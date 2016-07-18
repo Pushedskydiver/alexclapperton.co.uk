@@ -1,4 +1,4 @@
-# Louise Jewers Physiotherapy
+# Alex Clapperton Website Portfolio
 
 ## Folder Structure
 
