@@ -1,0 +1,147 @@
+/**
+* Main font family
+*/
+@font-face {
+  font-family: 'Prompt';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Prompt'), local('Prompt-Regular'), url('../fonts/prompt/prompt-regular.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Prompt';
+  font-style: normal;
+  font-weight: 600;
+  src: local('Prompt SemiBold'), local('Prompt-SemiBold'), url('../fonts/prompt/prompt-semi-bold.ttf') format('truetype');
+}
+
+/**
+* Secondary font family
+*/
+@font-face {
+  font-family: 'Arima Madurai';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Arima Madurai Medium'), local('ArimaMadurai-Medium'), url('../fonts/arima-madurai/arima-madurai-medium.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Arima Madurai';
+  font-style: normal;
+  font-weight: $core-secondary-font-weight;
+  src: local('Arima Madurai Bold'), local('ArimaMadurai-Bold'), url('../fonts/arima-madurai/arima-madurai-bold.ttf') format('truetype');
+}
+
+$text-styles-default: (
+  body-1: (
+    description: 'basic text style for body copy',
+    font-family: $core-font-family,
+    font-size: $core-font-size,
+    line-height: $core-line-height,
+    color: $core-color-dark,
+    font-weight: $core-font-weight
+  ),
+  body-2: (
+    description: 'lighter text used for subsidiary copy',
+    font-family: $core-font-family,
+    font-size: $core-font-size,
+    line-height: $core-line-height,
+    color: $core-color-dark,
+    font-weight: 200
+  ),
+  body-3: (
+    description: 'heavier text for highlighting paragraphs e.g. intro paragraphs',
+    font-family: inherit,
+    font-size: $core-font-size,
+    line-height: $core-line-height,
+    color: $core-color-dark,
+    font-weight: $core-secondary-font-weight
+  ),
+  display-1: (
+    description: 'Default Level 1 heading style',
+    font-family: $core-secondary-font-family,
+    font-size: $core-grid-unit * 3.5,
+    line-height: $core-grid-unit * 4,
+    color: $core-color-brand,
+    display: block,
+    padding: 0,
+    margin: $core-margin 0,
+    font-weight: $core-secondary-font-weight
+  ),
+  display-2: (
+    description: 'Default Level 2 heading style',
+    font-family: $core-secondary-font-family,
+    font-size: $core-grid-unit * 3,
+    line-height: $core-grid-unit * 4,
+    color: $core-color-dark,
+    display: block,
+    padding: 0,
+    margin: $core-margin 0,
+    font-weight: $core-secondary-font-weight
+  ),
+  display-3: (
+    description: 'Default Level 3 heading style',
+    font-family: $core-secondary-font-family,
+    font-size: $core-grid-unit * 2.5,
+    line-height: $core-grid-unit * 3,
+    color: $core-color-dark,
+    display: block,
+    padding: 0,
+    margin: $core-margin 0,
+    font-weight: $core-font-weight
+  ),
+  display-4: (
+    description: 'Default Level 4 heading style',
+    font-family: $core-secondary-font-family,
+    font-size: $core-grid-unit * 2,
+    line-height: $core-grid-unit * 3,
+    color: $core-color-neutral,
+    display: block,
+    padding: 0,
+    margin: $core-margin 0,
+    font-weight: $core-font-weight
+  ),
+  display-5: (
+    description: 'Default Level 5 heading style',
+    font-family: $core-secondary-font-family,
+    font-size: $core-grid-unit * 1.5,
+    line-height: $core-grid-unit * 2,
+    color: $core-color-dark,
+    display: block,
+    padding: 0,
+    margin: $core-margin 0,
+    font-weight: $core-font-weight
+  )
+);
+
+
+/**
+* generate text style css for named style.
+*
+* Use the text mixin to apply a text style to a class, specify the text style name either from the default styles or from any custom text styles which have been defined for the site in `$text-styles-site`.
+*
+* @example
+* ```scss
+* .myclass{
+*     \@include text('body-1');
+* }
+* ```
+* ```html
+* <p class="myclass">lorem ipsum</p>
+* ```
+*
+* @group Toolkit
+* @component Text
+*/
+@mixin text($style: 'body-1') {
+  // merge any custom typography styles into the defaults
+  $text-styles-all: $text-styles-default;
+  @if variable-exists('text-styles-site') {
+    @if type-of($text-styles-site) == map {
+      $text-styles-all: map-merge($text-styles-default, $text-styles-site);
+    }
+  }
+  // get the named style spec
+  $props: map-get($text-styles-all, $style);
+  @if type-of($props) == map {
+    @include map-to-props($props);
+  }
+}

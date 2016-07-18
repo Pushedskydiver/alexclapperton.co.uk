@@ -1,0 +1,114 @@
+@include editorial;
+
+.siteHeader {
+  position: fixed 0 * 0 0;
+  width: 100%;
+}
+
+.mainHeader {
+  position: relative;
+  background: $core-color-light;
+  padding: $core-grid-unit + 3px;
+  @include grid(null, row, space-between);
+  @include align-items(center);
+  -webkit-box-shadow: 3px 4px 9px 0px rgba(0,0,0,0.15);
+  box-shadow: 3px 4px 9px 0px rgba(0,0,0,0.15);
+}
+
+.mainHeader_logo {
+  display: inline-block;
+  color: $core-color-brand;
+  text-decoration: none;
+}
+
+.menuBtn {
+  display: inline-block;
+  position: relative;
+  size: 30px;
+  background: transparent;
+  border: 0;
+  overflow: hidden;
+  -webkit-appearance: none;
+
+  &:focus {
+    outline: 0;
+  }
+}
+
+.menuBtn_inner {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  size: 30px 18px;
+  margin: -9px 0 0 -9px;
+}
+
+
+.menuBtn_bar {
+  position: absolute;
+  left: 0;
+  size: 30px 1px;
+  background: $core-color-dark;
+  @include transition-03;
+}
+
+.menuBtn_bar--top {
+  top: 0;
+}
+.menuBtn_bar--middle {
+  top: 8px;
+}
+.menuBtn_bar--bottom {
+  bottom: 0;
+}
+
+.menuBtn--openNav {
+
+  .menuBtn_bar--top {
+    top: 9px;
+    @include transform(rotate(45deg));
+  }
+  .menuBtn_bar--middle {
+    opacity: 0;
+  }
+  .menuBtn_bar--bottom {
+    bottom: 8px;
+    @include transform(rotate(-45deg));
+  }
+}
+
+.siteNav {
+  display: none;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  left: 0;
+  width: 100%;
+  background: $core-color-light;
+  margin: 0 auto;
+  -webkit-box-shadow: 3px 4px 9px 0px rgba(0, 0, 0, 0.15);
+  box-shadow: 3px 4px 9px 0px rgba(0, 0, 0, 0.15);
+}
+
+.siteNav_link {
+  display: block;
+  position: relative;
+  color: $core-color-brand;
+  font-size: $core-font-size;
+  padding: $core-grid-unit 20px;
+  border-top: 1px solid $core-color-neutral;
+  text-decoration: none;
+}
+.siteNav_link--active {
+  color: $core-color-dark;
+
+  &::before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    size: 3px 100%;
+    background: $core-color-dark;
+  }
+}

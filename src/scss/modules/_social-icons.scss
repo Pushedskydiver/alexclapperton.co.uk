@@ -1,0 +1,127 @@
+/**
+* Social media icons
+*
+* @group Toolkit
+* @component Social icons
+*/
+
+/**
+ * width of social icons container
+ * @type color
+ */
+$socialIcons-width: 30% !default;
+
+/**
+ * color of the icons
+ * @type color
+ */
+$socialIcons_link-color: $core-color-dark !default;
+
+/**
+* width of the icons
+* @type number
+*/
+$socialIcons_link-width: 27px !default;
+
+/**
+* height of the icons
+* @type number
+*/
+$socialIcons_link-height: 29px !default;
+
+/**
+* margin around the icons
+* @type number
+*/
+$socialIcons_link-margin: 0 22px 0 0 !default;
+
+/**
+* padding around the icons
+* @type number
+*/
+$socialIcons_svg-padding: 0 !default;
+
+/**
+* social icon border properties
+* @type number, string. color
+*/
+$socialIcons_link-border-width: $core-border-width !default;
+$socialIcons_link-border-style: $core-border-style !default;
+$socialIcons_link-border-color: $core-border-color !default;
+$socialIcons_link-border-radius: $core-border-radius !default;
+
+/**
+* social network colors
+* @type color
+*/
+$social-networks: (
+   facebook #3b5998,
+   linkedin #007bb6,
+   twitter #55acee,
+);
+
+/*
+* Set the following variable to 'true' to show fill of
+* social media colors when hovering over social icons
+*/
+$social-network-fill-hover: false !default;
+
+/*
+* Set the following variable to 'true' to add a
+* border around each social media icon
+*/
+$social-icons-bordered: false !default;
+
+/*
+*
+*/
+@if ($social-icons-bordered == true) {
+  $socialIcons_link-width: 40px;
+  $socialIcons_link-height: 42px;
+  $socialIcons_link-margin: 0 5px 0 0;
+  $socialIcons_svg-padding: 8px;
+}
+
+/**
+* default social icon properties
+* @component Social icons
+*/
+@mixin social-icons-default {
+  display: inline-block;
+  width: $socialIcons_link-width;
+  height: $socialIcons_link-height;
+  margin: $socialIcons_link-margin;
+  overflow: hidden;
+
+  &:#{'last-child'} {
+    margin-right: 0;
+  }
+}
+
+/**
+* social icons with border
+* @component Social icons
+*/
+@mixin social-icons-bordered {
+  border-width: $socialIcons_link-border-width;
+  border-style: $socialIcons_link-border-style;
+  border-color: $socialIcons_link-border-color;
+  border-radius: $socialIcons_link-border-radius;
+}
+
+/**
+* Adding all social media colors
+* @component Social icons
+*/
+@mixin social-network-colors-fill($svg-icon: socialIcons_svg-) {
+  @each $sn in $social-networks {
+    .#{$svg-icon}#{nth($sn, 1)} {
+      fill: #{nth($sn, 2)};
+    }
+    @if $social-network-fill-hover == true {
+      .#{$svg-icon}#{nth($sn, 1)}:hover {
+        fill: #{nth($sn, 2)};
+      }
+    }
+  }
+}

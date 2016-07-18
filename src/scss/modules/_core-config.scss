@@ -1,0 +1,111 @@
+/**
+* # Core settings
+*
+* These are the defaults which can be overridden
+* @group Toolkit
+* @component Core Settings
+*/
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+$core-grid-width: 1170px !default;
+
+/**
+* Base grid unit size. This should be the basis for all measurements.
+* @group Toolkit
+* @component Core Settings
+*/
+$core-grid-unit: 12px !default;
+
+/**
+* Main branding color
+*/
+$core-color-brand: #e84855 !default;
+
+/**
+* Main dark color
+*/
+$core-color-dark: #191d32 !default;
+
+/**
+* Main neutral color
+*/
+$core-color-neutral: #757780 !default;
+
+/**
+* Main light color
+*/
+$core-color-light: #f7f7ff !default;
+
+/**
+* Line width used for separators and borders
+*/
+$core-border-width: 1px !default;
+
+/**
+* Line style for separators and borders
+*/
+$core-border-style: solid !default;
+
+/**
+* Line color for separators and borders
+*/
+$core-border-color: $core-color-neutral !default;
+
+/**
+* Rounded corners on block and bordered elements
+*/
+$core-border-radius: 2px !default;
+
+/**
+* Main font family
+*/
+$core-font-family: 'Prompt', sans-serif !default;
+
+/**
+* Secondary font family
+*/
+$core-secondary-font-family: 'Arima Madurai', sans-serif !default;
+
+/**
+* Base font size
+*/
+$core-font-size: 0.85rem !default;
+
+/**
+* Base line height
+*/
+$core-line-height: $core-grid-unit * 2 !default;
+
+/**
+* Base font weight
+*/
+$core-font-weight: 400 !default;
+
+/**
+* Secondary font weight
+*/
+$core-secondary-font-weight: 700 !default;
+
+/**
+* Margin applied to block elements
+*/
+$core-margin: $core-grid-unit !default;
+
+/**
+* Padding applied to block containers
+*/
+$core-padding: $core-grid-unit !default;
+
+.wrapper {
+  padding: 0 ($core-grid-unit + 3px);
+  margin: 0 auto;
+}
+
+.row {
+  margin: 0 -15px;
+}

@@ -1,0 +1,242 @@
+/**
+ *  Base element styles for editorial content
+ *
+ *  Any element which will contain html editorial content e.g. blog posts or other CMS driven content can be given the .editorial class so that base HTML elements will be styled according to these styles rather than the reset styles
+ *
+ * @group Toolkit
+ * @component Editorial Content
+ *
+ *  @example scss
+ *  .editorialContent {
+ *      @include editorial;
+ *  }
+ */
+
+/**
+ * color for html hyperlinks
+ * @type color
+ * @group Toolkit
+ * @component Editorial Content
+ */
+$editorial-link-color: $core-color-brand;
+/**
+ * hover color for html hyperlinks
+ * @type color
+ */
+$editorial-link-hover-color: lighten($core-color-brand, 20%);
+
+/**
+ * standard margin for editorial elements
+ * @type number
+ */
+$editorial-margin: $core-margin 0;
+
+/**
+ * padding for blockquotes
+ * @type number
+ * @type string
+ */
+$editorial-blockquote-padding: $core-padding;
+
+/**
+ * list indent
+ * @type number
+ */
+$editorial-list-indent: $core-padding * 2;
+/**
+ * unordered list type
+ * @type string
+ */
+$editorial-list-unordered-type: circle;
+/**
+ * order list type
+ * @type string
+ */
+$editorial-list-ordered-type: decimal;
+/**
+ *
+ */
+$editorial-hr-thickness: $core-border-width;
+/**
+ * @type color
+ */
+$editorial-hr-color: $core-color-neutral;
+
+/**
+ *
+ */
+$editorial-base-text: body-1;
+/**
+ *
+ */
+$editorial-h1-text: display-1;
+/**
+ *
+ */
+$editorial-h2-text: display-2;
+/**
+ *
+ */
+$editorial-h3-text: display-3;
+/**
+ *
+ */
+$editorial-h4-text: display-4;
+/**
+ &
+ */
+$editorial-h5-text: display-5;
+
+/**
+ * apply styling to editorial content, e.g. HTML markup with no component classes applied
+ */
+@mixin editorial() {
+  @include text($editorial-base-text);
+  display: block;
+  overflow: hidden;
+
+  //block elements
+  h1,h2,h3,h4,h5,ul,ol,dl,p,pre,blockquote,div,table {
+    margin: $editorial-margin;
+    display: block
+  }
+
+  h1 {
+    @include text($editorial-h1-text);
+  }
+
+  h2 {
+    @include text($editorial-h2-text);
+  }
+
+  h3 {
+    @include text($editorial-h3-text);
+  }
+
+  h4 {
+    @include text($editorial-h4-text);
+  }
+
+  h5 {
+    @include text($editorial-h5-text);
+  }
+
+  address {
+   // contact information
+  }
+
+  // Grouping content
+  p {
+    // paragraph
+    @include text('body-1');
+  }
+
+  hr {
+    // thematic break
+    display: block;
+    border-style: solid;
+    margin: $editorial-margin $editorial-hr-thickness*-1;
+    border-width: 0 0 $editorial-hr-thickness;
+    border-color: $editorial-hr-color;
+  }
+
+  pre {
+    // preformatted text
+    @include text('body-4');
+    white-space: pre;
+  }
+
+  blockquote {
+    // block quotation
+    @include text('body-3');
+    padding: $editorial-blockquote-padding;
+  }
+
+  ol {
+   // ordered list
+   @include list($style-type: decimal)
+
+   ol {
+     margin: 0;
+   }
+
+   li {
+     @include list-item($style-type: decimal)
+     list-style-position: inside;
+    }
+  }
+
+  ul {
+   // unordered list
+   @include list(0 0 0 $editorial-list-indent, $editorial-margin, $editorial-list-unordered-type)
+
+   ul {
+     margin: 0;
+   }
+
+   li {
+     @include list-item($editorial-list-unordered-type);
+     list-style-position: inside;
+    }
+  }
+
+  li {
+   // list item
+   display: list-item;
+  }
+
+  figure {
+   // figure with optional caption
+  }
+
+  figcaption {
+   // figure caption
+  }
+
+  div {
+    // generic flow container
+    @include text('body-1');
+  }
+
+  // Text-level semantics
+  a {
+    // hyperlink
+    color: $editorial-link-color;
+
+    &:hover, &:focus, &:active {
+        color: $editorial-link-hover-color;
+        text-decoration: underline;
+    }
+  }
+
+  small {
+   // small print
+  }
+
+  code {
+   // code fragment
+   white-space: inherit;
+  }
+
+  i {
+   // offset text conventionally styled in italic
+  }
+
+  b {
+   // offset text conventionally styled in bold
+  }
+
+  span {
+   // generic span
+  }
+
+  // Embedded content
+  img {
+   max-width: 100%;
+   vertical-align: middle;
+  }
+
+  iframe {
+   // nested browsing context (inline frame)
+  }
+}

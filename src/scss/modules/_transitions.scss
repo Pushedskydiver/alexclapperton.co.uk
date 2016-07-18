@@ -1,0 +1,16 @@
+@mixin transition($element, $duration, $transition) {
+  -webkit-transition: $element $duration $transition;
+  -moz-transition: $element $duration $transition;
+  -ms-transition: $element $duration $transition;
+  -o-transition: $element $duration $transition;
+  transition: $element $duration $transition;
+}
+@mixin no-transition {
+  @include transition(none);
+}
+@mixin transition-025 {
+  @include transition(all, .25s, ease-in-out);
+}
+@mixin transition-03 {
+  @include transition(all, .3s, ease-in-out);
+}
