@@ -16,6 +16,10 @@ module.exports = {
             src: './src/js/*.js',
             dest: './dist/js/'
         },
+        html: {
+            src: './src/pages/*.html',
+            dest: './dist/'
+        },
         imgs: {
             src: './src/images/*',
             dest: './dist/images/'
@@ -66,6 +70,25 @@ module.exports = {
                 warnings: false,
                 global_defs: {}
             }
+        },
+        html: {
+            collapseWhitespace: true,
+            conservativeCollapse: true,
+            collapseBooleanAttributes: true,
+            decodeEntities: true,
+            keepClosingSlash: true,
+            minifyCSS: true,
+            minifyJS: true,
+            processConditionalComments: true,
+            removeAttributeQuotes: true,
+            removeComments: true,
+            removeEmptyAttributes: true,
+            removeOptionalTags: true,
+            removeRedundantAttributes: true,
+            removeScriptTypeAttributes: true,
+            sortAttributes: true,
+            sortClassName: true,
+            useShortDoctype: true
         },
         imgmin: {
             options: {
