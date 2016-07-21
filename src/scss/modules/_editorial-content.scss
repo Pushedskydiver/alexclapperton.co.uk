@@ -3,9 +3,6 @@
  *
  *  Any element which will contain html editorial content e.g. blog posts or other CMS driven content can be given the .editorial class so that base HTML elements will be styled according to these styles rather than the reset styles
  *
- * @group Toolkit
- * @component Editorial Content
- *
  *  @example scss
  *  .editorialContent {
  *      @include editorial;
@@ -14,43 +11,33 @@
 
 /**
  * color for html hyperlinks
- * @type color
- * @group Toolkit
- * @component Editorial Content
  */
 $editorial-link-color: $core-color-brand;
 /**
  * hover color for html hyperlinks
- * @type color
  */
-$editorial-link-hover-color: lighten($core-color-brand, 20%);
+$editorial-link-hover-color: $core-color-dark;
 
 /**
  * standard margin for editorial elements
- * @type number
  */
 $editorial-margin: $core-margin 0;
 
 /**
  * padding for blockquotes
- * @type number
- * @type string
  */
 $editorial-blockquote-padding: $core-padding;
 
 /**
  * list indent
- * @type number
  */
 $editorial-list-indent: $core-padding * 2;
 /**
  * unordered list type
- * @type string
  */
 $editorial-list-unordered-type: circle;
 /**
  * order list type
- * @type string
  */
 $editorial-list-ordered-type: decimal;
 /**
@@ -96,7 +83,7 @@ $editorial-h5-text: display-5;
   overflow: hidden;
 
   //block elements
-  h1,h2,h3,h4,h5,ul,ol,dl,p,pre,blockquote,div,table {
+  h1,h2,h3,h4,h5,ul,ol,p,blockquote,div,table {
     margin: $editorial-margin;
     display: block
   }
@@ -138,12 +125,6 @@ $editorial-h5-text: display-5;
     margin: $editorial-margin $editorial-hr-thickness*-1;
     border-width: 0 0 $editorial-hr-thickness;
     border-color: $editorial-hr-color;
-  }
-
-  pre {
-    // preformatted text
-    @include text('body-4');
-    white-space: pre;
   }
 
   blockquote {
@@ -202,11 +183,6 @@ $editorial-h5-text: display-5;
   a {
     // hyperlink
     color: $editorial-link-color;
-
-    &:hover, &:focus, &:active {
-        color: $editorial-link-hover-color;
-        text-decoration: underline;
-    }
   }
 
   small {

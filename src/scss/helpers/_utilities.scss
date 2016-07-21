@@ -1,6 +1,5 @@
 /**
- * Is this one of these?
- * 
+ *
  * @param  {string|number} $value  value to compare
  * @param  {list} $values values to compare with
  * @return {Boolean}         true if value is in values
@@ -9,37 +8,4 @@
  */
 @function is($value, $values) {
   @return not not index($values, $value);
-}
-
-/**
- * Apply flex ordering based on a list of values for a data attribute
- *
- * @example
- * ``` scss
- * $orderList: ('type1','type2','type3');
- * .containerElement {
- *     \@include orderByData($orderList, 'variant')
- * }
- * ```
- * ``` html
- * <div class="containerElement">
- *     <div data-variant="type3">Type3</div>
- *     <div data-variant="type1">Type1</div>
- *     <div data-variant="type2">Type2</div>
- * </div>
- * ```
- * 
- * @param  {list} $list      an ordered list of values
- * @param  {string} $attribute the name of the data attribute e.g. 'type' to match 'data-type'
- * @group Toolkit
- * @component Helpers
- */
-@mixin orderByData($list, $attribute) {
-    display: flex;
-    flex-direction: column;
-    @each $att in $list {
-        & > [data-#{$attribute}="#{$att}"] {
-            order: index($list, $att);
-        }
-    }
 }

@@ -96,7 +96,7 @@
   color: $core-color-brand;
   font-size: $core-font-size;
   padding: $core-grid-unit 20px;
-  border-top: 1px solid $core-color-neutral;
+  border-top: 1px solid lighten($core-color-neutral, 40%);
   text-decoration: none;
 }
 .siteNav_link--active {
