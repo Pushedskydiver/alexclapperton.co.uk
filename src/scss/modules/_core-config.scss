@@ -24,17 +24,17 @@ $core-grid-unit: 12px !default;
 /**
 * Main branding color
 */
-$core-color-brand: #e84855 !default;
+$core-color-brand: #ff486e !default;
 
 /**
 * Main dark color
 */
-$core-color-dark: #191d32 !default;
+$core-color-dark: #2e353b !default;
 
 /**
 * Main neutral color
 */
-$core-color-neutral: #757780 !default;
+$core-color-neutral: #e5e5e5 !default;
 
 /**
 * Main light color
@@ -64,17 +64,17 @@ $core-border-radius: 2px !default;
 /**
 * Main font family
 */
-$core-font-family: 'Prompt', sans-serif !default;
+$core-font-family: 'Inconsolata', sans-serif !default;
 
 /**
 * Secondary font family
 */
-$core-secondary-font-family: 'Arima Madurai', sans-serif !default;
+$core-secondary-font-family: 'Dosis', sans-serif !default;
 
 /**
 * Base font size
 */
-$core-font-size: 0.85rem !default;
+$core-font-size: 0.95rem !default;
 
 /**
 * Base line height
@@ -89,7 +89,12 @@ $core-font-weight: 400 !default;
 /**
 * Secondary font weight
 */
-$core-secondary-font-weight: 700 !default;
+$core-secondary-font-weight: 600 !default;
+
+/**
+* Tertiary font weight
+*/
+$core-tertiary-font-weight: 700 !default;
 
 /**
 * Margin applied to block elements
@@ -100,12 +105,3 @@ $core-margin: $core-grid-unit !default;
 * Padding applied to block containers
 */
 $core-padding: $core-grid-unit !default;
-
-.wrapper {
-  padding: 0 ($core-grid-unit + 3px);
-  margin: 0 auto;
-}
-
-.row {
-  margin: 0 -15px;
-}

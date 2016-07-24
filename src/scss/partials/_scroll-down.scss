@@ -1,0 +1,17 @@
+.scrollDown {
+  position: absolute;
+  right: 0;
+  bottom: 5%;
+  left: 0;
+  size: 27px;
+  margin: 0 auto;
+  text-align: center;
+  z-index: z(delta);
+  @include animation-fadeInOutDown;
+}
+
+.scrollDown_icon {
+  width: 100%;
+  height: 100%;
+  fill: $core-color-dark;
+}

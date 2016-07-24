@@ -65,7 +65,7 @@ $breakpoints: (
     -ms-flex-direction: column;
     flex-direction: column;
   }
-  @if $value == row {
+  @else if $value == row {
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
     -webkit-flex-direction: row;

@@ -1,3 +1,4 @@
+@import "vendor/owl-carousel/owl-carousel";
 
 @import "modules/core-config";
 @import "modules/grid";
@@ -7,9 +8,13 @@
 @import "modules/transitions";
 @import "modules/transforms";
 @import "modules/z-index";
+@import "modules/keyframes";
 
 @import "helpers/sassmaps";
 @import "helpers/utilities";
 
+@import "partials/base";
 @import "partials/skip-links";
 @import "partials/navigation";
+@import "partials/banner";
+@import "partials/scroll-down";

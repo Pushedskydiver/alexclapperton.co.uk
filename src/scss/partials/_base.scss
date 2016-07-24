@@ -1,0 +1,30 @@
+@include editorial;
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+body {
+  background: $core-color-neutral;
+  margin: 0;
+  @include fadein;
+}
+
+body ::-moz-selection {
+  color: $core-color-light darken($core-color-neutral, 70%);
+}
+
+body ::selection {
+  color: $core-color-light darken($core-color-neutral, 70%);
+}
+
+.wrapper {
+  padding: 0 ($core-grid-unit + 3px);
+  margin: 0 auto;
+}
+
+.row {
+  margin: 0 -15px;
+}

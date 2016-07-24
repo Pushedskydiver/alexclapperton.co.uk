@@ -1,0 +1,76 @@
+.siteBanner {
+  margin-top: 65px;
+}
+
+.siteBanner_slide {
+  size: 90% auto;
+  background: $core-color-light;
+  padding: 15px ;
+  margin: 0 auto;
+  margin-bottom: 25px;
+
+  &:first-child {
+    height: calc(100vh - 70px);
+
+    @include respond-to(xs) {
+      height: auto;
+    }
+  }
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.siteBanner_slideContent {
+  @include grid(wrap, column, center);
+  position: relative;
+  height: 100%;
+  background: $core-color-neutral;
+  padding: 15px;
+  z-index: z(alpha);
+
+  &--slideOne::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    size: 100%;
+    background: url('../images/slider.jpg') center center no-repeat;
+    background-size: cover;
+    opacity: .5;
+    z-index: -1;
+  }
+}
+
+.siteBanner_heading,
+.siteBanner_subHeading {
+  @include text(display-1);
+}
+
+.siteBanner_text--padding {
+  @include respond-to(xs) {
+    padding-bottom: 20px;
+  }
+}
+
+.siteBanner_link {
+  background: $core-color-brand;
+  color: $core-color-light;
+  padding: 3px 15px;
+  text-decoration: none;
+  -webkit-align-self: flex-start;
+  -ms-flex-item-align: start;
+  align-self: flex-start;
+
+  span {
+    text-transform: uppercase;
+    text-decoration: underline;
+  }
+}
+
+.siteBanner_linkIcon {
+  size: 17px;
+  fill: $core-color-light;
+  vertical-align: middle;
+}

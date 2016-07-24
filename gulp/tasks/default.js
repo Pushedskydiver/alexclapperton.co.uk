@@ -3,5 +3,5 @@ var gulp = require('gulp'),
 
 //Default task
 gulp.task('default', function() {
-    gulp.start('sass', 'svgSprite', 'js', 'images')
+    gulp.start('sass', 'svgSprite', 'js', 'html', 'images')
 });

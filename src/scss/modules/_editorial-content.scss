@@ -84,7 +84,7 @@ $editorial-h5-text: display-5;
 
   //block elements
   h1,h2,h3,h4,h5,ul,ol,p,blockquote,div,table {
-    margin: $editorial-margin;
+    margin: 0 0 $editorial-margin 0;
     display: block
   }
 

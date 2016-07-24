@@ -2,32 +2,32 @@
 * Main font family
 */
 @font-face {
-  font-family: 'Prompt';
+  font-family: 'Inconsolata';
   font-style: normal;
-  font-weight: 400;
-  src: local('Prompt'), local('Prompt-Regular'), url('../fonts/prompt/prompt-regular.ttf') format('truetype');
+  font-weight: $core-font-weight;
+  src: local('Inconsolata'), url('../fonts/inconsolata/inconsolata-regular.ttf') format('truetype');
 }
 @font-face {
-  font-family: 'Prompt';
+  font-family: 'Inconsolata';
   font-style: normal;
-  font-weight: 600;
-  src: local('Prompt SemiBold'), local('Prompt-SemiBold'), url('../fonts/prompt/prompt-semi-bold.ttf') format('truetype');
+  font-weight: $core-tertiary-font-weight;
+  src: local('Inconsolata Bold'), local('Inconsolata-Bold'), url('../fonts/inconsolata/inconsolata-bold.ttf') format('truetype');
 }
 
 /**
 * Secondary font family
 */
 @font-face {
-  font-family: 'Arima Madurai';
+  font-family: 'Dosis';
   font-style: normal;
-  font-weight: 400;
-  src: local('Arima Madurai Medium'), local('ArimaMadurai-Medium'), url('../fonts/arima-madurai/arima-madurai-medium.ttf') format('truetype');
+  font-weight: $core-font-weight;
+  src: local('Dosis Regular'), local('Dosis-Regular'), url('../fonts/dosis/dosis-regular.ttf') format('truetype');
 }
 @font-face {
-  font-family: 'Arima Madurai';
+  font-family: 'Dosis';
   font-style: normal;
   font-weight: $core-secondary-font-weight;
-  src: local('Arima Madurai Bold'), local('ArimaMadurai-Bold'), url('../fonts/arima-madurai/arima-madurai-bold.ttf') format('truetype');
+  src: local('Dosis SemiBold'), local('Dosis-SemiBold'), url('../fonts/dosis/dosis-semi-bold.ttf') format('truetype');
 }
 
 $text-styles-default: (
@@ -37,7 +37,8 @@ $text-styles-default: (
     font-size: $core-font-size,
     line-height: $core-line-height,
     color: $core-color-dark,
-    font-weight: $core-font-weight
+    font-weight: $core-font-weight,
+    margin-top: 0
   ),
   body-2: (
     description: 'lighter text used for subsidiary copy',
@@ -58,57 +59,72 @@ $text-styles-default: (
   display-1: (
     description: 'Default Level 1 heading style',
     font-family: $core-secondary-font-family,
-    font-size: $core-grid-unit * 3.5,
-    line-height: $core-grid-unit * 4,
+    font-size: $core-grid-unit * 2.5,
+    line-height: $core-grid-unit * 3.5,
     color: $core-color-brand,
     display: block,
     padding: 0,
-    margin: $core-margin 0,
-    font-weight: $core-secondary-font-weight
+    margin: 0 0 $core-margin 0,
+    font-weight: $core-font-weight,
+    -webkit-font-smoothing: antialiased,
+    -webkit-text-size-adjust: 100%,
+    -ms-text-size-adjust: 100%
   ),
   display-2: (
     description: 'Default Level 2 heading style',
     font-family: $core-secondary-font-family,
-    font-size: $core-grid-unit * 3,
-    line-height: $core-grid-unit * 4,
+    font-size: $core-grid-unit * 2.25,
+    line-height: $core-grid-unit * 3.5,
     color: $core-color-dark,
     display: block,
     padding: 0,
-    margin: $core-margin 0,
-    font-weight: $core-secondary-font-weight
+    margin: 0 0 $core-margin 0,
+    font-weight: $core-secondary-font-weight,
+    -webkit-font-smoothing: antialiased,
+    -webkit-text-size-adjust: 100%,
+    -ms-text-size-adjust: 100%
   ),
   display-3: (
     description: 'Default Level 3 heading style',
     font-family: $core-secondary-font-family,
-    font-size: $core-grid-unit * 2.5,
-    line-height: $core-grid-unit * 3,
+    font-size: $core-grid-unit * 2,
+    line-height: $core-grid-unit * 3.5,
     color: $core-color-dark,
     display: block,
     padding: 0,
-    margin: $core-margin 0,
-    font-weight: $core-font-weight
+    margin: 0 0 $core-margin 0,
+    font-weight: $core-font-weight,
+    -webkit-font-smoothing: antialiased,
+    -webkit-text-size-adjust: 100%,
+    -ms-text-size-adjust: 100%
   ),
   display-4: (
     description: 'Default Level 4 heading style',
     font-family: $core-secondary-font-family,
-    font-size: $core-grid-unit * 2,
-    line-height: $core-grid-unit * 3,
+    font-size: $core-grid-unit * 1.5,
+    line-height: $core-grid-unit * 3.5,
     color: $core-color-neutral,
     display: block,
     padding: 0,
-    margin: $core-margin 0,
-    font-weight: $core-font-weight
+    margin: 0 0 $core-margin 0,
+    font-weight: $core-font-weight,
+    -webkit-font-smoothing: antialiased,
+    -webkit-text-size-adjust: 100%,
+    -ms-text-size-adjust: 100%
   ),
   display-5: (
     description: 'Default Level 5 heading style',
     font-family: $core-secondary-font-family,
-    font-size: $core-grid-unit * 1.5,
-    line-height: $core-grid-unit * 2,
+    font-size: $core-grid-unit * 1.25,
+    line-height: $core-grid-unit * 3.5,
     color: $core-color-dark,
     display: block,
     padding: 0,
-    margin: $core-margin 0,
-    font-weight: $core-font-weight
+    margin: 0 0 $core-margin 0,
+    font-weight: $core-font-weight,
+    -webkit-font-smoothing: antialiased,
+    -webkit-text-size-adjust: 100%,
+    -ms-text-size-adjust: 100%
   )
 );
 

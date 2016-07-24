@@ -123,46 +123,73 @@
 
 
     // ==============================================
-    //    Contact form | Contact page
+    //    Contact form
     // ==============================================
     function init_contact_form() {
-      var form = $('.contact-form'),
-          // Get the messages div.
-          formMessages = $('.form-messages');
+      //contact form button event
+      $(".button_submit").on('click',function (event) {
+          var error = init_validate_form();
+          var _this = $(this);
+          if (error) {
+              _this.next('.loading').removeClass('display-none');
+              _this.prop('disabled', true);
+              $.ajax({
+                  type: "POST",
+                  url: "forms/contact.php",
+                  data: $(".contactForm").serialize(),
+                  success: function (result) {
+                      $('input[type=text],textarea').each(function () {
+                          $(this).val('');
+                      })
+                      $(".contactForm_message").html(result);
+                      $(".contactForm_message").fadeIn("slow");
+                      $('.contactForm_message').delay(4000).fadeOut("slow");
+                      _this.next('.loading').addClass('display-none');
+                      _this.prop('disabled', false);
+                  },
+                  error: function () {
+                      _this.next('.loading').addClass('display-none');
+                      _this.prop('disabled', false);
+                  }
+              });
+          }
+      });
 
-      // Set up an event listener for the contact form.
-      $(form).submit(function (e) {
-        // Stop the browser from submitting the form.
-        e.preventDefault();
+      function init_validate_form() {
+          var error = true;
+          $('.contactForm input[type=text]').each(function (index) {
+              if (index == 0) {
+                  if ($(this).val() == null || $(this).val() == "") {
+                      $(".contactForm").find("input:eq(" + index + ")").addClass("contactForm_message--error");
+                      error = false;
+                  }
+                  else {
+                      $(".contactForm").find("input:eq(" + index + ")").removeClass("contactForm_message--error");
+                  }
+              }
+              else if (index == 1) {
+                  if (!(/(.+)@(.+){2,}\.(.+){2,}/.test($(this).val()))) {
+                      $(".contactForm").find("input:eq(" + index + ")").addClass("contactForm_message--error");
+                      error = false;
+                  } else {
+                      $(".contactForm").find("input:eq(" + index + ")").removeClass("contactForm_message--error");
+                  }
+              }
 
-        // Serialize the form data.
-        var formData = $(form).serialize();
+          });
+          return error;
+      }
+    }
 
-        // Submit the form using AJAX.
-        $.ajax({
-                type: 'POST',
-                url: $(form).attr('action'),
-                data: formData
-        })
-        .done(function (response) {
-            // Make sure that the formMessages div has the 'success' class.
-            $(formMessages).removeClass('error').addClass('success').fadeIn().delay(5000).fadeOut();
-            // Set the message text.
-            $(formMessages).text(response);
 
-            // Clear the form.
-            $(form).trigger("reset");
-        })
-        .fail(function (data) {
-            // Make sure that the formMessages div has the 'error' class.
-            $(formMessages).removeClass('success').addClass('error').fadeIn().delay(5000).fadeOut();
-            // Set the message text.
-            if (data.responseText !== '') {
-                $(formMessages).text(data.responseText);
-            } else {
-                $(formMessages).text('Oops! An error occured and your message could not be sent.');
-            }
-        });
+    // ==============================================
+    //    Main slider
+    // ==============================================
+    function init_slider() {
+      $(".siteBanner_slider").owlCarousel({
+        items: 1,
+        center: true,
+        dots: false
       });
     }
 
@@ -174,5 +201,10 @@
     init_scroll_to();
     init_smooth_scroll_top();
     init_mobile_nav();
+    init_contact_form();
+
+    if (!$('body').hasClass('mobile')) {
+      init_slider();
+    }
 
 })(window.jQuery);
