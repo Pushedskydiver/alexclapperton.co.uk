@@ -2,7 +2,7 @@
 
 ## Folder Structure
 
-The folder structure for this project is relatively simple. All development work is done inside the `src` folder, the `form` folder holds the contact form php script and the `twitter` folder contains the necessary files to create a customized twitter feed for the clients website.
+The folder structure for this project is pretty simple. All development work is done inside the `src` folder, the `form` folder holds the contact form php script and the `twitter` folder contains the necessary files to create a customized twitter feed for the clients website.
 
 ## SCSS Folder Structure
 
