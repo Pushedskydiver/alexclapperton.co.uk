@@ -116,8 +116,14 @@
       });
 
       function toggleNav(bool) {
-      	if (bool === true) $('.siteNav').slideDown();
-      	else $('.siteNav').slideUp();
+      	if (bool === true) {
+          $('.socialHeader').addClass('socialHeader--display');
+          $('.siteNav').addClass('siteNav--display');
+        }
+      	else {
+          $('.socialHeader').removeClass('socialHeader--display');
+          $('.siteNav').removeClass('siteNav--display');
+        }
       }
     }
 
@@ -189,7 +195,10 @@
       $(".siteBanner_slider").owlCarousel({
         items: 1,
         center: true,
-        dots: false
+        loop: false,
+        stagePadding: 60,
+        smartSpeed: 1000,
+        activeClass: 'siteBanner_slide--active'
       });
     }
 
@@ -203,7 +212,7 @@
     init_mobile_nav();
     init_contact_form();
 
-    if (!$('body').hasClass('mobile')) {
+    if( $(window).width() > 767) {
       init_slider();
     }
 

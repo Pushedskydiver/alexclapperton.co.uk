@@ -24,7 +24,7 @@ $list-margin: $core-margin 0;
  */
 @mixin make-list($item-selector:'li'){
     @include list;
-    
+
     #{$item-selector} {
         @include list-item;
     }

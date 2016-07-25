@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
 
     <!-- META TAGS  -->
@@ -25,114 +25,160 @@
     <header class="siteHeader">
       <a href="#nav" class="skipLink  skipLink--hidden  skipLink--focusable">Skip to navigation</a>
       <a href="#content" class="skipLink  skipLink--hidden  skipLink--focusable  skipLink--scrollTo" data-offset-top="130">Skip to content</a>
-      <!-- BEGIN : CONTAINER -->
-      <div class="wrapper">
-        <!-- BEGIN : ROW -->
-        <div class="row">
-          <!-- BEGIN : MAIN HEADER -->
-          <div class="mainHeader">
-            <a href="#" class="mainHeader_logo"><span>.</span>Alex</a>
-            <!-- BEGIN : Mobile Nav -->
-            <button type="button" name="button" class="menuBtn">
-              <div class="menuBtn_inner">
-                <span class="menuBtn_bar  menuBtn_bar--top"></span>
-                <span class="menuBtn_bar  menuBtn_bar--middle"></span>
-                <span class="menuBtn_bar  menuBtn_bar--bottom"></span>
-              </div>
-            </button>
-            <!-- END : Mobile Nav /-->
-            <!-- BEGIN : NAV -->
-            <nav class="siteNav">
-              <a href="#" class="siteNav_link  siteNav_link--active">Home</a>
-              <a href="#" class="siteNav_link">About Me</a>
-              <a href="#" class="siteNav_link">Portfolio</a>
-              <a href="#" class="siteNav_link">Blog</a>
-              <a href="#" class="siteNav_link">Contact</a>
-            </nav>
-            <!-- END : NAV /-->
+
+      <!-- BEGIN : MAIN HEADER -->
+      <div class="mainHeader">
+        <a href="#" class="mainHeader_logo"><span>.</span>Alex</a>
+        <!-- BEGIN : Mobile Nav -->
+        <a class="menuBtn">
+          <span>Menu</span>
+          <div class="menuBtn_inner">
+            <span class="menuBtn_bar  menuBtn_bar--top"></span>
+            <span class="menuBtn_bar  menuBtn_bar--middle"></span>
+            <span class="menuBtn_bar  menuBtn_bar--bottom"></span>
           </div>
-          <!-- END : MAIN HEADER /-->
+        </a>
+        <!-- END : Mobile Nav /-->
+
+        <div class="socialHeader">
+          <svg class="socialHeader_logo">
+            <title>Alex Clapperton logo</title>
+            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="images/icons/sprite.svg#logo"></use>
+          </svg>
+
+          <div class="socialHeader_content">
+            <div class="socialHeader_icons">
+              <a href="#" title="External link to Alex's Facebook profile">
+                <svg class="socialHeader_icon  socialHeader_icon--facebook">
+                  <title>Facebook logo</title>
+                  <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="images/icons/sprite.svg#facebook"></use>
+                </svg>
+              </a>
+              <a href="#" title="External link to Alex's Twitter profile">
+                <svg class="socialHeader_icon  socialHeader_icon--twitter">
+                  <title>Twitter logo</title>
+                  <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="images/icons/sprite.svg#twitter"></use>
+                </svg>
+              </a>
+              <a href="#" title="External link to Alex's LinkedIn profile">
+                <svg class="socialHeader_icon  socialHeader_icon--linkedin">
+                  <title>LinkedIn logo</title>
+                  <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="images/icons/sprite.svg#linkedin"></use>
+                </svg>
+              </a>
+            </div>
+
+            <div class="socialHeader_copyright">
+              <p>
+                &copy; <script type="text/javascript">document.write(new Date().getFullYear());</script>, Alex Clapperton.
+              </p>
+            </div>
+          </div>
         </div>
-        <!-- END : ROW /-->
+
+        <!-- BEGIN : NAV -->
+        <nav class="siteNav">
+          <a href="#" class="siteNav_link  siteNav_link--active">Home</a>
+          <a href="#" class="siteNav_link">About Me</a>
+          <a href="#" class="siteNav_link">Portfolio</a>
+          <a href="#" class="siteNav_link">Blog</a>
+          <a href="#" class="siteNav_link">Contact</a>
+        </nav>
+        <!-- END : NAV /-->
       </div>
-      <!-- END : CONTAINER /-->
+      <!-- END : MAIN HEADER /-->
     </header>
     <!--******************** SITE HEADER : End ******************** /-->
 
 
     <!--******************** SITE BANNER : Start ********************-->
     <section class="siteBanner">
-      <!-- BEGIN : WRAPPER -->
-      <div class="wrapper">
-        <!-- BEGIN : ROW -->
-        <div class="row">
-          <!-- BEGIN : SITE BANNER SLIDER -->
-          <div class="siteBanner_slider">
-            <!-- BEGIN : SITE BANNER SLIDE -->
-            <div class="siteBanner_slide">
-              <!-- BEGIN : SITE BANNER SLIDE CONTENT -->
-              <div class="siteBanner_slideContent siteBanner_slideContent--slideOne">
-                <h1 class="siteBanner_heading">Hello! <br> My name is <br> Alex Clapperton</h1>
-                <p class="siteBanner_text--padding">
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                </p>
-                <!-- BEGIN : SCROLL DOWN -->
-                <div class="scrollDown">
-                  <a href="#content" class="scrollDown_link  scroll-to" data-offset-top="130">
-                    <svg class="scrollDown_icon">
-                      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="images/icons/sprite.svg#angle-down"></use>
-                    </svg>
-                  </a>
-                </div>
-                <!-- END : SCROLL DOWN /-->
-              </div>
-              <!-- END : SITE BANNER SLIDE CONTENT /-->
+      <!-- BEGIN : SITE BANNER SLIDER -->
+      <div class="siteBanner_slider">
+        <!-- BEGIN : SITE BANNER SLIDE -->
+        <div class="siteBanner_slide">
+          <!-- BEGIN : SITE BANNER SLIDE CONTENT -->
+          <div class="siteBanner_slideContent siteBanner_slideContent--slideOne">
+            <h1 class="siteBanner_heading">Hello! <br> My name is <br> Alex Clapperton</h1>
+            <p class="siteBanner_text">
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            </p>
+            <div class="siteBanner_slideNumber">
+              01 <span class="siteBanner_slideNumber--divider">/</span> 03
             </div>
-            <!-- END : SITE BANNER SLIDE /-->
-            <!-- BEGIN : SITE BANNER SLIDE -->
-            <div class="siteBanner_slide">
-              <!-- BEGIN : SITE BANNER SLIDE CONTENT -->
-              <div class="siteBanner_slideContent">
-                <h2 class="siteBanner_subHeading">I am a UX <br> Developer/Designer</h2>
-                <p>
-                  Working with a strong focus on design and user experience. I create digital experiences for brands and companies.
-                </p>
-                <a href="#" class="siteBanner_link">
-                  <span>About Me</span>
-                  <svg class="siteBanner_linkIcon">
-                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="images/icons/sprite.svg#arrow-right"></use>
-                  </svg>
-                </a>
-              </div>
-              <!-- END : SITE BANNER SLIDE CONTENT /-->
-            </div>
-            <!-- END : SITE BANNER SLIDE /-->
-            <!-- BEGIN : SITE BANNER SLIDE -->
-            <div class="siteBanner_slide">
-              <!-- BEGIN : SITE BANNER SLIDE CONTENT -->
-              <div class="siteBanner_slideContent">
-                <h2 class="siteBanner_subHeading">Yes I Believe <br> in Quality</h2>
-                <p>
-                  We design websites with conversions in mind, our websites look great, but each page has a clearly defined conversion goal.
-                </p>
-                <a href="#" class="siteBanner_link">
-                  <span>Portfolio</span>
-                  <svg class="siteBanner_linkIcon">
-                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="images/icons/sprite.svg#arrow-right"></use>
-                  </svg>
-                </a>
-              </div>
-              <!-- END : SITE BANNER SLIDE CONTENT /-->
-            </div>
-            <!-- END : SITE BANNER SLIDE /-->
           </div>
-          <!-- END : SITE BANNER SLIDER /-->
+          <!-- END : SITE BANNER SLIDE CONTENT /-->
         </div>
-        <!-- END : ROW /-->
+        <!-- END : SITE BANNER SLIDE /-->
+        <!-- BEGIN : SITE BANNER SLIDE -->
+        <div class="siteBanner_slide">
+          <!-- BEGIN : SITE BANNER SLIDE CONTENT -->
+          <div class="siteBanner_slideContent">
+            <h2 class="siteBanner_subHeading">I am a UX <br> Developer/Designer</h2>
+            <p class="siteBanner_text">
+              Working with a strong focus on design and user experience. I create digital experiences for brands and companies.
+            </p>
+            <a href="#" class="button_link  button_link--flex">
+              <span>About Me</span>
+              <svg class="button_linkIcon">
+                <title>Arrow pointing right</title>
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="images/icons/sprite.svg#arrow-right"></use>
+              </svg>
+            </a>
+            <div class="siteBanner_slideNumber">
+              02 <span class="siteBanner_slideNumber--divider">/</span> 03
+            </div>
+          </div>
+          <!-- END : SITE BANNER SLIDE CONTENT /-->
+        </div>
+        <!-- END : SITE BANNER SLIDE /-->
+        <!-- BEGIN : SITE BANNER SLIDE -->
+        <div class="siteBanner_slide">
+          <!-- BEGIN : SITE BANNER SLIDE CONTENT -->
+          <div class="siteBanner_slideContent">
+            <h2 class="siteBanner_subHeading">Yes I Believe <br> in Quality</h2>
+            <p class="siteBanner_text">
+              We design websites with conversions in mind, our websites look great, but each page has a clearly defined conversion goal.
+            </p>
+            <a href="#" class="button_link  button_link--flex">
+              <span>Portfolio</span>
+              <svg class="button_linkIcon">
+                <title>Arrow pointing right</title>
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="images/icons/sprite.svg#arrow-right"></use>
+              </svg>
+            </a>
+            <div class="siteBanner_slideNumber">
+              03 <span class="siteBanner_slideNumber--divider">/</span> 03
+            </div>
+          </div>
+          <!-- END : SITE BANNER SLIDE CONTENT /-->
+        </div>
+        <!-- END : SITE BANNER SLIDE /-->
       </div>
-      <!-- END : WRAPPER /-->
+      <!-- END : SITE BANNER SLIDER /-->
     </section>
     <!--******************** SITE BANNER : End ******************** /-->
+
+
+    <section class="contentBlock">
+      <div class="contentBlock_wrapper  contentBlock_wrapper--aboutBg">
+        <h2 class="contentBlock_title">About Me <span class="contentBlock_title--spacer"></span></h2>
+        <ul class="contentBlock_list">
+          <li class="contentBlock_listItem"><b>Name:</b> <br> Alex Clapperton</li>
+          <li class="contentBlock_listItem"><b>Email:</b> <br> <a href="#">hello@alexclapperton.co.uk</a></li>
+          <li class="contentBlock_listItem"><b>Phone:</b> <br> 07930  946 211</li>
+          <li class="contentBlock_listItem"><b>Date of birth:</b> <br> 21 June 1992</li>
+          <li class="contentBlock_listItem"><b>Nationality:</b> <br> British</li>
+        </ul>
+        <a href="#" class="button_link">
+          <span>Download My CV</span>
+          <svg class="button_linkIcon">
+            <title>Arrow pointing right</title>
+            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="images/icons/sprite.svg#arrow-right"></use>
+          </svg>
+        </a>
+      </div>
+    </section>
 
 
     <script src="js/main.js"></script>

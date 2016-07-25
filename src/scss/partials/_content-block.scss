@@ -1,0 +1,68 @@
+.contentBlock {
+  position: relative;
+  size: calc(100% - 30px) auto;
+  background: $core-color-light;
+  padding: 15px ;
+  margin: 0 auto;
+  margin-top: 25px;
+  margin-bottom: 25px;
+
+  @include respond-to(l) {
+    width: 970px;
+  }
+
+  @include respond-to(xl) {
+    width: 1170px;
+  }
+}
+
+.contentBlock_wrapper {
+  position: relative;
+  padding: 15px;
+  z-index: z(alpha);
+}
+
+.contentBlock_wrapper--aboutBg {
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    size: 100%;
+    background: url('../images/about-me-bg.jpg') center center no-repeat;
+    background-size: cover;
+    z-index: -1;
+
+    @include respond-to(l) {
+      background-size: 50%;
+      background-position: right center;
+    }
+  }
+}
+
+.contentBlock_title {
+  position: relative;
+  padding: 10px 5px 5px;
+}
+
+.contentBlock_title--spacer {
+  display: inline-block;
+  size: 20px 3px;
+  background: $core-color-brand;
+}
+
+.contentBlock_list {
+  padding: 0;
+  margin: 0;
+  margin-bottom: 30px;
+}
+
+.contentBlock_listItem {
+  list-style-type: none;
+  margin-bottom: 10px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}

@@ -1,5 +1,3 @@
-
-.owl-theme {
 	// Styling Next and Prev buttons
 	.owl-nav {
 		margin-top: 10px;
@@ -29,15 +27,15 @@
 	}
 
 	// Styling dots
-	.owl-nav.disabled + .owl-dots {
+	.owl-nav.disabled + .siteBanner_sliderDots {
 		margin-top: 10px;
 	}
 
-	.owl-dots {
+	.siteBanner_sliderDots {
 		text-align: center;
 		-webkit-tap-highlight-color: transparent;
 
-		.owl-dot {
+		.siteBanner_sliderDot {
 			display: inline-block;
 			zoom: 1;
 			*display: inline;
@@ -51,9 +49,10 @@
 				-webkit-backface-visibility: visible;
 				transition: opacity 200ms ease;
 				border-radius: 30px;
+				cursor: pointer;
 			}
 
-			&.active,
+			&--active,
 			&:hover {
 				span {
 					background: $dot-background-active;
@@ -61,4 +60,3 @@
 			}
 		}
 	}
-}

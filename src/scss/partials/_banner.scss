@@ -1,11 +1,25 @@
 .siteBanner {
-  margin-top: 65px;
+  margin-top: 68px;
+
+  @include respond-to(m) {
+    margin-top: 78px;
+  }
+
+  @include respond-to(l) {
+    width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  @include respond-to(xl) {
+    width: 1170px;
+  }
 }
 
 .siteBanner_slide {
-  size: 90% auto;
+  size: calc(100% - 30px) auto;
   background: $core-color-light;
-  padding: 15px ;
+  padding: 15px;
   margin: 0 auto;
   margin-bottom: 25px;
 
@@ -15,10 +29,45 @@
     @include respond-to(xs) {
       height: auto;
     }
+
+    @include respond-to(m) {
+      height: 600px;
+    }
+
+    @include respond-to(l) {
+      size: 970 520px;
+      margin: 0 auto;
+    }
   }
 
   &:last-child {
     margin-bottom: 0;
+  }
+
+  @include respond-to(m) {
+    size: calc(100% - 30px) 600px;
+    padding: 20px;
+    margin-right: auto;
+    margin-bottom: 0;
+    margin-left: auto;
+  }
+
+  @include respond-to(l) {
+    width: 970px;
+    margin: 0 auto;
+    position: relative;
+    cursor: ew-resize;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 20px;
+      left: 50%;
+      width: 1px;
+      height: 80%;
+      background: darken($core-color-neutral, 15%);
+      z-index: z(beta);
+    }
   }
 }
 
@@ -41,36 +90,53 @@
     opacity: .5;
     z-index: -1;
   }
+
+  @include respond-to(m) {
+    padding: 45px;
+  }
 }
 
 .siteBanner_heading,
 .siteBanner_subHeading {
   @include text(display-1);
-}
 
-.siteBanner_text--padding {
-  @include respond-to(xs) {
-    padding-bottom: 20px;
+  @include respond-to(m) {
+    font-size: $core-grid-unit * 3.5;
+    font-weight: $core-secondary-font-weight;
+    line-height: $core-grid-unit * 4.5;
+    margin-bottom: $core-grid-unit * 2.5;
   }
 }
 
-.siteBanner_link {
-  background: $core-color-brand;
-  color: $core-color-light;
-  padding: 3px 15px;
-  text-decoration: none;
-  -webkit-align-self: flex-start;
-  -ms-flex-item-align: start;
-  align-self: flex-start;
+.siteBanner_text {
+  @include respond-to(m) {
+    width: 55%;
+    font-size: $core-font-size * 1.25;
+    line-height: $core-grid-unit * 2.25;
+  }
 
-  span {
-    text-transform: uppercase;
-    text-decoration: underline;
+  @include respond-to(l) {
+    width: 45%;
   }
 }
 
-.siteBanner_linkIcon {
-  size: 17px;
-  fill: $core-color-light;
-  vertical-align: middle;
+.siteBanner_slideNumber {
+  display: none;
+
+  @include respond-to(l) {
+    display: block;
+    position: absolute;
+    right: 0;
+    bottom: 20px;
+    left: 0;
+    color: $core-color-brand;
+    font-size: $core-grid-unit * 2.2;
+    font-weight: $core-font-weight;
+    margin: 0 auto;
+    text-align: center;
+  }
+}
+
+.siteBanner_slideNumber--divider {
+  margin: 0 5px;
 }
