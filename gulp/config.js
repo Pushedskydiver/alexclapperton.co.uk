@@ -23,6 +23,10 @@ module.exports = {
         imgs: {
             src: './src/images/*',
             dest: './dist/images/'
+        },
+        fonts: {
+            src: './src/fonts/**/*.ttf',
+            dest: './dist/fonts/'
         }
     },
     plugin: {
