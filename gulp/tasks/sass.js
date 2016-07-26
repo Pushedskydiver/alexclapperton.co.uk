@@ -2,7 +2,7 @@ var gulp = require('gulp'),
     config = require('../config'),
     cssnano = require('cssnano'),
     cssshort = require('postcss-short'),
-    browserSync = require('browser-sync').create(),
+    //browserSync = require('browser-sync').create(),
     plugins = require('gulp-load-plugins')();
 
 // PostCss Config
@@ -19,6 +19,6 @@ gulp.task('sass', function() {
         .pipe(plugins.postcss(postcss))
         .pipe(plugins.sourcemaps.write('sourcemaps'))
         .pipe(gulp.dest(config.paths.sass.dest))
-        .pipe(browserSync.stream())
+        //.pipe(browserSync.stream())
         .pipe(plugins.notify({message: 'Scss task complete', onLast: true}));
 });

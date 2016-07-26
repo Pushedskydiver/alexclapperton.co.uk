@@ -7,4 +7,5 @@ node_modules
 
 #Other folder/files
 .sass-cache
+browser-sync.js
 dist
