@@ -196,9 +196,24 @@
         items: 1,
         center: true,
         loop: false,
-        stagePadding: 60,
         smartSpeed: 1000,
-        activeClass: 'siteBanner_slide--active'
+        activeClass: 'siteBanner_slide--active',
+        dotsContainer: '.siteBanner_sliderDots',
+        dotClass: 'siteBanner_sliderDot',
+        responsive: {
+          0:{
+              items: 1,
+              nav: false,
+              stagePadding: 0
+          },
+          768:{
+              dots: true
+          },
+          992:{
+              nav: false,
+              stagePadding: 60
+          }
+        }
       });
     }
 

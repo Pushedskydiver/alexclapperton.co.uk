@@ -31,6 +31,7 @@
     }
 
     @include respond-to(m) {
+      width: calc(100% - 30px);
       height: 600px;
     }
 
@@ -45,7 +46,7 @@
   }
 
   @include respond-to(m) {
-    size: calc(100% - 30px) 600px;
+    size: 100% 600px;
     padding: 20px;
     margin-right: auto;
     margin-bottom: 0;
@@ -123,7 +124,7 @@
 .siteBanner_slideNumber {
   display: none;
 
-  @include respond-to(l) {
+  @include respond-to(m) {
     display: block;
     position: absolute;
     right: 0;
@@ -139,4 +140,18 @@
 
 .siteBanner_slideNumber--divider {
   margin: 0 5px;
+}
+
+.siteBanner_sliderDot {
+  color: $core-color-neutral;
+
+  span {
+    size: 12px;
+    margin: 0 4px;
+    border: 2px solid $core-color-brand;
+  }
+}
+
+.siteBanner_sliderDot--active {
+  color: $core-color-brand;
 }

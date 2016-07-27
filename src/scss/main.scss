@@ -1,4 +1,3 @@
-@import "vendor/owl-carousel/owl-carousel";
 
 @import "modules/core-config";
 @import "modules/grid";
@@ -12,6 +11,8 @@
 
 @import "helpers/sassmaps";
 @import "helpers/utilities";
+
+@import "vendor/owl-carousel/owl-carousel";
 
 @import "partials/base";
 @import "partials/skip-links";

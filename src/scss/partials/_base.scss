@@ -54,3 +54,39 @@ a {
   fill: $core-color-light;
   vertical-align: middle;
 }
+
+.text--large {
+  font-size: 1.05rem;
+  margin-bottom: 20px;
+}
+
+.text--lightGray {
+  color: darken($core-color-light, 40%);
+}
+
+.speechBlock {
+  display: inline-block;
+  position: relative;
+  padding: 4px 20px 4px 20px;
+  margin-bottom: 20px;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 65%;
+    left: 0;
+    border-right: 14px solid rgba(0, 0, 0, 0);
+    margin: 10px 0 0 10px;
+    height: 0;
+    width: 0;
+  }
+}
+
+.speechBlock--blue {
+  background: #1282a2;
+  color: $core-color-light;
+
+  &::before {
+    border-top: 10px solid #1282a2;
+  }
+}

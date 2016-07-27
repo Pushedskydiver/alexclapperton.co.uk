@@ -41,10 +41,6 @@
 			*display: inline;
 
 			span {
-				width: $dot-width;
-				height: $dot-height;
-				margin: $dot-margin;
-				background: $dot-background;
 				display: block;
 				-webkit-backface-visibility: visible;
 				transition: opacity 200ms ease;

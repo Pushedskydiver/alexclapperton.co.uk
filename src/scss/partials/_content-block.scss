@@ -16,6 +16,14 @@
   }
 }
 
+.contentBlock--flex {
+  @include grid(wrap, column, center);
+
+  @include respond-to(l) {
+    @include flex-direction(row);
+  }
+}
+
 .contentBlock_wrapper {
   position: relative;
   padding: 15px;
@@ -44,6 +52,17 @@
 .contentBlock_title {
   position: relative;
   padding: 10px 5px 5px;
+
+  @include respond-to(m) {
+    font-size: $core-font-size * 2;
+  }
+}
+
+.contentBlock_title--extra {
+  background: $core-color-dark;
+  color: $core-color-light;
+  padding-top: 20px;
+  margin-bottom: 10%;
 }
 
 .contentBlock_title--spacer {

@@ -62,7 +62,7 @@ $text-styles-default: (
     font-size: $core-font-size,
     line-height: $core-line-height,
     color: $core-color-dark,
-    font-weight: 200
+    font-weight: $core-font-weight
   ),
   body-3: (
     description: 'heavier text for highlighting paragraphs e.g. intro paragraphs',
@@ -109,7 +109,7 @@ $text-styles-default: (
     display: block,
     padding: 0,
     margin: 0 0 $core-margin 0,
-    font-weight: $core-font-weight,
+    font-weight: $core-secondary-font-weight,
     -webkit-font-smoothing: antialiased,
     -webkit-text-size-adjust: 100%,
     -ms-text-size-adjust: 100%
