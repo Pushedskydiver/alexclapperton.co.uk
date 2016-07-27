@@ -1,6 +1,6 @@
-# Alex Clapperton Website Portfolio
-
 [![build status](https://gitlab.com/alex-clapperton/alex-clapperton.gitlab.io/badges/master/build.svg)](https://gitlab.com/alex-clapperton/alex-clapperton.gitlab.io/commits/master)
+
+# Alex Clapperton Website Portfolio
 
 ## Folder Structure
 

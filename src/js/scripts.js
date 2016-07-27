@@ -210,8 +210,8 @@
               dots: true
           },
           992:{
-              nav: false,
-              stagePadding: 60
+              dots: false,
+              stagePadding: 13
           }
         }
       });
