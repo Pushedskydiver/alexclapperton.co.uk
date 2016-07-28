@@ -7,6 +7,7 @@ pages:
 
   script:
   - mkdir dist
+  - npm install
   - gulp default
   - mv dist public
   artifacts:
