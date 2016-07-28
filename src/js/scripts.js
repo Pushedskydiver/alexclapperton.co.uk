@@ -194,7 +194,6 @@
     function init_slider() {
       $(".siteBanner_slider").owlCarousel({
         items: 1,
-        center: true,
         loop: false,
         smartSpeed: 1000,
         activeClass: 'siteBanner_slide--active',
@@ -202,16 +201,16 @@
         dotClass: 'siteBanner_sliderDot',
         responsive: {
           0:{
-              items: 1,
               nav: false,
-              stagePadding: 0
           },
           768:{
               dots: true
           },
           992:{
               dots: false,
-              stagePadding: 13
+          },
+          1200:{
+              dots: false,
           }
         }
       });

@@ -10,10 +10,6 @@
     margin-right: auto;
     margin-left: auto;
   }
-
-  @include respond-to(xl) {
-    width: 1170px;
-  }
 }
 
 .siteBanner_slide {
@@ -31,13 +27,17 @@
     }
 
     @include respond-to(m) {
-      width: calc(100% - 30px);
-      height: 600px;
+      soze: calc(100% - 30px) 600px;
+      margin: 0 auto;
+
     }
 
     @include respond-to(l) {
       size: 970px 520px;
-      margin: 0 auto;
+    }
+
+    @include respond-to(xl) {
+      width: 1170px;
     }
   }
 
@@ -69,6 +69,10 @@
       background: darken($core-color-neutral, 15%);
       z-index: z(beta);
     }
+  }
+
+  @include respond-to(xl) {
+    width: 1170px;
   }
 }
 
