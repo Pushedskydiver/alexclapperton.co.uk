@@ -1,0 +1,32 @@
+/*------------------------------------*\
+    # SCROLL-TOP-STYLES
+\*------------------------------------*/
+
+.btn_scrollTop {
+  display: block;
+  position: fixed;
+  right: -60px;
+  bottom: 20px;
+  size: 40px;
+  background: $core-color-brand;
+  text-align: center;
+  border-radius: 50%;
+  z-index: z(juliet);
+  opacity: 0;
+  -webkit-box-shadow: 3px 4px 9px 0 rgba(0,0,0,.15);
+  box-shadow: 3px 4px 9px 0 rgba(0,0,0,.15);
+  -webkit-transition: right 400ms cubic-bezier(0.68, -0.55, 0.265, 1.55), opacity 0.3s, color 0.3s;
+  -moz-transition: right 400ms cubic-bezier(0.68, -0.55, 0.265, 1.55), opacity 0.3s, color 0.3s;
+  -o-transition: right 400ms cubic-bezier(0.68, -0.55, 0.265, 1.55), opacity 0.3s, color 0.3s;
+  transition: right 400ms cubic-bezier(0.68, -0.55, 0.265, 1.55), opacity 0.3s, color 0.3s;
+}
+
+.btn_scrollTop--isVisible {
+  right: 15px;
+  opacity: 1;
+}
+
+.btn_scrollIcon {
+  size: 50% 100%;
+  fill: $core-color-light;
+}

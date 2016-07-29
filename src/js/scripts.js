@@ -81,13 +81,13 @@
     // ======================================
     function init_smooth_scroll_top() {
       // Animated Scroll to Top Button
-      var $scrollTop = $('.scroll-to-top-btn');
+      var $scrollTop = $('.btn_scrollTop');
       if ($scrollTop.length > 0) {
         $(window).on('scroll', function(){
           if ($(window).scrollTop() > 600) {
-            $scrollTop.addClass('visible');
+            $scrollTop.addClass('btn_scrollTop--isVisible');
           } else {
-            $scrollTop.removeClass('visible');
+            $scrollTop.removeClass('btn_scrollTop--isVisible');
           }
         });
         $scrollTop.on('click', function(e){
@@ -245,7 +245,7 @@
     init_scroll_to();
     init_smooth_scroll_top();
     init_mobile_nav();
-    init_contact_form();
+    // init_contact_form();
     init_skills();
 
     if( $(window).width() > 767) {
