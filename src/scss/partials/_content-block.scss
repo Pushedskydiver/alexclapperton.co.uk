@@ -27,8 +27,12 @@
 
 .contentBlock_wrapper {
   position: relative;
-  padding: 15px;
+  padding: 15px 0;
   z-index: z(alpha);
+
+  @include respond-to(m) {
+    padding: 15px;
+  }
 
   @include respond-to(l) {
     width: 50%;
@@ -51,7 +55,7 @@
 
 .contentBlock_inner {
   @include respond-to(m) {
-    padding: 0 35px;
+    padding: 0 15px;
   }
 
   @include respond-to(l) {
@@ -61,18 +65,28 @@
 
 .contentBlock_title {
   position: relative;
-  padding: 10px 5px 5px;
+  padding: 10px 0 5px;
+  margin-bottom: 40px;
 
   @include respond-to(m) {
     font-size: $core-font-size * 2;
+  }
+
+  @include respond-to(l) {
+    font-size: $core-font-size * 2.25;
   }
 }
 
 .contentBlock_title--extra {
   background: $core-color-dark;
   color: $core-color-light;
-  padding-top: 20px;
+  font-weight: $core-secondary-font-weight;
+  padding: 20px 5px 5px;
   margin-bottom: 40px;
+
+  @include respond-to(m) {
+    padding-left: 10px;
+  }
 
   @include respond-to(l) {
     font-size: $core-font-size * 2.5;
@@ -90,6 +104,12 @@
   background: $core-color-brand;
 }
 
+.contentBlock_subTitle {
+  @include respond-to (m) {
+    font-size: $core-font-size * 1.9;
+  }
+}
+
 .contentBlock_list {
   padding: 0;
   margin: 0;
@@ -102,5 +122,9 @@
 
   &:last-child {
     margin-bottom: 0;
+  }
+
+  @include respond-to(l) {
+    font-size: 1rem;
   }
 }

@@ -7,6 +7,8 @@
 }
 
 body {
+  font-family: $core-font-family;
+  font-size: $core-font-size;
   background: $core-color-neutral;
   margin: 0;
   @include fadein;
@@ -30,15 +32,21 @@ a {
   display: inline-block;
   background: $core-color-brand;
   color: $core-color-light;
-  padding: 3px 15px;
+  padding: 5px 15px;
   text-decoration: none;
+
+  @include respond-to(l) {
+    &:hover {
+      background: $core-color-dark;
+    }
+  }
 
   span {
     text-transform: uppercase;
     text-decoration: underline;
 
     @include respond-to(m) {
-      font-size: $core-font-size * 1.25;
+      font-size: $core-font-size * 1.1;
     }
   }
 }
@@ -73,7 +81,7 @@ a {
   &::before {
     content: '';
     position: absolute;
-    top: 65%;
+    top: 55%;
     left: 0;
     border-right: 14px solid rgba(0, 0, 0, 0);
     margin: 10px 0 0 10px;
@@ -88,5 +96,30 @@ a {
 
   &::before {
     border-top: 10px solid #1282a2;
+  }
+}
+
+.blockquote_wrapper {
+  padding: 0;
+  margin: 20px 0;
+}
+
+.blockquote_wrapper--large {
+  font-size: $core-font-size * 1.4;
+  font-weight: $core-secondary-font-weight;
+  line-height: 1.3;
+
+  @include respond-to(l) {
+    font-size: $core-font-size * 1.6;
+  }
+}
+
+.blockquote_quoteIcon {
+  display: block;
+  size: 40px;
+  fill: $core-color-brand;
+
+  @include respond-to(m) {
+    margin-bottom: 10px;
   }
 }

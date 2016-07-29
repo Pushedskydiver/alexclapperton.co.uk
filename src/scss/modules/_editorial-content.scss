@@ -116,6 +116,10 @@ $editorial-h5-text: display-5;
   p {
     // paragraph
     @include text('body-1');
+
+    @include respond-to(l) {
+      font-size: 1rem;
+    }
   }
 
   hr {
@@ -125,12 +129,6 @@ $editorial-h5-text: display-5;
     margin: $editorial-margin $editorial-hr-thickness*-1;
     border-width: 0 0 $editorial-hr-thickness;
     border-color: $editorial-hr-color;
-  }
-
-  blockquote {
-    // block quotation
-    @include text('body-3');
-    padding: $editorial-blockquote-padding;
   }
 
   ol {
@@ -172,11 +170,6 @@ $editorial-h5-text: display-5;
 
   figcaption {
    // figure caption
-  }
-
-  div {
-    // generic flow container
-    @include text('body-1');
   }
 
   // Text-level semantics

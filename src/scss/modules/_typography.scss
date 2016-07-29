@@ -54,7 +54,8 @@ $text-styles-default: (
     line-height: $core-line-height,
     color: $core-color-dark,
     font-weight: $core-font-weight,
-    margin-top: 0
+    margin-top: 0,
+    margin-bottom: 25px,
   ),
   body-2: (
     description: 'lighter text used for subsidiary copy',
@@ -103,13 +104,13 @@ $text-styles-default: (
   display-3: (
     description: 'Default Level 3 heading style',
     font-family: $core-secondary-font-family,
-    font-size: $core-grid-unit * 2,
+    font-size: $core-grid-unit * 1.8,
     line-height: $core-grid-unit * 3.5,
-    color: $core-color-dark,
+    color: $core-color-brand,
     display: block,
     padding: 0,
     margin: 0 0 $core-margin 0,
-    font-weight: $core-secondary-font-weight,
+    font-weight: $core-font-weight,
     -webkit-font-smoothing: antialiased,
     -webkit-text-size-adjust: 100%,
     -ms-text-size-adjust: 100%
@@ -117,13 +118,13 @@ $text-styles-default: (
   display-4: (
     description: 'Default Level 4 heading style',
     font-family: $core-secondary-font-family,
-    font-size: $core-grid-unit * 1.5,
-    line-height: $core-grid-unit * 3.5,
-    color: $core-color-neutral,
+    font-size: $core-grid-unit * 1.3,
+    line-height: 1.3,
+    color: $core-color-dark,
     display: block,
     padding: 0,
-    margin: 0 0 $core-margin 0,
-    font-weight: $core-font-weight,
+    margin: 0 0 0 0,
+    font-weight: $core-secondary-font-weight,
     -webkit-font-smoothing: antialiased,
     -webkit-text-size-adjust: 100%,
     -ms-text-size-adjust: 100%
