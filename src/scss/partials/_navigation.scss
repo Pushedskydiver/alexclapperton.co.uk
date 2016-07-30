@@ -55,10 +55,10 @@
   background: $core-color-brand;
   border: 0;
   overflow: hidden;
-  z-index: z(delta);
+  z-index: z(foxtrot);
 
   &:focus {
-    outline: 0;
+    background: $core-color-brand;
   }
 
   @include respond-to(l) {
@@ -196,7 +196,7 @@
   background: $core-color-light;
   padding: 55px 0;
   margin: 0 auto;
-  z-index: z('alpha');
+  z-index: z(charlie);
   @include transition-03;
 
   @include respond-to(m) {

@@ -57,7 +57,7 @@
     width: 970px;
     margin: 0 auto;
     position: relative;
-    cursor: ew-resize;
+    cursor: url('../images/arrows-lr.png'), ew-resize;
 
     &::before {
       content: '';

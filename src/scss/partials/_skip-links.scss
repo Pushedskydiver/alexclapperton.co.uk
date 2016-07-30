@@ -1,7 +1,10 @@
 .skipLink {
-  position: absolute 2.25rem 0 * 2.25rem;
-  float: left;
-  text-align: left;
+  position: absolute;
+  top: 40%;
+  right: 0;
+  left: 0;
+  text-align: center;
+  margin: 0 auto;
   color: $core-color-brand;
   font-weight: $core-secondary-font-weight;
 }
@@ -9,20 +12,15 @@
 .skipLink--hidden {
   border: 0;
   /* clip: rect(0 0 0 0); */
-  size: .0625rem .0625rem;
-  margin: -.0625rem;
+  size: 130px .0625rem;
   overflow: hidden;
   padding: 0;
   position: absolute;
 
   &:active,
   &:focus {
-    position: static;
     clip: auto;
-    size: auto;
-    margin: 0;
-    margin-top: 10px;
-    margin-left: 20px;
+    size: 130px auto;
     overflow: visible;
   }
 }

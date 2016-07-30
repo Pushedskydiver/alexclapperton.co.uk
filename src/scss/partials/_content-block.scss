@@ -17,7 +17,7 @@
 }
 
 .contentBlock--flex {
-  @include grid(wrap, column, center);
+  @include grid(null, column, center);
 
   @include respond-to(l) {
     @include flex-direction(row);
@@ -118,7 +118,7 @@
 
 .contentBlock_listItem {
   list-style-type: none;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
 
   &:last-child {
     margin-bottom: 0;

@@ -74,12 +74,12 @@ $core-secondary-font-family: 'Dosis', sans-serif !default;
 /**
 * Base font size
 */
-$core-font-size: 0.95rem !default;
+$core-font-size: 0.9rem !default;
 
 /**
 * Base line height
 */
-$core-line-height: $core-grid-unit * 2 !default;
+$core-line-height: 1.5 !default;
 
 /**
 * Base font weight
@@ -99,7 +99,7 @@ $core-tertiary-font-weight: 700 !default;
 /**
 * Margin applied to block elements
 */
-$core-margin: $core-grid-unit !default;
+$core-margin: 10px !default;
 
 /**
 * Padding applied to block containers
