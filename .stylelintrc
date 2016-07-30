@@ -1,0 +1,16 @@
+"rules": {
+   "color-hex-case": ['lower', {
+      "message": "Lowercase letters are easier to distinguish from numbers",
+      "severity": "warning"
+   }],
+   "color-hex-length": ['short', {
+      "severity": "warning"
+   }],
+   "color-no-invalid-hex": [true, {
+      "severity": "error"
+   }],
+   "color-named": ['never', {
+      "message": "Using a Hex code is preferred than using color names",
+      "severity": "warning"
+   }]
+}

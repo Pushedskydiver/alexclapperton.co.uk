@@ -2,7 +2,7 @@
   "name": "website-portfolio",
   "version": "1.0.0",
   "description": "Alex Clapperton's personal website portfolio",
-  "repository": "git@gitlab.com:alex-clapperton/website-portfolio.git",
+  "repository": "git@gitlab.com:alex-clapperton/alex-clapperton.gitlab.io.git",
   "main": "gulpfile.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -25,6 +25,7 @@
     "gulp-rename": "^1.2.2",
     "gulp-sass": "^2.3.2",
     "gulp-sourcemaps": "^1.6.0",
+    "gulp-stylelint": "^3.0.0",
     "gulp-svg-sprite": "^1.3.3",
     "gulp-uglify": "^1.5.4",
     "gulp-watch": "^4.3.8",

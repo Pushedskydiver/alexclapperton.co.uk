@@ -6,7 +6,7 @@ var gulp = require('gulp'),
 gulp.task('watch', function() {
 
     // Watch .scss files
-    gulp.watch(config.paths.sass.src + '/**/*', ['sass']);
+    gulp.watch(config.paths.sass.src + '/**/*.scss', ['sass']);
 
     // Watch svg files
     gulp.watch(config.paths.sprite.src, ['svgSprite']);

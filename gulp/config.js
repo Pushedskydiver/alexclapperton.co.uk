@@ -36,7 +36,7 @@ module.exports = {
                     maxWidth: 32
                 },
                 spacing: {
-                  padding: 1
+                    padding: 1
                 },
             },
             mode: {
@@ -75,6 +75,15 @@ module.exports = {
                 global_defs: {}
             }
         },
+        stylelint: {
+            failAfterError: true,
+            syntax: 'scss',
+            reportOutputDir: 'src/reports/stylelint/',
+            reporters: [
+                {formatter: 'verbose', console: true},
+                {formatter: 'verbose', save: 'stylelint.txt'}
+            ]
+        },
         html: {
             collapseWhitespace: true,
             conservativeCollapse: true,
@@ -96,8 +105,9 @@ module.exports = {
         },
         imgmin: {
             options: {
-                optimizationLevel: 4,
+                optimizationLevel: 7,
                 progressive: true,
+                interlaced: true
             }
         }
     }
