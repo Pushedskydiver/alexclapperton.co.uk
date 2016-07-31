@@ -192,27 +192,32 @@
     //    Main slider
     // ==============================================
     function init_slider() {
-      $(".siteBanner_slider").owlCarousel({
-        items: 1,
-        loop: false,
-        smartSpeed: 1000,
-        activeClass: 'siteBanner_slide--active',
-        dotsContainer: '.siteBanner_sliderDots',
-        dotClass: 'siteBanner_sliderDot',
-        responsive: {
-          0:{
-              nav: false,
-          },
-          768:{
-              dots: true
-          },
-          992:{
-              dots: false,
-          },
-          1200:{
-              dots: false,
+      $(document).ready(function () {
+        var mySwiper = new Swiper ('.siteBanner_slider', {
+          direction: 'horizontal',
+          speed: 1200,
+          wrapperClass: 'siteBanner_wrapper',
+          slideClass: 'siteBanner_slide',
+          bulletClass: 'siteBanner_sliderDot',
+          bulletActiveClass: 'siteBanner_sliderDot--active',
+          loop: false,
+          a11y: true,
+          keyboardControl: true,
+          width: 1170,
+          spaceBetween: 50,
+          pagination: '.siteBanner_sliderDots',
+          nextButton: '.siteBanner_sliderBtn--next',
+          prevButton: '.siteBanner_sliderBtn--prev',
+          scrollbar: '.siteBanner_sliderScrollbar',
+          breakpoints: {
+            991: {
+              width: 750
+            },
+            1199: {
+              width: 970
+            }
           }
-        }
+        })
       });
     }
 

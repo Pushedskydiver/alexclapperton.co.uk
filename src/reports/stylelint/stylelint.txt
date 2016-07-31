@@ -1,5 +1,5 @@
 
-27 sources checked
+28 sources checked
  /Users/alih2106/Desktop/website/src/scss/main.scss
  /Users/alih2106/Desktop/website/src/scss/helpers/_sassmaps.scss
  /Users/alih2106/Desktop/website/src/scss/helpers/_utilities.scss
@@ -15,6 +15,7 @@
  /Users/alih2106/Desktop/website/src/scss/partials/_banner.scss
  /Users/alih2106/Desktop/website/src/scss/partials/_base.scss
  /Users/alih2106/Desktop/website/src/scss/partials/_content-block.scss
+ /Users/alih2106/Desktop/website/src/scss/partials/_info-block.scss
  /Users/alih2106/Desktop/website/src/scss/partials/_navigation.scss
  /Users/alih2106/Desktop/website/src/scss/partials/_scroll-down.scss
  /Users/alih2106/Desktop/website/src/scss/partials/_scroll-top.scss

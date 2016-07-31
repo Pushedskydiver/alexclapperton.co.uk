@@ -7,6 +7,10 @@
   margin-top: 25px;
   margin-bottom: 25px;
 
+  @include respond-to(m) {
+    width: 750px;
+  }
+
   @include respond-to(l) {
     width: 970px;
   }

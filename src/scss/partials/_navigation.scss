@@ -16,7 +16,8 @@
   @include align-items(center);
 
   @include respond-to(m) {
-    padding: $core-grid-unit + 3px;
+    width: 750px;
+    padding: $core-grid-unit + 3px 0;
   }
 
   @include respond-to(l) {
