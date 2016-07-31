@@ -78,7 +78,7 @@ module.exports = {
         stylelint: {
             failAfterError: true,
             syntax: 'scss',
-            reportOutputDir: 'src/reports/stylelint/',
+            reportOutputDir: 'dest/reports/stylelint/',
             reporters: [
                 {formatter: 'verbose', console: true},
                 {formatter: 'verbose', save: 'stylelint.txt'}
