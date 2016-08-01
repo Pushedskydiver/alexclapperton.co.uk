@@ -6,7 +6,7 @@
   transition: $element $duration $transition;
 }
 @mixin no-transition {
-  @include transition(none);
+  @include transition(none, null, null);
 }
 @mixin transition-025 {
   @include transition(all, .25s, ease-in-out);

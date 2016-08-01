@@ -238,8 +238,31 @@
           });
         }
       });
-
       $('.skillBar').appear();
+    }
+
+
+    // ==============================================
+    //    Portfolio grid & filter
+    // ==============================================
+    function init_portfolio() {
+      var $grid = $('.portfolioBlock_grid'),
+          $grid_filter = $('.portfolioBlock_filter'),
+          $grid_selectors = $('.portfolioBlock_filterBtn');
+
+      imagesLoaded($grid, function(){
+        $grid.isotope({
+          itemSelector: '.portfolioBlock_portfolioItem',
+          layoutMode: 'fitRows'
+        });
+        $grid_selectors.on( 'click', function() {
+          $grid_selectors.removeClass('portfolioBlock_filterBtn--active');
+          $(this).addClass('portfolioBlock_filterBtn--active');
+          var filterValue = $(this).attr('data-filter');
+          $grid.isotope({ filter: filterValue });
+          return false;
+        });
+      });
     }
 
 
@@ -252,6 +275,7 @@
     init_mobile_nav();
     // init_contact_form();
     init_skills();
+    init_portfolio();
 
     if( $(window).width() > 767) {
       init_slider();

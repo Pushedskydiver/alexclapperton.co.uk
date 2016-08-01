@@ -22,6 +22,17 @@ body ::selection {
   color: $core-color-light darken($core-color-neutral, 70%);
 }
 
+figure {
+  padding: 0;
+  margin: 0;
+}
+
+button {
+  -webkit-appearance: none;
+  appearance: none;
+  border: none;
+}
+
 a {
   @include respond-to(l) {
     @include transition-025;

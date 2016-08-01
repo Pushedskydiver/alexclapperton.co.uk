@@ -51,7 +51,9 @@
 }
 
 .menuBtn {
+  display: inline-block;
   position: relative;
+  right: 0;
   size: 35px;
   background: $core-color-brand;
   border: 0;
@@ -68,18 +70,17 @@
 }
 
 .menuBtn_inner {
+  @include grid(null, column, center);
   position: absolute;
-  top: 50%;
+  top: 0;
   right: 0;
-  size: 35px 18px;
-  margin: -9px 0 0 -9px;
+  size: 35px 27px;
+  margin: 0;
 }
 
 
 .menuBtn_bar {
-  position: absolute;
-  right: 0;
-  left: 0;
+  position: relative;
   size: 22px 3px;
   background: $core-color-light;
   margin: 0 auto;
@@ -90,10 +91,10 @@
   top: 0;
 }
 .menuBtn_bar--middle {
-  top: 7.5px;
+  top: 4.5px;
 }
 .menuBtn_bar--bottom {
-  bottom: 0;
+  top: 9px;
 }
 
 .menuBtn--openNav {
@@ -106,7 +107,7 @@
     opacity: 0;
   }
   .menuBtn_bar--bottom {
-    bottom: 7px;
+    top: 2px;
     @include transform(rotate(-45deg));
   }
 }
@@ -135,7 +136,7 @@
       background: url('../images/menu-left.jpg') no-repeat center center;
       background-size: cover;
       opacity: .15;
-      z-index: -1;
+      z-index: 0;
     }
   }
 }

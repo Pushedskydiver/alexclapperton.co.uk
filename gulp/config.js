@@ -21,7 +21,7 @@ module.exports = {
             dest: './dist/'
         },
         imgs: {
-            src: './src/images/*',
+            src: './src/images/**/*',
             dest: './dist/images/'
         },
         fonts: {

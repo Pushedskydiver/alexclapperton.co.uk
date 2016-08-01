@@ -161,8 +161,8 @@
       <div class="siteBanner_sliderDots"></div>
       <!-- If we need navigation buttons -->
       <div class="siteBanner_sliderBtns">
-        <div class="siteBanner_sliderBtn  siteBanner_sliderBtn--prev"></div>
-        <div class="siteBanner_sliderBtn  siteBanner_sliderBtn--next"></div>
+        <button type="button" class="siteBanner_sliderBtn  siteBanner_sliderBtn--prev">Previous Slide</button>
+        <button type="button" class="siteBanner_sliderBtn  siteBanner_sliderBtn--next">Next Slide</button>
       </div>
 
       <div class="siteBanner_sliderScrollbar"></div>
@@ -172,22 +172,24 @@
 
     <section class="contentBlock  contentBlock--flex">
       <div class="contentBlock_wrapper  contentBlock_wrapper--aboutBg">
-        <div class="contentBlock_inner">
+        <div class="contentBlock_inner  contentBlock_inner--flex">
           <h2 class="contentBlock_title">About Me <span class="contentBlock_title--spacer"></span></h2>
-          <ul class="contentBlock_list">
-            <li class="contentBlock_listItem"><b>Name:</b> <br> Alex Clapperton</li>
-            <li class="contentBlock_listItem"><b>Email:</b> <br> <a href="#">hello@alexclapperton.co.uk</a></li>
-            <li class="contentBlock_listItem"><b>Phone:</b> <br> 07930  946 211</li>
-            <li class="contentBlock_listItem"><b>Date of birth:</b> <br> 21 June 1992</li>
-            <li class="contentBlock_listItem"><b>Nationality:</b> <br> British</li>
-          </ul>
-          <a href="#" class="button_link">
-            <span>Download My CV</span>
-            <svg class="button_linkIcon">
-              <title>Arrow pointing right</title>
-              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="images/icons/sprite.svg#arrow-right"></use>
-            </svg>
-          </a>
+          <div class="contentBlock_content">
+            <ul class="contentBlock_list">
+              <li class="contentBlock_listItem"><b>Name:</b> <br> Alex Clapperton</li>
+              <li class="contentBlock_listItem"><b>Email:</b> <br> <a href="#">hello@alexclapperton.co.uk</a></li>
+              <li class="contentBlock_listItem"><b>Phone:</b> <br> 07930  946 211</li>
+              <li class="contentBlock_listItem"><b>Date of birth:</b> <br> 21 June 1992</li>
+              <li class="contentBlock_listItem"><b>Nationality:</b> <br> British</li>
+            </ul>
+            <a href="#" class="button_link">
+              <span>Download My CV</span>
+              <svg class="button_linkIcon">
+                <title>Arrow pointing right</title>
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="images/icons/sprite.svg#arrow-right"></use>
+              </svg>
+            </a>
+          </div>
         </div>
       </div>
 
@@ -210,26 +212,28 @@
 
     <section class="contentBlock  contentBlock--flex">
       <div class="contentBlock_wrapper">
-        <div class="contentBlock_inner">
+        <div class="contentBlock_inner  contentBlock_inner--flex">
           <h2 class="contentBlock_title">My Skills <span class="contentBlock_title--spacer"></span></h2>
-          <blockquote class="blockquote_wrapper  blockquote_wrapper--large">
-            <svg class="blockquote_quoteIcon">
-              <title>Left quote icon</title>
-              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="images/icons/sprite.svg#quotes-left"></use>
-            </svg>
-            Good Design Keeps the User Happy, the Manufacturer in the Black and the Aesthete Unoffended.
-          </blockquote>
-          <h3 class="contentBlock_subTitle">We're creative minds</h3>
-          <p class="text--lightGray">
-            Ensured mock-ups met both visual and textual branding standards. Defined and documented website design standards when needed. Designed adaptive layouts to maintain a consistent user experience across the product. Created clickable prototypes when needed.
-          </p>
-          <a href="#" class="button_link">
-            <span>Download My CV</span>
-            <svg class="button_linkIcon">
-              <title>Arrow pointing right</title>
-              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="images/icons/sprite.svg#arrow-right"></use>
-            </svg>
-          </a>
+          <div class="contentBlock_content">
+            <blockquote class="blockquote_wrapper  blockquote_wrapper--large">
+              <svg class="blockquote_quoteIcon">
+                <title>Left quote icon</title>
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="images/icons/sprite.svg#quotes-left"></use>
+              </svg>
+              Good Design Keeps the User Happy, the Manufacturer in the Black and the Aesthete Unoffended.
+            </blockquote>
+            <h3 class="contentBlock_subTitle">We're creative minds</h3>
+            <p class="text--lightGray">
+              Ensured mock-ups met both visual and textual branding standards. Defined and documented website design standards when needed. Designed adaptive layouts to maintain a consistent user experience across the product. Created clickable prototypes when needed.
+            </p>
+            <a href="#" class="button_link">
+              <span>Download My CV</span>
+              <svg class="button_linkIcon">
+                <title>Arrow pointing right</title>
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="images/icons/sprite.svg#arrow-right"></use>
+              </svg>
+            </a>
+          </div>
         </div>
       </div>
 
@@ -291,6 +295,58 @@
                 <p class="skillBar_bar"></p>
                 <span class="skillBar_percent"></span>
               </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <section class="contentBlock">
+      <div class="contentBlock_wrapper  contentBlock_wrapper--fullWidth">
+        <div class="contentBlock_inner">
+          <h2 class="contentBlock_title">My Portfolio <span class="contentBlock_title--spacer"></span></h2>
+
+          <div class="portfolioBlock">
+            <div class="portfolioBlock_filter">
+              <button type="button" class="portfolioBlock_filterBtn  portfolioBlock_filterBtn--active" data-filter="*">All</button>
+              <button type="button" class="portfolioBlock_filterBtn" data-filter=".web">Web</button>
+              <button type="button" class="portfolioBlock_filterBtn" data-filter=".graphics">Graphics</button>
+              <button type="button" class="portfolioBlock_filterBtn" data-filter=".design">Design</button>
+            </div>
+            <div class="portfolioBlock_grid  portfolioBlock_grid--flex">
+              <figure class="portfolioBlock_portfolioItem  web">
+                <img class="portfolioBlock_portfolioImage" src="images/portfolio/gallery-1.jpg" alt="" />
+                <figcaption class="portfolioBlock_portfolioCaption">
+                  <h3>Lorem Ipsum</h3>
+                  <p>Bubba likes to appear out of thin air.</p>
+                  <a href="#">Portfolio Item</a>
+                </figcaption>
+              </figure>
+              <figure class="portfolioBlock_portfolioItem  graphics">
+                <img class="portfolioBlock_portfolioImage" src="images/portfolio/gallery-1.jpg" alt="" />
+                <figcaption class="portfolioBlock_portfolioCaption">
+                  <h3>Lorem Ipsum</h3>
+                  <p>Bubba likes to appear out of thin air.</p>
+                  <a href="#">Portfolio Item</a>
+                </figcaption>
+              </figure>
+              <figure class="portfolioBlock_portfolioItem  web">
+                <img class="portfolioBlock_portfolioImage" src="images/portfolio/gallery-1.jpg" alt="" />
+                <figcaption class="portfolioBlock_portfolioCaption">
+                  <h3>Lorem Ipsum</h3>
+                  <p>Bubba likes to appear out of thin air.</p>
+                  <a href="#">Portfolio Item</a>
+                </figcaption>
+              </figure>
+              <figure class="portfolioBlock_portfolioItem  design">
+                <img class="portfolioBlock_portfolioImage" src="images/portfolio/gallery-1.jpg" alt="" />
+                <figcaption class="portfolioBlock_portfolioCaption">
+                  <h3>Lorem Ipsum</h3>
+                  <p>Bubba likes to appear out of thin air.</p>
+                  <a href="#">Portfolio Item</a>
+                </figcaption>
+              </figure>
             </div>
           </div>
         </div>

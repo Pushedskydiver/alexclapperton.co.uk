@@ -1,0 +1,262 @@
+.portfolioBlock_filter {
+  @include grid(null, column, center);
+  @include align-items(center);
+  margin-bottom: 20px;
+
+  @include respond-to(m) {
+    @include flex-direction(row);
+    margin-bottom: 30px;
+  }
+
+  @include respond-to(l) {
+    margin-bottom: 40px;
+  }
+}
+
+.portfolioBlock_filterBtn {
+  position: relative;
+  background: transparent;
+  color: $core-color-dark;
+  font-family: $core-secondary-font-family;
+  font-size: 1.05rem;
+  padding: 0;
+  margin: 0 0 20px 0;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    bottom: 5px;
+    left: -12px;
+    size: 0 1px;
+    background: $core-color-dark;
+    @include transition-025;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    right: -12px;
+    bottom: 5px;
+    size: 0 1px;
+    background: $core-color-dark;
+    @include transition-025;
+  }
+
+  @include respond-to(m) {
+    margin: 0 20px;
+  }
+
+  @include respond-to(l) {
+    margin: 0 30px;
+    cursor: pointer;
+    @include transition-025;
+
+    &:hover {
+      color: $core-color-brand;
+
+      &::before {
+        content: '';
+        position: absolute;
+        bottom: 5px;
+        left: -12px;
+        size: 10px 1px;
+        background: $core-color-dark;
+      }
+
+      &::after {
+        content: '';
+        position: absolute;
+        right: -12px;
+        bottom: 5px;
+        size: 10px 1px;
+        background: $core-color-dark;
+      }
+    }
+  }
+}
+
+.portfolioBlock_filterBtn--active {
+  color: $core-color-brand;
+  @include transition-025;
+
+  &::before {
+    size: 10px 1px;
+  }
+
+  &::after {
+    size: 10px 1px;
+  }
+}
+
+.portfolioBlock_grid--flex {
+  @include grid(null, column, center);
+  @include align-items(center);
+
+  @include respond-to(m) {
+    @include flex-direction(row);
+    @include justify-content(space-between);
+    margin-right: -15px;
+    margin-left: -15px;
+  }
+}
+
+.portfolioBlock_portfolioItem {
+  position: relative;
+  margin-bottom: 20px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    size: 100%;
+    background: url('../images/overlay.png');
+    background-size: cover;
+    margin: 0 auto;
+    opacity: 0.8;
+  }
+
+  @include respond-to(m) {
+    width: 50%;
+    padding: 0 15px;
+    margin-bottom: 30px;
+
+    &::before {
+      size: calc(100% - 30px) 100%;
+    }
+  }
+
+  @include respond-to(l) {
+    @include no-transition;
+
+    &:last-child {
+      margin-bottom: 30px;
+    }
+  }
+}
+
+.portfolioBlock_portfolioImage {
+  width: 100%;
+}
+
+.portfolioBlock_portfolioCaption {
+  @include grid(null, column, center);
+  @include align-items(center);
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  size: 100%;
+  text-align: center;
+  padding: 5%;
+  margin: 0 auto;
+
+  h3 {
+    color: $core-color-light;
+    margin: 0;
+    -webkit-transform: translate3d(0, -0, 0);
+    transform: translate3d(0, -0, 0);
+    @include transition-03;
+  }
+
+  p {
+    color: $core-color-light;
+    margin-bottom: 0;
+    -webkit-transform: translate3d(0, 20px, 0);
+    transform: translate3d(0, 20px, 0);
+    @include transition-03;
+  }
+
+  a {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    size: 100%;
+    margin: 0 auto;
+    text-indent: -9999px;
+    z-index: z(alpha);
+  }
+
+  @include respond-to(m) {
+    size: calc(100% - 30px) 100%;
+
+    a {
+      size: calc(100% - 30px) 100%;
+    }
+  }
+
+  @include respond-to(l) {
+    h3 {
+      font-size: 1.7rem;
+      margin-bottom: 10px;
+      -webkit-transform: translate3d(0, -20px, 0);
+      transform: translate3d(0, -20px, 0);
+    }
+
+    p {
+      font-size: 1rem;
+      opacity: 0;
+    }
+
+    @include transition-03;
+
+    &:hover {
+      background: rgba($core-color-brand, 0.75);
+
+      &::before,
+      &::after {
+        opacity: 1;
+      	-webkit-transform: scale(1);
+      	transform: scale(1);
+      }
+
+      h3, p {
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+      }
+
+      p {
+        opacity: 1;
+      }
+    }
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 30px;
+    	right: 30px;
+    	bottom: 30px;
+    	left: 30px;
+      border-top: 1px solid $core-color-light;
+      border-bottom: 1px solid $core-color-light;
+      -webkit-transform: scale(0, 1);
+      transform: scale(0, 1);
+      @include transition-03;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 30px;
+    	right: 30px;
+    	bottom: 30px;
+    	left: 30px;
+      border-right: 1px solid $core-color-light;
+      border-left: 1px solid $core-color-light;
+      opacity: 0;
+      -webkit-transform: scale(1, 0);
+      transform: scale(1, 0);
+      @include transition-03;
+    }
+  }
+}
