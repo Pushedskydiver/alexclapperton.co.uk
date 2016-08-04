@@ -43,6 +43,18 @@
   }
 }
 
+.contentBlock_wrapper--flex  {
+  @include respond-to(l) {
+    @include grid(null, column, center);
+  }
+}
+
+.contentBlock_wrapper--border-left {
+  @include respond-to(l) {
+    border-left: 1px solid #ccc;
+  }
+}
+
 .contentBlock_wrapper--fullWidth {
   @include respond-to(l) {
     width: 100%;
@@ -64,45 +76,14 @@
 }
 
 .contentBlock_inner {
+  position: relative;
+
   @include respond-to(m) {
     padding: 0 15px;
   }
 
   @include respond-to(l) {
     padding: 0;
-  }
-}
-
-.contentBlock_inner--flex {
-  @include respond-to(l) {
-    position: absolute;
-    top: 0;
-    left: 0;
-    size: 100%;
-    @include grid(wrap, row, center);
-    @include align-items(center);
-
-    .contentBlock_title {
-      position: relative;
-      left: -30px;
-      size: 10% 100%;
-      text-align: center;
-      padding: 0 15px;
-      margin: 0;
-      border-left: 1px solid $core-color-neutral;
-      -webkit-writing-mode: vertical-lr;
-      -ms-writing-mode: tb-lr;
-      writing-mode: vertical-lr;
-      @include rotate(180);
-    }
-
-    .contentBlock_title--spacer {
-      size: 3px 20px;
-    }
-
-    .contentBlock_content {
-      width: 80%;
-    }
   }
 }
 
@@ -121,6 +102,9 @@
   }
 
   @include respond-to(l) {
+    position: absolute;
+    top: 0;
+    left: 0;
     height: 100%;
   }
 }
@@ -128,7 +112,7 @@
 .contentBlock_title {
   position: relative;
   padding: 10px 0 5px;
-  margin-bottom: 40px;
+  margin-bottom: 20px;
 
   @include respond-to(m) {
     font-size: $core-font-size * 2;
@@ -136,6 +120,25 @@
 
   @include respond-to(l) {
     font-size: $core-font-size * 2.25;
+    margin-bottom: 40px;
+  }
+}
+
+.contentBlock_title--sideways {
+  @include respond-to(l) {
+    position: relative;
+    left: 0;
+    size: auto;
+    text-align: center;
+    padding-left: 15px;
+    margin: 0;
+    -webkit-align-self: center;
+    -ms-flex-item-align: center;
+    align-self: center;
+    -webkit-writing-mode: vertical-lr;
+    -ms-writing-mode: tb-lr;
+    writing-mode: vertical-lr;
+    @include rotate(180);
   }
 }
 
@@ -164,6 +167,10 @@
   display: inline-block;
   size: 20px 3px;
   background: $core-color-brand;
+
+  @include respond-to(l) {
+    size: 3px 20px;
+  }
 }
 
 .contentBlock_subTitle {
