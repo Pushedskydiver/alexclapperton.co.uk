@@ -1,10 +1,10 @@
 .siteBanner {
   position: relative;
   margin-top: 68px;
+  margin-bottom: 25px;
 
   @include respond-to(m) {
-    margin: 0 auto;
-    margin-top: 78px;
+    margin: 78px auto 25px auto;
   }
 }
 
@@ -342,6 +342,10 @@
   @include respond-to(l) {
     left: -28px;
   }
+
+  @include respond-to(xl) {
+    left: -1.25%;
+  }
 }
 
 .siteBanner_sliderBtn--prev.swiper-button-black,
@@ -362,6 +366,10 @@
 
   @include respond-to(l) {
     right: -28px;
+  }
+
+  @include respond-to(xl) {
+    right: -1.25%;
   }
 }
 
