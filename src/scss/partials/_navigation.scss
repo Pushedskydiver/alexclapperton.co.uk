@@ -57,16 +57,29 @@
   size: 35px;
   background: $core-color-brand;
   border: 0;
-  overflow: hidden;
   z-index: z(foxtrot);
 
   &:focus {
-    background: $core-color-brand;
+
+    + .socialHeader,
+    + .socialHeader + .siteNav {
+      left: 0;
+    }
   }
 
   @include respond-to(l) {
     cursor: pointer;
   }
+}
+
+.menuBtn_text {
+  position: absolute;
+  top: 0;
+  left: -120%;
+  color: $core-color-dark;
+  font-size: 1.2rem;
+  font-weight: $core-secondary-font-weight;
+  line-height: 35px;
 }
 
 .menuBtn_inner {

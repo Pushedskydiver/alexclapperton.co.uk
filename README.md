@@ -1,6 +1,14 @@
 [![build status](https://gitlab.com/alex-clapperton/alex-clapperton.gitlab.io/badges/master/build.svg)](https://gitlab.com/alex-clapperton/alex-clapperton.gitlab.io/commits/master)
 
-[![coverage report](https://gitlab.com/alex-clapperton/alex-clapperton.gitlab.io/badges/master/coverage.svg)](https://gitlab.com/alex-clapperton/alex-clapperton.gitlab.io/commits/master)
+<!-- TOC START min:1 max:3 link:true update:true -->
+- [Alex Clapperton Website Portfolio](#alex-clapperton-website-portfolio)
+  - [Folder Structure](#folder-structure)
+  - [SCSS Folder Structure](#scss-folder-structure)
+  - [JavaScript Files](#javascript-files)
+  - [Pages Folder Structure](#pages-folder-structure)
+  - [SVG Icons](#svg-icons)
+
+<!-- TOC END -->
 
 # Alex Clapperton Website Portfolio
 

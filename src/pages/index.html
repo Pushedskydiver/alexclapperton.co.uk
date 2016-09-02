@@ -29,24 +29,27 @@
       <!-- BEGIN : MAIN HEADER -->
       <div class="mainHeader">
         <a href="#" class="mainHeader_logo"><span>.</span>Alex</a>
-        <!-- BEGIN : Mobile Nav -->
+        <!-- BEGIN : MOBILE NAV -->
         <a href="#" class="menuBtn">
-          <span>Menu</span>
+          <span class="menuBtn_text">Menu</span>
+          <!-- BEGIN : MENU BTN INNER -->
           <div class="menuBtn_inner">
             <span class="menuBtn_bar  menuBtn_bar--top"></span>
             <span class="menuBtn_bar  menuBtn_bar--middle"></span>
             <span class="menuBtn_bar  menuBtn_bar--bottom"></span>
           </div>
+          <!-- END : MENU BTN INNER /-->
         </a>
-        <!-- END : Mobile Nav /-->
-
+        <!-- END : MOBILE NAV /-->
+        <!-- BEGIN : SOCIAL HEADER -->
         <div class="socialHeader">
           <svg class="socialHeader_logo">
             <title>Alex Clapperton logo</title>
             <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="images/icons/sprite.svg#logo"></use>
           </svg>
-
+          <!-- BEGIN : SOCIAL HEADER CONTENT -->
           <div class="socialHeader_content">
+            <!-- BEGIN : SOCIAL HEADER ICONS -->
             <div class="socialHeader_icons">
               <a href="#" title="External link to Alex's Facebook profile">
                 <svg class="socialHeader_icon  socialHeader_icon--facebook">
@@ -67,16 +70,19 @@
                 </svg>
               </a>
             </div>
-
+            <!-- END : SOCIAL HEADER ICONS /-->
+            <!-- BEGIN : SOCIAL HEADER COPYRIGHT -->
             <div class="socialHeader_copyright">
               <p>
                 &copy; <script type="text/javascript">document.write(new Date().getFullYear());</script>, Alex Clapperton.
               </p>
             </div>
+            <!-- END : SOCIAL HEADER COPYRIGHT /-->
           </div>
+          <!-- END : SOCIAL HEADER CONTENT /-->
         </div>
-
-        <!-- BEGIN : NAV -->
+        <!-- END : SOCIAL HEADER /-->
+        <!-- BEGIN : SITE NAV -->
         <nav class="siteNav">
           <a href="#" class="siteNav_link  siteNav_link--active">Home</a>
           <a href="#" class="siteNav_link">About Me</a>
@@ -84,7 +90,7 @@
           <a href="#" class="siteNav_link">Blog</a>
           <a href="#" class="siteNav_link">Contact</a>
         </nav>
-        <!-- END : NAV /-->
+        <!-- END : SITE NAV /-->
       </div>
       <!-- END : MAIN HEADER /-->
     </header>
@@ -95,6 +101,7 @@
     <section class="siteBanner">
       <!-- BEGIN : SITE BANNER SLIDER -->
       <div class="siteBanner_slider  swiper-container">
+        <!-- BEGIN : SITE BANNER WRAPPER -->
         <div class="siteBanner_wrapper">
           <!-- BEGIN : SITE BANNER SLIDE -->
           <div class="siteBanner_slide">
@@ -156,6 +163,7 @@
           </div>
           <!-- END : SITE BANNER SLIDE /-->
         </div>
+        <!-- END : SITE BANNER WRAPPER /-->
       </div>
       <!-- END : SITE BANNER SLIDER /-->
       <div class="siteBanner_sliderDots"></div>
@@ -362,17 +370,24 @@
     <!--******************** CONTENT BLOCK : Start ********************-->
     <section class="contentBlock  contentBlock--flex">
       <h2 class="contentBlock_title  contentBlock_title--sideways">My Portfolio <span class="contentBlock_title--spacer"></span></h2>
+      <!-- BEGIN : CONTENT BLOCK WRAPPER -->
       <div class="contentBlock_wrapper  contentBlock_wrapper--border-left">
+        <!-- BEGIN : CONTENT BLOCK INNER -->
         <div class="contentBlock_inner  contentBlock_content--portfolio"></div>
+        <!-- END : CONTENT BLOCK INNER /-->
       </div>
-
+      <!-- END : CONTENT BLOCK WRAPPER /-->
+      <!-- BEGIN : CONTENT BLOCK WRAPPER -->
       <div class="contentBlock_wrapper">
+        <!-- BEGIN : CONTENT BLOCK INNER -->
         <div class="contentBlock_inner">
           <h2 class="contentBlock_title  contentBlock_title--extra">Other Things I've Designed.</h2>
+          <!-- BEGIN : CONTENT BLOCK CONTENT -->
           <div class="contentBlock_content">
             <p class="text--lightGray">
               Created strong design concepts and developed design layouts for a variety of creative projects using Photoshop and Illustrator, you can see more at my portfolio.
             </p>
+            <!-- BEGIN : CONTENT BLOCK BULLET LIST -->
             <ul class="contentBlock_bulletList  text--lightGray">
               <li class="contentBlock_listItem">Design is not just what it looks like and feels like.</li>
               <li class="contentBlock_listItem">The details are not the details. They make the design.</li>
@@ -380,6 +395,8 @@
               <li class="contentBlock_listItem">Everyday people are not very good designers.</li>
               <li class="contentBlock_listItem">I design for the woman who loves being a woman.</li>
             </ul>
+            <!-- END : CONTENT BLOCK BULLET LIST /-->
+            <!-- BEGIN : BUTTON LINK -->
             <a href="#" class="button_link">
               <span>View Full Portfolio</span>
               <svg class="button_linkIcon">
@@ -387,25 +404,36 @@
                 <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="images/icons/sprite.svg#arrow-right"></use>
               </svg>
             </a>
+            <!-- END : BUTTON LINK /-->
           </div>
+          <!-- END : CONTENT BLOCK CONTENT /-->
         </div>
+        <!-- END : CONTENT BLOCK INNER /-->
       </div>
+      <!-- END : CONTENT BLOCK WRAPPER /-->
     </section>
     <!--******************** CONTENT BLOCK : End ******************** /-->
 
 
     <!--******************** CONTENT BLOCK : Start ********************-->
     <section class="contentBlock">
+      <!-- BEGIN : CONTENT BLOCK WRAPPER -->
       <div class="contentBlock_wrapper  contentBlock_wrapper--fullWidth">
+        <!-- BEGIN : CONTENT BLOCK INNER -->
         <div class="contentBlock_inner">
+          <!-- BEGIN : PORTFOLIO BLOCK -->
           <div class="portfolioBlock">
+            <!-- BEGIN : PORTFOLIO BLOCK FILTER -->
             <div class="portfolioBlock_filter">
               <button type="button" class="portfolioBlock_filterBtn  portfolioBlock_filterBtn--active" data-filter="*">All</button>
               <button type="button" class="portfolioBlock_filterBtn" data-filter=".web">Web</button>
               <button type="button" class="portfolioBlock_filterBtn" data-filter=".graphics">Graphics</button>
               <button type="button" class="portfolioBlock_filterBtn" data-filter=".design">Design</button>
             </div>
+            <!-- END : PORTFOLIO BLOCK FILTER /-->
+            <!-- BEGIN : PORTFOLIO BLOCK GRID -->
             <div class="portfolioBlock_grid  portfolioBlock_grid--flex">
+              <!-- BEGIN : PORTFOLIO ITEM -->
               <figure class="portfolioBlock_portfolioItem  web">
                 <img class="portfolioBlock_portfolioImage" src="images/portfolio/gallery-1.jpg" alt="" />
                 <figcaption class="portfolioBlock_portfolioCaption">
@@ -414,6 +442,8 @@
                   <a href="#" class="portfolioBlock_portfolioLink">Portfolio Item</a>
                 </figcaption>
               </figure>
+              <!-- END : PORTFOLIO ITEM /-->
+              <!-- BEGIN : PORTFOLIO ITEM -->
               <figure class="portfolioBlock_portfolioItem  graphics">
                 <img class="portfolioBlock_portfolioImage" src="images/portfolio/gallery-1.jpg" alt="" />
                 <figcaption class="portfolioBlock_portfolioCaption">
@@ -422,6 +452,8 @@
                   <a href="#" class="portfolioBlock_portfolioLink">Portfolio Item</a>
                 </figcaption>
               </figure>
+              <!-- END : PORTFOLIO ITEM /-->
+              <!-- BEGIN : PORTFOLIO ITEM -->
               <figure class="portfolioBlock_portfolioItem  web">
                 <img class="portfolioBlock_portfolioImage" src="images/portfolio/gallery-1.jpg" alt="" />
                 <figcaption class="portfolioBlock_portfolioCaption">
@@ -430,6 +462,8 @@
                   <a href="#" class="portfolioBlock_portfolioLink">Portfolio Item</a>
                 </figcaption>
               </figure>
+              <!-- END : PORTFOLIO ITEM /-->
+              <!-- BEGIN : PORTFOLIO ITEM -->
               <figure class="portfolioBlock_portfolioItem  design">
                 <img class="portfolioBlock_portfolioImage" src="images/portfolio/gallery-1.jpg" alt="" />
                 <figcaption class="portfolioBlock_portfolioCaption">
@@ -438,12 +472,42 @@
                   <a href="#" class="portfolioBlock_portfolioLink">Portfolio Item</a>
                 </figcaption>
               </figure>
+              <!-- END : PORTFOLIO ITEM /-->
             </div>
+            <!-- END : PORTFOLIO GRID /-->
+          </div>
+          <!-- END : PORTFOLIO BLOCK /-->
+        </div>
+        <!-- END : CONTENT BLOCK INNER /-->
+      </div>
+      <!-- END : CONTENT BLOCK WRAPPER /-->
+    </section>
+    <!--******************** CONTENT BLOCK : End ******************** /-->
+
+
+    <section class="contentBlock contentBlock--flex">
+      <h2 class="contentBlock_title  contentBlock_title--sideways">Latest Posts <span class="contentBlock_title--spacer"></span></h2>
+      <div class="contentBlock_wrapper  contentBlock_wrapper--fullWidth  contentBlock_wrapper--border-left">
+        <div class="contentBlock_inner">
+          <div class="blogBock  blogBlock--flex">
+            <figure class="blogBlock_blogItem">
+              <img class="blogBlock_blogImage" src="images/portfolio/gallery-1.jpg" alt="" />
+              <figcaption class="blogBlock_blogCaption">
+                <h3 class="blogBlock_blogTitle">Excepteur sint occaecat</h3>
+                <a href="#" class="blogBlock_blogLink">Blog Item</a>
+              </figcaption>
+            </figure>
+            <figure class="blogBlock_blogItem">
+              <img class="blogBlock_blogImage" src="images/portfolio/gallery-1.jpg" alt="" />
+              <figcaption class="blogBlock_blogCaption">
+                <h3 class="blogBlock_blogTitle">Excepteur sint occaecat</h3>
+                <a href="#" class="blogBlock_blogLink">Blog Item</a>
+              </figcaption>
+            </figure>
           </div>
         </div>
       </div>
     </section>
-    <!--******************** CONTENT BLOCK : End ******************** /-->
 
 
     <!--/ Scroll to top -->

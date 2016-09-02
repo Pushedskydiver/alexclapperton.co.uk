@@ -277,7 +277,7 @@
   z-index: z(alpha);
 
   @include respond-to(m) {
-    size: calc(100% - 30px) 100%;
+    size: 100%;
   }
 
   @include respond-to(l) {
