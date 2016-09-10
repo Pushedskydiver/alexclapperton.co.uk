@@ -1,0 +1,113 @@
+.blogBlock--flex {
+  @include grid(wrap, column, center);
+
+  @include respond-to(l) {
+    @include flex-direction(row);
+    @include justify-content(space-between);
+  };
+}
+
+.blogBlock_blogItem {
+  position: relative;
+  margin-top: 25px;
+
+  &:nth-of-type(1),
+  &:nth-of-type(2), {
+    margin-top: 0;
+  }
+
+  @include respond-to(l) {
+    width: 48%;
+  }
+
+  @include respond-to(xl) {
+    width: 31.333333%;
+
+    &:nth-of-type(3), {
+      margin-top: 0;
+    }
+  }
+}
+
+.blogBlock_blogImage {
+  width: 100%;
+}
+
+.blogBlock_blogCaption {
+  position: absolute;
+  top: 0;
+  left: 0;
+  size: 100%;
+  background: rgba($core-color-brand, 0.8);
+  padding: 5%;
+}
+
+.blogBlock_blogTitle {
+  color: $core-color-light;
+
+  @include respond-to(s) {
+    font-size: $core-font-size * 2.3;
+  }
+
+  @include respond-to(l) {
+    font-size: 1.7rem;
+  }
+}
+
+.blogBlock_postDetails {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: $core-color-dark;
+  padding: 3% 5%;
+
+  @include respond-to(s) {
+    padding: 2.5% 5%;
+  }
+}
+
+.blogBlock_postDetails--flex {
+  @include grid(null, column, center);
+
+  @include respond-to(s) {
+    @include flex-direction(row);
+    @include justify-content(space-between);
+  }
+}
+
+.blogBlock_postInfo {
+  display: block;
+  margin-bottom: 5px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.blogBlock_postIcon {
+  size: 15px;
+  fill: $core-color-light;
+  vertical-align: middle;
+
+  @include respond-to(s) {
+    size: 20px;
+  }
+}
+
+.blogBlock_postText {
+  color: $core-color-light;
+  vertical-align: middle;
+
+  @include respond-to(s) {
+    font-size: $core-font-size * 1.2;
+  }
+}
+
+.blogBlock_blogLink {
+  position: absolute;
+  top: 0;
+  left: 0;
+  size: 100%;
+  text-indent: -9999px;
+}

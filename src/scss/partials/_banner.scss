@@ -340,7 +340,7 @@
   background-size: 65%;
 
   @include respond-to(l) {
-    left: -28px;
+    left: 0;
   }
 
   @include respond-to(xl) {
@@ -365,7 +365,7 @@
   background-size: 65%;
 
   @include respond-to(l) {
-    right: -28px;
+    right: 0;
   }
 
   @include respond-to(xl) {

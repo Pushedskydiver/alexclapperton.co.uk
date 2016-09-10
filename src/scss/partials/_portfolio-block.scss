@@ -3,11 +3,14 @@
   @include align-items(center);
   margin-bottom: 20px;
 
+  @include respond-to(xs) {
+    @include flex-direction(row);
+  }
+
   @include respond-to(m) {
     position: relative;
     padding-bottom: 20px;
     margin-bottom: 0;
-    @include flex-direction(row);
 
     &::before {
       content: '';
@@ -55,7 +58,7 @@
     @include transition-025;
   }
 
-  @include respond-to(m) {
+  @include respond-to(xs) {
     margin: 0 20px;
   }
 
@@ -114,24 +117,12 @@
 }
 
 .portfolioBlock_portfolioItem {
+  width: 100%;
   position: relative;
   margin-top: 20px;
 
   &:first-child {
     margin-top: 0;
-  }
-
-  &::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    right: 0;
-    left: 0;
-    size: 100%;
-    background: url('../images/overlay.png');
-    background-size: cover;
-    margin: 0 auto;
-    opacity: 0.8;
   }
 
   @include respond-to(m) {
@@ -165,44 +156,16 @@
   right: 0;
   left: 0;
   size: 100%;
+  background: rgba($core-color-brand, 0.8);
   text-align: left;
   padding: 5%;
   margin: 0 auto;
-
-  h3 {
-    color: $core-color-light;
-    margin: 0;
-    -webkit-transform: translate3d(0, -0, 0);
-    transform: translate3d(0, -0, 0);
-    @include transition-03;
-  }
-
-  p {
-    color: $core-color-light;
-    margin-bottom: 0;
-    -webkit-transform: translate3d(0, 20px, 0);
-    transform: translate3d(0, 20px, 0);
-    @include transition-03;
-  }
 
   @include respond-to(m) {
     size: calc(100% - 30px) 100%;
   }
 
   @include respond-to(l) {
-    h3 {
-      font-size: 1.7rem;
-      margin: 20px 0 10px 30px;
-      -webkit-transform: translate3d(0, -20px, 0);
-      transform: translate3d(0, -20px, 0);
-    }
-
-    p {
-      font-size: 1rem;
-      margin-left: 30px;
-      opacity: 0;
-    }
-
     @include transition-03;
 
     &:hover {
@@ -215,12 +178,13 @@
       	transform: scale(1);
       }
 
-      h3, p {
+      .portfolioBlock_portfolioTitle,
+      .portfolioBlock_portfolioText {
         -webkit-transform: translate3d(0, 0, 0);
         transform: translate3d(0, 0, 0);
       }
 
-      p {
+      .portfolioBlock_portfolioText {
         opacity: 1;
       }
 
@@ -263,6 +227,61 @@
       transform: scale(1, 0);
       @include transition-03;
     }
+  }
+
+  @include respond-to(xl) {
+    &::before,
+    &::after {
+      top: 15px;
+      right: 15px;
+      bottom: 15px;
+      left: 15px;
+    }
+  }
+}
+
+.portfolioBlock_portfolioTitle {
+  color: $core-color-light;
+  margin: 0;
+  -webkit-transform: translate3d(0, -0, 0);
+  transform: translate3d(0, -0, 0);
+  @include transition-03;
+
+  @include respond-to(s) {
+    font-size: $core-font-size * 2.3;
+  }
+
+  @include respond-to(l) {
+    font-size: 1.7rem;
+    margin: 20px 0 10px 30px;
+    -webkit-transform: translate3d(0, -20px, 0);
+    transform: translate3d(0, -20px, 0);
+  }
+
+  @include respond-to(xl) {
+    margin: 10px 0 10px 20px;
+  }
+}
+
+.portfolioBlock_portfolioText {
+  color: $core-color-light;
+  margin-bottom: 0;
+  -webkit-transform: translate3d(0, 20px, 0);
+  transform: translate3d(0, 20px, 0);
+  @include transition-03;
+
+  @include respond-to(s) {
+    font-size: $core-font-size * 1.2;
+  }
+
+  @include respond-to(l) {
+    font-size: 1rem;
+    margin-left: 30px;
+    opacity: 0;
+  }
+
+  @include respond-to(xl) {
+    margin-left: 20px;
   }
 }
 
@@ -308,6 +327,14 @@
       -webkit-transform: scale(0, 1);
       transform: scale(0, 1);
       @include transition-03;
+    }
+  }
+
+  @include respond-to(xl) {
+
+    &::before,
+    &::after {
+      bottom: 15px;
     }
   }
 }
