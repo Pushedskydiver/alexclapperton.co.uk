@@ -637,6 +637,50 @@
     <!--******************** CONTENT BLOCK : End ******************** /-->
 
 
+    <section class="siteFooter">
+      <div class="siteFooter_wrapper  siteFooter_wrapper--flex">
+        <div class="siteFooter_item">
+          <div class="siteFooter_twitterFeed">
+            <h4 class="siteFooter_title  siteFooter_title--flex">
+              <a class="siteFooter_twitterLink" href="#">@AlexMClapperton</a>
+              <svg class="siteFooter_TwitterIcon">
+                <title>Twitter logo</title>
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="images/icons/sprite.svg#twitter"></use>
+              </svg>
+            </h4>
+            <div id="siteFooter_twitterFeed"></div>
+          </div>
+        </div>
+        <div class="siteFooter_item">
+          <h4 class="siteFooter_title">Follow Me</h4>
+          <div class="siteFooter_social  siteFooter_social--flex">
+            <a class="siteFooter_socialLink" href="#" title="External link to Alex's Facebook profile">
+              <svg class="siteFooter_socialIcon  siteFooter_socialIcon--facebook">
+                <title>Facebook logo</title>
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="images/icons/sprite.svg#facebook"></use>
+              </svg>
+            </a>
+            <a class="siteFooter_socialLink" href="#" title="External link to Alex's Twitter profile">
+              <svg class="siteFooter_socialIcon  siteFooter_socialIcon--twitter">
+                <title>Twitter logo</title>
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="images/icons/sprite.svg#twitter"></use>
+              </svg>
+            </a>
+            <a class="siteFooter_socialLink" href="#" title="External link to Alex's LinkedIn profile">
+              <svg class="siteFooter_socialIcon  siteFooter_socialIcon--linkedin">
+                <title>LinkedIn logo</title>
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="images/icons/sprite.svg#linkedin"></use>
+              </svg>
+            </a>
+          </div>
+          <div class="siteFooter_copyright  text--lightGray">
+            Copyright &copy; Alex Clapperton. All Rights Reserved <script type="text/javascript">document.write(new Date().getFullYear());</script>.
+          </div>
+        </div>
+      </div>
+    </section>
+
+
     <!--/ Scroll to top -->
     <a href="#" class="btn_scrollTop">
       <svg class="btn_scrollIcon">
@@ -646,21 +690,7 @@
     </a>
 
 
-    <script type="text/javascript">
-      function downloadJSAtOnload() {
-        var element = document.createElement("script");
-        element.src = "js/main.js";
-        document.body.appendChild(element);
-      }
-
-      if (window.addEventListener)
-      window.addEventListener("load", downloadJSAtOnload, false);
-
-      else if (window.attachEvent)
-      window.attachEvent("onload", downloadJSAtOnload);
-
-      else window.onload = downloadJSAtOnload;
-    </script>
+    <script src="js/main.js"></script>
 
 
   </body>
