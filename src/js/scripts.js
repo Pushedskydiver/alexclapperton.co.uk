@@ -98,36 +98,6 @@
     }
 
 
-    // ======================================
-    //    Mobile navigation
-    // ======================================
-    function init_mobile_nav() {
-
-      $('.menuBtn').on('click', function() {
-
-      	if (!$(this).hasClass('menuBtn--openNav')) {
-      		$(this).addClass('menuBtn--openNav');
-      		toggleNav(true);
-      	} else {
-      		$(this).removeClass('menuBtn--openNav');
-      		toggleNav(false);
-      	}
-
-      });
-
-      function toggleNav(bool) {
-      	if (bool === true) {
-          $('.socialHeader').addClass('socialHeader--display');
-          $('.siteNav').addClass('siteNav--display');
-        }
-      	else {
-          $('.socialHeader').removeClass('socialHeader--display');
-          $('.siteNav').removeClass('siteNav--display');
-        }
-      }
-    }
-
-
     // ==============================================
     //    Contact form
     // ==============================================
@@ -189,40 +159,6 @@
 
 
     // ==============================================
-    //    Main slider
-    // ==============================================
-    function init_slider() {
-      $(document).ready(function () {
-        var mySwiper = new Swiper ('.siteBanner_slider', {
-          direction: 'horizontal',
-          speed: 1200,
-          wrapperClass: 'siteBanner_wrapper',
-          slideClass: 'siteBanner_slide',
-          bulletClass: 'siteBanner_sliderDot',
-          bulletActiveClass: 'siteBanner_sliderDot--active',
-          loop: false,
-          a11y: true,
-          keyboardControl: true,
-          width: 1170,
-          spaceBetween: 50,
-          pagination: '.siteBanner_sliderDots',
-          nextButton: '.siteBanner_sliderBtn--next',
-          prevButton: '.siteBanner_sliderBtn--prev',
-          scrollbar: '.siteBanner_sliderScrollbar',
-          breakpoints: {
-            991: {
-              width: 750
-            },
-            1199: {
-              width: 970
-            }
-          }
-        })
-      });
-    }
-
-
-    // ==============================================
     //    Skill bars
     // ==============================================
     function init_skills() {
@@ -272,13 +208,8 @@
     init_dummy_link();
     init_scroll_to();
     init_smooth_scroll_top();
-    init_mobile_nav();
     // init_contact_form();
-    init_skills();
-    init_portfolio();
-
-    if( $(window).width() > 767) {
-      init_slider();
-    }
+    //init_skills();
+    //init_portfolio();
 
 })(window.jQuery);

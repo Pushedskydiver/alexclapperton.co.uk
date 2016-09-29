@@ -1,25 +1,15 @@
 
 @import "modules/core-config";
+@import "modules/z-index";
 @import "modules/grid";
-@import "modules/list";
 @import "modules/typography";
-@import "modules/editorial-content";
 @import "modules/transitions";
 @import "modules/transforms";
-@import "modules/z-index";
 @import "modules/keyframes";
-
-@import "helpers/sassmaps";
-@import "helpers/utilities";
 
 @import "partials/base";
 @import "partials/skip-links";
 @import "partials/scroll-top";
 @import "partials/navigation";
 @import "partials/banner";
-@import "partials/content-block";
-@import "partials/info-block";
-@import "partials/skill-bars";
-@import "partials/portfolio-block";
-@import "partials/blog-block";
-@import "partials/footer";
+@import "partials/section";
