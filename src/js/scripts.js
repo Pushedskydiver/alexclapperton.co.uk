@@ -207,9 +207,9 @@
     // ==============================================
     init_dummy_link();
     init_scroll_to();
-    init_smooth_scroll_top();
+    //init_smooth_scroll_top();
     // init_contact_form();
-    //init_skills();
+    init_skills();
     //init_portfolio();
 
 })(window.jQuery);

@@ -1,7 +1,10 @@
 .siteBanner {
   position: relative;
-  size: 100% calc(100vh - 107px);
-  @include grid(null, column, center);
+  size: 100% 110vh;
+  @include grid(null, column, null);
+  background: url('../images/person.png') no-repeat center bottom;
+  background-size: 120%;
+  padding: 15px 0;
 }
 
 .siteBanner_Text {

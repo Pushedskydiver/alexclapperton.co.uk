@@ -1,10 +1,10 @@
 .skillBars {
-  padding: 30px 0 0;
+  padding: 15px 0 0;
 }
 
 .skillBars_wrapper {
   @include grid(null, column, center);
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 
   &:last-child {
     margin-bottom: 0;
