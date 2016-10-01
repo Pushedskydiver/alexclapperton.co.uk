@@ -40,10 +40,11 @@
   position: fixed;
   bottom: 0;
   right: 0;
-  size: 100% 50px;
+  size: 100% 55px;
   background: $core-color-light;
   padding: 0;
   margin: 0 auto;
+  border-top: 1px solid darken($core-color-neutral, 15%);
   z-index: z(charlie);
   @include transition-03;
 }
@@ -52,20 +53,21 @@
   @include grid(null, column, center);
   @include align-items(center);
   position: relative;
-  size: 20% 100%;
+  size: 25% 100%;
   text-decoration: none;
+}
+
+.siteNav_linkIcon {
+  size: 25px;
+  fill: $core-color-dark;
+  margin-bottom: 3px;
 }
 
 .siteNav_linkText {
   display: block;
   color: $core-color-dark;
-  font-size: $core-font-size;
+  font-size: 0.95rem;
   text-align: center;
-}
-
-.siteNav_linkIcon {
-  size: 23px;
-  fill: $core-color-dark;
 }
 
 .siteNav_link--active .siteNav_linkText {

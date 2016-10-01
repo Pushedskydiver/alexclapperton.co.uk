@@ -159,26 +159,6 @@
 
 
     // ==============================================
-    //    Skill bars
-    // ==============================================
-    function init_skills() {
-      $(document.body).on('appear', '.skillBar', function (e) {
-        // this code is executed for each appeared element
-        if (!$(this).hasClass('appear')) {
-          $(this).addClass('appear');
-          $(this).skillBars({
-            from: 0,
-            speed: 4000,
-            interval: 100,
-            decimals: 0,
-          });
-        }
-      });
-      $('.skillBar').appear();
-    }
-
-
-    // ==============================================
     //    Portfolio grid & filter
     // ==============================================
     function init_portfolio() {
@@ -207,9 +187,8 @@
     // ==============================================
     init_dummy_link();
     init_scroll_to();
-    //init_smooth_scroll_top();
+    // init_smooth_scroll_top();
     // init_contact_form();
-    init_skills();
-    //init_portfolio();
+    // init_portfolio();
 
 })(window.jQuery);

@@ -5,11 +5,15 @@
   box-sizing: border-box;
 }
 
+html {
+  font-size: 16px;
+}
+
 body {
   font-family: $core-font-family;
   font-size: $core-font-size;
   background: $core-color-neutral;
-  padding-bottom: 50px;
+  padding-bottom: 55px;
   margin: 0;
   @include fadein;
 }
@@ -67,7 +71,9 @@ h6 {
 }
 
 p {
-  line-height: $core-line-height;
+  color: $core-color-dark;
+  font-size: $core-font-size;
+  line-height: 1.7;
   margin: 0 0 $core-grid-unit 0;
 }
 
@@ -83,6 +89,9 @@ button {
 }
 
 a {
+  color: $core-color-brand;
+  text-decoration: underline;
+
   @include respond-to(l) {
     @include transition-025;
   }
@@ -95,7 +104,7 @@ a {
 
 .btnLink {
   display: inline-block;
-  padding: 5px 15px;
+  padding: 8px 15px;
   text-decoration: none;
 
   @include respond-to(l) {
@@ -111,8 +120,7 @@ a {
 }
 
 .btnLink_text {
-  text-transform: uppercase;
-  text-decoration: underline;
+  text-decoration: none;
 }
 
 .btnLink--flex {
