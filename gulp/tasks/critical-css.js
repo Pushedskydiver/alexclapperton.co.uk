@@ -1,6 +1,5 @@
 var gulp = require('gulp'),
     critical = require('critical').stream,
-    filterCss = require('filter-css'),
     config = require('../config');
 
 // Generate & Inline Critical-path CSS
