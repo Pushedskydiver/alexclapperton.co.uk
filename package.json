@@ -31,5 +31,9 @@
     "gulp-watch": "^4.3.8",
     "postcss-short": "^1.4.0",
     "require-dir": "^0.3.0"
+  },
+  "dependencies": {
+    "critical": "^0.8.0",
+    "filter-css": "^0.1.2"
   }
 }

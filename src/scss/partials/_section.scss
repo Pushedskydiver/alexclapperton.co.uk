@@ -1,8 +1,24 @@
 .siteSection {
+  position: relative;
   background: $core-color-light;
-  padding: 15px;
+  padding: 15px 0;
+}
+
+.siteSection--flex {
+
+  @include respond-to(m) {
+    padding: 0 $core-grid-unit;
+  }
+
+  @include respond-to(xl) {
+    @include grid(wrap, row, space-between);
+  }
 }
 
 .siteSection_flexItem {
   margin-bottom: 15px;
+
+  @include respond-to(xl) {
+    width: 48%;
+  }
 }

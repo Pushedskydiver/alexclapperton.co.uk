@@ -16,6 +16,23 @@ body {
   padding-bottom: 55px;
   margin: 0;
   @include fadein;
+
+  @include respond-to(xs) {
+    font-size: 1rem;
+  }
+
+  @include respond-to(s) {
+    font-size: ($core-font-size * 1.18);
+    padding-bottom: 0;
+  }
+
+  @include respond-to(m) {
+    font-size: 1rem;
+  }
+
+  @include respond-to(l) {
+    font-size: $core-font-size;
+  }
 }
 
 body ::-moz-selection {
@@ -40,6 +57,10 @@ h2 {
   font-size: ($core-font-size * 1.65);
   margin: 0 0 $core-grid-unit 0;
   line-height: $core-line-height;
+
+  @include respond-to(s) {
+    font-size: ($core-font-size * 1.85);
+  }
 }
 
 h3 {
@@ -47,6 +68,10 @@ h3 {
   font-size: ($core-font-size * 1.5);
   margin: 0 0 $core-grid-unit 0;
   line-height: $core-line-height;
+
+  @include respond-to(s) {
+    font-size: ($core-font-size * 1.7);
+  }
 }
 
 h4 {
@@ -54,6 +79,10 @@ h4 {
   font-size: ($core-font-size * 1.35);
   margin: 0 0 $core-grid-unit 0;
   line-height: $core-line-height;
+
+  @include respond-to(s) {
+    font-size: ($core-font-size * 1.55);
+  }
 }
 
 h5 {
@@ -61,6 +90,10 @@ h5 {
   font-size: ($core-font-size * 1.2);
   margin: 0 0 $core-grid-unit 0;
   line-height: $core-line-height;
+
+  @include respond-to(s) {
+    font-size: ($core-font-size * 1.4);
+  }
 }
 
 h6 {
@@ -68,13 +101,16 @@ h6 {
   font-size: ($core-font-size * 1.15);
   margin: 0 0 $core-grid-unit 0;
   line-height: $core-line-height;
+
+  @include respond-to(s) {
+    font-size: ($core-font-size * 1.3);
+  }
 }
 
 p {
   color: $core-color-dark;
-  font-size: $core-font-size;
   line-height: 1.7;
-  margin: 0 0 $core-grid-unit 0;
+  margin: 0 0 15px 0;
 }
 
 figure {
@@ -100,6 +136,20 @@ a {
 .container {
   position: relative;
   padding: 0 15px;
+
+  @include respond-to(m) {
+    width: 668px;
+    padding: 0;
+    margin: 0 auto;
+  }
+
+  @include respond-to(l) {
+    width: 962px;
+  }
+
+  @include respond-to(xl) {
+    width: 1200px;
+  }
 }
 
 .btnLink {
@@ -116,6 +166,11 @@ a {
 
 .btnLink--pink {
   background: $core-color-brand;
+  color: $core-color-light;
+}
+
+.btnLink--grey {
+  background: $core-color-dark;
   color: $core-color-light;
 }
 

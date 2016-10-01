@@ -1,22 +1,38 @@
 .siteHeader {
   position: relative;
   width: 100%;
+  background: $core-color-light;
   z-index: z(charlie);
+
+  @include respond-to(m) {
+    position: fixed;
+    top: 0;
+    left: 0;
+  }
+}
+
+.siteHeader--flex {
+
+  @include respond-to(m) {
+    @include grid(null, row, nul);
+    padding: 0 $core-grid-unit;
+  }
 }
 
 .mainHeader {
   size: 100% auto;
-  background: $core-color-light;
-  padding: 10px 15px;
+  padding: 10px 0;
   margin: 0 auto;
-  @include grid(null, row, space-between);
-  @include align-items(center);
-  @include transition-025;
-}
 
-.mainHeader--shrink {
-  height: 30px;
-  @include transition-025;
+  @include respond-to(m) {
+    width: 50%;
+    margin: 0;
+    align-self: flex-start;
+  }
+
+  @include respond-to(l) {
+    width: 60%;
+  }
 }
 
 .mainHeader_logo {
@@ -31,6 +47,10 @@
   .mainHeader_logoPeriod {
     color: $core-color-brand;
     margin-right: 2px;
+  }
+
+  @include respond-to(m) {
+    display: inline-block;
   }
 }
 
@@ -47,6 +67,17 @@
   border-top: 1px solid darken($core-color-neutral, 15%);
   z-index: z(charlie);
   @include transition-03;
+
+  @include respond-to(m) {
+    position: initial;
+    width: 50%;
+    border: none;
+    align-self: flex-end;
+  }
+
+  @include respond-to(l) {
+    width: 40%;
+  }
 }
 
 .siteNav_link {
@@ -55,12 +86,27 @@
   position: relative;
   size: 25% 100%;
   text-decoration: none;
+
+  &:hover {
+
+    .siteNav_linkIcon {
+      fill: $core-color-brand;
+    }
+
+    .siteNav_linkText {
+      color: $core-color-brand;
+    }
+  }
 }
 
 .siteNav_linkIcon {
   size: 25px;
   fill: $core-color-dark;
   margin-bottom: 3px;
+
+  @include respond-to(l) {
+    @include transition-025;
+  }
 }
 
 .siteNav_linkText {
@@ -68,6 +114,10 @@
   color: $core-color-dark;
   font-size: 0.95rem;
   text-align: center;
+
+  @include respond-to(l) {
+    @include transition-025;
+  }
 }
 
 .siteNav_link--active .siteNav_linkText {

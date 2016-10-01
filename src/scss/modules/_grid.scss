@@ -6,7 +6,7 @@ $breakpoints: (
   s: 600px,
   m: 768px,
   l: 992px,
-  xl: 1200px
+  xl: 1230px
 );
 
 @mixin respond-to($name) {
@@ -125,28 +125,93 @@ $breakpoints: (
   top: 0;
   left: 0;
   size: 100%;
+  z-index: -1;
+
+  @include respond-to(m) {
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -$core-grid-unit;
+      size: 1px 100%;
+      background: $core-color-dark;
+      opacity: 0.15;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: -$core-grid-unit;
+      size: 1px 100%;
+      background: $core-color-dark;
+      opacity: 0.15;
+    }
+  }
 }
 
 .gridGuide {
   position: absolute;
   size: 100%;
   min-height: auto;
+  z-index: 1;
 
-  &::before, &::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    size: 1px 100%;
-    background: $core-color-dark;
-    opacity: 0.1;
-    z-index: z(alpha);
+  &:nth-of-type(1) {
+
+    &::before, &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      size: 1px 100%;
+      background: $core-color-dark;
+      opacity: 0.15;
+      z-index: -1;
+    }
+
+    &::before {
+      left: $core-grid-unit;
+    }
+
+    &::after {
+      right: $core-grid-unit;
+    }
   }
 
-  &::before {
-    left: 15px;
-  }
+  @include respond-to(m) {
+    width: 25%;
 
-  &::after {
-    right: 15px;
+    &:nth-of-type(1) {
+      left: 0;
+    }
+
+    &:nth-of-type(2) {
+      left: 25%;
+    }
+
+    &:nth-of-type(3) {
+      left: 50%;
+    }
+
+    &:nth-of-type(4) {
+      left: 75%;
+    }
+
+    &::before, &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      size: 1px 100%;
+      background: $core-color-dark;
+      opacity: 0.15;
+      z-index: -1;
+    }
+
+    &::before {
+      left: $core-grid-unit;
+    }
+
+    &::after {
+      right: $core-grid-unit;
+    }
   }
 }
