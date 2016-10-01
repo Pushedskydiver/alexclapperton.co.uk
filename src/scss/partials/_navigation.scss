@@ -15,7 +15,6 @@
 
   @include respond-to(m) {
     @include grid(null, row, nul);
-    padding: 0 $core-grid-unit;
   }
 }
 

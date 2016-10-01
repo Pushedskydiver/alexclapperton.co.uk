@@ -6,10 +6,6 @@
 
 .siteSection--flex {
 
-  @include respond-to(m) {
-    padding: 0 $core-grid-unit;
-  }
-
   @include respond-to(xl) {
     @include grid(wrap, row, space-between);
   }

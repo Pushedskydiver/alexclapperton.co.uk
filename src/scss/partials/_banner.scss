@@ -7,7 +7,7 @@
 
   .container {
     height: 100%;
-    padding: 15px;
+    padding: $core-grid-unit;
   }
 
   @include respond-to(s) {
