@@ -6,7 +6,7 @@
 
 .siteSection--flex {
 
-  @include respond-to(xl) {
+  @include respond-to(l) {
     @include grid(wrap, row, space-between);
   }
 }
@@ -14,7 +14,7 @@
 .siteSection_flexItem {
   margin-bottom: 15px;
 
-  @include respond-to(xl) {
-    width: 48%;
+  @include respond-to(l) {
+    width: 48.5%;
   }
 }

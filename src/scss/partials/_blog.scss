@@ -15,6 +15,10 @@
   }
 }
 
+.siteBlog_title {
+  padding: 0 $core-grid-unit;
+}
+
 .siteBlog--flex {
 
   @include respond-to(m) {
@@ -34,8 +38,9 @@
     width: 48%;
   }
 
-  @include respond-to(xl) {
+  @include respond-to(l) {
     width: 31%;
+    margin-bottom: 0;
   }
 }
 

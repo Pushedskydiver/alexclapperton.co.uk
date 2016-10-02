@@ -66,6 +66,10 @@
     margin: 0 auto;
     border-radius: 4px;
     z-index: -1;
+
+    @include respond-to(l) {
+      size: calc(100% - 4px) calc(100% - 2px);
+    }
   }
 }
 

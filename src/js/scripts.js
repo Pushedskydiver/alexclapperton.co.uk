@@ -187,8 +187,10 @@
     // ==============================================
     init_dummy_link();
     init_scroll_to();
-    // init_smooth_scroll_top();
     // init_contact_form();
     // init_portfolio();
+    if (!$('body').hasClass('mobile')) {
+      init_smooth_scroll_top();
+    }
 
 })(window.jQuery);
