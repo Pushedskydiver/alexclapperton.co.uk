@@ -1,8 +1,6 @@
 image: node:4.2.2
 
 pages:
-  tags:
-  - my_private_runner
   cache:
     paths:
     - node_modules/
