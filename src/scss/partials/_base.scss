@@ -130,7 +130,7 @@ img {
 }
 
 svg {
-  
+
   @include respond-to(l) {
     @include transition-025;
   }

@@ -1,18 +1,21 @@
 .siteBlog {
   position: relative;
-  padding: 15px 0;
 
   .container {
     height: 100%;
+    padding: $core-grid-unit;
   }
 
   @include respond-to(m) {
-    padding: 0;
 
     .container {
       padding: 30px 0;
     }
   }
+}
+
+.siteBlog--white {
+  background: $core-color-light;
 }
 
 .siteBlog_title {
@@ -28,6 +31,7 @@
 }
 
 .siteBlog_item {
+  position: relative;
   margin-bottom: 30px;
 
   &:last-child {
@@ -36,16 +40,42 @@
 
   @include respond-to(m) {
     width: 48%;
+    margin-bottom: ($core-grid-unit * 4);
+
+    &:nth-of-type(3) {
+      margin-bottom: 0;
+    }
   }
 
   @include respond-to(l) {
     width: 32%;
-    margin-bottom: 0;
+
+    &:nth-of-type(3) {
+      margin-bottom: ($core-grid-unit * 4);
+    }
+  }
+}
+
+.siteBlog_itemImgLink {
+  display: block;
+
+  @include respond-to(l) {
+    overflow: hidden;
+
+    &:hover .siteBlog_itemImg {
+      -ms-transform: scale(1.1);
+      -webkit-transform: scale(1.1);
+      transform: scale(1.1);
+    }
   }
 }
 
 .siteBlog_itemImg {
   width: 100%;
+
+  @include respond-to(l) {
+    @include transition-025;
+  }
 }
 
 .siteBlog_itemDesc {
@@ -60,5 +90,11 @@
 
 .siteBlog_itemDate {
   display: block;
+  position: absolute;
+  top: $core-grid-unit;
+  right: $core-grid-unit;
+  background: $core-color-brand;
+  color: $core-color-light;
+  padding: ($core-grid-unit / 2) $core-grid-unit;
   margin-bottom: 10px;
 }

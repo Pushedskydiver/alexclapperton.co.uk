@@ -10,7 +10,6 @@
   }
 
   @include respond-to(m) {
-    padding: 0;
     margin-top: 58px;
   }
 }
@@ -30,6 +29,18 @@
 .siteBanner_blog {
   .container {
     background: url('../images/banner/wordpress-frame.png') no-repeat center bottom;
+    background-size: calc(100% - 24px);
+
+    @include respond-to(m) {
+      background-position: calc(100% - 12px) bottom;
+      background-size: 50%;
+    }
+  }
+}
+
+.siteBanner_contact {
+  .container {
+    background: url('../images/banner/contact-frame.png') no-repeat center bottom;
     background-size: calc(100% - 24px);
 
     @include respond-to(m) {
