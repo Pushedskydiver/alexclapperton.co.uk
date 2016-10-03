@@ -1,0 +1,62 @@
+.btnLink {
+  display: inline-block;
+  padding: 8px 15px;
+  text-decoration: none;
+}
+
+.btnLink_noPadding {
+  display: inline-block;
+  font-size: ($core-font-size * 1.15);
+  font-weight: $core-secondary-font-weight;
+  text-decoration: none;
+
+  @include respond-to(l) {
+
+    &:hover .btnLink_icon {
+      margin-left: 10px;
+    }
+  }
+}
+
+.btnLink_noPadding--pink {
+  color: $core-color-brand;
+}
+
+.btnLink--pink {
+  background: $core-color-brand;
+  color: $core-color-light;
+
+  @include respond-to(l) {
+    &:hover {
+      background: $core-color-dark;
+    }
+  }
+}
+
+.btnLink--grey {
+  background: $core-color-dark;
+  color: $core-color-light;
+}
+
+.btnLink_text {
+  text-decoration: none;
+}
+
+.btnLink--flex {
+  -webkit-align-self: flex-start;
+  -ms-flex-item-align: start;
+  align-self: flex-start;
+}
+
+.btnLink_icon {
+  size: 19px;
+  vertical-align: middle;
+}
+
+.btnLink_icon--pink {
+  fill: $core-color-brand;
+}
+
+.btnLink_icon--white {
+  fill: $core-color-light;
+}

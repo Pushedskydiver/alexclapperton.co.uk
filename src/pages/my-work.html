@@ -12,7 +12,7 @@
     <link rel="icon" type="image/ico" href="images/favicon.ico">
 
     <!-- PAGE TITLE -->
-    <title>Alex Clapperton</title>
+    <title>My Work | Alex Clapperton</title>
 
     <!-- STYLESHEET -->
     <link rel="stylesheet" type="text/css" href="css/main.css">
@@ -21,7 +21,7 @@
 
   <body>
 
-    <!-- ******************** SITE HEADER : Start ******************** /-->
+    <!-- ******************** SITE HEADER : Start ********************-->
     <header class="siteHeader">
       <!-- BEGIN : CONTAINER -->
       <div class="container">
@@ -41,7 +41,7 @@
           <!-- BEGIN : SITE NAV -->
           <nav class="siteNav" id="nav">
             <!-- BEGIN : SITE NAV LINK -->
-            <a href="index.html" class="siteNav_link  siteNav_link--active">
+            <a href="index.html" class="siteNav_link">
               <svg class="siteNav_linkIcon">
                 <title>Home icon</title>
                 <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="images/icons/sprite.svg#home"></use>
@@ -50,7 +50,7 @@
             </a>
             <!-- END : SITE NAV LINK /-->
             <!-- BEGIN : SITE NAV LINK -->
-            <a href="my-work.html" class="siteNav_link">
+            <a href="my-work.html" class="siteNav_link  siteNav_link--active">
               <svg class="siteNav_linkIcon">
                 <title>Porfolio icon</title>
                 <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="images/icons/sprite.svg#portfolio"></use>
@@ -68,7 +68,7 @@
             </a>
             <!-- END : SITE NAV LINK /-->
             <!-- BEGIN : SITE NAV LINK -->
-            <a href="contact.html" class="siteNav_link">
+            <a href="contact.htmlt" class="siteNav_link">
               <svg class="siteNav_linkIcon">
                 <title>Contact icon</title>
                 <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="images/icons/sprite.svg#mobile"></use>
@@ -86,8 +86,8 @@
     <!-- ******************** SITE HEADER : End ******************** /-->
 
 
-    <!-- ******************** SITE BANNER : Start ******************** /-->
-    <section class="siteBanner  siteBanner--large">
+    <!-- ******************** SITE BANNER : Start ********************-->
+    <section class="siteBanner  siteBanner--small  siteBanner_work">
       <!-- BEGIN : CONTAINER -->
       <div class="container">
         <!-- BEGIN : GRID GUIDES -->
@@ -100,148 +100,125 @@
         <!-- END : GRID GUIDES /-->
         <!-- BEGIN : SITE BANNER FLEX -->
         <div class="siteBanner--flex">
-          <h1 class="siteBanner_Title">Hello! <br> My name is <br> Alex Clapperton</h1>
-          <p class="siteBanner_Text">
-            I am a <b>Manchester</b> based Junior/Freelance <b>Front End Web Developer</b> and a final year University student.
-          </p>
+          <h1 class="siteBanner_Title">Check out <br> my latest work</h1>
+          <div class="siteBanner_breadcrumbs">
+            <span class="siteBanner_breadcrumbsItem"><a class="siteBanner_breadcrumbsLink" href="index.html">Home</a></span>
+            <span class="siteBanner_breadcrumbsItem  siteBanner_breadcrumbsItem--active">My Work</span>
+          </div>
         </div>
         <!-- END : SITE BANNER FLEX -->
       </div>
       <!-- END : CONTAINER -->
     </section>
-    <!-- ******************** SITE BANNER : End /******************** /-->
+    <!-- ******************** SITE BANNER : End ******************** /-->
 
 
-    <!-- ******************** SITE SECTION : Start ******************** /-->
-    <section class="siteSection" id="content">
+    <!-- ******************** SITE PORTFOLIO : Start ********************-->
+    <section class="sitePortfolio" id="content">
       <!-- BEGIN : CONTAINER -->
       <div class="container">
-        <!-- BEGIN : SITE SECTION FLEX -->
-        <div class="siteSection--flex">
-          <!-- BEGIN : SITE SECTION FLEX ITEM -->
-          <div class="siteSection_flexItem">
-            <h2>Who am I?</h2>
-            <p>
-              I have had a passion for Web Development since 2012 where I started my own little <b>Wordpress</b> site where I blogged about my love for <b>Apple</b> products. It was there I found an interest into how websites were made and decided to head to the <b><a href="#" title="External link to the Manchester Metropolitan University website.">Manchester Metropolitan University</a></b> to expand my knowledge of Web Development further.
-            </p>
-            <p>
-              I thrive off learning new skills, being challenged daily and having to prove myself under pressure and being part of such young and dynamic industry is the perfect motivation for me to keep improving myself both professionally and personally.
-            </p>
-            <a class="btnLink  btnLink--pink  btnLink--flex" href="#">
-              <span class="btnLink_text">Download My CV</span>
-              <svg class="btnLink_icon  btnLink_icon--white">
-                <title>Download icon</title>
-                <use xlink:href="images/icons/sprite.svg#download" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
-              </svg>
-            </a>
-          </div>
-          <!-- END : SITE SECTION FLEX ITEM /-->
-          <!-- BEGIN : SITE SECTION FLEX ITEM -->
-          <div class="siteSection_flexItem">
-            <h2>My Future</h2>
-            <p>
-              Currently I work part-time as a Front End Developer for a small creative agency known as <b><a href="#" title="External link to the Nuttersons website.">Nuttersons</a></b>, based in Manchester. My main focus currently is to get the best degree possible at university and expanding on my level of skills. When I finally do graduate I will be heading down the path of Front End Development as this is the area I am most passionate about.
-            </p>
-            <p>
-              Further down the line, I would like to be able to gain the courage to do a talk at a conference or meet up as I feel I will be giving something back to this great industry I am in. I would also like to be able to become a full-time freelance developer once I have gained enough experience within the industry.
-            </p>
-          </div>
-          <!-- END : SITE SECTION FLEX ITEM /-->
+        <!-- BEGIN : SITE PORTFOLIO FILTER -->
+        <div class="sitePortfolio_filter  sitePortfolio_filter--flex">
+          <button class="sitePortfolio_filterBtn  sitePortfolio_filterBtn--active" type="button" name="button" data-filter="*">All Work</button>
+          <button class="sitePortfolio_filterBtn" type="button" name="button" data-filter=".uni">University Projects</button>
+          <button class="sitePortfolio_filterBtn" type="button" name="button" data-filter=".personal">Personal Projects</button>
         </div>
-        <!-- END : SITE SECTION FLEX /-->
+        <!-- END : SITE PORTFOLIO FILTER /-->
+        <!-- BEGIN : SITE PORTFOLIO GRID -->
+        <div class="sitePortfolio_grid">
+          <!-- BEGIN : SITE PORTFOLIO ITEM -->
+          <figure class="sitePortfolio_item  uni">
+            <img class="sitePortfolio_itemImg" src="images/portfolio/portfolio.jpg" alt="" />
+            <figcaption class="sitePortfolio_itemDesc">
+              <a class="sitePortfolio_itemLink" href="#">
+                <h3 class="sitePortfolio_itemTitle">Love Manchester Website</h3>
+                <span class="sitePortfolio_itemText">University Project</span>
+                <svg class="sitePortfolio_itemIcon">
+                  <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="images/icons/sprite.svg#graduation-cap"></use>
+                </svg>
+              </a>
+            </figcaption>
+          </figure>
+          <!-- END : SITE PORTFOLIO ITEM /-->
+          <!-- BEGIN : SITE PORTFOLIO ITEM -->
+          <figure class="sitePortfolio_item  uni">
+            <img class="sitePortfolio_itemImg" src="images/portfolio/portfolio.jpg" alt="" />
+            <figcaption class="sitePortfolio_itemDesc">
+              <a class="sitePortfolio_itemLink" href="#">
+                <h3 class="sitePortfolio_itemTitle">MMU ICO Website</h3>
+                <span class="sitePortfolio_itemText">University Project</span>
+                <svg class="sitePortfolio_itemIcon">
+                  <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="images/icons/sprite.svg#graduation-cap"></use>
+                </svg>
+              </a>
+            </figcaption>
+          </figure>
+          <!-- END : SITE PORTFOLIO ITEM /-->
+          <!-- BEGIN : SITE PORTFOLIO ITEM -->
+          <figure class="sitePortfolio_item  personal">
+            <img class="sitePortfolio_itemImg" src="images/portfolio/portfolio.jpg" alt="" />
+            <figcaption class="sitePortfolio_itemDesc">
+              <a class="sitePortfolio_itemLink" href="#">
+                <h3 class="sitePortfolio_itemTitle">Website Portfolio 2014</h3>
+                <span class="sitePortfolio_itemText">Personal Project</span>
+                <svg class="sitePortfolio_itemIcon">
+                  <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="images/icons/sprite.svg#user"></use>
+                </svg>
+              </a>
+            </figcaption>
+          </figure>
+          <!-- END : SITE PORTFOLIO ITEM /-->
+          <!-- BEGIN : SITE PORTFOLIO ITEM -->
+          <figure class="sitePortfolio_item  uni">
+            <img class="sitePortfolio_itemImg" src="images/portfolio/portfolio.jpg" alt="" />
+            <figcaption class="sitePortfolio_itemDesc">
+              <a class="sitePortfolio_itemLink" href="#">
+                <h3 class="sitePortfolio_itemTitle">MMU ICO Website</h3>
+                <span class="sitePortfolio_itemText">University Project</span>
+                <svg class="sitePortfolio_itemIcon">
+                  <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="images/icons/sprite.svg#graduation-cap"></use>
+                </svg>
+              </a>
+            </figcaption>
+          </figure>
+          <!-- END : SITE PORTFOLIO ITEM /-->
+          <!-- BEGIN : SITE PORTFOLIO ITEM -->
+          <figure class="sitePortfolio_item personal">
+            <img class="sitePortfolio_itemImg" src="images/portfolio/portfolio.jpg" alt="" />
+            <figcaption class="sitePortfolio_itemDesc">
+              <a class="sitePortfolio_itemLink" href="#">
+                <h3 class="sitePortfolio_itemTitle">Website Portfolio 2015</h3>
+                <span class="sitePortfolio_itemText">Personal Project</span>
+                <svg class="sitePortfolio_itemIcon">
+                  <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="images/icons/sprite.svg#user"></use>
+                </svg>
+              </a>
+            </figcaption>
+          </figure>
+          <!-- END : SITE PORTFOLIO ITEM /-->
+          <!-- BEGIN : SITE PORTFOLIO ITEM -->
+          <figure class="sitePortfolio_item  uni">
+            <img class="sitePortfolio_itemImg" src="images/portfolio/portfolio.jpg" alt="" />
+            <figcaption class="sitePortfolio_itemDesc">
+              <a class="sitePortfolio_itemLink" href="#">
+                <h3 class="sitePortfolio_itemTitle">MMU ICO Website</h3>
+                <span class="sitePortfolio_itemText">University Project</span>
+                <svg class="sitePortfolio_itemIcon">
+                  <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="images/icons/sprite.svg#graduation-cap"></use>
+                </svg>
+              </a>
+            </figcaption>
+          </figure>
+          <!-- END : SITE PORTFOLIO ITEM /-->
+        </div>
+        <!-- END : SITE PORTFOLIO GRID /-->
       </div>
       <!-- END : CONTAINER /-->
     </section>
-    <!-- ******************** SITE SECTION : End /******************** /-->
+    <!-- ******************** SITE PORTFOLIO : End ******************** /-->
 
 
-    <!-- ******************** SITE BLOG : Start ******************** /-->
-    <section class="siteBlog">
-      <!-- BEGIN : CONTAINER -->
-      <div class="container">
-        <!-- BEGIN : GRID GUIDES -->
-        <div class="gridGuides">
-          <div class="gridGuide"></div>
-          <div class="gridGuide"></div>
-          <div class="gridGuide"></div>
-          <div class="gridGuide"></div>
-        </div>
-        <!-- END : GRID GUIDES /-->
-        <h2 class="siteBlog_title">Latest Blog Posts</h2>
-        <!-- BEGIN : SITE BLOG FLEX -->
-        <div class="siteBlog--flex">
-          <!-- BEGIN : SITE BLOG ITEM -->
-          <div class="siteBlog_item">
-            <img class="siteBlog_itemImg" src="images/blog/blog.jpg" alt="" />
-            <!-- BEGIN : SITE BLOG ITEM DESCRIPTION -->
-            <div class="siteBlog_itemDesc">
-              <h3 class="siteBlog_itemTitle">There on the Lake Missouri</h3>
-              <span class="siteBlog_itemDate">September 30, 2016</span>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Int get commodo tristique odio, qui is aliquet ut.
-              </p>
-              <a class="btnLink_noPadding  btnLink_noPadding--pink  btnLink--flex" href="#">
-                <span class="btnLink_text">Read Post</span>
-                <svg class="btnLink_icon  btnLink_icon--pink">
-                  <title>Arrow pointing right</title>
-                  <use xlink:href="images/icons/sprite.svg#arrow-right" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
-                </svg>
-              </a>
-            </div>
-            <!-- END : SITE BLOG ITEM DESCRIPTION /-->
-          </div>
-          <!-- END : SITE BLOG ITEM /-->
-          <!-- BEGIN : SITE BLOG ITEM -->
-          <div class="siteBlog_item">
-            <img class="siteBlog_itemImg" src="images/blog/blog.jpg" alt="" />
-            <!-- BEGIN : SITE BLOG ITEM DESCRIPTION -->
-            <div class="siteBlog_itemDesc">
-              <h3 class="siteBlog_itemTitle">There on the Lake Missouri</h3>
-              <span class="siteBlog_itemDate">September 30, 2016</span>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Int get commodo tristique odio, qui is aliquet ut.
-              </p>
-              <a class="btnLink_noPadding  btnLink_noPadding--pink  btnLink--flex" href="#">
-                <span class="btnLink_text">Read Post</span>
-                <svg class="btnLink_icon  btnLink_icon--pink">
-                  <title>Arrow pointing right</title>
-                  <use xlink:href="images/icons/sprite.svg#arrow-right" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
-                </svg>
-              </a>
-            </div>
-            <!-- END : SITE BLOG ITEM DESCRIPTION /-->
-          </div>
-          <!-- END : SITE BLOG ITEM /-->
-          <!-- BEGIN : SITE BLOG ITEM -->
-          <div class="siteBlog_item">
-            <img class="siteBlog_itemImg" src="images/blog/blog.jpg" alt="" />
-            <!-- BEGIN : SITE BLOG ITEM DESCRIPTION -->
-            <div class="siteBlog_itemDesc">
-              <h3 class="siteBlog_itemTitle">There on the Lake Missouri</h3>
-              <span class="siteBlog_itemDate">September 30, 2016</span>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Int get commodo tristique odio, qui is aliquet ut.
-              </p>
-              <a class="btnLink_noPadding  btnLink_noPadding--pink  btnLink--flex" href="#">
-                <span class="btnLink_text">Read Post</span>
-                <svg class="btnLink_icon  btnLink_icon--pink">
-                  <title>Arrow pointing right</title>
-                  <use xlink:href="images/icons/sprite.svg#arrow-right" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
-                </svg>
-              </a>
-            </div>
-            <!-- END : SITE BLOG ITEM DESCRIPTION /-->
-          </div>
-          <!-- END : SITE BLOG ITEM /-->
-        </div>
-        <!-- END : SITE BLOG FLEX /-->
-      </div>
-      <!-- END : CONTAINER /-->
-    </section>
-    <!-- ******************** SITE BLOG : End /******************** /-->
-
-
-    <!-- ******************** SITE FOOTER : Start ******************** /-->
+    <!-- ******************** SITE FOOTER : Start ********************-->
     <footer class="siteFooter">
       <!-- BEGIN : CONTAINER -->
       <div class="container">
@@ -322,7 +299,7 @@
       </div>
       <!-- END : CONTAINER /-->
     </footer>
-    <!-- ******************** SITE FOOTER : End /******************** /-->
+    <!-- ******************** SITE FOOTER : End ******************** /-->
 
 
     <!--/ Scroll to top -->

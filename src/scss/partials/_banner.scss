@@ -1,6 +1,5 @@
 .siteBanner {
   position: relative;
-  size: 100% 110vh;
   @include grid(null, column, null);
   //background: url('../images/person.png') no-repeat center bottom;
   //background-size: 120%;
@@ -10,14 +9,65 @@
     padding: $core-grid-unit;
   }
 
+  @include respond-to(m) {
+    padding: 0;
+    margin-top: 58px;
+  }
+}
+
+.siteBanner_work {
+  .container {
+    background: url('../images/banner/browser-frame.png') no-repeat center bottom;
+    background-size: calc(100% - 24px);
+
+    @include respond-to(m) {
+      background-position: calc(100% - 12px) bottom;
+      background-size: 50%;
+    }
+  }
+}
+
+.siteBanner_blog {
+  .container {
+    background: url('../images/banner/wordpress-frame.png') no-repeat center bottom;
+    background-size: calc(100% - 24px);
+
+    @include respond-to(m) {
+      background-position: calc(100% - 12px) bottom;
+      background-size: 50%;
+    }
+  }
+}
+
+.siteBanner--large {
+  size: 100% 110vh;
+
   @include respond-to(s) {
     height: 100vh;
   }
 
   @include respond-to(m) {
     height: 500px;
-    padding: 0;
-    margin-top: 58px;
+  }
+}
+
+.siteBanner--small {
+  size: 100% 400px;
+
+  @include respond-to(xs) {
+    height: 550px;
+  }
+
+  @include respond-to(s) {
+    height: 650px;
+  }
+
+  @include respond-to(m) {
+    height: 400px;
+  }
+
+  @include respond-to(xl) {
+    height: 550px;
   }
 }
 
@@ -50,5 +100,37 @@
 
   @include respond-to(m) {
     align-self: flex-start;
+  }
+}
+
+.siteBanner_breadcrumbs {
+  @include grid(null, row, null);
+}
+
+.siteBanner_breadcrumbsItem {
+  font-size: ($core-font-size * 1.2);
+
+  &::after {
+    content: '/';
+    color: $core-color-brand;
+    margin: 0 5px;
+  }
+
+  &:last-child::after {
+    display: none;
+  }
+}
+
+.siteBanner_breadcrumbsItem--active {
+  display: block;
+  color: $core-color-dark;
+}
+
+.siteBanner_breadcrumbsLink {
+
+  @include respond-to(l) {
+    &:hover {
+      color: $core-color-dark;
+    }
   }
 }

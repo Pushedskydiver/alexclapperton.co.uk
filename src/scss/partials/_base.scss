@@ -47,6 +47,7 @@ h1 {
   color: $core-color-brand;
   font-family: $core-secondary-font-family;
   font-size: ($core-font-size * 1.8);
+  font-weight: $core-secondary-font-weight;
   margin: 0 0 $core-grid-unit 0;
   line-height: $core-line-height;
 }
@@ -55,6 +56,7 @@ h2 {
   color: $core-color-brand;
   font-family: $core-secondary-font-family;
   font-size: ($core-font-size * 1.65);
+  font-weight: $core-secondary-font-weight;
   margin: 0 0 $core-grid-unit 0;
   line-height: $core-line-height;
 
@@ -66,6 +68,7 @@ h2 {
 h3 {
   font-family: $core-secondary-font-family;
   font-size: ($core-font-size * 1.5);
+  font-weight: $core-secondary-font-weight;
   margin: 0 0 $core-grid-unit 0;
   line-height: $core-line-height;
 
@@ -77,6 +80,7 @@ h3 {
 h4 {
   font-family: $core-secondary-font-family;
   font-size: ($core-font-size * 1.35);
+  font-weight: $core-secondary-font-weight;
   margin: 0 0 $core-grid-unit 0;
   line-height: $core-line-height;
 
@@ -88,6 +92,7 @@ h4 {
 h5 {
   font-family: $core-secondary-font-family;
   font-size: ($core-font-size * 1.2);
+  font-weight: $core-secondary-font-weight;
   margin: 0 0 $core-grid-unit 0;
   line-height: $core-line-height;
 
@@ -99,6 +104,7 @@ h5 {
 h6 {
   font-family: $core-secondary-font-family;
   font-size: ($core-font-size * 1.15);
+  font-weight: $core-secondary-font-weight;
   margin: 0 0 $core-grid-unit 0;
   line-height: $core-line-height;
 
@@ -116,6 +122,18 @@ p {
 figure {
   padding: 0;
   margin: 0;
+}
+
+img {
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+svg {
+  
+  @include respond-to(l) {
+    @include transition-025;
+  }
 }
 
 button {
@@ -148,71 +166,6 @@ a {
 
   @include respond-to(xl) {
     width: 1200px;
-  }
-}
-
-.btnLink {
-  display: inline-block;
-  padding: 8px 15px;
-  text-decoration: none;
-
-  @include respond-to(l) {
-    &:hover {
-      background: $core-color-dark;
-    }
-  }
-}
-
-.btnLink--pink {
-  background: $core-color-brand;
-  color: $core-color-light;
-}
-
-.btnLink--grey {
-  background: $core-color-dark;
-  color: $core-color-light;
-}
-
-.btnLink_text {
-  text-decoration: none;
-}
-
-.btnLink--flex {
-  -webkit-align-self: flex-start;
-  -ms-flex-item-align: start;
-  align-self: flex-start;
-}
-
-.btnLink_icon {
-  size: 17px;
-  fill: $core-color-light;
-  vertical-align: middle;
-}
-
-.speechBlock {
-  display: inline-block;
-  position: relative;
-  padding: 4px 20px 4px 20px;
-  margin-bottom: 20px;
-
-  &::before {
-    content: '';
-    position: absolute;
-    top: 55%;
-    left: 0;
-    border-right: 14px solid rgba(0, 0, 0, 0);
-    margin: 10px 0 0 10px;
-    height: 0;
-    width: 0;
-  }
-}
-
-.speechBlock--blue {
-  background: #1282a2;
-  color: $core-color-light;
-
-  &::before {
-    border-top: 10px solid #1282a2;
   }
 }
 

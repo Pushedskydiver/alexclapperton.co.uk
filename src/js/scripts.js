@@ -162,18 +162,18 @@
     //    Portfolio grid & filter
     // ==============================================
     function init_portfolio() {
-      var $grid = $('.portfolioBlock_grid'),
-          $grid_filter = $('.portfolioBlock_filter'),
-          $grid_selectors = $('.portfolioBlock_filterBtn');
+      var $grid = $('.sitePortfolio_grid'),
+          $grid_filter = $('.sitePortfolio_filter'),
+          $grid_selectors = $('.sitePortfolio_filterBtn');
 
       imagesLoaded($grid, function(){
         $grid.isotope({
-          itemSelector: '.portfolioBlock_portfolioItem',
+          itemSelector: '.sitePortfolio_item',
           layoutMode: 'fitRows'
         });
         $grid_selectors.on( 'click', function() {
-          $grid_selectors.removeClass('portfolioBlock_filterBtn--active');
-          $(this).addClass('portfolioBlock_filterBtn--active');
+          $grid_selectors.removeClass('sitePortfolio_filterBtn--active');
+          $(this).addClass('sitePortfolio_filterBtn--active');
           var filterValue = $(this).attr('data-filter');
           $grid.isotope({ filter: filterValue });
           return false;
@@ -188,7 +188,8 @@
     init_dummy_link();
     init_scroll_to();
     // init_contact_form();
-    // init_portfolio();
+    init_portfolio();
+
     if (!$('body').hasClass('mobile')) {
       init_smooth_scroll_top();
     }
