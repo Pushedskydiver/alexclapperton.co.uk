@@ -1,0 +1,138 @@
+.siteContact {
+  background: $core-color-light;
+  padding: 30px 0;
+}
+
+.siteContact--flex {
+
+  @include respond-to(m) {
+    @include grid(wrap, row, space-between);
+  }
+}
+
+.siteContact_flexItem {
+
+  @include respond-to(m) {
+    width: 48%;
+  }
+}
+
+.siteContact_field {
+  position: relative;
+  margin-top: 25px;
+
+  @include respond-to(m) {
+    margin-top: ($core-grid-unit * 3);
+  }
+}
+
+.siteContact_input {
+  width: 100%;
+  background: $core-color-neutral;
+  color: $core-color-dark;
+  font-family: $core-font-family;
+  font-size: $core-font-size;
+  padding: ($core-grid-unit / 1.5) $core-grid-unit;
+  border: none;
+
+  &:focus ~ .siteContact_label,
+  &:valid ~ .siteContact_label {
+    opacity: 0;
+  }
+
+  @include respond-to(l) {
+    padding: $core-grid-unit;
+    @include transition-025;
+
+    &:focus, &:valid {
+      background: transparent;
+      color: $core-color-brand;
+      border-bottom: 1px solid $core-color-brand;
+    }
+
+    &:focus ~ .siteContact_label,
+    &:valid ~ .siteContact_label {
+      top: -20px;
+      font-size: 1rem;
+      opacity: 1;
+    }
+  }
+}
+
+.siteContact_label {
+  position: absolute;
+  top: ($core-grid-unit / 1.5);
+  left: $core-grid-unit;
+  font-family: $core-secondary-font-family;
+  font-weight: $core-secondary-font-weight;
+  pointer-events:none;
+  @include transition-025;
+
+  @include respond-to(l) {
+    top: $core-grid-unit;
+  }
+}
+
+.siteContact_textarea {
+  width: 100%;
+  background: $core-color-neutral;
+  color: $core-color-dark;
+  font-family: $core-font-family;
+  font-size: $core-font-size;
+  padding: ($core-grid-unit / 1.5) $core-grid-unit;
+  border: none;
+
+  &:focus ~ .siteContact_label,
+  &:valid ~ .siteContact_label {
+    opacity: 0;
+  }
+
+  @include respond-to(l) {
+    @include transition-025;
+
+    &:focus, &:valid {
+      background: transparent;
+      color: $core-color-brand;
+      border-bottom: 1px solid $core-color-brand;
+    }
+
+    &:focus ~ .siteContact_label,
+    &:valid ~ .siteContact_label {
+      top: -20px;
+      font-size: 1rem;
+      opacity: 1;
+    }
+  }
+}
+
+.siteContact_btn {
+  background: $core-color-brand;
+  color: $core-color-light;
+  font-family: $core-font-family;
+  font-size: $core-font-size;
+  padding: 8px 15px;
+  margin-top: 25px;
+
+  @include respond-to(l) {
+    cursor: pointer;
+
+    &:hover, &:focus {
+      @include cd-pulse;
+    }
+  }
+}
+
+.siteContact_btnText {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.siteContact_btnIcon {
+  size: 19px;
+  fill: $core-color-light;
+  vertical-align: middle;
+}
+
+.siteContact_loading--displayNone {
+  display: none;
+}

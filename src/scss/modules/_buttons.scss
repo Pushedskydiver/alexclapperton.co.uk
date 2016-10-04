@@ -27,8 +27,8 @@
   color: $core-color-light;
 
   @include respond-to(l) {
-    &:hover {
-      background: $core-color-dark;
+    &:hover, &:focus {
+      @include cd-pulse;
     }
   }
 }

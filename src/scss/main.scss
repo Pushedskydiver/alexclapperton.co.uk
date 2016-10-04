@@ -1,12 +1,12 @@
 
 @import "modules/core-config";
 @import "modules/z-index";
+@import "modules/keyframes";
 @import "modules/grid";
 @import "modules/typography";
 @import "modules/buttons";
 @import "modules/transitions";
 @import "modules/transforms";
-@import "modules/keyframes";
 
 @import "partials/base";
 @import "partials/skip-links";
@@ -16,4 +16,5 @@
 @import "partials/section";
 @import "partials/blog";
 @import "partials/portfolio";
+@import "partials/contact";
 @import "partials/footer";

@@ -103,23 +103,23 @@
     // ==============================================
     function init_contact_form() {
       //contact form button event
-      $(".button_submit").on('click',function (event) {
+      $(".siteContact_btn").on('click',function (event) {
           var error = init_validate_form();
           var _this = $(this);
           if (error) {
-              _this.next('.loading').removeClass('display-none');
+              _this.next('.loading').removeClass('loading--displayNone');
               _this.prop('disabled', true);
               $.ajax({
                   type: "POST",
                   url: "forms/contact.php",
-                  data: $(".contactForm").serialize(),
+                  data: $(".siteContact_form").serialize(),
                   success: function (result) {
                       $('input[type=text],textarea').each(function () {
                           $(this).val('');
                       })
-                      $(".contactForm_message").html(result);
-                      $(".contactForm_message").fadeIn("slow");
-                      $('.contactForm_message').delay(4000).fadeOut("slow");
+                      $(".siteContact_message").html(result);
+                      $(".siteContact_message").fadeIn("slow");
+                      $('.siteContact_message').delay(4000).fadeOut("slow");
                       _this.next('.loading').addClass('display-none');
                       _this.prop('disabled', false);
                   },
@@ -133,22 +133,22 @@
 
       function init_validate_form() {
           var error = true;
-          $('.contactForm input[type=text]').each(function (index) {
+          $('.siteContact_form input[type=text]').each(function (index) {
               if (index == 0) {
                   if ($(this).val() == null || $(this).val() == "") {
-                      $(".contactForm").find("input:eq(" + index + ")").addClass("contactForm_message--error");
+                      $(".siteContact_form").find("input:eq(" + index + ")").addClass("siteContact_message--error");
                       error = false;
                   }
                   else {
-                      $(".contactForm").find("input:eq(" + index + ")").removeClass("contactForm_message--error");
+                      $(".siteContact_form").find("input:eq(" + index + ")").removeClass("siteContact_message--error");
                   }
               }
               else if (index == 1) {
                   if (!(/(.+)@(.+){2,}\.(.+){2,}/.test($(this).val()))) {
-                      $(".contactForm").find("input:eq(" + index + ")").addClass("contactForm_message--error");
+                      $(".siteContact_form").find("input:eq(" + index + ")").addClass("siteContact_message--error");
                       error = false;
                   } else {
-                      $(".contactForm").find("input:eq(" + index + ")").removeClass("contactForm_message--error");
+                      $(".siteContact_form").find("input:eq(" + index + ")").removeClass("siteContact_message--error");
                   }
               }
 
@@ -187,7 +187,7 @@
     // ==============================================
     init_dummy_link();
     init_scroll_to();
-    // init_contact_form();
+    init_contact_form();
     init_portfolio();
 
     if (!$('body').hasClass('mobile')) {
