@@ -15,6 +15,6 @@
   margin-bottom: 15px;
 
   @include respond-to(l) {
-    width: 48.5%;
+    width: calc(50% - 12px);
   }
 }

@@ -6,6 +6,6 @@ var gulp = require('gulp'),
 // HTML Minifier
 gulp.task('del', function() {
     return del([
-      './dist/fonts/**/*.css'
+      './dist/fonts/**/*.css',
     ]);
 });

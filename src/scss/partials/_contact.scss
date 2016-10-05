@@ -11,9 +11,15 @@
 }
 
 .siteContact_flexItem {
+  margin-bottom: ($core-grid-unit * 2);
+
+  &:last-child {
+    margin-bottom: 0;
+  }
 
   @include respond-to(m) {
-    width: 48%;
+    width: calc(50% - 12px);
+    margin-bottom: 0;
   }
 }
 
@@ -135,4 +141,58 @@
 
 .siteContact_loading--displayNone {
   display: none;
+}
+
+.siteContact_details {
+  margin-bottom: ($core-grid-unit * 2);
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  &:last-child .siteContact_detailsIconWrapper::after {
+    display: none;
+  }
+}
+
+.siteContact_details--flex {
+  @include grid(null, row, space-between);
+  @include align-items(center);
+}
+
+.siteContact_detailsIconWrapper {
+  position: relative;
+  size: 45px;
+  background: $core-color-neutral;
+  padding: 10px;
+  margin-right: 10px;
+  border-radius: 50%;
+  z-index: z(alpha);
+
+  &::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    bottom: -100%;
+    left: 0;
+    size: 1px 100%;
+    background: $core-color-neutral;
+    margin: 0 auto;
+    z-index: -1;
+  }
+
+  @include respond-to(m) {
+    margin-right: $core-grid-unit;
+  }
+}
+
+.siteContact_detailsIcon {
+  size: 100%;
+  fill: $core-color-dark;
+  vertical-align: middle;
+}
+
+.siteContact_detailsText {
+  flex-grow: 1;
+  font-size: ($core-font-size * 1.15);
 }

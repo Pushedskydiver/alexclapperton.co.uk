@@ -8,13 +8,15 @@
     position: fixed;
     top: 0;
     left: 0;
+    padding: 5px 0;
   }
 }
 
 .siteHeader--flex {
 
   @include respond-to(m) {
-    @include grid(null, row, nul);
+    @include grid(null, row, center);
+    @include align-items(center);
   }
 }
 
@@ -24,13 +26,15 @@
   margin: 0 auto;
 
   @include respond-to(m) {
-    width: 50%;
+    width: auto;
+    padding: 0;
     margin: 0;
-    align-self: flex-start;
+    flex-grow: 1;
   }
 
   @include respond-to(l) {
-    width: 60%;
+    @include justify-content(flex-start);
+    width: 31.333333%;
   }
 }
 
@@ -54,8 +58,6 @@
 }
 
 .siteNav {
-  @include grid(null, row, center);
-  @include align-items(center);
   position: fixed;
   bottom: 0;
   right: 0;
@@ -65,26 +67,29 @@
   margin: 0 auto;
   border-top: 1px solid darken($core-color-neutral, 15%);
   z-index: z(charlie);
+  @include grid(null, row, center);
+  @include align-items(center);
   @include transition-03;
 
   @include respond-to(m) {
     position: initial;
-    width: 50%;
+    width: auto;
     border: none;
-    align-self: flex-end;
+    flex-grow: 1;
   }
 
   @include respond-to(l) {
-    width: 40%;
+    @include justify-content(center);
+    width: 37.333333%;
   }
 }
 
 .siteNav_link {
-  @include grid(null, column, center);
-  @include align-items(center);
   position: relative;
   size: 25% 100%;
   text-decoration: none;
+  @include grid(null, column, center);
+  @include align-items(center);
 
   &:hover {
 
@@ -125,4 +130,45 @@
 
 .siteNav_link--active .siteNav_linkIcon {
   fill: $core-color-brand;
+}
+
+.socialHeader--flex {
+  display: none;
+
+  @include respond-to(l) {
+    width: 31.333333%;
+    @include grid(null, row, flex-end);
+  }
+}
+
+.socialHeader_flexItem {
+
+  @include respond-to(l) {
+    margin-right: ($core-grid-unit * 2.5);
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}
+
+.socialHeader_link {
+  display: block;
+  size: 28px;
+
+  @include respond-to(l) {
+    @include transition-025;
+
+    &:hover {
+
+      .socialHeader_linkIcon {
+        fill: $core-color-brand;
+      }
+    }
+  }
+}
+
+.socialHeader_linkIcon {
+  size: 100%;
+  fill: $core-color-dark;
 }

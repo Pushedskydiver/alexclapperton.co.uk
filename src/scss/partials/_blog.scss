@@ -25,8 +25,8 @@
 .siteBlog--flex {
 
   @include respond-to(m) {
-    @include grid(wrap, row, space-between);
     padding: 0 $core-grid-unit;
+    @include grid(wrap, row, space-between);
   }
 }
 
