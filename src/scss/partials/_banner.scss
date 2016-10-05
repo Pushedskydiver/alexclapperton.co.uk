@@ -21,7 +21,7 @@
 
     @include respond-to(m) {
       background-position: calc(100% - 12px) bottom;
-      background-size: 50%;
+      background-size: calc(50% - 24px);
     }
   }
 }
@@ -33,7 +33,7 @@
 
     @include respond-to(m) {
       background-position: calc(100% - 12px) bottom;
-      background-size: 50%;
+      background-size: calc(50% - 24px);
     }
   }
 }
@@ -45,7 +45,7 @@
 
     @include respond-to(m) {
       background-position: calc(100% - 12px) bottom;
-      background-size: 50%;
+      background-size: calc(50% - 24px);
     }
   }
 }
