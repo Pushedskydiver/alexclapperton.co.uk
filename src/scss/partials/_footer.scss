@@ -29,10 +29,18 @@
 
   @include respond-to(m) {
     width: 48%;
+
+    &:last-child {
+      display: none;
+    }
   }
 
   @include respond-to(l) {
     width: 31%;
+
+    &:last-child {
+      display: block;
+    }
   }
 }
 
@@ -41,6 +49,14 @@
   fill: $core-color-brand;
   float: left;
   margin-right: 5px;
+}
+
+.siteFooter_tweet a[data-expanded-url] {
+  display: block;
+  width: 250px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .footerSocial--flex {

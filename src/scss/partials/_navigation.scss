@@ -101,6 +101,15 @@
       color: $core-color-brand;
     }
   }
+
+  @include respond-to(l) {
+    width: auto;
+    margin-right: 40px;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
 }
 
 .siteNav_linkIcon {

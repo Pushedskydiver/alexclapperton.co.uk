@@ -3,7 +3,7 @@
 
   .container {
     height: 100%;
-    padding: $core-grid-unit;
+    padding: 30px $core-grid-unit;
   }
 
   @include respond-to(m) {
@@ -97,4 +97,53 @@
   color: $core-color-light;
   padding: ($core-grid-unit / 2) $core-grid-unit;
   margin-bottom: 10px;
+}
+
+.siteBlogPost {
+  overflow: hidden;
+}
+
+.siteBlogPost--flex {
+
+  @include respond-to(m) {
+    @include grid(wrap, row, space-between);
+  }
+}
+
+.siteBlogPost_content {
+  background: $core-color-light;
+  padding: 30px 20px;
+
+  @include respond-to(m) {
+    position: relative;
+    width: calc(75% - 6px);
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: calc(-100% - 24px);
+      size: 100%;
+      background: $core-color-light;
+    }
+  }
+}
+
+.siteBlogPost_sideBar {
+  background: $core-color-light;
+  padding: 30px 15px;
+
+  @include respond-to(m) {
+    position: relative;
+    width: calc(25% - 18px);
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: calc(-100% - 24px);
+      size: 100%;
+      background: $core-color-light;
+    }
+  }
 }

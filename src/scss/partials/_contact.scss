@@ -139,8 +139,23 @@
   vertical-align: middle;
 }
 
+.siteContact_loading {
+  font-weight: bold;
+}
+
 .siteContact_loading--displayNone {
   display: none;
+}
+
+.siteContact_message {
+  display: none;
+  background: #bff2a6;
+  padding: $core-grid-unit;
+  margin-top: ($core-grid-unit * 2);
+}
+
+.siteContact_message--error {
+  background: #f2a6a6;
 }
 
 .siteContact_details {
@@ -156,7 +171,7 @@
 }
 
 .siteContact_details--flex {
-  @include grid(null, row, space-between);
+  @include grid(null, row, null);
   @include align-items(center);
 }
 
@@ -193,6 +208,5 @@
 }
 
 .siteContact_detailsText {
-  flex-grow: 1;
   font-size: ($core-font-size * 1.15);
 }

@@ -1,21 +1,20 @@
 .skipLinks {
   position: absolute;
-  top: 0;
-  right: 0;
+  top: 10px;
   left: 0;
   width: 100%;
-  margin: 0 auto;
   text-align: center;
+  z-index: z(juliet);
 }
 
 .skipLink {
   position: absolute;
   top: 40%;
-  right: 0;
-  left: 0;
+  left: 10%;
+  margin: 0;
   text-align: center;
-  margin: 0 auto;
   color: $core-color-brand;
+  font-size: ($core-font-size * 1.05);
   font-weight: $core-secondary-font-weight;
 }
 
