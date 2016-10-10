@@ -8,9 +8,9 @@ gulp.task('critical', function () {
         .pipe(critical({
           base: config.paths.base.dest,
           css: config.paths.sass.dest + 'main.css',
-          inline: true,
+          inline: false,
           minify: true,
           ignore: ['@font-face']
         }))
-        .pipe(gulp.dest('./dist/css/critical.css'));
+        .pipe(gulp.dest('./src/css/critical'));
 });

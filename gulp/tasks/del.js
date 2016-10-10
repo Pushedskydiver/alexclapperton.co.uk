@@ -7,5 +7,6 @@ var gulp = require('gulp'),
 gulp.task('del', function() {
     return del([
       './dist/fonts/**/*.css',
+      './src/css/critical/forms'
     ]);
 });

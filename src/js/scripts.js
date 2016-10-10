@@ -111,7 +111,7 @@
               _this.prop('disabled', true);
               $.ajax({
                   type: "POST",
-                  url: "forms/contact.php",
+                  url: "http://www.alexclapperton.co.uk/forms/mailer.php",
                   data: $(".siteContact_form").serialize(),
                   success: function (result) {
                       $('.siteContact_input, .siteContact_textarea').each(function () {
