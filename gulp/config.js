@@ -16,8 +16,8 @@ module.exports = {
             src: './src/js/*.js',
             dest: './dist/js/'
         },
-        html: {
-            src: './src/pages/*.html',
+        php: {
+            src: './src/pages/**/*.php',
             dest: './dist/'
         },
         imgs: {
@@ -84,7 +84,7 @@ module.exports = {
                 {formatter: 'verbose', save: 'stylelint.txt'}
             ]
         },
-        html: {
+        php: {
             collapseWhitespace: true,
             conservativeCollapse: true,
             collapseBooleanAttributes: true,

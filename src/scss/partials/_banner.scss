@@ -93,14 +93,7 @@
 }
 
 .siteBanner_Title {
-
-  @include respond-to(xs) {
-    font-size: ($core-font-size * 2);
-  }
-
-  @include respond-to(s) {
-    font-size: ($core-font-size * 2.3);
-  }
+  @include font-size($h1-font-sizes);
 }
 
 .siteBanner_Text {
@@ -120,6 +113,7 @@
 
 .siteBanner_breadcrumbsItem {
   font-size: ($core-font-size * 1.2);
+  text-transform: capitalize;
 
   &::after {
     content: '/';

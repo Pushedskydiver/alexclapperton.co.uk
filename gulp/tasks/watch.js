@@ -14,8 +14,8 @@ gulp.task('watch', function() {
     // Watch .js files
     gulp.watch(config.paths.js.src, ['js']);
 
-    // Watch .html files
-    gulp.watch(config.paths.html.src, ['html']);
+    // Watch .php files
+    gulp.watch(config.paths.php.src, ['php']);
 
     // Watch image files
     gulp.watch(config.paths.imgs.src, ['images']);

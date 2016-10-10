@@ -17,21 +17,8 @@ body {
   margin: 0;
   @include fadein;
 
-  @include respond-to(xs) {
-    font-size: 1rem;
-  }
-
   @include respond-to(s) {
-    font-size: ($core-font-size * 1.18);
     padding-bottom: 0;
-  }
-
-  @include respond-to(m) {
-    font-size: 1rem;
-  }
-
-  @include respond-to(l) {
-    font-size: $core-font-size;
   }
 }
 
@@ -46,7 +33,7 @@ body ::selection {
 h1 {
   color: $core-color-brand;
   font-family: $core-secondary-font-family;
-  font-size: ($core-font-size * 1.8);
+  @include font-size($h1-font-sizes);
   font-weight: $core-secondary-font-weight;
   margin: 0 0 $core-grid-unit 0;
   line-height: $core-line-height;
@@ -55,38 +42,27 @@ h1 {
 h2 {
   color: $core-color-brand;
   font-family: $core-secondary-font-family;
-  font-size: ($core-font-size * 1.65);
+  @include font-size($h2-font-sizes);
   font-weight: $core-secondary-font-weight;
   margin: 0 0 $core-grid-unit 0;
   line-height: $core-line-height;
-
-  @include respond-to(s) {
-    font-size: ($core-font-size * 1.85);
-  }
 }
 
 h3 {
+  color: $core-color-dark;
   font-family: $core-secondary-font-family;
-  font-size: ($core-font-size * 1.5);
+  @include font-size($h3-font-sizes);
   font-weight: $core-secondary-font-weight;
   margin: 0 0 $core-grid-unit 0;
   line-height: $core-line-height;
-
-  @include respond-to(s) {
-    font-size: ($core-font-size * 1.5);
-  }
 }
 
 h4 {
   font-family: $core-secondary-font-family;
-  font-size: ($core-font-size * 1.35);
+  @include font-size($h4-font-sizes);
   font-weight: $core-secondary-font-weight;
   margin: 0 0 $core-grid-unit 0;
   line-height: $core-line-height;
-
-  @include respond-to(s) {
-    font-size: ($core-font-size * 1.5);
-  }
 }
 
 h5 {
@@ -115,6 +91,8 @@ h6 {
 
 p {
   color: $core-color-dark;
+  @include font-size($p-font-sizes);
+  font-weight: $core-font-weight;
   line-height: 1.7;
   margin: 0 0 15px 0;
 }
@@ -127,6 +105,7 @@ figure {
 img {
   max-width: 100%;
   margin: 0 auto;
+  vertical-align: middle;
 }
 
 svg {
@@ -166,5 +145,32 @@ a {
 
   @include respond-to(xl) {
     width: 1200px;
+  }
+}
+
+.twitter-tweet {
+  margin: ($core-grid-unit * 2) 0 !important;
+}
+
+.siteFigure {
+  width: 100%;
+  margin: ($core-grid-unit * 2) auto;
+
+  @include respond-to(m) {
+    width: 80%;
+  }
+}
+
+.siteFigure_img {
+  width: 100%;
+}
+
+.siteFigure_caption {
+  background: $core-color-neutral;
+  line-height: $core-line-height;
+  padding: ($core-grid-unit / 2) $core-grid-unit;
+
+  @include respond-to(m) {
+    text-align: center;
   }
 }

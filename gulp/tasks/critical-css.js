@@ -4,7 +4,7 @@ var gulp = require('gulp'),
 
 // Generate & Inline Critical-path CSS
 gulp.task('critical', function () {
-    gulp.src(config.paths.html.dest + '*.html')
+    gulp.src(config.paths.php.dest + '**/*.php')
         .pipe(critical({
           base: config.paths.base.dest,
           css: config.paths.sass.dest + 'main.css',

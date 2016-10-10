@@ -3,7 +3,7 @@ var gulp = require('gulp'),
     config = require('../config'),
     plugins = require('gulp-load-plugins')();
 
-// HTML Minifier
+// Delte font css
 gulp.task('del', function() {
     return del([
       './dist/fonts/**/*.css',
