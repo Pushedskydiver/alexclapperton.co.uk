@@ -12,5 +12,5 @@ gulp.task('critical', function () {
           minify: true,
           ignore: ['@font-face']
         }))
-        .pipe(gulp.dest('./dist'));
+        .pipe(gulp.dest('./dist/css/critical.css'));
 });

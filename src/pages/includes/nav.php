@@ -20,16 +20,14 @@
         <!-- BEGIN : SITE NAV LINK -->
         <a href="/index.php" <?php if($current == 'home') {echo 'class="siteNav_link  siteNav_link--active"';} else {echo 'class="siteNav_link"';} ?>>
           <svg class="siteNav_linkIcon">
-            <title>Home icon</title>
             <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/icons/sprite.svg#home"></use>
           </svg>
           <span class="siteNav_linkText">Home</span>
         </a>
         <!-- END : SITE NAV LINK /-->
         <!-- BEGIN : SITE NAV LINK -->
-        <a href="/my-work.php" <?php if($current == 'work') {echo 'class="siteNav_link  siteNav_link--active"';} else {echo 'class="siteNav_link"';} ?>>
+        <a href="/my-work/index.php" <?php if($current == 'work') {echo 'class="siteNav_link  siteNav_link--active"';} else {echo 'class="siteNav_link"';} ?>>
           <svg class="siteNav_linkIcon">
-            <title>Porfolio icon</title>
             <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/icons/sprite.svg#portfolio"></use>
           </svg>
           <span class="siteNav_linkText">My Work</span>
@@ -38,7 +36,6 @@
         <!-- BEGIN : SITE NAV LINK -->
         <a href="/blog/index.php" <?php if($current == 'blog') {echo 'class="siteNav_link  siteNav_link--active"';} else {echo 'class="siteNav_link"';} ?>>
           <svg class="siteNav_linkIcon">
-            <title>Blog icon</title>
             <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/icons/sprite.svg#book"></use>
           </svg>
           <span class="siteNav_linkText">Blog</span>
@@ -47,8 +44,7 @@
         <!-- BEGIN : SITE NAV LINK -->
         <a href="/contact.php" <?php if($current == 'contact') {echo 'class="siteNav_link  siteNav_link--active"';} else {echo 'class="siteNav_link"';} ?>>
           <svg class="siteNav_linkIcon">
-            <title>Contact icon</title>
-            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/icons/sprite.svg#mobile"></use>
+            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/icons/sprite.svg#mail"></use>
           </svg>
           <span class="siteNav_linkText">Contact</span>
         </a>

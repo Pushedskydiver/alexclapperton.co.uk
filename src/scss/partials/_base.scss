@@ -97,6 +97,10 @@ p {
   margin: 0 0 15px 0;
 }
 
+li {
+  @include font-size($p-font-sizes);
+}
+
 figure {
   padding: 0;
   margin: 0;
@@ -128,6 +132,12 @@ a {
   @include respond-to(l) {
     @include transition-025;
   }
+}
+
+hr {
+  margin: ($core-grid-unit * 2) 0;
+  border-color: $core-color-dark;
+  opacity: 0.2;
 }
 
 .container {

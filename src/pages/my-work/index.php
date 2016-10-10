@@ -65,13 +65,13 @@
         <div class="sitePortfolio_grid">
           <!-- BEGIN : SITE PORTFOLIO ITEM -->
           <figure class="sitePortfolio_item  uni">
-            <img class="sitePortfolio_itemImg" src="images/portfolio/portfolio.jpg" alt="" />
+            <img class="sitePortfolio_itemImg" src="/images/portfolio/portfolio.jpg" alt="" />
             <figcaption class="sitePortfolio_itemDesc">
-              <a class="sitePortfolio_itemLink" href="#">
+              <a class="sitePortfolio_itemLink" href="love-manchester-website.php">
                 <h3 class="sitePortfolio_itemTitle">Love Manchester Website</h3>
                 <span class="sitePortfolio_itemText">University Project</span>
                 <svg class="sitePortfolio_itemIcon">
-                  <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="images/icons/sprite.svg#graduation-cap"></use>
+                  <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/icons/sprite.svg#graduation-cap"></use>
                 </svg>
               </a>
             </figcaption>
@@ -79,13 +79,13 @@
           <!-- END : SITE PORTFOLIO ITEM /-->
           <!-- BEGIN : SITE PORTFOLIO ITEM -->
           <figure class="sitePortfolio_item  uni">
-            <img class="sitePortfolio_itemImg" src="images/portfolio/portfolio.jpg" alt="" />
+            <img class="sitePortfolio_itemImg" src="/images/portfolio/portfolio.jpg" alt="" />
             <figcaption class="sitePortfolio_itemDesc">
               <a class="sitePortfolio_itemLink" href="#">
                 <h3 class="sitePortfolio_itemTitle">MMU ICO Website</h3>
                 <span class="sitePortfolio_itemText">University Project</span>
                 <svg class="sitePortfolio_itemIcon">
-                  <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="images/icons/sprite.svg#graduation-cap"></use>
+                  <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/icons/sprite.svg#graduation-cap"></use>
                 </svg>
               </a>
             </figcaption>
@@ -93,13 +93,13 @@
           <!-- END : SITE PORTFOLIO ITEM /-->
           <!-- BEGIN : SITE PORTFOLIO ITEM -->
           <figure class="sitePortfolio_item  personal">
-            <img class="sitePortfolio_itemImg" src="images/portfolio/portfolio.jpg" alt="" />
+            <img class="sitePortfolio_itemImg" src="/images/portfolio/portfolio.jpg" alt="" />
             <figcaption class="sitePortfolio_itemDesc">
               <a class="sitePortfolio_itemLink" href="#">
                 <h3 class="sitePortfolio_itemTitle">Website Portfolio 2014</h3>
                 <span class="sitePortfolio_itemText">Personal Project</span>
                 <svg class="sitePortfolio_itemIcon">
-                  <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="images/icons/sprite.svg#user"></use>
+                  <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/icons/sprite.svg#user"></use>
                 </svg>
               </a>
             </figcaption>
@@ -107,13 +107,13 @@
           <!-- END : SITE PORTFOLIO ITEM /-->
           <!-- BEGIN : SITE PORTFOLIO ITEM -->
           <figure class="sitePortfolio_item  uni">
-            <img class="sitePortfolio_itemImg" src="images/portfolio/portfolio.jpg" alt="" />
+            <img class="sitePortfolio_itemImg" src="/images/portfolio/portfolio.jpg" alt="" />
             <figcaption class="sitePortfolio_itemDesc">
               <a class="sitePortfolio_itemLink" href="#">
                 <h3 class="sitePortfolio_itemTitle">MMU ICO Website</h3>
                 <span class="sitePortfolio_itemText">University Project</span>
                 <svg class="sitePortfolio_itemIcon">
-                  <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="images/icons/sprite.svg#graduation-cap"></use>
+                  <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/icons/sprite.svg#graduation-cap"></use>
                 </svg>
               </a>
             </figcaption>
@@ -121,13 +121,13 @@
           <!-- END : SITE PORTFOLIO ITEM /-->
           <!-- BEGIN : SITE PORTFOLIO ITEM -->
           <figure class="sitePortfolio_item personal">
-            <img class="sitePortfolio_itemImg" src="images/portfolio/portfolio.jpg" alt="" />
+            <img class="sitePortfolio_itemImg" src="/images/portfolio/portfolio.jpg" alt="" />
             <figcaption class="sitePortfolio_itemDesc">
               <a class="sitePortfolio_itemLink" href="#">
                 <h3 class="sitePortfolio_itemTitle">Website Portfolio 2015</h3>
                 <span class="sitePortfolio_itemText">Personal Project</span>
                 <svg class="sitePortfolio_itemIcon">
-                  <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="images/icons/sprite.svg#user"></use>
+                  <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/icons/sprite.svg#user"></use>
                 </svg>
               </a>
             </figcaption>
@@ -135,13 +135,13 @@
           <!-- END : SITE PORTFOLIO ITEM /-->
           <!-- BEGIN : SITE PORTFOLIO ITEM -->
           <figure class="sitePortfolio_item  uni">
-            <img class="sitePortfolio_itemImg" src="images/portfolio/portfolio.jpg" alt="" />
+            <img class="sitePortfolio_itemImg" src="/images/portfolio/portfolio.jpg" alt="" />
             <figcaption class="sitePortfolio_itemDesc">
               <a class="sitePortfolio_itemLink" href="#">
                 <h3 class="sitePortfolio_itemTitle">MMU ICO Website</h3>
                 <span class="sitePortfolio_itemText">University Project</span>
                 <svg class="sitePortfolio_itemIcon">
-                  <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="images/icons/sprite.svg#graduation-cap"></use>
+                  <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/icons/sprite.svg#graduation-cap"></use>
                 </svg>
               </a>
             </figcaption>
