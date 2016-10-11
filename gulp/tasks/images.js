@@ -3,9 +3,10 @@ var gulp = require('gulp'),
     plugins = require('gulp-load-plugins')();
 
 // Image optimizer
-gulp.task('images', () =>
-    gulp.src(config.paths.imgs.src)
-        .pipe(plugins.imagemin(config.plugin.imgmin))
-        .pipe(gulp.dest(config.paths.imgs.dest))
-        .pipe(plugins.notify({message: 'Image task complete', onLast: true}))
-);
+gulp.task('images', gulp.series(function(done) {
+  gulp.src(config.paths.imgs.src)
+      .pipe(plugins.imagemin(config.plugin.imgmin))
+      .pipe(gulp.dest(config.paths.imgs.dest))
+      .pipe(plugins.notify({message: 'Image task complete', onLast: true}));
+      done();
+}));

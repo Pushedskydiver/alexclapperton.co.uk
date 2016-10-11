@@ -3,9 +3,10 @@ var gulp = require('gulp'),
     plugins = require('gulp-load-plugins')();
 
 // SVG Sprite
-gulp.task('svgSprite', function() {
+gulp.task('svgSprite', gulp.series(function(done) {
     gulp.src(config.paths.sprite.src)
         .pipe(plugins.svgSprite(config.plugin.svgSprite))
         .pipe(gulp.dest(config.paths.sprite.dest))
         .pipe(plugins.notify({message: 'SVG task complete', onLast: true}));
-});
+        done();
+}));

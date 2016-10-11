@@ -3,8 +3,9 @@ var gulp = require('gulp'),
     plugins = require('gulp-load-plugins')();
 
 // Stylelint check
-gulp.task('stylelint', function() {
+gulp.task('stylelint', gulp.series(function(done) {
     gulp.src(config.paths.sass.src + '**/*.scss')
         .pipe(plugins.stylelint(config.plugin.stylelint))
         .pipe(plugins.notify({message: 'Stylelint task complete', onLast: true}));
-})
+        done();
+}));

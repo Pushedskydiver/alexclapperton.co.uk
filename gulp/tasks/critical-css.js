@@ -3,7 +3,7 @@ var gulp = require('gulp'),
     config = require('../config');
 
 // Generate & Inline Critical-path CSS
-gulp.task('critical', function () {
+gulp.task('critical', gulp.series(function(done) {
     gulp.src(config.paths.php.dest + '**/*.php')
         .pipe(critical({
           base: config.paths.base.dest,
@@ -13,4 +13,5 @@ gulp.task('critical', function () {
           ignore: ['@font-face']
         }))
         .pipe(gulp.dest('./src/css/critical'));
-});
+        done();
+}));

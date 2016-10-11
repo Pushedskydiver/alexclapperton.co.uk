@@ -14,7 +14,7 @@
     "cssnano": "^3.7.3",
     "cz-conventional-changelog": "^1.2.0",
     "del": "^2.2.1",
-    "gulp": "^3.9.1",
+    "gulp": "github:gulpjs/gulp#4.0",
     "gulp-concat": "^2.6.0",
     "gulp-fontmin": "^0.7.4",
     "gulp-htmlmin": "^3.0.0",

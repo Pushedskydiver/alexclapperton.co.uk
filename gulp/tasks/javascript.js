@@ -3,7 +3,7 @@ var gulp = require('gulp'),
     plugins = require('gulp-load-plugins')();
 
 // JS Concat
-gulp.task('js', function() {
+gulp.task('js', gulp.series(function(done) {
     gulp.src(config.paths.js.src)
         .pipe(plugins.order([
             'jquery.min.js',
@@ -14,4 +14,5 @@ gulp.task('js', function() {
         .pipe(plugins.uglify(config.plugin.js))
         .pipe(gulp.dest(config.paths.js.dest))
         .pipe(plugins.notify({message: 'JS task complete', onLast: true}));
-});
+        done();
+}));

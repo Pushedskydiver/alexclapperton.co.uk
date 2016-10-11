@@ -4,9 +4,10 @@ var gulp = require('gulp'),
     plugins = require('gulp-load-plugins')();
 
 // Delte font css
-gulp.task('del', function() {
+gulp.task('del', gulp.series(function(done) {
     return del([
       './dist/fonts/**/*.css',
       './src/css/critical/forms'
     ]);
-});
+    done();
+}));

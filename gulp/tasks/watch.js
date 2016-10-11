@@ -3,21 +3,23 @@ var gulp = require('gulp'),
     watch = require('gulp-watch');
 
 // Watch
-gulp.task('watch', function() {
+gulp.task('watch', gulp.series(function(done) {
 
     // Watch .scss files
-    gulp.watch(config.paths.sass.src + '/**/*.scss', ['sass']);
+    gulp.watch(config.paths.sass.src + '/**/*.scss', gulp.parallel('sass', 'critical', 'injectCss'));
 
     // Watch svg files
-    gulp.watch(config.paths.sprite.src, ['svgSprite']);
+    gulp.watch(config.paths.sprite.src, gulp.parallel('svgSprite'));
 
     // Watch .js files
-    gulp.watch(config.paths.js.src, ['js']);
+    gulp.watch(config.paths.js.src, gulp.parallel('js'));
 
     // Watch .php files
-    gulp.watch(config.paths.php.src, ['php']);
+    gulp.watch(config.paths.php.src, gulp.parallel('php'));
 
     // Watch image files
-    gulp.watch(config.paths.imgs.src, ['images']);
+    gulp.watch(config.paths.imgs.src, gulp.parallel('images'));
 
-});
+    done();
+
+}));

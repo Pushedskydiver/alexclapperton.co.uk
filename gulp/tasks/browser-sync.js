@@ -4,7 +4,7 @@ var gulp = require('gulp'),
     plugins = require('gulp-load-plugins')();
 
 // Static Server + watching scss/html files
-gulp.task('browser-sync', ['sass'], function() {
+gulp.task('browser-sync', gulp.series(function(done) {
 
     browserSync.init({
         server: "./dist/"
@@ -12,4 +12,5 @@ gulp.task('browser-sync', ['sass'], function() {
 
     gulp.watch('./src/scss/**/*.scss').on('change', browserSync.reload);
     gulp.watch('./dist/*.html').on('change', browserSync.reload);
-});
+    done();
+}));

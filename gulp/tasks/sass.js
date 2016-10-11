@@ -12,7 +12,7 @@ var postcss = [
 ];
 
 // SCSS Compile
-gulp.task('sass', function() {
+gulp.task('sass', gulp.series(function(done) {
     gulp.src(config.paths.sass.src + '*.scss')
         .pipe(plugins.sourcemaps.init())
         .pipe(plugins.sass({outputStyle: 'expanded'}).on('error', plugins.sass.logError))
@@ -21,4 +21,5 @@ gulp.task('sass', function() {
         .pipe(gulp.dest(config.paths.sass.dest))
         //.pipe(browserSync.stream())
         .pipe(plugins.notify({message: 'Scss task complete', onLast: true}));
-});
+        done();
+}));
