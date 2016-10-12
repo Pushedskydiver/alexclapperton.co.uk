@@ -14,5 +14,6 @@
 
   <!-- STYLESHEET -->
   <?php echo $critical_path; ?>
+  <link rel="stylesheet" type="text/css" href="/css/main.css?hash=734a3e4399234ccd4d2e461bae5ee932">
 
 </head>
