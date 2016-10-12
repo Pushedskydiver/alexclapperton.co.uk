@@ -3,7 +3,7 @@
   <!-- BEGIN : CONTAINER -->
   <div class="container">
     <!-- BEGIN : SITE FOOTER FLEX -->
-    <div class="siteFooter--flex">
+    <div class="siteFooter_flex">
       <!-- BEGIN : SITE FOOTER FLEX ITEM -->
       <div class="siteFooter_flexItem">
         <h4><span class="siteFooter_logoPeriod">.</span>Alex</h4>
@@ -11,7 +11,7 @@
           Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
         </p>
         <!-- BEGIN : FOOTER SOCIAL -->
-        <div class="footerSocial  footerSocial--flex">
+        <div class="footerSocial  footerSocial_flex">
           <!-- BEGIN : FOOTER SOCIAL LINK -->
           <a class="footerSocial_link" href="https://www.facebook.com/AlexMClapperton" title="External link to Alex's Facebook profile.">
             <svg class="footerSocial_icon  footerSocial_icon--facebook">
@@ -93,3 +93,7 @@
 
 <!-- JAVASCRIPT -->
 <script src="/js/main.js"></script>
+<script>
+function loadCSS(e,t,n){"use strict";var i=window.document.createElement("link");var o=t||window.document.getElementsByTagName("script")[0];i.rel="stylesheet";i.href=e;i.media="only x";o.parentNode.insertBefore(i,o);setTimeout(function(){i.media=n||"all"})}
+loadCSS('/css/main.css');
+</script>

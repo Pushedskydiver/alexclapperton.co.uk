@@ -111,14 +111,14 @@
               _this.prop('disabled', true);
               $.ajax({
                   type: "POST",
-                  url: "http://www.alexclapperton.co.uk/forms/mailer.php",
+                  url: "/forms/mailer.php",
                   data: $(".siteContact_form").serialize(),
                   success: function (result) {
                       $('.siteContact_input, .siteContact_textarea').each(function () {
                           $(this).val('');
                       })
                       $(".siteContact_message").html(result);
-                      $(".siteContact_message").fadeIn("slow");
+                      $(".siteContact_message").fadeIn("slow").removeClass('siteContact_input--error').addClass('siteContact_message--success');
                       $('.siteContact_message').delay(4000).fadeOut("slow");
                       _this.next('.siteContact_loading').addClass('siteContact_loading--displayNone');
                       _this.prop('disabled', false);
@@ -136,22 +136,31 @@
           $('.siteContact_input').each(function (index) {
               if (index == 0) {
                   if ($(this).val() == null || $(this).val() == "") {
-                      $(".siteContact_form").find(".siteContact_input:eq(" + index + ")").addClass("siteContact_message--error");
+                      $(".siteContact_form").find(".siteContact_input:eq(" + index + ")").addClass("siteContact_input--error");
                       error = false;
                   }
                   else {
-                      $(".siteContact_form").find(".siteContact_input:eq(" + index + ")").removeClass("siteContact_message--error");
+                      $(".siteContact_form").find(".siteContact_input:eq(" + index + ")").removeClass("siteContact_input--error");
                   }
               }
               else if (index == 1) {
                   if (!(/(.+)@(.+){2,}\.(.+){2,}/.test($(this).val()))) {
-                      $(".siteContact_form").find(".siteContact_input:eq(" + index + ")").addClass("siteContact_message--error");
+                      $(".siteContact_form").find(".siteContact_input:eq(" + index + ")").addClass("siteContact_input--error");
                       error = false;
                   } else {
-                      $(".siteContact_form").find(".siteContact_input:eq(" + index + ")").removeClass("siteContact_message--error");
+                      $(".siteContact_form").find(".siteContact_input:eq(" + index + ")").removeClass("siteContact_input--error");
                   }
               }
+          });
 
+          $('.siteContact_textarea').each(function() {
+            if ($(this).val() == null || $(this).val() == "") {
+                $(".siteContact_form").find(".siteContact_textarea").addClass("siteContact_input--error");
+                error = false;
+            }
+            else {
+                $(".siteContact_form").find(".siteContact_textarea").removeClass("siteContact_input--error");
+            }
           });
           return error;
       }

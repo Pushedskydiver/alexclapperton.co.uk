@@ -12,7 +12,7 @@
   }
 }
 
-.siteFooter--flex {
+.siteFooter_flex {
 
   @include respond-to(m) {
     @include grid(wrap, row, space-between);
@@ -59,7 +59,7 @@
   text-overflow: ellipsis;
 }
 
-.footerSocial--flex {
+.footerSocial_flex {
   @include grid(null, row, null);
 }
 

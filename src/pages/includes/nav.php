@@ -9,7 +9,7 @@
     </div>
     <!-- END : SKIP LINKS /-->
     <!-- BEGIN : SITE HEADER FLEX -->
-    <div class="siteHeader--flex">
+    <div class="siteHeader_flex">
       <!-- BEGIN : MAIN HEADER -->
       <div class="mainHeader">
         <a href="#" class="mainHeader_logo"><span class="mainHeader_logoPeriod">.</span>Alex</a>
@@ -52,7 +52,7 @@
       </nav>
       <!-- END : SITE NAV /-->
       <!-- BEGIN : SOCIAL HEADER -->
-      <div class="socialHeader  socialHeader--flex">
+      <div class="socialHeader  socialHeader_flex">
         <!-- BEGIN : SOCIAL HEADER FLEX ITEM -->
         <div class="socialHeader_flexItem">
           <a class="socialHeader_link" href="#">

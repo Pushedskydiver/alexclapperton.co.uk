@@ -3,7 +3,7 @@
   padding: 30px 0;
 }
 
-.siteContact--flex {
+.siteContact_flex {
 
   @include respond-to(m) {
     @include grid(wrap, row, space-between);
@@ -44,6 +44,10 @@
   &:focus ~ .siteContact_label,
   &:valid ~ .siteContact_label {
     opacity: 0;
+  }
+
+  &.siteContact_input--error {
+    background: #f2a6a6;
   }
 
   @include respond-to(l) {
@@ -91,6 +95,10 @@
   &:focus ~ .siteContact_label,
   &:valid ~ .siteContact_label {
     opacity: 0;
+  }
+
+  &.siteContact_input--error {
+    background: #f2a6a6;
   }
 
   @include respond-to(l) {
@@ -149,9 +157,12 @@
 
 .siteContact_message {
   display: none;
-  background: #bff2a6;
   padding: $core-grid-unit;
   margin-top: ($core-grid-unit * 2);
+}
+
+.siteContact_message--success {
+  background: #bff2a6;
 }
 
 .siteContact_message--error {
@@ -170,7 +181,7 @@
   }
 }
 
-.siteContact_details--flex {
+.siteContact_details_flex {
   @include grid(null, row, null);
   @include align-items(center);
 }

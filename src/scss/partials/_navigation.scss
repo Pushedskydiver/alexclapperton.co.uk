@@ -12,7 +12,7 @@
   }
 }
 
-.siteHeader--flex {
+.siteHeader_flex {
 
   @include respond-to(m) {
     @include grid(null, row, center);
@@ -141,7 +141,7 @@
   fill: $core-color-brand;
 }
 
-.socialHeader--flex {
+.socialHeader_flex {
   display: none;
 
   @include respond-to(l) {

@@ -7,7 +7,7 @@
   margin-bottom: ($core-grid-unit * 2);
 }
 
-.sitePortfolio_filter--flex {
+.sitePortfolio_filter_flex {
   @include grid(wrap, column, center);
 
   @include respond-to(s) {
@@ -140,7 +140,7 @@
   fill: $core-color-dark;
 }
 
-.sitePortfolio--flex {
+.sitePortfolio_flex {
 
   @include respond-to(m) {
     @include grid(wrap, row, space-between);
@@ -208,7 +208,7 @@
   }
 }
 
-.sitePortfolio_cta--flex {
+.sitePortfolio_cta_flex {
   @include grid(wrap, row, space-between);
 }
 

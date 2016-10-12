@@ -1,8 +1,5 @@
 .siteBanner {
   position: relative;
-  @include grid(null, column, null);
-  //background: url('../images/person.png') no-repeat center bottom;
-  //background-size: 120%;
 
   .container {
     height: 100%;
@@ -82,13 +79,25 @@
   }
 }
 
-.siteBanner--flex {
+.siteBanner_flex {
 
   @include respond-to(m) {
     position: relative;
     height: 100%;
     z-index: z(alpha);
     @include grid(null, column, center);
+
+    @supports not (display: flex) {
+      display: inline-block;
+    }
+  }
+}
+
+.siteBanner_flex--blog {
+  @include align-items(center);
+
+  .siteBanner_Title {
+    text-align: center;
   }
 }
 

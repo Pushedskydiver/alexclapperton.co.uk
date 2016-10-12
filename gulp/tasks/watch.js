@@ -3,10 +3,10 @@ var gulp = require('gulp'),
     watch = require('gulp-watch');
 
 // Watch
-gulp.task('watch', gulp.series(function(done) {
+gulp.task('watch', function(done) {
 
     // Watch .scss files
-    gulp.watch(config.paths.sass.src + '/**/*.scss', gulp.parallel('sass', 'critical', 'injectCss'));
+    gulp.watch(config.paths.sass.src + '**/*.scss', gulp.parallel('sass'));
 
     // Watch svg files
     gulp.watch(config.paths.sprite.src, gulp.parallel('svgSprite'));
@@ -22,4 +22,4 @@ gulp.task('watch', gulp.series(function(done) {
 
     done();
 
-}));
+});
