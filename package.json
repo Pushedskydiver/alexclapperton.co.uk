@@ -4,9 +4,6 @@
   "description": "Alex Clapperton's personal website portfolio",
   "repository": "git@gitlab.com:alex-clapperton/alex-clapperton.gitlab.io.git",
   "main": "gulpfile.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
   "author": "Alex Clapperton",
   "license": "ISC",
   "devDependencies": {
