@@ -27,7 +27,11 @@ module.exports = {
         fonts: {
             src: './src/fonts/**/*.ttf',
             dest: './dist/fonts/'
-        }
+        },
+        critical: {
+            src: './src/critical/**/*.html',
+            dest: './src/critical/',
+        },
     },
     plugin: {
         svgSprite: {

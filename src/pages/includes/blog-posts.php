@@ -13,9 +13,9 @@
     <!-- BEGIN : SITE BLOG FLEX -->
     <div class="siteBlog_flex">
       <!-- BEGIN : SITE BLOG ITEM -->
-      <a class="siteBlog_item" href="#">
+      <a class="siteBlog_item" href="/blog/the-digital-industry-a-developers-perspective.php">
         <h3 class="siteBlog_itemTitle">The Digital Industry: A Developer's Perspective</h3>
-        <span class="siteBlog_itemDate">Sept 30, 2016</span>
+        <span class="siteBlog_itemDate">Oct 13, 2016</span>
         <p>
            Digital tech industries have become a key contributor to the UK’s economy, growing faster in turnover, GVA and productivity than the rest of the economy.
         </p>

@@ -10,3 +10,4 @@ node_modules
 browser-sync.js
 dist
 style-guide
+src/critical

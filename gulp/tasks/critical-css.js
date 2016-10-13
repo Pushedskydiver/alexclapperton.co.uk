@@ -4,14 +4,14 @@ var gulp = require('gulp'),
 
 // Generate & Inline Critical-path CSS
 gulp.task('critical', gulp.series(function(done) {
-    gulp.src(config.paths.php.dest + '**/*.php')
+    gulp.src(config.paths.critical.src)
         .pipe(critical({
           base: config.paths.base.dest,
           css: config.paths.sass.dest + 'main.css',
-          inline: false,
+          inline: true,
           minify: true,
           ignore: ['@font-face']
         }))
-        .pipe(gulp.dest('./src/css/critical'));
+        .pipe(gulp.dest(config.paths.critical.dest));
         done();
 }));

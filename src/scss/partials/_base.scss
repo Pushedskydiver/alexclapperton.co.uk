@@ -158,8 +158,49 @@ hr {
   }
 }
 
+.siteList {
+  list-style: none;
+  padding: 0;
+  margin: $core-grid-unit 0 ($core-grid-unit * 2) 0;
+}
+
+.siteList_item {
+  margin-top: $core-grid-unit;
+
+  &:first-child {
+    margin-top: 0;
+  }
+}
+
+.siteList_link {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.siteList_icon {
+  size: 13px;
+  fill: $core-color-dark;
+  vertical-align: middle;
+}
+
 .twitter-tweet {
   margin: ($core-grid-unit * 2) 0 !important;
+}
+
+.externalLink {
+  display: inline-block;
+  text-decoration: none;
+}
+
+.externalLink_text {
+  text-decoration: underline;
+}
+
+.externalLink_icon {
+  size: 10px;
+  fill: $core-color-brand;
+  margin-left: -5px;
+  vertical-align: middle;
 }
 
 .siteFigure {

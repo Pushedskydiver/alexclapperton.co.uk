@@ -8,7 +8,7 @@
 *  Github: https://github.com/jasonmayes/Twitter-Post-Fetcher
 *  Updates will be posted to this site.
 *********************************************************************/
-(function(E,q){"function"===typeof define&&define.amd?define([],q):"object"===typeof exports?module.exports=q():q()})(this,function(){function E(a){if(null===t){for(var f=a.length,b=0,k=document.getElementById(F),g="<p>";b<f;)g+=a[b],b++;k.innerHTML=g+"</p>"}else t(a)}function q(a){return a.replace(/<b[^>]*>(.*?)<\/b>/gi,function(a,b){return b}).replace(/class="(?!(tco-hidden|tco-display|tco-ellipsis))+.*?"|data-query-source=".*?"|dir=".*?"|rel=".*?"/gi,"")}function G(a){a=a.getElementsByTagName("a");
+(function(E,q){"function"===typeof define&&define.amd?define([],q):"object"===typeof exports?module.exports=q():q()})(this,function(){function E(a){if(null===t){for(var f=a.length,b=0,k=document.getElementById(F),g="";b<f;)g+=a[b],b++;k.innerHTML=g+""}else t(a)}function q(a){return a.replace(/<b[^>]*>(.*?)<\/b>/gi,function(a,b){return b}).replace(/class="(?!(tco-hidden|tco-display|tco-ellipsis))+.*?"|data-query-source=".*?"|dir=".*?"|rel=".*?"/gi,"")}function G(a){a=a.getElementsByTagName("a");
 for(var f=a.length-1;0<=f;f--)a[f].setAttribute("target","_blank")}function l(a,f){for(var b=[],k=new RegExp("(^| )"+f+"( |$)"),g=a.getElementsByTagName("*"),h=0,d=g.length;h<d;h++)k.test(g[h].className)&&b.push(g[h]);return b}function y(a){if(void 0!==a&&0<=a.innerHTML.indexOf("data-srcset"))return a=a.innerHTML.match(/data-srcset="([A-z0-9%_\.-]+)/i)[0],decodeURIComponent(a).split('"')[1]}var F="",f=20,H=!0,x=[],z=!1,A=!0,n=!0,B=null,C=!0,D=!0,t=null,I=!0,u=!1,v=!0,J=!0,K=!1,m=null,L={fetch:function(a){void 0===
 a.maxTweets&&(a.maxTweets=20);void 0===a.enableLinks&&(a.enableLinks=!0);void 0===a.showUser&&(a.showUser=!0);void 0===a.showTime&&(a.showTime=!0);void 0===a.dateFunction&&(a.dateFunction="default");void 0===a.showRetweet&&(a.showRetweet=!0);void 0===a.customCallback&&(a.customCallback=null);void 0===a.showInteraction&&(a.showInteraction=!0);void 0===a.showImages&&(a.showImages=!1);void 0===a.linksInNewWindow&&(a.linksInNewWindow=!0);void 0===a.showPermalinks&&(a.showPermalinks=!0);void 0===a.dataOnly&&
 (a.dataOnly=!1);if(z)x.push(a);else{z=!0;F=a.domId;f=a.maxTweets;H=a.enableLinks;n=a.showUser;A=a.showTime;D=a.showRetweet;B=a.dateFunction;t=a.customCallback;I=a.showInteraction;u=a.showImages;v=a.linksInNewWindow;J=a.showPermalinks;K=a.dataOnly;var l=document.getElementsByTagName("head")[0];null!==m&&l.removeChild(m);m=document.createElement("script");m.type="text/javascript";m.src=void 0!==a.list?"https://syndication.twitter.com/timeline/list?callback=twitterFetcher.callback&dnt=false&list_slug="+
@@ -90,7 +90,7 @@ b.push(d);c++}E(b);z=!1;0<x.length&&(L.fetch(x[0]),x.splice(0,1))}};return windo
 var configProfile = {
   "profile": {"screenName": 'alexmclapperton'},
   "domId": 'twitter',
-  "maxTweets": 2,
+  "maxTweets": 1,
   "enableLinks": true,
   "showUser": false,
   "showTime": false,

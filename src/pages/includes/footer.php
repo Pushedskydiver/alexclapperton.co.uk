@@ -1,5 +1,5 @@
 <!-- ******************** SITE FOOTER : Start ******************** /-->
-<footer class="siteFooter">
+<footer class="siteFooter" role="contentinfo">
   <!-- BEGIN : CONTAINER -->
   <div class="container">
     <!-- BEGIN : SITE FOOTER FLEX -->
@@ -30,13 +30,6 @@
           <a class="footerSocial_link" href="https://uk.linkedin.com/in/alexclapperton" title="External link to Alex's LinkedIn profile.">
             <svg class="footerSocial_icon  footerSocial_icon--linkedin">
               <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/icons/sprite.svg#linkedin"></use>
-            </svg>
-          </a>
-          <!-- END : FOOTER SOCIAL LINK /-->
-          <!-- BEGIN : FOOTER SOCIAL LINK -->
-          <a class="footerSocial_link" href="#" title="External link to Alex's website GitLab repo.">
-            <svg class="footerSocial_icon  footerSocial_icon--gitlab">
-              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/icons/sprite.svg#gitlab"></use>
             </svg>
           </a>
           <!-- END : FOOTER SOCIAL LINK /-->
@@ -92,4 +85,4 @@
 
 
 <!-- JAVASCRIPT -->
-<script src="/js/main.js"></script>
+<script src="/js/main.js?t=1476302664883"></script>

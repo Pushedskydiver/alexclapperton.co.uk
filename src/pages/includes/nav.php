@@ -1,5 +1,5 @@
 <!-- ******************** SITE HEADER : Start ******************** /-->
-<header class="siteHeader">
+<header class="siteHeader" role="banner">
   <!-- BEGIN : CONTAINER -->
   <div class="container">
     <!-- BEGIN : SKIP LINKS -->
@@ -16,7 +16,7 @@
       </div>
       <!-- END : MAIN HEADER /-->
       <!-- BEGIN : SITE NAV -->
-      <nav class="siteNav" id="nav">
+      <nav class="siteNav" id="nav" role="navigation">
         <!-- BEGIN : SITE NAV LINK -->
         <a href="/index.php" <?php if($current == 'home') {echo 'class="siteNav_link  siteNav_link--active"';} else {echo 'class="siteNav_link"';} ?>>
           <svg class="siteNav_linkIcon">
