@@ -35,7 +35,7 @@ h1 {
   font-family: $core-secondary-font-family;
   @include font-size($h1-font-sizes);
   font-weight: $core-secondary-font-weight;
-  margin: 0 0 $core-grid-unit 0;
+  margin: 0 0 $core-margin 0;
   line-height: $core-line-height;
 }
 
@@ -44,7 +44,7 @@ h2 {
   font-family: $core-secondary-font-family;
   @include font-size($h2-font-sizes);
   font-weight: $core-secondary-font-weight;
-  margin: 0 0 $core-grid-unit 0;
+  margin: 0 0 $core-margin 0;
   line-height: $core-line-height;
 }
 
@@ -53,7 +53,7 @@ h3 {
   font-family: $core-secondary-font-family;
   @include font-size($h3-font-sizes);
   font-weight: $core-secondary-font-weight;
-  margin: 0 0 $core-grid-unit 0;
+  margin: 0 0 $core-margin 0;
   line-height: $core-line-height;
 }
 
@@ -61,7 +61,7 @@ h4 {
   font-family: $core-secondary-font-family;
   @include font-size($h4-font-sizes);
   font-weight: $core-secondary-font-weight;
-  margin: 0 0 $core-grid-unit 0;
+  margin: 0 0 $core-margin 0;
   line-height: $core-line-height;
 }
 
@@ -69,7 +69,7 @@ h5 {
   font-family: $core-secondary-font-family;
   font-size: ($core-font-size * 1.2);
   font-weight: $core-secondary-font-weight;
-  margin: 0 0 $core-grid-unit 0;
+  margin: 0 0 $core-margin 0;
   line-height: $core-line-height;
 
   @include respond-to(s) {
@@ -81,7 +81,7 @@ h6 {
   font-family: $core-secondary-font-family;
   font-size: ($core-font-size * 1.15);
   font-weight: $core-secondary-font-weight;
-  margin: 0 0 $core-grid-unit 0;
+  margin: 0 0 $core-margin 0;
   line-height: $core-line-height;
 
   @include respond-to(s) {
@@ -135,14 +135,14 @@ a {
 }
 
 hr {
-  margin: ($core-grid-unit * 2) 0;
+  margin: ($core-margin * 2) 0;
   border-color: $core-color-dark;
   opacity: 0.2;
 }
 
 .container {
   position: relative;
-  padding: 0 $core-grid-unit;
+  padding: 0 $core-padding;
 
   @include respond-to(m) {
     width: 668px;
@@ -161,11 +161,11 @@ hr {
 .siteList {
   list-style: none;
   padding: 0;
-  margin: $core-grid-unit 0 ($core-grid-unit * 2) 0;
+  margin: $core-margin 0 ($core-margin * 2) 0;
 }
 
 .siteList_item {
-  margin-top: $core-grid-unit;
+  margin-top: $core-margin;
 
   &:first-child {
     margin-top: 0;
@@ -184,7 +184,7 @@ hr {
 }
 
 .twitter-tweet {
-  margin: ($core-grid-unit * 2) 0 !important;
+  margin: ($core-margin * 2) 0 !important;
 }
 
 .externalLink {
@@ -205,7 +205,7 @@ hr {
 
 .siteFigure {
   width: 100%;
-  margin: ($core-grid-unit * 2) auto;
+  margin: ($core-margin * 2) auto;
 
   @include respond-to(m) {
     width: 80%;
@@ -219,7 +219,7 @@ hr {
 .siteFigure_caption {
   background: $core-color-neutral;
   line-height: $core-line-height;
-  padding: ($core-grid-unit / 2) $core-grid-unit;
+  padding: ($core-padding / 2) $core-padding;
 
   @include respond-to(m) {
     text-align: center;

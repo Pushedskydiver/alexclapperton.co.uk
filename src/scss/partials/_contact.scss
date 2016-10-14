@@ -11,7 +11,7 @@
 }
 
 .siteContact_flexItem {
-  margin-bottom: ($core-grid-unit * 2);
+  margin-bottom: ($core-margin * 2);
 
   &:last-child {
     margin-bottom: 0;
@@ -28,7 +28,7 @@
   margin-top: 25px;
 
   @include respond-to(m) {
-    margin-top: ($core-grid-unit * 3);
+    margin-top: ($core-margin * 3);
   }
 }
 
@@ -38,7 +38,7 @@
   color: $core-color-dark;
   font-family: $core-font-family;
   font-size: $core-font-size;
-  padding: ($core-grid-unit / 1.5) $core-grid-unit;
+  padding: ($core-padding / 1.5) $core-padding;
   border: none;
 
   &:focus ~ .siteContact_label,
@@ -51,7 +51,7 @@
   }
 
   @include respond-to(l) {
-    padding: $core-grid-unit;
+    padding: $core-padding;
     @include transition-025;
 
     &:focus, &:valid {
@@ -89,7 +89,7 @@
   color: $core-color-dark;
   font-family: $core-font-family;
   font-size: $core-font-size;
-  padding: ($core-grid-unit / 1.5) $core-grid-unit;
+  padding: ($core-padding / 1.5) $core-padding;
   border: none;
 
   &:focus ~ .siteContact_label,
@@ -157,8 +157,8 @@
 
 .siteContact_message {
   display: none;
-  padding: $core-grid-unit;
-  margin-top: ($core-grid-unit * 2);
+  padding: $core-padding;
+  margin-top: ($core-margin * 2);
 }
 
 .siteContact_message--success {
@@ -170,7 +170,7 @@
 }
 
 .siteContact_details {
-  margin-bottom: ($core-grid-unit * 2);
+  margin-bottom: ($core-margin * 2);
 
   &:last-child {
     margin-bottom: 0;
@@ -208,7 +208,7 @@
   }
 
   @include respond-to(m) {
-    margin-right: $core-grid-unit;
+    margin-right: $core-margin;
   }
 }
 

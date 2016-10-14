@@ -55,7 +55,7 @@
       <div class="socialHeader  socialHeader_flex">
         <!-- BEGIN : SOCIAL HEADER FLEX ITEM -->
         <div class="socialHeader_flexItem">
-          <a class="socialHeader_link" href="#">
+          <a class="socialHeader_link" href="https://www.facebook.com/AlexMClapperton" title="External link to Alex's Facebook profile.">
             <svg class="socialHeader_linkIcon  socialHeader_linkIcon--facebook">
               <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/icons/sprite.svg#facebook"></use>
             </svg>
@@ -64,7 +64,7 @@
         <!-- END : SOCIAL HEADER FLEX ITEM /-->
         <!-- BEGIN : SOCIAL HEADER FLEX ITEM -->
         <div class="socialHeader_flexItem">
-          <a class="socialHeader_link" href="#">
+          <a class="socialHeader_link" href="https://twitter.com/AlexMClapperton" title="External link to Alex's Twitter profile.">
             <svg class="socialHeader_linkIcon  socialHeader_linkIcon--twitter">
               <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/icons/sprite.svg#twitter"></use>
             </svg>
@@ -73,7 +73,7 @@
         <!-- END : SOCIAL HEADER FLEX ITEM /-->
         <!-- BEGIN : SOCIAL HEADER FLEX ITEM -->
         <div class="socialHeader_flexItem">
-          <a class="socialHeader_link" href="#">
+          <a class="socialHeader_link" href="https://uk.linkedin.com/in/alexclapperton" title="External link to Alex's LinkedIn profile.">
             <svg class="socialHeader_linkIcon  socialHeader_linkIcon--linkedin">
               <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/icons/sprite.svg#linkedin"></use>
             </svg>

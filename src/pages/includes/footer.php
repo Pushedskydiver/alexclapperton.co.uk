@@ -33,6 +33,13 @@
             </svg>
           </a>
           <!-- END : FOOTER SOCIAL LINK /-->
+          <!-- BEGIN : FOOTER SOCIAL LINK -->
+          <a class="footerSocial_link" href="https://gitlab.com/alex-clapperton/alex-clapperton.gitlab.io.git" title="External link to Alex's GitLab repo.">
+            <svg class="footerSocial_icon  footerSocial_icon--linkedin">
+              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/icons/sprite.svg#gitlab"></use>
+            </svg>
+          </a>
+          <!-- END : FOOTER SOCIAL LINK /-->
         </div>
         <!-- END : FOOTER SOICAL /-->
       </div>

@@ -153,7 +153,7 @@
 .socialHeader_flexItem {
 
   @include respond-to(l) {
-    margin-right: ($core-grid-unit * 2.5);
+    margin-right: ($core-margin * 2.5);
 
     &:last-child {
       margin-right: 0;

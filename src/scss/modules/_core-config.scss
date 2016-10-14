@@ -97,7 +97,7 @@ $core-tertiary-font-weight: 700 !default;
 /**
 * Margin applied to block elements
 */
-$core-margin: 10px !default;
+$core-margin: $core-grid-unit !default;
 
 /**
 * Padding applied to block containers
