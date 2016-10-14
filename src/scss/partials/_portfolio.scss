@@ -20,7 +20,7 @@
   background: $core-color-brand;
   color: $core-color-light;
   font-family: $core-secondary-font-family;
-  font-size: ($core-font-size * 1.1);
+  font-size: ($core-font-size * 1.3);
   font-weight: $core-font-weight;
   letter-spacing: 0.5px;
   padding: $core-grid-unit;
@@ -54,7 +54,6 @@
 }
 
 .sitePortfolio_grid {
-
   @include respond-to(s) {
     margin-right: -$core-grid-unit;
     margin-left: -$core-grid-unit;
@@ -81,7 +80,6 @@
   }
 
   @include respond-to(l) {
-
     &:hover .sitePortfolio_itemDesc {
       -webkit-transform: translate3d(0,0,0);
     	transform: translate3d(0,0,0);
@@ -141,14 +139,12 @@
 }
 
 .sitePortfolio_flex {
-
   @include respond-to(m) {
     @include grid(wrap, row, space-between);
   }
 }
 
 .sitePortfolio_flexItem {
-
   &:last-child {
     background: $core-color-neutral;
     padding: $core-grid-unit;
@@ -167,7 +163,6 @@
   margin-bottom: ($core-grid-unit * 2);
 
   @include respond-to(m) {
-
     &:last-child {
       margin-bottom: 0;
     }
@@ -198,7 +193,6 @@
 }
 
 .sitePortfolio_cta {
-
   .container {
     padding: 30px $core-grid-unit;
 
@@ -219,7 +213,6 @@
   text-decoration: none;
 
   @include respond-to(l) {
-
     &:hover {
       @include cd-pulse;
     }

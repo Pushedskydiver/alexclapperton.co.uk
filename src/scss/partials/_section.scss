@@ -5,7 +5,6 @@
 }
 
 .siteSection_flex {
-
   @include respond-to(l) {
     @include grid(wrap, row, space-between);
   }

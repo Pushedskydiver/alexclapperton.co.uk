@@ -7,7 +7,6 @@
   }
 
   @include respond-to(m) {
-
     .container {
       padding: 30px 0;
     }
@@ -23,7 +22,6 @@
 }
 
 .siteBlog_flex {
-
   @include respond-to(m) {
     padding: 0 $core-padding;
     @include grid(wrap, row, space-between);
@@ -65,7 +63,6 @@
     }
 
     &:hover {
-
       &::after {
         width: 100%;
       }
@@ -75,6 +72,10 @@
       }
     }
   }
+}
+
+.siteBlog_item--noPadding {
+  padding: 15px 0;
 }
 
 .siteBlog_itemTitle {

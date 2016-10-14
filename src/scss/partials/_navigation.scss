@@ -13,7 +13,6 @@
 }
 
 .siteHeader_flex {
-
   @include respond-to(m) {
     @include grid(null, row, center);
     @include align-items(center);
@@ -91,23 +90,22 @@
   @include grid(null, column, center);
   @include align-items(center);
 
-  &:hover {
-
-    .siteNav_linkIcon {
-      fill: $core-color-brand;
-    }
-
-    .siteNav_linkText {
-      color: $core-color-brand;
-    }
-  }
-
   @include respond-to(l) {
     width: auto;
     margin-right: 40px;
 
     &:last-child {
       margin-right: 0;
+    }
+
+    &:hover {
+      .siteNav_linkIcon {
+        fill: $core-color-brand;
+      }
+
+      .siteNav_linkText {
+        color: $core-color-brand;
+      }
     }
   }
 }
@@ -125,7 +123,7 @@
 .siteNav_linkText {
   display: block;
   color: $core-color-dark;
-  font-size: 0.95rem;
+  @include font-size($p-font-sizes);
   text-align: center;
 
   @include respond-to(l) {
@@ -133,12 +131,14 @@
   }
 }
 
-.siteNav_link--active .siteNav_linkText {
-  color: $core-color-brand;
-}
+.siteNav_link--active {
+  .siteNav_linkText {
+    color: $core-color-brand;
+  }
 
-.siteNav_link--active .siteNav_linkIcon {
-  fill: $core-color-brand;
+  .siteNav_linkIcon {
+    fill: $core-color-brand;
+  }
 }
 
 .socialHeader_flex {
@@ -151,7 +151,6 @@
 }
 
 .socialHeader_flexItem {
-
   @include respond-to(l) {
     margin-right: ($core-margin * 2.5);
 
@@ -169,7 +168,6 @@
     @include transition-025;
 
     &:hover {
-
       .socialHeader_linkIcon {
         fill: $core-color-brand;
       }

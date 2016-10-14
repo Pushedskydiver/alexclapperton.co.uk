@@ -29,7 +29,7 @@ module.exports = {
             dest: './dist/fonts/'
         },
         critical: {
-            src: './src/critical/**/*.html',
+            src: './src/critical/*.html',
             dest: './src/critical/',
         },
     },

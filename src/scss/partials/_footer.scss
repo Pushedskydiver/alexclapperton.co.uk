@@ -13,7 +13,6 @@
 }
 
 .siteFooter_flex {
-
   @include respond-to(m) {
     @include grid(wrap, row, space-between);
   }

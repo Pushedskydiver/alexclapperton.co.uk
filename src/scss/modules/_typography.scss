@@ -55,22 +55,22 @@ $p-font-sizes: (
   xs: em(($core-font-size + 1)),
   s: em(($core-font-size + 1.5)),
   m: em(($core-font-size + 2)),
-  l: em(($core-font-size + 2.7)),
-  xl: em(($core-font-size + 2.85)),
+  l: em(($core-font-size + 2.5)),
+  xl: em(($core-font-size + 2.7)),
 );
 
 $h1-font-sizes: (
   null: em(($core-font-size * 2)),
   xs: em(($core-font-size * 2.25)),
   m: em(($core-font-size * 2.5)),
-  l: em(($core-font-size * 2.75)),
+  l: em(($core-font-size * 2.7)),
 );
 
 $h2-font-sizes: (
   null: em(($core-font-size * 1.5)),
   xs: em(($core-font-size * 1.75)),
   m: em(($core-font-size * 2)),
-  l: em(($core-font-size * 2.2)),
+  l: em(($core-font-size * 2.3)),
 );
 
 $h3-font-sizes: (
