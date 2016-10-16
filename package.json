@@ -3,9 +3,6 @@
   "version": "1.0.0",
   "description": "test metalsmith",
   "main": "gulpfile.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
   "author": "Alex Clapperton",
   "license": "ISC",
   "devDependencies": {
