@@ -7,5 +7,4 @@ node_modules
 
 #Other folder/files
 dist
-src/pages-php
 .sass-cache

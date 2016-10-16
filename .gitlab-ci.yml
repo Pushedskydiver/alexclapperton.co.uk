@@ -1,0 +1,16 @@
+image: node:4.2.2
+
+pages:
+  cache:
+    paths:
+    - node_modules/
+
+  script:
+  - npm install
+  - gulp default --prod
+  - mv dist public
+  artifacts:
+    paths:
+    - public
+  only:
+  - master
