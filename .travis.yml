@@ -1,0 +1,22 @@
+language: node_js
+node_js:
+- '5.4.0'
+git:
+  depth: 1
+cache:
+  directories:
+    — node_modules
+deploy:
+  provider: s3
+  access_key_id: AKIAIWNWV4ICIZKLIN6A
+  secret_access_key: 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
+  bucket: alexclapperton.co.uk
+  skip_cleanup: true
+  endpoint: http://alexclapperton.co.uk.s3-website-eu-west-1.amazonaws.com/
+  region: eu-west-1
+  local-dir: dist
+  on:
+    branch: master
+    repo: pushedskydiver/alexclapperton.co.uk
+after_deploy:
+  - gulp psi
