@@ -1,14 +1,14 @@
 image: node:4.2.2
 
 pages:
+  stage: deploy
   cache:
     paths:
     - node_modules/
-
   script:
-  - npm install
-  - gulp default --prod
-  - mv dist public
+  - mkdir .public
+  - cp -r * .public
+  - mv .public public
   artifacts:
     paths:
     - public
