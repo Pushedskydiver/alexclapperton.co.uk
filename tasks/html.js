@@ -48,7 +48,7 @@ module.exports = function (gulp, data, argv) {
 
     if (argv.prod) {
       metal.use(sitemap({
-        'hostname': config.site.baseUrl,
+        'hostname': data.site.baseUrl,
         'omitExtension': true,
         'omitIndex': true,
         'priority': 0.5,
@@ -61,7 +61,7 @@ module.exports = function (gulp, data, argv) {
           'docs/complexity/*'
         ],
         'useragent': '*',
-        'sitemap': `${config.site.baseUrl}sitemap.xml`
+        'sitemap': `${data.site.baseUrl}sitemap.xml`
       }))
     } else {
       // For dev environment we need to disallow all

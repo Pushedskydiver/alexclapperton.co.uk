@@ -19,7 +19,7 @@
       <nav class="site-nav" id="nav" role="navigation">
         <!-- BEGIN : SITE NAV LINK -->
         {{#each global.navigation}}
-          <a href="{{{this.url}}}" class="site-nav__link">
+          <a href="{{{this.url}}}" class="site-nav__link site-nav__link--{{{this.slug}}}">
             <svg class="site-nav__icon">
               <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/icons/sprite.svg#{{{this.icon}}}"></use>
             </svg>

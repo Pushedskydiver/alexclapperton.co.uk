@@ -35,22 +35,9 @@
       <div class="site-footer__item">
         <h4>Latest Posts</h4>
         <!-- BEGIN : SITE FOOTER POST -->
-        <div class="site-footer__posts">
-          <span class="site-footer__post-date">12 <small class="site-footer__post-date--small">OCT</small></span>
-          <a class="site-footer__post-title" href="#">There on the Lake Missouri</a>
-        </div>
-        <!-- END : SITE FOOTER POST /-->
-        <!-- BEGIN : SITE FOOTER POST -->
-        <div class="site-footer__posts">
-          <span class="site-footer__post-date">12 <small class="site-footer__post-date--small">OCT</small></span>
-          <a class="site-footer__post-title" href="#">There on the Lake Missouri</a>
-        </div>
-        <!-- END : SITE FOOTER POST /-->
-        <!-- BEGIN : SITE FOOTER POST -->
-        <div class="site-footer__posts">
-          <span class="site-footer__post-date">12 <small class="site-footer__post-date--small">OCT</small></span>
-          <a class="site-footer__post-title" href="#">There on the Lake Missouri</a>
-        </div>
+        {{#each articles.[2016]}}
+          {{>footer-article}}
+        {{/each}}
         <!-- END : SITE FOOTER POST /-->
       </div>
       <!-- END : SITE FOOTER FLEX ITEM /-->

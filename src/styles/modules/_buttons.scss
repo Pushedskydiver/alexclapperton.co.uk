@@ -28,6 +28,10 @@
   }
 }
 
+.btn-primary--no-padding-pink {
+  color: $core-color-brand;
+}
+
 .btn-primary--pink {
   background: $core-color-brand;
   color: $core-color-light;
@@ -67,4 +71,41 @@
 
 .btn-primary__icon--white {
   fill: $core-color-light;
+}
+
+.btn-portfolio {
+  background: $core-color-brand;
+  color: $core-color-light;
+  font-family: $core-secondary-font-family;
+  font-size: ($core-font-size * 1.3);
+  font-weight: $core-font-weight;
+  letter-spacing: 0.5px;
+  padding: $core-grid-unit;
+  margin-bottom: 10px;
+  text-align: center;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  @include respond-to(s) {
+    min-width: 150px;
+    padding: $core-grid-unit 15px;
+    margin-right: 10px;
+    margin-bottom: 0;
+  }
+
+  @include respond-to(l) {
+    padding: 8px 15px;
+    cursor: pointer;
+    @include transition-025;
+
+    &:hover {
+      background: $core-color-dark;
+    }
+  }
+}
+
+.btn-portfolio--active {
+  background: $core-color-dark;
 }

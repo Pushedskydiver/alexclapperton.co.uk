@@ -5,7 +5,10 @@
   "employer": "Nuttersons",
   "university": "Manchester Metropolitan University",
   "email": "hi@alexclapperton.co.uk",
+  "phone": "+44 7930 946 211",
   "twitterHandle": "@AlexMClapperton",
+  "facebookName": "AlexMClapperton",
+  "linkedinName": "AlexClapperton",
   "social": [
     {
       "url": "https://www.facebook.com/AlexMClapperton",
@@ -24,21 +27,25 @@
     {
       "url": "/",
       "title": "Home",
+      "slug": "home",
       "icon": "home"
     },
     {
       "url": "/my-work",
       "title": "My Work",
+      "slug": "work",
       "icon": "portfolio"
     },
     {
       "url": "/blog",
       "title": "Blog",
+      "slug": "blog",
       "icon": "book"
     },
     {
       "url": "/contact",
       "title": "Contact",
+      "slug": "contact",
       "icon": "mail"
     }
   ]

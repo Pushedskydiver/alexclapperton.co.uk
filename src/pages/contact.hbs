@@ -2,11 +2,10 @@
 page: contact
 layout: default.hbs
 title: Contact
-description: Alex Clapperton &mdash; Manchester, UK based front-end developer
+description: Contact &mdash; Alex Clapperton &mdash; Manchester, UK based front-end developer
 changefreq: monthly
 priority: 0.9
 ---
-
 
 <!-- ******************** SITE BANNER : Start ********************-->
 <section class="site-banner site-banner--small">
@@ -27,7 +26,7 @@ priority: 0.9
 
         <div class="breadcrumbs">
           <span class="breadcrumbs__item"><a class="breadcrumbs__link" href="/">Home</a></span>
-          <span class="breadcrumbs__item"><a class="breadcrumbs__link" href="/contact">Home</a></span>
+          <span class="breadcrumbs__item">Contact</span>
         </div>
 
         <img class="site-banner__img" src="/images/banner/contact-frame.png" alt="" />
@@ -41,7 +40,7 @@ priority: 0.9
 
 
 <!-- ******************** SITE CONTACT : Start ******************** -->
-<main class="site-contact" role="main">
+<main class="site-contact" id="content" role="main">
   <!-- BEGIN : CONTAINER -->
   <div class="site-container">
     <!-- BEGIN : SITE CONTACT FLEX -->
@@ -103,7 +102,7 @@ priority: 0.9
             </svg>
           </div>
           <!-- END : SITE CONTACT DETAILS ICON WRAPPER /-->
-          <span class="site-contact__details-text">+44 7930 946 211</span>
+          <span class="site-contact__details-text">{{{global.phone}}}</span>
         </div>
         <!-- END : SITE CONTACT DETAILS -->
         <!-- BEGIN : SITE CONTACT DETAILS -->
@@ -116,7 +115,7 @@ priority: 0.9
             </svg>
           </div>
           <!-- END : SITE CONTACT DETAILS ICON WRAPPER /-->
-          <a class="site-contact__details-text" href="mailto:alex@alexclapperton.co.uk">alex@alexclapperton.co.uk</a>
+          <a class="site-contact__details-text" href="mailto:alex@alexclapperton.co.uk">{{{global.email}}}</a>
         </div>
         <!-- END : SITE CONTACT DETAILS /-->
         <!-- BEGIN : SITE CONTACT DETAILS -->
@@ -129,7 +128,7 @@ priority: 0.9
             </svg>
           </div>
           <!-- END : SITE CONTACT DETAILS ICON WRAPPER /-->
-          <a class="site-contact__details-text" href="https://www.facebook.com/AlexMClapperton" title="External link to Alex's Facebook profile.">AlexMClapperton</a>
+          <a class="site-contact__details-text" href="https://www.facebook.com/AlexMClapperton" title="External link to Alex's Facebook profile.">{{{global.facebookName}}}</a>
         </div>
         <!-- END : SITE CONTACT DETAILS /-->
         <!-- BEGIN : SITE CONTACT DETAILS -->
@@ -142,7 +141,7 @@ priority: 0.9
             </svg>
           </div>
           <!-- END : SITE CONTACT DETAILS ICON WRAPPER -->
-          <a class="site-contact__details-text" href="https://twitter.com/AlexMClapperton" title="External link to Alex's Twitter profile.">@AlexMClapperton</a>
+          <a class="site-contact__details-text" href="https://twitter.com/AlexMClapperton" title="External link to Alex's Twitter profile.">{{{global.twitterHandle}}}</a>
         </div>
         <!-- END : SITE CONTACT DETAILS /-->
         <!-- BEGIN : SITE CONTACT DETAILS -->
@@ -155,7 +154,7 @@ priority: 0.9
             </svg>
           </div>
           <!-- END : SITE CONTACT DETAILS ICON WRAPPER /-->
-          <a class="site-contact__details-text" href="https://uk.linkedin.com/in/alexclapperton" title="External link to Alex's LinkedIn profile.">AlexClapperton</a>
+          <a class="site-contact__details-text" href="https://uk.linkedin.com/in/alexclapperton" title="External link to Alex's LinkedIn profile.">{{{global.linkedinName}}}</a>
         </div>
         <!-- END : SITE CONTACT DETAILS /-->
       </div>

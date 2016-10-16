@@ -4,6 +4,7 @@ var config = require('../config'),
     focus = require('postcss-focus'),
     cssshort = require('postcss-short'),
     cssnano = require('cssnano'),
+    cleancss = require('gulp-clean-css'),
     plugins = require('gulp-load-plugins')();
 
 
@@ -42,7 +43,7 @@ module.exports = function (gulp, data, argv) {
   gulp.task('styles:minify', function () {
     if (argv.prod) {
       gulp.src(data.paths.styles.dest + '*.css')
-          .pipe(plugins.cleanCSS())
+          .pipe(cleancss())
           .pipe(gulp.dest(data.paths.styles.dest))
           .pipe(plugins.notify({message: 'Minify task complete', onLast: true}));
     }

@@ -1,0 +1,60 @@
+{{>head}}
+
+{{>header}}
+
+<div itemscope itemtype="http://schema.org/BlogPosting">
+  <!-- ******************** SITE BANNER : Start ********************-->
+  <section class="site-banner site-banner--no-img">
+    <!-- BEGIN : CONTAINER -->
+    <div class="site-container">
+      <!-- BEGIN : GRID GUIDES -->
+      <div class="grid-guides">
+        <div class="grid-guides__guide"></div>
+        <div class="grid-guides__guide"></div>
+        <div class="grid-guides__guide"></div>
+        <div class="grid-guides__guide"></div>
+      </div>
+      <!-- END : GRID GUIDES /-->
+      <!-- BEGIN : SITE BANNER FLEX -->
+      <div class="site-banner__flex site-banner__flex--blog">
+        <div class="site-banner__content">
+          <h1 class="site-banner__title">{{{bannerTitle}}}
+          {{#if subtitle}}
+          <br>
+          {{{subtitle}}}
+          {{/if}}</h1>
+
+          <div class="breadcrumbs">
+            <span class="breadcrumbs__item"><a class="breadcrumbs__link" href="/">Home</a></span>
+            <span class="breadcrumbs__item"><a class="breadcrumbs__link" href="/blog">Blog</a></span>
+            <span class="breadcrumbs__item">{{{title}}}{{#if subtitle}}{{{subtitle}}}{{/if}}</span>
+          </div>
+
+        </div>
+      </div>
+      <!-- END : SITE BANNER FLEX -->
+    </div>
+    <!-- END : CONTAINER -->
+  </section>
+  <!-- ******************** SITE BANNER : End ******************** /-->
+
+  <!-- ******************** SITE BLOG POST : Start ******************** -->
+  <main class="site-post" role="main">
+    <div class="site-container">
+      <article class="site-post__content">
+        <div class="site-post__details">
+          <span class="site-post__date">Posted on <b><time itemprop="datePublished" value="{{{pubDate}}}">{{{pubDate}}}</time></b></span>
+          <span class="site-post__category">Category: <b>{{{category}}}</b></span>
+        </div>
+
+        {{{contents}}}
+
+      </article>
+    </div>
+  </main>
+  <!-- ******************** SITE BLOG POST : End ******************** /-->
+</div>
+
+{{>footer}}
+
+{{>foot}}

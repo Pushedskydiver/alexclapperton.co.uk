@@ -8,7 +8,7 @@ module.exports = function (gulp, data, argv) {
       if (argv.prod) {
         critical.generate({
           base: data.paths.dist.base,
-          css: data.paths.dist.styles + 'main.css',
+          src: 'index.html',
           dest: `${data.paths.dist.html}index.html`,
           inline: true,
           minify: true,

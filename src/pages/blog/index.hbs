@@ -1,0 +1,59 @@
+---
+page: blog
+title: Blog Homepage
+slug: blog
+layout: default.hbs
+description: Alex Clapperton &mdash; Manchester, UK based front-end developer
+changefreq: monthly
+priority: 1.0
+---
+
+<!-- ******************** SITE BANNER : Start ********************-->
+<section class="site-banner site-banner--small">
+  <!-- BEGIN : CONTAINER -->
+  <div class="site-container">
+    <!-- BEGIN : GRID GUIDES -->
+    <div class="grid-guides">
+      <div class="grid-guides__guide"></div>
+      <div class="grid-guides__guide"></div>
+      <div class="grid-guides__guide"></div>
+      <div class="grid-guides__guide"></div>
+    </div>
+    <!-- END : GRID GUIDES /-->
+    <!-- BEGIN : SITE BANNER FLEX -->
+    <div class="site-banner__flex">
+      <div class="site-banner__content">
+        <h1 class="site-banner__title">Check out <br> my latest posts</h1>
+
+        <div class="breadcrumbs">
+          <span class="breadcrumbs__item"><a class="breadcrumbs__link" href="/">Home</a></span>
+          <span class="breadcrumbs__item">Blog</span>
+        </div>
+
+        <img class="site-banner__img" src="/images/banner/wordpress-frame.png" alt="" />
+      </div>
+    </div>
+    <!-- END : SITE BANNER FLEX -->
+  </div>
+  <!-- END : CONTAINER -->
+</section>
+<!-- ******************** SITE BANNER : End ******************** /-->
+
+
+<!-- ******************** SITE BLOG : Start ******************** /-->
+<main class="site-blog site-blog--white" id="content" role="main">
+  <!-- BEGIN : CONTAINER -->
+  <div class="site-container">
+    <!-- BEGIN : SITE BLOG FLEX -->
+    <div class="site-blog__flex">
+      <!-- BEGIN : SITE BLOG ITEM -->
+      {{#each articles.[2016]}}
+        {{>article-preview}}
+      {{/each}}
+      <!-- END : SITE BLOG ITEM /-->
+    </div>
+    <!-- END : SITE BLOG FLEX /-->
+  </div>
+  <!-- END : CONTAINER /-->
+</main>
+<!-- ******************** SITE BLOG : End /******************** /-->

@@ -1,14 +1,11 @@
-.sitePortfolio {
+.site-portfolio {
   background: $core-color-light;
   padding: 30px 0;
 }
 
-.sitePortfolio_filter {
-  margin-bottom: ($core-grid-unit * 2);
-}
-
-.sitePortfolio_filter_flex {
+.site-portfolio__filter {
   @include grid(wrap, column, center);
+  margin-bottom: ($core-grid-unit * 2);
 
   @include respond-to(s) {
     @include flex-direction(row);
@@ -16,51 +13,14 @@
   }
 }
 
-.sitePortfolio_filterBtn {
-  background: $core-color-brand;
-  color: $core-color-light;
-  font-family: $core-secondary-font-family;
-  font-size: ($core-font-size * 1.3);
-  font-weight: $core-font-weight;
-  letter-spacing: 0.5px;
-  padding: $core-grid-unit;
-  margin-bottom: 10px;
-  text-align: center;
-
-  &:last-child {
-    margin-bottom: 0;
-  }
-
-  @include respond-to(s) {
-    min-width: 150px;
-    padding: $core-grid-unit 15px;
-    margin-right: 10px;
-    margin-bottom: 0;
-  }
-
-  @include respond-to(l) {
-    padding: 8px 15px;
-    cursor: pointer;
-    @include transition-025;
-
-    &:hover {
-      background: $core-color-dark;
-    }
-  }
-}
-
-.sitePortfolio_filterBtn--active {
-  background: $core-color-dark;
-}
-
-.sitePortfolio_grid {
+.site-portfolio__grid {
   @include respond-to(s) {
     margin-right: -$core-grid-unit;
     margin-left: -$core-grid-unit;
   }
 }
 
-.sitePortfolio_item {
+.site-portfolio__item {
   position: relative;
   background: $core-color-dark;
   margin-top: $core-grid-unit;
@@ -80,7 +40,7 @@
   }
 
   @include respond-to(l) {
-    &:hover .sitePortfolio_itemDesc {
+    &:hover .site-portfolio__item-desc {
       -webkit-transform: translate3d(0,0,0);
     	transform: translate3d(0,0,0);
     }
@@ -91,11 +51,11 @@
   }
 }
 
-.sitePortfolio_itemImg {
+.site-portfolio__item-img {
   opacity: 0.8;
 }
 
-.sitePortfolio_itemDesc {
+.site-portfolio__item-desc {
   position: absolute;
   bottom: 0;
   left: 0;
@@ -111,18 +71,18 @@
   }
 }
 
-.sitePortfolio_itemLink {
+.site-portfolio__item-link {
   display: block;
   position: relative;
   text-decoration: none;
 }
 
-.sitePortfolio_itemTitle {
+.site-portfolio__item-title {
   color: $core-color-brand;
   font-weight: $core-font-weight;
 }
 
-.sitePortfolio_itemText {
+.site-portfolio__item-text {
   color: $core-color-dark;
 
   @include respond-to(m) {
@@ -130,7 +90,7 @@
   }
 }
 
-.sitePortfolio_itemIcon {
+.site-portfolio__item-icon {
   position: absolute;
   right: 0;
   bottom: 0;
@@ -138,13 +98,13 @@
   fill: $core-color-dark;
 }
 
-.sitePortfolio_flex {
+.site-portfolio__flex {
   @include respond-to(m) {
     @include grid(wrap, row, space-between);
   }
 }
 
-.sitePortfolio_flexItem {
+.site-portfolio__flex-item {
   &:last-child {
     background: $core-color-neutral;
     padding: $core-grid-unit;
@@ -159,7 +119,7 @@
   }
 }
 
-.sitePortfolio_img {
+.site-portfolio__img {
   margin-bottom: ($core-grid-unit * 2);
 
   @include respond-to(m) {
@@ -169,13 +129,13 @@
   }
 }
 
-.sitePortfolio_list {
+.site-portfolio__list {
   list-style: none;
   padding: 0;
   margin: 0;
 }
 
-.sitePortfolio_listItem {
+.site-portfolio__list-item {
   color: $core-color-dark;
   margin-bottom: ($core-grid-unit * 2);
 
@@ -184,16 +144,17 @@
   }
 }
 
-.sitePortfolio_share {
+.site-portfolio__share {
   margin-top: ($core-grid-unit * 2);
 }
 
-.sitePortfolio_shareItem {
+.site-portfolio__share-item {
   margin-right: ($core-grid-unit / 2);
 }
 
-.sitePortfolio_cta {
-  .container {
+.site-portfolio__cta {
+
+  .site-container {
     padding: 30px $core-grid-unit;
 
     @include respond-to(m) {
@@ -202,11 +163,11 @@
   }
 }
 
-.sitePortfolio_ctaFlex {
+.site-portfolio__cta-flex {
   @include grid(wrap, row, space-between);
 }
 
-.sitePortfolio_ctaLink {
+.site-portfolio__cta-link {
   display: block;
   background: $core-color-brand;
   padding: $core-grid-unit;
@@ -219,30 +180,30 @@
   }
 }
 
-.sitePortfolio_ctaLink--disabled {
+.site-portfolio__cta-link--disabled {
   background: darken($core-color-neutral, 10%);
   pointer-events: none;
 }
 
-.sitePortfolio_ctaLink--left {
+.site-portfolio__cta-link--left {
   align-self: flex-start;
 }
 
-.sitePortfolio_ctaLink--right {
+.site-portfolio__cta-link--right {
   align-self: flex-end;
 }
 
-.sitePortfolio_ctaIcon {
+.site-portfolio__cta-icon {
   size: 20px;
   fill: $core-color-light;
   vertical-align: middle;
 }
 
-.sitePortfolio_ctaIcon--left {
+.site-portfolio__cta-icon--left {
   @include rotate(180);
 }
 
-.sitePortfolio_ctaText {
+.site-portfolio__cta-text {
   color: $core-color-light;
   @include font-size($p-font-sizes);
   font-weight: $core-secondary-font-weight;

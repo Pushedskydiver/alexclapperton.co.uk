@@ -1,10 +1,12 @@
 var gulp = require('gulp'),
-    argv = require('yargs'),
+    yargs = require('yargs'),
     runSeq = require('run-sequence');
 
+const argv = yargs.argv
 
 const data = {
   paths: require('./global/paths.json'),
+  site: require('./global/site.json'),
   performance: require('./global/performance.json'),
   stylelint: require('./global/stylelint.json'),
 }
@@ -20,6 +22,7 @@ require('./tasks/scripts.js')(gulp, data, argv);
 require('./tasks/images.js')(gulp, data, argv);
 require('./tasks/icons.js')(gulp, data, argv);
 require('./tasks/fonts.js')(gulp, data, argv);
+require('./tasks/forms.js')(gulp, data, argv);
 require('./tasks/critical.js')(gulp, data, argv);
 require('./tasks/cache-bust.js')(gulp, data, argv);
 require('./tasks/stylelint.js')(gulp, data, argv);
@@ -44,10 +47,10 @@ gulp.task('dev', function (callback) {
 gulp.task('default', function (callback) {
   runSeq(
     'clean:all',
-    ['html:build', 'styles:sass', 'scripts', 'icons', 'images', 'fonts'],
+    ['html:build', 'styles:sass', 'scripts', 'icons', 'images', 'fonts', 'copy:forms'],
     'clean:fonts',
     ['critical', 'styles:minify', 'scripts:uglify'],
-    ['html:min'],
+    'html:min',
     callback
   )
 });

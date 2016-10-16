@@ -99,6 +99,25 @@
 
 
     // ==============================================
+    //    Active nav links
+    // ==============================================
+    function init_active_nav() {
+      if(window.location.pathname == '/') {
+        $('.site-nav__link--home').addClass('site-nav__link--active');
+      }
+      if(window.location.pathname == '/my-work/') {
+        $('.site-nav__link--work').addClass('site-nav__link--active');
+      }
+      if(window.location.href.indexOf("blog") > -1) {
+        $('.site-nav__link--blog').addClass('site-nav__link--active');
+      }
+      if(window.location.pathname == '/contact/') {
+        $('.site-nav__link--contact').addClass('site-nav__link--active');
+      }
+    }
+
+
+    // ==============================================
     //    Contact form
     // ==============================================
     function init_contact_form() {
@@ -171,18 +190,18 @@
     //    Portfolio grid & filter
     // ==============================================
     function init_portfolio() {
-      var $grid = $('.sitePortfolio_grid'),
-          $grid_filter = $('.sitePortfolio_filter'),
-          $grid_selectors = $('.sitePortfolio_filterBtn');
+      var $grid = $('.site-portfolio__grid'),
+          $grid_filter = $('.site-portfolio__filter'),
+          $grid_selectors = $('.btn-portfolio');
 
       imagesLoaded($grid, function(){
         $grid.isotope({
-          itemSelector: '.sitePortfolio_item',
+          itemSelector: '.site-portfolio__item',
           layoutMode: 'fitRows'
         });
         $grid_selectors.on( 'click', function() {
-          $grid_selectors.removeClass('sitePortfolio_filterBtn--active');
-          $(this).addClass('sitePortfolio_filterBtn--active');
+          $grid_selectors.removeClass('btn-portfolio--active');
+          $(this).addClass('btn-portfolio--active');
           var filterValue = $(this).attr('data-filter');
           $grid.isotope({ filter: filterValue });
           return false;
@@ -196,6 +215,7 @@
     // ==============================================
     init_dummy_link();
     init_scroll_to();
+    init_active_nav();
     init_contact_form();
     init_portfolio();
 
