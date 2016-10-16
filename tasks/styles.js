@@ -45,7 +45,7 @@ module.exports = function (gulp, data, argv) {
       gulp.src(data.paths.styles.dest + '*.css')
           .pipe(cleancss())
           .pipe(gulp.dest(data.paths.styles.dest))
-          .pipe(plugins.notify({message: 'Minify task complete', onLast: true}));
+          .pipe(plugins.notify({message: 'CSS minify task complete', onLast: true}));
     }
   });
 }

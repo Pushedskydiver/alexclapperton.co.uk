@@ -49,8 +49,7 @@ gulp.task('default', function (callback) {
     'clean:all',
     ['html:build', 'styles:sass', 'scripts', 'icons', 'images', 'fonts', 'copy:forms'],
     'clean:fonts',
-    ['critical', 'styles:minify', 'scripts:uglify'],
-    'html:min',
+    ['critical', 'styles:minify', 'scripts:uglify', 'html:min'],
     callback
   )
 });

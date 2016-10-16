@@ -8,6 +8,7 @@ pages:
   script:
   - npm install
   - gulp default --prod
+  - gulp html:min --prod
   - mv dist public
   artifacts:
     paths:
