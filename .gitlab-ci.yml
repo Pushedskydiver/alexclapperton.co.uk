@@ -6,7 +6,6 @@ pages:
     - node_modules/
 
   script:
-  - npm install gulp -g
   - npm install
   - gulp default --prod
   - mv dist public
