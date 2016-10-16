@@ -1,0 +1,71 @@
+<!-- ******************** SITE FOOTER : Start ******************** /-->
+<footer class="site-footer" role="contentinfo">
+  <!-- BEGIN : CONTAINER -->
+  <div class="site-container">
+    <!-- BEGIN : SITE FOOTER FLEX -->
+    <div class="site-footer__flex">
+      <!-- BEGIN : SITE FOOTER FLEX ITEM -->
+      <div class="site-footer__item">
+        <h4><span class="site-logo__period">.</span>Alex</h4>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+        </p>
+        <!-- BEGIN : FOOTER SOCIAL -->
+        <div class="footer-social">
+          <!-- BEGIN : FOOTER SOCIAL LINK -->
+          {{#each global.social}}
+            <a href="{{{this.url}}}" class="footer-social__link">
+              <svg class="footer-social__icon  footer-social__icon--{{{this.icon}}}">
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/icons/sprite.svg#{{{this.icon}}}"></use>
+              </svg>
+            </a>
+          {{/each}}
+          <!-- END : FOOTER SOCIAL LINK /-->
+        </div>
+        <!-- END : FOOTER SOICAL /-->
+      </div>
+      <!-- END : SITE FOOTER FLEX ITEM /-->
+      <!-- BEGIN : SITE FOOTER FLEX ITEM -->
+      <div class="site-footer__item">
+        <h4>{{{global.twitterHandle}}}</h4>
+        <div id="twitter"></div>
+      </div>
+      <!-- END : SITE FOOTER FLEX ITEM /-->
+      <!-- BEGIN : SITE FOOTER FLEX ITEM -->
+      <div class="site-footer__item">
+        <h4>Latest Posts</h4>
+        <!-- BEGIN : SITE FOOTER POST -->
+        <div class="site-footer__posts">
+          <span class="site-footer__post-date">12 <small class="site-footer__post-date--small">OCT</small></span>
+          <a class="site-footer__post-title" href="#">There on the Lake Missouri</a>
+        </div>
+        <!-- END : SITE FOOTER POST /-->
+        <!-- BEGIN : SITE FOOTER POST -->
+        <div class="site-footer__posts">
+          <span class="site-footer__post-date">12 <small class="site-footer__post-date--small">OCT</small></span>
+          <a class="site-footer__post-title" href="#">There on the Lake Missouri</a>
+        </div>
+        <!-- END : SITE FOOTER POST /-->
+        <!-- BEGIN : SITE FOOTER POST -->
+        <div class="site-footer__posts">
+          <span class="site-footer__post-date">12 <small class="site-footer__post-date--small">OCT</small></span>
+          <a class="site-footer__post-title" href="#">There on the Lake Missouri</a>
+        </div>
+        <!-- END : SITE FOOTER POST /-->
+      </div>
+      <!-- END : SITE FOOTER FLEX ITEM /-->
+    </div>
+    <!-- END : SITE FOOTER FLEX /-->
+    <p class="site-copyright">Copyright &copy; <script type="text/javascript">document.write(new Date().getFullYear());</script>. All rights reserved.</p>
+  </div>
+  <!-- END : CONTAINER /-->
+</footer>
+<!-- ******************** SITE FOOTER : End /******************** /-->
+
+
+<!--/ Scroll to top -->
+<a href="#" class="scroll-top">
+  <svg class="scroll-top__icon">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/icons/sprite.svg#arrow-up"></use>
+  </svg>
+</a>

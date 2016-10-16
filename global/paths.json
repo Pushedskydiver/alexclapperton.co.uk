@@ -1,0 +1,51 @@
+{
+  "base": {
+      "src": "./src/",
+      "dest": "./dist/"
+  },
+  "styles": {
+      "src": "./src/styles/",
+      "dest": "./dist/css/"
+  },
+  "icons": {
+      "src": "./src/icons/*",
+      "dest": "./dist/images/icons/"
+  },
+  "js": {
+      "src": "./src/scripts/*.js",
+      "dest": "./dist/js/"
+  },
+  "html": {
+      "src": "./src/pages/**/*.hbs",
+      "dest": "./dist/"
+  },
+  "images": {
+      "src": "./src/images/**/*",
+      "dest": "./dist/images/"
+  },
+  "fonts": {
+      "src": "./src/fonts/**/*.ttf",
+      "dest": "./dist/fonts/"
+  },
+  "source": {
+    "base": "./src/",
+    "data": "./src/data/",
+    "layouts": "./src/layouts/",
+    "content": "./src/pages/",
+    "icons": "./src/icons/",
+    "images": "./src/images/",
+    "layouts": "./layouts/",
+    "partials": "./partials/",
+    "scripts": "./src/scripts/",
+    "styles": "./src/styles/"
+  },
+  "dist": {
+    "base": "./dist/",
+    "styles": "./dist/css/",
+    "icons": "./dist/images/icons/",
+    "js": "./dist/js/",
+    "html": "./dist/",
+    "imgs": "./dist/images/",
+    "fonts": "./dist/fonts/"
+  }
+}

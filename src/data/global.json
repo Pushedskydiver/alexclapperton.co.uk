@@ -1,0 +1,45 @@
+{
+  "url": "http://alexclapperton.co.uk",
+  "name": "Alex Clapperton",
+  "jobTitle": "Front-End Developer",
+  "employer": "Nuttersons",
+  "university": "Manchester Metropolitan University",
+  "email": "hi@alexclapperton.co.uk",
+  "twitterHandle": "@AlexMClapperton",
+  "social": [
+    {
+      "url": "https://www.facebook.com/AlexMClapperton",
+      "icon": "facebook"
+    },
+    {
+      "url": "https://twitter.com/AlexMClapperton",
+      "icon": "twitter"
+    },
+    {
+      "url": "https://uk.linkedin.com/in/alexclapperton",
+      "icon": "linkedin"
+    }
+  ],
+  "navigation": [
+    {
+      "url": "/",
+      "title": "Home",
+      "icon": "home"
+    },
+    {
+      "url": "/my-work",
+      "title": "My Work",
+      "icon": "portfolio"
+    },
+    {
+      "url": "/blog",
+      "title": "Blog",
+      "icon": "book"
+    },
+    {
+      "url": "/contact",
+      "title": "Contact",
+      "icon": "mail"
+    }
+  ]
+}

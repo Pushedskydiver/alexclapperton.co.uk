@@ -1,0 +1,50 @@
+<!-- ******************** SITE HEADER : Start ******************** /-->
+<header class="site-header" role="banner">
+  <!-- BEGIN : CONTAINER -->
+  <div class="site-container">
+    <!-- BEGIN : SKIP LINKS -->
+    <div class="skip-links">
+      <a href="#nav" class="skip-link hidden focusable">Skip to navigation</a>
+      <a href="#content" class="skip-link hidden focusable scroll-to" data-offset-top="130">Skip to content</a>
+    </div>
+    <!-- END : SKIP LINKS /-->
+    <!-- BEGIN : SITE HEADER FLEX -->
+    <div class="site-header__flex">
+      <!-- BEGIN : MAIN HEADER -->
+      <div class="site-logo">
+        <a href="#" class="site-logo__link"><span class="site-logo__period">.</span>Alex</a>
+      </div>
+      <!-- END : MAIN HEADER /-->
+      <!-- BEGIN : SITE NAV -->
+      <nav class="site-nav" id="nav" role="navigation">
+        <!-- BEGIN : SITE NAV LINK -->
+        {{#each global.navigation}}
+          <a href="{{{this.url}}}" class="site-nav__link">
+            <svg class="site-nav__icon">
+              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/icons/sprite.svg#{{{this.icon}}}"></use>
+            </svg>
+            <span class="site-nav__text">{{{this.title}}}</span>
+          </a>
+        {{/each}}
+        <!-- END : SITE NAV LINK /-->
+      </nav>
+      <!-- END : SITE NAV /-->
+      <!-- BEGIN : SOCIAL HEADER -->
+      <div class="social-header">
+        <!-- BEGIN : SOCIAL HEADER ICON -->
+        {{#each global.social}}
+          <a href="{{{this.url}}}" class="social-header__link">
+            <svg class="social-header__icon">
+              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/icons/sprite.svg#{{{this.icon}}}"></use>
+            </svg>
+          </a>
+        {{/each}}
+        <!-- END : SOCIAL HEADER ICON /-->
+      </div>
+      <!-- END : SOCIAL HEADER -->
+    </div>
+    <!-- END : SITE HEADER FLEX /-->
+  </div>
+  <!-- END : CONTAINER /-->
+</header>
+<!-- ******************** SITE HEADER : End ******************** /-->

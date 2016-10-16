@@ -1,0 +1,13 @@
+{
+  "wptAPIKey": "A.f6b8584ad051d9760a6eec0f513b9b22",
+  "psiAPIKey": "AIzaSyCo1kdWNcwEhoiO0Q9KL6zR-rkWjYmef_g",
+  "urls": [
+    "http://alexclapperton.co.uk"
+  ],
+  "bytesIn": 1000000,
+  "speedIndex": 1500,
+  "visualComplete": 3000,
+  "parameters": {
+    "location": "ec2-eu-west-1:Chrome"
+  }
+}

@@ -1,0 +1,137 @@
+.site-footer {
+  background: $core-color-dark;
+  color: $core-color-light;
+  padding: 30px 0;
+
+  p {
+    color: $core-color-light;
+  }
+
+  @include respond-to(m) {
+    padding: 20px 0;
+  }
+}
+
+.site-footer__flex {
+  @include respond-to(m) {
+    @include grid(wrap, row, space-between);
+  }
+}
+
+.site-footer__item {
+  margin-bottom: 30px;
+
+  @include respond-to(m) {
+    width: 48%;
+
+    &:last-child {
+      display: none;
+    }
+  }
+
+  @include respond-to(l) {
+    width: 31%;
+
+    &:last-child {
+      display: block;
+    }
+  }
+}
+
+.site-footer__twitter-icon {
+  size: 20px;
+  fill: $core-color-brand;
+  float: left;
+  margin-right: 5px;
+}
+
+.site-footer__tweet a[data-expanded-url] {
+  display: block;
+  width: 250px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.footer-social {
+  @include grid(null, row, null);
+}
+
+.footer-social__link {
+  position: relative;
+  size: 27px;
+  margin-right: 15px;
+  z-index: 1;
+
+  &:first-child::before,
+  &:nth-of-type(3)::before {
+    content: '';
+    position: absolute;
+    top: 1px;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    size: calc(100% - 2px);
+    background: $core-color-light;
+    margin: 0 auto;
+    border-radius: 4px;
+    z-index: -1;
+
+    @include respond-to(l) {
+      size: calc(100% - 4px) calc(100% - 2px);
+    }
+  }
+}
+
+.footer-social__icon {
+  size: 100%;
+}
+
+.footer-social__icon--facebook {
+  position: relative;
+  fill: #3b5998;
+}
+
+.footer-social__icon--twitter {
+  fill: #55acee;
+}
+
+.footer-social__icon--linkedin {
+  fill: #007bb5;
+}
+
+.site-footer__posts {
+  margin-bottom: 25px;
+  overflow: hidden;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.site-footer__post-date {
+  display: inline-block;
+  background: $core-color-brand;
+  color: $core-color-light;
+  font-family: $core-secondary-font-family;
+  font-size: ($core-font-size * 1.15);
+  font-weight: $core-secondary-font-weight;
+  text-align: center;
+  padding: 4px 15px;
+  margin-right: 5px;
+  vertical-align: middle;
+  float: left;
+}
+
+.site-footer__post-date--small {
+  display: block;
+}
+
+.site-footer__post-title {
+  display: block;
+  color: $core-color-light;
+  font-family: $core-secondary-font-family;
+  font-size: ($core-font-size * 1.3);
+  text-decoration: none;
+  vertical-align: middle;
+}

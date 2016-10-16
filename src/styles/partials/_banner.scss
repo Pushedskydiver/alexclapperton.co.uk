@@ -1,0 +1,165 @@
+.site-banner {
+  position: relative;
+
+  .site-container {
+    height: 100%;
+    padding: $core-padding;
+  }
+
+  @include respond-to(m) {
+    margin-top: 65px;
+
+    .site-container {
+      padding: 0 $core-padding;
+    }
+  }
+}
+
+.site-banner__img {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: calc(100% - 24px);
+  margin: 0 auto;
+
+  @include respond-to(s) {
+    width: calc(90% - 24px);
+    margin-left: $core-margin;
+  }
+
+  @include respond-to(m) {
+    left: initial;
+    width: calc(50% - 12px);
+    margin: 0;
+  }
+}
+
+.site-banner--large {
+  size: 100% 110vh;
+
+  @include respond-to(s) {
+    height: 100vh;
+  }
+
+  @include respond-to(m) {
+    height: 500px;
+  }
+}
+
+.site-banner--small {
+  size: 100% 400px;
+
+  @include respond-to(xs) {
+    height: 550px;
+  }
+
+  @include respond-to(s) {
+    height: 650px;
+  }
+
+  @include respond-to(m) {
+    height: 400px;
+  }
+
+  @include respond-to(xl) {
+    height: 550px;
+  }
+}
+
+.site-banner--no-img {
+  size: 100% 350px;
+
+  @include respond-to(m) {
+    height: 400px;
+  }
+}
+
+.site-banner__flex {
+  @include respond-to(m) {
+    position: relative;
+    height: 100%;
+    z-index: z(alpha);
+
+    @supports (display: flex) {
+      @include grid(null, column, center);
+    }
+
+    @supports not (display: flex) {
+      display: table;
+      width: 100%;
+      height: 100%;
+    }
+  }
+}
+
+.site-banner__flex--blog {
+  height: 100%;
+  @include grid(wrap, column, center);
+
+  @include respond-to(s) {
+    .site-banner__title {
+      text-align: center;
+    }
+
+    .site-banner__breadcrumbs {
+      @include justify-content(center);
+    }
+  }
+}
+
+.site-banner__content {
+  @supports not (display: flex) {
+    display: table-cell;
+    vertical-align: middle;
+  }
+}
+
+.site-banner__title {
+  @include font-size($h1-font-sizes);
+}
+
+.site-banner__text {
+  @include respond-to(s) {
+    max-width: 375px;
+  }
+
+  @include respond-to(m) {
+    align-self: flex-start;
+  }
+}
+
+.breadcrumbs {
+  @include grid(wrap, row, null);
+}
+
+.breadcrumbs__item {
+  @include font-size($p-font-sizes);
+  text-transform: capitalize;
+  line-height: $core-line-height;
+
+  &::after {
+    content: '/';
+    color: $core-color-brand;
+    margin: 0 5px;
+  }
+
+  &:last-child {
+    &::after {
+      display: none;
+    }
+  }
+}
+
+.breadcrumbs__item--active {
+  display: block;
+  color: $core-color-dark;
+}
+
+.breadcrumbs__link {
+  @include respond-to(l) {
+    &:hover {
+      color: $core-color-dark;
+    }
+  }
+}
