@@ -33,6 +33,7 @@
     "gulp-util": "^3.0.7",
     "gulp-watch": "^4.3.10",
     "handlebars": "^4.0.5",
+    "handlebars-helpers": "^0.7.5",
     "handlebars-layouts": "^3.1.4",
     "metalsmith": "^2.2.0",
     "metalsmith-assets": "^0.1.0",

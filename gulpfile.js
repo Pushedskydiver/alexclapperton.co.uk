@@ -86,7 +86,7 @@ gulp.task('watch', function() {
 
     // Watch .hbs files
     gulp.watch([
-      data.paths.source.pages + '**/*.hbs',
+      data.paths.source.content + '**/*.hbs',
       data.paths.source.partials + '*.hbs',
       data.paths.source.layouts + '*.json',
       data.paths.source.data + '*.json'

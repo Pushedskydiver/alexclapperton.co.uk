@@ -2,6 +2,7 @@ var config = require('../config'),
     Metalsmith = require('metalsmith'),
     handlebars = require('handlebars'),
     handlelayouts = require('handlebars-layouts'),
+    helpers = require('handlebars-helpers'),
     metadataDirectory = require('metalsmith-metadata-directory'),
     metalLayouts = require('metalsmith-layouts'),
     inPlace = require('metalsmith-in-place'),
@@ -12,12 +13,13 @@ var config = require('../config'),
     gulpif = require('gulp-if'),
     gutil = require('gulp-util'),
     plugins = require('gulp-load-plugins')();
-    
+
 
 module.exports = function (gulp, data, argv) {
 
   gulp.task('html:build', function () {
     handlebars.registerHelper(handlelayouts(handlebars))
+    handlebars.registerHelper(helpers())
 
     const metal = new Metalsmith('.').clean(false)
       .source(data.paths.source.content)

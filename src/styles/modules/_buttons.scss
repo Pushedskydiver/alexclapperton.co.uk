@@ -1,7 +1,17 @@
 .btn-primary {
   display: inline-block;
+  font-family: $core-font-family;
+  @include font-size($p-font-sizes);
   padding: 8px 15px;
   text-decoration: none;
+
+  @include respond-to(l) {
+    cursor: pointer;
+  }
+}
+
+.btn-primary--contact {
+  margin-top: 25px;
 }
 
 .btn-primary--no-padding {
@@ -35,7 +45,9 @@
 }
 
 .btn-primary__text {
+  display: inline-block;
   text-decoration: none;
+  vertical-align: middle;
 }
 
 .btn-primary__flex {

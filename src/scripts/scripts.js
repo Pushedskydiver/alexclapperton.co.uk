@@ -67,7 +67,7 @@
     //    Smooth Scroll to element
     // ======================================
   	function init_scroll_to() {
-      var $scrollTo = $('.skipLink--scrollTo');
+      var $scrollTo = $('.scroll-to');
     	$scrollTo.on('click', function(event){
     		var $elemOffsetTop = $(this).data('offset-top');
     		$('html').velocity("scroll", { offset:$(this.hash).offset().top-$elemOffsetTop, duration: 1500, easing:'easeInOutCubic', mobileHA: false});
@@ -81,13 +81,13 @@
     // ======================================
     function init_smooth_scroll_top() {
       // Animated Scroll to Top Button
-      var $scrollTop = $('.btn_scrollTop');
+      var $scrollTop = $('.scroll-top');
       if ($scrollTop.length > 0) {
         $(window).on('scroll', function(){
           if ($(window).scrollTop() > 600) {
-            $scrollTop.addClass('btn_scrollTop--isVisible');
+            $scrollTop.addClass('scroll-top--isVisible');
           } else {
-            $scrollTop.removeClass('btn_scrollTop--isVisible');
+            $scrollTop.removeClass('scroll-top--isVisible');
           }
         });
         $scrollTop.on('click', function(e){
@@ -103,28 +103,28 @@
     // ==============================================
     function init_contact_form() {
       //contact form button event
-      $(".siteContact_btn").on('click',function (event) {
+      $(".btn-primary--contact").on('click',function (event) {
           var error = init_validate_form();
           var _this = $(this);
           if (error) {
-              _this.next('.siteContact_loading').removeClass('siteContact_loading--displayNone');
+              _this.next('.site-contact__loading').removeClass('site-contact__loading--displayNone');
               _this.prop('disabled', true);
               $.ajax({
                   type: "POST",
                   url: "/forms/mailer.php",
-                  data: $(".siteContact_form").serialize(),
+                  data: $(".site-contact__form").serialize(),
                   success: function (result) {
-                      $('.siteContact_input, .siteContact_textarea').each(function () {
+                      $('.site-contact__input, .site-contact__textarea').each(function () {
                           $(this).val('');
                       })
-                      $(".siteContact_message").html(result);
-                      $(".siteContact_message").fadeIn("slow").removeClass('siteContact_input--error').addClass('siteContact_message--success');
-                      $('.siteContact_message').delay(4000).fadeOut("slow");
-                      _this.next('.siteContact_loading').addClass('siteContact_loading--displayNone');
+                      $(".site-contact__message").html(result);
+                      $(".site-contact__message").fadeIn("slow").removeClass('site-contact__input--error').addClass('site-contact__message--success');
+                      $('.site-contact__message').delay(4000).fadeOut("slow");
+                      _this.next('.site-contact__loading').addClass('site-contact__loading--displayNone');
                       _this.prop('disabled', false);
                   },
                   error: function () {
-                      _this.next('.siteContact_loading').addClass('siteContact_loading--displayNone');
+                      _this.next('.site-contact__loading').addClass('site-contact__loading--displayNone');
                       _this.prop('disabled', false);
                   }
               });
@@ -133,33 +133,33 @@
 
       function init_validate_form() {
           var error = true;
-          $('.siteContact_input').each(function (index) {
+          $('.site-contact__input').each(function (index) {
               if (index == 0) {
                   if ($(this).val() == null || $(this).val() == "") {
-                      $(".siteContact_form").find(".siteContact_input:eq(" + index + ")").addClass("siteContact_input--error");
+                      $(".site-contact__form").find(".site-contact__input:eq(" + index + ")").addClass("site-contact__input--error");
                       error = false;
                   }
                   else {
-                      $(".siteContact_form").find(".siteContact_input:eq(" + index + ")").removeClass("siteContact_input--error");
+                      $(".site-contact__form").find(".site-contact__input:eq(" + index + ")").removeClass("site-contact__input--error");
                   }
               }
               else if (index == 1) {
                   if (!(/(.+)@(.+){2,}\.(.+){2,}/.test($(this).val()))) {
-                      $(".siteContact_form").find(".siteContact_input:eq(" + index + ")").addClass("siteContact_input--error");
+                      $(".site-contact__form").find(".site-contact__input:eq(" + index + ")").addClass("site-contact__input--error");
                       error = false;
                   } else {
-                      $(".siteContact_form").find(".siteContact_input:eq(" + index + ")").removeClass("siteContact_input--error");
+                      $(".site-contact__form").find(".site-contact__input:eq(" + index + ")").removeClass("site-contact__input--error");
                   }
               }
           });
 
-          $('.siteContact_textarea').each(function() {
+          $('.site-contact__textarea').each(function() {
             if ($(this).val() == null || $(this).val() == "") {
-                $(".siteContact_form").find(".siteContact_textarea").addClass("siteContact_input--error");
+                $(".site-contact__form").find(".site-contact__textarea").addClass("site-contact__input--error");
                 error = false;
             }
             else {
-                $(".siteContact_form").find(".siteContact_textarea").removeClass("siteContact_input--error");
+                $(".site-contact__form").find(".site-contact__textarea").removeClass("site-contact__input--error");
             }
           });
           return error;
