@@ -20,7 +20,6 @@ module.exports = function (gulp, data, argv) {
             })
           ], {
             syntax: scss
-          }))
-          .pipe(plugins.notify({message: 'Stylelint task complete', onLast: true}));
+          }));
   });
 }

@@ -24,16 +24,14 @@ module.exports = function (gulp, data, argv) {
               'scripts.js'
           ]))
           .pipe(plugins.concat('main.js'))
-          .pipe(gulp.dest(data.paths.js.dest))
-          .pipe(plugins.notify({message: 'JS task complete', onLast: true}));
+          .pipe(gulp.dest(data.paths.js.dest));
   });
 
   gulp.task('scripts:uglify', function () {
     if (argv.prod) {
       gulp.src(data.paths.js.dest + '*.js')
           .pipe(plugins.uglify(config.plugin.js))
-          .pipe(gulp.dest(data.paths.js.dest))
-          .pipe(plugins.notify({message: 'Uglify task complete', onLast: true}));
+          .pipe(gulp.dest(data.paths.js.dest));
     }
   });
 }

@@ -83,8 +83,7 @@ module.exports = function (gulp, data, argv) {
     if (argv.prod) {
       gulp.src(data.paths.dist.base + '**/*.html')
         .pipe(plugins.htmlmin(config.plugin.html))
-        .pipe(gulp.dest(data.paths.dist.base))
-        .pipe(plugins.notify({message: 'HTML minify task complete', onLast: true}));
+        .pipe(gulp.dest(data.paths.dist.base));
     }
   });
 }

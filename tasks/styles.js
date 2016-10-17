@@ -41,16 +41,14 @@ module.exports = function (gulp, data, argv) {
           .pipe(plugins.sass({outputStyle: 'expanded'}).on('error', plugins.sass.logError))
           .pipe(plugins.postcss(getPostCssPlugins()))
           .pipe(plugins.sourcemaps.write('sourcemaps'))
-          .pipe(gulp.dest(data.paths.styles.dest))
-          .pipe(plugins.notify({message: 'Scss task complete', onLast: true}));
+          .pipe(gulp.dest(data.paths.styles.dest));
   });
 
   gulp.task('styles:minify', function () {
     if (argv.prod) {
       gulp.src(data.paths.styles.dest + '*.css')
           .pipe(cleancss())
-          .pipe(gulp.dest(data.paths.styles.dest))
-          .pipe(plugins.notify({message: 'CSS minify task complete', onLast: true}));
+          .pipe(gulp.dest(data.paths.styles.dest));
     }
   });
 }
