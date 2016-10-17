@@ -14,7 +14,7 @@ module.exports = function (gulp, data, argv) {
         critical.generate({
           base: data.paths.dist.base,
           src: 'index.html',
-          dest: data.paths.dist.html + 'index.html',
+          dest: `${data.paths.dist.html}index.html`,
           inline: true,
           minify: true,
           ignore: ['@font-face']

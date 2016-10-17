@@ -15,7 +15,7 @@ module.exports = function (gulp, data) {
     browserSync.create().init({
       browser: 'google chrome',
       files: [
-        data.paths.dist.base + '**/*'
+        `${data.paths.dist.base}**/*`
       ],
       ghostMode: false,
       notify: false,

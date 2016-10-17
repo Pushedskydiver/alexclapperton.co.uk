@@ -12,7 +12,7 @@ var config = require('../config'),
 
 module.exports = function (gulp, data, argv) {
   gulp.task('stylelint', function () {
-      gulp.src(data.paths.source.styles + '**/*.scss')
+      gulp.src(`${data.paths.source.styles}**/*.scss`)
           .pipe(plugins.postcss([
             stylelint(data.stylelint),
             reporter({
