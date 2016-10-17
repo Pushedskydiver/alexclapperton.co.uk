@@ -11,10 +11,10 @@ module.exports = function (gulp, data, argv) {
   gulp.task('scripts', function () {
       var source = [];
 
-      source.push(`${data.paths.js.src}*.js`)
+      source.push(data.paths.js.src + '*.js')
 
       if (!argv.prod) {
-        source.push(`${data.paths.js.src}vendor/tota11y.js`)
+        source.push(data.paths.js.src + 'vendor/tota11y.js')
       }
 
       gulp.src(source)

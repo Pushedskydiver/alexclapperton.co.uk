@@ -61,7 +61,7 @@ module.exports = function (gulp, data, argv) {
           'docs/complexity/*'
         ],
         'useragent': '*',
-        'sitemap': `${data.site.baseUrl}sitemap.xml`
+        'sitemap': data.site.baseUrl + 'sitemap.xml'
       }))
     } else {
       // For dev environment we need to disallow all
