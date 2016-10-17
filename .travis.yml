@@ -4,7 +4,7 @@ cache:
     — node_modules
 install:
   - npm install
-script: gulp default --prod
+script: gulp default
 env:
   global:
     - secure: "BtCFOCmxbixmtAwFXKYfMftrWfkEQSsyNhxVpLQgRv1Wjf4CuIKvPEfz/fKo3hzN3qWn/jU8OhskGUgPWaTQkiVwTfotq0wW/CxxJ62M4iew2Xsi6DL6yFAAftU7pHBwWMDelArDoOP34ARJlIERa2CXeuav1hwrtVj6cq2x5yCGEw7jDUhcc0yqtXeRzRh0iY32kPXnXEwYDJGmQMcZaW829iSG/GGl7DK3hGkwon3hwu0Oco28ply5unAMowjY0uLYZDU+QoFpa50c6n0OCsNfAkfHce1mfpLjpaPAxyczZZa78zyEepMg6aKTpCTrLOQpSA1i9CuQLb3ylc4b2+FNQGMNtv+E24XR2sRv1rdFzct+9ENvWbZ9gODm+WkvprFu6WS158a5vHyURfTpIzTykx8W4Qkf7iNtK9/f4ObOZYuYwrULHaoB7l6coE0eYWEgeebeyZBofhbl1gPOYh+dVpiVaEHq7qZK+IwYbdK4xVgXj33JDaFbp3XHh4Y20tgyhATP7SChoYU8aDJAe52NreYQFQG2iRU0EmIGZQvfSf6XQnsimvSRZGShsvekDTZiK2UPfxh98xTsKfFP4pF+7Cy+IXl1CvGDbuowsLm/P63XCOOSLX+Yz/BZfwu9havH9jwdmtBN7lYPcjoIYu/hwU2rl24y9p1WvK6dknw="
