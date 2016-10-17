@@ -48,7 +48,7 @@ gulp.task('dev', function (callback) {
 gulp.task('default', function (callback) {
   runSeq(
     'clean:all',
-    ['html:build', 'styles:sass', 'scripts', 'icons', 'images', 'fonts', 'copy:forms'],
+    ['html:build', 'styles:sass', 'scripts', 'icons', 'images', 'fonts', 'cacheBuster', 'copy:forms'],
     'clean:fonts',
     ['critical', 'styles:minify', 'scripts:uglify'],
     ['html:min'],
