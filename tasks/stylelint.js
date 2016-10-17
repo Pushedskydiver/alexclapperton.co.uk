@@ -1,3 +1,8 @@
+/**
+ * @file stylelint.js - Check for any styling issues in scss files
+ * @author Alex Clapperton <hi@alexclapperton.co.uk>
+ */
+
 var config = require('../config'),
     stylelint = require('stylelint'),
     reporter = require('postcss-reporter'),

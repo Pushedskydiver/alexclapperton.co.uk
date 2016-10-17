@@ -12,7 +12,7 @@
       "dest": "./dist/images/icons/"
   },
   "js": {
-      "src": "./src/scripts/*.js",
+      "src": "./src/scripts/",
       "dest": "./dist/js/"
   },
   "html": {

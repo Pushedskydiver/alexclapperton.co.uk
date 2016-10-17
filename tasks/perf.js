@@ -1,3 +1,8 @@
+/**
+ * @file perf.js - Monitor performance budget with Gulp task
+ * @author Alex Clapperton <hi@alexclapperton.co.uk>
+ */
+
 var config = require('../config'),
     Webpagetest = require('webpagetest'),
     psi = require('psi'),

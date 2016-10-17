@@ -1,3 +1,8 @@
+/**
+ * @file critical.js - Inline critical css above the fold in html file
+ * @author Alex Clapperton <hi@alexclapperton.co.uk>
+ */
+
 var config = require('../config'),
     critical = require('critical');
 

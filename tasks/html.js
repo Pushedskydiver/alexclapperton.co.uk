@@ -76,7 +76,7 @@ module.exports = function (gulp, data, argv) {
         gutil.log(gutil.colors.red(err))
       }
     })
-  })
+  });
 
   // Minify HTML
   gulp.task('html:min', function () {
@@ -86,5 +86,5 @@ module.exports = function (gulp, data, argv) {
         .pipe(gulp.dest(data.paths.dist.base))
         .pipe(plugins.notify({message: 'HTML minify task complete', onLast: true}));
     }
-  })
+  });
 }

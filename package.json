@@ -51,6 +51,7 @@
     "metalsmith-robots": "^1.0.1",
     "metalsmith-slug": "^0.2.0",
     "metalsmith-word-count": "0.0.4",
+    "minimist": "^1.2.0",
     "postcss-devtools": "^1.1.0",
     "postcss-focus": "^1.0.0",
     "postcss-reporter": "^1.4.1",
@@ -59,6 +60,7 @@
     "require-dir": "^0.3.1",
     "run-sequence": "^1.2.2",
     "stylelint": "^7.4.2",
+    "vinyl-ftp": "^0.5.0",
     "webpagetest": "^0.3.4",
     "yargs": "^6.1.1"
   },

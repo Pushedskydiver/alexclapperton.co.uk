@@ -12,34 +12,34 @@
     <div class="site-header__flex">
       <!-- BEGIN : MAIN HEADER -->
       <div class="site-logo">
-        <a href="#" class="site-logo__link"><span class="site-logo__period">.</span>Alex</a>
+        <a href="/" class="site-logo__link"><span class="site-logo__period">.</span>Alex</a>
       </div>
       <!-- END : MAIN HEADER /-->
       <!-- BEGIN : SITE NAV -->
       <nav class="site-nav" id="nav" role="navigation">
-        <!-- BEGIN : SITE NAV LINK -->
         {{#each global.navigation}}
+          <!-- BEGIN : SITE NAV LINK -->
           <a href="{{{this.url}}}" class="site-nav__link site-nav__link--{{{this.slug}}}">
             <svg class="site-nav__icon">
               <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/icons/sprite.svg#{{{this.icon}}}"></use>
             </svg>
             <span class="site-nav__text">{{{this.title}}}</span>
           </a>
+          <!-- END : SITE NAV LINK /-->
         {{/each}}
-        <!-- END : SITE NAV LINK /-->
       </nav>
       <!-- END : SITE NAV /-->
       <!-- BEGIN : SOCIAL HEADER -->
       <div class="social-header">
-        <!-- BEGIN : SOCIAL HEADER ICON -->
         {{#each global.social}}
+          <!-- BEGIN : SOCIAL HEADER ICON -->
           <a href="{{{this.url}}}" class="social-header__link">
             <svg class="social-header__icon">
               <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/icons/sprite.svg#{{{this.icon}}}"></use>
             </svg>
           </a>
+          <!-- END : SOCIAL HEADER ICON /-->
         {{/each}}
-        <!-- END : SOCIAL HEADER ICON /-->
       </div>
       <!-- END : SOCIAL HEADER -->
     </div>

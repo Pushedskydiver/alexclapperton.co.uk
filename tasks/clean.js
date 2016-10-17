@@ -1,7 +1,12 @@
+/**
+ * @file clean.js - Wipe dist and css in fonts directory with Gulp task
+ * @author Alex Clapperton <hi@alexclapperton.co.uk>
+ */
+
 var config = require('../config'),
     del = require('del'),
     plugins = require('gulp-load-plugins')();
-    
+
 
 module.exports = function (gulp, data, argv) {
 

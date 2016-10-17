@@ -1,3 +1,8 @@
+/**
+ * @file styles.js - Styles related Gulp tasks
+ * @author Alex Clapperton <hi@alexclapperton.co.uk>
+ */
+
 var config = require('../config'),
     autoprefixer = require('autoprefixer'),
     devtools = require('postcss-devtools'),

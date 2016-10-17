@@ -1,6 +1,6 @@
 /**
  * @file server.js - Run Browsersync server
- * @author Alex Clapperton <hi@alexclapperton..co.uk>
+ * @author Alex Clapperton <hi@alexclapperton.co.uk>
  * @see {@link https://www.browsersync.io/docs/gulp}
  */
 

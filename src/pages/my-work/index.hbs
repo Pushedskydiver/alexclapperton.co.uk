@@ -142,3 +142,30 @@ priority: 0.9
   <!-- END : CONTAINER /-->
 </main>
 <!-- ******************** SITE PORTFOLIO : End ******************** /-->
+
+
+<!-- ******************** SITE BLOG : Start ******************** /-->
+<section class="site-blog">
+  <!-- BEGIN : CONTAINER -->
+  <div class="site-container">
+    <!-- BEGIN : GRID GUIDES -->
+    <div class="grid-guides">
+      <div class="grid-guides__guide"></div>
+      <div class="grid-guides__guide"></div>
+      <div class="grid-guides__guide"></div>
+      <div class="grid-guides__guide"></div>
+    </div>
+    <!-- END : GRID GUIDES /-->
+    <!-- BEGIN : SITE BLOG FLEX -->
+    <div class="site-blog__flex">
+      {{#each articles.[2016]}}
+        <!-- BEGIN : SITE BLOG ITEM -->
+        {{>article-section}}
+        <!-- END : SITE BLOG ITEM /-->
+      {{/each}}
+    </div>
+    <!-- END : SITE BLOG FLEX /-->
+  </div>
+  <!-- END : CONTAINER /-->
+</section>
+<!-- ******************** SITE BLOG : End /******************** /-->

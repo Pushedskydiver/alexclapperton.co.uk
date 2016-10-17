@@ -28,6 +28,7 @@ require('./tasks/cache-bust.js')(gulp, data, argv);
 require('./tasks/stylelint.js')(gulp, data, argv);
 require('./tasks/perf.js')(gulp, data, argv);
 require('./tasks/server.js')(gulp, data, argv);
+require('./tasks/deploy.js')(gulp, data, argv);
 require('./tasks/clean.js')(gulp, data, argv);
 
 
@@ -49,7 +50,8 @@ gulp.task('default', function (callback) {
     'clean:all',
     ['html:build', 'styles:sass', 'scripts', 'icons', 'images', 'fonts', 'copy:forms'],
     'clean:fonts',
-    ['critical', 'styles:minify', 'scripts:uglify', 'html:min'],
+    ['critical', 'styles:minify', 'scripts:uglify'],
+    ['html:min'],
     callback
   )
 });
