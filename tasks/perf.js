@@ -32,7 +32,7 @@ module.exports = function (gulp, data, argv) {
       median: {
         firstView: {
           bytesIn: data.performance.bytesIn,
-          visualCompvare: data.performance.visualCompvare
+          visualComplete: data.performance.visualComplete
         }
       }
     }
@@ -52,7 +52,7 @@ module.exports = function (gulp, data, argv) {
           }
 
           gutil.log(gutil.colors.blue(`Status for ${testID}: ${data.data.statusText}`))
-          if (!data.data.compvareTime) {
+          if (!data.data.completeTime) {
             return setTimeout(checkStatus, 5000)
           } else {
             return wpt.getTestResults(testID, {

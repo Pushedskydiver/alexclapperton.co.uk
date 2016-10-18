@@ -1,0 +1,13 @@
+{
+  "2016": [
+    {
+      "title": "Love Manchester Website",
+      "slug": "love-manchester-website/",
+      "image": "portfolio",
+      "alt": "Example alt text.",
+      "university": true,
+      "universityTitle": "University Project",
+      "universityIcon": "graduation-cap"
+    }
+  ]
+}

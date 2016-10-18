@@ -1,0 +1,12 @@
+<figure class="site-portfolio__item  uni">
+  <img class="site-portfolio__item-img" src="/images/portfolio/{{{image}}}.jpg" alt="{{{alt}}}" />
+  <figcaption class="site-portfolio__item-desc">
+    <a class="site-portfolio__item-link" href="{{{this.slug}}}">
+      <h3 class="site-portfolio__item-title">{{{this.title}}}</h3>
+      <span class="site-portfolio__item-text">{{#if personal}}{{{persoanlTitle}}}{{/if}}{{#if university}}{{{universityTitle}}}{{/if}}</span>
+      <svg class="site-portfolio__item-icon">
+        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/icons/sprite.svg#{{#if personal}}{{{persoanlIcon}}}{{/if}}{{#if university}}{{{universityIcon}}}{{/if}}"></use>
+      </svg>
+    </a>
+  </figcaption>
+</figure>
