@@ -10,7 +10,7 @@ var config = require('../config'),
     plugins = require('gulp-load-plugins')();
 
 
-module.exports = function (gulp, data, argv) {
+module.exports = function (gulp, data) {
   gulp.task('stylelint', function () {
       gulp.src(`${data.paths.source.styles}**/*.scss`)
           .pipe(plugins.postcss([

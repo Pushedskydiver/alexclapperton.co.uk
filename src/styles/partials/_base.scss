@@ -12,8 +12,8 @@ body {
   font-family: $core-font-family;
   font-size: $core-font-size;
   background: $core-color-neutral;
-  padding-bottom: 55px;
   margin: 0;
+  padding-bottom: 55px;
   @include fadein;
 
   @include respond-to(s) {
@@ -101,8 +101,8 @@ li {
 }
 
 figure {
-  padding: 0;
   margin: 0;
+  padding: 0;
 }
 
 img {
@@ -158,8 +158,8 @@ hr {
 
 .site-list {
   list-style: none;
-  padding: 0;
   margin: $core-margin 0 ($core-margin * 2) 0;
+  padding: 0;
 }
 
 .site-list__item {

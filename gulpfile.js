@@ -6,8 +6,8 @@ const argv = yargs.argv
 
 const data = {
   paths: require('./global/paths.json'),
-  site: require('./global/site.json'),
   performance: require('./global/performance.json'),
+  site: require('./global/site.json'),
   stylelint: require('./global/stylelint.json'),
 }
 
@@ -19,13 +19,13 @@ const data = {
 require('./tasks/html.js')(gulp, data, argv);
 require('./tasks/styles.js')(gulp, data, argv);
 require('./tasks/scripts.js')(gulp, data, argv);
-require('./tasks/images.js')(gulp, data, argv);
-require('./tasks/icons.js')(gulp, data, argv);
-require('./tasks/fonts.js')(gulp, data, argv);
-require('./tasks/forms.js')(gulp, data, argv);
+require('./tasks/images.js')(gulp, data);
+require('./tasks/icons.js')(gulp, data);
+require('./tasks/fonts.js')(gulp, data);
+require('./tasks/forms.js')(gulp, data);
 require('./tasks/critical.js')(gulp, data, argv);
-require('./tasks/cache-bust.js')(gulp, data, argv);
-require('./tasks/stylelint.js')(gulp, data, argv);
+require('./tasks/cache-bust.js')(gulp, data);
+require('./tasks/stylelint.js')(gulp, data);
 require('./tasks/perf.js')(gulp, data, argv);
 require('./tasks/server.js')(gulp, data, argv);
 require('./tasks/deploy.js')(gulp, data, argv);
@@ -48,9 +48,9 @@ gulp.task('dev', function (callback) {
 gulp.task('default', function (callback) {
   runSeq(
     'clean:all',
-    ['html:build', 'styles:sass', 'scripts', 'icons', 'images', 'fonts', 'cacheBuster', 'copy:forms'],
+    ['html:build', 'styles:sass', 'scripts', 'icons', 'images', 'fonts', 'copy:forms'],
     'clean:fonts',
-    ['critical', 'styles:minify', 'scripts:uglify'],
+    ['cacheBuster', 'critical'],
     ['html:min'],
     callback
   )

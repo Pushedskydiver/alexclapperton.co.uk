@@ -40,15 +40,8 @@ module.exports = function (gulp, data, argv) {
           .pipe(plugins.sourcemaps.init())
           .pipe(plugins.sass({outputStyle: 'expanded'}).on('error', plugins.sass.logError))
           .pipe(plugins.postcss(getPostCssPlugins()))
+          .pipe(plugins.if(argv.prod, cleancss()))
           .pipe(plugins.sourcemaps.write('sourcemaps'))
           .pipe(gulp.dest(data.paths.styles.dest));
-  });
-
-  gulp.task('styles:minify', function () {
-    if (argv.prod) {
-      gulp.src(data.paths.styles.dest + '*.css')
-          .pipe(cleancss())
-          .pipe(gulp.dest(data.paths.styles.dest));
-    }
   });
 }

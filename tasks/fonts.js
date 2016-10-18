@@ -7,7 +7,7 @@ var config = require('../config'),
     plugins = require('gulp-load-plugins')();
 
 
-module.exports = function (gulp, data, argv) {
+module.exports = function (gulp, data) {
 
   gulp.task('fonts', function () {
       gulp.src(data.paths.fonts.src)

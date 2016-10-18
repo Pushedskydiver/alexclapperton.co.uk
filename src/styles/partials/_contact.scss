@@ -139,8 +139,8 @@
 
 .site-contact__message {
   display: none;
-  padding: $core-padding;
   margin-top: ($core-margin * 2);
+  padding: $core-padding;
 }
 
 .site-contact__message--success {
@@ -172,8 +172,8 @@
   position: relative;
   size: 45px;
   background: $core-color-neutral;
-  padding: 10px;
   margin-right: 10px;
+  padding: 10px;
   border-radius: 50%;
   z-index: z(alpha);
 

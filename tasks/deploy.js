@@ -1,7 +1,11 @@
+/**
+ * @file deploy.js - Dploy website to wen host via ftp
+ * @author Alex Clapperton <hi@alexclapperton.co.uk>
+ */
+
 var config = require('../config'),
     ftp = require('vinyl-ftp'),
-    gutil = require('gulp-util'),
-    minimist = require('minimist');
+    gutil = require('gulp-util');
 
 module.exports = function (gulp, data, argv) {
 

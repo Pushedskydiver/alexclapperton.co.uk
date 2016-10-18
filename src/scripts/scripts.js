@@ -51,17 +51,6 @@
 
     'use strict';
 
-    // ======================================
-    //    Dummy link
-    // ======================================
-    function init_dummy_link() {
-      // Disable default link behavior for dummy links that have href='#'
-      var $emptyLink = $('a[href=#]');
-      $emptyLink.on('click', function(e){
-        e.preventDefault();
-      });
-    }
-
 
     // ======================================
     //    Smooth Scroll to element
@@ -108,7 +97,7 @@
       if(window.location.pathname == '/my-work/') {
         $('.site-nav__link--work').addClass('site-nav__link--active');
       }
-      if(window.location.href.indexOf("blog") > -1) {
+      if(window.location.href.indexOf("blog/") > -1) {
         $('.site-nav__link--blog').addClass('site-nav__link--active');
       }
       if(window.location.pathname == '/contact/') {
@@ -213,7 +202,6 @@
     // ==============================================
     //    Initialise plugins
     // ==============================================
-    init_dummy_link();
     init_scroll_to();
     init_active_nav();
     init_contact_form();

@@ -7,7 +7,7 @@ var config = require('../config');
     plugins = require('gulp-load-plugins')();
 
 
-module.exports = function (gulp, data, argv) {
+module.exports = function (gulp, data) {
 
   gulp.task('copy:forms', function () {
       gulp.src(data.paths.source.forms + "*")
