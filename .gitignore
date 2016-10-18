@@ -5,6 +5,9 @@
 #Gulp & npm files
 node_modules
 
+#Sass cache
+.sass-cache
+
 #Other folder/files
 dist
-.sass-cache
+style-guide

@@ -94,7 +94,7 @@
       if(window.location.pathname == '/') {
         $('.site-nav__link--home').addClass('site-nav__link--active');
       }
-      if(window.location.pathname == '/my-work/') {
+      if(window.location.href.indexOf("my-work/") > -1) {
         $('.site-nav__link--work').addClass('site-nav__link--active');
       }
       if(window.location.href.indexOf("blog/") > -1) {
