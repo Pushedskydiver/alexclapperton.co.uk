@@ -2,22 +2,22 @@
 * Main font family
 */
 @font-face {
-  font-family: "Inconsolata";
-  src: url("../fonts/inconsolata/inconsolata-regular.eot"); /* IE9 */
-  src: url("../fonts/inconsolata/inconsolata-regular.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
-  url("../fonts/inconsolata/inconsolata-regular.woff") format("woff"), /* chrome, firefox */
-  url("../fonts/inconsolata/inconsolata-regular.ttf") format("truetype"), /* chrome, firefox, opera, Safari, Android, iOS 4.2+ */
-  url("../fonts/inconsolata/inconsolata-regular.svg#Inconsolata") format("svg"); /* iOS 4.1- */
+  font-family: "Josefin Slab";
+  src: url("../fonts/josefin-slab/josefin-slab-regular.eot"); /* IE9 */
+  src: url("../fonts/josefin-slab/josefin-slab-regular.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
+  url("../fonts/josefin-slab/josefin-slab-regular.woff") format("woff"), /* chrome, firefox */
+  url("../fonts/josefin-slab/josefin-slab-regular.ttf") format("truetype"), /* chrome, firefox, opera, Safari, Android, iOS 4.2+ */
+  url("../fonts/josefin-slab/josefin-slab-regular.svg#josefin-slab") format("svg"); /* iOS 4.1- */
   font-style: normal;
   font-weight: $core-font-weight;
 }
 @font-face {
-  font-family: "Inconsolata";
-  src: url("../fonts/inconsolata/inconsolata-bold.eot"); /* IE9 */
-  src: url("../fonts/inconsolata/inconsolata-bold.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
-  url("../fonts/inconsolata/inconsolata-bold.woff") format("woff"), /* chrome, firefox */
-  url("../fonts/inconsolata/inconsolata-bold.ttf") format("truetype"), /* chrome, firefox, opera, Safari, Android, iOS 4.2+ */
-  url("../fonts/inconsolata/inconsolata-bold.svg#Inconsolata") format("svg"); /* iOS 4.1- */
+  font-family: "Josefin Slab";
+  src: url("../fonts/josefin-slab/josefin-slab-semi-bold.eot"); /* IE9 */
+  src: url("../fonts/josefin-slab/josefin-slab-semi-bold.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
+  url("../fonts/josefin-slab/josefin-slab-semi-bold.woff") format("woff"), /* chrome, firefox */
+  url("../fonts/josefin-slab/josefin-slab-semi-bold.ttf") format("truetype"), /* chrome, firefox, opera, Safari, Android, iOS 4.2+ */
+  url("../fonts/josefin-slab/josefin-slab-semi-bold.svg#josefin-slab") format("svg"); /* iOS 4.1- */
   font-style: normal;
   font-weight: $core-tertiary-font-weight;
 }

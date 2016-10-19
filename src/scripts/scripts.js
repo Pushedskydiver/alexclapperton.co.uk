@@ -94,10 +94,10 @@
       if(window.location.pathname == '/') {
         $('.site-nav__link--home').addClass('site-nav__link--active');
       }
-      if(window.location.href.indexOf("my-work/") > -1) {
-        $('.site-nav__link--work').addClass('site-nav__link--active');
+      if(window.location.pathname == '/about/') {
+        $('.site-nav__link--about').addClass('site-nav__link--active');
       }
-      if(window.location.href.indexOf("blog/") > -1) {
+      if(window.location.href.indexOf('blog/') > -1) {
         $('.site-nav__link--blog').addClass('site-nav__link--active');
       }
       if(window.location.pathname == '/contact/') {

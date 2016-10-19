@@ -152,20 +152,17 @@
 }
 
 .site-contact__details {
+  @include grid(null, row, null);
+  @include align-items(center);
   margin-bottom: ($core-margin * 2);
 
   &:last-child {
     margin-bottom: 0;
   }
 
-  &:last-child .site-contact__detail-icon-wrapper::after {
+  &:last-child .site-contact__details-icon-wrapper::after {
     display: none;
   }
-}
-
-.site-contact__details {
-  @include grid(null, row, null);
-  @include align-items(center);
 }
 
 .site-contact__details-icon-wrapper {

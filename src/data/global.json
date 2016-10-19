@@ -9,17 +9,21 @@
   "twitterHandle": "@AlexMClapperton",
   "facebookName": "AlexMClapperton",
   "linkedinName": "AlexClapperton",
+  "githubRepo": "https://github.com/Pushedskydiver/alexclapperton.co.uk",
   "social": [
     {
       "url": "https://www.facebook.com/AlexMClapperton",
+      "title-attr": "External link to Alex's Facebook profile.",
       "icon": "facebook"
     },
     {
       "url": "https://twitter.com/AlexMClapperton",
+      "title-attr": "External link to Alex's Twitter profile.",
       "icon": "twitter"
     },
     {
       "url": "https://uk.linkedin.com/in/alexclapperton",
+      "title-attr": "External link to Alex's LinkedIn profile.",
       "icon": "linkedin"
     }
   ],
@@ -31,16 +35,16 @@
       "icon": "home"
     },
     {
-      "url": "/my-work",
-      "title": "My Work",
-      "slug": "work",
-      "icon": "portfolio"
+      "url": "/about",
+      "title": "About Me",
+      "slug": "about",
+      "icon": "user"
     },
     {
       "url": "/blog",
       "title": "Blog",
       "slug": "blog",
-      "icon": "book"
+      "icon": "blog"
     },
     {
       "url": "/contact",

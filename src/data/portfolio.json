@@ -3,11 +3,26 @@
     {
       "title": "Love Manchester Website",
       "slug": "love-manchester-website/",
-      "image": "portfolio",
+      "title-attr": "Link to portfolio item",
+      "description": "An international student website about Manchester",
+      "src": "portfolio",
       "alt": "Example alt text.",
+      "type": "uni",
       "university": true,
       "universityTitle": "University Project",
       "universityIcon": "graduation-cap"
+    },
+    {
+      "title": "Website Portfolio 2015",
+      "slug": "website-portfolio-2015/",
+      "title-attr": "Link to portfolio item",
+      "description": "My personal portfolio website I made in 2015",
+      "src": "portfolio",
+      "alt": "Example alt text.",
+      "type": "personal",
+      "personal": true,
+      "personalTitle": "Personal Project",
+      "persoanlIcon": "user"
     }
   ]
 }

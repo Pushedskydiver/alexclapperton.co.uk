@@ -2,7 +2,7 @@
   display: inline-block;
   font-family: $core-font-family;
   @include font-size($p-font-sizes);
-  padding: 8px 15px;
+  padding: 8px 15px 11px 15px;
   text-decoration: none;
 
   @include respond-to(l) {

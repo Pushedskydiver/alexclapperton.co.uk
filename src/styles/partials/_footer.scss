@@ -39,7 +39,7 @@
 }
 
 .site-footer__twitter-icon {
-  size: 20px;
+  size: 25px;
   fill: $core-color-brand;
   float: left;
   margin-right: 5px;
@@ -98,6 +98,10 @@
 
 .footer-social__icon--linkedin {
   fill: #007bb5;
+}
+
+.footer-social__icon--github {
+  fill: $core-color-light;
 }
 
 .footer-social__text {

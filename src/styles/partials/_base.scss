@@ -57,7 +57,7 @@ h3 {
 }
 
 h4 {
-  font-family: $core-secondary-font-family;
+  font-family: $core-font-family;
   @include font-size($h4-font-sizes);
   font-weight: $core-secondary-font-weight;
   margin: 0 0 $core-margin 0;
@@ -79,7 +79,7 @@ h5 {
 h6 {
   font-family: $core-secondary-font-family;
   font-size: ($core-font-size * 1.15);
-  font-weight: $core-secondary-font-weight;
+  font-weight: $core-font-weight;
   margin: 0 0 $core-margin 0;
   line-height: $core-line-height;
 
@@ -92,7 +92,7 @@ p {
   color: $core-color-dark;
   @include font-size($p-font-sizes);
   font-weight: $core-font-weight;
-  line-height: 1.7;
+  line-height: $core-line-height;
   margin: 0 0 15px 0;
 }
 
@@ -156,6 +156,18 @@ hr {
   }
 }
 
+.site-sub-heading {
+  display: block;
+  font-family: $core-font-family;
+  font-weight: $core-font-weight;
+  @include font-size($h1-font-sizes);
+  text-align: center;
+}
+
+.site-sub-heading--dark {
+  color: $core-color-dark;
+}
+
 .site-list {
   list-style: none;
   margin: $core-margin 0 ($core-margin * 2) 0;
@@ -197,8 +209,13 @@ hr {
 .external-link__icon {
   size: 10px;
   fill: $core-color-brand;
-  margin-left: -5px;
   vertical-align: middle;
+}
+
+.interact a {
+  display: inline-block;
+  color: $core-color-light;
+  margin-right: $core-grid-unit;
 }
 
 .site-figure {

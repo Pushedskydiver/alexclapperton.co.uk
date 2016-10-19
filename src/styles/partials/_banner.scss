@@ -94,8 +94,6 @@
 }
 
 .site-banner__flex--blog {
-  height: 100%;
-  @include grid(wrap, column, center);
 
   @include respond-to(s) {
     .site-banner__title {

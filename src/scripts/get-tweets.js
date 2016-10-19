@@ -35,7 +35,7 @@ var configProfile = {
   "showTime": false,
   "showImages": false,
   "showRetweet": false,
-  "showInteraction": false,
+  "showInteraction": true,
   "lang": 'en'
 };
 
