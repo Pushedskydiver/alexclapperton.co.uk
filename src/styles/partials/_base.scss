@@ -138,6 +138,20 @@ hr {
   opacity: 0.2;
 }
 
+.site-heading-font {
+  font-family: $core-secondary-font-family;
+}
+
+.site-body-font {
+  font-family: $core-font-family;
+}
+
+.site-text--large {
+  @include font-size($h1-font-sizes);
+  letter-spacing: 5px;
+  margin-bottom: 0;
+}
+
 .site-container {
   position: relative;
   padding: 0 $core-padding;

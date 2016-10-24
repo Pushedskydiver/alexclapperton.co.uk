@@ -14,6 +14,15 @@
   margin-top: 25px;
 }
 
+.btn-primary--margin {
+  margin-bottom: $core-grid-unit;
+
+  @include respond-to(m) {
+    margin-right: $core-grid-unit;
+    margin-bottom: 0;
+  }
+}
+
 .btn-primary--no-padding {
   display: inline-block;
   font-size: ($core-font-size * 1.15);
@@ -32,7 +41,7 @@
   color: $core-color-brand;
 }
 
-.btn-primary--pink {
+.btn-primary--blue {
   background: $core-color-brand;
   color: $core-color-light;
 
@@ -61,10 +70,11 @@
 
 .btn-primary__icon {
   size: 19px;
+  margin-left: 2px;
   vertical-align: middle;
 }
 
-.btn-primary__icon--pink {
+.btn-primary__icon--blue {
   fill: $core-color-brand;
 }
 

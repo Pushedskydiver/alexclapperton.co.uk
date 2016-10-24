@@ -139,35 +139,133 @@
 
 .site-portfolio__content {
   margin-bottom: ($core-grid-unit * 2);
+  padding: ($core-grid-unit * 2) 0;
 
   @include respond-to(m) {
     width: calc(75% - 6px);
   }
 }
 
-.site-portfolio__img {
-  width: 100%;
-  margin-bottom: ($core-grid-unit * 2);
+.site-portfolio__title--blue {
+  color: $core-color-brand;
+}
 
+.site-portfolio__flex {
   @include respond-to(m) {
-    &:last-child {
-      margin-bottom: 0;
-    }
+    @include grid(wrap, row, space-between);
   }
 }
 
-.site-portfolio__share {
+.site-portfolio__flex-item {
+  @include respond-to(m) {
+    width: calc(50% - 12px);
+  }
+}
+
+.site-portfolio__img {
+  width: 100%;
   margin-top: ($core-grid-unit * 2);
+
+  @include respond-to(m) {
+    margin-top: 0;
+  }
+}
+
+.site-portfolio__palette {
+  margin: ($core-margin * 7) 0;
+
+  @include respond-to(s) {
+    @include grid(wrap, row, space-between);
+  }
+}
+
+.site-portfolio__palette-item {
+  margin-top: ($core-margin * 2);
+
+  &:first-child {
+    margin-top: 0;
+  }
+
+  @include respond-to(s) {
+    width: calc(50% - 12px);
+
+    &:nth-of-type(2) {
+      margin-top: 0;
+    }
+  }
+
+  @include respond-to(m) {
+    width: calc(25% - 12px);
+    margin-top: 0;
+  }
+}
+
+.site-portfolio__palette-color {
+  size: 120px;
+  margin: 0 auto;
+  box-shadow: 0 5px 20px 0 rgba(0,0,0,.33);
+  border-radius: 50%;
+
+  @include respond-to(xs) {
+    size: 160px;
+  }
+
+  @include respond-to(s) {
+    size: 180px;
+  }
+
+  @include respond-to(m) {
+    size: 130px;
+  }
+
+  @include respond-to(l) {
+    size: 160px;
+  }
+
+  @include respond-to(xl) {
+    size: 190px;
+  }
+}
+
+.site-portfolio__palette--base {
+  background: $core-color-brand;
+}
+
+.site-portfolio__palette--dark {
+  background: $core-color-dark;
+}
+
+.site-portfolio__palette--neutral {
+  background: $core-color-neutral;
+}
+
+.site-portfolio__palette--light {
+  background: $core-color-light;
+}
+
+.site-portfolio__palette-name {
+  display: block;
+  @include font-size($h5-font-sizes);
+  text-align: center;
+  margin-top: ($core-margin * 2);
+}
+
+.site-portfolio__font {
+  margin-bottom: ($core-margin * 2) ;
+}
+
+.site-portfolio__share {
+  margin-top: ($core-margin * 2);
 }
 
 .site-portfolio__share-item {
-  margin-right: ($core-grid-unit / 2);
+  margin-right: ($core-margin / 2);
 }
 
 .site-portfolio__cta {
 
   .site-container {
-    padding: 30px $core-grid-unit;
+    padding: 30px $core-padding;
 
     @include respond-to(m) {
       padding: 60px $core-grid-unit;
