@@ -1,8 +1,6 @@
 $palettes: (
-  lvm : (
-    base: $core-color-brand,
-    dark: $core-color-dark,
-    neutral: $core-color-neutral,
-    light: $core-color-light
-  )
+  ('lvm', 'base', #38c9ff),
+  ('lvm', 'dark', #f36),
+  ('lvm', 'neutral', #333),
+  ('lvm', 'light', #ededed),
 );

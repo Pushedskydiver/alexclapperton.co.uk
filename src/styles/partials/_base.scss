@@ -118,6 +118,7 @@ svg {
 }
 
 button {
+  @include font-size($p-font-sizes);
   -webkit-appearance: none;
   appearance: none;
   border: none;
@@ -146,12 +147,6 @@ hr {
   font-family: $core-font-family;
 }
 
-.site-text--large {
-  @include font-size($h1-font-sizes);
-  letter-spacing: 5px;
-  margin-bottom: 0;
-}
-
 .site-container {
   position: relative;
   padding: 0 $core-padding;
@@ -168,6 +163,26 @@ hr {
   @include respond-to(xl) {
     width: 1200px;
   }
+}
+
+.site-flex {
+  @include grid(wrap, column, null);
+
+  @include respond-to(m) {
+    @include flex-direction(row);
+  }
+}
+
+.site-flex--space-between {
+  @include justify-content(space-between);
+}
+
+.site-flex--justify-center {
+  @include justify-content(center);
+}
+
+.site-flex--align-center {
+  @include align-items(center);
 }
 
 .site-sub-heading {
@@ -230,6 +245,11 @@ hr {
   display: inline-block;
   color: $core-color-light;
   margin-right: $core-grid-unit;
+}
+
+.site-image--center {
+  text-align: center;
+  margin: 0 auto ($core-margin * 2) auto;
 }
 
 .site-figure {

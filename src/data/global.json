@@ -36,6 +36,13 @@
       "icon": "home"
     },
     {
+      "url": "/my-work",
+      "title": "Work",
+      "slug": "work",
+      "title-attr": "Internal link to the my work page",
+      "icon": "work"
+    },
+    {
       "url": "/about",
       "title": "About Me",
       "slug": "about",

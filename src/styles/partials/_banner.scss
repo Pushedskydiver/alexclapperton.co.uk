@@ -80,21 +80,11 @@
     position: relative;
     height: 100%;
     z-index: z(alpha);
-
-    @supports (display: flex) {
-      @include grid(null, column, center);
-    }
-
-    @supports not (display: flex) {
-      display: table;
-      width: 100%;
-      height: 100%;
-    }
+    @include grid(null, column, center);
   }
 }
 
 .site-banner__flex--blog {
-
   @include respond-to(s) {
     .site-banner__title {
       text-align: center;
@@ -103,13 +93,6 @@
     .breadcrumbs {
       @include justify-content(center);
     }
-  }
-}
-
-.site-banner__content {
-  @supports not (display: flex) {
-    display: table-cell;
-    vertical-align: middle;
   }
 }
 

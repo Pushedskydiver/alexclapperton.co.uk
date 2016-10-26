@@ -1,5 +1,5 @@
-<figure class="site-portfolio__item  {{{this.type}}}">
-  <a class="site-portfolio__item-link" href="/my-work/{{{this.slug}}}" title="{{{this.title-attr}}}">
+<a class="site-portfolio__item" href="/my-work/{{{this.slug}}}" title="{{{this.title-attr}}}">
+  <figure class="site-portfolio__figure  {{{this.type}}}">
     <h3 class="site-portfolio__item-title">{{{this.title}}}</h3>
     <svg class="site-portfolio__item-icon">
       <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/icons/sprite.svg#{{#if personal}}{{{persoanlIcon}}}{{/if}}{{#if university}}{{{universityIcon}}}{{/if}}"></use>
@@ -9,5 +9,5 @@
       <p class="site-portfolio__item-text">{{#if personal}}{{{personalTitle}}}{{/if}}{{#if university}}{{{universityTitle}}}{{/if}}</p>
       <p class="site-portfolio__item-text">{{{this.description}}}</p>
     </figcaption>
-  </a>
-</figure>
+  </figure>
+</a>

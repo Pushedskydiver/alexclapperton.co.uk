@@ -94,6 +94,9 @@
       if(window.location.pathname == '/') {
         $('.site-nav__link--home').addClass('site-nav__link--active');
       }
+      if(window.location.href.indexOf('my-work/') > -1) {
+        $('.site-nav__link--work').addClass('site-nav__link--active');
+      }
       if(window.location.pathname == '/about/') {
         $('.site-nav__link--about').addClass('site-nav__link--active');
       }
@@ -205,7 +208,10 @@
     init_scroll_to();
     init_active_nav();
     init_contact_form();
-    init_portfolio();
+
+    if(window.location.pathname == '/my-work/') {
+      init_portfolio();
+    }
 
     if (!$('body').hasClass('mobile')) {
       init_smooth_scroll_top();

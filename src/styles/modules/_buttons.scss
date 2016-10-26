@@ -7,7 +7,16 @@
 
   @include respond-to(l) {
     cursor: pointer;
+
+    &:hover,
+    &:focus {
+      @include cd-pulse;
+    }
   }
+}
+
+.btn-primary--large {
+  padding: 12px 60px 16px 60px;
 }
 
 .btn-primary--contact {
@@ -37,20 +46,13 @@
   }
 }
 
-.btn-primary--no-padding-pink {
+.btn-primary--no-padding-blue {
   color: $core-color-brand;
 }
 
 .btn-primary--blue {
   background: $core-color-brand;
   color: $core-color-light;
-
-  @include respond-to(l) {
-    &:hover,
-    &:focus {
-      @include cd-pulse;
-    }
-  }
 }
 
 .btn-primary--grey {
@@ -64,7 +66,25 @@
   vertical-align: middle;
 }
 
+.btn-primary__text--large {
+  @include font-size($h4-font-sizes);
+}
+
 .btn-primary__flex {
+  margin-top: ($core-margin * 2);
+  @include grid(wrap, row, center);
+
+  @include respond-to(m) {
+    margin-top: 0;
+  }
+}
+
+.btn-primary__flex--center {
+  height: 100%;
+  @include align-items(center);
+}
+
+.btn-primary__flex--start {
   align-self: flex-start;
 }
 
@@ -85,8 +105,7 @@
 .btn-portfolio {
   background: $core-color-brand;
   color: $core-color-light;
-  font-family: $core-secondary-font-family;
-  font-size: ($core-font-size * 1.3);
+  font-family: $core-font-family;
   font-weight: $core-font-weight;
   margin-bottom: 10px;
   padding: $core-grid-unit;

@@ -15,14 +15,17 @@
 
 .site-portfolio__grid {
   @include respond-to(s) {
+    @include grid(wrap, row, space-between);
     margin-right: -$core-grid-unit;
     margin-left: -$core-grid-unit;
   }
 }
 
 .site-portfolio__item {
+  display: block;
   position: relative;
   background: $core-color-dark;
+  text-decoration: none;
   margin-top: $core-grid-unit;
   overflow: hidden;
 
@@ -81,6 +84,7 @@
   top: ($core-grid-unit * 2);
   left: ($core-grid-unit * 2);
   width: 80%;
+  padding-right: 5px;
   border-right: 1px solid #fff;
 
   @include respond-to(l) {
@@ -91,10 +95,8 @@
   }
 }
 
-.site-portfolio__item-link {
-  display: block;
+.site-portfolio__figure {
   position: relative;
-  text-decoration: none;
 }
 
 .site-portfolio__item-title {
@@ -106,6 +108,14 @@
   font-weight: $core-font-weight;
   margin: 0;
   z-index: z(beta);
+
+  @include respond-to(m) {
+    width: 80%;
+  }
+
+  @include respond-to(l) {
+    width: 100%;
+  }
 }
 
 .site-portfolio__item-text {
@@ -172,10 +182,14 @@
 }
 
 .site-portfolio__palette {
-  margin: ($core-margin * 7) 0;
+  padding: ($core-padding * 7) 0;
 
   @include respond-to(s) {
     @include grid(wrap, row, space-between);
+  }
+
+  @include respond-to(l) {
+    padding: ($core-padding * 10) 0;
   }
 }
 
@@ -227,20 +241,12 @@
   }
 }
 
-.site-portfolio__palette--base {
-  background: $core-color-brand;
-}
-
-.site-portfolio__palette--dark {
-  background: $core-color-dark;
-}
-
-.site-portfolio__palette--neutral {
-  background: $core-color-neutral;
-}
-
-.site-portfolio__palette--light {
-  background: $core-color-light;
+@each $theme in $palettes {
+  .site-portfolio__palette--#{nth($theme,1)} {
+    .site-portfolio__palette--#{nth($theme,2)} {
+      background: nth($theme,3);
+    }
+  }
 }
 
 .site-portfolio__palette-name {
@@ -251,7 +257,7 @@
 }
 
 .site-portfolio__font {
-  margin-bottom: ($core-margin * 2) ;
+  padding: 0 0 ($core-padding * 3) 0;
 }
 
 .site-portfolio__share {

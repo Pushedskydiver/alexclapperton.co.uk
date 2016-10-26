@@ -9,14 +9,14 @@
     </div>
     <!-- END : SKIP LINKS /-->
     <!-- BEGIN : SITE HEADER FLEX -->
-    <div class="site-header__flex">
+    <div class="site-flex site-flex--align-center">
       <!-- BEGIN : MAIN HEADER -->
       <div class="site-logo">
         <a href="/" class="site-logo__link"><span class="site-logo__period">.</span>Alex</a>
       </div>
       <!-- END : MAIN HEADER /-->
       <!-- BEGIN : SITE NAV -->
-      <nav class="site-nav" id="nav" role="navigation">
+      <nav class="site-nav site-flex site-flex--align-center" id="nav" role="navigation">
         {{#each global.navigation}}
           <!-- BEGIN : SITE NAV LINK -->
           <a href="{{{this.url}}}" class="site-nav__link site-nav__link--{{{this.slug}}}" title="{{{this.title-attr}}}">
