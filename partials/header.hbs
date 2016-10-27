@@ -12,7 +12,7 @@
     <div class="site-flex site-flex--align-center">
       <!-- BEGIN : MAIN HEADER -->
       <div class="site-logo">
-        <a href="/" class="site-logo__link"><span class="site-logo__period">.</span>Alex</a>
+        <a href="/" class="site-logo__link" title="Internal link to homepage."><span class="site-logo__period">.</span>Alex</a>
       </div>
       <!-- END : MAIN HEADER /-->
       <!-- BEGIN : SITE NAV -->
@@ -33,7 +33,7 @@
       <div class="social-header">
         {{#each global.social}}
           <!-- BEGIN : SOCIAL HEADER ICON -->
-          <a href="{{{this.url}}}" class="social-header__link">
+          <a href="{{{this.url}}}" class="social-header__link" title="{{{this.title-attr}}}">
             <svg class="social-header__icon">
               <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/icons/sprite.svg#{{{this.icon}}}"></use>
             </svg>

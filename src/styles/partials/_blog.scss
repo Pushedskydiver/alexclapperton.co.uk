@@ -17,10 +17,6 @@
   background: $core-color-light;
 }
 
-.site-blog__title {
-  padding: 0 $core-padding;
-}
-
 .site-blog__flex {
   @include respond-to(m) {
     padding: 0 $core-padding;

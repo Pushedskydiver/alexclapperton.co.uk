@@ -66,14 +66,10 @@ h4 {
 
 h5 {
   font-family: $core-secondary-font-family;
-  font-size: ($core-font-size * 1.2);
+  @include font-size($h5-font-sizes);
   font-weight: $core-secondary-font-weight;
   margin: 0 0 $core-margin 0;
   line-height: $core-line-height;
-
-  @include respond-to(s) {
-    font-size: ($core-font-size * 1.4);
-  }
 }
 
 h6 {
@@ -137,14 +133,6 @@ hr {
   margin: ($core-margin * 2) 0;
   border-color: $core-color-dark;
   opacity: 0.2;
-}
-
-.site-heading-font {
-  font-family: $core-secondary-font-family;
-}
-
-.site-body-font {
-  font-family: $core-font-family;
 }
 
 .site-container {
@@ -219,6 +207,7 @@ hr {
 .site-list__icon {
   size: 13px;
   fill: $core-color-dark;
+  margin-right: 5px;
   vertical-align: middle;
 }
 

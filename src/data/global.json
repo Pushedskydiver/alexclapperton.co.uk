@@ -32,34 +32,34 @@
       "url": "/",
       "title": "Home",
       "slug": "home",
-      "title-attr": "Internal link to the homepage",
+      "title-attr": "Internal link to the homepage.",
       "icon": "home"
     },
     {
       "url": "/my-work",
       "title": "Work",
       "slug": "work",
-      "title-attr": "Internal link to the my work page",
+      "title-attr": "Internal link to the my work page.",
       "icon": "work"
     },
     {
       "url": "/about",
-      "title": "About Me",
+      "title": "About",
       "slug": "about",
-      "title-attr": "Internal link to the about page",
+      "title-attr": "Internal link to the about page.",
       "icon": "user"
     },
     {
       "url": "/blog",
       "title": "Blog",
       "slug": "blog",
-      "title-attr": "Internal link to the blog page",
+      "title-attr": "Internal link to the blog page.",
       "icon": "blog"
     },
     {
       "url": "/contact",
       "title": "Contact",
-      "title-attr": "Internal link to the contact page",
+      "title-attr": "Internal link to the contact page.",
       "slug": "contact",
       "icon": "mail"
     }

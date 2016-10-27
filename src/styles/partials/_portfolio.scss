@@ -28,6 +28,7 @@
   text-decoration: none;
   margin-top: $core-grid-unit;
   overflow: hidden;
+  transition: none;
 
   &:first-child {
     margin-top: 0;
@@ -47,7 +48,6 @@
     &:hover {
 
       .site-portfolio__item-img {
-        opacity: 0.5;
         -webkit-transform: translate3d(0,0,0) scale(1);
       	transform: translate3d(0,0,0) scale(1);
       }
@@ -66,7 +66,7 @@
 }
 
 .site-portfolio__item-img {
-  opacity: 0.5;
+  opacity: 0.3;
   -webkit-transform: translate3d(-15px,0,0) scale(1.12);
   transform: translate3d(-15px,0,0) scale(1.12);
 
