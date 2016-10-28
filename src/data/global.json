@@ -44,7 +44,7 @@
     },
     {
       "url": "/about",
-      "title": "About",
+      "title": "About Me",
       "slug": "about",
       "title-attr": "Internal link to the about page.",
       "icon": "user"

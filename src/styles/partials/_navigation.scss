@@ -31,7 +31,7 @@
 }
 
 .site-logo__link {
-  display: block;
+  display: inline-block;
   font-family: $core-font-family;
   color: $core-color-dark;
   font-size: $core-font-size * 2;
@@ -53,18 +53,16 @@
   position: fixed;
   bottom: 0;
   right: 0;
-  size: 100% 55px;
+  size: 100% 60px;
   background: $core-color-light;
   margin: 0 auto;
   padding: 0;
-  border-top: 1px solid darken($core-color-neutral, 15%);
   z-index: z(charlie);
   @include transition-03;
 
   @include respond-to(m) {
     position: initial;
-    width: auto;
-    border: none;
+    size: auto 55px;
     flex-grow: 1;
   }
 

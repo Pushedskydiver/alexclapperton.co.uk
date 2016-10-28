@@ -13,10 +13,10 @@ body {
   font-size: $core-font-size;
   background: $core-color-neutral;
   margin: 0;
-  padding-bottom: 55px;
+  padding-bottom: 60px;
   @include fadein;
 
-  @include respond-to(s) {
+  @include respond-to(m) {
     padding-bottom: 0;
   }
 }
@@ -132,7 +132,7 @@ a {
 hr {
   margin: ($core-margin * 2) 0;
   border-color: $core-color-dark;
-  opacity: 0.2;
+  opacity: 0.1;
 }
 
 .site-container {
@@ -179,10 +179,6 @@ hr {
   font-weight: $core-font-weight;
   @include font-size($h1-font-sizes);
   text-align: center;
-}
-
-.site-sub-heading--dark {
-  color: $core-color-dark;
 }
 
 .site-list {

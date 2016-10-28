@@ -15,7 +15,7 @@
 
 .site-portfolio__grid {
   @include respond-to(s) {
-    @include grid(wrap, row, space-between);
+    @include grid(wrap, row, flex-start);
     margin-right: -$core-grid-unit;
     margin-left: -$core-grid-unit;
   }

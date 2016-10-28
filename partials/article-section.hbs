@@ -1,4 +1,4 @@
-<a class="site-blog__item" href="/blog/{{this.slug}}">
+<a class="site-blog__item" href="/blog/{{this.slug}}" title="{{{this.title-attr}}}">
   <h3 class="site-blog__item-title">{{#if external}} rel="external">{{/if}}{{{this.title}}}{{#if subtitle}}: <em>{{{subtitle}}}</em>{{/if}}</h3>
   <time datetime="{{{pubDate}}}" class="site-blog__item-date">
     {{{this.readableDate}}}

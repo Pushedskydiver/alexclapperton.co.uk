@@ -76,6 +76,14 @@
 }
 
 .site-banner__flex {
+  @include respond-to(xs) {
+    margin-top: 40px;
+  }
+
+  @include respond-to(s) {
+    margin-top: 0;
+  }
+
   @include respond-to(m) {
     position: relative;
     height: 100%;
@@ -85,7 +93,12 @@
 }
 
 .site-banner__flex--blog {
+  height: 100%;
+  margin-top: 0;
+
   @include respond-to(s) {
+    @include grid(wrap, column, center);
+
     .site-banner__title {
       text-align: center;
     }
