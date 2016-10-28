@@ -29,25 +29,59 @@
           <span class="breadcrumbs__item">{{{title}}}{{#if subtitle}}{{{subtitle}}}{{/if}}</span>
         </div>
       </div>
-      <!-- END : SITE BANNER FLEX -->
+      <!-- END : SITE BANNER FLEX /-->
     </div>
-    <!-- END : CONTAINER -->
+    <!-- END : CONTAINER /-->
   </section>
   <!-- ******************** SITE BANNER : End ******************** /-->
 
   <!-- ******************** SITE BLOG POST : Start ******************** -->
   <main class="site-post" role="main">
+    <!-- BEGIN : CONTAINER -->
     <div class="site-container">
-      <article class="site-post__content">
-        <div class="site-post__details">
-          <span class="site-post__date">Posted on <strong><time itemprop="datePublished" value="{{{pubDate}}}">{{{pubDate}}}</time></strong></span>
-          <span class="site-post__category">Category: <strong>{{{category}}}</strong></span>
+      <!-- BEGIN : ARTICLE BODY -->
+      <article class="article__body">
+        <!-- BEGIN : ARTICLE DETAILS -->
+        <div class="article__details">
+          <span class="article__date">Posted on <strong><time itemprop="datePublished" value="{{{pubDate}}}">{{{pubDate}}}</time></strong></span>
+          <span class="article__category">Category: <strong>{{{category}}}</strong></span>
         </div>
+        <!-- END : ARTICLE DETAILS /-->
 
         {{{contents}}}
 
       </article>
+      <!-- END : ARTICLE BODY -->
+      <!-- BEGIN : ARTICLE SECTION -->
+      <aside class="article__section">
+        <h3>Share this post</h3>
+        <!-- BEGIN : ARTICLE SECTION FLEX -->
+        <div class="article__section--flex">
+          <a href="https://twitter.com/intent/tweet?text={{{title}}}&amp;url={{{global.url}}}/blog/{{{slug}}}&amp;via=AlexMClapperton" target="_blank" rel="external" title="External link to Twitter share post." class="post__share-link" data-ga-category="Post share - Twitter" data-ga-action="click" data-ga-label="{{{title}}}">
+            <span class="u-visually-hidden">Twitter</span>
+            <svg class="post__share-icon post__share-icon--twitter">
+              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/icons/sprite.svg#twitter"></use>
+            </svg>
+          </a>
+          <a href="https://www.linkedin.com/shareArticle?mini=true&url={{{global.url}}}/blog/{{{slug}}}&amp;title={{{title}}}&amp;source={{{global.url}}}/blog/" target="_blank" rel="external" title="External link to LinkedIn share article." class="post__share-link" data-ga-category="Post share - LinkedIn" data-ga-action="click" data-ga-label="{{{title}}}">
+            <span class="u-visually-hidden">LinkedIn</span>
+            <svg class="post__share-icon post__share-icon--linkedin">
+              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/icons/sprite.svg#linkedin"></use>
+            </svg>
+          </a>
+        </div>
+        <!-- END : ARTICLE SECTION FLEX /-->
+      </aside>
+      <!-- END : ARTICLE SECTION /-->
+      <!-- BEGIN : ARTICLE SECTION -->
+      <aside class="article__section">
+        <h3>Comment on this post</h3>
+        <div id="disqus_thread" class="disqus-thread"></div>
+        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+      </aside>
+      <!-- END : ARTICLE SECTION /-->
     </div>
+    <!-- END : CONTAINER /-->
   </main>
   <!-- ******************** SITE BLOG POST : End ******************** /-->
 </div>

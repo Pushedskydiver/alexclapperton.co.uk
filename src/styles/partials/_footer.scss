@@ -89,24 +89,19 @@
 
 .footer-social__icon--facebook {
   position: relative;
-  fill: #3b5998;
+  fill: $core-facebook-color;
 }
 
 .footer-social__icon--twitter {
-  fill: #55acee;
+  fill: $core-twitter-color;
 }
 
 .footer-social__icon--linkedin {
-  fill: #007bb5;
+  fill: $core-linkedin-color;
 }
 
 .footer-social__icon--github {
   fill: $core-color-light;
-}
-
-.footer-social__text {
-  display: inline-block;
-  text-indent: -9999px;
 }
 
 .site-footer__posts {

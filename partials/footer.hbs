@@ -15,10 +15,10 @@
           <!-- BEGIN : FOOTER SOCIAL LINK -->
           {{#each global.social}}
             <a href="{{{this.url}}}" class="footer-social__link" title="{{{this.title-attr}}}">
-              <svg class="footer-social__icon  footer-social__icon--{{{this.icon}}}">
+              <svg class="footer-social__icon footer-social__icon--{{{this.icon}}}">
                 <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/icons/sprite.svg#{{{this.icon}}}"></use>
               </svg>
-              <span class="footer-social__text">{{{this.icon}}}</span>
+              <span class="u-visually-hidden">{{{this.icon}}}</span>
             </a>
           {{/each}}
           <!-- END : FOOTER SOCIAL LINK /-->
@@ -27,7 +27,7 @@
             <svg class="footer-social__icon  footer-social__icon--github">
               <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/icons/sprite.svg#github"></use>
             </svg>
-            <span class="footer-social__text">Github</span>
+            <span class="u-visually-hidden">Github</span>
           </a>
           <!-- END : FOOTER SOCIAL LINK /-->
         </div>
