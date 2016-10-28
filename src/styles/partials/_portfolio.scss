@@ -172,6 +172,10 @@
   }
 }
 
+.site-portfolio__flex-img {
+  max-width: 350px;
+}
+
 .site-portfolio__img {
   width: 100%;
   margin-top: ($core-grid-unit * 2);

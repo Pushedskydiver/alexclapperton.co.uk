@@ -6,7 +6,7 @@
     <div class="site-footer__flex">
       <!-- BEGIN : SITE FOOTER FLEX ITEM -->
       <div class="site-footer__item">
-        <h4>.Alex</h4>
+        <h4 class="site-footer__title">.Alex</h4>
         <p>
           Manchester based Junior/Freelance Front-End Web Developer.
         </p>
@@ -18,7 +18,7 @@
               <svg class="footer-social__icon footer-social__icon--{{{this.icon}}}">
                 <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/icons/sprite.svg#{{{this.icon}}}"></use>
               </svg>
-              <span class="u-visually-hidden">{{{this.icon}}}</span>
+              <span class="u-visually-hidden u-visually-hidden--white">{{{this.icon}}}</span>
             </a>
           {{/each}}
           <!-- END : FOOTER SOCIAL LINK /-->
@@ -27,7 +27,7 @@
             <svg class="footer-social__icon  footer-social__icon--github">
               <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/icons/sprite.svg#github"></use>
             </svg>
-            <span class="u-visually-hidden">Github</span>
+            <span class="u-visually-hidden u-visually-hidden--white">Github</span>
           </a>
           <!-- END : FOOTER SOCIAL LINK /-->
         </div>
@@ -36,13 +36,13 @@
       <!-- END : SITE FOOTER FLEX ITEM /-->
       <!-- BEGIN : SITE FOOTER FLEX ITEM -->
       <div class="site-footer__item">
-        <h4>{{{global.twitterHandle}}}</h4>
+        <h4 class="site-footer__title">{{{global.twitterHandle}}}</h4>
         <div id="twitter"></div>
       </div>
       <!-- END : SITE FOOTER FLEX ITEM /-->
       <!-- BEGIN : SITE FOOTER FLEX ITEM -->
       <div class="site-footer__item">
-        <h4>Latest Posts</h4>
+        <h4 class="site-footer__title">Latest Posts</h4>
         <!-- BEGIN : SITE FOOTER POST -->
         {{#each_upto articles.[2016] 3}}
           {{>footer-article}}
@@ -64,5 +64,5 @@
   <svg class="scroll-top__icon">
     <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/icons/sprite.svg#arrow-up"></use>
   </svg>
-  <span class="scroll-top__text">Scroll to top</span>
+  <span class="u-visually-hidden u-visually-hidden--white">Scroll to top</span>
 </a>

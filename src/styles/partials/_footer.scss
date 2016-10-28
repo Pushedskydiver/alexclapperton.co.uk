@@ -38,6 +38,11 @@
   }
 }
 
+.site-footer__title {
+  font-family: $core-font-family;
+  @include font-size($h6-font-sizes);
+}
+
 .site-footer__twitter-icon {
   size: 25px;
   fill: $core-color-brand;

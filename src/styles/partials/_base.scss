@@ -5,13 +5,15 @@
 }
 
 html {
-  font-size: 16px;
+  font-size: $core-font-size;
 }
 
 body {
-  font-family: $core-font-family;
-  font-size: $core-font-size;
   background: $core-color-neutral;
+  color: $core-color-dark;
+  font-family: $core-font-family;
+  font-weight: $core-font-weight;
+  line-height: $core-line-height;
   margin: 0;
   padding-bottom: 60px;
   @include fadein;
@@ -33,7 +35,7 @@ h1 {
   color: $core-color-brand;
   font-family: $core-secondary-font-family;
   @include font-size($h1-font-sizes);
-  font-weight: $core-secondary-font-weight;
+  font-weight: $core-tertiary-font-weight;
   margin: 0 0 $core-margin 0;
   line-height: $core-line-height;
 }
@@ -42,7 +44,7 @@ h2 {
   color: $core-color-brand;
   font-family: $core-secondary-font-family;
   @include font-size($h2-font-sizes);
-  font-weight: $core-secondary-font-weight;
+  font-weight: $core-tertiary-font-weight;
   margin: 0 0 $core-margin 0;
   line-height: $core-line-height;
 }
@@ -51,15 +53,15 @@ h3 {
   color: $core-color-dark;
   font-family: $core-secondary-font-family;
   @include font-size($h3-font-sizes);
-  font-weight: $core-secondary-font-weight;
+  font-weight: $core-tertiary-font-weight;
   margin: 0 0 $core-margin 0;
   line-height: $core-line-height;
 }
 
 h4 {
-  font-family: $core-font-family;
+  font-family: $core-secondary-font-family;
   @include font-size($h4-font-sizes);
-  font-weight: $core-secondary-font-weight;
+  font-weight: $core-tertiary-font-weight;
   margin: 0 0 $core-margin 0;
   line-height: $core-line-height;
 }
@@ -67,7 +69,7 @@ h4 {
 h5 {
   font-family: $core-secondary-font-family;
   @include font-size($h5-font-sizes);
-  font-weight: $core-secondary-font-weight;
+  font-weight: $core-tertiary-font-weight;
   margin: 0 0 $core-margin 0;
   line-height: $core-line-height;
 }
@@ -153,6 +155,10 @@ hr {
   }
 }
 
+.u-visually-hidden--white {
+  color: $core-color-light;
+}
+
 .site-container {
   position: relative;
   padding: 0 $core-padding;
@@ -195,7 +201,7 @@ hr {
   display: block;
   font-family: $core-font-family;
   font-weight: $core-font-weight;
-  @include font-size($h1-font-sizes);
+  @include font-size($h2-font-sizes);
   text-align: center;
 }
 
@@ -241,6 +247,7 @@ hr {
 .external-link__icon {
   size: 10px;
   fill: $core-color-brand;
+  margin-left: -2px;
   vertical-align: middle;
 }
 
@@ -270,10 +277,9 @@ hr {
 
 .site-figure__caption {
   background: $core-color-neutral;
+  color: $core-color-brand;
+  @include font-size($p-font-sizes);
+  text-align: center;
   line-height: $core-line-height;
   padding: ($core-padding / 2) $core-padding;
-
-  @include respond-to(m) {
-    text-align: center;
-  }
 }
