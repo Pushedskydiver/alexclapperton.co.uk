@@ -84,8 +84,8 @@
   @include align-items(center);
 }
 
-.btn-primary__flex--start {
-  align-self: flex-start;
+.btn-primary__flex--end {
+  @include justify-content(flex-end);
 }
 
 .btn-primary__icon {

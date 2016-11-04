@@ -6,9 +6,9 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,minimum-scale=1, user-scalable=yes, initial-scale=1">
   <meta name="description" content="{{#if description}}{{{description}}}{{else}}{{#if title}}{{{title}}} - {{/if}}Alex Clapperton &mdash; Front-End Developer{{/if}}">
-
-  <!-- FAVICON -->
-  <link rel="icon" type="image/ico" href="/images/favicon.ico">
+  {{#if nofollow}}
+    <meta name="robots" content="noindex, nofollow">
+  {{/if}}
 
   <!-- PAGE TITLE -->
   <title>
@@ -18,6 +18,65 @@
 
   <!-- STYLESHEET -->
   <link rel="stylesheet" href="/css/main.css">
+
+  <!-- SITEMAP -->
+  <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml" />
+
+  <link rel="alternate" href="{{{global.url}}}" hreflang="en-gb">
+  <link rel="canonical" href="{{{global.url}}}{{#if pubDate}}/blog{{/if}}{{#if slug}}/{{{slug}}}{{/if}}">
+
+  <script type="application/ld+json" async>
+    {
+      "@context": "http://schema.org",
+      {{#if pubDate}}
+      "@type": "NewsArticle",
+      "author": {{{global.name}}}
+      "publisher": {{{global.name}}}
+      "headline": "{{{title}}}",
+      "datePublished": "{{{pubDate}}}",
+      "dateModified":  "{{{pubDate}}}",
+      "mainEntityOfPage": "{{{global.url}}}{{#if pubDate}}/blog{{/if}}{{#if slug}}/{{{slug}}}{{/if}}",
+      {{else}}
+      "@type": "Person",
+      "name": "{{{global.name}}}",
+      {{/if}}
+      "url": "{{{global.url}}}{{#if pubDate}}/blog{{/if}}{{#if slug}}/{{{slug}}}{{/if}}",
+      "image" : "{{#if ogImage}}{{{ogImage}}}{{else}}{{{global.url}}}/images/profile/daniel-furze_open-source-talk.jpg{{/if}}",
+      {{#unless pubDate}}
+      "sameAs" : [
+        "{{{global.twitter}}}",
+        "{{{global.linkedin}}}",
+        "{{{global.github}}}"
+      ]
+      {{/unless}}
+    }
+  </script>
+
+  <!-- FACEBOOK -->
+  <meta property="og:title" content="{{#if title}}{{{title}}} &mdash; {{/if}}{{{global.name}}}{{#if global.jobTitle}} &mdash; {{{global.jobTitle}}}{{/if}}" />
+  <meta property="og:type" content="{{#if pubDate}}article{{else}}website{{/if}}" />
+  <meta property="og:url" content="{{{global.url}}}{{#if pubDate}}/blog{{/if}}{{#if slug}}/{{{slug}}}{{/if}}" />
+  <meta property="og:image" content="{{{global.url}}}{{#if ogImage}}{{{ogImage}}}{{else}}/images/profile/daniel-furze_open-source-talk.jpg{{/if}}" />
+  <meta property="og:description" content="{{#if summary}}{{{summary}}}{{else}}{{{global.name}}} &mdash; blog{{/if}}">
+  <meta property="og:locale" content="en_GB">
+  <meta property="article:author" content="{{{global.name}}}">
+  <meta property="og:site_name" content="{{{global.name}}} &mdash; blog">
+
+  <!-- TWITTER -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:site" content="{{{global.twitterHandle}}}">
+  <meta name="twitter:creator" content="{{{global.twitterHandle}}}">
+  <meta name="twitter:url" content="{{{global.url}}}{{#if pubDate}}/blog{{/if}}{{#if slug}}/{{{slug}}}{{/if}}">
+  <meta name="twitter:title" content="{{#if title}}{{{title}}} &mdash; {{/if}}{{{global.name}}}{{#if global.jobTitle}} &mdash; {{{global.jobTitle}}}{{/if}}">
+  <meta name="twitter:description" content="{{#if summary}}{{{summary}}}{{else}}{{{global.name}}} &mdash; blog{{/if}}">
+  <meta name="twitter:image" content="{{{global.url}}}{{#if ogImage}}{{{ogImage}}}{{else}}/images/profile/daniel-furze_open-source-talk.jpg{{/if}}">
+
+  <!-- FAVICONS -->
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/favicons/favicon-96x96.png">
+  <link rel="mask-icon" href="/favicons/safari-pinned-tab.svg" color="#3455db">
+  <link rel="manifest" href="manifest.json">
 
 </head>
 

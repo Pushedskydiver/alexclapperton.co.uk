@@ -21,8 +21,8 @@ require('./tasks/styles.js')(gulp, data, argv);
 require('./tasks/scripts.js')(gulp, data, argv);
 require('./tasks/images.js')(gulp, data);
 require('./tasks/icons.js')(gulp, data);
+require('./tasks/copy.js')(gulp, data);
 require('./tasks/fonts.js')(gulp, data);
-require('./tasks/forms.js')(gulp, data);
 require('./tasks/critical.js')(gulp, data, argv);
 require('./tasks/cache-bust.js')(gulp, data);
 require('./tasks/stylelint.js')(gulp, data);
@@ -48,7 +48,7 @@ gulp.task('dev', function (callback) {
 gulp.task('default', function (callback) {
   runSeq(
     'clean:all',
-    ['html:build', 'styles:sass', 'scripts', 'icons', 'images', 'fonts', 'copy:forms'],
+    ['html:build', 'styles:sass', 'scripts', 'icons', 'images', 'fonts', 'copy:forms', 'copy:favicons', 'copy:manifest'],
     'clean:fonts',
     ['cacheBuster', 'critical'],
     ['html:min'],

@@ -184,7 +184,10 @@
     function init_portfolio() {
       var $grid = $('.site-portfolio__grid'),
           $grid_filter = $('.site-portfolio__filter'),
-          $grid_selectors = $('.btn-portfolio');
+          $grid_selectors = $('.btn-portfolio'),
+          $grid_items = $('.site-portfolio__item');
+
+      $grid_items.addClass('site-portfolio__item--isotope');
 
       imagesLoaded($grid, function(){
         $grid.isotope({

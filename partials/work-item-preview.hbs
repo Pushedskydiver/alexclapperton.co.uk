@@ -1,9 +1,11 @@
 <a class="site-portfolio__item {{{this.type}}}" href="/my-work/{{{this.slug}}}" title="{{{this.title-attr}}}">
   <figure class="site-portfolio__figure">
-    <h3 class="site-portfolio__item-title">{{{this.title}}}</h3>
-    <svg class="site-portfolio__item-icon">
-      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/icons/sprite.svg#{{#if personal}}{{{persoanlIcon}}}{{/if}}{{#if university}}{{{universityIcon}}}{{/if}}"></use>
-    </svg>
+    <div class="site-portfolio__figure-wrapper">
+      <h3 class="site-portfolio__item-title">{{{this.title}}}</h3>
+      <svg class="site-portfolio__item-icon">
+        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/icons/sprite.svg#{{#if personal}}{{{persoanlIcon}}}{{/if}}{{#if university}}{{{universityIcon}}}{{/if}}"></use>
+      </svg>
+    </div>
     <img class="site-portfolio__item-img" src="/images/portfolio/{{{src}}}.jpg" alt="{{{this.alt}}}" />
     <figcaption class="site-portfolio__item-desc">
       <p class="site-portfolio__item-text">{{#if personal}}{{{personalTitle}}}{{/if}}{{#if university}}{{{universityTitle}}}{{/if}}</p>

@@ -36,17 +36,14 @@
     margin-top: 0;
   }
 
-  @include respond-to(m) {
+  @include respond-to(l) {
     width: calc(50% - 12px);
+    position: relative;
+    border-bottom: none;
 
     &:nth-of-type(2) {
       margin-top: 0;
     }
-  }
-
-  @include respond-to(l) {
-    position: relative;
-    border-bottom: none;
 
     &::after {
       content: '';

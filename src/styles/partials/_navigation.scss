@@ -32,21 +32,10 @@
 
 .site-logo__link {
   display: inline-block;
-  font-family: $core-font-family;
-  color: $core-color-dark;
-  font-size: $core-font-size * 2;
-  font-weight: $core-secondary-font-weight;
-  line-height: normal;
-  text-decoration: none;
-
-  @include respond-to(m) {
-    display: inline-block;
-  }
 }
 
-.site-logo__period {
-  color: $core-color-brand;
-  margin-right: 2px;
+.site-logo__img {
+  width: 60px;
 }
 
 .site-nav {

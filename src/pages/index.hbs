@@ -7,7 +7,7 @@ changefreq: monthly
 priority: 1.0
 ---
 
-<!-- ******************** SITE BANNER : Start ******************** /-->
+<!-- ******************** SITE BANNER : Start ******************** -->
 <section class="site-banner site-banner--large">
   <!-- BEGIN : CONTAINER -->
   <div class="site-container">
@@ -33,12 +33,27 @@ priority: 1.0
 <!-- ******************** SITE BANNER : End /******************** /-->
 
 
-<!-- ******************** SITE SECTION : Start ******************** /-->
+<!-- ******************** SITE MAIN : Start ******************** -->
 <main class="site-main" id="content" role="main">
   <!-- BEGIN : CONTAINER -->
   <div class="site-container">
-    <h2 class="site-sub-heading">Check out my latest work</h2>
-    <hr>
+    <!-- BEGIN : SITE PORTFOLIO FLEX -->
+    <div class="site-portfolio__flex site-portfolio__flex--padding">
+      <!-- BEGIN : SITE PORTFOLIO FLEX ITEM -->
+      <div class="site-portfolio__flex-item">
+        <h2>My latest work</h2>
+      </div>
+      <!-- END : SITE PORTFOLIO FLEX ITEM /-->
+      <!-- BEGIN : SITE PORTFOLIO FLEX ITEM -->
+      <div class="site-portfolio__flex-item">
+        <!-- BEGIN : BTN PRIMARY FLEX -->
+        <div class="btn-primary__flex btn-primary__flex--end">
+          <a class="btn-primary btn-primary--blue btn-primary--large btn-primary__text--large" href="/my-work" title="Internal link to my work page.">See more</a>
+        </div>
+        <!-- END : BTN PRIMARY FLEX /-->
+      </div>
+    </div>
+    <!-- END : SITE PORTFOLIO FLEX /-->
     <!-- BEGIN : SITE PORTFOLIO GRID -->
     <div class="site-portfolio__grid">
       {{#each_upto portfolio.[2016] 4}}
@@ -48,15 +63,13 @@ priority: 1.0
       {{/each_upto}}
     </div>
     <!-- END : SITE PORTFOLIO GRID /-->
-    <hr>
-    <h2 class="site-sub-heading"><a href="/my-work">See more of my work</a></h2>
   </div>
   <!-- END : CONTAINER /-->
 </main>
-<!-- ******************** SITE SECTION : End /******************** /-->
+<!-- ******************** SITE MAIN : End ******************** /-->
 
 
-<!-- ******************** SITE BLOG : Start ******************** /-->
+<!-- ******************** SITE BLOG : Start ******************** -->
 <section class="site-blog">
   <!-- BEGIN : CONTAINER -->
   <div class="site-container">
@@ -80,4 +93,4 @@ priority: 1.0
   </div>
   <!-- END : CONTAINER /-->
 </section>
-<!-- ******************** SITE BLOG : End /******************** /-->
+<!-- ******************** SITE BLOG : End ******************** /-->
