@@ -134,9 +134,10 @@
   margin-top: 0;
 
   @include grid(wrap, column, center);
-  @include align-items(center);
 
   @include respond-to(s) {
+    @include align-items(center);
+    
     .breadcrumbs {
       @include justify-content(center);
     }
