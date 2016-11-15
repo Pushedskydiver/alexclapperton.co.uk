@@ -42,12 +42,12 @@
       "name": "{{{global.name}}}",
       {{/if}}
       "url": "{{{global.url}}}{{#if pubDate}}/blog{{/if}}{{#if slug}}/{{{slug}}}{{/if}}",
-      "image" : "{{#if ogImage}}{{{ogImage}}}{{else}}{{{global.url}}}/images/profile/daniel-furze_open-source-talk.jpg{{/if}}",
+      "image" : "{{#if ogImage}}{{{ogImage}}}{{else}}{{{global.url}}}/images/profile/alex-clapperton.jpg{{/if}}",
       {{#unless pubDate}}
       "sameAs" : [
-        "{{{global.twitter}}}",
-        "{{{global.linkedin}}}",
-        "{{{global.github}}}"
+        "{{{global.twitterHandle}}}",
+        "{{{global.linkedinName}}}",
+        "{{{global.githubRepo}}}"
       ]
       {{/unless}}
     }
@@ -57,7 +57,7 @@
   <meta property="og:title" content="{{#if title}}{{{title}}} &mdash; {{/if}}{{{global.name}}}{{#if global.jobTitle}} &mdash; {{{global.jobTitle}}}{{/if}}" />
   <meta property="og:type" content="{{#if pubDate}}article{{else}}website{{/if}}" />
   <meta property="og:url" content="{{{global.url}}}{{#if pubDate}}/blog{{/if}}{{#if slug}}/{{{slug}}}{{/if}}" />
-  <meta property="og:image" content="{{{global.url}}}{{#if ogImage}}{{{ogImage}}}{{else}}/images/profile/daniel-furze_open-source-talk.jpg{{/if}}" />
+  <meta property="og:image" content="{{{global.url}}}{{#if ogImage}}{{{ogImage}}}{{else}}/images/profile/alex-clapperton.jpg{{/if}}" />
   <meta property="og:description" content="{{#if summary}}{{{summary}}}{{else}}{{{global.name}}} &mdash; blog{{/if}}">
   <meta property="og:locale" content="en_GB">
   <meta property="article:author" content="{{{global.name}}}">
@@ -70,14 +70,13 @@
   <meta name="twitter:url" content="{{{global.url}}}{{#if pubDate}}/blog{{/if}}{{#if slug}}/{{{slug}}}{{/if}}">
   <meta name="twitter:title" content="{{#if title}}{{{title}}} &mdash; {{/if}}{{{global.name}}}{{#if global.jobTitle}} &mdash; {{{global.jobTitle}}}{{/if}}">
   <meta name="twitter:description" content="{{#if summary}}{{{summary}}}{{else}}{{{global.name}}} &mdash; blog{{/if}}">
-  <meta name="twitter:image" content="{{{global.url}}}{{#if ogImage}}{{{ogImage}}}{{else}}/images/profile/daniel-furze_open-source-talk.jpg{{/if}}">
+  <meta name="twitter:image" content="{{{global.url}}}{{#if ogImage}}{{{ogImage}}}{{else}}/images/profile/alex-clapperton.jpg{{/if}}">
 
   <!-- FAVICONS -->
   <link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="96x96" href="/favicons/favicon-96x96.png">
   <link rel="mask-icon" href="/favicons/safari-pinned-tab.svg">
-  <link rel="manifest" href="manifest.json">
 
 </head>
 
@@ -90,11 +89,3 @@
       <p>Find out <a href="http://enable-javascript.com" rel="external" target="_blank">how to turn JavaScript on</a>.</p>
     </div>
   </noscript>
-
-  <!--[if lte IE 11]>
-    <div class="support-notice support-notice--browser">
-    <p>Some features of this website will not work with the browser you are using <small>(Internet Explorer 11 or less)</small>.</p>
-    <p>You might want to look into <a href="http://whatbrowser.org" rel="external" target="_blank">Upgrading your browser</a>.</p>
-    <button class="js-close-notice">Close this notice</button>
-    </div>
-  <![endif]-->

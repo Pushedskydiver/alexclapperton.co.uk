@@ -23,11 +23,17 @@ priority: 1.0
     <!-- BEGIN : SITE BANNER FLEX -->
     <div class="site-banner__flex">
       <h1 class="site-banner__title">A little bit about <br> who I am</h1>
-
+      <!-- BEGIN : BREADCRUMBS -->
       <div class="breadcrumbs">
         <span class="breadcrumbs__item"><a class="breadcrumbs__link" href="/">Home</a></span>
         <span class="breadcrumbs__item">About</span>
       </div>
+      <!-- END : BREADCRUMBS /-->
+      <picture>
+          <source srcset="/images/banner/alex-thinking.png" media="(min-width: 768px)">
+          <source srcset="/images/banner/alex-looking-up.png">
+          <img class="site-banner__img site-banner__img--home" src="/images/banner/alex-thinking.png" alt="Portrait of Alex tilting his head to the left looking up with his right hand grabbing his chin, like he is thinking." />
+      </picture>
     </div>
     <!-- END : SITE BANNER FLEX -->
   </div>

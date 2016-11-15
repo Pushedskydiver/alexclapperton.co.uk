@@ -6,6 +6,7 @@
   .site-container {
     height: 100%;
     padding: $core-padding;
+    overflow: hidden;
   }
 
   @include respond-to(m) {
@@ -34,6 +35,32 @@
     left: initial;
     width: calc(50% - 12px);
     margin: 0;
+  }
+}
+
+.site-banner__img--home {
+  padding: 0 $core-padding;
+  @include scale(1.5);
+
+  @include respond-to(xs) {
+    @include scale(1.7);
+  }
+
+  @include respond-to(s) {
+    bottom: -15%;
+    padding: 0;
+    margin: 0 auto;
+    @include scale(0.9);
+  }
+
+  @include respond-to(m) {
+    bottom: 0;
+    width: calc(50% - 12px);
+    @include scale(1);
+  }
+
+  @include respond-to(xl) {
+    bottom: -15%;
   }
 }
 
