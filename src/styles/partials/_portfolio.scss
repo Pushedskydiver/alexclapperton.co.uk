@@ -56,6 +56,14 @@
   }
 }
 
+.site-portfolio__flex-item--margin {
+  margin-top: ($core-margin * 2);
+
+  @include respond-to(m) {
+    margin: 0;
+  }
+}
+
 .site-portfolio__item--isotope {
   @include respond-to(l) {
     &:nth-of-type(odd) {
@@ -188,7 +196,7 @@
 }
 
 .site-portfolio__palette {
-  padding: ($core-padding * 7) 0;
+  padding: ($core-padding * 4) 0;
 
   @include respond-to(s) {
     @include grid(wrap, row, space-between);
