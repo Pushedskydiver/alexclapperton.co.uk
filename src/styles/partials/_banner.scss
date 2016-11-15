@@ -42,6 +42,10 @@
   padding: 0 $core-padding;
   @include scale(1.5);
 
+  @media (min-width: 600px) and (min-height: 370px) {
+    display: none;
+  }
+
   @include respond-to(xs) {
     @include scale(1.7);
   }
