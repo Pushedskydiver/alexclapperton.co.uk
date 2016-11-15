@@ -93,7 +93,7 @@ module.exports = {
             minifyCSS: true,
             minifyJS: true,
             processConditionalComments: true,
-            removeAttributeQuotes: true,
+            removeAttributeQuotes: false,
             removeComments: true,
             removeEmptyAttributes: true,
             removeOptionalTags: true,
