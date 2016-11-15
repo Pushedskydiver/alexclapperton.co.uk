@@ -46,12 +46,15 @@
     display: none;
   }
 
+  @media (min-width: 700px) and (min-height: 450px) {
+    display: block;
+  }
+
   @include respond-to(xs) {
     @include scale(1.7);
   }
 
   @include respond-to(s) {
-    display: block;
     bottom: -15%;
     padding: 0;
     margin: 0 auto;
