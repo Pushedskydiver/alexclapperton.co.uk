@@ -137,7 +137,11 @@
 
   @include respond-to(s) {
     @include align-items(center);
-    
+
+    .site-banner__title {
+      text-align: center;
+    }
+
     .breadcrumbs {
       @include justify-content(center);
     }
