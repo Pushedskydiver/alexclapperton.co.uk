@@ -1,3 +1,5 @@
+// Transforms - css transform properties
+
 @mixin transform($transforms) {
   -webkit-transform: $transforms;
   -moz-transform: $transforms;

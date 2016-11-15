@@ -6,6 +6,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,minimum-scale=1, user-scalable=yes, initial-scale=1">
   <meta name="description" content="{{#if description}}{{{description}}}{{else}}{{#if title}}{{{title}}} - {{/if}}Alex Clapperton &mdash; Front-End Developer{{/if}}">
+  <meta name="keywords" content="{{{keywords}}}">
   {{#if nofollow}}
     <meta name="robots" content="noindex, nofollow">
   {{/if}}
@@ -81,3 +82,19 @@
 </head>
 
 <body>
+
+  <!-- JAVASCRIPT ALERT -->
+  <noscript>
+    <div class="support-notice support-notice--javascript">
+      <p>You currently have JavaScript in your browser turned off, so some features of this site may not work fully.</p>
+      <p>Find out <a href="http://enable-javascript.com" rel="external" target="_blank">how to turn JavaScript on</a>.</p>
+    </div>
+  </noscript>
+
+  <!--[if lt IE 11]>
+    <div class="support-notice support-notice--browser">
+    <p>Some features of this website will not work with the browser you are using <small>(Internet Explorer 11 or less)</small>.</p>
+    <p>You might want to look into <a href="http://whatbrowser.org" rel="external" target="_blank">Upgrading your browser</a>.</p>
+    <button class="js-close-notice">Close this notice</button>
+    </div>
+  <![endif]-->

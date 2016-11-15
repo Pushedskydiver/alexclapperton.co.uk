@@ -16,8 +16,8 @@ module.exports = function (gulp, data) {
       .pipe(gulp.dest(data.paths.dist.favicons))
   });
 
-  gulp.task('copy:manifest', function () {
-    return gulp.src(`${data.paths.source.base}manifest.json`)
-      .pipe(gulp.dest(data.paths.dist.base))
+  gulp.task('copy:pdf', function () {
+    return gulp.src(`${data.paths.source.base}pdf/*.pdf`)
+      .pipe(gulp.dest(`${data.paths.dist.base}pdf/`))
   });
 }

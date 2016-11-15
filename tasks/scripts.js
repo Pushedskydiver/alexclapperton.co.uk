@@ -12,6 +12,7 @@ module.exports = function (gulp, data, argv) {
       var source = [];
 
       source.push(`${data.paths.js.src}*.js`)
+      source.push(`${data.paths.js.src}vendor/cookies.js`)
 
       if (!argv.prod) {
         source.push(`${data.paths.js.src}vendor/tota11y.js`)

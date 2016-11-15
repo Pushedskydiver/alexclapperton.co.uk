@@ -1,3 +1,37 @@
+/* ============================================================ *\
+
+  #MAIN
+
+/* ============================================================ */
+
+/**
+* CONTENTS
+*
+* STYLES
+*  Core config - site wide config declarations
+*  Color palettes - color palettes for portfolio item projects
+*  Z-index - z-index map configuration
+*  Transitions - css transition properties
+*  Transforms - css transform properties
+*  Keyframes - animation keyframes
+*  Grid - site wide grid configuration
+*  Typography
+*  Buttons
+*
+*  Base - global properties
+*  Skip links - skip to nav and content links
+*  Scroll top - scroll to top button
+*  Notices - support notices
+*  Navigation - site navigation
+*  Breadcrumbs - breadcrumb links
+*  Banner - Site banner sections
+*  Main - main content section
+*  Portfolio - portfolio pages, filter buttons and items
+*  Blog - blog pages & blog posts
+*  Contact - contact page & form
+*  Footer - footer section
+*
+*/
 
 @import 'modules/core-config';
 @import 'modules/color-palettes';
@@ -12,6 +46,7 @@
 @import 'partials/base';
 @import 'partials/skip-links';
 @import 'partials/scroll-top';
+@import 'partials/notices';
 @import 'partials/navigation';
 @import 'partials/breadcrumbs';
 @import 'partials/banner';

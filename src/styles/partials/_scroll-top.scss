@@ -1,3 +1,5 @@
+// Scroll top - scroll to top button
+
 .scroll-top {
   display: block;
   position: fixed;
@@ -15,6 +17,10 @@
   -moz-transition: right 400ms cubic-bezier(0.68, -0.55, 0.265, 1.55), opacity 0.3s, color 0.3s;
   -o-transition: right 400ms cubic-bezier(0.68, -0.55, 0.265, 1.55), opacity 0.3s, color 0.3s;
   transition: right 400ms cubic-bezier(0.68, -0.55, 0.265, 1.55), opacity 0.3s, color 0.3s;
+
+  @include respond-to(m) {
+    cursor: pointer;
+  }
 
   &:hover::before {
     @include respond-to(l) {

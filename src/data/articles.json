@@ -1,6 +1,15 @@
 {
   "2016": [
     {
+      "title": "Creating my website part one: Research and design",
+      "slug": "creating-my-website-part-one-research-and-design",
+      "title-attr": "Creating my website part one: Research and design blog post page.",
+      "readableDate": "13 Nov, 2016",
+      "footerDate": "<span class=\"site-footer__post-date\">13 <small class=\"site-footer__post-date--small\">NOV</small></span>",
+      "pubDate": "2016-11-13",
+      "summary": "<p>A two part series into the research, design and build process of my portfolio website.</p>"
+    },
+    {
       "title": "Performance and optimisation: Getting your website up to speed",
       "slug": "performance-and-optimisation-getting-your-website-up-to-speed",
       "title-attr": "Performance and optimisation: Getting your website up to speed blog post page.",

@@ -1,0 +1,30 @@
+// Notices - support notices
+
+.support-notice {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background: #ffd600;
+  padding: ($core-padding / 2);
+  text-align: center;
+  border-top: 1px solid;
+  opacity: 0.9;
+  transition: opacity 250ms;
+  z-index: 999;
+
+  &:hover {
+    opacity: 1;
+  }
+
+  p:last-child {
+    margin: 0;
+  }
+}
+
+.support-notice--browser {
+  display: none;
+
+  .browser-notice-active & {
+    display: block;
+  }
+}
