@@ -189,17 +189,19 @@
 
       $grid_items.addClass('site-portfolio__item--isotope');
 
-      imagesLoaded($grid, function(){
-        $grid.isotope({
-          itemSelector: '.site-portfolio__item',
-          layoutMode: 'fitRows'
-        });
-        $grid_selectors.on( 'click', function() {
-          $grid_selectors.removeClass('btn-portfolio--active');
-          $(this).addClass('btn-portfolio--active');
-          var filterValue = $(this).attr('data-filter');
-          $grid.isotope({ filter: filterValue });
-          return false;
+      $(window).load(function(){
+        $grid.imagesLoaded( function(){
+          $grid.isotope({
+            itemSelector: '.site-portfolio__item',
+            percentPosition: true,
+            layoutMode: 'fitRows'
+          });
+          $grid_selectors.on( 'click', function() {
+            $grid_selectors.removeClass('btn-portfolio--active');
+            $(this).addClass('btn-portfolio--active');
+            var filterValue = $(this).attr('data-filter');
+            $grid.isotope({ filter: filterValue });
+          });
         });
       });
     }
