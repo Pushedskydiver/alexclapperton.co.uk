@@ -23,7 +23,8 @@
 .hidden {
   border: 0;
   /* clip: rect(0 0 0 0); */
-  size: 130px .0625rem;
+  width: 130px;
+  height: 0.0625rem;
   overflow: hidden;
   padding: 0;
   position: absolute;
@@ -31,7 +32,8 @@
   &:active,
   &:focus {
     clip: auto;
-    size: 130px auto;
+    width: 130px;
+    height: auto;
     overflow: visible;
   }
 }

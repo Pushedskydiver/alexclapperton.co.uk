@@ -95,14 +95,17 @@
 }
 
 .site-portfolio__item-icon {
-  size: 25px;
+  width: 25px;
+  height: 25px;
   fill: $core-color-light;
   @include respond-to(s) {
-    size: 30px;
+    width: 30px;
+    height: 30px;
   }
 
   @include respond-to(m) {
-    size: 35px;
+    width: 35px;
+    height: 35px;
   }
 }
 
@@ -230,29 +233,35 @@
 }
 
 .site-portfolio__palette-color {
-  size: 120px;
+  width: 120px;
+  height: 120px;
   margin: 0 auto;
   box-shadow: 0 5px 20px 0 rgba(0,0,0,.33);
   border-radius: 50%;
 
   @include respond-to(xs) {
-    size: 160px;
+    width: 160px;
+    height: 160px;
   }
 
   @include respond-to(s) {
-    size: 180px;
+    width: 180px;
+    height: 180px;
   }
 
   @include respond-to(m) {
-    size: 130px;
+    width: 130px;
+    height: 130px;
   }
 
   @include respond-to(l) {
-    size: 160px;
+    width: 160px;
+    height: 160px;
   }
 
   @include respond-to(xl) {
-    size: 190px;
+    width: 190px;
+    height: 190px;
   }
 }
 
@@ -325,7 +334,8 @@
 }
 
 .site-portfolio__cta-icon {
-  size: 20px;
+  width: 20px;
+  height: 20px;
   fill: $core-color-light;
   vertical-align: middle;
 }

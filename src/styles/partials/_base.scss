@@ -219,7 +219,8 @@ hr {
 }
 
 .site-list__icon {
-  size: 13px;
+  width: 13px;
+  height: 13px;
   fill: $core-color-dark;
   margin-right: 5px;
   vertical-align: middle;
@@ -239,7 +240,8 @@ hr {
 }
 
 .external-link__icon {
-  size: 10px;
+  width: 10px;
+  height: 10px;
   fill: $core-color-brand;
   margin-left: -2px;
   vertical-align: middle;

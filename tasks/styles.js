@@ -7,7 +7,6 @@ var config = require('../config'),
     autoprefixer = require('autoprefixer'),
     devtools = require('postcss-devtools'),
     focus = require('postcss-focus'),
-    cssshort = require('postcss-short'),
     cssnano = require('cssnano'),
     cleancss = require('gulp-clean-css'),
     plugins = require('gulp-load-plugins')();
@@ -22,7 +21,6 @@ module.exports = function (gulp, data, argv) {
       }),
       devtools(),
       focus(),
-      cssshort(),
       cssnano(config.plugin.cssnano)
     ]
 

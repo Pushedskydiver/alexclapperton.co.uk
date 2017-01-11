@@ -52,7 +52,8 @@
       position: absolute;
       bottom: 0;
       left: 0;
-      size: 0 2px;
+      width: 0;
+      height: 2px;
       background: $core-color-brand;
       @include transition-03;
     }
@@ -151,7 +152,8 @@
 }
 
 .post__share-icon {
-  size: 35px;
+  width: 35px;
+  height: 35px;
 }
 
 .post__share-icon--twitter {
