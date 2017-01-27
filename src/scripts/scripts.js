@@ -228,6 +228,7 @@
     init_scroll_to();
     init_active_nav();
     init_contact_form();
+    init_twitter();
 
     if(window.location.pathname == '/my-work/') {
       init_portfolio();
