@@ -1,11 +1,11 @@
 <!-- JAVASCRIPT -->
 <script src="/js/main.js"></script>
-<script src="/twitter/tweets_json.php?count=1&callback=listTweet"></script>
+<script src="/twitter/tweets_json.php?count=1&callback=listTweets"></script>
 <script>
   $(document).ready(function() {
     var refreshID = setInterval(function() {
       $.getJSON('/twitter/tweets_json.php?count=1', function(data) {
-        listTweet(data);
+        listTweets(data);
         $('.twitter-feed').trigger('create');
       });
     }, 5000);
