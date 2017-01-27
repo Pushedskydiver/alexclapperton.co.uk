@@ -23,4 +23,16 @@ module.exports = function (gulp, data, argv) {
         data.paths.dist.fonts + '**/*.css',
       ]);
   });
+
+  gulp.task('clean:css', function () {
+      return del([
+        data.paths.styles.dest + 'main.css',
+      ]);
+  });
+
+  gulp.task('clean:js', function () {
+      return del([
+        data.paths.js.dest + 'main.js',
+      ]);
+  });
 }

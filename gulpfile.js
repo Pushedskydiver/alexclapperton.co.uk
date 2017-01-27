@@ -50,23 +50,12 @@ gulp.task('default', function (callback) {
     'clean:all',
     ['html:build', 'styles:sass', 'scripts', 'icons', 'images', 'fonts', 'copy:forms', 'copy:favicons', 'copy:pdf', 'copy:twitter'],
     'clean:fonts',
-    ['cacheBuster', 'critical'],
-    ['html:min'],
-    callback
-  )
-});
-
-gulp.task('psi', function (callback) {
-  runSeq(
-    'psi:mobile',
-    'psi:desktop',
     callback
   )
 });
 
 gulp.task('perf', function (callback) {
   runSeq(
-    'psi',
     'webpagetest',
     callback
   )

@@ -4,16 +4,29 @@
  */
 
 var config = require('../config'),
+    CacheBuster = require('gulp-cachebust'),
     plugins = require('gulp-load-plugins')();
 
 
-module.exports = function (gulp, data, argv) {
+var cachebust = new CacheBuster();
 
-  gulp.task('cacheBuster', function () {
-      gulp.src(data.paths.dist.html + '**/*.html')
-          .pipe(plugins.cacheBust({
-            type: 'timestamp'
-          }))
-          .pipe(gulp.dest(data.paths.dist.html));
+module.exports = function (gulp, data) {
+
+  gulp.task('cache:css', function () {
+      gulp.src(`${data.paths.styles.dest}main.css`)
+          .pipe(cachebust.resources())
+          .pipe(gulp.dest(data.paths.styles.dest));
+  });
+
+  gulp.task('cache:js', function () {
+      gulp.src(`${data.paths.js.dest}main.js`)
+          .pipe(cachebust.resources())
+          .pipe(gulp.dest(data.paths.js.dest));
+  });
+
+  gulp.task('cache:html', ['cache:css', 'cache:js'], function () {
+      gulp.src(`${data.paths.dist.base}**/*.html`)
+          .pipe(cachebust.references())
+          .pipe(gulp.dest(data.paths.dist.base));
   });
 }

@@ -208,27 +208,11 @@
 
 
     // ==============================================
-    //    Twitter feed | Footer
-    // ==============================================
-    function init_twitter() {
-      $(document).ready(function() {
-        var refreshID = setInterval(function() {
-          $.getJSON('/twitter/tweets_json.php?count=1', function(data) {
-            listTweet(data);
-            $('.twitter-feed').trigger('create');
-          });
-        }, 5000);
-      });
-    }
-
-
-    // ==============================================
     //    Initialise plugins
     // ==============================================
     init_scroll_to();
     init_active_nav();
     init_contact_form();
-    init_twitter();
 
     if(window.location.pathname == '/my-work/') {
       init_portfolio();
