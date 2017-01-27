@@ -20,4 +20,9 @@ module.exports = function (gulp, data) {
     return gulp.src(`${data.paths.source.base}pdf/*.pdf`)
       .pipe(gulp.dest(`${data.paths.dist.base}pdf/`))
   });
+
+  gulp.task('copy:twitter', function () {
+    return gulp.src(`${data.paths.source.base}twitter/*`)
+      .pipe(gulp.dest(`${data.paths.dist.base}twitter/`))
+  });
 }
