@@ -50,12 +50,12 @@
   margin: 0;
   padding: 0;
   list-style: none;
-  @include grid(nowrap, row, flex-start);
 }
 
 .twitter-feed__item {
   color: $core-color-light;
   margin-bottom: ($core-margin * 1.2);
+  @include grid(nowrap, row, flex-start);
 
   &:last-child {
     margin-bottom: 0;
