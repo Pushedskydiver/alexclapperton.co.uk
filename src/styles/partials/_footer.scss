@@ -46,20 +46,26 @@
   @include font-size($h6-font-sizes);
 }
 
-.site-footer__twitter-icon {
+.twitter-feed__container {
+  margin: 0;
+  padding: 0;
+}
+
+.twitter-feed__item {
+  color: $core-color-light;
+  margin-bottom: ($core-margin * 1.2);
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.twitter-feed__icon {
   width: 25px;
   height: 25px;
   fill: $core-color-brand;
   float: left;
   margin-right: 5px;
-}
-
-.site-footer__tweet a[data-expanded-url] {
-  display: block;
-  width: 250px;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
 }
 
 .footer-social {
@@ -147,7 +153,6 @@
 .site-footer__post-title {
   display: block;
   color: $core-color-light;
-  font-family: $core-secondary-font-family;
   font-size: ($core-font-size * 1.2);
   text-decoration: none;
   vertical-align: middle;
