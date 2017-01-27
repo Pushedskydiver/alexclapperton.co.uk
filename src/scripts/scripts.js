@@ -213,7 +213,6 @@
     init_scroll_to();
     init_active_nav();
     init_contact_form();
-    listTweets();
 
     if(window.location.pathname == '/my-work/') {
       init_portfolio();
