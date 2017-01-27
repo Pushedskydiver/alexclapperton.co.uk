@@ -1,6 +1,5 @@
 <!-- JAVASCRIPT -->
 <script src="/js/main.js"></script>
-<script src="/twitter/tweets_json.php?count=1&callback=listTweets"></script>
 <script>
   function listTweets(data) {
     console.log(data);
@@ -29,13 +28,14 @@
       });
 
       output += '<li class="twitter-feed__item">';
-      output += 'text';
+      output += text;
       output += '</li>';
     }); //go through each tweet
     output += '</ul>';
     $('.twitter-feed').html(output);
   }
 </script>
+<script src="/twitter/tweets_json.php?count=1&callback=listTweets"></script>
 <script>
   $(document).ready(function() {
     var refreshID = setInterval(function() {
