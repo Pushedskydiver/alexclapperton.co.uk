@@ -50,6 +50,7 @@
   margin: 0;
   padding: 0;
   list-style: none;
+  @include grid(nowrap, row, flex-start);
 }
 
 .twitter-feed__item {
@@ -59,13 +60,16 @@
   &:last-child {
     margin-bottom: 0;
   }
+
+  span {
+    flex: 1;
+  }
 }
 
 .twitter-feed__icon {
   width: 25px;
   height: 25px;
   fill: $core-color-brand;
-  float: left;
   margin-right: 5px;
 }
 
