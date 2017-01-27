@@ -10,7 +10,6 @@ script:
   - gulp default --prod
   - gulp html:min --prod
   - gulp scripts --prod
-  - gulp cacheBuster
   - gulp critical --prod
   - gulp clean:fonts
 env:
