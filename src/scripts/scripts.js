@@ -237,8 +237,7 @@
     		});
 
     		output += '<li class="twitter-feed__item">';
-        outpu += '<svg class="twitter-feed__icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/icons/sprite.svg#arrow-up"></use></svg>'
-    		output += text;
+    		output += '<svg class="twitter-feed__icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/icons/sprite.svg#arrow-up"></use></svg>' + text;
     		output += '</li>';
     	}); //go through each tweet
     	output += '</ul>';
