@@ -27,18 +27,18 @@
       });
 
       output += '<li class="twitter-feed__item">';
-      output += '<svg class="twitter-feed__icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/icons/sprite.svg#arrow-up"></use></svg>' + text;
+      output += '<svg class="twitter-feed__icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/icons/sprite.svg#twitter"></use></svg>' + text;
       output += '</li>';
     }); //go through each tweet
     output += '</ul>';
     $('.twitter-feed').html(output);
   }
 </script>
-<script src="/twitter/tweets_json.php?count=1&callback=listTweets"></script>
+<script src="/twitter/tweets_json.php?count=2&callback=listTweets"></script>
 <script>
   $(document).ready(function() {
     var refreshID = setInterval(function() {
-      $.getJSON('/twitter/tweets_json.php?count=1', function(data) {
+      $.getJSON('/twitter/tweets_json.php?count=2', function(data) {
         listTweets(data);
         $('.twitter-feed').trigger('create');
       });
