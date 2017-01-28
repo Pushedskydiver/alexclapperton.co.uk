@@ -17,8 +17,6 @@ module.exports = function (gulp, data, argv) {
       log: gutil.log
     });
     gulp.src(`${data.paths.base.dest}**/*`)
-      .pipe(conn.delete(`${remotePath}css/*.css`))
-      .pipe(conn.delete(`${remotePath}js/*.js`))
       .pipe(conn.newer(remotePath))
       .pipe(conn.dest(remotePath));
   });
