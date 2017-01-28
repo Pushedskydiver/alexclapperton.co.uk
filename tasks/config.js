@@ -22,7 +22,7 @@ module.exports = {
             }
         },
         uglify: {
-            mangle: false,
+            mangle: true,
             compress: {
                 sequences: true,
                 properties: false,
@@ -42,7 +42,6 @@ module.exports = {
                 cascade: true,
                 side_effects: false,
                 warnings: false,
-                keep_fnames: true,
                 global_defs: {}
             }
         },
