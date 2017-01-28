@@ -42,6 +42,7 @@ module.exports = {
                 cascade: true,
                 side_effects: false,
                 warnings: false,
+                keep_fnames: true,
                 global_defs: {}
             }
         },
