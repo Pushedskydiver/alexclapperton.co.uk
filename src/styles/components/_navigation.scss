@@ -71,7 +71,7 @@
   width: 20%;
   height: 100%;
   text-decoration: none;
-  @include grid(null, column, center);
+  @include flex(null, column, center);
   @include align-items(center);
 
   @include respond-to(l) {
@@ -131,7 +131,7 @@
 
   @include respond-to(l) {
     width: 29.333333%;
-    @include grid(null, row, flex-end);
+    @include flex(null, row, flex-end);
   }
 }
 

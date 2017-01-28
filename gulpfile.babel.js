@@ -1,6 +1,13 @@
-var gulp = require('gulp'),
-    yargs = require('yargs'),
-    runSeq = require('run-sequence');
+/**
+ * @file gulpfile
+ * @author Alex Clapperton <hi@alexclapperton.co.uk>
+ */
+
+'use strict'
+
+import gulp from 'gulp'
+import yargs from 'yargs'
+import runSeq from 'run-sequence'
 
 const argv = yargs.argv
 

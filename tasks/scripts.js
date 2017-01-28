@@ -3,13 +3,14 @@
  * @author Alex Clapperton <hi@alexclapperton.co.uk>
  */
 
-var config = require('../config'),
-    plugins = require('gulp-load-plugins')();
+import config from '../tasks/config'
+import plugins from 'gulp-load-plugins'
 
+const $ = plugins()
 
 module.exports = function (gulp, data, argv) {
   gulp.task('scripts', function () {
-      var source = [];
+      let source = [];
 
       source.push(`${data.paths.js.src}*.js`)
       source.push(`${data.paths.js.src}vendor/cookies.js`)
@@ -19,13 +20,13 @@ module.exports = function (gulp, data, argv) {
       }
 
       gulp.src(source)
-          .pipe(plugins.order([
+          .pipe($.order([
               'jquery.min.js',
               '*',
               'scripts.js'
           ]))
-          .pipe(plugins.concat('main.js'))
-          .pipe(plugins.if(argv.prod, plugins.uglify()))
+          .pipe($.concat('main.js'))
+          .pipe($.if(argv.prod, $.uglify(config.plugin.uglify)))
           .pipe(gulp.dest(data.paths.js.dest));
   });
 }

@@ -1,48 +1,14 @@
 <!-- JAVASCRIPT -->
 <script src="/js/main.js"></script>
-<script>
-  function listTweets(data) {
-    var output = '<ul data-role="listview" class="twitter-feed__container">';
-
-    $.each(data, function(key, val) {
-      var text = data[key].text;
-      var thumbnail = data[key].user.profile_image_url;
-      var name = data[key].user.name;
-
-      text=text.replace(/[A-Za-z]+:\/\/[A-Za-z0-9-_]+\.[A-Za-z0-9-_:%&~\?\/.=]+/g, function(i) {
-        var url=i.link(i);
-        return url;
-      });
-
-      text=text.replace(/[@]+[A-Za-z0-9-_]+/g, function(i) {
-        var item = i.replace("@",'');
-        var	url = i.link("http://twitter.com/"+ item);
-        return url;
-      });
-
-      text=text.replace(/[#]+[A-Za-z0-9-_]+/g, function(i) {
-        var item = i.replace("#", '%23');
-        var url = i.link("http://search.twitter.com/search?q="+item);
-        return url;
-      });
-
-      output += '<li class="twitter-feed__item">';
-      output += '<svg class="twitter-feed__icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/icons/sprite.svg#twitter"></use></svg>' + '<span>' + text + '</span>';
-      output += '</li>';
-    }); //go through each tweet
-    output += '</ul>';
-    $('.twitter-feed').html(output);
-  }
-</script>
 <script src="/twitter/tweets_json.php?count=2&callback=listTweets"></script>
 <script>
   $(document).ready(function() {
-    var refreshID = setInterval(function() {
+    var refreshID = (function() {
       $.getJSON('/twitter/tweets_json.php?count=2', function(data) {
         listTweets(data);
         $('.twitter-feed').trigger('create');
       });
-    }, 5000);
+    });
   });
 </script>
 <script>

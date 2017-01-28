@@ -5,53 +5,69 @@
 /* ============================================================ */
 
 /**
-* CONTENTS
+* ITCSS LAYOUT
 *
-* STYLES
-*  Core config - site wide config declarations
-*  Color palettes - color palettes for portfolio item projects
-*  Z-index - z-index map configuration
-*  Transitions - css transition properties
-*  Transforms - css transform properties
-*  Keyframes - animation keyframes
-*  Grid - site wide grid configuration
-*  Typography
-*  Buttons
-*
-*  Base - global properties
-*  Skip links - skip to nav and content links
-*  Scroll top - scroll to top button
-*  Notices - support notices
-*  Navigation - site navigation
-*  Breadcrumbs - breadcrumb links
-*  Banner - Site banner sections
-*  Main - main content section
-*  Portfolio - portfolio pages, filter buttons and items
-*  Blog - blog pages & blog posts
-*  Contact - contact page & form
-*  Footer - footer section
+* SETTINGS
+* TOOLS
+* GENERIC
+* ELEMENTS
+* OBJECTS
+* COMPONENTS
+* TRUMPS
 *
 */
 
-@import 'modules/core-config';
-@import 'modules/color-palettes';
-@import 'modules/z-index';
-@import 'modules/transitions';
-@import 'modules/transforms';
-@import 'modules/keyframes';
-@import 'modules/grid';
-@import 'modules/typography';
-@import 'modules/buttons';
 
-@import 'partials/base';
-@import 'partials/skip-links';
-@import 'partials/scroll-top';
-@import 'partials/notices';
-@import 'partials/navigation';
-@import 'partials/breadcrumbs';
-@import 'partials/banner';
-@import 'partials/main';
-@import 'partials/portfolio';
-@import 'partials/blog';
-@import 'partials/contact';
-@import 'partials/footer';
+// @TODO: Organise Components files properly
+
+
+// ITCSS: SETTINGS
+@import 'settings/variables';
+
+
+// ITCSS: TOOLS
+@import 'tools/functions/typography';
+@import 'tools/functions/z-index';
+@import 'tools/mixins/typography';
+@import 'tools/mixins/grid';
+@import 'tools/mixins/flexbox';
+@import 'tools/mixins/transitions';
+@import 'tools/mixins/transforms';
+
+
+// ITCSS: GENERIC
+@import 'generic/typography';
+@import 'generic/keyframes';
+
+
+// ITCSS: ELEMENTS
+@import 'elements/global';
+
+
+// ITCSS: OBJECTS
+@import 'objects/layout';
+@import 'objects/grid-guides';
+@import 'objects/flexbox';
+@import 'objects/visually-hidden';
+@import 'objects/color-palettes';
+
+
+// ITCSS: COMPONENTS
+@import 'components/buttons';
+@import 'components/breadcrumbs';
+@import 'components/skip-links';
+@import 'components/external-links';
+@import 'components/scroll-top';
+@import 'components/notices';
+@import 'components/list';
+@import 'components/figure';
+@import 'components/navigation';
+@import 'components/banner';
+@import 'components/main';
+@import 'components/footer';
+@import 'components/blog';
+@import 'components/contact';
+@import 'components/portfolio';
+
+// ITCSS: TRUMPS
+// @NOTE: Ccode that is rushed and needs to be fixed later 

@@ -1,0 +1,55 @@
+// Convert px to em
+@function em($px, $base: $core-font-size) {
+    @return ($px / $base) * 1em;
+}
+
+$p-font-sizes: (
+  null: em($core-font-size),
+  xs: em(($core-font-size + 1)),
+  s: em(($core-font-size + 1.2)),
+  m: em(($core-font-size + 1.4)),
+  l: em(($core-font-size + 1.6)),
+  xl: em(($core-font-size + 1.8)),
+);
+
+$h1-font-sizes: (
+  null: em(($core-font-size * 2)),
+  xs: em(($core-font-size * 2.25)),
+  m: em(($core-font-size * 2.5)),
+  l: em(($core-font-size * 2.7)),
+);
+
+$h2-font-sizes: (
+  null: em(($core-font-size * 1.6)),
+  xs: em(($core-font-size * 1.8)),
+  m: em(($core-font-size * 2.1)),
+  l: em(($core-font-size * 2.4)),
+);
+
+$h3-font-sizes: (
+  null: em(($core-font-size * 1.35)),
+  xs: em(($core-font-size * 1.5)),
+  m: em(($core-font-size * 1.8)),
+  l: em(($core-font-size * 1.9)),
+);
+
+$h4-font-sizes: (
+  null: em(($core-font-size * 1.25)),
+  xs: em(($core-font-size * 1.35)),
+  m: em(($core-font-size * 1.6)),
+  l: em(($core-font-size * 1.7)),
+);
+
+$h5-font-sizes: (
+  null: em(($core-font-size * 1.15)),
+  xs: em(($core-font-size * 1.25)),
+  m: em(($core-font-size * 1.4)),
+  l: em(($core-font-size * 1.5)),
+);
+
+$h6-font-sizes: (
+  null: em(($core-font-size * 1.1)),
+  xs: em(($core-font-size * 1.15)),
+  m: em(($core-font-size * 1.3)),
+  l: em(($core-font-size * 1.4)),
+);

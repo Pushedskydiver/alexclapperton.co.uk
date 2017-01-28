@@ -1,0 +1,101 @@
+.grid-guides {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+
+  @include respond-to(m) {
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -$core-grid-unit;
+      width: 1px;
+      height: 100%;
+      background: $core-color-dark;
+      opacity: 0.15;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: -$core-grid-unit;
+      width: 1px;
+      height: 100%;
+      background: $core-color-dark;
+      opacity: 0.15;
+    }
+  }
+}
+
+.grid-guides__guide {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  min-height: auto;
+  z-index: 1;
+
+  &:nth-of-type(1) {
+
+    &::before, &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      width: 1px;
+      height: 100%;
+      background: $core-color-dark;
+      opacity: 0.15;
+      z-index: -1;
+    }
+
+    &::before {
+      left: $core-grid-unit;
+    }
+
+    &::after {
+      right: $core-grid-unit;
+    }
+  }
+
+  @include respond-to(m) {
+    width: 25%;
+
+    &:nth-of-type(1) {
+      left: 0;
+    }
+
+    &:nth-of-type(2) {
+      left: 25%;
+    }
+
+    &:nth-of-type(3) {
+      left: 50%;
+    }
+
+    &:nth-of-type(4) {
+      left: 75%;
+    }
+
+    &::before, &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      width: 1px;
+      height: 100%;
+      background: $core-color-dark;
+      opacity: 0.15;
+      z-index: -1;
+    }
+
+    &::before {
+      left: $core-grid-unit;
+    }
+
+    &::after {
+      right: $core-grid-unit;
+    }
+  }
+}

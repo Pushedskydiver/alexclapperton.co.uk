@@ -1,13 +1,13 @@
 // Contact - contact page & form
 
 .site-contact {
-  background: $core-color-light;
+  background-color: $core-color-light;
   padding: 30px 0;
 }
 
 .site-contact__flex {
   @include respond-to(m) {
-    @include grid(wrap, row, space-between);
+    @include flex(wrap, row, space-between);
   }
 }
 
@@ -35,7 +35,7 @@
 
 .site-contact__input {
   width: 100%;
-  background: $core-color-neutral;
+  background-color: $core-color-neutral;
   color: $core-color-dark;
   font-family: $core-font-family;
   font-size: $core-font-size;
@@ -44,8 +44,8 @@
   border: none;
   border-radius: 0;
 
-  &.site-contact__input--error {
-    background: #f2a6a6;
+  &--error {
+    background-color: #f2a6a6;
   }
 
   @include respond-to(l) {
@@ -54,7 +54,7 @@
 
     &:focus,
     &:valid {
-      background: transparent;
+      background-color: transparent;
       color: $core-color-brand;
       border-bottom: 1px solid $core-color-brand;
     }
@@ -63,7 +63,7 @@
 
 .site-contact__textarea {
   width: 100%;
-  background: $core-color-neutral;
+  background-color: $core-color-neutral;
   color: $core-color-dark;
   font-family: $core-font-family;
   font-size: $core-font-size;
@@ -72,7 +72,7 @@
   border-radius: 0;
 
   &.site-contact__input--error {
-    background: #f2a6a6;
+    background-color: #f2a6a6;
   }
 
   @include respond-to(l) {
@@ -80,7 +80,7 @@
 
     &:focus,
     &:valid {
-      background: transparent;
+      background-color: transparent;
       color: $core-color-brand;
       border-bottom: 1px solid $core-color-brand;
     }
@@ -89,28 +89,30 @@
 
 .site-contact__loading {
   font-weight: bold;
-}
 
-.site-contact__loading--hide {
-  display: none;
+  &--hide {
+    display: none;
+  }
 }
 
 .site-contact__message {
   display: none;
   margin-top: ($core-margin * 2);
   padding: $core-padding;
+
+  &--success {
+    background-color: #bff2a6;
+  }
+
+  &--error {
+    background-color: #f2a6a6;
+  }
+
 }
 
-.site-contact__message--success {
-  background: #bff2a6;
-}
-
-.site-contact__message--error {
-  background: #f2a6a6;
-}
 
 .site-contact__details {
-  @include grid(null, row, null);
+  @include flex(null, row, null);
   @include align-items(center);
   margin-bottom: ($core-margin * 2);
 
@@ -127,7 +129,7 @@
   position: relative;
   width: 45px;
   height: 45px;
-  background: $core-color-neutral;
+  background-color: $core-color-neutral;
   margin-right: 10px;
   padding: 10px;
   border-radius: 50%;
@@ -141,7 +143,7 @@
     left: 0;
     width: 1px;
     height: 100%;
-    background: $core-color-neutral;
+    background-color: $core-color-neutral;
     margin: 0 auto;
     z-index: -1;
   }

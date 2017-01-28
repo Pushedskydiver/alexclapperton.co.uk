@@ -128,7 +128,7 @@
     position: relative;
     height: 100%;
     z-index: z(alpha);
-    @include grid(null, column, center);
+    @include flex(null, column, center);
   }
 }
 
@@ -136,7 +136,7 @@
   height: 100%;
   margin-top: 0;
 
-  @include grid(wrap, column, center);
+  @include flex(wrap, column, center);
 
   @include respond-to(s) {
     @include align-items(center);

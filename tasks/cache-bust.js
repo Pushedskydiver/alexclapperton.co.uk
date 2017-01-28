@@ -3,15 +3,12 @@
  * @author Alex Clapperton <hi@alexclapperton.co.uk>
  */
 
-var config = require('../config'),
-    CacheBuster = require('gulp-cachebust'),
-    plugins = require('gulp-load-plugins')();
+import config from '../tasks/config'
+import CacheBuster from 'gulp-cachebust'
 
-
-var cachebust = new CacheBuster();
+const cachebust = new CacheBuster()
 
 module.exports = function (gulp, data) {
-
   gulp.task('cache:css', function () {
       gulp.src(`${data.paths.styles.dest}main.css`)
           .pipe(cachebust.resources())

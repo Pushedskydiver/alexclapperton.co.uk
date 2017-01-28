@@ -3,15 +3,15 @@
  * @author Alex Clapperton <hi@alexclapperton.co.uk>
  */
 
-var config = require('../config'),
-    plugins = require('gulp-load-plugins')();
+ import config from '../tasks/config'
+ import plugins from 'gulp-load-plugins'
 
+ const $ = plugins()
 
 module.exports = function (gulp, data) {
-
   gulp.task('images', function () {
       gulp.src(data.paths.images.src)
-          .pipe(plugins.imagemin(config.plugin.imgmin))
+          .pipe($.imagemin(config.plugin.imgmin))
           .pipe(gulp.dest(data.paths.images.dest));
   });
 }

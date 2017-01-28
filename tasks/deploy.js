@@ -3,12 +3,11 @@
  * @author Alex Clapperton <hi@alexclapperton.co.uk>
  */
 
-var config = require('../config'),
-    ftp = require('vinyl-ftp'),
-    gutil = require('gulp-util');
+import config from '../tasks/config'
+import ftp from 'vinyl-ftp'
+import gutil from 'gulp-util'
 
 module.exports = function (gulp, data, argv) {
-
   gulp.task('deploy', function() {
     var remotePath = '/httpdocs/';
     var conn = ftp.create({
@@ -17,7 +16,7 @@ module.exports = function (gulp, data, argv) {
       password: argv.password,
       log: gutil.log
     });
-    gulp.src(data.paths.base.dest + '**/*')
+    gulp.src(`${data.paths.base.dest}**/*`)
       .pipe(conn.newer(remotePath))
       .pipe(conn.dest(remotePath));
   });

@@ -1,22 +1,27 @@
-var config = require('../config'),
-    Metalsmith = require('metalsmith'),
-    handlebars = require('handlebars'),
-    handlelayouts = require('handlebars-layouts'),
-    helpers = require('handlebars-helpers'),
-    metadataDirectory = require('metalsmith-metadata-directory'),
-    metalLayouts = require('metalsmith-layouts'),
-    inPlace = require('metalsmith-in-place'),
-    slug = require('metalsmith-slug'),
-    permalinks = require('metalsmith-permalinks'),
-    sitemap = require('metalsmith-mapsite'),
-    robots = require('metalsmith-robots'),
-    gulpif = require('gulp-if'),
-    gutil = require('gulp-util'),
-    plugins = require('gulp-load-plugins')();
+/**
+ * @file html.js - Builds HTML pages using Metalsmith
+ * @author Alex Clapperton <hi@alexclapperton.co.uk>
+ */
 
+import config from '../tasks/config'
+import Metalsmith from 'metalsmith'
+import handlebars from 'handlebars'
+import handlelayouts from 'handlebars-layouts'
+import helpers from 'handlebars-helpers'
+import metadataDirectory from 'metalsmith-metadata-directory'
+import metalLayouts from 'metalsmith-layouts'
+import inPlace from 'metalsmith-in-place'
+import slug from 'metalsmith-slug'
+import permalinks from 'metalsmith-permalinks'
+import sitemap from 'metalsmith-mapsite'
+import robots from 'metalsmith-robots'
+import gulpif from 'gulp-if'
+import gutil from 'gulp-util'
+import plugins from 'gulp-load-plugins'
+
+const $ = plugins()
 
 module.exports = function (gulp, data, argv) {
-
   gulp.task('html:build', function () {
     handlebars.registerHelper(handlelayouts(handlebars))
     handlebars.registerHelper(helpers())
@@ -24,8 +29,8 @@ module.exports = function (gulp, data, argv) {
       if(!ary || ary.length == 0)
           return options.inverse(this);
 
-      var result = [ ];
-      for(var i = 0; i < max && i < ary.length; ++i)
+      let result = [ ];
+      for(let i = 0; i < max && i < ary.length; ++i)
           result.push(options.fn(ary[i]));
       return result.join('');
     });
@@ -90,8 +95,8 @@ module.exports = function (gulp, data, argv) {
   // Minify HTML
   gulp.task('html:min', function () {
     if (argv.prod) {
-      gulp.src(data.paths.dist.base + '**/*.html')
-        .pipe(plugins.htmlmin(config.plugin.html))
+      gulp.src(`${data.paths.dist.base}**/*.html`)
+        .pipe($.htmlmin(config.plugin.html))
         .pipe(gulp.dest(data.paths.dist.base));
     }
   });

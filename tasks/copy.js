@@ -3,11 +3,11 @@
  * @author Alex Clapperton <hi@alexclapperton.co.uk>
  */
 
-var config = require('../config');
+import config from '../tasks/config'
 
 module.exports = function (gulp, data) {
   gulp.task('copy:forms', function () {
-      gulp.src(data.paths.source.forms + "*")
+      gulp.src(`${data.paths.source.forms}*`)
           .pipe(gulp.dest(data.paths.dist.forms))
   });
 

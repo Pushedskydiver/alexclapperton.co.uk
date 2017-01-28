@@ -3,12 +3,10 @@
  * @author Alex Clapperton <hi@alexclapperton.co.uk>
  */
 
-var config = require('../config'),
-    Webpagetest = require('webpagetest'),
-    psi = require('psi'),
-    gutil = require('gulp-util'),
-    plugins = require('gulp-load-plugins')();
-
+import config from '../tasks/config'
+import Webpagetest from 'webpagetest'
+import psi from 'psi'
+import gutil from 'gulp-util'
 
 module.exports = function (gulp, data, argv) {
   gulp.task('webpagetest', function () {

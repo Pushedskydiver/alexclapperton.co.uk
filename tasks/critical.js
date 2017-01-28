@@ -3,12 +3,10 @@
  * @author Alex Clapperton <hi@alexclapperton.co.uk>
  */
 
-var config = require('../config'),
-    critical = require('critical');
-
+import config from '../tasks/config'
+import critical from 'critical'
 
 module.exports = function (gulp, data, argv) {
-
   gulp.task('critical', function () {
       if (argv.prod) {
         critical.generate({

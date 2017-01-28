@@ -4,13 +4,10 @@
  * @see {@link https://www.browsersync.io/docs/gulp}
  */
 
-
-var config = require('../config'),
-    browserSync = require('browser-sync');
-
+import config from '../tasks/config'
+import browserSync from 'browser-sync'
 
 module.exports = function (gulp, data) {
-
   gulp.task('browser-sync', function () {
     browserSync.create().init({
       browser: 'google chrome',

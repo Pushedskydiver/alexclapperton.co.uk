@@ -74,7 +74,7 @@
 
 .btn-primary__flex {
   margin-top: ($core-margin * 2);
-  @include grid(wrap, row, center);
+  @include flex(wrap, row, center);
 
   @include respond-to(m) {
     margin-top: 0;

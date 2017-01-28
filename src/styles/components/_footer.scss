@@ -16,7 +16,7 @@
 
 .site-footer__flex {
   @include respond-to(m) {
-    @include grid(wrap, row, space-between);
+    @include flex(wrap, row, space-between);
   }
 }
 
@@ -55,7 +55,7 @@
 .twitter-feed__item {
   color: $core-color-light;
   margin-bottom: ($core-margin * 1.2);
-  @include grid(nowrap, row, flex-start);
+  @include flex(nowrap, row, flex-start);
 
   &:last-child {
     margin-bottom: 0;
@@ -74,7 +74,7 @@
 }
 
 .footer-social {
-  @include grid(null, row, null);
+  @include flex(null, row, null);
 }
 
 .footer-social__link {

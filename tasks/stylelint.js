@@ -3,17 +3,18 @@
  * @author Alex Clapperton <hi@alexclapperton.co.uk>
  */
 
-var config = require('../config'),
-    stylelint = require('stylelint'),
-    reporter = require('postcss-reporter'),
-    scss = require('postcss-scss'),
-    plugins = require('gulp-load-plugins')();
+import config from '../tasks/config'
+import stylelint from 'stylelint'
+import reporter from 'postcss-reporter'
+import scss from 'postcss-scss'
+import plugins from 'gulp-load-plugins'
 
+const $ = plugins()
 
 module.exports = function (gulp, data) {
   gulp.task('stylelint', function () {
       gulp.src(`${data.paths.source.styles}**/*.scss`)
-          .pipe(plugins.postcss([
+          .pipe($.postcss([
             stylelint(data.stylelint),
             reporter({
               clearMessages: true

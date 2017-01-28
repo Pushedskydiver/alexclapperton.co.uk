@@ -3,19 +3,19 @@
  * @author Alex Clapperton <hi@alexclapperton.co.uk>
  */
 
-var config = require('../config'),
-    autoprefixer = require('autoprefixer'),
-    devtools = require('postcss-devtools'),
-    focus = require('postcss-focus'),
-    cssnano = require('cssnano'),
-    cleancss = require('gulp-clean-css'),
-    plugins = require('gulp-load-plugins')();
+import config from '../tasks/config'
+import autoprefixer from 'autoprefixer'
+import devtools from 'postcss-devtools'
+import focus from 'postcss-focus'
+import cssnano from 'cssnano'
+import cleancss from 'gulp-clean-css'
+import plugins from 'gulp-load-plugins'
 
+const $ = plugins()
 
 module.exports = function (gulp, data, argv) {
-
   function getPostCssPlugins () {
-    const plugins = [
+    const postCssPlugins = [
       autoprefixer({
         browsers: ['> 5%']
       }),
@@ -25,21 +25,21 @@ module.exports = function (gulp, data, argv) {
     ]
 
     if (argv.prod) {
-      plugins.push(cssnano({
+      postCssPlugins.push(cssnano({
         core: true
       }))
     }
 
-    return plugins
+    return postCssPlugins
   }
 
   gulp.task('styles:sass', function () {
-      gulp.src(data.paths.styles.src + '*.scss')
-          .pipe(plugins.sourcemaps.init())
-          .pipe(plugins.sass({outputStyle: 'expanded'}).on('error', plugins.sass.logError))
-          .pipe(plugins.postcss(getPostCssPlugins()))
-          .pipe(plugins.if(argv.prod, cleancss()))
-          .pipe(plugins.sourcemaps.write('sourcemaps'))
+      gulp.src(`${data.paths.styles.src}*.scss`)
+          .pipe($.sourcemaps.init())
+          .pipe($.sass({outputStyle: 'expanded'}).on('error', $.sass.logError))
+          .pipe($.postcss(getPostCssPlugins()))
+          .pipe($.if(argv.prod, cleancss()))
+          .pipe($.sourcemaps.write('sourcemaps'))
           .pipe(gulp.dest(data.paths.styles.dest));
   });
 }

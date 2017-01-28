@@ -4,12 +4,6 @@
 * These are the defaults which can be overridden
 */
 
-*,
-*:before,
-*:after {
-  box-sizing: border-box;
-}
-
 $core-grid-width: 1170px !default;
 
 /**

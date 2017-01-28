@@ -1,0 +1,17 @@
+.site-container {
+  position: relative;
+  padding: 0 $core-padding;
+
+  @include respond-to(m) {
+    width: 668px;
+    margin: 0 auto;
+  }
+
+  @include respond-to(l) {
+    width: 962px;
+  }
+
+  @include respond-to(xl) {
+    width: 1200px;
+  }
+}
