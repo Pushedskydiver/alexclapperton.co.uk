@@ -44,6 +44,22 @@
   border: none;
   border-radius: 0;
 
+  &::-webkit-input-placeholder {
+    color: $core-color-dark;
+  }
+
+  &:-moz-placeholder {
+    color: $core-color-dark;
+  }
+
+  &::-moz-placeholder {
+    color: $core-color-dark;
+  }
+
+  &:-ms-input-placeholder {
+    color: $core-color-dark;
+  }
+
   &--error {
     background-color: #f2a6a6;
   }
@@ -70,6 +86,22 @@
   padding: ($core-padding / 1.5) $core-padding;
   border: none;
   border-radius: 0;
+
+  &::-webkit-input-placeholder {
+    color: $core-color-dark;
+  }
+
+  &:-moz-placeholder {
+    color: $core-color-dark;
+  }
+
+  &::-moz-placeholder {
+    color: $core-color-dark;
+  }
+
+  &:-ms-input-placeholder {
+    color: $core-color-dark;
+  }
 
   &.site-contact__input--error {
     background-color: #f2a6a6;
