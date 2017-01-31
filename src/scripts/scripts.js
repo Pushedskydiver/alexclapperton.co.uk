@@ -87,25 +87,74 @@
     }
 
 
+    // ======================================
+    //    Mobile navigation
+    // ======================================
+    function init_mobile_nav() {
+      var $topMenu = $('.mobile-menu'),
+          $bottomMenu = $('.mobile-bar__link--main'),
+          $close = $('.nav__close');
+
+      $topMenu.on('click', function() {
+        $('.nav').addClass('nav--show');
+      });
+
+      $bottomMenu.on('click', function() {
+        $('.nav').toggleClass('nav--show');
+      });
+
+      $close.on('click', function() {
+        $('.nav').removeClass('nav--show');
+      });
+    }
+
+
     // ==============================================
-    //    Active nav links
+    //    Active navigation links
     // ==============================================
     function init_active_nav() {
       if(window.location.pathname == '/') {
-        $('.site-nav__link--home').addClass('site-nav__link--active');
+        $('.nav__link--home').addClass('nav__link--active');
       }
       if(window.location.href.indexOf('my-work/') > -1) {
-        $('.site-nav__link--work').addClass('site-nav__link--active');
+        $('.nav__link--work').addClass('nav__link--active');
       }
       if(window.location.pathname == '/about/') {
-        $('.site-nav__link--about').addClass('site-nav__link--active');
+        $('.nav__link--about').addClass('nav__link--active');
       }
       if(window.location.href.indexOf('blog/') > -1) {
-        $('.site-nav__link--blog').addClass('site-nav__link--active');
+        $('.nav__link--blog').addClass('nav__link--active');
       }
       if(window.location.pathname == '/contact/') {
-        $('.site-nav__link--contact').addClass('site-nav__link--active');
+        $('.nav__link--contact').addClass('nav__link--active');
       }
+    }
+
+
+    // ==============================================
+    //    Typing animation | Homepage banner
+    // ==============================================
+    function init_ityped() {
+      ityped.init('.type', {
+        strings:['Alex Clapperton', 'a Front-end Web Developer', 'an Apple fanatic'],
+        startDelay: 200,
+        backDelay: 1000,
+        loop: true
+      });
+    }
+
+
+    // ==============================================
+    //    Button line length
+    // ==============================================
+    function init_btn_line() {
+      $(document).ready(function(){
+        $(".block-line").each(function(){
+          $(this).css('width', $(this).parent().width() - $(this).parent().find('.btn').width() - 60);
+
+          $(this).css('top', ($(this).parent().innerHeight()) - ($(this).parent().find('.btn').outerHeight() * 1.5));
+        });
+      });
     }
 
 
@@ -211,15 +260,18 @@
     //    Initialise plugins
     // ==============================================
     init_scroll_to();
+    init_mobile_nav();
     init_active_nav();
-    init_contact_form();
+    init_ityped();
+    init_btn_line();
+    //init_contact_form();
 
-    if(window.location.pathname == '/my-work/') {
-      init_portfolio();
-    }
+    //if(window.location.pathname == '/my-work/') {
+      //init_portfolio();
+    //}
 
-    if (!$('body').hasClass('mobile')) {
-      init_smooth_scroll_top();
-    }
+    //if (!$('body').hasClass('mobile')) {
+      //init_smooth_scroll_top();
+    //}
 
 })(window.jQuery);

@@ -4,28 +4,25 @@
       "title": "Creating my website part one: Research and design",
       "slug": "creating-my-website-part-one-research-and-design",
       "title-attr": "Creating my website part one: Research and design blog post page.",
-      "readableDate": "13 Nov, 2016",
-      "footerDate": "<span class=\"site-footer__post-date\">13 <small class=\"site-footer__post-date--small\">NOV</small></span>",
+      "readableDate": "13th November 2016",
       "pubDate": "2016-11-13",
-      "summary": "<p>A two part series into the research, design and build process of my portfolio website.</p>"
+      "summary": "<p class=\"blog__item-body\">A two part series into the research, design and build process of my portfolio website.</p>"
     },
     {
       "title": "Performance and optimisation: Getting your website up to speed",
       "slug": "performance-and-optimisation-getting-your-website-up-to-speed",
       "title-attr": "Performance and optimisation: Getting your website up to speed blog post page.",
-      "readableDate": "28 Oct, 2016",
-      "footerDate": "<span class=\"site-footer__post-date\">28 <small class=\"site-footer__post-date--small\">OCT</small></span>",
+      "readableDate": "28th October 2016",
       "pubDate": "2016-10-28",
-      "summary": "<p>A taste into some of the fantastic methods I have come across to optimise my website and increase performance.</p>"
+      "summary": "<p class=\"blog__item-body\">A taste into some of the fantastic methods I have come across to optimise my website and increase performance.</p>"
     },
     {
       "title": "The digital industry: A developers perspective",
       "slug": "the-digital-industry-a-developers-perspective",
       "title-attr": "Internal link to The digital industry: A developers perspective blog post page.",
-      "readableDate": "30 Sept, 2016",
-      "footerDate": "<span class=\"site-footer__post-date\">30 <small class=\"site-footer__post-date--small\">SEP</small></span>",
+      "readableDate": "30th September 2016",
       "pubDate": "2016-09-30",
-      "summary": "<p>My look into the digital industry after reading the Manchester Digital 2016 slide deck and the 2016 Tech Nation report.</p>"
+      "summary": "<p class=\"blog__item-body\">My look into the digital industry after reading the Manchester Digital 2016 slide deck and the 2016 Tech Nation report.</p>"
     }
   ]
 }

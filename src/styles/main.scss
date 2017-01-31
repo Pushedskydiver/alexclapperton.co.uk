@@ -46,28 +46,26 @@
 
 // ITCSS: OBJECTS
 @import 'objects/layout';
-@import 'objects/grid-guides';
-@import 'objects/flexbox';
 @import 'objects/visually-hidden';
-@import 'objects/color-palettes';
+//@import 'objects/color-palettes';
 
 
 // ITCSS: COMPONENTS
 @import 'components/buttons';
-@import 'components/breadcrumbs';
+//@import 'components/breadcrumbs';
 @import 'components/skip-links';
 @import 'components/external-links';
-@import 'components/scroll-top';
+//@import 'components/scroll-top';
 @import 'components/notices';
-@import 'components/list';
-@import 'components/figure';
+//@import 'components/list';
+//@import 'components/figure';
+@import 'components/mobile-navigation';
 @import 'components/navigation';
 @import 'components/banner';
-@import 'components/main';
-@import 'components/footer';
-@import 'components/blog';
-@import 'components/contact';
+@import 'components/intro';
 @import 'components/portfolio';
+@import 'components/blog';
+@import 'components/footer';
 
 // ITCSS: TRUMPS
-// @NOTE: Ccode that is rushed and needs to be fixed later 
+// @NOTE: Ccode that is rushed and needs to be fixed later

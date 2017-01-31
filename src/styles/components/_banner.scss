@@ -1,174 +1,78 @@
-// Banner - Site banner sections
-
-.site-banner {
-  position: relative;
-
-  .site-container {
-    height: 100%;
-    padding: $core-padding;
-    overflow: hidden;
-  }
-
-  @include respond-to(m) {
-    margin-top: 65px;
-
-    .site-container {
-      padding: 0 $core-padding;
-    }
-  }
-}
-
-.site-banner__img {
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  width: calc(100% - 24px);
-  margin: 0 auto;
+.banner {
+  height: calc(100vh - 60px);
+  background-color: #292c34;
+  @include flex(wrap, column, center, null);
 
   @include respond-to(s) {
-    width: calc(90% - 24px);
-    margin-left: $core-margin;
-  }
-
-  @include respond-to(m) {
-    left: initial;
-    width: calc(50% - 12px);
-    margin: 0;
-  }
-}
-
-.site-banner__img--home {
-  padding: 0 $core-padding;
-  @include scale(1.5);
-
-  @media (min-width: 600px) and (max-height: 450px) {
-    display: none;
-  }
-
-  @media (min-width: 700px) and (min-height: 451px) {
-    display: block;
-  }
-
-  @include respond-to(xs) {
-    @include scale(1.7);
-  }
-
-  @include respond-to(s) {
-    bottom: -15%;
-    padding: 0;
-    margin: 0 auto;
-    @include scale(0.9);
-  }
-
-  @include respond-to(m) {
-    bottom: 0;
-    width: calc(50% - 12px);
-    @include scale(1);
-  }
-
-  @include respond-to(xl) {
-    bottom: -15%;
-  }
-}
-
-.site-banner--large {
-  width: 100%;
-  height: 110vh;
-
-  @include respond-to(s) {
-    height: 100vh;
-  }
-
-  @include respond-to(m) {
     height: 500px;
   }
-}
 
-.site-banner--small {
-  width: 100%;
-  height: 400px;
-
-  @include respond-to(xs) {
-    height: 550px;
-  }
-
-  @include respond-to(s) {
-    height: 650px;
-  }
-
-  @include respond-to(m) {
-    height: 400px;
-  }
-
-  @include respond-to(xl) {
+  @include respond-to(l) {
     height: 550px;
   }
 }
 
-.site-banner--no-img {
-  width: 100%;
-  height: 350px;
+.banner__title {
+  position: relative;
+  padding-top: ($core-padding / 2);
 
-  @include respond-to(m) {
-    height: 400px;
-  }
-}
+  &::before {
+    content: '<!- - BEGIN : TITLE - ->';
+    position: absolute;
+    top: -15px;
+    left: 0;
+    color: #5c6370;
+    font-size: 0.8rem;
 
-.site-banner__flex {
-  @include respond-to(xs) {
-    margin-top: 40px;
-  }
-
-  @include respond-to(s) {
-    margin-top: 0;
-  }
-
-  @include respond-to(m) {
-    position: relative;
-    height: 100%;
-    z-index: z(alpha);
-    @include flex(null, column, center);
-  }
-}
-
-.site-banner__flex--blog {
-  height: 100%;
-  margin-top: 0;
-
-  @include flex(wrap, column, center);
-
-  @include respond-to(s) {
-    @include align-items(center);
-
-    .site-banner__title {
-      text-align: center;
+    @include respond-to(xs) {
+      font-size: 1rem;
     }
 
-    .breadcrumbs {
-      @include justify-content(center);
+    @include respond-to(l) {
+      font-size: 1.1rem;
+    }
+  }
+
+  &--white {
+    color: $core-color-light;
+  }
+}
+
+.banner__body {
+  color: $core-color-light;
+  @include font-size($h5-font-sizes);
+}
+
+.banner__icon {
+  vertical-align: middle;
+
+  &--green {
+    width: 19px;
+    height: 19px;
+    fill: #98c379;
+
+    @include respond-to(l) {
+      width: 22px;
+      height: 22px;
+    }
+  }
+
+  &--red {
+    width: 17px;
+    height: 17px;
+    fill: $core-color-brand;
+
+    @include respond-to(l) {
+      width: 19px;
+      height: 19px;
     }
   }
 }
 
-.site-banner__title {
-  @include font-size($h1-font-sizes);
-}
-
-.site-banner__title-break {
-  display: none;
-
-  @include respond-to(m) {
-    display: block;
-  }
-}
-
-.site-banner__text {
-  @include respond-to(s) {
-    max-width: 375px;
-  }
-
-  @include respond-to(m) {
-    align-self: flex-start;
-  }
+.ityped-cursor {
+  color: #568af2;
+  font-size: 2.2rem;
+  opacity: 1;
+  animation: blink 0.3s infinite;
+  animation-direction: alternate;
 }

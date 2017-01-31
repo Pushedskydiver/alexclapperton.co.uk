@@ -14,22 +14,27 @@ $core-grid-unit: 12px !default;
 /**
 * Main branding color
 */
-$core-color-brand: #3455db !default;
+$core-color-brand: #de656f !default;
 
 /**
 * Main dark color
 */
-$core-color-dark: #2e353b !default;
+$core-color-dark: #21252b !default;
 
 /**
 * Main neutral color
 */
-$core-color-neutral: #e5e5e5 !default;
+$core-color-neutral: #73777a !default;
 
 /**
 * Main light color
 */
 $core-color-light: #fff !default;
+
+/**
+* Main heading color
+*/
+$core-color-heading: #292c34 !default;
 
 /**
 * Main Facebook color
@@ -69,12 +74,7 @@ $core-border-radius: 2px !default;
 /**
 * Main font family
 */
-$core-font-family: 'Ubuntu', sans-serif !default;
-
-/**
-* Secondary font family
-*/
-$core-secondary-font-family: 'Josefin Slab', serif !default;
+$core-font-family: 'Maven Pro', sans-serif !default;
 
 /**
 * Base font size
@@ -84,27 +84,22 @@ $core-font-size: 14px !default;
 /**
 * Base line height
 */
-$core-line-height: 1.7em !default;
+$core-line-height: 1.45 !default;
 
 /**
 * Secondary line height
 */
-$core-secondary-line-height: 1.45em !default;
+$core-secondary-line-height: 1.3 !default;
 
 /**
 * Base font weight
 */
-$core-font-weight: 300 !default;
+$core-font-weight: 400 !default;
 
 /**
 * Secondary font weight
 */
-$core-secondary-font-weight: 400 !default;
-
-/**
-* Tertiary font weight
-*/
-$core-tertiary-font-weight: 700 !default;
+$core-secondary-font-weight: 700 !default;
 
 /**
 * Margin applied to block elements

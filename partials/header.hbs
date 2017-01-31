@@ -1,7 +1,48 @@
+<!-- BEGIN : MOBILE BAR -->
+<div class="mobile-bar">
+  <!-- BEGIN : MOBILE BAR LINK -->
+  <a class="mobile-bar__link" href="#">
+    <svg width="20" height="20" class="mobile-bar__icon">
+      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/icons/sprite.svg#home"></use>
+    </svg>
+  </a>
+  <!-- END : MOBILE BAR LINK /-->
+  <!-- BEGIN : MOBILE BAR LINK -->
+  <a class="mobile-bar__link" href="#">
+    <svg width="20" height="20" class="mobile-bar__icon">
+      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/icons/sprite.svg#about"></use>
+    </svg>
+  </a>
+  <!-- END : MOBILE BAR LINK /-->
+  <!-- BEGIN : MOBILE BAR LINK (MAIN) -->
+  <button type="button" class="mobile-bar__link mobile-bar__link--main">
+    <svg width="20" height="20" class="mobile-bar__icon mobile-bar__icon--main">
+      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/icons/sprite.svg#menu"></use>
+    </svg>
+  </button>
+  <!-- END : MOBILE BAR LINK (MAIN) /-->
+  <!-- BEGIN : MOBILE BAR LINK -->
+  <a class="mobile-bar__link" href="#">
+    <svg width="20" height="20" class="mobile-bar__icon">
+      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/icons/sprite.svg#work"></use>
+    </svg>
+  </a>
+  <!-- END : MOBILE BAR LINK /-->
+  <!-- BEGIN : MOBILE BAR LINK -->
+  <a class="mobile-bar__link" href="#">
+    <svg width="20" height="20" class="mobile-bar__icon">
+      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/icons/sprite.svg#contact"></use>
+    </svg>
+  </a>
+  <!-- END : MOBILE BAR LINK /-->
+</div>
+<!-- END : MOBILE BAR /-->
+
+
 <!-- ******************** SITE HEADER : Start ******************** /-->
-<header class="site-header" role="banner">
+<header class="header" role="banner">
   <!-- BEGIN : CONTAINER -->
-  <div class="site-container">
+  <div class="container">
     <!-- BEGIN : SKIP LINKS -->
     <div class="skip-links">
       <a href="#nav" class="skip-link hidden focusable">Skip to navigation</a>
@@ -9,32 +50,39 @@
     </div>
     <!-- END : SKIP LINKS /-->
     <!-- BEGIN : SITE HEADER FLEX -->
-    <div class="site-flex site-flex--align-center">
-      <!-- BEGIN : MAIN HEADER -->
-      <div class="site-logo">
-        <a href="/" class="site-logo__link" title="Internal link to homepage."><img class="site-logo__img" src="/images/logo.png" alt="Alex Clapperton's website logo." /></a>
-      </div>
-      <!-- END : MAIN HEADER /-->
-      <!-- BEGIN : SITE NAV -->
-      <nav class="site-nav site-flex site-flex--align-center" id="nav" role="navigation">
+    <div class="header__content">
+      <!-- BEGIN : SITE LOGO -->
+      <a href="/" class="header__logo" title="Internal link to homepage.">< <span class="header__logo--red">Alex</span> /></a>
+      <!-- END : SITE LOGO /-->
+
+      <button type="button" class="mobile-menu">
+        M
+        <svg width="20" height="20" class="mobile-menu__icon">
+          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/icons/sprite.svg#menu"></use>
+        </svg>
+        NU
+      </button>
+
+      <!-- BEGIN : NAV -->
+      <nav class="nav" id="nav" role="navigation">
+        <button type="button" class="nav__close">
+          <svg width="20" height="20" class="nav__close-icon">
+            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/icons/sprite.svg#close"></use>
+          </svg>
+        </button>
         {{#each global.navigation}}
-          <!-- BEGIN : SITE NAV LINK -->
-          <a href="{{{this.url}}}" class="site-nav__link site-nav__link--{{{this.slug}}}" title="{{{this.title-attr}}}">
-            <svg width="20" height="20" class="site-nav__icon">
-              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/icons/sprite.svg#{{{this.icon}}}"></use>
-            </svg>
-            <span class="site-nav__text">{{{this.title}}}</span>
-          </a>
-          <!-- END : SITE NAV LINK /-->
+          <!-- BEGIN : NAV LINK -->
+          <a href="{{{this.url}}}" class="nav__link nav__link--{{{this.slug}}}" title="{{{this.title-attr}}}">{{{this.title}}}</a>
+          <!-- END : NAV LINK /-->
         {{/each}}
       </nav>
-      <!-- END : SITE NAV /-->
+      <!-- END : NAV /-->
       <!-- BEGIN : SOCIAL HEADER -->
-      <div class="social-header">
+      <div class="header__social">
         {{#each global.social}}
           <!-- BEGIN : SOCIAL HEADER ICON -->
-          <a href="{{{this.url}}}" class="social-header__link" title="{{{this.title-attr}}}">
-            <svg width="20" height="20" class="social-header__icon">
+          <a href="{{{this.url}}}" class="header__social__link" title="{{{this.title-attr}}}">
+            <svg width="20" height="20" class="header__social__icon">
               <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/icons/sprite.svg#{{{this.icon}}}"></use>
             </svg>
             <span class="visually-hidden">{{{this.icon}}}</span>

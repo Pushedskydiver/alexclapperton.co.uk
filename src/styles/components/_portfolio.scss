@@ -1,358 +1,129 @@
-// Portfolio - portfolio pages, filter buttons and items
-
-.site-portfolio {
-  background-color: $core-color-light;
-  padding: 30px 0;
+.portfolio {
+  background-color: #ededed;
+  padding: 50px 0;
 }
 
-.site-portfolio__filter {
-  @include flex(wrap, column, center);
-  margin-bottom: ($core-grid-unit * 2);
+.portfolio__content {
 
-  @include respond-to(s) {
-    @include flex-direction(row);
-    justify-content: flex-start;
+  @include respond-to(m) {
+    @include flex(wrap, row, space-between, null);
   }
 }
 
-.site-portfolio__grid {
-  @include respond-to(s) {
-    @include flex(wrap, row, space-between);
-  }
-}
-
-.site-portfolio__item {
+.portfolio__item {
   display: block;
-  position: relative;
-  width: 100%;
-  background-color: $core-color-dark;
   text-decoration: none;
-  margin-top: $core-grid-unit;
-  overflow: hidden;
-  transition: none;
 
-  &:first-child {
-    margin-top: 0;
+  @include respond-to(m) {
+    width: 50%;
   }
 
   @include respond-to(l) {
-    width: calc(50% - 12px);
-    margin: 0;
-    overflow: hidden;
+    position: relative;
 
     &:hover {
-      .site-portfolio__item-img {
-        opacity: 0.2;
-        -webkit-transform: translate3d(0,0,0) scale(1);
-      	transform: translate3d(0,0,0) scale(1);
-      }
-
-      .site-portfolio__item-desc {
+      .portfolio__item-caption {
         opacity: 1;
-        -webkit-transform: translate3d(0,0,0);
-      	transform: translate3d(0,0,0);
+        visibility: visible;
       }
     }
-  }
-}
-
-.site-portfolio__flex-item--margin {
-  margin-top: ($core-margin * 2);
-
-  @include respond-to(m) {
-    margin: 0;
-  }
-}
-
-.site-portfolio__item--isotope {
-  @include respond-to(l) {
-    &:nth-of-type(odd) {
-      margin-right: ($core-margin * 2);
-    }
-  }
-}
-
-.site-portfolio__figure {
-  position: relative;
-}
-
-.site-portfolio__figure-wrapper {
-  @include flex(wrap, row, space-between);
-  @include align-items(center);
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  background-color: rgba($core-color-brand, 0.85);
-  padding: $core-padding ($core-padding * 2);
-  z-index: z(beta);
-}
-
-.site-portfolio__item-title {
-  color: $core-color-light;
-  font-weight: $core-font-weight;
-  margin: 0;
-}
-
-.site-portfolio__item-icon {
-  width: 25px;
-  height: 25px;
-  fill: $core-color-light;
-  @include respond-to(s) {
-    width: 30px;
-    height: 30px;
-  }
-
-  @include respond-to(m) {
-    width: 35px;
-    height: 35px;
-  }
-}
-
-.site-image--center {
-  text-align: center;
-  margin: 0 auto ($core-margin * 2) auto;
-}
-
-.site-portfolio__item-img {
-  display: block;
-  width: 100%;
-  opacity: 0.2;
-
-  @include respond-to(l) {
-    opacity: 1;
-  	-webkit-transform: translate3d(-20px,0,0) scale(1.12);
-  	transform: translate3d(-20px,0,0) scale(1.12);
-  	-webkit-backface-visibility: hidden;
-  	backface-visibility: hidden;
-    @include transition-025;
-  }
-}
-
-.site-portfolio__item-desc {
-  position: absolute;
-  top: ($core-grid-unit * 2);
-  left: ($core-grid-unit * 2);
-  width: 80%;
-  padding-right: 5px;
-  border-right: 1px solid #fff;
-
-  @include respond-to(l) {
-    opacity: 0;
-    @include transition-025;
-    -webkit-transform: translate3d(-40px,0,0);
-  	transform: translate3d(-40px,0,0);
-  }
-}
-
-.site-portfolio__item-text {
-  color: $core-color-light;
-
-  &:last-child {
-    margin-bottom: 0;
-  }
-
-  @include respond-to(m) {
-    font-size: ($core-font-size * 1.2);
-  }
-}
-
-.site-portfolio__content {
-  margin-bottom: ($core-grid-unit * 2);
-  padding: ($core-grid-unit * 2) 0;
-
-  @include respond-to(m) {
-    width: calc(75% - 6px);
-  }
-}
-
-.site-portfolio__title--blue {
-  color: $core-color-brand;
-}
-
-.site-portfolio__flex {
-
-  &--padding {
-    padding: ($core-padding * 1.5) 0 ($core-padding * 3) 0;
-    @include align-items(center);
-  }
-
-  @include respond-to(m) {
-    @include flex(wrap, row, space-between);
-  }
-}
-
-.site-portfolio__flex-item {
-  @include respond-to(m) {
-    width: calc(50% - 12px);
-
-    h2 {
-      margin: 0;
-    }
-  }
-}
-
-.site-portfolio__flex-img {
-  max-width: 350px;
-}
-
-.site-portfolio__img {
-  width: 100%;
-  margin-top: ($core-grid-unit * 2);
-
-  @include respond-to(m) {
-    margin-top: 0;
-  }
-}
-
-.site-portfolio__palette {
-  padding: ($core-padding * 4) 0;
-
-  @include respond-to(s) {
-    @include flex(wrap, row, space-between);
-  }
-
-  @include respond-to(l) {
-    padding: ($core-padding * 10) 0;
-  }
-}
-
-.site-portfolio__palette-item {
-  margin-top: ($core-margin * 2);
-
-  &:first-child {
-    margin-top: 0;
-  }
-
-  @include respond-to(s) {
-    width: calc(50% - 12px);
-
-    &:nth-of-type(2) {
-      margin-top: 0;
-    }
-  }
-
-  @include respond-to(m) {
-    width: calc(25% - 12px);
-    margin-top: 0;
-  }
-}
-
-.site-portfolio__palette-color {
-  width: 120px;
-  height: 120px;
-  margin: 0 auto;
-  box-shadow: 0 5px 20px 0 rgba(0,0,0,.33);
-  border-radius: 50%;
-
-  @include respond-to(xs) {
-    width: 160px;
-    height: 160px;
-  }
-
-  @include respond-to(s) {
-    width: 180px;
-    height: 180px;
-  }
-
-  @include respond-to(m) {
-    width: 130px;
-    height: 130px;
-  }
-
-  @include respond-to(l) {
-    width: 160px;
-    height: 160px;
   }
 
   @include respond-to(xl) {
-    width: 190px;
-    height: 190px;
+    width: 33.333333%;
   }
-}
 
-@each $theme in $palettes {
-  .site-portfolio__palette--#{nth($theme,1)} {
-    .site-portfolio__palette--#{nth($theme,2)} {
-      background-color: nth($theme,3);
+  &--main {
+    background-color: $core-color-light;
+    padding: 22px;
+    @include flex(wrap, column, center, null);
+
+    @include respond-to(s) {
+      min-height: 425px;
+      padding: ($core-padding * 4);
     }
-  }
-}
-
-.site-portfolio__palette-name {
-  display: block;
-  @include font-size($h5-font-sizes);
-  text-align: center;
-  margin-top: ($core-margin * 2);
-}
-
-.site-portfolio__font {
-  padding: 0 0 ($core-padding * 3) 0;
-}
-
-.site-portfolio__share {
-  margin-top: ($core-margin * 2);
-}
-
-.site-portfolio__share-item {
-  margin-right: ($core-margin / 2);
-}
-
-.site-portfolio__cta {
-
-  .site-container {
-    padding: 30px $core-padding;
 
     @include respond-to(m) {
-      padding: 60px $core-grid-unit;
+      width: 100%;
+      min-height: initial;
+    }
+
+    @include respond-to(l) {
+      &:hover {
+        background-color: $core-color-brand;
+
+        .portfolio__item-title,
+        .portfolio__item-body {
+          color: $core-color-light;
+        }
+      }
+    }
+
+    @include respond-to(xl) {
+      width: 33.333333%;
+      padding: 22px;
     }
   }
 }
 
-.site-portfolio__cta-flex {
-  @include flex(wrap, row, space-between);
+.portfolio__item-fig {
+  position: relative;
 }
 
-.site-portfolio__cta-link {
-  display: block;
-  background-color: $core-color-brand;
-  padding: $core-grid-unit;
-  text-decoration: none;
+.portfolio__item-img {
+  width: 100%;
 
-  &--disabled {
-    background-color: darken($core-color-neutral, 10%);
-    pointer-events: none;
+  @include respond-to(xl) {
+    width: auto;
+    height: 100%;
   }
+}
 
-  &--left {
-    align-self: flex-start;
-  }
-
-  &--right {
-    align-self: flex-end;
-  }
+.portfolio__item-caption {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba($core-color-dark, 0.75);
+  @include flex(wrap, column, center, center);
 
   @include respond-to(l) {
-    &:hover {
-      @include cd-pulse;
-    }
+    opacity: 0;
+    visibility: hiden;
+    @include transition-03;
   }
 }
 
-.site-portfolio__cta-icon {
-  width: 20px;
-  height: 20px;
-  fill: $core-color-light;
-  vertical-align: middle;
+.portfolio__item-title {
 
-  &--left {
-    @include rotate(180);
+  &--white {
+    color: $core-color-light;
+  }
+
+  &--bold {
+    font-weight: $core-secondary-font-weight;
   }
 }
 
-.site-portfolio__cta-text {
-  color: $core-color-light;
-  @include font-size($p-font-sizes);
-  font-weight: $core-secondary-font-weight;
-  vertical-align: middle;
+.portfolio__item-body {
+  text-transform: capitalize;
+
+  &--neutral {
+    color: $core-color-neutral;
+  }
+
+  &--white {
+    color: $core-color-light;
+    margin-bottom: 0;
+  }
+}
+
+.block-line {
+  @include respond-to(l) {
+    position: absolute;
+    right: 22px;
+    height: 1px;
+    background-color: $core-color-brand;
+  }
 }

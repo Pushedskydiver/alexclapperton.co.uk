@@ -8,96 +8,141 @@ changefreq: monthly
 priority: 1.0
 ---
 
-<!-- ******************** SITE BANNER : Start ******************** -->
-<section class="site-banner site-banner--large">
+<!-- ******************** BANNER : Start ******************** -->
+<section class="banner" role="banner">
   <!-- BEGIN : CONTAINER -->
-  <div class="site-container">
-    <!-- BEGIN : GRID GUIDES -->
-    <div class="grid-guides">
-      <div class="grid-guides__guide"></div>
-      <div class="grid-guides__guide"></div>
-      <div class="grid-guides__guide"></div>
-      <div class="grid-guides__guide"></div>
+  <div class="container">
+    <!-- BEGIN : BANNER CONTENT -->
+    <div class="banner__content">
+      <!-- BEGIN : BANNER ITEM -->
+      <div class="banner__item">
+        <h1 class="banner__title banner__title--white">Hello! <br> I am known as <br> <span class="type"></span></h1>
+        <p class="banner__body">
+          <svg width="20" height="20" class="banner__icon banner__icon--green">
+            <use xlink:href="/images/icons/sprite.svg#tags" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+          </svg>
+          with
+          <svg width="20" height="20" class="banner__icon banner__icon--red">
+            <use xlink:href="/images/icons/sprite.svg#heart" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+          </svg>
+          by me
+        </p>
+      </div>
+      <!-- END : BANNER ITEM /-->
     </div>
-    <!-- END : GRID GUIDES /-->
-    <!-- BEGIN : SITE BANNER FLEX -->
-    <div class="site-banner__flex">
-      <h1 class="site-banner__title">Hello! <br> My name is <br> {{{global.name}}}</h1>
-      <p class="site-banner__text">
-        I am a <strong>Manchester</strong> based Junior/Freelance <strong>{{{global.jobTitle}}}</strong> and a final year University student.
-      </p>
-      <picture>
-        <source srcset="/images/banner/alex.png" media="(min-width: 768px)">
-          <source srcset="/images/banner/alex-looking-up.png">
-          <img class="site-banner__img site-banner__img--home" src="/images/banner/alex.png" alt="Portrait of Alex smiling and wearing a black t-shirt." />
-      </picture>
-    </div>
-    <!-- END : SITE BANNER FLEX -->
+    <!-- END : BANNER CONTENT /-->
   </div>
-  <!-- END : CONTAINER -->
+  <!-- END : CONTAINER /-->
 </section>
-<!-- ******************** SITE BANNER : End /******************** /-->
+<!-- ******************** BANNER : End ******************** /-->
 
 
-<!-- ******************** SITE MAIN : Start ******************** -->
-<main class="site-main" id="content" role="main">
+<!-- ******************** INTRO : Start ******************** -->
+<main class="intro" role="main">
   <!-- BEGIN : CONTAINER -->
-  <div class="site-container">
-    <!-- BEGIN : SITE PORTFOLIO FLEX -->
-    <div class="site-portfolio__flex site-portfolio__flex--padding">
-      <!-- BEGIN : SITE PORTFOLIO FLEX ITEM -->
-      <div class="site-portfolio__flex-item">
-        <h2>My latest work</h2>
+  <div class="container">
+    <!-- BEGIN : INTRO CONTENT -->
+    <div class="intro__content">
+      <!-- BEGIN : INTRO ITEM -->
+      <div class="intro__item  intro__item--red">
+        <svg width="20" height="20" class="intro__item-icon intro__item-icon--red">
+          <use xlink:href="/images/icons/sprite.svg#tags-close" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+        </svg>
+        <br>
+        <span class="intro__item-title">Front-end development.</span>
+        <p class="intro__item-body">
+          Great design starts with putting people first. Work with us and you'll benefit from a collaborative user experience design approach that promises improved usability, accessibility and efficiency.
+        </p>
       </div>
-      <!-- END : SITE PORTFOLIO FLEX ITEM /-->
-      <!-- BEGIN : SITE PORTFOLIO FLEX ITEM -->
-      <div class="site-portfolio__flex-item">
-        <!-- BEGIN : BTN PRIMARY FLEX -->
-        <div class="btn-primary__flex btn-primary__flex--home">
-          <a class="btn-primary btn-primary--blue btn-primary--large btn-primary__text--large" href="/my-work" title="Internal link to my work page.">View all my work</a>
-        </div>
-        <!-- END : BTN PRIMARY FLEX /-->
+      <!-- END : INTRO ITEM /-->
+      <!-- BEGIN : INTRO ITEM -->
+      <div class="intro__item intro__item--green">
+        <svg width="20" height="20" class="intro__item-icon intro__item-icon--green">
+          <use xlink:href="/images/icons/sprite.svg#mobile" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+        </svg>
+        <br>
+        <span class="intro__item-title">Mobile first approach.</span>
+        <p class="intro__item-body">
+          We're not joking when we say we've considered every detail. That's right, down to each individual pixel. When you see a design, this is exactly how your website will look, complete with animation and effects.
+        </p>
       </div>
-      <!-- END : SITE PORTFOLIO FLEX ITEM /-->
+      <!-- END : INTRO ITEM /-->
+      <!-- BEGIN : INTRO ITEM -->
+      <div class="intro__item intro__item--blue">
+        <svg width="20" height="20" class="intro__item-icon intro__item-icon--blue">
+          <use xlink:href="/images/icons/sprite.svg#browser" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+        </svg>
+        <br>
+        <span class="intro__item-title">Modern browser support.</span>
+        <p class="intro__item-body">
+          We're not joking when we say we've considered every detail. That's right, down to each individual pixel. When you see a design, this is exactly how your website will look, complete with animation and effects.
+        </p>
+      </div>
+      <!-- END : INTRO ITEM /-->
     </div>
-    <!-- END : SITE PORTFOLIO FLEX /-->
-    <!-- BEGIN : SITE PORTFOLIO GRID -->
-    <div class="site-portfolio__grid">
-      {{#each_upto portfolio.[2016] 4}}
-        <!-- BEGIN : SITE PORTFOLIO ITEM -->
-        {{>work-item-preview}}
-        <!-- END : SITE PORTFOLIO ITEM /-->
-      {{/each_upto}}
-    </div>
-    <!-- END : SITE PORTFOLIO GRID /-->
+    <!-- END : INTRO CONTENT /-->
   </div>
   <!-- END : CONTAINER /-->
 </main>
-<!-- ******************** SITE MAIN : End ******************** /-->
+<!-- ******************** INTRO : End ******************** /-->
 
 
-<!-- ******************** SITE BLOG : Start ******************** -->
-<section class="site-blog">
+<!-- ******************** PORTFOLIO : Start ******************** -->
+<section class="portfolio">
   <!-- BEGIN : CONTAINER -->
-  <div class="site-container">
-    <!-- BEGIN : GRID GUIDES -->
-    <div class="grid-guides">
-      <div class="grid-guides__guide"></div>
-      <div class="grid-guides__guide"></div>
-      <div class="grid-guides__guide"></div>
-      <div class="grid-guides__guide"></div>
+  <div class="container">
+    <!-- BEGIN : PORTFOLIO CONTENT -->
+    <div class="portfolio__content portfolio__content--flex">
+      <!-- BEGIN : PORTFOLIO ITEM -->
+      <a class="portfolio__item portfolio__item--main" href="#">
+        <h2 class="portfolio__item-title portfolio__item-title--dark">My recent work</h2>
+        <p class="portfolio__item-body portfolio__item-body--neutral">
+          Curabitur at pulvinar massa. Sed rhoncus sapien ac neque venenatis, quis fringilla urna consequat. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Duis lacinia justo ac sem tristique.
+        </p>
+        <span class="btn btn--red">
+          View portfolio
+          <svg width="20" height="20" class="btn__icon btn__icon--red">
+            <use xlink:href="/images/icons/sprite.svg#arrow" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+          </svg>
+        </span>
+        <span class="block-line"></span>
+      </a>
+      <!-- END : PORTFOLIO ITEM /-->
+      {{#each_upto portfolio.[2016] 2}}
+        {{>portfolio-preview}}
+      {{/each_upto}}
     </div>
-    <!-- END : GRID GUIDES /-->
-    <!-- BEGIN : SITE BLOG FLEX -->
-    <div class="site-blog__flex">
-      {{#each articles.[2016]}}
-        <!-- BEGIN : SITE BLOG ITEM -->
-        {{>article-section}}
-        <!-- END : SITE BLOG ITEM /-->
-      {{/each}}
-    </div>
-    <!-- END : SITE BLOG FLEX /-->
+    <!-- END : PORTFOLIO CONTENT /-->
   </div>
   <!-- END : CONTAINER /-->
 </section>
-<!-- ******************** SITE BLOG : End ******************** /-->
+<!-- ******************** PORTFOLIO : End ******************** /-->
+
+
+<section class="blog">
+  <div class="container">
+    <h2 class="blog__title">My latest posts</h2>
+    <p class="blog__body">Our live feed of what’s happening right now. A mixture of industry updates, company news, advice, social media, new projects and website launches.</p>
+    <div class="blog__content">
+      <a class="blog__additional blog__additional--blue" href="#">
+        <p class="blog__additional-body">My brother is a little 💩 Get a message to pick him up from work. So I drive to his work to find out he hasn’t finished work. B*stard 🤣</p>
+        <svg width="20" height="20" class="blog__additional-icon">
+          <use xlink:href="/images/icons/sprite.svg#twitter" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+        </svg>
+      </a>
+      {{#each articles.[2016]}}
+        {{>article-section}}
+      {{/each}}
+      <a class="blog__additional blog__additional--purple" href="#">
+        <h3 class="blog__additional-title">Want to read more?</h3>
+        <p class="blog__additional-body">My Journal is the best place to find out what we’ve been up to and read some of the latest industry news.</p>
+        <span class="btn btn--white">
+          View my blog
+          <svg width="20" height="20" class="btn__icon btn__icon--white">
+            <use xlink:href="/images/icons/sprite.svg#arrow" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+          </svg>
+        </span>
+      </a>
+    </div>
+  </div>
+</section>

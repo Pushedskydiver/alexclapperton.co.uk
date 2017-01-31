@@ -9,89 +9,97 @@ html {
 }
 
 body {
-  background: $core-color-neutral;
-  color: $core-color-dark;
+  background: $core-color-light;
+  color: $core-color-neutral;
   font-family: $core-font-family;
   font-weight: $core-font-weight;
-  line-height: $core-line-height;
+  line-height: 1.45;
   margin: 0;
   padding-bottom: 60px;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
   @include fadein;
 
-  @include respond-to(m) {
+  @include respond-to(s) {
     padding-bottom: 0;
   }
 }
 
 body ::-moz-selection {
-  color: $core-color-light darken($core-color-neutral, 70%);
+  background: $core-color-brand;
+  color: $core-color-light;
 }
 
 body ::selection {
-  color: $core-color-light darken($core-color-neutral, 70%);
+  background: $core-color-brand;
+  color: $core-color-light;
 }
 
 h1 {
-  color: $core-color-brand;
-  font-family: $core-secondary-font-family;
+  color: $core-color-heading;
+  font-family: $core-font-family;
   @include font-size($h1-font-sizes);
-  font-weight: $core-tertiary-font-weight;
+  font-weight: $core-font-weight;
   margin: 0 0 $core-margin 0;
   line-height: $core-secondary-line-height;
 }
 
 h2 {
-  color: $core-color-brand;
-  font-family: $core-secondary-font-family;
+  color: $core-color-heading;
+  font-family: $core-font-family;
   @include font-size($h2-font-sizes);
-  font-weight: $core-tertiary-font-weight;
+  font-weight: $core-font-weight;
   margin: 0 0 $core-margin 0;
   line-height: $core-secondary-line-height;
 }
 
 h3 {
-  color: $core-color-dark;
-  font-family: $core-secondary-font-family;
+  color: $core-color-heading;
+  font-family: $core-font-family;
   @include font-size($h3-font-sizes);
-  font-weight: $core-tertiary-font-weight;
+  font-weight: $core-font-weight;
   margin: 0 0 $core-margin 0;
   line-height: $core-secondary-line-height;
 }
 
 h4 {
-  font-family: $core-secondary-font-family;
+  color: $core-color-heading;
+  font-family: $core-font-family;
   @include font-size($h4-font-sizes);
-  font-weight: $core-tertiary-font-weight;
+  font-weight: $core-font-weight;
   margin: 0 0 $core-margin 0;
   line-height: $core-secondary-line-height;
 }
 
 h5 {
-  font-family: $core-secondary-font-family;
+  color: $core-color-heading;
+  font-family: $core-font-family;
   @include font-size($h5-font-sizes);
-  font-weight: $core-tertiary-font-weight;
+  font-weight: $core-font-weight;
   margin: 0 0 $core-margin 0;
   line-height: $core-secondary-line-height;
 }
 
 h6 {
-  font-family: $core-secondary-font-family;
-  font-size: ($core-font-size * 1.15);
+  color: $core-color-heading;
+  font-family: $core-font-family;
+  @include font-size($h6-font-sizes);
   font-weight: $core-font-weight;
   margin: 0 0 $core-margin 0;
   line-height: $core-secondary-line-height;
-
-  @include respond-to(s) {
-    font-size: ($core-font-size * 1.3);
-  }
 }
 
 p {
-  color: $core-color-dark;
   @include font-size($p-font-sizes);
   font-weight: $core-font-weight;
   line-height: $core-line-height;
   margin: 0 0 15px 0;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
 }
 
 li {
@@ -111,15 +119,21 @@ img {
 
 svg {
   @include respond-to(l) {
-    @include transition-025;
+    @include transition-03;
   }
 }
 
 button {
-  @include font-size($p-font-sizes);
+  margin: 0;
+  padding: 0;
+  border: none;
   -webkit-appearance: none;
   appearance: none;
-  border: none;
+  @include font-size($p-font-sizes);
+
+  @include respond-to(l) {
+    @include transition-03;
+  }
 }
 
 a {
@@ -127,7 +141,8 @@ a {
   text-decoration: underline;
 
   @include respond-to(l) {
-    @include transition-025;
+    cursor: pointer;
+    @include transition-03;
   }
 }
 

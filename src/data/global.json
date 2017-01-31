@@ -14,47 +14,56 @@
   "social": [
     {
       "url": "https://www.facebook.com/AlexMClapperton",
+      "title": "Facebook",
       "title-attr": "External link to Alex's Facebook profile.",
       "icon": "facebook"
     },
     {
       "url": "https://twitter.com/AlexMClapperton",
+      "title": "Twitter",
       "title-attr": "External link to Alex's Twitter profile.",
       "icon": "twitter"
     },
     {
       "url": "https://uk.linkedin.com/in/alexclapperton",
+      "title": "LinkedIn",
       "title-attr": "External link to Alex's LinkedIn profile.",
       "icon": "linkedin"
+    },
+    {
+      "url": "https://github.com/Pushedskydiver",
+      "title": "GitHub",
+      "title-attr": "External link to Alex's GitHub profile.",
+      "icon": "github"
     }
   ],
   "navigation": [
     {
       "url": "/",
       "title": "Home",
-      "slug": "home",
       "title-attr": "Internal link to the homepage.",
+      "slug": "home",
       "icon": "home"
     },
     {
-      "url": "/my-work",
-      "title": "Work",
-      "slug": "work",
-      "title-attr": "Internal link to the my work page.",
-      "icon": "work"
+      "url": "/about-me",
+      "title": "About me",
+      "title-attr": "Internal link to the about page.",
+      "slug": "about",
+      "icon": "user"
     },
     {
-      "url": "/about",
-      "title": "About Me",
-      "slug": "about",
-      "title-attr": "Internal link to the about page.",
-      "icon": "user"
+      "url": "/mportfolio",
+      "title": "Portfolio",
+      "title-attr": "Internal link to the my work page.",
+      "slug": "portfolio",
+      "icon": "work"
     },
     {
       "url": "/blog",
       "title": "Blog",
-      "slug": "blog",
       "title-attr": "Internal link to the blog page.",
+      "slug": "blog",
       "icon": "blog"
     },
     {
@@ -62,7 +71,7 @@
       "title": "Contact",
       "title-attr": "Internal link to the contact page.",
       "slug": "contact",
-      "icon": "mail"
+      "icon": "contact"
     }
   ]
 }

@@ -1,165 +1,108 @@
-// Blog - blog pages & blog posts
+.blog {
+  padding: 50px 0;
+}
 
-.site-blog {
-  position: relative;
+.blog__body {
+  max-width: 550px;
+}
 
-  &--white {
-    background-color: $core-color-light;
-  }
-
-  .site-container {
-    height: 100%;
-    padding: 30px $core-padding;
-  }
+.blog__content {
+  margin-top: ($core-margin * 3);
+  @include flex(wrap, column, space-between, null);
 
   @include respond-to(m) {
-    .site-container {
-      padding: 30px 0;
-    }
+    @include flex-direction(row);
   }
 }
 
-.site-blog__flex {
-  @include respond-to(m) {
-    padding: 0 $core-padding;
-    @include flex(wrap, row, space-between);
-  }
-}
-
-.site-blog__item {
+.blog__additional {
   display: block;
-  background-color: $core-color-light;
+  margin-bottom: ($core-margin * 2);
+  padding: 30px;
   text-decoration: none;
-  margin-top: 30px;
-  padding: 15px;
-  border-bottom: 2px solid $core-color-brand;
 
-  &:first-child {
-    margin-top: 0;
+  &--blue {
+    background-color: #007cbf;
+    order: 3;
   }
 
-  &--no-padding {
-    padding: 15px 0;
+  &--purple {
+    background-color: #b147cb;
+    margin-bottom: 0;
+    order: 5;
+  }
+
+  @include respond-to(m) {
+    width: 48.5%;
+    @include flex(null, column, center, null);
+  }
+
+  @include respond-to(xl) {
+    width: 25%;
+  }
+}
+
+.blog__additional-title {
+  color: $core-color-light;
+}
+
+.blog__additional-body {
+  color: $core-color-light;
+  @include font-size($h6-font-sizes);
+}
+
+.blog__additional-icon {
+  width: 32px;
+  height: 32px;
+  fill: #1da0f1;
+}
+
+.blog__item {
+  display: block;
+  margin-bottom: ($core-margin * 2);
+  padding: 22px;
+  text-decoration: none;
+  box-shadow: 0px 0px 15px 0px rgba(41,44,52,0.25);
+
+  &:nth-child(2) {
+    order: 1;
+  }
+
+  &:nth-child(3) {
+    order: 2;
+  }
+
+  &:nth-child(4) {
+    order: 4;
+  }
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  @include respond-to(m) {
+    width: 48.5%;
+    @include flex(null, column, center, null);
   }
 
   @include respond-to(l) {
-    width: calc(50% - 12px);
     position: relative;
-    border-bottom: none;
+    padding: 30px;
+  }
 
-    &:nth-of-type(2) {
-      margin-top: 0;
-    }
-
-    &::after {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 0;
-      height: 2px;
-      background-color: $core-color-brand;
-      @include transition-03;
-    }
-
-    &:hover {
-      &::after {
-        width: 100%;
-      }
-
-       .btn-primary__icon {
-         margin-left: 10px;
-      }
-    }
+  @include respond-to(xl) {
+    width: 36.5%;
   }
 }
 
-.site-blog__item-title {
-  color: $core-color-brand;
+.blog__item-body {
+  color: $core-color-neutral;
 }
 
-.site-blog__item-date {
+.blog__item-date {
   display: block;
-  color: $core-color-dark;
+  margin-bottom: 15px;
+  color: $core-color-neutral;
+  font-size: 0.85em;
   font-weight: $core-secondary-font-weight;
-  margin-bottom: 10px;
-}
-
-.site-post {
-  background-color: $core-color-light;
-}
-
-.article__body {
-  max-width: 46.88rem;
-  padding: 30px 0;
-  margin: 0 auto;
-}
-
-.article__img {
-  width: 100%;
-  margin-bottom: $core-margin;
-}
-
-.article__details {
-  @include font-size($p-font-sizes);
-
-  @include respond-to(m) {
-    margin-bottom: ($core-margin * 2);
-  }
-}
-
-.article__date {
-  display: block;
-  margin-bottom: $core-margin;
-
-  @include respond-to(m) {
-    display: inline-block;
-    margin-right: ($core-margin * 2);
-    margin-bottom: 0;
-  }
-}
-
-.article__category {
-  display: block;
-  margin-bottom: $core-margin;
-
-  @include respond-to(m) {
-    display: inline-block;
-    margin-bottom: 0;
-  }
-}
-
-.article__section {
-  max-width: 46.88rem;
-  margin: 0 auto ($core-margin * 3) auto;
-
-  &:last-child {
-    margin-bottom: 0;
-    padding-bottom: ($core-padding * 3);
-  }
-
-  &--flex {
-    @include flex(wrap, row, flex-start);
-  }
-}
-
-.post__share-link {
-  margin-right: ($core-margin * 2);
-
-  &:last-child {
-    margin-right: 0;
-  }
-}
-
-.post__share-icon {
-  width: 35px;
-  height: 35px;
-
-  &--twitter {
-    fill: $core-twitter-color;
-  }
-
-  &--linkedin {
-    fill: $core-linkedin-color;
-  }
 }

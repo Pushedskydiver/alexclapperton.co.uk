@@ -1,17 +1,21 @@
-.site-container {
+.container {
   position: relative;
-  padding: 0 $core-padding;
+  padding: 0 20px;
 
   @include respond-to(m) {
-    width: 668px;
+    width: 750px;
     margin: 0 auto;
   }
 
   @include respond-to(l) {
-    width: 962px;
+    width: 970px;
   }
 
   @include respond-to(xl) {
-    width: 1200px;
+    width: 1170px;
+  }
+
+  @include respond-to(xxl) {
+    width: 80%;
   }
 }

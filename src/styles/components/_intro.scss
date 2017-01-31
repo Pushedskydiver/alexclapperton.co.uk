@@ -1,0 +1,115 @@
+.intro {
+  padding: 80px 0 50px 0;
+
+  @include respond-to(l) {
+    padding: 50px 0;
+  }
+}
+
+.intro__content {
+
+  @include respond-to(l) {
+    @include flex(wrap, row, space-between, null);
+  }
+}
+
+.intro__item {
+  position: relative;
+  padding: ($core-padding * 2);
+  margin-bottom: ($core-margin * 6);
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  &--red {
+    background-color: $core-color-brand;
+
+    @include respond-to(l) {
+      background-color: transparent;
+    }
+  }
+
+  &--green {
+    background-color: #98c379;
+
+    @include respond-to(l) {
+      background-color: transparent;
+    }
+  }
+
+  &--blue {
+    background-color: #61afef;
+
+    @include respond-to(l) {
+      background-color: transparent;
+    }
+  }
+
+  @include respond-to(m) {
+    padding: ($core-padding * 3.5);
+  }
+
+  @include respond-to(l) {
+    width: 32%;
+    margin-bottom: 0;
+    padding: 0;
+  }
+
+  @include respond-to(xl) {
+    width: 30%;
+  }
+}
+
+.intro__item-icon {
+  position: absolute;
+  top: -30px;
+  left: 24px;
+  width: 60px;
+  height: 60px;
+  fill: $core-color-light;
+  padding: 15px;
+  border-radius: 50%;
+  box-shadow: 0 0 50px 0 rgba(0,0,0,0.1);
+
+  &--red {
+    background-color: $core-color-brand;
+  }
+
+  &--green {
+    background-color: #98c379;
+  }
+
+  &--blue {
+    background-color: #61afef;
+  }
+
+  @include respond-to(m) {
+    left: 42px;
+  }
+
+  @include respond-to(l) {
+    position: static;
+    box-shadow: none;
+  }
+}
+
+.intro__item-title {
+  display: block;
+  color: $core-color-light;
+  margin-bottom: ($core-margin / 2);
+  line-height: $core-secondary-line-height;
+  @include font-size($h3-font-sizes);
+
+  @include respond-to(l) {
+    color: $core-color-heading;
+  }
+}
+
+.intro__item-body {
+  color: $core-color-light;
+
+  @include respond-to(l) {
+    color: $core-color-neutral;
+  }
+}

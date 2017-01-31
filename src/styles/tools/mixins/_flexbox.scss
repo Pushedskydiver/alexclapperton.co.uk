@@ -50,9 +50,10 @@
   }
 }
 
-@mixin flex($wrap, $direction, $justify) {
+@mixin flex($wrap, $direction, $justify, $align) {
   @include flexbox;
   @include flex-wrap($wrap);
   @include flex-direction($direction);
   @include justify-content($justify);
+  @include align-items($align);
 }

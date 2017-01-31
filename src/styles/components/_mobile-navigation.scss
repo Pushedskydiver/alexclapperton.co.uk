@@ -1,0 +1,85 @@
+// Bottom Mobile menu Bar
+.mobile-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 60px;
+  background: $core-color-light;
+  padding: $core-padding 0;
+  z-index: z(juliet);
+  @include flex(wrap, row, center, center);
+
+  @include respond-to(s) {
+    display: none;
+  }
+}
+
+.mobile-bar__link {
+  width: 11%;
+  height: 60px;
+  margin: 0 ($core-margin / 2);
+  text-align: center;
+  text-decoration: none;
+
+  &--main {
+    position: relative;
+    width: 90px;
+    height: 90px;
+    background-color: $core-color-light;
+    border: 3px $core-border-style $core-color-brand;
+    border-radius: 50%;
+    @include flex(null, column, center, center);
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: -7px;
+      left: -8px;
+      width: 100px;
+      height: 100px;
+      background-color: $core-color-light;
+      border-radius: 50%;
+      z-index: -1;
+    }
+  }
+}
+
+.mobile-bar__icon {
+  width: 23px;
+  height: 100%;
+  fill: transparent;
+  stroke: $core-color-neutral;
+  vertical-align: middle;
+
+  &--main {
+    width: 90px;
+    fill: $core-color-brand;
+    stroke: transparent;
+    padding: ($core-padding * 2.4);
+  }
+}
+
+// Top Mobile Menu
+.mobile-menu {
+  display: inline-block;
+  background-color: transparent;
+  color: $core-color-light;
+  line-height: 1.45;
+  float: right;
+  @include font-size($h3-font-sizes);
+
+  @include respond-to(l) {
+    display: none;
+  }
+}
+
+.mobile-menu__icon {
+  fill: $core-color-brand;
+  vertical-align: text-bottom;
+
+  @include respond-to(xs) {
+    width: 25px;
+    height: 25px;
+  }
+}

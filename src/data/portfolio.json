@@ -1,7 +1,7 @@
 {
   "2016": [
     {
-      "title": "Love Manchester Website",
+      "title": "Love <span class=\"portfolio__item-title--bold\">Manchester</span>",
       "slug": "love-manchester-website/",
       "title-attr": "Link to Love Manchester portfolio page.",
       "description": "An international student website about Manchester",
@@ -13,7 +13,7 @@
       "universityIcon": "graduation-cap"
     },
     {
-      "title": "Website Portfolio 2015",
+      "title": "Website <span class=\"portfolio__item-title--bold\">Portfolio 2015</span>",
       "slug": "website-portfolio-2015/",
       "title-attr": "Link to website portfolio 2015 portfolio page.",
       "description": "My personal portfolio website I made in 2015",
