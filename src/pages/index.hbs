@@ -14,8 +14,6 @@ priority: 1.0
   <div class="container">
     <!-- BEGIN : BANNER CONTENT -->
     <div class="banner__content">
-      <!-- BEGIN : BANNER ITEM -->
-      <div class="banner__item">
         <h1 class="banner__title banner__title--white">Hello! <br> I am known as <br> <span class="type"></span></h1>
         <p class="banner__body">
           <svg width="20" height="20" class="banner__icon banner__icon--green">
@@ -27,12 +25,15 @@ priority: 1.0
           </svg>
           by me
         </p>
-      </div>
-      <!-- END : BANNER ITEM /-->
     </div>
     <!-- END : BANNER CONTENT /-->
   </div>
   <!-- END : CONTAINER /-->
+
+  <!-- END : BANNER ITEM /-->
+  <div class="banner__sidebar">
+
+  </div>
 </section>
 <!-- ******************** BANNER : End ******************** /-->
 
@@ -99,13 +100,15 @@ priority: 1.0
         <p class="portfolio__item-body portfolio__item-body--neutral">
           Curabitur at pulvinar massa. Sed rhoncus sapien ac neque venenatis, quis fringilla urna consequat. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Duis lacinia justo ac sem tristique.
         </p>
-        <span class="btn btn--red">
-          View portfolio
-          <svg width="20" height="20" class="btn__icon btn__icon--red">
-            <use xlink:href="/images/icons/sprite.svg#arrow" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
-          </svg>
-        </span>
-        <span class="block-line"></span>
+        <div class="btn--flex">
+          <span class="btn btn--red">
+            View portfolio
+            <svg width="20" height="20" class="btn__icon btn__icon--red">
+              <use xlink:href="/images/icons/sprite.svg#arrow" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+            </svg>
+          </span>
+          <span class="btn__line"></span>
+        </div>
       </a>
       <!-- END : PORTFOLIO ITEM /-->
       {{#each_upto portfolio.[2016] 2}}
@@ -119,20 +122,26 @@ priority: 1.0
 <!-- ******************** PORTFOLIO : End ******************** /-->
 
 
+<!-- ******************** BLOG : Start ******************** -->
 <section class="blog">
+  <!-- BEGIN : CONTAINER -->
   <div class="container">
     <h2 class="blog__title">My latest posts</h2>
     <p class="blog__body">Our live feed of what’s happening right now. A mixture of industry updates, company news, advice, social media, new projects and website launches.</p>
+    <!-- BEGIN : BLOG CONTENT -->
     <div class="blog__content">
+      <!-- BEGIN : BLOG ADDITIONAL -->
       <a class="blog__additional blog__additional--blue" href="#">
         <p class="blog__additional-body">My brother is a little 💩 Get a message to pick him up from work. So I drive to his work to find out he hasn’t finished work. B*stard 🤣</p>
         <svg width="20" height="20" class="blog__additional-icon">
           <use xlink:href="/images/icons/sprite.svg#twitter" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
         </svg>
       </a>
+      <!-- END : BLOG ADDITIONAL -->
       {{#each articles.[2016]}}
         {{>article-section}}
       {{/each}}
+      <!-- BEGIN : BLOG ADDITIONAL -->
       <a class="blog__additional blog__additional--purple" href="#">
         <h3 class="blog__additional-title">Want to read more?</h3>
         <p class="blog__additional-body">My Journal is the best place to find out what we’ve been up to and read some of the latest industry news.</p>
@@ -143,6 +152,10 @@ priority: 1.0
           </svg>
         </span>
       </a>
+      <!-- END : BLOG ADDITIONAL /-->
     </div>
+    <!-- END : BLOG CONTENT /-->
   </div>
+  <!-- END : CONTAINER /-->
 </section>
+<!-- ******************** BLOG : End ******************** /-->

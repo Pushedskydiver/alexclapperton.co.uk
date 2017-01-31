@@ -12,6 +12,7 @@
 
   @include respond-to(m) {
     @include flex-direction(row);
+    @include justify-content(flex-start);
   }
 }
 
@@ -33,12 +34,40 @@
   }
 
   @include respond-to(m) {
-    width: 48.5%;
+    width: 48%;
     @include flex(null, column, center, null);
+
+    &--blue {
+      margin-right: 4%;
+    }
+  }
+
+  @include respond-to(l) {
+
+    &:hover {
+
+      .btn {
+        background-color: $core-color-light;
+        color: #b147cb;
+      }
+
+      .btn__icon {
+        fill: #b147cb;
+      }
+    }
   }
 
   @include respond-to(xl) {
     width: 25%;
+
+    &--blue {
+      margin-right: 0;
+    }
+
+    &--purple {
+      margin-right: 1.5%;
+      order: 4;
+    }
   }
 }
 
@@ -81,22 +110,78 @@
   }
 
   @include respond-to(m) {
-    width: 48.5%;
+    width: 48%;
     @include flex(null, column, center, null);
+
+    &:nth-child(2) {
+      margin-right: 4%;
+    }
   }
 
   @include respond-to(l) {
     position: relative;
     padding: 30px;
+    overflow: hidden;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background-color: $core-color-brand;
+      z-index: -1;
+      @include transition-03;
+    }
+
+    &:hover {
+      box-shadow: none;
+
+      &::before {
+        left: 0;
+      }
+
+      .blog__item-title,
+      .blog__item-body,
+      .blog__item-date {
+        color: $core-color-light;
+      }
+
+      .btn__line {
+        background-color: $core-color-light;
+      }
+    }
   }
 
   @include respond-to(xl) {
-    width: 36.5%;
+    width: 36%;
+
+    &:nth-child(2),
+    &:nth-child(3),
+    &:nth-child(4) {
+      margin-right: 1.5%;
+    }
+
+    &:nth-child(4) {
+      margin-bottom: 0;
+      order: 5;
+    }
+  }
+}
+
+.blog__item-title {
+  @include respond-to(l) {
+    @include transition-03;
   }
 }
 
 .blog__item-body {
   color: $core-color-neutral;
+
+  @include respond-to(l) {
+    @include transition-03;
+  }
 }
 
 .blog__item-date {
@@ -105,4 +190,8 @@
   color: $core-color-neutral;
   font-size: 0.85em;
   font-weight: $core-secondary-font-weight;
+
+  @include respond-to(l) {
+    @include transition-03;
+  }
 }

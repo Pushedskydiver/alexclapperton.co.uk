@@ -8,6 +8,7 @@
   }
 
   @include respond-to(l) {
+    position: relative;
     height: 550px;
   }
 }
@@ -75,4 +76,19 @@
   opacity: 1;
   animation: blink 0.3s infinite;
   animation-direction: alternate;
+}
+
+.banner__sidebar {
+  display: none;
+
+  @include respond-to(l) {
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 30%;
+    max-width: 400px;
+    height: 550px;
+    background-color: $core-color-dark;
+  }
 }

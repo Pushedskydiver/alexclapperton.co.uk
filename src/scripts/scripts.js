@@ -149,10 +149,8 @@
     // ==============================================
     function init_btn_line() {
       $(document).ready(function(){
-        $(".block-line").each(function(){
+        $(".btn__line").each(function(){
           $(this).css('width', $(this).parent().width() - $(this).parent().find('.btn').width() - 60);
-
-          $(this).css('top', ($(this).parent().innerHeight()) - ($(this).parent().find('.btn').outerHeight() * 1.5));
         });
       });
     }

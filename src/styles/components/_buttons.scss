@@ -14,6 +14,28 @@
     color: $core-color-light;
     border: $core-border-width $core-border-style $core-color-light;
   }
+
+  &--flex {
+    @include respond-to(l) {
+      @include flex(wrap, row, space-between, center);
+    }
+  }
+
+  @include respond-to(l) {
+    @include transition-03;
+  }
+}
+
+.btn__line {
+  display: none;
+
+  @include respond-to(l) {
+    display: block;
+    width: 100%;
+    height: 1px;
+    background-color: $core-color-brand;
+    @include transition-03;
+  }
 }
 
 .btn__icon {

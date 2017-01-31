@@ -49,12 +49,35 @@
     }
 
     @include respond-to(l) {
-      &:hover {
+      position: relative;
+      overflow: hidden;
+      z-index: 1;
+
+      &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
         background-color: $core-color-brand;
+        z-index: -1;
+        @include transition-03;
+      }
+
+      &:hover {
+
+        &::before {
+          left: 0;
+        }
 
         .portfolio__item-title,
         .portfolio__item-body {
           color: $core-color-light;
+        }
+
+        .btn__line {
+          background-color: $core-color-light;
         }
       }
     }
@@ -104,6 +127,10 @@
   &--bold {
     font-weight: $core-secondary-font-weight;
   }
+
+  @include respond-to(l) {
+    @include transition-03;
+  }
 }
 
 .portfolio__item-body {
@@ -117,13 +144,8 @@
     color: $core-color-light;
     margin-bottom: 0;
   }
-}
 
-.block-line {
   @include respond-to(l) {
-    position: absolute;
-    right: 22px;
-    height: 1px;
-    background-color: $core-color-brand;
+    @include transition-03;
   }
 }
