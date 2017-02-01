@@ -15,6 +15,16 @@
 }
 @font-face {
   font-family: "Maven Pro";
+  src: url("../fonts/maven-pro/maven-pro-medium.eot"); /* IE9 */
+  src: url("../fonts/maven-pro/maven-pro-medium.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
+  url("../fonts/maven-pro/maven-pro-medium.woff") format("woff"), /* chrome, firefox */
+  url("../fonts/maven-pro/maven-pro-medium.ttf") format("truetype"), /* chrome, firefox, opera, Safari, Android, iOS 4.2+ */
+  url("../fonts/maven-pro/maven-pro-medium.svg#maven-pro") format("svg"); /* iOS 4.1- */
+  font-style: normal;
+  font-weight: $core-tertiary-font-weight;
+}
+@font-face {
+  font-family: "Maven Pro";
   src: url("../fonts/maven-pro/maven-pro-bold.eot"); /* IE9 */
   src: url("../fonts/maven-pro/maven-pro-bold.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
   url("../fonts/maven-pro/maven-pro-bold.woff") format("woff"), /* chrome, firefox */

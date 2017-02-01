@@ -58,3 +58,7 @@ $btn-font-sizes: (
   m: em(($core-font-size * 1.3)),
   l: em(($core-font-size * 1.1)),
 );
+
+$small-font-sizes: (
+  l: em(($core-font-size - 1)),
+);

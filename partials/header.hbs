@@ -49,12 +49,12 @@
       <a href="#content" class="skip-link hidden focusable scroll-to" data-offset-top="130">Skip to content</a>
     </div>
     <!-- END : SKIP LINKS /-->
-    <!-- BEGIN : SITE HEADER FLEX -->
+    <!-- BEGIN : SITE HEADER CONTENT -->
     <div class="header__content">
       <!-- BEGIN : SITE LOGO -->
       <a href="/" class="header__logo" title="Internal link to homepage.">< <span class="header__logo--red">Alex</span> /></a>
       <!-- END : SITE LOGO /-->
-
+      <!-- BEGIN : MOBILE MENU -->
       <button type="button" class="mobile-menu">
         M
         <svg width="20" height="20" class="mobile-menu__icon">
@@ -62,7 +62,7 @@
         </svg>
         NU
       </button>
-
+      <!-- END : MOBILE MENU /-->
       <!-- BEGIN : NAV -->
       <nav class="nav" id="nav" role="navigation">
         <button type="button" class="nav__close">
@@ -81,8 +81,8 @@
       <div class="header__social">
         {{#each global.social}}
           <!-- BEGIN : SOCIAL HEADER ICON -->
-          <a href="{{{this.url}}}" class="header__social__link" title="{{{this.title-attr}}}">
-            <svg width="20" height="20" class="header__social__icon">
+          <a href="{{{this.url}}}" class="header__social-link" title="{{{this.title-attr}}}">
+            <svg width="20" height="20" class="header__social-icon">
               <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/icons/sprite.svg#{{{this.icon}}}"></use>
             </svg>
             <span class="visually-hidden">{{{this.icon}}}</span>
@@ -92,7 +92,7 @@
       </div>
       <!-- END : SOCIAL HEADER -->
     </div>
-    <!-- END : SITE HEADER FLEX /-->
+    <!-- END : SITE HEADER CONTENT /-->
   </div>
   <!-- END : CONTAINER /-->
 </header>

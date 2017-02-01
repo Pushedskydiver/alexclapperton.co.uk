@@ -102,6 +102,11 @@ $core-font-weight: 400 !default;
 $core-secondary-font-weight: 700 !default;
 
 /**
+* Secondary font weight
+*/
+$core-tertiary-font-weight: 500 !default;
+
+/**
 * Margin applied to block elements
 */
 $core-margin: $core-grid-unit !default;

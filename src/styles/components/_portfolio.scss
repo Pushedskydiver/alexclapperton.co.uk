@@ -31,6 +31,7 @@
 
   @include respond-to(xl) {
     width: 33.333333%;
+    overflow: hidden;
   }
 
   &--main {
@@ -51,7 +52,7 @@
     @include respond-to(l) {
       position: relative;
       overflow: hidden;
-      z-index: 1;
+      z-index: z(alpha);
 
       &::before {
         content: '';
@@ -98,6 +99,7 @@
 
   @include respond-to(xl) {
     width: auto;
+    max-width: initial;
     height: 100%;
   }
 }
@@ -113,7 +115,7 @@
 
   @include respond-to(l) {
     opacity: 0;
-    visibility: hiden;
+    visibility: hidden;
     @include transition-03;
   }
 }
