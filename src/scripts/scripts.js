@@ -5,7 +5,7 @@
     var AC = function() {
         this.VERSION = "1.1.0";
         this.AUTHOR = "Alex Clapperton";
-        this.SUPPORT = "alexclapperton@nuttersons.co.uk";
+        this.SUPPORT = "hi@alexclapperton.co.uk";
 
         this.pageScrollElement = 'html, body';
         this.$body = $('body');
@@ -30,8 +30,8 @@
             this.$body.addClass('mobile');
         } else {
             this.$body.addClass('desktop');
-            if (navigator.userAgent.match(/MSIE 9.0/)) {
-                this.$body.addClass('ie9');
+            if (navigator.userAgent.match(/MSIE 10|MSIE 9.0|)) {
+                this.$body.addClass('ie');
             }
         }
     }
@@ -132,6 +132,15 @@
 
 
     // ==============================================
+    //    Interactive particles | Homepage banner
+    // ==============================================
+    function init_particles() {
+      particlesJS.load('particles-js', 'particlesjs-config.json', function() {
+      });
+    }
+
+
+    // ==============================================
     //    Typing animation | Homepage banner
     // ==============================================
     function init_ityped() {
@@ -153,75 +162,6 @@
           $(this).css('width', $(this).parent().width() - $(this).parent().find('.btn').width() - 60);
         });
       });
-    }
-
-
-    // ==============================================
-    //    Contact form
-    // ==============================================
-    function init_contact_form() {
-      //contact form button event
-      $(".btn-primary--contact").on('click',function (event) {
-          var error = init_validate_form();
-          var _this = $(this);
-          if (error) {
-              _this.next('.site-contact__loading').removeClass('site-contact__loading--displayNone');
-              _this.prop('disabled', true);
-              $.ajax({
-                  type: "POST",
-                  url: "/forms/mailer.php",
-                  data: $(".site-contact__form").serialize(),
-                  success: function (result) {
-                      $('.site-contact__input, .site-contact__textarea').each(function () {
-                          $(this).val('');
-                      })
-                      $(".site-contact__message").html(result);
-                      $(".site-contact__message").fadeIn("slow").removeClass('site-contact__input--error').addClass('site-contact__message--success');
-                      $('.site-contact__message').delay(4000).fadeOut("slow");
-                      _this.next('.site-contact__loading').addClass('site-contact__loading--displayNone');
-                      _this.prop('disabled', false);
-                  },
-                  error: function () {
-                      _this.next('.site-contact__loading').addClass('site-contact__loading--displayNone');
-                      _this.prop('disabled', false);
-                  }
-              });
-          }
-      });
-
-      function init_validate_form() {
-          var error = true;
-          $('.site-contact__input').each(function (index) {
-              if (index == 0) {
-                  if ($(this).val() == null || $(this).val() == "") {
-                      $(".site-contact__form").find(".site-contact__input:eq(" + index + ")").addClass("site-contact__input--error");
-                      error = false;
-                  }
-                  else {
-                      $(".site-contact__form").find(".site-contact__input:eq(" + index + ")").removeClass("site-contact__input--error");
-                  }
-              }
-              else if (index == 1) {
-                  if (!(/(.+)@(.+){2,}\.(.+){2,}/.test($(this).val()))) {
-                      $(".site-contact__form").find(".site-contact__input:eq(" + index + ")").addClass("site-contact__input--error");
-                      error = false;
-                  } else {
-                      $(".site-contact__form").find(".site-contact__input:eq(" + index + ")").removeClass("site-contact__input--error");
-                  }
-              }
-          });
-
-          $('.site-contact__textarea').each(function() {
-            if ($(this).val() == null || $(this).val() == "") {
-                $(".site-contact__form").find(".site-contact__textarea").addClass("site-contact__input--error");
-                error = false;
-            }
-            else {
-                $(".site-contact__form").find(".site-contact__textarea").removeClass("site-contact__input--error");
-            }
-          });
-          return error;
-      }
     }
 
 
@@ -268,8 +208,9 @@
       //init_portfolio();
     //}
 
-    //if (!$('body').hasClass('mobile')) {
+    if (!$('body').hasClass('mobile')) {
+      init_particles();
       //init_smooth_scroll_top();
-    //}
+    }
 
 })(window.jQuery);

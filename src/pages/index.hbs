@@ -10,36 +10,34 @@ priority: 1.0
 
 <!-- ******************** BANNER : Start ******************** -->
 <section class="banner" role="banner">
+  <div id="particles-js"></div>
   <!-- BEGIN : CONTAINER -->
   <div class="container">
     <!-- BEGIN : BANNER CONTENT -->
     <div class="banner__content">
-        <h1 class="banner__title banner__title--white">Hello! <br> I am known as <br> <span class="type"></span></h1>
-        <p class="banner__body">
-          <svg width="20" height="20" class="banner__icon banner__icon--green">
-            <use xlink:href="/images/icons/sprite.svg#tags" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
-          </svg>
-          with
-          <svg width="20" height="20" class="banner__icon banner__icon--red">
-            <use xlink:href="/images/icons/sprite.svg#heart" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
-          </svg>
-          by me
-        </p>
+      <h1 class="banner__title banner__title--white">Hello! <br> I am known as <br> <span class="type"></span></h1>
+      <p class="banner__body">
+        <svg width="20" height="20" class="banner__icon banner__icon--green">
+          <use xlink:href="/images/icons/sprite.svg#tags" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+        </svg>
+        with
+        <svg width="20" height="20" class="banner__icon banner__icon--red">
+          <use xlink:href="/images/icons/sprite.svg#heart" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+        </svg>
+        by me
+      </p>
     </div>
     <!-- END : BANNER CONTENT /-->
   </div>
   <!-- END : CONTAINER /-->
-
-  <!-- END : BANNER ITEM /-->
+  <!-- BEGIN : BANNER SIDEBAR -->
   <div class="banner__sidebar">
     <img class="banner__sidebar-img" src="/images/banner/alex.jpg" alt="Full body portrait of Alex with yellow M&amp;M mascot.">
-
     <span class="banner__sidebar-title">Alex Clapperton</span>
     <small class="banner__sidebar-sub">Front-end Web Developer <br> from Manchester, UK</small>
-
     <a class="banner__sidebar-email" href="mailto:hi@alexclapperton.co.uk">hi@alexclapperton.co.uk</a>
     <span class="banner__sidebar-phone">+44 7930 946 211</span>
-
+    <!-- BEGIN : BANNER SIDEBAR SOCIAL -->
     <div class="banner__sidebar-social">
       {{#each global.social}}
         <!-- BEGIN : SOCIAL HEADER ICON -->
@@ -52,7 +50,7 @@ priority: 1.0
         <!-- END : SOCIAL HEADER ICON /-->
       {{/each}}
     </div>
-
+    <!-- END : BANNER SIDEBAR SOCIAL /-->
     <a class="btn btn--white banner__sidebar-btn" href="#">
       View portfolio
       <svg width="20" height="20" class="btn__icon btn__icon--white">
@@ -60,6 +58,7 @@ priority: 1.0
       </svg>
     </a>
   </div>
+  <!-- END : BANNER SIDEBAR /-->
 </section>
 <!-- ******************** BANNER : End ******************** /-->
 
