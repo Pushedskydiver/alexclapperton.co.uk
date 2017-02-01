@@ -30,8 +30,8 @@
             this.$body.addClass('mobile');
         } else {
             this.$body.addClass('desktop');
-            if (navigator.userAgent.match(/MSIE 10|MSIE 9.0|)) {
-                this.$body.addClass('ie');
+            if (navigator.userAgent.match(/MSIE 9.0/)) {
+                this.$body.addClass('ie9');
             }
         }
     }
