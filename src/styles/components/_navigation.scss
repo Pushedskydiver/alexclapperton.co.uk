@@ -4,9 +4,10 @@
   left: 0;
   width: 100%;
   padding: 15px 0;
+  z-index: z(india);
 
   @include respond-to(l) {
-    position: static;
+    position: relative;
     background-color: #22252b;
     padding: 0;
     border-bottom: $core-border-width $core-border-style #181a1f;
@@ -14,7 +15,6 @@
 }
 
 .header__content {
-
   @include respond-to(l) {
     @include flex(wrap, row, space-between, center);
   }
@@ -63,7 +63,7 @@
     visibility: visible;
     z-index: 0;
     @include flex-direction(row);
-    @include justify-content(space-between);
+    @include justify-content(flex-start);
     @include align-items(flex-start);
   }
 
