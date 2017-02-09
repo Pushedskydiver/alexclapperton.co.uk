@@ -53,10 +53,32 @@
 
 
     // ======================================
+    //    Loading screen
+    // ======================================
+    function init_loader() {
+      var r = 50;
+      $(window).load(function(){
+        $(".loader").length > 0 ? (r = 3e3,
+          window.setTimeout(function() {
+            $('.loader').fadeOut('slow', function(){
+              $(this).remove();
+            });
+          }, r),
+          window.setTimeout(function() {
+              $(".loader").removeClass("active")
+          }, r + 1e3)) : window.setTimeout(function() {
+            $("body").addClass("loader_complete")
+        }, r);
+      });
+    }
+
+
+    // ======================================
     //    Smooth Scroll to element
     // ======================================
   	function init_scroll_to() {
       var $scrollTo = $('.scroll-to');
+
     	$scrollTo.on('click', function(event){
     		var $elemOffsetTop = $(this).data('offset-top');
     		$('html').velocity("scroll", { offset:$(this.hash).offset().top-$elemOffsetTop, duration: 1500, easing:'easeInOutCubic', mobileHA: false});
@@ -95,16 +117,62 @@
           $bottomMenu = $('.mobile-bar__link--main'),
           $close = $('.nav__close');
 
+      var $menuBorder = new ProgressBar.Circle('.mobile-bar__link--main', {
+        strokeWidth: 3.5,
+        easing: 'easeInOut',
+        duration: 800,
+        color: '#4bd486',
+        trailColor: '#de656f',
+        trailWidth: 1,
+        svgStyle: null
+      });
+
       $topMenu.on('click', function() {
         $('.nav').addClass('nav--show');
       });
 
       $bottomMenu.on('click', function() {
         $('.nav').toggleClass('nav--show');
+
+        if ($('.nav').hasClass('nav--show')) {
+          $bottomMenu.addClass('mobile-bar__link--active');
+          $menuBorder.animate(1.0);
+        } else {
+          $bottomMenu.removeClass('mobile-bar__link--active');
+          $menuBorder.animate(0);
+        }
       });
 
       $close.on('click', function() {
         $('.nav').removeClass('nav--show');
+        $('.mobile-bar__link--main').removeClass('mobile-bar__link--active');
+        $menuBorder.animate(0);
+      });
+    }
+
+
+    // ==============================================
+    //    Show/hide nav on scroll | Desktop
+    // ==============================================
+    function init_scroll_nav() {
+      $(window).scroll(function() {
+        var $header = $(".header");
+
+        if ($(window).scrollTop() > 50 && $(window).scrollTop() < 599 ) {
+          $header.slideUp("fast");
+        }
+
+        if ($(window).scrollTop() > 600) {
+          $header.addClass("header--fixed");
+          $header.removeClass("header--static");
+          $header.slideDown();
+        }
+
+        if ($(window).scrollTop() < 200 && $(window).scrollTop() == 0) {
+          $header.removeClass("header--fixed");
+          $header.addClass("header--static");
+          $header.slideDown();
+        }
       });
     }
 
@@ -197,6 +265,7 @@
     // ==============================================
     //    Initialise plugins
     // ==============================================
+    init_loader();
     init_scroll_to();
     init_mobile_nav();
     init_active_nav();
@@ -209,8 +278,9 @@
     //}
 
     if (!$('body').hasClass('mobile')) {
+      init_scroll_nav();
       init_particles();
-      //init_smooth_scroll_top();
+      init_smooth_scroll_top();
     }
 
 })(window.jQuery);

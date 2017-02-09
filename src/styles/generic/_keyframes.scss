@@ -130,8 +130,24 @@
         box-shadow: 0 0 0 0 $core-color-brand;
     }
     80% {
-    box-shadow: 0 0 0 13px rgba(255, 150, 44, 0);
+        box-shadow: 0 0 0 13px rgba(255, 150, 44, 0);
+    }
 }
+@-ms-keyframes cd-pulse {
+    0% {
+        box-shadow: 0 0 0 0 $core-color-brand;
+    }
+    80% {
+        box-shadow: 0 0 0 13px rgba(255, 150, 44, 0);
+    }
+}
+@-o-keyframes cd-pulse {
+    0% {
+        box-shadow: 0 0 0 0 $core-color-brand;
+    }
+    80% {
+        box-shadow: 0 0 0 13px rgba(255, 150, 44, 0);
+    }
 }
 @keyframes cd-pulse {
     0% {
@@ -144,37 +160,56 @@
 
 
 /* - Blinking cursor - */
+@-webkit-keyframes blink {
+    100% {
+        opacity: 0;
+    }
+}
+@-moz-keyframes blink {
+    100% {
+        opacity: 0;
+    }
+}
+@-ms-keyframes blink {
+    100% {
+        opacity: 0;
+    }
+}
+@-o-keyframes blink {
+    100% {
+        opacity: 0;
+    }
+}
 @keyframes blink {
     100% {
         opacity: 0;
     }
 }
 
-@-webkit-keyframes blink {
-    100% {
-        opacity: 0;
+
+/* - Loading screen - */
+@-webkit-keyframes loading_screen {
+    50% {
+        transform: rotate(359deg) scale(2.5);
     }
 }
-
-@-moz-keyframes blink {
-    100% {
-        opacity: 0;
+@-moz-keyframes loading_screen {
+    50% {
+        transform: rotate(359deg) scale(2.5);
     }
 }
-
-
-@mixin fadein {
-  animation: fadein 2s;
+@-ms-keyframes loading_screen {
+    50% {
+        transform: rotate(359deg) scale(2.5);
+    }
 }
-
-@mixin animation-fadeInOutDown {
-  animation-name: fadeInOutDown;
-  animation-iteration-count: infinite;
-  animation-duration: 1.2s;
-  animation-timing-function: ease-in-out;
+@-o-keyframes loading_screen {
+    50% {
+        transform: rotate(359deg) scale(2.5);
+    }
 }
-
-@mixin cd-pulse {
-  animation: cd-pulse 1s infinite;
-  animation-delay: 0.5s;
+@keyframes loading_screen {
+    50% {
+        transform: rotate(359deg) scale(2.5);
+    }
 }

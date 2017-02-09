@@ -1,46 +1,71 @@
+<!-- BEGIN : LOADER | REMOVED AFTER LOAD -->
+<div class="loader loader--active">
+  <!-- BEGIN : LOADER WRAPPER -->
+  <div class="loader__wrapper">
+    <img class="loader__logo" src="/images/preload/preload-logo.png" alt="">
+    <!-- BEGIN : LOADER MASK -->
+    <div class="loader__mask">
+      <img class="loader__mask-img" src="/images/preload/preload-bg.png" alt="">
+    </div>
+    <!-- END : LOADER MAKS /-->
+  </div>
+  <!-- END : LOADER WRAPPER /-->
+</div>
+<!-- END : LOADER /-->
+
+
 <!-- BEGIN : MOBILE BAR -->
 <div class="mobile-bar">
-  <!-- BEGIN : MOBILE BAR LINK -->
-  <a class="mobile-bar__link" href="#">
-    <svg width="20" height="20" class="mobile-bar__icon">
-      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/icons/sprite.svg#home"></use>
-    </svg>
-  </a>
-  <!-- END : MOBILE BAR LINK /-->
-  <!-- BEGIN : MOBILE BAR LINK -->
-  <a class="mobile-bar__link" href="#">
-    <svg width="20" height="20" class="mobile-bar__icon">
-      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/icons/sprite.svg#about"></use>
-    </svg>
-  </a>
-  <!-- END : MOBILE BAR LINK /-->
+  <!-- BEGIN : MOBILE BAR LINKS (LEFT) -->
+  <div class="mobile-bar__links mobile-bar__links--left">
+    <!-- BEGIN : MOBILE BAR LINK -->
+    <a class="mobile-bar__link" href="#">
+      <svg width="20" height="20" class="mobile-bar__icon">
+        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/icons/sprite.svg#home"></use>
+      </svg>
+    </a>
+    <!-- END : MOBILE BAR LINK /-->
+    <!-- BEGIN : MOBILE BAR LINK -->
+    <a class="mobile-bar__link" href="#">
+      <svg width="20" height="20" class="mobile-bar__icon">
+        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/icons/sprite.svg#about"></use>
+      </svg>
+    </a>
+    <!-- END : MOBILE BAR LINK /-->
+  </div>
+  <!-- END : MOBILE BAR LINKS (LEFT) /-->
   <!-- BEGIN : MOBILE BAR LINK (MAIN) -->
   <button type="button" class="mobile-bar__link mobile-bar__link--main">
+    <span class="mobile-bar__loader"></span>
     <svg width="20" height="20" class="mobile-bar__icon mobile-bar__icon--main">
       <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/icons/sprite.svg#menu"></use>
     </svg>
   </button>
   <!-- END : MOBILE BAR LINK (MAIN) /-->
-  <!-- BEGIN : MOBILE BAR LINK -->
-  <a class="mobile-bar__link" href="#">
-    <svg width="20" height="20" class="mobile-bar__icon">
-      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/icons/sprite.svg#work"></use>
-    </svg>
-  </a>
-  <!-- END : MOBILE BAR LINK /-->
-  <!-- BEGIN : MOBILE BAR LINK -->
-  <a class="mobile-bar__link" href="#">
-    <svg width="20" height="20" class="mobile-bar__icon">
-      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/icons/sprite.svg#contact"></use>
-    </svg>
-  </a>
-  <!-- END : MOBILE BAR LINK /-->
+  <!-- BEGIN : MOBILE BAR LINKS (RIGHT) -->
+  <div class="mobile-bar__links mobile-bar__links--right">
+    <!-- BEGIN : MOBILE BAR LINK -->
+    <a class="mobile-bar__link" href="#">
+      <svg width="20" height="20" class="mobile-bar__icon">
+        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/icons/sprite.svg#work"></use>
+      </svg>
+    </a>
+    <!-- END : MOBILE BAR LINK /-->
+    <!-- BEGIN : MOBILE BAR LINK -->
+    <a class="mobile-bar__link" href="#">
+      <svg width="20" height="20" class="mobile-bar__icon">
+        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/icons/sprite.svg#contact"></use>
+      </svg>
+    </a>
+    <!-- END : MOBILE BAR LINK /-->
+  </div>
+  <!-- END : MOBILE BAR LINKS (RIGHT) /-->
 </div>
 <!-- END : MOBILE BAR /-->
 
 
 <!-- ******************** SITE HEADER : Start ******************** /-->
-<header class="header" role="banner">
+<header class="header header--static" role="banner">
   <!-- BEGIN : SKIP LINKS -->
   <a href="#nav" class="skip-link hidden focusable">Navigation</a>
   <a href="#content" class="skip-link hidden focusable">Skip to content</a>

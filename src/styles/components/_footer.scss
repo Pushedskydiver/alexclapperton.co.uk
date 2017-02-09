@@ -5,14 +5,30 @@
 
 .footer__content {
   @include flex(wrap, row, flex-start, null);
+
+  @include respond-to(m) {
+    @include justify-content(space-between);
+  }
 }
 
 .footer__item {
   margin-right: ($core-margin * 3);
   margin-bottom: ($core-margin * 3);
 
-  @include respond-to(m) {
+  &--twitter {
+    max-width: 350px;
+  }
+
+  &:last-child {
+    margin-right: 0;
+  }
+
+  @include respond-to(xs) {
     margin-right: ($core-margin * 5);
+  }
+
+  @include respond-to(xxl) {
+    max-width: 410px;
   }
 }
 
@@ -39,6 +55,10 @@
   color: $core-color-light;
   margin-bottom: $core-margin;
 
+  &--blue {
+    color: #61afef;
+  }
+
   &:last-child {
     margin-bottom: 0;
   }
@@ -52,4 +72,18 @@
     color: #c678dd;
     text-decoration: underline;
   }
+
+  @include respond-to(l) {
+    &:hover {
+      border-bottom: $core-border-width dotted $core-color-light;
+    }
+
+    &--purple:hover {
+      border-bottom: none;
+    }
+  }
+}
+
+.footer__copyright {
+  margin: 0;
 }

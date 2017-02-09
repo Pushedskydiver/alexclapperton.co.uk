@@ -82,7 +82,7 @@ gulp.task('watch', function() {
     gulp.watch(data.paths.icons.src, ['icons']);
 
     // Watch .js files
-    gulp.watch(data.paths.js.src, ['scripts']);
+    gulp.watch(data.paths.js.src + '**/*', ['scripts']);
 
     // Watch .hbs files
     gulp.watch([
@@ -93,6 +93,6 @@ gulp.task('watch', function() {
     ], ['html:build']);
 
     // Watch image files
-    gulp.watch(data.paths.images.src, ['images']);
+    gulp.watch(data.paths.images.src + '**/*', ['images']);
 
 });

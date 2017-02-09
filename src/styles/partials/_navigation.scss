@@ -1,0 +1,156 @@
+// Navigation - site navigation
+
+.site-header {
+  position: relative;
+  width: 100%;
+  background: $core-color-light;
+  z-index: z(charlie);
+
+  @include respond-to(m) {
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 5px 0;
+  }
+}
+
+.site-logo {
+  size: 100% auto;
+  margin: 0 auto;
+  padding: 10px 0;
+
+  @include respond-to(m) {
+    width: auto;
+    margin: 0;
+    padding: 0;
+    flex-grow: 1;
+  }
+
+  @include respond-to(l) {
+    @include justify-content(flex-start);
+    width: 29.333333%;
+  }
+}
+
+.site-logo__link {
+  display: inline-block;
+}
+
+.site-logo__img {
+  width: 60px;
+}
+
+.site-nav {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  size: 100% 60px;
+  background: $core-color-light;
+  margin: 0 auto;
+  padding: 0;
+  z-index: z(charlie);
+  @include transition-03;
+
+  @include respond-to(m) {
+    position: initial;
+    size: auto 55px;
+    flex-grow: 1;
+  }
+
+  @include respond-to(l) {
+    @include justify-content(center);
+    width: 41.333333%;
+  }
+}
+
+.site-nav__link {
+  position: relative;
+  size: 20% 100%;
+  text-decoration: none;
+  @include grid(null, column, center);
+  @include align-items(center);
+
+  @include respond-to(l) {
+    width: auto;
+    margin-right: 30px;
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    &:hover {
+      .site-nav__icon {
+        fill: $core-color-brand;
+      }
+
+      .site-nav__text {
+        color: $core-color-brand;
+      }
+    }
+  }
+}
+
+.site-nav__icon {
+  size: 25px;
+  fill: $core-color-dark;
+  margin-bottom: 3px;
+
+  @include respond-to(l) {
+    @include transition-025;
+  }
+}
+
+.site-nav__text {
+  display: block;
+  color: $core-color-dark;
+  @include font-size($p-font-sizes);
+  text-align: center;
+
+  @include respond-to(l) {
+    @include transition-025;
+  }
+}
+
+.site-nav__link--active {
+  .site-nav__text {
+    color: $core-color-brand;
+  }
+
+  .site-nav__icon {
+    fill: $core-color-brand;
+  }
+}
+
+.social-header {
+  display: none;
+
+  @include respond-to(l) {
+    width: 29.333333%;
+    @include grid(null, row, flex-end);
+  }
+}
+
+.social-header__link {
+  display: block;
+  size: 28px;
+
+  @include respond-to(l) {
+    margin-right: ($core-margin * 2.5);
+    @include transition-025;
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    &:hover {
+      .social-header__icon {
+        fill: $core-color-brand;
+      }
+    }
+  }
+}
+
+.social-header__icon {
+  size: 100%;
+  fill: $core-color-dark;
+}

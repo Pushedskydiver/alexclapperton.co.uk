@@ -16,7 +16,7 @@ module.exports = function (gulp, data) {
       ],
       ghostMode: false,
       notify: false,
-      online: false,
+      online: true,
       server: {
         baseDir: data.paths.dist.base
       }

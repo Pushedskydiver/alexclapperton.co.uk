@@ -1,0 +1,28 @@
+.twitter-feed__item {
+  color: $core-color-light;
+  margin-bottom: ($core-margin * 1.5);
+  @include flex(wrap, row, flex-start, null);
+
+  @include respond-to(m) {
+    margin-bottom: ($core-margin * 2);
+  }
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  a {
+    color: #c678dd;
+  }
+}
+
+.twitter-feed__icon {
+  width: 25px;
+  height: 25px;
+  fill: #61afef;
+  margin-right: ($core-margin / 2);
+}
+
+.twitter-feed__body {
+  flex: 1;
+}

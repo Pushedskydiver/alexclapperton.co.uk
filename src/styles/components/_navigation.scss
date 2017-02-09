@@ -6,11 +6,78 @@
   padding: 15px 0;
   z-index: z(india);
 
+  &--static {
+
+    .header__logo {
+      color: $core-color-light;
+    }
+  }
+
   @include respond-to(l) {
     position: relative;
-    background-color: #22252b;
     padding: 0;
-    border-bottom: $core-border-width $core-border-style #181a1f;
+
+    &--static {
+      background-color: #22252b;
+      border-bottom: $core-border-width $core-border-style #181a1f;
+
+      .header__logo {
+        color: $core-color-light;
+      }
+
+      .nav__link {
+
+        &:hover {
+          background-color: #292c34;
+        }
+
+        &--active {
+          background-color: #292c34;
+          border-right: $core-border-width $core-border-style #181a1f;
+          border-left: 2px $core-border-style #568af2;
+        }
+      }
+
+      .header__social-icon {
+        fill: $core-color-light;
+      }
+    }
+
+    &--fixed {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background-color: $core-color-light;
+      border: none;
+      box-shadow: 0 0 150px 0 rgba(0,0,0,0.1);
+      z-index: z(juliet);
+
+      .header__logo {
+        color: $core-color-dark;
+      }
+
+      .nav {
+        background-color: transparent;
+      }
+
+      .nav__link {
+        color: $core-color-neutral;
+
+        &--active {
+          background-color: transparent;
+          border: none;
+        }
+
+        &:hover {
+          color: $core-color-dark;
+        }
+      }
+
+      .header__social-icon {
+        fill: $core-color-dark;
+      }
+    }
   }
 }
 
@@ -22,7 +89,6 @@
 
 .header__logo {
   display: inline-block;
-  color: $core-color-light;
   text-decoration: none;
   vertical-align: middle;
   @include font-size($h3-font-sizes);
@@ -44,7 +110,7 @@
   opacity: 0;
   z-index: -1;
   @include flex(wrap, column, center, center);
-  @include transition-03;
+  @include transition-05;
 
   &--show {
     visibility: visible;
@@ -96,7 +162,7 @@
   color: $core-color-light;
   text-decoration: none;
   margin-bottom: ($core-margin * 2);
-  @include font-size($h6-font-sizes);
+  @include font-size($nav-font-sizes);
 
   &:last-child {
     margin-bottom: 0;
@@ -108,16 +174,6 @@
     margin-bottom: 0;
     padding: 15px;
     text-align: center;
-
-    &:hover {
-      background-color: #292c34;
-    }
-
-    &--active {
-      background-color: #292c34;
-      border-right: $core-border-width $core-border-style #181a1f;
-      border-left: 2px $core-border-style #568af2;
-    }
   }
 }
 
@@ -134,6 +190,5 @@
 .header__social-icon {
   width: 23px;
   height: 100%;
-  fill: $core-color-light;
   vertical-align: middle;
 }

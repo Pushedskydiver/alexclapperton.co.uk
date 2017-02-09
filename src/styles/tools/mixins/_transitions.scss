@@ -11,8 +11,11 @@
   @include transition(none, null, null);
 }
 @mixin transition-025 {
-  @include transition(all, .25s, ease-in-out);
+  @include transition(all, 0.25s, ease-in-out);
 }
 @mixin transition-03 {
-  @include transition(all, .3s, ease-in-out);
+  @include transition(all, 0.3s, ease-in-out);
+}
+@mixin transition-05 {
+  @include transition(all, 0.5s, ease-in-out);
 }
