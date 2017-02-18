@@ -8,6 +8,8 @@ import autoprefixer from 'autoprefixer'
 import devtools from 'postcss-devtools'
 import focus from 'postcss-focus'
 import cssnano from 'cssnano'
+import mqpacker from 'css-mqpacker'
+import cleanselectors from 'postcss-minify-selectors'
 import cleancss from 'gulp-clean-css'
 import plugins from 'gulp-load-plugins'
 
@@ -19,8 +21,12 @@ module.exports = function (gulp, data, argv) {
       autoprefixer({
         browsers: ['> 5%']
       }),
+      mqpacker({
+        sort: true
+      }),
       devtools(),
       focus(),
+      cleanselectors(),
       cssnano(config.plugin.cssnano)
     ]
 
@@ -34,12 +40,12 @@ module.exports = function (gulp, data, argv) {
   }
 
   gulp.task('styles:sass', function () {
-      gulp.src(`${data.paths.styles.src}*.scss`)
+      gulp.src(`${data.paths.source.styles}*.scss`)
           .pipe($.sourcemaps.init())
           .pipe($.sass({outputStyle: 'expanded'}).on('error', $.sass.logError))
           .pipe($.postcss(getPostCssPlugins()))
           .pipe($.if(argv.prod, cleancss()))
           .pipe($.sourcemaps.write('sourcemaps'))
-          .pipe(gulp.dest(data.paths.styles.dest));
+          .pipe(gulp.dest(data.paths.dist.styles));
   });
 }

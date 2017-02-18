@@ -75,24 +75,24 @@ gulp.task('perf', function (callback) {
 
 gulp.task('watch', function() {
 
-    // Watch .scss files
-    gulp.watch(data.paths.styles.src + '**/*.scss', ['styles:sass']);
+    // Watch image files
+    gulp.watch(`${data.paths.source.images}**/*`, ['images']);
 
     // Watch svg files
-    gulp.watch(data.paths.icons.src, ['icons']);
+    gulp.watch(data.paths.source.icons, ['icons']);
+
+    // Watch .scss files
+    gulp.watch(`${data.paths.source.styles}**/*.scss`, ['styles:sass']);
 
     // Watch .js files
-    gulp.watch(data.paths.js.src + '**/*', ['scripts']);
+    gulp.watch(`${data.paths.source.scripts}**/*.js`, ['scripts']);
 
-    // Watch .hbs files
+    // Watch .hbs & .json files
     gulp.watch([
-      data.paths.source.content + '**/*.hbs',
-      data.paths.source.partials + '*.hbs',
-      data.paths.source.layouts + '*.json',
-      data.paths.source.data + '*.json'
+      `${data.paths.source.content}**/*.hbs`,
+      `${data.paths.source.partials}*.hbs`,
+      `${data.paths.source.layouts}*.json`,
+      `${data.paths.source.data}*.json`
     ], ['html:build']);
-
-    // Watch image files
-    gulp.watch(data.paths.images.src + '**/*', ['images']);
 
 });

@@ -1,55 +1,28 @@
 {
-  "base": {
-      "src": "./src/",
-      "dest": "./dist/"
-  },
-  "styles": {
-      "src": "./src/styles/",
-      "dest": "./dist/css/"
-  },
-  "icons": {
-      "src": "./src/icons/*",
-      "dest": "./dist/images/icons/"
-  },
-  "js": {
-      "src": "./src/scripts/",
-      "dest": "./dist/js/"
-  },
-  "html": {
-      "src": "./src/pages/**/*.hbs",
-      "dest": "./dist/"
-  },
-  "images": {
-      "src": "./src/images/**/*",
-      "dest": "./dist/images/"
-  },
-  "fonts": {
-      "src": "./src/fonts/**/*.ttf",
-      "dest": "./dist/fonts/"
-  },
   "source": {
     "base": "./src/",
     "data": "./src/data/",
     "layouts": "./src/layouts/",
-    "content": "./src/pages/",
-    "icons": "./src/icons/",
-    "favicons": "./src/favicons/",
-    "images": "./src/images/",
-    "forms": "./src/forms/",
-    "layouts": "./layouts/",
     "partials": "./partials/",
+    "content": "./src/pages/",
+    "fonts": "./src/fonts/**/*.ttf",
+    "icons": "./src/icons/*",
+    "favicons": "./src/favicons/",
+    "images": "./src/images/**/*",
+    "forms": "./src/forms/",
+    "html": "./src/pages/**/*.hbs",
     "scripts": "./src/scripts/",
     "styles": "./src/styles/"
   },
   "dist": {
     "base": "./dist/",
-    "styles": "./dist/css/",
+    "fonts": "./dist/fonts/",
     "icons": "./dist/images/icons/",
     "favicons": "./dist/favicons/",
-    "js": "./dist/js/",
+    "images": "./dist/images/",
+    "forms": "./dist/forms/",
     "html": "./dist/",
-    "imgs": "./dist/images/",
-    "fonts": "./dist/fonts/",
-    "forms": "./dist/forms/"
+    "scripts": "./dist/js/",
+    "styles": "./dist/css/"
   }
 }

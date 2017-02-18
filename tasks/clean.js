@@ -23,13 +23,13 @@ module.exports = function (gulp, data, argv) {
 
   gulp.task('clean:css', function () {
       return del([
-        `${data.paths.styles.dest}main.css`,
+        `${data.paths.dist.styles}main.css`,
       ]);
   });
 
   gulp.task('clean:js', function () {
       return del([
-        `${data.paths.js.dest}main.js`,
+        `${data.paths.dist.scripts}main.js`,
       ]);
   });
 }

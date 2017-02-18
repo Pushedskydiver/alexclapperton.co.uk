@@ -10,15 +10,15 @@ const cachebust = new CacheBuster()
 
 module.exports = function (gulp, data) {
   gulp.task('cache:css', function () {
-      gulp.src(`${data.paths.styles.dest}main.css`)
+      gulp.src(`${data.paths.dist.styles}main.css`)
           .pipe(cachebust.resources())
-          .pipe(gulp.dest(data.paths.styles.dest));
+          .pipe(gulp.dest(data.paths.dist.styles));
   });
 
   gulp.task('cache:js', function () {
-      gulp.src(`${data.paths.js.dest}main.js`)
+      gulp.src(`${data.paths.dist.scripts}main.js`)
           .pipe(cachebust.resources())
-          .pipe(gulp.dest(data.paths.js.dest));
+          .pipe(gulp.dest(data.paths.dist.scripts));
   });
 
   gulp.task('cache:html', ['cache:css', 'cache:js'], function () {

@@ -2,6 +2,7 @@
 page: home
 layout: default.hbs
 title: Homepage
+active: nav__link--active
 description: Alex Clapperton &mdash; Manchester, UK based front-end developer
 keywords: web development, front-end, front end, developer, web developer, website portfolio, html, css, js, javascript, ux, user experience, web design, sass, git, gulp, handlebars
 changefreq: monthly
@@ -43,11 +44,11 @@ priority: 1.0
     <div class="banner__sidebar-social">
       {{#each global.social}}
         <!-- BEGIN : SOCIAL HEADER ICON -->
-        <a href="{{{this.url}}}" class="banner__sidebar-social-link" title="{{{this.title-attr}}}">
+        <a href="{{this.url}}" class="banner__sidebar-social-link" title="{{this.title-attr}}">
           <svg width="20" height="20" class="banner__sidebar-social-icon">
-            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/icons/sprite.svg#{{{this.icon}}}"></use>
+            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/icons/sprite.svg#{{this.icon}}"></use>
           </svg>
-          <span class="visually-hidden">{{{this.icon}}}</span>
+          <span class="visually-hidden">{{this.icon}}</span>
         </a>
         <!-- END : SOCIAL HEADER ICON /-->
       {{/each}}

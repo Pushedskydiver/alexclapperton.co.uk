@@ -1,10 +1,10 @@
 <!-- BEGIN : PORTFOLIO ITEM -->
-<a class="portfolio__item {{{this.type}}}" href="/portfolio/{{{this.slug}}}" title="{{{this.title-attr}}}">
+<a class="portfolio__item {{this.type}}" href="/portfolio/{{this.slug}}" title="{{this.title-attr}}">
   <figure class="portfolio__item-fig">
-    <img class="portfolio__item-img" src="/images/portfolio/{{{src}}}.jpg" alt="{{{this.alt}}}" />
+    <img class="portfolio__item-img" src="/images/portfolio/{{src}}.jpg" alt="{{this.alt}}" />
     <figcaption class="portfolio__item-caption">
       <h3 class="portfolio__item-title portfolio__item-title--white">{{{this.title}}}</h3>
-      <p class="portfolio__item-body portfolio__item-body--white">< {{{this.type}}} project /></p>
+      <p class="portfolio__item-body portfolio__item-body--white">< {{this.type}} project /></p>
       <!--<p class="portfolio__item-body">{{#if personal}}{{{personalTitle}}}{{/if}}{{#if university}}{{{universityTitle}}}{{/if}}</p>
       <p class="portfolio__item-body">{{{this.description}}}</p>-->
     </figcaption>

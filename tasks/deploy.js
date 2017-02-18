@@ -16,7 +16,7 @@ module.exports = function (gulp, data, argv) {
       password: argv.password,
       log: gutil.log
     });
-    gulp.src(`${data.paths.base.dest}**/*`)
+    gulp.src(`${data.paths.dist.base}**/*`)
       .pipe(conn.newer(remotePath))
       .pipe(conn.dest(remotePath));
   });
