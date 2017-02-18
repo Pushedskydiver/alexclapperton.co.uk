@@ -3,7 +3,6 @@
  * @author Alex Clapperton <hi@alexclapperton.co.uk>
  */
 
-import config from '../tasks/config'
 import ftp from 'vinyl-ftp'
 import gutil from 'gulp-util'
 

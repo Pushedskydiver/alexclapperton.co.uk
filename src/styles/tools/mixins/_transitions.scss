@@ -1,4 +1,4 @@
-// Transitions - css transition properties
+// Transitions........Simple mixxins for css transition properties.
 
 @mixin transition($element, $duration, $transition) {
   -webkit-transition: $element $duration $transition;

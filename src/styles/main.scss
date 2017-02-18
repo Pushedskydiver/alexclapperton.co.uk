@@ -2,71 +2,94 @@
 
   #MAIN
 
+  Author:  Alex Clapperton
+  Website: alexclapperton.co.uk
+
 /* ============================================================ */
 
 /**
-* ITCSS LAYOUT
-*
+* CONTENTS
+* 
 * SETTINGS
-* TOOLS
+*  Variables..........The sites core sass variables.
+* 
+* FUNCTIONS
+*  Typography.........Responsive typography & convert px to em.
+*  Z-index............Z-index map configuration.
+* 
+* MIXINS
+*  Flexbox............Simple flexbox mixin.
+*  Grid...............site wide grid configuration.
+*  Keyframes..........Simple mixins for keyframe animations.
+*  Transforms.........Simple mixins for css transform properties.
+*  Transitions........Simple mixxins for css transition properties.
+*  Typography.........Mixin to add responsive typography to breakpoints map.
+* 
 * GENERIC
+*  Keyframes..........Keyframe animations.
+*  Typography.........The sites typography faces.
+* 
 * ELEMENTS
+*  External links.....Simple styles for external links.
+*  Figure.............Figure styles.
+*  Global.............The sites core styles.
+*  Hidden.............Hidden styles to hide text behind icons with links.
+* 
 * OBJECTS
+*  Layout.............Generic layout module.
+*  Loader.............The sire's pre loader when site first loads.
+*  Particles..........Styles for the particles in the main banner.
+* 
 * COMPONENTS
-* TRUMPS
+*  Banner.............Top page banner styles.
+*  Blog...............Blog page/posts styles.
+*  Breadcrumbs........Simple breadcrumbs styles.
+*  Butons.............Button styles.
+*  Footer.............Footer styles.
+*  Header.............The sites header styles.
+*  Intro..............Styles for intro under main banner on homepage.
+*  Nav mobile.........The sites bottom mobile nav and menu in header.
+*  Nav primary........The sites main nav.
+*  Notices............The sites notice styles for JS turned off etc.
+*  Portfolio..........Portfolio items/page styles.
+*  Scroll to top......Scroll to top button styles.
+*  Skip links.........The sites skip to links.
+*  Twitter............Twitter feed styles.
 *
 */
 
 
-// @TODO: Organise Components files properly
 
 
-// ITCSS: SETTINGS
-@import 'settings/variables';
-
-
-// ITCSS: TOOLS
-@import 'tools/functions/typography';
-@import 'tools/functions/z-index';
-@import 'tools/mixins/typography';
-@import 'tools/mixins/grid';
-@import 'tools/mixins/flexbox';
-@import 'tools/mixins/transitions';
-@import 'tools/mixins/transforms';
-@import 'tools/mixins/keyframes';
-
-
-// ITCSS: GENERIC
-@import 'generic/typography';
-@import 'generic/keyframes';
-
-
-// ITCSS: ELEMENTS
-@import 'elements/global';
-
-
-// ITCSS: OBJECTS
-@import 'objects/layout';
-@import 'objects/visually-hidden';
-@import 'objects/loader';
-@import 'objects/particles';
-
-
-// ITCSS: COMPONENTS
-@import 'components/buttons';
-//@import 'components/breadcrumbs';
-@import 'components/skip-links';
-@import 'components/external-links';
-@import 'components/scroll-top';
-@import 'components/notices';
-@import 'components/mobile-navigation';
-@import 'components/navigation';
-@import 'components/banner';
-@import 'components/intro';
-@import 'components/portfolio';
-@import 'components/blog';
-@import 'components/footer';
-@import 'components/twitter';
-
-// ITCSS: TRUMPS
-// @NOTE: Ccode that is rushed and needs to be fixed later
+@import "/Users/alih2106/Desktop/Desktop - MacBook/website/src/styles/settings/_variables.scss";
+@import "/Users/alih2106/Desktop/Desktop - MacBook/website/src/styles/tools/functions/_typography.scss";
+@import "/Users/alih2106/Desktop/Desktop - MacBook/website/src/styles/tools/functions/_z-index.scss";
+@import "/Users/alih2106/Desktop/Desktop - MacBook/website/src/styles/tools/mixins/_flexbox.scss";
+@import "/Users/alih2106/Desktop/Desktop - MacBook/website/src/styles/tools/mixins/_grid.scss";
+@import "/Users/alih2106/Desktop/Desktop - MacBook/website/src/styles/tools/mixins/_keyframes.scss";
+@import "/Users/alih2106/Desktop/Desktop - MacBook/website/src/styles/tools/mixins/_transforms.scss";
+@import "/Users/alih2106/Desktop/Desktop - MacBook/website/src/styles/tools/mixins/_transitions.scss";
+@import "/Users/alih2106/Desktop/Desktop - MacBook/website/src/styles/tools/mixins/_typography.scss";
+@import "/Users/alih2106/Desktop/Desktop - MacBook/website/src/styles/generic/_keyframes.scss";
+@import "/Users/alih2106/Desktop/Desktop - MacBook/website/src/styles/generic/_typography.scss";
+@import "/Users/alih2106/Desktop/Desktop - MacBook/website/src/styles/elements/_external-links.scss";
+@import "/Users/alih2106/Desktop/Desktop - MacBook/website/src/styles/elements/_figure.scss";
+@import "/Users/alih2106/Desktop/Desktop - MacBook/website/src/styles/elements/_global.scss";
+@import "/Users/alih2106/Desktop/Desktop - MacBook/website/src/styles/elements/_visually-hidden.scss";
+@import "/Users/alih2106/Desktop/Desktop - MacBook/website/src/styles/objects/_layout.scss";
+@import "/Users/alih2106/Desktop/Desktop - MacBook/website/src/styles/objects/_loader.scss";
+@import "/Users/alih2106/Desktop/Desktop - MacBook/website/src/styles/objects/_particles.scss";
+@import "/Users/alih2106/Desktop/Desktop - MacBook/website/src/styles/components/_banner.scss";
+@import "/Users/alih2106/Desktop/Desktop - MacBook/website/src/styles/components/_blog.scss";
+@import "/Users/alih2106/Desktop/Desktop - MacBook/website/src/styles/components/_breadcrumbs.scss";
+@import "/Users/alih2106/Desktop/Desktop - MacBook/website/src/styles/components/_buttons.scss";
+@import "/Users/alih2106/Desktop/Desktop - MacBook/website/src/styles/components/_footer.scss";
+@import "/Users/alih2106/Desktop/Desktop - MacBook/website/src/styles/components/_header.scss";
+@import "/Users/alih2106/Desktop/Desktop - MacBook/website/src/styles/components/_intro.scss";
+@import "/Users/alih2106/Desktop/Desktop - MacBook/website/src/styles/components/_mobile-navigation.scss";
+@import "/Users/alih2106/Desktop/Desktop - MacBook/website/src/styles/components/_navigation.scss";
+@import "/Users/alih2106/Desktop/Desktop - MacBook/website/src/styles/components/_notices.scss";
+@import "/Users/alih2106/Desktop/Desktop - MacBook/website/src/styles/components/_portfolio.scss";
+@import "/Users/alih2106/Desktop/Desktop - MacBook/website/src/styles/components/_scroll-top.scss";
+@import "/Users/alih2106/Desktop/Desktop - MacBook/website/src/styles/components/_skip-links.scss";
+@import "/Users/alih2106/Desktop/Desktop - MacBook/website/src/styles/components/_twitter.scss";

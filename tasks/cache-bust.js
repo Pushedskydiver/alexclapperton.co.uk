@@ -3,7 +3,6 @@
  * @author Alex Clapperton <hi@alexclapperton.co.uk>
  */
 
-import config from '../tasks/config'
 import CacheBuster from 'gulp-cachebust'
 
 const cachebust = new CacheBuster()

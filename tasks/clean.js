@@ -3,7 +3,6 @@
  * @author Alex Clapperton <hi@alexclapperton.co.uk>
  */
 
-import config from '../tasks/config'
 import del from 'del'
 
 module.exports = function (gulp, data, argv) {

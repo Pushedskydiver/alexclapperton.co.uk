@@ -24,5 +24,13 @@
     "html": "./dist/",
     "scripts": "./dist/js/",
     "styles": "./dist/css/"
+  },
+  "sass": {
+    "settings": "./src/styles/settings/**/*.scss",
+    "tools": "./src/styles/tools/**/*.scss",
+    "generic": "./src/styles/generic/**/*.scss",
+    "elements": "./src/styles/elements/**/*.scss",
+    "objects": "./src/styles/objects/**/*.scss",
+    "components": "./src/styles/components/**/*.scss"
   }
 }

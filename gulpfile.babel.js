@@ -25,6 +25,7 @@ const data = {
 
 require('./tasks/html.js')(gulp, data, argv);
 require('./tasks/styles.js')(gulp, data, argv);
+require('./tasks/imports.js')(gulp, data);
 require('./tasks/scripts.js')(gulp, data, argv);
 require('./tasks/images.js')(gulp, data);
 require('./tasks/icons.js')(gulp, data);
@@ -55,6 +56,7 @@ gulp.task('dev', function (callback) {
 gulp.task('default', function (callback) {
   runSeq(
     'clean:all',
+    'imports:sass',
     ['html:build', 'styles:sass', 'scripts', 'icons', 'images', 'fonts', 'copy:forms', 'copy:favicons', 'copy:pdf', 'copy:twitter', 'copy:particles-config'],
     'clean:fonts',
     callback

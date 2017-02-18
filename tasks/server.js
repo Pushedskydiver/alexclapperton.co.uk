@@ -4,7 +4,6 @@
  * @see {@link https://www.browsersync.io/docs/gulp}
  */
 
-import config from '../tasks/config'
 import browserSync from 'browser-sync'
 
 module.exports = function (gulp, data) {

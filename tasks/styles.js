@@ -10,7 +10,6 @@ import focus from 'postcss-focus'
 import cssnano from 'cssnano'
 import mqpacker from 'css-mqpacker'
 import cleanselectors from 'postcss-minify-selectors'
-import cleancss from 'gulp-clean-css'
 import plugins from 'gulp-load-plugins'
 
 const $ = plugins()
@@ -44,7 +43,7 @@ module.exports = function (gulp, data, argv) {
           .pipe($.sourcemaps.init())
           .pipe($.sass({outputStyle: 'expanded'}).on('error', $.sass.logError))
           .pipe($.postcss(getPostCssPlugins()))
-          .pipe($.if(argv.prod, cleancss()))
+          .pipe($.if(argv.prod, $.cleanCss()))
           .pipe($.sourcemaps.write('sourcemaps'))
           .pipe(gulp.dest(data.paths.dist.styles));
   });
