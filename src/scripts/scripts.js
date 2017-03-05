@@ -200,15 +200,6 @@
 
 
     // ==============================================
-    //    Interactive particles | Homepage banner
-    // ==============================================
-    function init_particles() {
-      particlesJS.load('particles-js', 'particlesjs-config.json', function() {
-      });
-    }
-
-
-    // ==============================================
     //    Typing animation | Homepage banner
     // ==============================================
     function init_ityped() {
@@ -279,7 +270,6 @@
 
     if (!$('body').hasClass('mobile')) {
       init_scroll_nav();
-      init_particles();
       init_smooth_scroll_top();
     }
 

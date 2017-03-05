@@ -25,8 +25,6 @@
     "del": "^2.2.2",
     "gulp": "^3.9.1",
     "gulp-a11y": "^0.1.1",
-    "gulp-cache-bust": "^1.0.2",
-    "gulp-cachebust": "0.0.6",
     "gulp-clean-css": "^3.0.2",
     "gulp-concat": "^2.6.0",
     "gulp-fontmin": "^0.7.4",
@@ -73,8 +71,7 @@
     "run-sequence": "^1.2.2",
     "stylelint": "^7.4.2",
     "vinyl-ftp": "^0.6.0",
-    "webpagetest": "^0.3.4",
-    "yargs": "^6.1.1"
+    "webpagetest": "^0.3.4"
   },
   "babel": {
     "presets": [

@@ -22,7 +22,6 @@ module.exports = function (gulp, data, argv) {
       gulp.src(source)
           .pipe($.order([
               'jquery.min.js',
-              'particles.min.js',
               '*',
               'scripts.js'
           ]))

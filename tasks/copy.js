@@ -25,9 +25,4 @@ module.exports = function (gulp, data) {
     return gulp.src(`${data.paths.source.base}twitter/*`)
       .pipe(gulp.dest(`${data.paths.dist.base}twitter/`))
   });
-
-  gulp.task('copy:particles-config', function () {
-    return gulp.src(`${data.paths.source.base}data/particlesjs-config.jso*`)
-      .pipe(gulp.dest(`${data.paths.dist.base}`))
-  });
 }

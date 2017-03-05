@@ -3,26 +3,17 @@
  * @author Alex Clapperton <hi@alexclapperton.co.uk>
  */
 
-import CacheBuster from 'gulp-cachebust'
+var config = require('../config'),
+    plugins = require('gulp-load-plugins')();
 
-const cachebust = new CacheBuster()
 
-module.exports = function (gulp, data) {
-  gulp.task('cache:css', function () {
-      gulp.src(`${data.paths.dist.styles}main.css`)
-          .pipe(cachebust.resources())
-          .pipe(gulp.dest(data.paths.dist.styles));
-  });
+module.exports = function (gulp, data, argv) {
 
-  gulp.task('cache:js', function () {
-      gulp.src(`${data.paths.dist.scripts}main.js`)
-          .pipe(cachebust.resources())
-          .pipe(gulp.dest(data.paths.dist.scripts));
-  });
-
-  gulp.task('cache:html', ['cache:css', 'cache:js'], function () {
-      gulp.src(`${data.paths.dist.base}**/*.html`)
-          .pipe(cachebust.references())
-          .pipe(gulp.dest(data.paths.dist.base));
+  gulp.task('cacheBuster', function () {
+      gulp.src(data.paths.dist.html + '**/*.html')
+          .pipe(plugins.cacheBust({
+            type: 'timestamp'
+          }))
+          .pipe(gulp.dest(data.paths.dist.html));
   });
 }
