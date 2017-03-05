@@ -52,6 +52,10 @@
   ga('create', 'UA-86474726-1', 'auto');
   ga('send', 'pageview');
 
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('/sw.js');
+  }
+
   {{#if pubDate}}
     var disqus_shortname = 'alexmclapperton';
     var disqus_title = '{{{title}}}';

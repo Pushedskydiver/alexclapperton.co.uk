@@ -31,7 +31,6 @@ require('./tasks/icons.js')(gulp, data);
 require('./tasks/copy.js')(gulp, data);
 require('./tasks/fonts.js')(gulp, data);
 require('./tasks/critical.js')(gulp, data, argv);
-require('./tasks/cache-bust.js')(gulp, data);
 require('./tasks/stylelint.js')(gulp, data);
 require('./tasks/perf.js')(gulp, data, argv);
 require('./tasks/server.js')(gulp, data, argv);
