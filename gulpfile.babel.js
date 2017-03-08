@@ -92,7 +92,7 @@ gulp.task('watch', function() {
     gulp.watch([
       `${data.paths.source.content}**/*.hbs`,
       `${data.paths.source.partials}*.hbs`,
-      `${data.paths.source.layouts}*.json`,
+      `${data.paths.source.layouts}*.hbs`,
       `${data.paths.source.data}*.json`
     ], ['html:build']);
 
