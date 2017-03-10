@@ -1,13 +1,16 @@
-#OS junk files
-[Tt]humbs.db
-*.DS_Store
-
-#Gulp & npm files
+# dependencies
 node_modules
 
-#Sass cache
+# production
+dist
+
+# Sass cache
 .sass-cache
 
-#Other folder/files
-dist
+# misc
 style-guide
+[Tt]humbs.db
+.DS_Store
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*

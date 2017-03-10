@@ -2,55 +2,6 @@
 
     'use strict';
 
-    var AC = function() {
-        this.VERSION = "1.1.0";
-        this.AUTHOR = "Alex Clapperton";
-        this.SUPPORT = "hi@alexclapperton.co.uk";
-
-        this.pageScrollElement = 'html, body';
-        this.$body = $('body');
-
-        this.setUserOS();
-        this.setUserAgent();
-    }
-
-    // Set environment vars
-    AC.prototype.setUserOS = function() {
-        var OSName = "";
-        if (navigator.appVersion.indexOf("Win") != -1) OSName = "windows";
-        if (navigator.appVersion.indexOf("Mac") != -1) OSName = "mac";
-        if (navigator.appVersion.indexOf("X11") != -1) OSName = "unix";
-        if (navigator.appVersion.indexOf("Linux") != -1) OSName = "linux";
-
-        this.$body.addClass(OSName);
-    }
-
-    AC.prototype.setUserAgent = function() {
-        if (navigator.userAgent.match(/Android|BlackBerry|iPhone|iPad|iPod|Opera Mini|IEMobile/i)) {
-            this.$body.addClass('mobile');
-        } else {
-            this.$body.addClass('desktop');
-            if (navigator.userAgent.match(/MSIE 9.0/)) {
-                this.$body.addClass('ie9');
-            }
-        }
-    }
-
-    // AC util functions
-    AC.prototype.getUserAgent = function() {
-        return $('body').hasClass('mobile') ? "mobile" : "desktop";
-    }
-
-    $.AC = new AC();
-    $.AC.Constructor = AC;
-
-})(window.jQuery);
-
-
-(function($) {
-
-    'use strict';
-
 
     // ======================================
     //    Loading screen
@@ -268,7 +219,7 @@
       //init_portfolio();
     //}
 
-    if (!$('body').hasClass('mobile')) {
+    if ($(window).width() < 768) {
       init_scroll_nav();
       init_smooth_scroll_top();
     }

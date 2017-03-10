@@ -36,10 +36,6 @@
   text-decoration: none;
   line-height: 30px;
 
-  @include respond-to(xs) {
-    margin: 0 ($core-margin * 1.25);
-  }
-
   &--main {
     position: absolute;
     top: -19px;
@@ -48,7 +44,7 @@
     width: 90px;
     height: 90px;
     background-color: $core-color-light;
-    margin: 0 auto;;
+    margin: 0 auto;
     border: 3px $core-border-style $core-color-brand;
     border-radius: 50%;
     @include flex(null, column, center, center);
@@ -81,6 +77,12 @@
       fill: #4bd486;
     }
   }
+
+  @include respond-to(xs) {
+    &:not(&--main) {
+      margin: 0 ($core-margin * 1.25);
+    }
+  }
 }
 
 .mobile-bar__icon {
@@ -90,10 +92,6 @@
   stroke: $core-color-neutral;
   vertical-align: middle;
 
-  @include respond-to(xs) {
-    width: 30px;
-  }
-
   &--main {
     width: 90px;
     height: 90px;
@@ -101,6 +99,12 @@
     stroke: transparent;
     padding: ($core-padding * 2.4);
     @include transition-05;
+  }
+
+  @include respond-to(xs) {
+    &:not(&--main) {
+      width: 30px;
+    }
   }
 }
 
