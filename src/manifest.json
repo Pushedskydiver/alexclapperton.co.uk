@@ -1,0 +1,25 @@
+{
+  "lang": "en",
+  "short_name": "Alex Clapperton's Website",
+  "name": "Alex Clapperton",
+  "description": "Front-End Web Developer",
+  "start_url": "/",
+  "display": "browser",
+  "background_color": "#21252b",
+  "theme_color": "#de656f",
+  "icons": [{
+      "src": "/favicons/favicon-16x16.png",
+      "sizes": "16x16",
+      "type": "image/png"
+    },
+    {
+      "src": "/favicons/favicon-32x32.png",
+      "sizes": "32x32",
+      "type": "image/png"
+    },
+    {
+      "src": "/favicons/favicon-96x96.png",
+      "sizes": "96x96",
+      "type": "image/png"
+    }]
+}

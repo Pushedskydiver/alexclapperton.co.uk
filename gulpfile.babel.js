@@ -56,7 +56,7 @@ gulp.task('default', function (callback) {
   runSeq(
     'clean:all',
     'imports:sass',
-    ['html:build', 'styles:sass', 'scripts', 'icons', 'images', 'fonts', 'copy:forms', 'copy:favicons', 'copy:pdf', 'copy:twitter'],
+    ['html:build', 'styles:sass', 'scripts', 'icons', 'images', 'fonts', 'copy:forms', 'copy:favicons', 'copy:manifest', 'copy:pdf', 'copy:serviceWorker', 'copy:twitter'],
     'clean:fonts',
     callback
   )

@@ -13,16 +13,26 @@ module.exports = function (gulp, data) {
 
   gulp.task('copy:favicons', function () {
     gulp.src(`${data.paths.source.favicons}**/*`)
-      .pipe(gulp.dest(data.paths.dist.favicons))
+        .pipe(gulp.dest(data.paths.dist.favicons))
+  });
+
+  gulp.task('copy:manifest', function () {
+      gulp.src(`${data.paths.source.base}manifest.json`)
+          .pipe(gulp.dest(data.paths.dist.base))
   });
 
   gulp.task('copy:pdf', function () {
-    return gulp.src(`${data.paths.source.base}pdf/*.pdf`)
-      .pipe(gulp.dest(`${data.paths.dist.base}pdf/`))
+      gulp.src(`${data.paths.source.base}pdf/*.pdf`)
+          .pipe(gulp.dest(`${data.paths.dist.base}pdf/`))
+  });
+
+  gulp.task('copy:serviceWorker', function () {
+      gulp.src(`${data.paths.source.base}sw.js`)
+          .pipe(gulp.dest(data.paths.dist.base))
   });
 
   gulp.task('copy:twitter', function () {
-    return gulp.src(`${data.paths.source.base}twitter/*`)
-      .pipe(gulp.dest(`${data.paths.dist.base}twitter/`))
+      gulp.src(`${data.paths.source.base}twitter/*`)
+          .pipe(gulp.dest(`${data.paths.dist.base}twitter/`))
   });
 }
