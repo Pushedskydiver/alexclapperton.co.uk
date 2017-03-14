@@ -131,6 +131,11 @@ a {
   }
 }
 
+pre {
+  margin-top: 0;
+	margin-bottom: ($core-margin * 3);
+}
+
 hr {
   margin: ($core-margin * 2) 0;
   border-color: $core-color-dark;

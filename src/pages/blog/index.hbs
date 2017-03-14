@@ -45,6 +45,11 @@ priority: 1.0
   <div class="site-container">
     <!-- BEGIN : SITE BLOG FLEX -->
     <div class="site-blog__flex">
+      {{#each articles.[2017]}}
+        <!-- END : SITE BLOG ITEM /-->
+        {{>article-preview}}
+        <!-- END : SITE BLOG ITEM /-->
+      {{/each}}
       {{#each articles.[2016]}}
         <!-- END : SITE BLOG ITEM /-->
         {{>article-preview}}
