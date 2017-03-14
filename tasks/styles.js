@@ -8,6 +8,7 @@ import autoprefixer from 'autoprefixer'
 import devtools from 'postcss-devtools'
 import focus from 'postcss-focus'
 import cssnano from 'cssnano'
+import mqpacker from 'css-mqpacker'
 import cleancss from 'gulp-clean-css'
 import plugins from 'gulp-load-plugins'
 
@@ -18,6 +19,9 @@ module.exports = function (gulp, data, argv) {
     const postCssPlugins = [
       autoprefixer({
         browsers: ['> 5%']
+      }),
+      mqpacker({
+        sort: true
       }),
       devtools(),
       focus(),
