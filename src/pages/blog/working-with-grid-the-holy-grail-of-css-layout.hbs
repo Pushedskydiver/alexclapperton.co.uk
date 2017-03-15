@@ -1,0 +1,186 @@
+---
+layout: post.hbs
+title: "Working with Grid: The holy grail of CSS layout"
+keywords: web development, front end, blog, grid, csss grid, css
+bannerTitle: "Working with Grid: <br class='site-banner__title-break'> The holy grail of CSS layout"
+slug: working-with-grid-the-holy-grail-of-css-layout
+summary: Ladies and gentlemen, boys and girls, and to the snake in my bedroom, I present to you the future of CSS layout and boy is it a game changer.
+category: CSS
+pubDate: 20 Feb, 2017
+dateTime: 20-02-2017
+tags:
+- css
+- grid
+- css grid
+changefreq: never
+priority: 0.2
+---
+<p>
+  Ladies and gentlemen, boys and girls, and to the snake in my bedroom, I present to you the future of CSS layout and boy is it a game changer. CSS Grid is finally upon us and totally changes the way in which we as web developers create layouts on a webpage. As it says in the title, it is the holy grail of CSS layout, making it easier to create simple and complex layouts. With that said I decided to take on and learn grid as a self-initiated project, so allow me to show you want I've achieved.
+</p>
+<h2>A bit more detail about Grid</h2>
+<p>
+  Before I go into detail about what I came with while learning grid it's best to have a better understanding of what it is first. CSS Grid (aka Grid) is a two-dimensional grid based system allowing the ability to place items in both columns and rows, unlike
+  <a class="external-link" href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/" title="External link to CSS Tricks web page about CSS Grid.">
+    <span class="external-link__text">flexbox </span>
+    <svg width="20" height="20" class="external-link__icon">
+      <use xlink:href="/images/icons/sprite.svg#external-link" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+    </svg>
+  </a>
+  which is one-dimensional and can only place items in either a column or a row, it can't handle both. Grid is the very first CSS module created specifically to solve the layout problems we've all been hacking our way around for as long as we've been making websites.
+</p>
+<h3>Current browser support</h3>
+<p>
+  Being a new feature for browsers, it shouldn't be a surprise to know that grid isn't widely supported across all browsers (yet 😉). However, in the past week it has been released in the latest update on Firefox (version 52) and Google Chrome (version 57), with Apple getting ready to release it on Safari (version 10.1) within the coming weeks.
+</p>
+<figure class="site-figure">
+  <img src="/images/blog/grid-support-1.jpg" alt="Browser versions that do and don't support grid." />
+  <figcaption class="site-figure__caption">Latest Firefox &amp; Chrome versions support Grid</figcaption>
+</figure>
+</p>
+<figure class="site-figure">
+  <img src="/images/blog/grid-support-2.jpg" alt="Browser versions that do and don't support grid." />
+  <figcaption class="site-figure__caption">Next version of Safari &amp; Opera will support Grid</figcaption>
+</figure>
+<h3>My project set-up</h3>
+<p>
+  At the time of learning grid, none of the browsers mentioned above supported grid natively. So, in order to play around with grid, I had to download developer versions of the browsers which contain experimental features (such as grid at the time) that aren't available on their native counterparts. For Safari, you can download
+  <a class="external-link" href="https://developer.apple.com/safari/technology-preview/" title="External link to Safari Tecnhology Preview website.">
+    <span class="external-link__text">Safari Technology Preview </span>
+    <svg width="20" height="20" class="external-link__icon">
+      <use xlink:href="/images/icons/sprite.svg#external-link" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+    </svg>
+  </a>,
+  for Firefox you can use
+  <a class="external-link" href="https://www.mozilla.org/en-GB/firefox/developer/" title="External link to Firefox Developer Edition website.">
+    <span class="external-link__text">Firefox Developer Edition </span>
+    <svg width="20" height="20" class="external-link__icon">
+      <use xlink:href="/images/icons/sprite.svg#external-link" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+    </svg>
+  </a>
+  and for Chrome you can either download
+  <a class="external-link" href="https://www.google.co.uk/chrome/browser/canary.html" title="External link to Google Chrome Canary website.">
+    <span class="external-link__text">Chrome Canary </span>
+    <svg width="20" height="20" class="external-link__icon">
+      <use xlink:href="/images/icons/sprite.svg#external-link" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+    </svg>
+  </a>
+  or enable <em>experimental web platform features</em> in Google Chrome by typing <em>chrome://flags</em> in the address bar.
+</p>
+<figure class="site-figure">
+  <img src="/images/blog/chrome-flags.jpg" alt="Enabling experimental web features in Google Chrome." />
+  <figcaption class="site-figure__caption">Enabling experimental web features in Google Chrome</figcaption>
+</figure>
+<p>
+  In addition to this, I used two online resources, Rachel Andrew's
+  <a class="external-link" href="http://gridbyexample.com/" title="External link to Rachel Andrew's Grid by Example website.">
+    <span class="external-link__text">Grid by Example </span>
+    <svg width="20" height="20" class="external-link__icon">
+      <use xlink:href="/images/icons/sprite.svg#external-link" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+    </svg>
+  </a>
+  website and Chris House's
+  <a class="external-link" href="http://gridbyexample.com/">
+    <span class="external-link__text">A Complete Guide to Grid </span>
+    <svg width="20" height="20" class="external-link__icon">
+      <use xlink:href="/images/icons/sprite.svg#external-link" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+    </svg>
+  </a>
+  article from CSS Tricks. Both these sites contained excellent information about grid as well as some excellent demonstrations.
+</p>
+<h3>Putting Grid into practice</h3>
+<p>
+  With Grid being a self-initiated project, I decided to have a bit of fun with it. I created two little games for myself on CodePen, where I sliced up two images in Photoshop and just using Grid, I had to place the sliced parts of the images in the correct place to re-build the images. You can have a look at what I created below <strong>Make sure you are using a browser that supports Grid</strong>.
+</p>
+<p data-height="350" data-theme-id="dark" data-slug-hash="bqNvRb" data-default-tab="result" data-user="Pushedskydiver" data-embed-version="2" data-pen-title="CSS Grid Game" class="codepen">See the Pen <a href="https://codepen.io/Pushedskydiver/pen/bqNvRb/">CSS Grid Game</a> by Alex Clapperton (<a href="http://codepen.io/Pushedskydiver">@Pushedskydiver</a>) on <a href="http://codepen.io">CodePen</a>.</p>
+<script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
+<p data-height="350" data-theme-id="dark" data-slug-hash="NpxpGQ" data-default-tab="result" data-user="Pushedskydiver" data-embed-version="2" data-pen-title="CSS Grid Game 2" class="codepen">See the Pen <a href="https://codepen.io/Pushedskydiver/pen/NpxpGQ/">CSS Grid Game 2</a> by Alex Clapperton (<a href="http://codepen.io/Pushedskydiver">@Pushedskydiver</a>) on <a href="http://codepen.io">CodePen</a>.</p>
+<script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
+<br>
+<h3>I've not finished yet</h3>
+<p>
+  While learning the property names of grid, I wanted to find a way to make it quick and easy to write the grid property names as there are quite a few of them and some are quite long. One thing I tried was to find a snippet package for my text editor
+  <a class="external-link" href="https://atom.io/">
+    <span class="external-link__text">Atom </span>
+    <svg width="20" height="20" class="external-link__icon">
+      <use xlink:href="/images/icons/sprite.svg#external-link" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+    </svg>
+  </a>
+  where I could write shorthand's for the grid property names without having to write the whole thing. To my disbelief there wasn't a single snippet package for grid that I could find for Atom, so I took it upon myself to create the package myself. If you are interested, you can install the package yourself in the settings section of Atom, or you can check it out on my
+  <a class="external-link" href="https://github.com/Pushedskydiver/atom-css-grid-snippets">
+    <span class="external-link__text">GitHub repo </span>
+    <svg width="20" height="20" class="external-link__icon">
+      <use xlink:href="/images/icons/sprite.svg#external-link" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+    </svg>
+  </a>.
+  I also made a Sublime Text version which you can find on my
+  <a class="external-link" href="https://github.com/Pushedskydiver/sublime-text-css-grid-snippets">
+    <span class="external-link__text">GitHub repo </span>
+    <svg width="20" height="20" class="external-link__icon">
+      <use xlink:href="/images/icons/sprite.svg#external-link" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+    </svg>
+  </a>.
+</p>
+<figure class="site-figure">
+  <img src="/images/blog/grid-snippets.jpg" alt="My CSS Grid snippets plugin in action on Atom." />
+  <figcaption class="site-figure__caption">Using my CSS Grid snippets package in Atom</figcaption>
+</figure>
+<h3>How to learn Grid</h3>
+<p>
+  There are now a variety of articles and tutorials that you can find on the web to learn about Grid. The biggest hurdle to overcome is finding out the grid system works as you can't physically see the grid lines in the browser (Not entirely true, more on that below) and so you have to try and plot out mentally where the grid lines would be. This is where Rachel Andrew's
+  <a class="external-link" href="http://gridbyexample.com/">
+    <span class="external-link__text">Grid by Example </span>
+    <svg width="20" height="20" class="external-link__icon">
+      <use xlink:href="/images/icons/sprite.svg#external-link" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+    </svg>
+  </a>
+  website and the
+  <a class="external-link" href="https://css-tricks.com/snippets/css/complete-guide-grid/" title="External link to CSS Tricks web page about CSS Grid.">
+    <span class="external-link__text">A Complete Guide to Grid </span>
+    <svg width="20" height="20" class="external-link__icon">
+      <use xlink:href="/images/icons/sprite.svg#external-link" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+    </svg>
+  </a>
+  article on CSS Tricks are the places to go. Like I mentioned earlier, these sites provide an in depth look on how grid works, the property names of the grid container and grid items and provide a variety of examples of how grid can be used.
+</p>
+<h3>Does this mean the end of Flexbox?</h3>
+<p>
+  I would imagine some of you are thinking "well if grid is so great then what's the point of using flexbox anymore?". My answer to that is by no means is flexbox dead. Grid is not a replacement of flexbox. It is simply an alternative layout method and there are occasions where both can work together. Don't believe me? Then maybe this
+  <a class="external-link" href="https://codepen.io/rachelandrew/pen/RGwyAb" title="External link to a CodePen made by Rachel Andrew.">
+    <span class="external-link__text">CodePen from Rachel Andrew </span>
+    <svg width="20" height="20" class="external-link__icon">
+      <use xlink:href="/images/icons/sprite.svg#external-link" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+    </svg>
+  </a>
+  will change your mind. To convince you further, checkout this
+  <a class="external-link" href="https://rachelandrew.co.uk/archives/2016/03/30/should-i-use-grid-or-flexbox/" title="External link to an article about using Flexbox or Grid by Rachel Andrew.">
+    <span class="external-link__text">article from Rachel </span>
+    <svg width="20" height="20" class="external-link__icon">
+      <use xlink:href="/images/icons/sprite.svg#external-link" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+    </svg>
+  </a>
+  on when to use grid and when to use flexbox.
+</p>
+<h4>Final thoughts</h4>
+<p>
+  When I started looking into grid, I thought that it was going to be too complex to get my head around how it would work and trying to remember the property names. But since then I feel I have come a long way and found that it isn't that complex at all. The main barrier is understanding how it works and the purpose of the property names and I feel with creating the snippet for my text editor, has contributed to me learning grid in a short space of time.
+</p>
+<hr>
+<h4>Bibliography</h4>
+<ul>
+  <li class="site-list__item">
+    House C. (2017). A Complete Guide to Grid [ONLINE] [Accessed 20 February 2017]. URL:
+    <a class="site-list__link" href="https://css-tricks.com/snippets/css/complete-guide-grid/" title="External link to CSS Tricks web page about CSS Grid.">CSS Tricks</a>
+    <svg width="20" height="20" class="external-link__icon">
+      <use xlink:href="/images/icons/sprite.svg#external-link" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+    </svg>
+  </li>
+  <li class="site-list__item">
+    Andrew R. (2017). Grid by Example [ONLINE] [Accessed 20 February 2017]. URL:
+    <a class="site-list__link" href="http://gridbyexample.com" title="External link to Rachel Andrew's Grid by Example website.">Grid by Example</a>
+    <svg width="20" height="20" class="external-link__icon">
+      <use xlink:href="/images/icons/sprite.svg#external-link" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+    </svg>
+  </li>
+</ul>
+<hr>

@@ -1,6 +1,15 @@
 {
   "2017": [
     {
+      "title": "Working with Grid: The holy grail of CSS layout",
+      "slug": "working-with-grid-the-holy-grail-of-css-layout",
+      "title-attr": "Working with Grid: The holy grail of CSS layout blog post page.",
+      "readableDate": "20 Feb, 2017",
+      "footerDate": "<span class=\"site-footer__post-date\">20 <small class=\"site-footer__post-date--small\">FEB</small></span>",
+      "pubDate": "2017-02-20",
+      "summary": "<p>Ladies and gentlemen, boys and girls, and to the snake in my bedroom, I present to you the future of CSS layout and boy is it a game changer.</p>"
+    },
+    {
       "title": "From HTTPS to CSS: What I've changed on my website",
       "slug": "from-https-to-css-what-i-have-changed-on-my-website",
       "title-attr": "From HTTPS to CSS: What I've changed on my website blog post page.",
