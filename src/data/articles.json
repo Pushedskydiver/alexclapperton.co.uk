@@ -1,28 +1,51 @@
 {
+  "2017": [
+    {
+      "title": "Working with Grid: The holy grail of CSS layout",
+      "slug": "working-with-grid-the-holy-grail-of-css-layout",
+      "title-attr": "Working with Grid: The holy grail of CSS layout blog post page.",
+      "readableDate": "20 Feb, 2017",
+      "footerDate": "<span class=\"site-footer__post-date\">20 <small class=\"site-footer__post-date--small\">FEB</small></span>",
+      "pubDate": "2017-02-20",
+      "summary": "<p>Ladies and gentlemen, boys and girls, and to the snake in my bedroom, I present to you the future of CSS layout and boy is it a game changer.</p>"
+    },
+    {
+      "title": "From HTTPS to CSS: What I have changed on my website",
+      "slug": "from-https-to-css-what-i-have-changed-on-my-website",
+      "title-attr": "From HTTPS to CSS: What I've changed on my website blog post page.",
+      "readableDate": "13 Jan, 2017",
+      "footerDate": "<span class=\"site-footer__post-date\">13 <small class=\"site-footer__post-date--small\">JAN</small></span>",
+      "pubDate": "2017-01-13",
+      "summary": "<p>I've made some interesting changes to my website since my last post and I'm very excited to share what I have been up to.</p>"
+    }
+  ],
   "2016": [
     {
       "title": "Creating my website part one: Research and design",
       "slug": "creating-my-website-part-one-research-and-design",
       "title-attr": "Creating my website part one: Research and design blog post page.",
-      "readableDate": "13th November 2016",
+      "readableDate": "13 Nov, 2016",
+      "footerDate": "<span class=\"site-footer__post-date\">13 <small class=\"site-footer__post-date--small\">NOV</small></span>",
       "pubDate": "2016-11-13",
-      "summary": "<p class=\"blog__item-body\">A two part series into the research, design and build process of my portfolio website.</p>"
+      "summary": "<p>A two part series into the research, design and build process of my portfolio website.</p>"
     },
     {
       "title": "Performance and optimisation: Getting your website up to speed",
       "slug": "performance-and-optimisation-getting-your-website-up-to-speed",
       "title-attr": "Performance and optimisation: Getting your website up to speed blog post page.",
-      "readableDate": "28th October 2016",
+      "readableDate": "28 Oct, 2016",
+      "footerDate": "<span class=\"site-footer__post-date\">28 <small class=\"site-footer__post-date--small\">OCT</small></span>",
       "pubDate": "2016-10-28",
-      "summary": "<p class=\"blog__item-body\">A taste into some of the fantastic methods I have come across to optimise my website and increase performance.</p>"
+      "summary": "<p>A taste into some of the fantastic methods I have come across to optimise my website and increase performance.</p>"
     },
     {
       "title": "The digital industry: A developers perspective",
       "slug": "the-digital-industry-a-developers-perspective",
       "title-attr": "Internal link to The digital industry: A developers perspective blog post page.",
-      "readableDate": "30th September 2016",
+      "readableDate": "30 Sept, 2016",
+      "footerDate": "<span class=\"site-footer__post-date\">30 <small class=\"site-footer__post-date--small\">SEP</small></span>",
       "pubDate": "2016-09-30",
-      "summary": "<p class=\"blog__item-body\">My look into the digital industry after reading the Manchester Digital 2016 slide deck and the 2016 Tech Nation report.</p>"
+      "summary": "<p>My look into the digital industry after reading the Manchester Digital 2016 slide deck and the 2016 Tech Nation report.</p>"
     }
   ]
 }
