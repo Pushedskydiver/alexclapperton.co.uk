@@ -1,0 +1,14 @@
+// Logo...............Site logo styles.
+
+.logo {
+  grid-area: logo;
+  color: $core-color-dark;
+  font-weight: $core-font-weight;
+  text-decoration: none;
+  justify-self: start;
+  @include font-size($logo-font-sizes);
+
+  &--core {
+    color: $core-color-brand;
+  }
+}

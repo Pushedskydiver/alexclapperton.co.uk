@@ -8,179 +8,46 @@ priority: 1.0
 ---
 
 <!-- ******************** BANNER : Start ******************** -->
-<section class="banner" role="banner">
-  <!-- BEGIN : CONTAINER -->
-  <div class="container">
-    <!-- BEGIN : BANNER CONTENT -->
-    <div class="banner__content">
-      <h1 class="banner__title banner__title--white">Hello! <br> I am known as <br> <span class="type"></span></h1>
-      <p class="banner__body">
-        <svg width="20" height="20" class="banner__icon banner__icon--green">
-          <title>Coded</title>
-          <use xlink:href="/images/icons/sprite.svg#tags" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
-        </svg>
-        with
-        <svg width="20" height="20" class="banner__icon banner__icon--red">
-          <title>love</title>
-          <use xlink:href="/images/icons/sprite.svg#heart" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
-        </svg>
-        by me
-      </p>
-    </div>
-    <!-- END : BANNER CONTENT /-->
+<section class="banner container" role="banner">
+  <!-- BEGIN : BANNER BLOCK -->
+  <div class="banner__block">
+    <h1 class="banner__title">Alex Clapperton</h1>
+    <p class="banner__body">Front-End Web Developer Manchester, UK</p>
   </div>
-  <!-- END : CONTAINER /-->
-  <!-- BEGIN : BANNER SIDEBAR -->
-  <div class="banner__sidebar">
-    <img class="banner__sidebar-img" src="/images/banner/alex.jpg" alt="Full body portrait of Alex with yellow M&amp;M mascot.">
-    <span class="banner__sidebar-title">Alex Clapperton</span>
-    <small class="banner__sidebar-sub">Front-end Web Developer <br> from Manchester, UK</small>
-    <a class="banner__sidebar-email" href="mailto:hi@alexclapperton.co.uk">hi@alexclapperton.co.uk</a>
-    <span class="banner__sidebar-phone">+44 7930 946 211</span>
-    <!-- BEGIN : BANNER SIDEBAR SOCIAL -->
-    <div class="banner__sidebar-social">
-      {{#each global.social}}
-        <!-- BEGIN : SOCIAL HEADER ICON -->
-        <a href="{{this.url}}" class="banner__sidebar-social-link" title="{{this.title-attr}}">
-          <svg width="20" height="20" class="banner__sidebar-social-icon">
-            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/icons/sprite.svg#{{this.icon}}"></use>
-          </svg>
-          <span class="visually-hidden">{{this.icon}}</span>
-        </a>
-        <!-- END : SOCIAL HEADER ICON /-->
-      {{/each}}
-    </div>
-    <!-- END : BANNER SIDEBAR SOCIAL /-->
-    <a class="btn btn--white banner__sidebar-btn" href="#">
-      View portfolio
-      <svg width="20" height="20" class="btn__icon btn__icon--white">
-        <use xlink:href="/images/icons/sprite.svg#arrow" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
-      </svg>
-    </a>
-  </div>
-  <!-- END : BANNER SIDEBAR /-->
+  <!-- END : BANNER BLOCK /-->
+  <a class="banner__scroll" href="#content">
+    <svg class="banner__scroll-icon" width="20" height="20">
+      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/icons/sprite.svg#arrow"></use>
+    </svg>
+  </a>
 </section>
 <!-- ******************** BANNER : End ******************** /-->
 
 
-<!-- ******************** INTRO : Start ******************** -->
-<main class="intro" id="content" role="main">
-  <!-- BEGIN : CONTAINER -->
-  <div class="container">
-    <!-- BEGIN : INTRO CONTENT -->
-    <div class="intro__content">
-      <!-- BEGIN : INTRO ITEM -->
-      <div class="intro__item  intro__item--red">
-        <svg width="20" height="20" class="intro__item-icon intro__item-icon--red">
-          <use xlink:href="/images/icons/sprite.svg#tags-close" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
-        </svg>
-        <br>
-        <span class="intro__item-title">Front-end development.</span>
-        <p class="intro__item-body">
-          Great design starts with putting people first. Work with us and you'll benefit from a collaborative user experience design approach that promises improved usability, accessibility and efficiency.
-        </p>
-      </div>
-      <!-- END : INTRO ITEM /-->
-      <!-- BEGIN : INTRO ITEM -->
-      <div class="intro__item intro__item--green">
-        <svg width="20" height="20" class="intro__item-icon intro__item-icon--green">
-          <use xlink:href="/images/icons/sprite.svg#mobile" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
-        </svg>
-        <br>
-        <span class="intro__item-title">Mobile first approach.</span>
-        <p class="intro__item-body">
-          We're not joking when we say we've considered every detail. That's right, down to each individual pixel. When you see a design, this is exactly how your website will look, complete with animation and effects.
-        </p>
-      </div>
-      <!-- END : INTRO ITEM /-->
-      <!-- BEGIN : INTRO ITEM -->
-      <div class="intro__item intro__item--blue">
-        <svg width="20" height="20" class="intro__item-icon intro__item-icon--blue">
-          <use xlink:href="/images/icons/sprite.svg#browser" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
-        </svg>
-        <br>
-        <span class="intro__item-title">Modern browser support.</span>
-        <p class="intro__item-body">
-          We're not joking when we say we've considered every detail. That's right, down to each individual pixel. When you see a design, this is exactly how your website will look, complete with animation and effects.
-        </p>
-      </div>
-      <!-- END : INTRO ITEM /-->
+<!-- ******************** INFO : Start ******************** -->
+<section class="info" id="content">
+  <div class="info__flex">
+    <h2 class="info__title">A little bit about me</h2>
+    <!-- BEGIN : SYMBOL -->
+    <div class="symbol symbol--secondary">
+      <svg class="symbol__icon symbol__icon--secondary" width="20" height="20">
+        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/icons/sprite.svg#about"></use>
+      </svg>
     </div>
-    <!-- END : INTRO CONTENT /-->
+    <!-- END : SYMBOL /-->
   </div>
-  <!-- END : CONTAINER /-->
-</main>
-<!-- ******************** INTRO : End ******************** /-->
-
-
-<!-- ******************** PORTFOLIO : Start ******************** -->
-<section class="portfolio">
-  <!-- BEGIN : CONTAINER -->
-  <div class="container">
-    <!-- BEGIN : PORTFOLIO CONTENT -->
-    <div class="portfolio__content portfolio__content--flex">
-      <!-- BEGIN : PORTFOLIO ITEM -->
-      <a class="portfolio__item portfolio__item--main" href="#">
-        <h2 class="portfolio__item-title portfolio__item-title--dark">My recent work</h2>
-        <p class="portfolio__item-body portfolio__item-body--neutral">
-          Curabitur at pulvinar massa. Sed rhoncus sapien ac neque venenatis, quis fringilla urna consequat. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Duis lacinia justo ac sem tristique.
-        </p>
-        <div class="btn--flex">
-          <span class="btn btn--red btn--left">
-            View portfolio
-            <svg width="20" height="20" class="btn__icon btn__icon--red">
-              <use xlink:href="/images/icons/sprite.svg#arrow" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
-            </svg>
-          </span>
-          <span class="btn__line"></span>
-        </div>
-      </a>
-      <!-- END : PORTFOLIO ITEM /-->
-      {{#each_upto portfolio.[2016] 2}}
-        {{>portfolio-preview}}
-      {{/each_upto}}
-    </div>
-    <!-- END : PORTFOLIO CONTENT /-->
-  </div>
-  <!-- END : CONTAINER /-->
+  <p class="info__body">I am Aaron a 24 year old Front-End Website Developer from Manchester. I have had a passion for Web Development since 2012 where I started my own little Wordpress site where I blogged about my love for Apple products.</p>
+  <a class="btn btn--primary" href="#">
+    More about Alex
+    <svg class="btn__icon btn__icon--primary btn__icon--rotate" width="20" height="20">
+      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/icons/sprite.svg#arrow"></use>
+    </svg>
+  </a>
+  <a class="btn btn--primary" href="#">
+    Download my CV
+    <svg class="btn__icon btn__icon--primary" width="20" height="20">
+      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/icons/sprite.svg#download"></use>
+    </svg>
+  </a>
 </section>
-<!-- ******************** PORTFOLIO : End ******************** /-->
-
-
-<!-- ******************** BLOG : Start ******************** -->
-<section class="blog">
-  <!-- BEGIN : CONTAINER -->
-  <div class="container">
-    <h2 class="blog__title">My latest posts</h2>
-    <p class="blog__body">Our live feed of what’s happening right now. A mixture of industry updates, company news, advice, social media, new projects and website launches.</p>
-    <!-- BEGIN : BLOG CONTENT -->
-    <div class="blog__content">
-      <!-- BEGIN : BLOG ADDITIONAL -->
-      <a class="blog__additional blog__additional--blue" href="#">
-        <p class="blog__additional-body">My brother is a little 💩 Get a message to pick him up from work. So I drive to his work to find out he hasn’t finished work. B*stard 🤣</p>
-        <svg width="20" height="20" class="blog__additional-icon">
-          <use xlink:href="/images/icons/sprite.svg#twitter" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
-        </svg>
-      </a>
-      <!-- END : BLOG ADDITIONAL -->
-      {{#each articles.[2016]}}
-        {{>article-section}}
-      {{/each}}
-      <!-- BEGIN : BLOG ADDITIONAL -->
-      <a class="blog__additional blog__additional--purple" href="#">
-        <h3 class="blog__additional-title">Want to read more?</h3>
-        <p class="blog__additional-body">My Journal is the best place to find out what we’ve been up to and read some of the latest industry news.</p>
-        <span class="btn btn--white btn--left">
-          View my blog
-          <svg width="20" height="20" class="btn__icon btn__icon--white">
-            <use xlink:href="/images/icons/sprite.svg#arrow" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
-          </svg>
-        </span>
-      </a>
-      <!-- END : BLOG ADDITIONAL /-->
-    </div>
-    <!-- END : BLOG CONTENT /-->
-  </div>
-  <!-- END : CONTAINER /-->
-</section>
-<!-- ******************** BLOG : End ******************** /-->
+<!-- ******************** INFO : End ******************** /-->

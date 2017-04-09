@@ -47,17 +47,17 @@
     },
     {
       "url": "/about-me",
-      "title": "About me",
+      "title": "About",
       "title-attr": "Internal link to the about page.",
       "slug": "about",
-      "icon": "user"
+      "icon": "about"
     },
     {
       "url": "/mportfolio",
       "title": "Portfolio",
       "title-attr": "Internal link to the my work page.",
       "slug": "portfolio",
-      "icon": "work"
+      "icon": "portfolio"
     },
     {
       "url": "/blog",

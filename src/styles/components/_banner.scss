@@ -1,106 +1,81 @@
 // Banner.............Top page banner styles.
 
 .banner {
-  height: calc(100vh - 60px);
-  background-color: #292c34;
-  @include flex(wrap, column, center, null);
+  display: grid;
+  grid-gap: 0;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+  height: calc(100vh - 127px);
 
-  @media (max-width: 500px) and (orientation: landscape) {
-    height: calc(100vh - 63px);
-    margin-top: 63px;
+  @include respond-to(xs) {
+    height: calc(100vh - 149px);
+  }
+}
+
+.banner__block {
+  position: relative;
+  width: 250px;
+  height: 250px;
+  background-color: $core-color-brand;
+  padding: 10%;
+  align-self: center;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: 0;
+    left: 0;
+    width: 90%;
+    height: 90%;
+    margin: 0 auto;
+    border: 5px $core-border-style $core-color-light;
+    transform: translateY(-50%);
+    z-index: 0;
   }
 
-  @media (min-width: 550px) and (max-width: 767px) and (orientation: landscape) {
-    height: calc(100vh - 62px);
-    margin-top: 62px;
-  }
+  @include respond-to(xs) {
+    margin-top: -125px;
 
-  @media only screen and (min-width: 320px) and (max-width: 480px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: landscape) {
-    height: calc(100vh - 63px);
-    margin-top: 63px;
-  }
-
-  @media only screen and (min-width: 320px)  and (max-width: 568px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: landscape) {
-    height: calc(100vh - 62px);
-    margin-top: 62px;
-  }
-
-  @include respond-to(s) {
-    height: 500px;
-  }
-
-  @include respond-to(l) {
-    position: relative;
-    height: 600px;
-  }
-
-  @include respond-to(xxl) {
-    height: 650px;
+    &::after {
+      content: '';
+      position: absolute;
+      top: 42%;
+      left: 42%;
+      width: 100%;
+      height: 100%;
+      background-image: url('../images/banner/banner--mobile.jpg');
+      background-size: cover;
+      background-position: center center;
+      background-repeat: no-repeat;
+      border: 10px $core-border-style $core-color-brand;
+      z-index: -2;
+    }
   }
 }
 
 .banner__title {
-  position: relative;
-  padding-top: ($core-padding / 2);
-
-  &::before {
-    content: '<!- - BEGIN : TITLE - ->';
-    position: absolute;
-    top: -15px;
-    left: 0;
-    color: #5c6370;
-    font-size: 0.8rem;
-
-    @include respond-to(xs) {
-      font-size: 1rem;
-    }
-
-    @include respond-to(l) {
-      font-size: 1.1rem;
-    }
-  }
-
-  &--white {
-    color: $core-color-light;
-  }
+  margin-bottom: ($core-margin * 3);
+  color: $core-color-light;
+  font-weight: $core-tertiary-font-weight;
 }
 
 .banner__body {
   color: $core-color-light;
-  @include font-size($h5-font-sizes);
 }
 
-.banner__icon {
-  vertical-align: middle;
-
-  &--green {
-    width: 19px;
-    height: 19px;
-    fill: #98c379;
-
-    @include respond-to(l) {
-      width: 22px;
-      height: 22px;
-    }
-  }
-
-  &--red {
-    width: 17px;
-    height: 17px;
-    fill: $core-color-brand;
-
-    @include respond-to(l) {
-      width: 19px;
-      height: 19px;
-    }
-  }
+.banner__scroll {
+  width: 35px;
+  height: 35px;
+  margin-bottom: $core-margin;
+  align-self: end;
+  justify-self: center;
+  @include fadeInOutDown;
 }
 
-
-// #2 Blinking cursor
-.ityped-cursor {
-  color: #568af2;
-  font-size: 2.2rem;
-  opacity: 1;
-  @include cd-blink;
+.banner__scroll-icon {
+  width: 100%;
+  height: 100%;
+  fill: $core-color-brand;
+  @include rotate(270);
 }

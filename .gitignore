@@ -4,7 +4,8 @@ node_modules
 # production
 dist
 
-# Sass cache
+# Sass
+main.scss
 .sass-cache
 
 # misc

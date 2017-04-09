@@ -12,12 +12,12 @@ html {
 
 body {
   background: $core-color-light;
-  color: $core-color-neutral;
+  color: $core-color-dark;
   font-family: $core-font-family;
   font-weight: $core-font-weight;
   line-height: 1.45;
   margin: 0;
-  padding-bottom: 60px;
+  padding-bottom: 67px;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
 
@@ -37,57 +37,57 @@ body ::selection {
 }
 
 h1 {
-  color: $core-color-heading;
-  font-family: $core-font-family;
-  @include font-size($h1-font-sizes);
-  font-weight: $core-font-weight;
+  color: $core-color-brand;
+  font-family: $core-secondary-font-family;
+  font-weight: $core-secondary-font-weight;
   margin: 0 0 $core-margin 0;
   line-height: $core-secondary-line-height;
+  @include font-size($h1-font-sizes);
 }
 
 h2 {
-  color: $core-color-heading;
-  font-family: $core-font-family;
-  @include font-size($h2-font-sizes);
-  font-weight: $core-font-weight;
+  color: $core-color-brand;
+  font-family: $core-secondary-font-family;
+  font-weight: $core-secondary-font-weight;
   margin: 0 0 $core-margin 0;
   line-height: $core-secondary-line-height;
+  @include font-size($h2-font-sizes);
 }
 
 h3 {
-  color: $core-color-heading;
-  font-family: $core-font-family;
-  @include font-size($h3-font-sizes);
-  font-weight: $core-font-weight;
+  color: $core-color-brand;
+  font-family: $core-secondary-font-family;
+  font-weight: $core-secondary-font-weight;
   margin: 0 0 $core-margin 0;
   line-height: $core-secondary-line-height;
+  @include font-size($h3-font-sizes);
 }
 
 h4 {
-  color: $core-color-heading;
-  font-family: $core-font-family;
-  @include font-size($h4-font-sizes);
-  font-weight: $core-font-weight;
+  color: $core-color-brand;
+  font-family: $core-secondary-font-family;
+  font-weight: $core-secondary-font-weight;
   margin: 0 0 $core-margin 0;
   line-height: $core-secondary-line-height;
+  @include font-size($h4-font-sizes);
 }
 
 h5 {
-  color: $core-color-heading;
-  font-family: $core-font-family;
-  @include font-size($h5-font-sizes);
-  font-weight: $core-font-weight;
+  color: $core-color-brand;
+  font-family: $core-secondary-font-family;
+  font-weight: $core-secondary-font-weight;
   margin: 0 0 $core-margin 0;
   line-height: $core-secondary-line-height;
+  @include font-size($h5-font-sizes);
 }
 
 h6 {
-  color: $core-color-heading;
-  font-family: $core-font-family;
-  @include font-size($h6-font-sizes);
-  font-weight: $core-font-weight;
+  color: $core-color-brand;
+  font-family: $core-secondary-font-family;
+  font-weight: $core-secondary-font-weight;
   margin: 0 0 $core-margin 0;
   line-height: $core-secondary-line-height;
+  @include font-size($h6-font-sizes);
 }
 
 p {
@@ -125,10 +125,10 @@ svg {
 }
 
 button {
+  background-color: transparent;
   margin: 0;
   padding: 0;
   border: none;
-  -webkit-appearance: none;
   appearance: none;
   @include font-size($p-font-sizes);
 

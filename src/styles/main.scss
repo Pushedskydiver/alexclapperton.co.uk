@@ -38,23 +38,20 @@
 *  Loader.............The sire's pre loader when site first loads.
 * 
 * COMPONENTS
-*  Banner Sidebar.....Banner sidebar styles.
 *  Banner.............Top page banner styles.
-*  Blog...............Blog page/posts styles.
 *  Breadcrumbs........Simple breadcrumbs styles.
 *  Butons.............Button styles.
-*  External links.....Simple styles for external links.
 *  Figure.............Figure styles.
 *  Footer.............Footer styles.
 *  Header.............The sites header styles.
-*  Intro..............Styles for intro under main banner on homepage.
-*  Nav mobile.........The sites bottom mobile nav and menu in header.
+*  Info...............About me info block styles.
+*  Logo...............Site logo styles.
 *  Nav primary........The sites main nav.
 *  Notices............The sites notice styles for JS turned off etc.
-*  Portfolio..........Portfolio items/page styles.
 *  Prism - code snippet syntax highlighter
 *  Scroll to top......Scroll to top button styles.
 *  Skip links.........The sites skip to links.
+*  Symbol.............Symbol block styles.
 *  Twitter............Twitter feed styles.
 *
 */
@@ -77,21 +74,18 @@
 @import "/Users/alih2106/Desktop/Desktop - MacBook/website/src/styles/elements/_visually-hidden.scss";
 @import "/Users/alih2106/Desktop/Desktop - MacBook/website/src/styles/objects/_layout.scss";
 @import "/Users/alih2106/Desktop/Desktop - MacBook/website/src/styles/objects/_loader.scss";
-@import "/Users/alih2106/Desktop/Desktop - MacBook/website/src/styles/components/_banner-sidebar.scss";
 @import "/Users/alih2106/Desktop/Desktop - MacBook/website/src/styles/components/_banner.scss";
-@import "/Users/alih2106/Desktop/Desktop - MacBook/website/src/styles/components/_blog.scss";
 @import "/Users/alih2106/Desktop/Desktop - MacBook/website/src/styles/components/_breadcrumbs.scss";
 @import "/Users/alih2106/Desktop/Desktop - MacBook/website/src/styles/components/_buttons.scss";
-@import "/Users/alih2106/Desktop/Desktop - MacBook/website/src/styles/components/_external-links.scss";
 @import "/Users/alih2106/Desktop/Desktop - MacBook/website/src/styles/components/_figure.scss";
 @import "/Users/alih2106/Desktop/Desktop - MacBook/website/src/styles/components/_footer.scss";
 @import "/Users/alih2106/Desktop/Desktop - MacBook/website/src/styles/components/_header.scss";
-@import "/Users/alih2106/Desktop/Desktop - MacBook/website/src/styles/components/_intro.scss";
-@import "/Users/alih2106/Desktop/Desktop - MacBook/website/src/styles/components/_mobile-navigation.scss";
+@import "/Users/alih2106/Desktop/Desktop - MacBook/website/src/styles/components/_info.scss";
+@import "/Users/alih2106/Desktop/Desktop - MacBook/website/src/styles/components/_logo.scss";
 @import "/Users/alih2106/Desktop/Desktop - MacBook/website/src/styles/components/_navigation.scss";
 @import "/Users/alih2106/Desktop/Desktop - MacBook/website/src/styles/components/_notices.scss";
-@import "/Users/alih2106/Desktop/Desktop - MacBook/website/src/styles/components/_portfolio.scss";
 @import "/Users/alih2106/Desktop/Desktop - MacBook/website/src/styles/components/_prism.scss";
 @import "/Users/alih2106/Desktop/Desktop - MacBook/website/src/styles/components/_scroll-top.scss";
 @import "/Users/alih2106/Desktop/Desktop - MacBook/website/src/styles/components/_skip-links.scss";
+@import "/Users/alih2106/Desktop/Desktop - MacBook/website/src/styles/components/_symbol.scss";
 @import "/Users/alih2106/Desktop/Desktop - MacBook/website/src/styles/components/_twitter.scss";

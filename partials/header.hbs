@@ -1,123 +1,35 @@
-<!-- BEGIN : LOADER | REMOVED AFTER LOAD -->
-<div class="loader loader--active">
-  <!-- BEGIN : LOADER WRAPPER -->
-  <div class="loader__wrapper">
-    <img class="loader__logo" src="/images/preload/preload-logo.png" alt="Alex Clapperton logo/">
-    <!-- BEGIN : LOADER MASK -->
-    <div class="loader__mask">
-      <img class="loader__mask-img" src="/images/preload/preload-bg.png" alt="Coloured abstract background.">
-    </div>
-    <!-- END : LOADER MAKS /-->
-  </div>
-  <!-- END : LOADER WRAPPER /-->
-</div>
-<!-- END : LOADER /-->
 
-
-<!-- BEGIN : MOBILE BAR -->
-<div class="mobile-bar">
-  <!-- BEGIN : MOBILE BAR LINKS (LEFT) -->
-  <div class="mobile-bar__links mobile-bar__links--left">
-    <!-- BEGIN : MOBILE BAR LINK -->
-    <a class="mobile-bar__link" href="#">
-      <svg width="20" height="20" class="mobile-bar__icon">
-        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/icons/sprite.svg#home"></use>
-      </svg>
-    </a>
-    <!-- END : MOBILE BAR LINK /-->
-    <!-- BEGIN : MOBILE BAR LINK -->
-    <a class="mobile-bar__link" href="#">
-      <svg width="20" height="20" class="mobile-bar__icon">
-        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/icons/sprite.svg#about"></use>
-      </svg>
-    </a>
-    <!-- END : MOBILE BAR LINK /-->
-  </div>
-  <!-- END : MOBILE BAR LINKS (LEFT) /-->
-  <!-- BEGIN : MOBILE BAR LINK (MAIN) -->
-  <button type="button" class="mobile-bar__link mobile-bar__link--main">
-    <span class="mobile-bar__loader"></span>
-    <svg width="20" height="20" class="mobile-bar__icon mobile-bar__icon--main">
-      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/icons/sprite.svg#menu"></use>
-    </svg>
-  </button>
-  <!-- END : MOBILE BAR LINK (MAIN) /-->
-  <!-- BEGIN : MOBILE BAR LINKS (RIGHT) -->
-  <div class="mobile-bar__links mobile-bar__links--right">
-    <!-- BEGIN : MOBILE BAR LINK -->
-    <a class="mobile-bar__link" href="#">
-      <svg width="20" height="20" class="mobile-bar__icon">
-        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/icons/sprite.svg#work"></use>
-      </svg>
-    </a>
-    <!-- END : MOBILE BAR LINK /-->
-    <!-- BEGIN : MOBILE BAR LINK -->
-    <a class="mobile-bar__link" href="#">
-      <svg width="20" height="20" class="mobile-bar__icon">
-        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/icons/sprite.svg#contact"></use>
-      </svg>
-    </a>
-    <!-- END : MOBILE BAR LINK /-->
-  </div>
-  <!-- END : MOBILE BAR LINKS (RIGHT) /-->
-</div>
-<!-- END : MOBILE BAR /-->
-
-
-<!-- ******************** SITE HEADER : Start ******************** /-->
-<header class="header header--static" role="banner">
+<!-- ******************** HEADER : Start ******************** -->
+<header class="header container" role="banner">
   <!-- BEGIN : SKIP LINKS -->
   <a href="#nav" class="skip-link hidden focusable">Navigation</a>
   <a href="#content" class="skip-link hidden focusable">Skip to content</a>
   <a href="#footer" class="skip-link hidden focusable">Skip to footer</a>
   <!-- END : SKIP LINKS /-->
-  <!-- BEGIN : CONTAINER -->
-  <div class="container">
-    <!-- BEGIN : SITE HEADER CONTENT -->
-    <div class="header__content">
-      <!-- BEGIN : SITE LOGO -->
-      <a href="/" class="header__logo" title="Internal link to homepage.">< <span class="header__logo--red">Alex</span> /></a>
-      <!-- END : SITE LOGO /-->
-      <!-- BEGIN : MOBILE MENU -->
-      <button type="button" class="mobile-menu">
-        M
-        <svg width="20" height="20" class="mobile-menu__icon">
-          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/icons/sprite.svg#menu"></use>
-        </svg>
-        NU
-      </button>
-      <!-- END : MOBILE MENU /-->
-      <!-- BEGIN : NAV -->
-      <nav class="nav" id="nav" role="navigation">
-        <button type="button" class="nav__close">
-          <svg width="20" height="20" class="nav__close-icon">
-            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/icons/sprite.svg#close"></use>
+  <!-- BEGIN : HEADER CONTNET -->
+  <div class="header__content">
+    <a class="logo" href="/"><<span class="logo--core">Alex</span>/></a>
+    <a class="header__btn btn btn--primary" href="#">
+      Hire me
+      <svg width="20" height="20" class="btn__icon btn__icon--primary">
+        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/icons/sprite.svg#send"></use>
+      </svg>
+    </a>
+    <!-- BEGIN : NAV -->
+    <nav class="nav">
+      {{#each global.navigation}}
+      <!-- BEGIN : NAV ITEM -->
+        <a class="nav__item" href="{{url}}" title="{{title-attr}}">
+          <svg width="20" height="20" class="nav__icon">
+            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/icons/sprite.svg#{{icon}}"></use>
           </svg>
-        </button>
-        {{#each global.navigation}}
-          <!-- BEGIN : NAV LINK -->
-          <a href="{{{this.url}}}" class="nav__link nav__link--{{{this.slug}}}" title="{{{this.title-attr}}}">{{{this.title}}}</a>
-          <!-- END : NAV LINK /-->
-        {{/each}}
-      </nav>
-      <!-- END : NAV /-->
-      <!-- BEGIN : SOCIAL HEADER -->
-      <div class="header__social">
-        {{#each global.social}}
-          <!-- BEGIN : SOCIAL HEADER ICON -->
-          <a href="{{{this.url}}}" class="header__social-link" title="{{{this.title-attr}}}">
-            <svg width="20" height="20" class="header__social-icon">
-              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/icons/sprite.svg#{{{this.icon}}}"></use>
-            </svg>
-            <span class="visually-hidden">{{{this.icon}}}</span>
-          </a>
-          <!-- END : SOCIAL HEADER ICON /-->
-        {{/each}}
-      </div>
-      <!-- END : SOCIAL HEADER -->
-    </div>
-    <!-- END : SITE HEADER CONTENT /-->
+          {{title}}
+        </a>
+        <!-- END : NAV ITEM /-->
+      {{/each}}
+    </nav>
+    <!-- END : NAV /-->
   </div>
-  <!-- END : CONTAINER /-->
+  <!-- END : HEADER CONTENT /-->
 </header>
-<!-- ******************** SITE HEADER : End ******************** /-->
+<!-- ******************** HEADER : End ******************** /-->

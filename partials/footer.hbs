@@ -2,48 +2,7 @@
 <footer class="footer" id="footer" role="contentinfo">
   <!-- BEGIN : CONTAINER -->
   <div class="container">
-    <!-- BEGIN : FOOTER CONTENT -->
-    <div class="footer__content">
-      <!-- BEGIN : FOOTER ITEM -->
-      <div class="footer__item">
-        <h4 class="footer__item-title footer__item-title--blue">Useful links</h4>
-        <ul class="footer__list">
-          <li class="footer__list-item"><a class="footer__list-link" href="#">Home</a></li>
-          <li class="footer__list-item"><a class="footer__list-link" href="#">About me</a></li>
-          <li class="footer__list-item"><a class="footer__list-link" href="#">Portfolio</a></li>
-          <li class="footer__list-item"><a class="footer__list-link" href="#">Blog</a></li>
-          <li class="footer__list-item"><a class="footer__list-link" href="#">Contact</a></li>
-        </ul>
-      </div>
-      <!-- END : FOOTER ITEM /-->
-      <!-- BEGIN : FOOTER ITEM -->
-      <div class="footer__item">
-        <h4 class="footer__item-title footer__item-title--red">Social</h4>
-        <ul class="footer__list">
-          {{#each global.social}}
-          <li class="footer__list-item"><a class="footer__list-link" href="{{{this.url}}}" title="{{{this.title-attr}}}">{{{this.title}}}</a></li>
-          {{/each}}
-        </ul>
-      </div>
-      <!-- END : FOOTER ITEM /-->
-      <!-- BEGIN : FOOTER ITEM -->
-      <div class="footer__item">
-        <h4 class="footer__item-title footer__item-title--green">Contact Details</h4>
-        <ul class="footer__list">
-          <li class="footer__list-item">Call: <span class="footer__list-item--blue">{{{global.phone}}}</span></li>
-          <li class="footer__list-item">Email: <a class="footer__list-link footer__list-link--purple" href="mailto:{{{global.email}}}" title="Email Alex Clapperton.">{{{global.email}}}</a></li>
-        </ul>
-      </div>
-      <!-- END : FOOTER ITEM /-->
-      <!-- BEGIN : FOOTER ITEM -->
-      <div class="footer__item footer__item--twitter">
-        <h4 class="footer__item-title footer__item-title--orange">Latest Tweets</h4>
-         <div class="twitter-feed"></div>
-      </div>
-      <!-- END : FOOTER ITEM /-->
-    </div>
-    <!-- END : FOOTER CONTENT /-->
-    <p class="footer__copyright">Copyright &copy; <script type="text/javascript">document.write(new Date().getFullYear());</script>. All rights reserved.</p>
+
   </div>
   <!-- END : CONTAINER /-->
 </footer>
@@ -51,7 +10,7 @@
 
 
 <!--/ Scroll to top -->
-<div class="scroll-top" title="Scroll to top">
+<div class="scroll-top" title="Scroll to top" data-scroll-top>
   <svg width="20" height="20" class="scroll-top__icon">
     <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/icons/sprite.svg#arrow-up"></use>
   </svg>

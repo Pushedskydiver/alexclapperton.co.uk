@@ -4,7 +4,7 @@
   animation: fadein 2s;
 }
 
-@mixin animation-fadeInOutDown {
+@mixin fadeInOutDown {
   animation-name: fadeInOutDown;
   animation-iteration-count: infinite;
   animation-duration: 1.2s;

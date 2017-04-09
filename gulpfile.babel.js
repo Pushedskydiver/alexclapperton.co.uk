@@ -12,10 +12,10 @@ import runSeq from 'run-sequence'
 const argv = yargs.argv
 
 const data = {
-  paths: require('./global/paths.json'),
-  performance: require('./global/performance.json'),
-  site: require('./global/site.json'),
-  stylelint: require('./global/stylelint.json'),
+  paths: require('./config/paths.json'),
+  performance: require('./config/performance.json'),
+  site: require('./config/site.json'),
+  stylelint: require('./config/stylelint.json'),
 }
 
 

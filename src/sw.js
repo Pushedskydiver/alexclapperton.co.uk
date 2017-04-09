@@ -1,10 +1,10 @@
 var cacheName = 'alexclapperton:0024';
 var cacheFiles = [
   '/',
-  '/about/',
-  '/blog/',
-  '/my-work/',
-  '/contact/',
+  // '/about/',
+  // '/blog/',
+  // '/my-work/',
+  // '/contact/',
 ];
 
 

@@ -1,0 +1,20 @@
+// Info...............About me info block styles.
+
+.info {
+  position: relative;
+  background-color: $core-color-neutral;
+  padding: 10% 5%;
+}
+
+.info__flex {
+  @include flex(wrap, row, space-between, center);
+
+  @include respond-to(xs) {
+    margin-bottom: ($core-margin * 5);
+  }
+}
+
+.info__title {
+  display: inline-block;
+  color: $core-color-dark;
+}

@@ -1,5 +1,6 @@
 // Typography.........The sites typography faces.
 
+// Maven Pro
 @font-face {
   font-family: "Maven Pro";
   src: url("../fonts/maven-pro/maven-pro-regular.eot"); /* IE9 */
@@ -10,23 +11,25 @@
   font-style: normal;
   font-weight: $core-font-weight;
 }
+
+// Catamaran
 @font-face {
-  font-family: "Maven Pro";
-  src: url("../fonts/maven-pro/maven-pro-medium.eot"); /* IE9 */
-  src: url("../fonts/maven-pro/maven-pro-medium.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
-  url("../fonts/maven-pro/maven-pro-medium.woff") format("woff"), /* chrome, firefox */
-  url("../fonts/maven-pro/maven-pro-medium.ttf") format("truetype"), /* chrome, firefox, opera, Safari, Android, iOS 4.2+ */
-  url("../fonts/maven-pro/maven-pro-medium.svg#maven-pro") format("svg"); /* iOS 4.1- */
-  font-style: normal;
-  font-weight: $core-tertiary-font-weight;
-}
-@font-face {
-  font-family: "Maven Pro";
-  src: url("../fonts/maven-pro/maven-pro-bold.eot"); /* IE9 */
-  src: url("../fonts/maven-pro/maven-pro-bold.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
-  url("../fonts/maven-pro/maven-pro-bold.woff") format("woff"), /* chrome, firefox */
-  url("../fonts/maven-pro/maven-pro-bold.ttf") format("truetype"), /* chrome, firefox, opera, Safari, Android, iOS 4.2+ */
-  url("../fonts/maven-pro/maven-pro-bold.svg#maven-pro") format("svg"); /* iOS 4.1- */
+  font-family: "Catamaran";
+  src: url("../fonts/catamaran/catamaran-medium.eot"); /* IE9 */
+  src: url("../fonts/catamaran/catamaran-medium.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
+  url("../fonts/catamaran/catamaran-medium.woff") format("woff"), /* chrome, firefox */
+  url("../fonts/catamaran/catamaran-medium.ttf") format("truetype"), /* chrome, firefox, opera, Safari, Android, iOS 4.2+ */
+  url("../fonts/catamaran/catamaran-medium.svg#maven-pro") format("svg"); /* iOS 4.1- */
   font-style: normal;
   font-weight: $core-secondary-font-weight;
+}
+@font-face {
+  font-family: "Catamaran";
+  src: url("../fonts/catamaran/catamaran-bold.eot"); /* IE9 */
+  src: url("../fonts/catamaran/catamaran-bold.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
+  url("../fonts/catamaran/catamaran-bold.woff") format("woff"), /* chrome, firefox */
+  url("../fonts/catamaran/catamaran-bold.ttf") format("truetype"), /* chrome, firefox, opera, Safari, Android, iOS 4.2+ */
+  url("../fonts/catamaran/catamaran-bold.svg#maven-pro") format("svg"); /* iOS 4.1- */
+  font-style: normal;
+  font-weight: $core-tertiary-font-weight;
 }

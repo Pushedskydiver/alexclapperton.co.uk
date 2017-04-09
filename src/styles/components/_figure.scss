@@ -3,21 +3,4 @@
 .site-figure {
   width: 100%;
   margin: ($core-margin * 2) auto;
-
-  @include respond-to(m) {
-    width: 80%;
-  }
-}
-
-.site-figure__img {
-  width: 100%;
-}
-
-.site-figure__caption {
-  background: $core-color-neutral;
-  color: $core-color-brand;
-  @include font-size($p-font-sizes);
-  text-align: center;
-  line-height: $core-line-height;
-  padding: ($core-padding / 2) $core-padding;
 }

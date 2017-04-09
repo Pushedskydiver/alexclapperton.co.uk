@@ -2,7 +2,13 @@
 
 .container {
   position: relative;
-  padding: 0 20px;
+  padding-right: 20px;
+  padding-left: 20px;
+
+  @include respond-to(xs) {
+    padding-right: 30px;
+    padding-left: 30px;
+  }
 
   @include respond-to(m) {
     width: 750px;
