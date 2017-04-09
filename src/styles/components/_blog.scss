@@ -1,0 +1,49 @@
+// Blog...............Blog styles.
+
+.blog {
+  padding: 30px 0;
+}
+
+.blog__content {
+  display: grid;
+  grid-gap: 40px 0;
+  grid-template-columns: 1fr;
+  grid-template-rows: min-content;
+}
+
+.blog__item {
+  text-decoration: none;
+}
+
+.blog__img {
+  margin-bottom: ($core-margin * 2);
+}
+
+.blog__title {
+  margin-bottom: ($core-margin * 1.4);
+}
+
+.blog__date {
+  display: block;
+  color: $core-color-dark;
+  margin-bottom: ($core-margin / 2);
+  font-weight: $core-secondary-font-weight;
+}
+
+.blog__body {
+  color: $core-color-body;
+}
+
+.blog__link-body {
+  display: inline-block;
+  font-weight: $core-secondary-font-weight;
+  vertical-align: middle;
+  @include font-size($btn-font-sizes);
+}
+
+.blog__link-icon {
+  display: inline-block;
+  fill: $core-color-brand;
+  vertical-align: middle;
+  @include rotate(180);
+}

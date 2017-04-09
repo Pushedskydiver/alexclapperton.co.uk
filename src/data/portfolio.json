@@ -1,28 +1,22 @@
 {
   "2016": [
     {
-      "title": "Love <span class=\"portfolio__item-title--bold\">Manchester</span>",
+      "title": "Love Manchester Website",
+      "description": "University Project",
       "slug": "love-manchester-website/",
       "title-attr": "Link to Love Manchester portfolio page.",
-      "description": "An international student website about Manchester",
       "src": "love-manchester-website/love-manchester-thumbnail",
       "alt": "Wide shot of Manchester Central building at the rear.",
-      "type": "uni",
-      "university": true,
-      "universityTitle": "University Project",
-      "universityIcon": "graduation-cap"
+      "type": "uni"
     },
     {
-      "title": "Website <span class=\"portfolio__item-title--bold\">Portfolio 2015</span>",
+      "title": "Website Portfolio 2015",
+      "description": "Personal Project",
       "slug": "website-portfolio-2015/",
       "title-attr": "Link to website portfolio 2015 portfolio page.",
-      "description": "My personal portfolio website I made in 2015",
       "src": "website-portfolio-2015/website-portfolio-2015-thumbnail",
       "alt": "Two portrait images of Alex Clapperton in a diamond shape.",
-      "type": "personal",
-      "personal": true,
-      "personalTitle": "Personal Project",
-      "persoanlIcon": "user"
+      "type": "personal"
     }
   ]
 }

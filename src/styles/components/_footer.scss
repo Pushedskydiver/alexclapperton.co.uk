@@ -1,6 +1,67 @@
 // Footer.............Footer styles.
 
 .footer {
-  background-color: $core-color-dark;
-  padding: 50px 0;
+  background-color: $core-color-neutral;
+  padding: 30px 0 0 0;
+}
+
+.footer__content {
+  display: grid;
+  grid-gap: 40px 0;
+  grid-template-columns: auto auto;
+  grid-template-rows: min-content;
+  justify-content: start;
+}
+
+.footer__title {
+  margin-bottom: ($core-margin / 1.2);
+  font-family: $core-secondary-font-family;
+  @include font-size($h4-font-sizes);
+
+  &--first {
+    color: #50abf1;
+  }
+
+  &--second {
+    color: $core-color-brand;
+  }
+
+  &--third {
+    color: #d63d6c;
+  }
+
+  &--fourth {
+    color: #6cb051;
+  }
+}
+
+.footer__item {
+  margin-bottom: ($core-margin / 2);
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.footer__link {
+  color: inherit;
+
+  &:not(&--email) {
+    text-decoration: none;
+  }
+
+  &--email {
+    font-weight: $core-secondary-font-weight;
+  }
+}
+
+.footer__bottom {
+  background-color: darken($core-color-neutral, 5%);
+  margin-top: 30px;
+  padding: $core-padding 0;
+}
+
+.footer__bottom-body {
+  color: lighten($core-color-body, 10%);
+  margin-bottom: 0;
 }

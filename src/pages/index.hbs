@@ -26,28 +26,109 @@ priority: 1.0
 
 <!-- ******************** INFO : Start ******************** -->
 <section class="info" id="content">
-  <div class="info__flex">
-    <h2 class="info__title">A little bit about me</h2>
-    <!-- BEGIN : SYMBOL -->
-    <div class="symbol symbol--secondary">
-      <svg class="symbol__icon symbol__icon--secondary" width="20" height="20">
-        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/icons/sprite.svg#about"></use>
-      </svg>
+  <!-- BEGIN : CONTAINER -->
+  <div class="container">
+    <!-- BEGIN : INFO CONTENT -->
+    <div class="info__content">
+      <h2 class="info__title">A little bit about me</h2>
+      <!-- BEGIN : SYMBOL -->
+      <div class="symbol symbol--secondary">
+        <svg class="symbol__icon symbol__icon--secondary" width="20" height="20">
+          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/icons/sprite.svg#about"></use>
+        </svg>
+      </div>
+      <!-- END : SYMBOL /-->
     </div>
-    <!-- END : SYMBOL /-->
+    <!-- END : INFO CONTENT /-->
+    <p class="info__body">I am Alex a 24 year old Front-End Website Developer from Manchester. I have had a passion for Web Development since 2012 where I started my own little Wordpress site where I blogged about my love for Apple products.</p>
+    <a class="btn btn--primary" href="#">
+      <span class="btn__body">More about Alex</span>
+      <svg class="btn__icon btn__icon--primary btn__icon--rotate" width="20" height="20">
+        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/icons/sprite.svg#arrow"></use>
+      </svg>
+    </a>
+    <a class="btn btn--primary" href="#">
+      <span class="btn__body">Download my CV</span>
+      <svg class="btn__icon btn__icon--primary" width="20" height="20">
+        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/icons/sprite.svg#download"></use>
+      </svg>
+    </a>
   </div>
-  <p class="info__body">I am Aaron a 24 year old Front-End Website Developer from Manchester. I have had a passion for Web Development since 2012 where I started my own little Wordpress site where I blogged about my love for Apple products.</p>
-  <a class="btn btn--primary" href="#">
-    More about Alex
-    <svg class="btn__icon btn__icon--primary btn__icon--rotate" width="20" height="20">
-      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/icons/sprite.svg#arrow"></use>
-    </svg>
-  </a>
-  <a class="btn btn--primary" href="#">
-    Download my CV
-    <svg class="btn__icon btn__icon--primary" width="20" height="20">
-      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/icons/sprite.svg#download"></use>
-    </svg>
-  </a>
+  <!-- END : CONTAINER /-->
 </section>
 <!-- ******************** INFO : End ******************** /-->
+
+
+<!-- ******************** BAR : Start ******************** -->
+<section class="bar">
+  <!-- BEGIN : CONTAINER -->
+  <div class="container">
+    <!-- BEGIN : BAR CONTENT -->
+    <div class="bar__content">
+      <h2 class="bar__title">Browse through my <br> recent projects</h2>
+      <!-- BEGIN : SYMBOL -->
+      <div class="symbol symbol--primary">
+        <svg class="symbol__icon symbol__icon--primary" width="20" height="20">
+          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/icons/sprite.svg#portfolio"></use>
+        </svg>
+      </div>
+      <!-- END : SYMBOL /-->
+    </div>
+    <!-- END : BAR CONTENT /-->
+  </div>
+  <!-- END : CONTAINER /-->
+</section>
+<!-- ******************** BAR : End ******************** /-->
+
+
+<!-- ******************** PORTFOLIO : Start ******************** -->
+<section class="portfolio">
+  <div class="container">
+    <div class="portfolio__content">
+      {{#each_upto portfolio.[2016] 3}}
+        {{>portfolio}}
+      {{/each_upto}}
+      <a class="portfolio__link" href="#">All Projects</a>
+    </div>
+  </div>
+</section>
+<!-- ******************** PORTFOLIO : End ******************** /-->
+
+
+<!-- ******************** BAR : Start ******************** -->
+<section class="bar">
+  <!-- BEGIN : CONTAINER -->
+  <div class="container">
+    <!-- BEGIN : BAR CONTENT -->
+    <div class="bar__content">
+      <h2 class="bar__title">Read my recent <br> blog posts</h2>
+      <!-- BEGIN : SYMBOL -->
+      <div class="symbol symbol--primary">
+        <svg class="symbol__icon symbol__icon--primary" width="20" height="20">
+          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/icons/sprite.svg#blog"></use>
+        </svg>
+      </div>
+      <!-- END : SYMBOL /-->
+    </div>
+    <!-- END : BAR CONTENT /-->
+  </div>
+  <!-- END : CONTAINER /-->
+</section>
+<!-- ******************** BAR : End ******************** /-->
+
+
+<!-- ******************** PORTFOLIO : Start ******************** -->
+<section class="blog">
+  <!-- BEGIN : CONTAINER -->
+  <div class="container">
+    <!-- BEGIN : BLOG CONTENT -->
+    <div class="blog__content">
+      {{#each_upto articles.[2017] 3}}
+        {{>article}}
+      {{/each_upto}}
+    </div>
+    <!-- END : BLOG CONTENT /-->
+  </div>
+  <!-- END : CONTAINER /-->
+</section>
+<!-- ******************** PORTFOLIO : End ******************** /-->

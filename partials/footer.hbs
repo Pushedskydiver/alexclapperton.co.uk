@@ -2,9 +2,43 @@
 <footer class="footer" id="footer" role="contentinfo">
   <!-- BEGIN : CONTAINER -->
   <div class="container">
-
+    <!-- BEGIN : FOOTER CONTENT -->
+    <div class="footer__content">
+      <!-- BEGIN : FOOTER LIST -->
+      <ul class="footer__list">
+        <li class="footer__title footer__title--first">Useful Links</li>
+        {{#each global.navigation}}
+          <li class="footer__item"><a class="footer__link" href="{{url}}" title="{{title-attr}}">{{title}}</a></li>
+        {{/each}}
+      </ul>
+      <!-- END : FOOTER LIST /-->
+      <!-- BEGIN : FOOTER LIST -->
+      <ul class="footer__list">
+        <li class="footer__title footer__title--second">Social</li>
+        {{#each global.social}}
+          <li class="footer__item"><a class="footer__link" href="{{url}}" title="{{title-attr}}">{{title}}</a></li>
+        {{/each}}
+      </ul>
+      <!-- END : FOOTER LIST /-->
+      <!-- BEGIN : FOOTER LIST -->
+      <ul class="footer__list">
+        <li class="footer__title footer__title--third">Contact Details</li>
+        <li class="footer__item">Phone: <strong>{{global.phone}}</strong></li>
+        <li class="footer__item">Email: <a class="footer__link footer__link--email" href="mailto:{{global.email}}">{{global.email}}</a></li>
+      </ul>
+      <!-- END : FOOTER LIST /-->
+    </div>
+    <!-- END : FOOTER CONTENT /-->
   </div>
   <!-- END : CONTAINER /-->
+  <div class="footer__bottom">
+    <!-- BEGIN : CONTAINER -->
+    <div class="container">
+      <p class="footer__bottom-body">Copyright &copy; <script type="text/javascript">document.write(new Date().getFullYear());</script> Alex Clapperton.</p>
+    </div>
+    <!-- END : CONTAINER /-->
+  </div>
+  <!-- END : FOOTER BOTTOM /-->
 </footer>
 <!-- ******************** SITE FOOTER : End /******************** /-->
 

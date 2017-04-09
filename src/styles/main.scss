@@ -39,15 +39,17 @@
 * 
 * COMPONENTS
 *  Banner.............Top page banner styles.
+*  Bar................Title bar styles.
+*  Blog...............Blog styles.
 *  Breadcrumbs........Simple breadcrumbs styles.
 *  Butons.............Button styles.
-*  Figure.............Figure styles.
 *  Footer.............Footer styles.
 *  Header.............The sites header styles.
 *  Info...............About me info block styles.
 *  Logo...............Site logo styles.
 *  Nav primary........The sites main nav.
 *  Notices............The sites notice styles for JS turned off etc.
+*  Portfolio..........Portfolio styles.
 *  Prism - code snippet syntax highlighter
 *  Scroll to top......Scroll to top button styles.
 *  Skip links.........The sites skip to links.
@@ -75,15 +77,17 @@
 @import "/Users/alih2106/Desktop/Desktop - MacBook/website/src/styles/objects/_layout.scss";
 @import "/Users/alih2106/Desktop/Desktop - MacBook/website/src/styles/objects/_loader.scss";
 @import "/Users/alih2106/Desktop/Desktop - MacBook/website/src/styles/components/_banner.scss";
+@import "/Users/alih2106/Desktop/Desktop - MacBook/website/src/styles/components/_bar.scss";
+@import "/Users/alih2106/Desktop/Desktop - MacBook/website/src/styles/components/_blog.scss";
 @import "/Users/alih2106/Desktop/Desktop - MacBook/website/src/styles/components/_breadcrumbs.scss";
 @import "/Users/alih2106/Desktop/Desktop - MacBook/website/src/styles/components/_buttons.scss";
-@import "/Users/alih2106/Desktop/Desktop - MacBook/website/src/styles/components/_figure.scss";
 @import "/Users/alih2106/Desktop/Desktop - MacBook/website/src/styles/components/_footer.scss";
 @import "/Users/alih2106/Desktop/Desktop - MacBook/website/src/styles/components/_header.scss";
 @import "/Users/alih2106/Desktop/Desktop - MacBook/website/src/styles/components/_info.scss";
 @import "/Users/alih2106/Desktop/Desktop - MacBook/website/src/styles/components/_logo.scss";
 @import "/Users/alih2106/Desktop/Desktop - MacBook/website/src/styles/components/_navigation.scss";
 @import "/Users/alih2106/Desktop/Desktop - MacBook/website/src/styles/components/_notices.scss";
+@import "/Users/alih2106/Desktop/Desktop - MacBook/website/src/styles/components/_portfolio.scss";
 @import "/Users/alih2106/Desktop/Desktop - MacBook/website/src/styles/components/_prism.scss";
 @import "/Users/alih2106/Desktop/Desktop - MacBook/website/src/styles/components/_scroll-top.scss";
 @import "/Users/alih2106/Desktop/Desktop - MacBook/website/src/styles/components/_skip-links.scss";

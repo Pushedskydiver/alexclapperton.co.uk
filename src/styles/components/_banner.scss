@@ -8,7 +8,7 @@
   height: calc(100vh - 127px);
 
   @include respond-to(xs) {
-    height: calc(100vh - 149px);
+    height: calc(100vh - 163px);
   }
 }
 
@@ -57,11 +57,12 @@
 .banner__title {
   margin-bottom: ($core-margin * 3);
   color: $core-color-light;
-  font-weight: $core-tertiary-font-weight;
+  font-weight: $core-secondary-font-weight;
 }
 
 .banner__body {
   color: $core-color-light;
+  @include font-size($small-font-sizes);
 }
 
 .banner__scroll {

@@ -10,6 +10,7 @@
   left: 0;
   width: 100%;
   background-color: $core-color-brand;
+  z-index: z(kilo);
 }
 
 .nav__item {
@@ -28,19 +29,20 @@
   }
 
   @include respond-to(xs) {
-    padding-top: ($core-padding / 1.3);
-    padding-bottom: ($core-padding / 1.3);
+    padding-top: ($core-padding / 1.4);
+    padding-bottom: ($core-padding / 1.4);
   }
 }
 
 .nav__icon {
   display: block;
   width: 30px;
-  height: auto;
+  height: 30px;
   fill: $core-color-light;
   margin: 0 auto;
 
   @include respond-to(xs) {
-    width: 38px;
+    width: 32px;
+    height: 32px;
   }
 }

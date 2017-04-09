@@ -1,0 +1,15 @@
+// Bar................Title bar styles.
+ .bar {
+   background-color: $core-color-brand;
+   padding: 40px 0;
+ }
+
+ .bar__content {
+   @include flex(wrap, row, space-between, center);
+ }
+
+ .bar__title {
+   display: inline-block;
+   margin-bottom: 0;
+   color: $core-color-light;
+ }

@@ -12,24 +12,34 @@
   font-weight: $core-font-weight;
 }
 
-// Catamaran
+// prompt
 @font-face {
-  font-family: "Catamaran";
-  src: url("../fonts/catamaran/catamaran-medium.eot"); /* IE9 */
-  src: url("../fonts/catamaran/catamaran-medium.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
-  url("../fonts/catamaran/catamaran-medium.woff") format("woff"), /* chrome, firefox */
-  url("../fonts/catamaran/catamaran-medium.ttf") format("truetype"), /* chrome, firefox, opera, Safari, Android, iOS 4.2+ */
-  url("../fonts/catamaran/catamaran-medium.svg#maven-pro") format("svg"); /* iOS 4.1- */
+  font-family: "Prompt";
+  src: url("../fonts/prompt/prompt-regular.eot"); /* IE9 */
+  src: url("../fonts/prompt/prompt-regular.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
+  url("../fonts/prompt/prompt-regular.woff") format("woff"), /* chrome, firefox */
+  url("../fonts/prompt/prompt-regular.ttf") format("truetype"), /* chrome, firefox, opera, Safari, Android, iOS 4.2+ */
+  url("../fonts/prompt/prompt-regular.svg#maven-pro") format("svg"); /* iOS 4.1- */
+  font-style: normal;
+  font-weight: $core-font-weight;
+}
+@font-face {
+  font-family: "Prompt";
+  src: url("../fonts/prompt/prompt-bold.eot"); /* IE9 */
+  src: url("../fonts/prompt/prompt-bold.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
+  url("../fonts/prompt/prompt-bold.woff") format("woff"), /* chrome, firefox */
+  url("../fonts/prompt/prompt-bold.ttf") format("truetype"), /* chrome, firefox, opera, Safari, Android, iOS 4.2+ */
+  url("../fonts/prompt/prompt-bold.svg#maven-pro") format("svg"); /* iOS 4.1- */
   font-style: normal;
   font-weight: $core-secondary-font-weight;
 }
 @font-face {
-  font-family: "Catamaran";
-  src: url("../fonts/catamaran/catamaran-bold.eot"); /* IE9 */
-  src: url("../fonts/catamaran/catamaran-bold.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
-  url("../fonts/catamaran/catamaran-bold.woff") format("woff"), /* chrome, firefox */
-  url("../fonts/catamaran/catamaran-bold.ttf") format("truetype"), /* chrome, firefox, opera, Safari, Android, iOS 4.2+ */
-  url("../fonts/catamaran/catamaran-bold.svg#maven-pro") format("svg"); /* iOS 4.1- */
+  font-family: "Prompt";
+  src: url("../fonts/prompt/prompt-light.eot"); /* IE9 */
+  src: url("../fonts/prompt/prompt-light.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
+  url("../fonts/prompt/prompt-light.woff") format("woff"), /* chrome, firefox */
+  url("../fonts/prompt/prompt-light.ttf") format("truetype"), /* chrome, firefox, opera, Safari, Android, iOS 4.2+ */
+  url("../fonts/prompt/prompt-light.svg#maven-pro") format("svg"); /* iOS 4.1- */
   font-style: normal;
   font-weight: $core-tertiary-font-weight;
 }

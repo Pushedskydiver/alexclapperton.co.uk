@@ -3,18 +3,35 @@
 .info {
   position: relative;
   background-color: $core-color-neutral;
-  padding: 10% 5%;
+  padding: 30px 0;
 }
 
-.info__flex {
+.info__content {
   @include flex(wrap, row, space-between, center);
 
   @include respond-to(xs) {
-    margin-bottom: ($core-margin * 5);
+    margin-bottom: ($core-margin * 4);
   }
 }
 
 .info__title {
   display: inline-block;
+  position: relative;
+  margin-bottom: 0;
   color: $core-color-dark;
+
+  &::before {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 30%;
+    height: 2px;
+    background-color: $core-color-brand;
+  }
+}
+
+.info__body {
+  color: $core-color-body;
+  margin-bottom: ($core-margin * 2);
 }

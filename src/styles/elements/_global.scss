@@ -39,7 +39,7 @@ body ::selection {
 h1 {
   color: $core-color-brand;
   font-family: $core-secondary-font-family;
-  font-weight: $core-secondary-font-weight;
+  font-weight: $core-font-weight;
   margin: 0 0 $core-margin 0;
   line-height: $core-secondary-line-height;
   @include font-size($h1-font-sizes);
@@ -48,7 +48,7 @@ h1 {
 h2 {
   color: $core-color-brand;
   font-family: $core-secondary-font-family;
-  font-weight: $core-secondary-font-weight;
+  font-weight: $core-font-weight;
   margin: 0 0 $core-margin 0;
   line-height: $core-secondary-line-height;
   @include font-size($h2-font-sizes);
@@ -57,7 +57,7 @@ h2 {
 h3 {
   color: $core-color-brand;
   font-family: $core-secondary-font-family;
-  font-weight: $core-secondary-font-weight;
+  font-weight: $core-font-weight;
   margin: 0 0 $core-margin 0;
   line-height: $core-secondary-line-height;
   @include font-size($h3-font-sizes);
@@ -66,7 +66,7 @@ h3 {
 h4 {
   color: $core-color-brand;
   font-family: $core-secondary-font-family;
-  font-weight: $core-secondary-font-weight;
+  font-weight: $core-font-weight;
   margin: 0 0 $core-margin 0;
   line-height: $core-secondary-line-height;
   @include font-size($h4-font-sizes);
@@ -75,7 +75,7 @@ h4 {
 h5 {
   color: $core-color-brand;
   font-family: $core-secondary-font-family;
-  font-weight: $core-secondary-font-weight;
+  font-weight: $core-font-weight;
   margin: 0 0 $core-margin 0;
   line-height: $core-secondary-line-height;
   @include font-size($h5-font-sizes);
@@ -84,7 +84,7 @@ h5 {
 h6 {
   color: $core-color-brand;
   font-family: $core-secondary-font-family;
-  font-weight: $core-secondary-font-weight;
+  font-weight: $core-font-weight;
   margin: 0 0 $core-margin 0;
   line-height: $core-secondary-line-height;
   @include font-size($h6-font-sizes);
@@ -94,7 +94,7 @@ p {
   @include font-size($p-font-sizes);
   font-weight: $core-font-weight;
   line-height: $core-line-height;
-  margin: 0 0 15px 0;
+  margin: 0 0 ($core-margin * 1.5) 0;
 }
 
 ul {
