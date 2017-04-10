@@ -65,6 +65,12 @@
         border-bottom: 1px dotted $core-color-dark;
       }
     }
+
+    &--email {
+      &:hover {
+        color: $core-color-brand;
+      }
+    }
   }
 }
 

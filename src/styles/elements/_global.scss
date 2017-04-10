@@ -20,6 +20,7 @@ body {
   padding-bottom: 67px;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
+  @include fadeIn;
 
   @include respond-to(s) {
     padding-bottom: 0;

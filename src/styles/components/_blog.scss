@@ -5,14 +5,16 @@
 }
 
 .blog__content {
-  display: grid;
-  grid-gap: 40px 0;
-  grid-template-columns: 1fr;
-  grid-template-rows: min-content;
+  @supports (display: grid) {
+    display: grid;
+    grid-gap: 40px;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
 
-  @include respond-to(l) {
-    grid-gap: 30px;
-    grid-template-columns: 1fr 1fr 1fr;
+    @include respond-to(l) {
+      grid-gap: 30px;
+      grid-template-columns: repeat(3, 1fr);
+    }
   }
 }
 

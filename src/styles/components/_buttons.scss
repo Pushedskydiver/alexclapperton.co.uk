@@ -15,6 +15,14 @@
     background-color: $core-color-brand;
     color: $core-color-light;
   }
+
+  @include respond-to(l) {
+    &--primary {
+      &:hover {
+        background-color: $core-color-dark;
+      }
+    }
+  }
 }
 
 .btn__body {

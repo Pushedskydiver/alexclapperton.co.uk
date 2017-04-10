@@ -2,25 +2,31 @@
 
 .nav {
   position: fixed;
-  display: grid;
-  grid-gap: 0;
-  grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: min-content;
   bottom: 0;
   left: 0;
   width: 100%;
   background-color: $core-color-brand;
   z-index: z(kilo);
 
-  @include respond-to(s) {
-    grid-template-columns: repeat(5, 1fr);
-  }
-
   @include respond-to(m) {
-    grid-area: nav;
-    grid-template-rows: repeat(3, 22px);
     position: static;
     background-color: transparent;
+  }
+
+  @supports (display: grid) {
+    display: grid;
+    grid-gap: 0;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: auto;
+
+    @include respond-to(s) {
+      grid-template-columns: repeat(5, 1fr);
+    }
+
+    @include respond-to(m) {
+      grid-area: nav;
+      grid-template-rows: 4.5em;
+    }
   }
 }
 
@@ -52,7 +58,6 @@
 
   @include respond-to(m) {
     position: relative;
-    grid-row: 1 / span 3;
     color: $core-color-dark;
     padding: 0;
     @include flex(null, column, center, center);
@@ -90,7 +95,7 @@
         @include transition-03;
       }
     }
-    
+
     &:hover {
       color: $core-color-brand;
 

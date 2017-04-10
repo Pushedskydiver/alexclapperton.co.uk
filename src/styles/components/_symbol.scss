@@ -54,7 +54,7 @@
       }
 
       @include respond-to(l) {
-        top: calc(50% - 20px);
+        top: calc(50% - 25px);
         right: 62px;
       }
     }
@@ -62,7 +62,6 @@
     &--secondary {
       position: relative;
       background-color: $core-color-brand;
-      margin-right: 26px;
 
       &::before {
         border: 3px $core-border-style $core-color-light;
@@ -73,12 +72,13 @@
       }
 
       @include respond-to(s) {
-        margin-right: 32px;
+        position: absolute;
+        top: -15px;
+        right: 72px;
       }
 
       @include respond-to(m) {
-        position: absolute;
-        top: calc(50% - 25px);
+        top: calc(50% - 15px);
         right: 62px;
         width: 100px;
         height: 100px;
