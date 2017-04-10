@@ -6,33 +6,18 @@
     // ======================================
     //    Smooth scroll to top button
     // ======================================
-    function init_smooth_scroll_top() {
+    function init_scroll_top() {
       var ELEMENT_scrollBtn = document.querySelector('[data-scroll-top]');
 
-      var CLASS_scrollBtnVisible = 'scroll__btn--visible;';
+      var CLASS_scrollBtnVisible = 'scroll-top--visible';
 
       window.addEventListener('scroll', function(){
-        if (window.scrollTop > 600) {
+        if (window.pageYOffset > 600) {
           ELEMENT_scrollBtn.classList.add(CLASS_scrollBtnVisible);
         } else {
           ELEMENT_scrollBtn.classList.remove(CLASS_scrollBtnVisible);
         }
       });
-
-      ELEMENT_scrollBtn.addEventListener('click', function() {
-        scrollTo(document.body, 0, 100);
-      });
-
-      function scrollTo(element, to, duration) {
-        if (duration < 0) return;
-        var difference = to - element.scrollTop;
-        var perTick = difference / duration * 2;
-
-        setTimeout(function() {
-          element.scrollTop = element.scrollTop + perTick;
-          scrollTo(element, to, duration - 2);
-        }, 10);
-      }
     }
 
 
@@ -100,12 +85,12 @@
     // ==============================================
     init_active_nav();
 
+    if (window.outerWidth > 768) {
+      init_scroll_top();
+    }
+
     //if(window.location.pathname == '/my-work/') {
       //init_portfolio();
     //}
-
-    if (window.outerWidth > 768) {
-      init_smooth_scroll_top();
-    }
 
 })();
