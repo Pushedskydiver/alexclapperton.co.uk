@@ -19,7 +19,7 @@
     <nav class="nav">
       {{#each global.navigation}}
       <!-- BEGIN : NAV ITEM -->
-        <a class="nav__item" href="{{url}}" title="{{title-attr}}">
+        <a class="nav__item" href="{{url}}" title="{{title-attr}}" data-item-{{slug}}>
           <svg width="20" height="20" class="nav__icon">
             <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/icons/sprite.svg#{{icon}}"></use>
           </svg>

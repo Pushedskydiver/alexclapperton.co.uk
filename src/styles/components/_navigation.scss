@@ -11,6 +11,17 @@
   width: 100%;
   background-color: $core-color-brand;
   z-index: z(kilo);
+
+  @include respond-to(s) {
+    grid-template-columns: repeat(5, 1fr);
+  }
+
+  @include respond-to(m) {
+    grid-area: nav;
+    grid-template-rows: repeat(3, 22px);
+    position: static;
+    background-color: transparent;
+  }
 }
 
 .nav__item {
@@ -32,6 +43,62 @@
     padding-top: ($core-padding / 1.4);
     padding-bottom: ($core-padding / 1.4);
   }
+
+  @include respond-to(s) {
+    &:first-child {
+      @include flex(null, column, center, center);
+    }
+  }
+
+  @include respond-to(m) {
+    position: relative;
+    grid-row: 1 / span 3;
+    color: $core-color-dark;
+    padding: 0;
+    @include flex(null, column, center, center);
+
+    &--active {
+      background-color: transparent;
+      color: $core-color-brand;
+
+      &::after {
+        content: '';
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        width: 1px;
+        height: ($core-grid-unit * 1.5);
+        background-color: $core-color-brand;
+        margin: 0 auto;
+      }
+    }
+  }
+
+  @include respond-to(l) {
+    &:not(&--active) {
+      &::after {
+        content: '';
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        width: 1px;
+        height: 0;
+        background-color: $core-color-brand;
+        margin: 0 auto;
+        @include transition-03;
+      }
+    }
+    
+    &:hover {
+      color: $core-color-brand;
+
+      &::after {
+        height: ($core-grid-unit * 1.5);
+      }
+    }
+  }
 }
 
 .nav__icon {
@@ -44,5 +111,17 @@
   @include respond-to(xs) {
     width: 32px;
     height: 32px;
+  }
+
+  @include respond-to(s) {
+    width: 36px;
+    height: 36px;
+  }
+
+  @include respond-to(m) {
+    display: none;
+    width: 0;
+    height: 0;
+    visibility: hidden;
   }
 }

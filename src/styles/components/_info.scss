@@ -4,6 +4,11 @@
   position: relative;
   background-color: $core-color-neutral;
   padding: 30px 0;
+
+  @include respond-to(s) {
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
 }
 
 .info__content {
@@ -11,6 +16,14 @@
 
   @include respond-to(xs) {
     margin-bottom: ($core-margin * 4);
+  }
+
+  @include respond-to(m) {
+    margin-bottom: ($core-margin * 3);
+  }
+
+  @include respond-to(l) {
+    margin-bottom: ($core-margin * 1.5);
   }
 }
 
@@ -29,9 +42,28 @@
     height: 2px;
     background-color: $core-color-brand;
   }
+
+  @include respond-to(l) {
+
+    &::before {
+      top: calc(50% + 1px);
+      bottom: initial;
+      left: 105%;
+      width: 220px;
+      transform: translateY(-50%);
+    }
+  }
 }
 
 .info__body {
   color: $core-color-body;
   margin-bottom: ($core-margin * 2);
+
+  @include respond-to(m) {
+    max-width: 500px;
+  }
+
+  @include respond-to(l) {
+    max-width: 550px;
+  }
 }

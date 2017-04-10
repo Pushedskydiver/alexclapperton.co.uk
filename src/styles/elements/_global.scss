@@ -52,6 +52,10 @@ h2 {
   margin: 0 0 $core-margin 0;
   line-height: $core-secondary-line-height;
   @include font-size($h2-font-sizes);
+
+  @include respond-to(l) {
+    font-weight: $core-tertiary-font-weight;
+  }
 }
 
 h3 {

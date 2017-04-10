@@ -1,24 +1,49 @@
 // Banner.............Top page banner styles.
 
 .banner {
+  @include respond-to(m) {
+    background-image: url('../images/banner/banner--desktop.jpg');
+    background-size: cover;
+    background-position: top center;
+    background-repeat: no-repeat;
+  }
+}
+
+.banner__content {
   display: grid;
-  grid-gap: 0;
-  grid-template-columns: 1fr;
-  grid-template-rows: 1fr;
-  height: calc(100vh - 127px);
+  grid-gap: 2em;
+  grid-template-columns: 1fr 1fr 1fr 35px 1fr 1fr 1fr;
+  grid-template-rows: 10px 1fr 1fr 40px 10px;
 
   @include respond-to(xs) {
-    height: calc(100vh - 163px);
+    grid-gap: 1.5em;
+    grid-template-rows: 20px 1fr 1fr 1fr 40px 20px;
+  }
+
+  @include respond-to(s) {
+    grid-template-columns: 1fr 1fr 1fr 40px 1fr 1fr 1fr;
+  }
+
+  @include respond-to(m) {
+    grid-gap: 1em;
+    grid-template-columns: 1fr 1fr 1fr 50px 1fr 1fr 1fr;
+    grid-template-rows: 50px 1fr 1fr 1fr 50px 50px;
+    align-items: center;
+  }
+
+  @include respond-to(l) {
+    grid-gap: 1.5em;
+    grid-template-columns: 1fr 1fr 1fr 35px 1fr 1fr 1fr;
+    grid-template-rows: 50px 1fr 1fr 1fr 35px 50px;
   }
 }
 
 .banner__block {
   position: relative;
-  width: 250px;
-  height: 250px;
+  grid-column: 1 / span 7;
+  grid-row: 2 / span 2;
   background-color: $core-color-brand;
   padding: 10%;
-  align-self: center;
 
   &::before {
     content: '';
@@ -35,7 +60,7 @@
   }
 
   @include respond-to(xs) {
-    margin-top: -125px;
+    grid-column-end: span 5;
 
     &::after {
       content: '';
@@ -52,26 +77,72 @@
       z-index: -2;
     }
   }
+
+  @include respond-to(s) {
+    padding: 45px;
+
+    &::before {
+      border-width: 8px;
+    }
+
+    &::after {
+      border-width: 13px;
+    }
+  }
+
+  @include respond-to(m) {
+    grid-column-end: span 3;
+
+    &::before {
+      z-index: z(beta);
+    }
+
+    &::after {
+      background-image: none;
+      z-index: z(alpha);
+    }
+  }
+
+  @include respond-to(l) {
+    grid-column-end: span 2;
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
 }
 
 .banner__title {
   margin-bottom: ($core-margin * 3);
   color: $core-color-light;
   font-weight: $core-secondary-font-weight;
+
+  @include respond-to(s) {
+    margin-bottom: ($core-margin * 4);
+  }
+
+  @include respond-to(m) {
+    position: relative;
+    z-index: z(beta);
+  }
 }
 
 .banner__body {
   color: $core-color-light;
   @include font-size($small-font-sizes);
+
+  @include respond-to(m) {
+    position: relative;
+    z-index: z(beta);
+  }
 }
 
 .banner__scroll {
-  width: 35px;
-  height: 35px;
-  margin-bottom: $core-margin;
-  align-self: end;
-  justify-self: center;
+  grid-column: 4;
+  grid-row: 4;
   @include fadeInOutDown;
+
+  @include respond-to(xs) {
+    grid-row: 5;
+  }
 }
 
 .banner__scroll-icon {

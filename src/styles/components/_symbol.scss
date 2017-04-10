@@ -8,7 +8,6 @@
     width: 60px;
     height: 60px;
     padding: 3%;
-    transform: translateY(-50%);
     z-index: z(alpha);
 
     &::before {
@@ -39,6 +38,7 @@
       top: calc(50% - 12px);
       right: 55px;
       background-color: $core-color-light;
+      transform: translateY(-50%);
 
       &::before {
         border: 3px $core-border-style $core-color-brand;
@@ -47,12 +47,21 @@
       &::after {
         border: 5px $core-border-style $core-color-light;
       }
+
+      @include respond-to(s) {
+        top: calc(50% - 18px);
+        right: 72px;
+      }
+
+      @include respond-to(l) {
+        top: calc(50% - 20px);
+        right: 62px;
+      }
     }
 
     &--secondary {
       position: relative;
       background-color: $core-color-brand;
-      margin-top: 30px;
       margin-right: 26px;
 
       &::before {
@@ -62,7 +71,66 @@
       &::after {
         border: 5px $core-border-style $core-color-brand;
       }
+
+      @include respond-to(s) {
+        margin-right: 32px;
+      }
+
+      @include respond-to(m) {
+        position: absolute;
+        top: calc(50% - 25px);
+        right: 62px;
+        width: 100px;
+        height: 100px;
+        margin-right: 0;
+        transform: translateY(-50%);
+      }
+
+      @include respond-to(l) {
+        top: calc(50% - 30px);
+        right: 72px;
+        width: 125px;
+        height: 125px;
+      }
     }
+
+    &--tertiary {
+      display: none;
+
+      @include respond-to(l) {
+        display: block;
+        position: absolute;
+        top: calc(50% - 55px);
+        right: 32.5px;
+        left: 0;
+        width: 75px;
+        height: 75px;
+        background-color: $core-color-light;
+        margin: 0 auto;
+        padding: 4%;
+        @include scale(0);
+        @include transition-03;
+
+        &::before {
+          border: 3px $core-border-style $core-color-brand;
+        }
+
+        &::after {
+          border: 5px $core-border-style $core-color-light;
+        }
+      }
+    }
+  }
+
+  @include respond-to(s) {
+    width: 75px;
+    height: 75px;
+  }
+
+  @include respond-to(l) {
+    width: 100px;
+    height: 100px;
+    padding: 1.5%;
   }
 }
 
@@ -76,5 +144,9 @@
 
   &--secondary {
     fill: $core-color-light;
+  }
+
+  &--tertiary {
+    fill: $core-color-brand;
   }
 }

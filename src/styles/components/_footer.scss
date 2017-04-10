@@ -11,6 +11,11 @@
   grid-template-columns: auto auto;
   grid-template-rows: min-content;
   justify-content: start;
+
+  @include respond-to(m) {
+    grid-gap: 8em;
+    grid-template-columns: repeat(3, auto);
+  }
 }
 
 .footer__title {
@@ -52,6 +57,14 @@
 
   &--email {
     font-weight: $core-secondary-font-weight;
+  }
+
+  @include respond-to(l) {
+    &:not(&--email) {
+      &:hover {
+        border-bottom: 1px dotted $core-color-dark;
+      }
+    }
   }
 }
 

@@ -35,4 +35,8 @@
   &--rotate {
     @include rotate(180);
   }
+
+  @include respond-to(s) {
+    width: 25px;
+  }
 }

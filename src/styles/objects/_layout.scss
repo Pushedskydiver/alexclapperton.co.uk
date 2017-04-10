@@ -10,9 +10,16 @@
     padding-left: 30px;
   }
 
+  @include respond-to(s) {
+    padding-right: 40px;
+    padding-left: 40px;
+  }
+
   @include respond-to(m) {
     width: 750px;
     margin: 0 auto;
+    padding-right: 20px;
+    padding-left: 20px;
   }
 
   @include respond-to(l) {

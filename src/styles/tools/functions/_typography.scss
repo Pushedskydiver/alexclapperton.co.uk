@@ -8,15 +8,15 @@
 $p-font-sizes: (
   null: em($core-font-size),
   xs: em(($core-font-size + 1.25)),
-  s: em(($core-font-size + 1.2)),
+  s: em(($core-font-size + 4)),
   m: em(($core-font-size + 1.4)),
-  l: em(($core-font-size + 1.2)),
+  l: em(($core-font-size + 1.45)),
 );
 
 $small-font-sizes: (
   null: em($core-font-size),
   xs: em(($core-font-size + 1)),
-  s: em(($core-font-size + 3)),
+  s: em(($core-font-size + 5)),
   m: em(($core-font-size + 1.4)),
   l: em(($core-font-size + 1.2)),
 );
@@ -24,62 +24,62 @@ $small-font-sizes: (
 $h1-font-sizes: (
   null: em(($core-font-size * 2)),
   xs: em(($core-font-size * 2.2)),
-  s: em(($core-font-size * 2.4)),
-  m: em(($core-font-size * 2.6)),
-  l: em(($core-font-size * 2.8)),
+  s: em(($core-font-size * 2.5)),
+  m: em(($core-font-size * 2.7)),
+  l: em(($core-font-size * 2.6)),
 );
 
 $h2-font-sizes: (
   null: em(($core-font-size * 1.6)),
   xs: em(($core-font-size * 1.8)),
-  s: em(($core-font-size * 2)),
-  m: em(($core-font-size * 2.2)),
-  l: em(($core-font-size * 2.4)),
+  s: em(($core-font-size * 2.15)),
+  m: em(($core-font-size * 2.3)),
+  l: em(($core-font-size * 2.2)),
 );
 
 $h3-font-sizes: (
   null: em(($core-font-size * 1.4)),
   xs: em(($core-font-size * 1.6)),
-  s: em(($core-font-size * 1.8)),
+  s: em(($core-font-size * 1.9)),
   m: em(($core-font-size * 2)),
-  l: em(($core-font-size * 2.2)),
+  l: em(($core-font-size * 1.8)),
 );
 
 $h4-font-sizes: (
   null: em(($core-font-size * 1.3)),
   xs: em(($core-font-size * 1.4)),
-  s: em(($core-font-size * 1.55)),
-  m: em(($core-font-size * 1.7)),
-  l: em(($core-font-size * 1.9)),
+  s: em(($core-font-size * 1.65)),
+  m: em(($core-font-size * 1.8)),
+  l: em(($core-font-size * 1.6)),
 );
 
 $h5-font-sizes: (
   null: em(($core-font-size * 1.2)),
   xs: em(($core-font-size * 1.3)),
-  s: em(($core-font-size * 1.4)),
-  m: em(($core-font-size * 1.5)),
-  l: em(($core-font-size * 1.7)),
+  s: em(($core-font-size * 1.5)),
+  m: em(($core-font-size * 1.65)),
+  l: em(($core-font-size * 1.4)),
 );
 
 $h6-font-sizes: (
   null: em(($core-font-size * 1.1)),
   xs: em(($core-font-size * 1.2)),
-  s: em(($core-font-size * 1.3)),
-  m: em(($core-font-size * 1.4)),
-  l: em(($core-font-size + 1.5)),
+  s: em(($core-font-size * 1.4)),
+  m: em(($core-font-size * 1.5)),
+  l: em(($core-font-size + 1.2)),
 );
 
 $nav-font-sizes: (
   null: em(($core-font-size * 0.9)),
   xs: em(($core-font-size * 1)),
-  s: em(($core-font-size * 1.65)),
-  m: em(($core-font-size * 1.8)),
+  s: em(($core-font-size * 1.3)),
+  m: em(($core-font-size * 1.5)),
   l: em(($core-font-size * 1.3)),
 );
 
 $btn-font-sizes: (
   null: em($core-font-size),
-  s: em(($core-font-size + 2)),
+  s: em(($core-font-size + 4)),
   m: em(($core-font-size + 3)),
   l: em(($core-font-size + 1.2)),
 );
@@ -87,7 +87,7 @@ $btn-font-sizes: (
 $logo-font-sizes: (
   null: em(($core-font-size * 1.9)),
   xs: em(($core-font-size * 2.1)),
-  s: em(($core-font-size * 2.2)),
-  m: em(($core-font-size * 2.3)),
-  l: em(($core-font-size * 2.4)),
+  s: em(($core-font-size * 2.3)),
+  m: em(($core-font-size * 2.5)),
+  l: em(($core-font-size * 2)),
 );

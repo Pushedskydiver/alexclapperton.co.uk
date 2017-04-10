@@ -12,7 +12,7 @@
       var CLASS_scrollBtnVisible = 'scroll__btn--visible;';
 
       window.addEventListener('scroll', function(){
-        if (window.scrollTop() > 600) {
+        if (window.scrollTop > 600) {
           ELEMENT_scrollBtn.classList.add(CLASS_scrollBtnVisible);
         } else {
           ELEMENT_scrollBtn.classList.remove(CLASS_scrollBtnVisible);
@@ -39,23 +39,31 @@
     // ==============================================
     //    Active navigation links
     // ==============================================
-    // function init_active_nav() {
-    //   if(window.location.pathname == '/') {
-    //     $('.nav__link--home').addClass('nav__link--active');
-    //   }
-    //   if(window.location.href.indexOf('my-work/') > -1) {
-    //     $('.nav__link--work').addClass('nav__link--active');
-    //   }
-    //   if(window.location.pathname == '/about/') {
-    //     $('.nav__link--about').addClass('nav__link--active');
-    //   }
-    //   if(window.location.href.indexOf('blog/') > -1) {
-    //     $('.nav__link--blog').addClass('nav__link--active');
-    //   }
-    //   if(window.location.pathname == '/contact/') {
-    //     $('.nav__link--contact').addClass('nav__link--active');
-    //   }
-    // }
+    function init_active_nav() {
+      var ELEMENT_navItemHome = document.querySelector('[data-item-home]'),
+          ELEMENT_navItemAbout = document.querySelector('[data-item-about]'),
+          ELEMENT_navItemPortfolio = document.querySelector('[data-item-portfolio]'),
+          ELEMENT_navItemBlog = document.querySelector('[data-item-blog]'),
+          ELEMENT_navItemContact = document.querySelector('[data-item-contact]');
+
+      var CLASS_navItemActive = 'nav__item--active';
+
+      if (window.location.pathname == '/') {
+        ELEMENT_navItemHome.classList.add('nav__item--active');
+      }
+      if (window.location.href.indexOf('about/') > -1) {
+        ELEMENT_navItemAbout.classList.add('nav__item--active');
+      }
+      if (window.location.pathname == '/my-work/') {
+        ELEMENT_navItemPortfolio.classList.add('nav__item--active');
+      }
+      if (window.location.href.indexOf('blog/') > -1) {
+        ELEMENT_navItemBlog.classList.add('nav__item--active');
+      }
+      if (window.location.pathname == '/contact/') {
+        ELEMENT_navItemContact.classList.add('nav__item--active');
+      }
+    }
 
 
     // ==============================================
@@ -90,6 +98,7 @@
     // ==============================================
     //    Initialise plugins
     // ==============================================
+    init_active_nav();
 
     //if(window.location.pathname == '/my-work/') {
       //init_portfolio();

@@ -3,19 +3,40 @@
 .header {
   padding-top: $core-padding;
   padding-bottom: $core-padding;
+
+  @include respond-to(m) {
+    padding-top: 0;
+    padding-bottom: 0;
+  }
 }
 
 .header__content {
   display: grid;
   grid-gap: 0;
-  grid-template-columns: repeat(3, auto);
   grid-template-rows: min-content;
   grid-template-areas:
     "logo . header-btn";
   align-items: center;
+
+  @include respond-to(m) {
+    grid-template-areas:
+      "logo . nav";
+  }
+
+  @include respond-to(l) {
+    grid-template-areas:
+      "logo . . . nav";
+  }
 }
 
 .header__btn {
   grid-area: header-btn;
   justify-self: end;
+
+  @include respond-to(m) {
+    display: none;
+    width: 0;
+    height: 0;
+    visibility: hidden;
+  }
 }

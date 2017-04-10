@@ -2,6 +2,11 @@
 
 .portfolio {
   padding: 30px 0;
+
+  @include respond-to(m) {
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
 }
 
 .portfolio__content {
@@ -9,11 +14,44 @@
   grid-gap: 25px 0;
   grid-template-columns: 1fr;
   grid-template-rows: min-content;
+
+  @include respond-to(l) {
+    grid-gap: 0;
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 .portfolio__figure {
   position: relative;
   z-index: z(alpha);
+
+  @include respond-to(l) {
+    &:hover {
+      .portfolio__caption {
+        background-color: rgba($core-color-dark, 0.8);
+
+        &::before {
+          opacity: 1;
+          @include scale(1);
+        }
+      }
+
+      .portfolio__title {
+        transform: translate3d(0,0,0);
+      }
+
+      .portfolio__body {
+        opacity: 1;
+        @include scale(1);
+      }
+    }
+  }
+}
+
+.portfolio__img {
+  @include respond-to(xs) {
+    width: 100%;
+  }
 }
 
 .portfolio__caption {
@@ -24,16 +62,50 @@
   background-color: $core-color-dark;
   padding: $core-padding;
   z-index: z(alpha);
+
+  @include respond-to(l) {
+    top: 0;
+    bottom: initial;
+    height: 100%;
+    background-color: rgba($core-color-dark, 0.5);
+    @include flex(null, column, center, center);
+    @include transition-03;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 30px;
+      right: 30px;
+      bottom: 30px;
+      left: 30px;
+      border: 1px $core-border-style $core-color-light;
+      opacity: 0;
+      @include scale(0);
+      @include transition-03;
+    }
+  }
 }
 
 .portfolio__title {
   color: $core-color-light;
   margin-bottom: 0;
+
+  @include respond-to(l) {
+    margin-bottom: ($core-margin * 1.5);
+    transform: translate3d(0,50%,0);
+    @include transition-03;
+  }
 }
 
 .portfolio__body {
   color: $core-color-light;
   margin-bottom: 0;
+
+  @include respond-to(l) {
+    opacity: 0;
+    @include scale(0);
+    @include transition-03;
+  }
 }
 
 .portfolio__link {
@@ -47,4 +119,14 @@
   text-decoration: none;
   @include font-size($h1-font-sizes);
   @include flex(null, column, center, center);
+
+  @include respond-to(s) {
+    min-height: 375px;
+  }
+
+  @include respond-to(l) {
+    &:hover {
+      background-color: darken($core-color-brand, 20%);
+    }
+  }
 }
