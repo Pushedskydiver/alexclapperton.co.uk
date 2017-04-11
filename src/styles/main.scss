@@ -38,8 +38,10 @@
 *  Loader.............The sire's pre loader when site first loads.
 * 
 * COMPONENTS
+*  About..............About me section styles.
 *  Banner.............Top page banner styles.
 *  Bar................Title bar styles.
+*  Blocks.............Blocks styles on about page.
 *  Blog...............Blog styles.
 *  Breadcrumbs........Simple breadcrumbs styles.
 *  Butons.............Button styles.
@@ -61,35 +63,37 @@
 
 
 
-@import "/Users/alih2106/Desktop/Desktop - MacBook/website/src/styles/settings/_variables.scss";
-@import "/Users/alih2106/Desktop/Desktop - MacBook/website/src/styles/tools/functions/_typography.scss";
-@import "/Users/alih2106/Desktop/Desktop - MacBook/website/src/styles/tools/functions/_z-index.scss";
-@import "/Users/alih2106/Desktop/Desktop - MacBook/website/src/styles/tools/mixins/_flexbox.scss";
-@import "/Users/alih2106/Desktop/Desktop - MacBook/website/src/styles/tools/mixins/_grid.scss";
-@import "/Users/alih2106/Desktop/Desktop - MacBook/website/src/styles/tools/mixins/_keyframes.scss";
-@import "/Users/alih2106/Desktop/Desktop - MacBook/website/src/styles/tools/mixins/_transforms.scss";
-@import "/Users/alih2106/Desktop/Desktop - MacBook/website/src/styles/tools/mixins/_transitions.scss";
-@import "/Users/alih2106/Desktop/Desktop - MacBook/website/src/styles/tools/mixins/_typography.scss";
-@import "/Users/alih2106/Desktop/Desktop - MacBook/website/src/styles/generic/_keyframes.scss";
-@import "/Users/alih2106/Desktop/Desktop - MacBook/website/src/styles/generic/_typography.scss";
-@import "/Users/alih2106/Desktop/Desktop - MacBook/website/src/styles/elements/_global.scss";
-@import "/Users/alih2106/Desktop/Desktop - MacBook/website/src/styles/elements/_visually-hidden.scss";
-@import "/Users/alih2106/Desktop/Desktop - MacBook/website/src/styles/objects/_layout.scss";
-@import "/Users/alih2106/Desktop/Desktop - MacBook/website/src/styles/objects/_loader.scss";
-@import "/Users/alih2106/Desktop/Desktop - MacBook/website/src/styles/components/_banner.scss";
-@import "/Users/alih2106/Desktop/Desktop - MacBook/website/src/styles/components/_bar.scss";
-@import "/Users/alih2106/Desktop/Desktop - MacBook/website/src/styles/components/_blog.scss";
-@import "/Users/alih2106/Desktop/Desktop - MacBook/website/src/styles/components/_breadcrumbs.scss";
-@import "/Users/alih2106/Desktop/Desktop - MacBook/website/src/styles/components/_buttons.scss";
-@import "/Users/alih2106/Desktop/Desktop - MacBook/website/src/styles/components/_footer.scss";
-@import "/Users/alih2106/Desktop/Desktop - MacBook/website/src/styles/components/_header.scss";
-@import "/Users/alih2106/Desktop/Desktop - MacBook/website/src/styles/components/_info.scss";
-@import "/Users/alih2106/Desktop/Desktop - MacBook/website/src/styles/components/_logo.scss";
-@import "/Users/alih2106/Desktop/Desktop - MacBook/website/src/styles/components/_navigation.scss";
-@import "/Users/alih2106/Desktop/Desktop - MacBook/website/src/styles/components/_notices.scss";
-@import "/Users/alih2106/Desktop/Desktop - MacBook/website/src/styles/components/_portfolio.scss";
-@import "/Users/alih2106/Desktop/Desktop - MacBook/website/src/styles/components/_prism.scss";
-@import "/Users/alih2106/Desktop/Desktop - MacBook/website/src/styles/components/_scroll-top.scss";
-@import "/Users/alih2106/Desktop/Desktop - MacBook/website/src/styles/components/_skip-links.scss";
-@import "/Users/alih2106/Desktop/Desktop - MacBook/website/src/styles/components/_symbol.scss";
-@import "/Users/alih2106/Desktop/Desktop - MacBook/website/src/styles/components/_twitter.scss";
+@import "/Users/alih2106/Desktop/website/src/styles/settings/_variables.scss";
+@import "/Users/alih2106/Desktop/website/src/styles/tools/functions/_typography.scss";
+@import "/Users/alih2106/Desktop/website/src/styles/tools/functions/_z-index.scss";
+@import "/Users/alih2106/Desktop/website/src/styles/tools/mixins/_flexbox.scss";
+@import "/Users/alih2106/Desktop/website/src/styles/tools/mixins/_grid.scss";
+@import "/Users/alih2106/Desktop/website/src/styles/tools/mixins/_keyframes.scss";
+@import "/Users/alih2106/Desktop/website/src/styles/tools/mixins/_transforms.scss";
+@import "/Users/alih2106/Desktop/website/src/styles/tools/mixins/_transitions.scss";
+@import "/Users/alih2106/Desktop/website/src/styles/tools/mixins/_typography.scss";
+@import "/Users/alih2106/Desktop/website/src/styles/generic/_keyframes.scss";
+@import "/Users/alih2106/Desktop/website/src/styles/generic/_typography.scss";
+@import "/Users/alih2106/Desktop/website/src/styles/elements/_global.scss";
+@import "/Users/alih2106/Desktop/website/src/styles/elements/_visually-hidden.scss";
+@import "/Users/alih2106/Desktop/website/src/styles/objects/_layout.scss";
+@import "/Users/alih2106/Desktop/website/src/styles/objects/_loader.scss";
+@import "/Users/alih2106/Desktop/website/src/styles/components/_about.scss";
+@import "/Users/alih2106/Desktop/website/src/styles/components/_banner.scss";
+@import "/Users/alih2106/Desktop/website/src/styles/components/_bar.scss";
+@import "/Users/alih2106/Desktop/website/src/styles/components/_blocks.scss";
+@import "/Users/alih2106/Desktop/website/src/styles/components/_blog.scss";
+@import "/Users/alih2106/Desktop/website/src/styles/components/_breadcrumbs.scss";
+@import "/Users/alih2106/Desktop/website/src/styles/components/_buttons.scss";
+@import "/Users/alih2106/Desktop/website/src/styles/components/_footer.scss";
+@import "/Users/alih2106/Desktop/website/src/styles/components/_header.scss";
+@import "/Users/alih2106/Desktop/website/src/styles/components/_info.scss";
+@import "/Users/alih2106/Desktop/website/src/styles/components/_logo.scss";
+@import "/Users/alih2106/Desktop/website/src/styles/components/_navigation.scss";
+@import "/Users/alih2106/Desktop/website/src/styles/components/_notices.scss";
+@import "/Users/alih2106/Desktop/website/src/styles/components/_portfolio.scss";
+@import "/Users/alih2106/Desktop/website/src/styles/components/_prism.scss";
+@import "/Users/alih2106/Desktop/website/src/styles/components/_scroll-top.scss";
+@import "/Users/alih2106/Desktop/website/src/styles/components/_skip-links.scss";
+@import "/Users/alih2106/Desktop/website/src/styles/components/_symbol.scss";
+@import "/Users/alih2106/Desktop/website/src/styles/components/_twitter.scss";

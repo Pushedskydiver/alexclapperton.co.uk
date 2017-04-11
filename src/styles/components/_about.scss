@@ -1,0 +1,79 @@
+// About..............About me section styles.
+
+.about {
+  padding: 30px 0;
+
+  @include respond-to(l) {
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+}
+
+.about__content {
+  @supports (display: grid) {
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-rows: auto;
+    align-items: center;
+
+    @include respond-to(m) {
+      grid-gap: 40px;
+    }
+  }
+}
+
+.about__hero {
+  position: relative;
+  margin-bottom: ($core-margin * 2);
+  z-index: z(alpha);
+
+  @include respond-to(xs) {
+    width: 90%;
+    margin-bottom: ($core-margin * 6);
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 10%;
+      left: 10%;
+      width: 100%;
+      height: 100%;
+      background-color: $core-color-neutral;
+      z-index: -1;
+    }
+  }
+
+  @include respond-to(l) {
+    width: 80%;
+  }
+}
+
+.about__hero-img {
+  @include respond-to(xs) {
+    width: 100%;
+  }
+}
+
+.about__title {
+  position: relative;
+  display: inline-block;
+  color: $core-color-dark;
+  z-index: z(alpha);
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 105%;
+    width: 120px;
+    height: 2px;
+    background-color: $core-color-brand;
+    transform: translateY(-50%);
+    z-index: -1;
+
+    @include respond-to(l) {
+      width: 230px;
+    }
+  }
+}

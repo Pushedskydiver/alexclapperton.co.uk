@@ -4,10 +4,10 @@
   position: absolute;
   top: 0;
   left: 20px;
-  background-color: $core-color-dark;
+  background-color: $core-color-brand;
   margin: 0;
   padding: 0 ($core-padding / 2);
-  color: $core-color-brand;
+  color: $core-color-light;
   font-size: ($core-font-size * 1.05);
   font-weight: $core-secondary-font-weight;
   text-align: center;
@@ -25,7 +25,7 @@
   &:active,
   &:focus {
     width: auto;
-    height: 100%;
+    height: auto;
     margin: 0;
     overflow: visible;
     clip: auto;

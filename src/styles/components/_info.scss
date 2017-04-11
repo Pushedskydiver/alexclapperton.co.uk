@@ -61,7 +61,6 @@
 }
 
 .info__body {
-  color: $core-color-body;
   margin-bottom: ($core-margin * 2);
 
   @include respond-to(m) {
@@ -69,6 +68,6 @@
   }
 
   @include respond-to(l) {
-    max-width: 550px;
+    max-width: 570px;
   }
 }

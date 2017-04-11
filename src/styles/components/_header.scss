@@ -8,6 +8,13 @@
     padding-top: 0;
     padding-bottom: 0;
   }
+
+  @include respond-to(l) {
+    position: sticky;
+    top: 0;
+    background-color: $core-color-neutral;
+    z-index: z(kilo);
+  }
 }
 
 .header__content {

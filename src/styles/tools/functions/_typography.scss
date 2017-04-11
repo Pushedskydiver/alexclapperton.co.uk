@@ -7,7 +7,7 @@
 
 $p-font-sizes: (
   null: em($core-font-size),
-  xs: em(($core-font-size + 1.25)),
+  xs: em(($core-font-size + 1.3)),
   s: em(($core-font-size + 4)),
   m: em(($core-font-size + 1.4)),
   l: em(($core-font-size + 1.45)),
@@ -19,6 +19,14 @@ $small-font-sizes: (
   s: em(($core-font-size + 5)),
   m: em(($core-font-size + 1.4)),
   l: em(($core-font-size + 2)),
+);
+
+$large-font-sizes: (
+  null: em(($core-font-size * 4)),
+  xs: em(($core-font-size * 5)),
+  s: em(($core-font-size * 5.5)),
+  m: em(($core-font-size * 6)),
+  l: em(($core-font-size * 5)),
 );
 
 $h1-font-sizes: (

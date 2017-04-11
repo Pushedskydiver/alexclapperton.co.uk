@@ -88,6 +88,10 @@
     z-index: -1;
   }
 
+  @include respond-to(m) {
+    padding: 60px 40px;
+  }
+
   @supports (display: grid) {
     grid-row: 1 / span 2;
 

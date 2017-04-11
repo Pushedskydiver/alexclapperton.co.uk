@@ -1,7 +1,7 @@
 {
   "url": "http://alexclapperton.co.uk",
   "name": "Alex Clapperton",
-  "jobTitle": "Front-End Developer",
+  "jobTitle": "Front-End Web Developer",
   "employer": "Supremo",
   "employerUrl": "https://www.supremo.tv/",
   "university": "Manchester Metropolitan University",
@@ -15,61 +15,65 @@
     {
       "url": "https://www.facebook.com/AlexMClapperton",
       "title": "Facebook",
-      "title-attr": "External link to Alex's Facebook profile.",
-      "icon": "facebook"
+      "title-attr": "Go to Alex's Facebook profile.",
+      "icon": "facebook",
+      "external": true
     },
     {
       "url": "https://twitter.com/AlexMClapperton",
       "title": "Twitter",
-      "title-attr": "External link to Alex's Twitter profile.",
-      "icon": "twitter"
+      "title-attr": "Go to Alex's Twitter profile.",
+      "icon": "twitter",
+      "external": true
     },
     {
       "url": "https://uk.linkedin.com/in/alexclapperton",
       "title": "LinkedIn",
-      "title-attr": "External link to Alex's LinkedIn profile.",
-      "icon": "linkedin"
+      "title-attr": "Go to Alex's LinkedIn profile.",
+      "icon": "linkedin",
+      "external": true
     },
     {
       "url": "https://github.com/Pushedskydiver",
       "title": "GitHub",
-      "title-attr": "External link to Alex's GitHub profile.",
-      "icon": "github"
+      "title-attr": "Go to Alex's GitHub profile.",
+      "icon": "github",
+      "external": true
     }
   ],
   "navigation": [
     {
       "url": "/",
       "title": "Home",
-      "title-attr": "Internal link to the homepage.",
+      "title-attr": "Go to the homepage.",
       "slug": "home",
       "icon": "home"
     },
     {
       "url": "/about-me",
-      "title": "About",
-      "title-attr": "Internal link to the about page.",
+      "title": "About me",
+      "title-attr": "Go to the about page.",
       "slug": "about",
       "icon": "about"
     },
     {
-      "url": "/mportfolio",
+      "url": "/portfolio",
       "title": "Portfolio",
-      "title-attr": "Internal link to the my work page.",
+      "title-attr": "Go to the portfolio page.",
       "slug": "portfolio",
       "icon": "portfolio"
     },
     {
       "url": "/blog",
       "title": "Blog",
-      "title-attr": "Internal link to the blog page.",
+      "title-attr": "Go to the blog page.",
       "slug": "blog",
       "icon": "blog"
     },
     {
       "url": "/contact",
       "title": "Contact",
-      "title-attr": "Internal link to the contact page.",
+      "title-attr": "Go to the contact page.",
       "slug": "contact",
       "icon": "contact"
     }

@@ -1,14 +1,14 @@
 ---
 page: home
 layout: default.hbs
-title: Homepage
+title:
 description: Alex Clapperton &mdash; Manchester, UK based front-end developer
 changefreq: monthly
 priority: 1.0
 ---
 
 <!-- ******************** BANNER : Start ******************** -->
-<section class="banner" role="banner">
+<section class="banner">
   <!-- BEGIN : CONTAINER -->
   <div class="container">
     <!-- BEGIN : BANNER CONTENT -->
@@ -16,8 +16,8 @@ priority: 1.0
       <!-- BEGIN : BANNER BLOCK -->
       <div class="banner__blocks">
         <div class="banner__block1">
-          <h1 class="banner__title">Alex Clapperton</h1>
-          <p class="banner__body">Front-End Web Developer Manchester, UK</p>
+          <h1 class="banner__title">{{global.name}}</h1>
+          <p class="banner__body">{{global.jobTitle}} Manchester, UK</p>
         </div>
         <div class="banner__block2"></div>
       </div>
@@ -26,6 +26,7 @@ priority: 1.0
         <svg class="banner__scroll-icon" width="30" height="30">
           <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/icons/sprite.svg#arrow"></use>
         </svg>
+        <span class="visually-hidden visually-hidden--white">Scroll to content</span>
       </a>
     </div>
     <!-- END : BANNER CONTENT /-->
@@ -36,7 +37,7 @@ priority: 1.0
 
 
 <!-- ******************** INFO : Start ******************** -->
-<section class="info" id="content">
+<main class="info" role="main" id="content">
   <!-- BEGIN : CONTAINER -->
   <div class="container">
     <h2 class="info__title">A little bit about me</h2>
@@ -48,13 +49,13 @@ priority: 1.0
     </div>
     <!-- END : SYMBOL /-->
     <p class="info__body">I am Alex a 24 year old Front-End Website Developer from Manchester. I have had a passion for Web Development since 2012 where I started my own little Wordpress site where I blogged about my love for Apple products.</p>
-    <a class="btn btn--primary" href="#">
+    <a class="btn btn--primary" href="/about-me" title="Go to the about page.">
       <span class="btn__body">More about Alex</span>
       <svg class="btn__icon btn__icon--primary btn__icon--rotate" width="20" height="20">
         <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/icons/sprite.svg#arrow"></use>
       </svg>
     </a>
-    <a class="btn btn--primary" href="#">
+    <a class="btn btn--primary" href="/pdf/alex-clapperton-cv.pdf" title="Download Alex's CV.">
       <span class="btn__body">Download my CV</span>
       <svg class="btn__icon btn__icon--primary" width="20" height="20">
         <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/icons/sprite.svg#download"></use>
@@ -62,7 +63,7 @@ priority: 1.0
     </a>
   </div>
   <!-- END : CONTAINER /-->
-</section>
+</main>
 <!-- ******************** INFO : End ******************** /-->
 
 
@@ -95,7 +96,7 @@ priority: 1.0
       {{#each_upto portfolio.[2016] 3}}
         {{>portfolio}}
       {{/each_upto}}
-      <a class="portfolio__link" href="#">All Projects</a>
+      <a class="portfolio__link" href="#" title="Go to portfolio page.">All Projects</a>
     </div>
   </div>
 </section>
@@ -131,6 +132,9 @@ priority: 1.0
     <!-- BEGIN : BLOG CONTENT -->
     <div class="blog__content">
       {{#each_upto articles.[2017] 3}}
+        {{>article}}
+      {{/each_upto}}
+      {{#each_upto articles.[2016] 1}}
         {{>article}}
       {{/each_upto}}
     </div>

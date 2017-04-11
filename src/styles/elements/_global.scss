@@ -96,10 +96,11 @@ h6 {
 }
 
 p {
-  @include font-size($p-font-sizes);
+  color: $core-color-body;
   font-weight: $core-font-weight;
   line-height: $core-line-height;
   margin: 0 0 ($core-margin * 1.5) 0;
+  @include font-size($p-font-sizes);
 }
 
 ul {

@@ -14,9 +14,9 @@
       window.addEventListener('scroll', function(){
         if (window.pageYOffset > 600) {
           ELEMENT_scrollBtn.classList.add(CLASS_scrollBtnVisible);
-        } else {
-          ELEMENT_scrollBtn.classList.remove(CLASS_scrollBtnVisible);
+          return;
         }
+        ELEMENT_scrollBtn.classList.remove(CLASS_scrollBtnVisible);
       });
     }
 
@@ -36,7 +36,7 @@
       if (window.location.pathname == '/') {
         ELEMENT_navItemHome.classList.add('nav__item--active');
       }
-      if (window.location.href.indexOf('about/') > -1) {
+      if (window.location.href.indexOf('about-me/') > -1) {
         ELEMENT_navItemAbout.classList.add('nav__item--active');
       }
       if (window.location.pathname == '/my-work/') {

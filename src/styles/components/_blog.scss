@@ -8,12 +8,11 @@
   @supports (display: grid) {
     display: grid;
     grid-gap: 40px;
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     grid-template-rows: auto;
 
     @include respond-to(l) {
       grid-gap: 30px;
-      grid-template-columns: repeat(3, 1fr);
     }
   }
 }
@@ -79,8 +78,8 @@
   @include font-size($p-font-sizes);
 }
 
-.blog__body {
-  color: $core-color-body;
+.blog__link {
+  display: block;
 }
 
 .blog__link-body {

@@ -1,35 +1,39 @@
 
 <!-- ******************** HEADER : Start ******************** -->
-<header class="header container" role="banner">
+<header class="header" role="banner">
   <!-- BEGIN : SKIP LINKS -->
   <a href="#nav" class="skip-link hidden focusable">Navigation</a>
   <a href="#content" class="skip-link hidden focusable">Skip to content</a>
   <a href="#footer" class="skip-link hidden focusable">Skip to footer</a>
   <!-- END : SKIP LINKS /-->
-  <!-- BEGIN : HEADER CONTNET -->
-  <div class="header__content">
-    <a class="logo" href="/"><<span class="logo--core">Alex</span>/></a>
-    <a class="header__btn btn btn--primary" href="#">
-      <span class="btn__body">Hire me</span>
-      <svg width="20" height="20" class="btn__icon btn__icon--primary">
-        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/icons/sprite.svg#send"></use>
-      </svg>
-    </a>
-    <!-- BEGIN : NAV -->
-    <nav class="nav" id="nav" role="navigation">
-      {{#each global.navigation}}
-      <!-- BEGIN : NAV ITEM -->
-        <a class="nav__item" href="{{url}}" title="{{title-attr}}" data-item-{{slug}}>
-          <svg width="20" height="20" class="nav__icon">
-            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/icons/sprite.svg#{{icon}}"></use>
-          </svg>
-          {{title}}
-        </a>
-        <!-- END : NAV ITEM /-->
-      {{/each}}
-    </nav>
-    <!-- END : NAV /-->
+  <!-- BEGIN : CONTAINER -->
+  <div class="container">
+    <!-- BEGIN : HEADER CONTNET -->
+    <div class="header__content">
+      <a class="logo" href="/" title="Go to the homepage."><<span class="logo--core">Alex</span>/></a>
+      <a class="header__btn btn btn--primary" href="mailto:{{global.email}}" title="Email Alex about freelance work.">
+        <span class="btn__body">Hire me</span>
+        <svg width="20" height="20" class="btn__icon btn__icon--primary">
+          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/icons/sprite.svg#send"></use>
+        </svg>
+      </a>
+      <!-- BEGIN : NAV -->
+      <nav class="nav" id="nav" role="navigation">
+        {{#each global.navigation}}
+        <!-- BEGIN : NAV ITEM -->
+          <a class="nav__item" href="{{url}}" title="{{title-attr}}" data-item-{{slug}}>
+            <svg width="20" height="20" class="nav__icon">
+              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/icons/sprite.svg#{{icon}}"></use>
+            </svg>
+            {{title}}
+          </a>
+          <!-- END : NAV ITEM /-->
+        {{/each}}
+      </nav>
+      <!-- END : NAV /-->
+    </div>
+    <!-- END : HEADER CONTENT /-->
   </div>
-  <!-- END : HEADER CONTENT /-->
+  <!-- END : CONTAINER /-->
 </header>
 <!-- ******************** HEADER : End ******************** /-->
