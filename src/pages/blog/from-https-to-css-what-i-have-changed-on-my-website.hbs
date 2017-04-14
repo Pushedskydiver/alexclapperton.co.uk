@@ -1,10 +1,9 @@
 ---
 layout: post.hbs
 title: "From HTTPS to CSS: What I have changed on my website"
-keywords: web development, front end, developer, web developer, website portfolio, blog, https, ssl, service worker, http/2
-bannerTitle: "From HTTPS to CSS: <br class='site-banner__title-break'> What I have changed on my website"
 slug: from-https-to-css-what-i-have-changed-on-my-website
 summary: I've made some interesting changes to my website since my last post and I'm very excited to share what I have been up to.
+hero: alex-clapperton-https
 category: Development
 pubDate: 13 Jan, 2017
 dateTime: 13-01-2017
@@ -15,96 +14,38 @@ tags:
 changefreq: never
 priority: 0.2
 ---
-<h2>Someone's been busy</h2>
-<p>
-  Well now haven't I been a busy bee. I've made some interesting changes to my website since my last post and I'm very excited to share what I have been up to. Now I imagine some of you have already jumped the gun and are thinking to yourself, "What do you mean changes? Your site looks the same as last time.". While you may be right in thinking this, the changes I have made are more performance improvements than visual (although I am working on re-designing my website 😉) and make my site faster and more secure than before, so let's get right into it.
-</p>
-<h3>Moving over to HTTPS</h3>
-<p>
-  For a while now I have debated whether I should move other to https as my website doesn't contain any databases, nor does it take any payment details or personal information (except for the contact form which just asks for an email address). For those unfamiliar with HTTPS, to put it simply it just makes your website secure and you get a nice padlock in the address bar on your browser. You can find more about https by checking out
-  <a class="external-link" href="https://www.sitepoint.com/https-basics/" title="External link to sitepoints blog on https basics.">
-    <span class="external-link__text">this nice article over on sitepoint </span>
-    <svg width="20" height="20" class="external-link__icon">
-      <use xlink:href="/images/icons/sprite.svg#external-link" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
-    </svg>
-  </a>.
-</p>
-<figure class="site-figure">
-  <img src="/images/blog/site-secure.jpg" alt="URL of alexclapperton.co.uk in Chrome browser address bar with https padlock." />
-  <figcaption class="site-figure__caption">alexclapperton.co.uk now on https</figcaption>
+
+<h2 class="post__title">Someone's been busy</h2>
+
+<p class="post__body">Well now haven't I been a busy bee. I've made some interesting changes to my website since my last post and I'm very excited to share what I have been up to. Now I imagine some of you have already jumped the gun and are thinking to yourself, "What do you mean changes? Your site looks the same as last time.". While you may be right in thinking this, the changes I have made are more performance improvements than visual (although I am working on re-designing my website 😉) and make my site faster and more secure than before, so let's get right into it.</p>
+
+<h3 class="post__subtitle">Moving over to HTTPS</h3>
+
+<p class="post__body">For a while now I have debated whether I should move other to https as my website doesn't contain any databases, nor does it take any payment details or personal information (except for the contact form which just asks for an email address). For those unfamiliar with HTTPS, to put it simply it just makes your website secure and you get a nice padlock in the address bar on your browser. You can find more about https by checking out <a href="https://www.sitepoint.com/https-basics/" title="External link to sitepoints blog on https basics.">this nice article over on sitepoint</a>.</p>
+
+<figure class="figure">
+  <img class="figure__img" src="/images/blog/post/site-secure.jpg" alt="URL of alexclapperton.co.uk in Chrome browser address bar with https padlock." />
+  <figcaption class="figure__caption">alexclapperton.co.uk now on https</figcaption>
 </figure>
-<p>
-  Having said all that, I felt I needed to make the change over with https becoming a prerequisite for several technologies that I wanted to use such as Service Worker (more on service worker below). Another reason for moving is
-  <a class="external-link" href="https://security.googleblog.com/2016/09/moving-towards-more-secure-web.html" title="External link to google blog about moving towards a secure web.">
-    <span class="external-link__text">Google's intent to mark certain webpages as insecure </span>
-    <svg width="20" height="20" class="external-link__icon">
-      <use xlink:href="/images/icons/sprite.svg#external-link" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
-    </svg>
-  </a>
-  which gives the implication that any site that isn't explicitly marked as secure, is therefore insecure which could prevent some users from vising the site.
-</p>
-<p>
-  Making the switch to https was relatively simple thanks to the use of CloudFlare which offer a variety of
-  <a class="external-link" href="https://www.cloudflare.com/performance/" title="External link to cloud flare website.">
-    <span class="external-link__text">performance-related services </span>
-    <svg width="20" height="20" class="external-link__icon">
-      <use xlink:href="/images/icons/sprite.svg#external-link" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
-    </svg>
-  </a>.
-  I found a nice
-  <a class="external-link" href="https://raventools.com/blog/free-ssl-http2/" title="External link to raven tools blog about moving to https.">
-    <span class="external-link__text">tutorial on Raven Tools </span>
-    <svg width="20" height="20" class="external-link__icon">
-      <use xlink:href="/images/icons/sprite.svg#external-link" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
-    </svg>
-  </a>
-  explaining how to move to https with CloudFlare.
-</p>
-<p>
-  To this end, I think that HTTPS is as much an exercise in branding and trust as it is in security, and that it will steadily become more and more ubiquitous. This is only a good thing.
-</p>
-<h3>Making my site work offline</h3>
-<p>
-  Yes, you read that right, my site can now work offline without any internet connection. So if you somehow find yourself stranded on a desert island, in the middle of nowhere, with nothing but your laptop
-  (<a class="external-link" href="https://www.youtube.com/watch?v=PdQIY6lSOWg" title="External link to youtube video of a scene from cast away film.">
-    <span class="external-link__text">and a volleyball called Wilson </span>
-    <svg width="20" height="20" class="external-link__icon">
-      <use xlink:href="/images/icons/sprite.svg#external-link" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
-    </svg>
-  </a>),
-  you'll be happy to know you can at least visit my website. How freaking cool is that?
-</p>
-<p>
-  The way this works is by the use of a Service Worker. in the words from the
-  <a class="external-link" href="https://developers.google.com/web/fundamentals/getting-started/primers/service-workers" title="External link to google developers web page about the service worker.">
-    <span class="external-link__text">Google Developer website </span>
-    <svg width="20" height="20" class="external-link__icon">
-      <use xlink:href="/images/icons/sprite.svg#external-link" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
-    </svg>
-  </a>,
-  A service worker is a script that your browser runs in the background, separate from a web page, opening the door to features that don't need a web page or user interaction. One such feature is by making your site work offline. The way in which it works is that whenever you visit a page on my website, it will create a cached version of that page and store it. Then if you turn off your internet and reload or re-visit the page, it will load the cached version of that page, allowing to carry on browsing the page as normal. Pretty awesome right? If you are interested in getting your site to work offline, then follow this nice
-  <a class="external-link" href="https://mariopabon.com/2016/07/25/make-your-site-work-offline-with-service-worker.html" title="External link to blog post about how to use a service worker.">
-    <span class="external-link__text">tutorial from Mario Pabon  </span>
-    <svg width="20" height="20" class="external-link__icon">
-      <use xlink:href="/images/icons/sprite.svg#external-link" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
-    </svg>
-  </a>
-  on how to do so.
-</p>
-<h3>Optimising my CSS media queries</h3>
-<p>
-  One problem I encountered with my css was that I had multiple media queries of the same breakpoint. The reasoning behind this was because my media queries were nested inside my classes (yes I'm using scss here), to make the code more maintainable. The problem with this is than when compiled, I had multiple media queries of the same breakpoint, which in turn made my css file larger.
-</p>
-<p>
-  Even though the size of my css code was pretty small when minified and gzipped, I wanted to find a solution to this problem and luckily I did with a bit of help from a handy Gulp plugin called
-  <a class="external-link" href="https://www.npmjs.com/package/css-mqpacker" title="External link to css-mqpacker plugin page.">
-    <span class="external-link__text">css-mqpacker  </span>
-    <svg width="20" height="20" class="external-link__icon">
-      <use xlink:href="/images/icons/sprite.svg#external-link" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
-    </svg>
-  </a>.
-  This awesome plugin looks for multiple media queries of the same breakpoint in your css and merges them into one thus reducing the file size of your css. With this plugin, I was able to reduce the size of my css from 6kb to 5kb, which may not seem a lot in terms of file size, but in terms of the amount of code it has been significantly reduced.
-</p>
+
+<p class="post__body">Having said all that, I felt I needed to make the change over with https becoming a prerequisite for several technologies that I wanted to use such as Service Worker (more on service worker below). Another reason for moving is <a href="https://security.googleblog.com/2016/09/moving-towards-more-secure-web.html" title="External link to google blog about moving towards a secure web.">Google's intent to mark certain webpages as insecure</a> which gives the implication that any site that isn't explicitly marked as secure, is therefore insecure which could prevent some users from vising the site.</p>
+
+<p class="post__body">Making the switch to https was relatively simple thanks to the use of CloudFlare which offer a variety of <a href="https://www.cloudflare.com/performance/" title="External link to cloud flare website.">performance-related services</a>. I found a nice <a href="https://raventools.com/blog/free-ssl-http2/" title="External link to raven tools blog about moving to https.">tutorial on Raven Tools</a> explaining how to move to https with CloudFlare.</p>
+
+<p class="post__body">To this end, I think that HTTPS is as much an exercise in branding and trust as it is in security, and that it will steadily become more and more ubiquitous. This is only a good thing.</p>
+
+<h3 class="post__subtitle">Making my site work offline</h3>
+
+<p class="post__body">Yes, you read that right, my site can now work offline without any internet connection. So if you somehow find yourself stranded on a desert island, in the middle of nowhere, with nothing but your laptop (<a href="https://www.youtube.com/watch?v=PdQIY6lSOWg" title="External link to youtube video of a scene from cast away film.">and a volleyball called Wilson</a>), you'll be happy to know you can at least visit my website. How freaking cool is that?</p>
+
+<p class="post__body">The way this works is by the use of a Service Worker. in the words from the <a href="https://developers.google.com/web/fundamentals/getting-started/primers/service-workers" title="External link to google developers web page about the service worker.">Google Developer website</a>, A service worker is a script that your browser runs in the background, separate from a web page, opening the door to features that don't need a web page or user interaction. One such feature is by making your site work offline. The way in which it works is that whenever you visit a page on my website, it will create a cached version of that page and store it. Then if you turn off your internet and reload or re-visit the page, it will load the cached version of that page, allowing to carry on browsing the page as normal. Pretty awesome right? If you are interested in getting your site to work offline, then follow this nice <a href="https://mariopabon.com/2016/07/25/make-your-site-work-offline-with-service-worker.html" title="External link to blog post about how to use a service worker.">tutorial from Mario Pabon</a> on how to do so.</p>
+
+<h3 class="post__subtitle">Optimising my CSS media queries</h3>
+
+<p class="post__body">One problem I encountered with my css was that I had multiple media queries of the same breakpoint. The reasoning behind this was because my media queries were nested inside my classes (yes I'm using scss here), to make the code more maintainable. The problem with this is than when compiled, I had multiple media queries of the same breakpoint, which in turn made my css file larger.</p>
+
+<p class="post__body"> Even though the size of my css code was pretty small when minified and gzipped, I wanted to find a solution to this problem and luckily I did with a bit of help from a handy Gulp plugin called <a href="https://www.npmjs.com/package/css-mqpacker" title="External link to css-mqpacker plugin page.">css-mqpacker</a>. This awesome plugin looks for multiple media queries of the same breakpoint in your css and merges them into one thus reducing the file size of your css. With this plugin, I was able to reduce the size of my css from 6kb to 5kb, which may not seem a lot in terms of file size, but in terms of the amount of code it has been significantly reduced.</p>
+
 <pre><code class="language-css">
 /* Compiled CSS before css-mqpacker */
 @media (min-width: 400px) {
@@ -146,19 +87,17 @@ priority: 0.2
 }
 
 </code></pre>
-<h3>That's a wrap</h3>
-<p>
-  So there you have it. This is what I have been up to these last few months and I'm not stopping there. I will always continue to look for new techniques that I can use to help make my website perform at its absolute best.
-</p>
+
+<h3 class="post__subtitle">That's a wrap</h3>
+
+<p class="post__body">So there you have it. This is what I have been up to these last few months and I'm not stopping there. I will always continue to look for new techniques that I can use to help make my website perform at its absolute best.</p>
+
 <hr>
-<h4>Bibliography</h4>
-<ul>
-  <li class="site-list__item">
-    Gauntm M. (2017). Service Workers: an Introduction. [ONLINE] [Accessed 13 January 2017]. URL:
-    <a class="site-list__link" href="https://developers.google.com/web/fundamentals/getting-started/primers/service-workers" title="External link to google developers web page about the service worker.">Google Developers</a>
-    <svg width="20" height="20" class="external-link__icon">
-      <use xlink:href="/images/icons/sprite.svg#external-link" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
-    </svg>
-  </li>
+
+<h4 class="post__subtitle">Bibliography</h4>
+
+<ul class="list">
+  <li class="list__item">Gauntm M. (2017). Service Workers: an Introduction. [ONLINE] [Accessed 13 January 2017]. URL: <a class="list__link" href="https://developers.google.com/web/fundamentals/getting-started/primers/service-workers" title="External link to google developers web page about the service worker.">Google Developers</a></li>
 </ul>
+
 <hr>

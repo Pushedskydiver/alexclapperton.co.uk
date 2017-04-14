@@ -24,6 +24,7 @@ pre[class*="language-"] {
 
 /* Code blocks */
 pre[class*="language-"] {
+	margin: ($core-margin * 3) 0;
 	padding: 1em;
 	overflow: auto;
 	border-radius: 0.3em;

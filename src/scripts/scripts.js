@@ -110,12 +110,9 @@
     function init_form_validation() {
       var ELEMENT_form = document.querySelector('[data-form]'),
           ELEMENT_formItem = document.querySelectorAll('[data-form-item]'),
-          ELEMENT_inputField = document.querySelector('[data-input-field]'),
-          ELEMENT_inputFieldAll = document.querySelectorAll('[data-input-field]'),
+          ELEMENT_inputField = document.querySelectorAll('[data-input-field]'),
           ELEMENT_textareaField = document.querySelector('[data-textarea-field]'),
           ELEMENT_formSubmit = document.querySelector('[data-form-submit]');
-
-      var SELECTOR_formValidation = '[data-form-validation]';
 
       var CLASS_formInputValid = 'form__input--valid',
           CLASS_formInputInvalid = 'form__input--invalid',
@@ -149,7 +146,6 @@
 
       function setCurrentInputToValid(ELEMENT_currentInput) {
         var ELEMENT_currentValidation = ELEMENT_currentInput.nextElementSibling;
-
         ELEMENT_currentInput.classList.add(CLASS_formInputValid);
         ELEMENT_currentInput.classList.remove(CLASS_formInputInvalid);
         ELEMENT_currentValidation.classList.remove(CLASS_formValidationInvalid);
@@ -159,7 +155,6 @@
 
       function setCurrentInputToInvalid(ELEMENT_currentInput, errorMessage, isTyping) {
         var ELEMENT_currentValidation = ELEMENT_currentInput.nextElementSibling;
-
         ELEMENT_currentInput.classList.remove(CLASS_formInputValid);
         ELEMENT_currentInput.classList.add(CLASS_formInputInvalid);
         ELEMENT_currentValidation.classList.remove(CLASS_formValidationValid);
@@ -173,7 +168,6 @@
 
       function setTextareaToValid() {
         var ELEMENT_currentValidation = ELEMENT_textareaField.nextElementSibling;
-
         ELEMENT_textareaField.classList.add(CLASS_formTextareaValid);
         ELEMENT_textareaField.classList.remove(CLASS_formTextareaInvalid);
         ELEMENT_currentValidation.classList.remove(CLASS_formValidationInvalid);
@@ -183,7 +177,6 @@
 
       function setTextareaToInvalid(errorMessage, isTyping) {
         var ELEMENT_currentValidation = ELEMENT_textareaField.nextElementSibling;
-
         ELEMENT_textareaField.classList.remove(CLASS_formTextareaValid);
         ELEMENT_textareaField.classList.add(CLASS_formTextareaInvalid);
         ELEMENT_currentValidation.classList.remove(CLASS_formValidationValid);
@@ -239,7 +232,7 @@
         var firstErrorFound = false;
         var isTyping = false;
 
-        [].forEach.call(ELEMENT_inputFieldAll, function(ELEMENT_this) {
+        [].forEach.call(ELEMENT_inputField, function(ELEMENT_this) {
           checkIfCurrentInputIsValid(ELEMENT_this, isTyping);
           if (ELEMENT_this.classList.contains(CLASS_formInputInvalid) && firstErrorFound === false) {
             ELEMENT_this.focus();

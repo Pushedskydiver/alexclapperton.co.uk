@@ -15,7 +15,7 @@ body {
   color: $core-color-dark;
   font-family: $core-font-family;
   font-weight: $core-font-weight;
-  line-height: 1.45;
+  line-height: $core-line-height;
   margin: 0;
   padding-bottom: 67px;
   text-rendering: optimizeLegibility;

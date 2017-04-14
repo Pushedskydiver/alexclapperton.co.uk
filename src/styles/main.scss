@@ -42,21 +42,26 @@
 *  Banner.............Top page banner styles.
 *  Bar................Title bar styles.
 *  Blocks.............Blocks styles on about page.
-*  Blog...............Blog styles.
+*  Blog...............Blog page styles.
 *  Breadcrumbs........Simple breadcrumbs styles.
 *  Butons.............Button styles.
 *  Contact............Contact section styles.
+*  Figure.............Figure and figcaption styles.
 *  Filter.............Portfolio filter button styles.
 *  Footer.............Footer styles.
 *  Form...............Contact form styles.
 *  Header.............The sites header styles.
+*  Hero...............Blog post hero image styles.
 *  Info...............About me info block styles.
+*  List...............Blog post list styles.
 *  Logo...............Site logo styles.
 *  Nav primary........The sites main nav.
 *  Notices............The sites notice styles for JS turned off etc.
 *  Portfolio..........Portfolio styles.
+*  Post...............Blog post styles.
 *  Prism - code snippet syntax highlighter
 *  Scroll to top......Scroll to top button styles.
+*  Share..............Blog post share styles.
 *  Skip links.........The sites skip to links.
 *  Social.............Social block styles.
 *  Symbol.............Symbol block styles.
@@ -90,17 +95,22 @@
 @import "/Users/alih2106/Desktop/website/src/styles/components/_breadcrumbs.scss";
 @import "/Users/alih2106/Desktop/website/src/styles/components/_buttons.scss";
 @import "/Users/alih2106/Desktop/website/src/styles/components/_contact.scss";
+@import "/Users/alih2106/Desktop/website/src/styles/components/_figure.scss";
 @import "/Users/alih2106/Desktop/website/src/styles/components/_filter.scss";
 @import "/Users/alih2106/Desktop/website/src/styles/components/_footer.scss";
 @import "/Users/alih2106/Desktop/website/src/styles/components/_form.scss";
 @import "/Users/alih2106/Desktop/website/src/styles/components/_header.scss";
+@import "/Users/alih2106/Desktop/website/src/styles/components/_hero.scss";
 @import "/Users/alih2106/Desktop/website/src/styles/components/_info.scss";
+@import "/Users/alih2106/Desktop/website/src/styles/components/_list.scss";
 @import "/Users/alih2106/Desktop/website/src/styles/components/_logo.scss";
 @import "/Users/alih2106/Desktop/website/src/styles/components/_navigation.scss";
 @import "/Users/alih2106/Desktop/website/src/styles/components/_notices.scss";
 @import "/Users/alih2106/Desktop/website/src/styles/components/_portfolio.scss";
+@import "/Users/alih2106/Desktop/website/src/styles/components/_post.scss";
 @import "/Users/alih2106/Desktop/website/src/styles/components/_prism.scss";
 @import "/Users/alih2106/Desktop/website/src/styles/components/_scroll-top.scss";
+@import "/Users/alih2106/Desktop/website/src/styles/components/_share.scss";
 @import "/Users/alih2106/Desktop/website/src/styles/components/_skip-links.scss";
 @import "/Users/alih2106/Desktop/website/src/styles/components/_social.scss";
 @import "/Users/alih2106/Desktop/website/src/styles/components/_symbol.scss";

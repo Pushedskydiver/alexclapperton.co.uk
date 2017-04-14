@@ -15,7 +15,7 @@
 }
 
 .form__label {
-  display: block;
+  display: inline-block;
   color: $core-color-dark;
   margin-bottom: ($core-margin / 2);
   font-weight: $core-secondary-font-weight;
@@ -46,7 +46,7 @@
   width: 100%;
   background-color: $core-color-neutral;
   padding: ($core-padding * 1.25) $core-padding;
-  border: $core-border-width $core-border-style $core-border-color;
+  border: ($core-border-width * 2) $core-border-style $core-border-color;
   @include font-size($p-font-sizes);
 
   &--valid {
@@ -62,7 +62,7 @@
   width: 100%;
   background-color: $core-color-neutral;
   padding: ($core-padding * 1.25) $core-padding;
-  border: $core-border-width $core-border-style $core-border-color;
+  border: ($core-border-width * 2) $core-border-style $core-border-color;
   @include font-size($p-font-sizes);
 
   &--valid {
@@ -76,7 +76,7 @@
 
 .form__validation {
   color: #de0000;
-  @include font-size($small-font-sizes);
+  font-size: inherit;
 }
 
 .form__btn {

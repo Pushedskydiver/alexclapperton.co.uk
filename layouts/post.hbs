@@ -3,146 +3,71 @@
 {{>header}}
 
 <div itemscope itemtype="http://schema.org/BlogPosting">
-  <!-- ******************** BANNER : Start ********************-->
-  <section class="banner banner--no-img">
+  <!-- ******************** HERO : Start ********************-->
+  <section class="hero" style="background-image: url(/images/blog/featured/{{hero}}.jpg);">
     <!-- BEGIN : CONTAINER -->
     <div class="container">
-      <!-- BEGIN : GRID GUIDES -->
-      <div class="grid-guides">
-        <div class="grid-guides__guide"></div>
-        <div class="grid-guides__guide"></div>
-        <div class="grid-guides__guide"></div>
-        <div class="grid-guides__guide"></div>
+      <!-- BEGIN : HERO CONTENT -->
+      <div class="hero__content">
+        <h1 class="hero__title">{{title}}
+          {{#if subtitle}}
+          <br>
+          {{subtitle}}
+          {{/if}}
+        </h1>
       </div>
-      <!-- END : GRID GUIDES /-->
-      <!-- BEGIN : BANNER FLEX -->
-      <div class="banner__flex banner__flex--blog">
-        <h1 class="banner__title">{{{bannerTitle}}}
-        {{#if subtitle}}
-        <br>
-        {{{subtitle}}}
-        {{/if}}</h1>
-
-        <div class="breadcrumbs">
-          <span class="breadcrumbs__item"><a class="breadcrumbs__link" href="/">Home</a></span>
-          <span class="breadcrumbs__item"><a class="breadcrumbs__link" href="/blog">Blog</a></span>
-          <span class="breadcrumbs__item">{{{title}}}{{#if subtitle}}{{{subtitle}}}{{/if}}</span>
-        </div>
-      </div>
-      <!-- END : BANNER FLEX /-->
+      <!-- END : HERO CONTENT /-->
     </div>
     <!-- END : CONTAINER /-->
   </section>
-  <!-- ******************** BANNER : End ******************** /-->
+  <!-- ******************** HERO : End ******************** /-->
 
-  <!-- ******************** SITE BLOG POST : Start ******************** -->
-  <main class="site-post" role="main">
+
+  <!-- ******************** POST : Start ******************** -->
+  <main class="post" role="main">
     <!-- BEGIN : CONTAINER -->
     <div class="container">
-      <!-- BEGIN : ARTICLE BODY -->
-      <article class="article__body">
-        <!-- BEGIN : ARTICLE DETAILS -->
-        <div class="article__details">
-          <span class="article__date">Posted on <strong><time datetime="{{{dateTime}}}">{{{pubDate}}}</time></strong></span>
-          <span class="article__category">Category: <strong>{{{category}}}</strong></span>
-        </div>
-        <!-- END : ARTICLE DETAILS /-->
-
-        {{{contents}}}
-
-      </article>
-      <!-- END : ARTICLE BODY -->
-      <!-- BEGIN : ARTICLE SECTION -->
-      <aside class="article__section">
-        <h3>Share this post</h3>
-        <!-- BEGIN : ARTICLE SECTION FLEX -->
-        <div class="article__section--flex">
-          <a href="https://twitter.com/intent/tweet?text={{{title}}}&amp;url={{{global.url}}}/blog/{{{slug}}}&amp;via=AlexMClapperton" target="_blank" rel="external" title="External link to Twitter share post." class="post__share-link" data-ga-category="Post share - Twitter" data-ga-action="click" data-ga-label="{{{title}}}">
+      <!-- BEGIN : POST CONTENT -->
+      <div class="post__content">
+        <!-- BEGIN : POST ARTICLE -->
+        <article class="post__article">
+          <!-- BEGIN : POST DETAILS -->
+          <div class="post__details">
+            <span class="post__date">Posted on <strong><time datetime="{{{dateTime}}}">{{pubDate}}</time></strong></span>
+            <span class="post__category">Category: <strong>{{{category}}}</strong></span>
+          </div>
+          <!-- END : POST DETAILS /-->
+          {{{contents}}}
+        </article>
+        <!-- END : POST ARTICLE -->
+        <!-- BEGIN : POST ASIDE -->
+        <aside class="post__aside">
+          <h4 class="post__subtitle">Share this post</h4>
+          <a class="share" href="https://twitter.com/intent/tweet?text={{{title}}}&amp;url={{{global.url}}}/blog/{{{slug}}}&amp;via=AlexMClapperton" target="_blank" rel="external" title="External link to Twitter share post." data-ga-category="Post share - Twitter" data-ga-action="click" data-ga-label="{{{title}}}">
             <span class="visually-hidden">Twitter</span>
-            <svg class="post__share-icon post__share-icon--twitter">
+            <svg class="share__icon share__icon--twitter" width="24" height="24">
               <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/icons/sprite.svg#twitter"></use>
             </svg>
           </a>
-          <a href="https://www.linkedin.com/shareArticle?mini=true&url={{{global.url}}}/blog/{{{slug}}}&amp;title={{{title}}}&amp;source={{{global.url}}}/blog/" target="_blank" rel="external" title="External link to LinkedIn share article." class="post__share-link" data-ga-category="Post share - LinkedIn" data-ga-action="click" data-ga-label="{{{title}}}">
+          <a class="share" href="https://www.linkedin.com/shareArticle?mini=true&url={{{global.url}}}/blog/{{{slug}}}&amp;title={{{title}}}&amp;source={{{global.url}}}/blog/" target="_blank" rel="external" title="External link to LinkedIn share article." data-ga-category="Post share - LinkedIn" data-ga-action="click" data-ga-label="{{{title}}}">
             <span class="visually-hidden">LinkedIn</span>
-            <svg class="post__share-icon post__share-icon--linkedin">
-              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/icons/sprite.svg#linkedin"></use>
+            <svg class="share__icon share__icon--linkedin" width="24" height="24">
+              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/icons/sprite.svg#linkedin-BG"></use>
             </svg>
           </a>
-        </div>
-        <!-- END : ARTICLE SECTION FLEX /-->
-      </aside>
-      <!-- END : ARTICLE SECTION /-->
-      <!-- BEGIN : ARTICLE SECTION -->
-      <aside class="article__section">
-        <h3>Comment on this post</h3>
-        <div id="disqus_thread" class="disqus-thread"></div>
-        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-      </aside>
-      <!-- END : ARTICLE SECTION /-->
+          <h4 class="post__subtitle">Comment on this post</h4>
+          <div id="disqus_thread" class="disqus-thread"></div>
+          <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+        </aside>
+        <!-- END : POST ASIDE /-->
+      </div>
+      <!-- END : POST CONTENT /-->
     </div>
     <!-- END : CONTAINER /-->
   </main>
-  <!-- ******************** SITE BLOG POST : End ******************** /-->
+  <!-- ******************** POST : End ******************** /-->
 </div>
 
 {{>footer}}
 
 {{>foot}}
-
-<script>
-  function listTweets(data) {
-    var output = '<ul data-role="listview" class="twitter-feed__container">';
-    $.each(data, function(key, val) {
-      var text = data[key].text;
-      var thumbnail = data[key].user.profile_image_url;
-      var name = data[key].user.name;
-      text=text.replace(/[A-Za-z]+:\/\/[A-Za-z0-9-_]+\.[A-Za-z0-9-_:%&~\?\/.=]+/g, function(i) {
-        var url=i.link(i);
-        return url;
-      });
-      text=text.replace(/[@]+[A-Za-z0-9-_]+/g, function(i) {
-        var item = i.replace("@",'');
-        var	url = i.link("http://twitter.com/"+ item);
-        return url;
-      });
-      text=text.replace(/[#]+[A-Za-z0-9-_]+/g, function(i) {
-        var item = i.replace("#", '%23');
-        var url = i.link("http://search.twitter.com/search?q="+item);
-        return url;
-      });
-      output += '<li class="twitter-feed__item">';
-      output += '<svg class="twitter-feed__icon" width="20" height="20"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/icons/sprite.svg#twitter"></use></svg>' + '<span class="twitter-feed__body">' + text + '</span>';
-      output += '</li>';
-    }); //go through each tweet
-    output += '</ul>';
-    $('.twitter-feed').html(output);
-  }
-</script>
-
-<script src="http://alexclapperton.co.uk/twitter/tweets_json.php?count=2&callback=listTweets"></script>
-
-<script>
-  $(document).ready(function() {
-    var twitter = (function() {
-      $.getJSON('http://alexclapperton.co.uk/twitter/tweets_json.php', function(data) {
-        listTweets(data);
-        $('.twitter-feed').trigger('create');
-      });
-    });
-  });
-</script>
-
-<script>
-  if ('serviceWorker' in navigator) {
-    window.addEventListener('load', function() {
-      navigator.serviceWorker.register('/sw.js').then(function(registration) {
-        // Successfully registered the Service Worker
-        //console.log('Service Worker registration successful with scope: ', registration.scope);
-      }).catch(function(err) {
-        // Failed to register the Service Worker
-        //console.log('Service Worker registration failed: ', err);
-      });
-    });
-  }
-</script>

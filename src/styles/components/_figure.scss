@@ -1,0 +1,18 @@
+// Figure.............Figure and figcaption styles.
+
+.figure {
+  margin-bottom: ($core-margin * 2.5);
+}
+
+.figure__img {
+  background-color: $core-color-light;
+  margin-bottom: ($core-margin / 2);
+  padding: $core-padding;
+  border: $core-border-width $core-border-style darken($core-border-color, 10%);
+}
+
+.figure__caption {
+  color: $core-color-body;
+  font-size: $core-font-size;
+  text-align: center;
+}
