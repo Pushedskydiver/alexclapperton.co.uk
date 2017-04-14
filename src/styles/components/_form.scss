@@ -1,0 +1,85 @@
+// Form...............Contact form styles.
+
+.form__fieldset {
+  margin: 0;
+  padding: 0;
+  border: none;
+}
+
+.form__content {
+  @include respond-to(m) {
+    display: grid;
+    grid-gap: 40px 20px;
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.form__label {
+  display: block;
+  color: $core-color-dark;
+  margin-bottom: ($core-margin / 2);
+  font-weight: $core-secondary-font-weight;
+  @include font-size($btn-font-sizes);
+
+  &--required {
+    color: $core-color-brand;
+  }
+
+  @include respond-to(l) {
+    cursor: pointer;
+  }
+}
+
+.form__item {
+  margin-bottom: ($core-margin * 1.5);
+
+  @include respond-to(m) {
+    margin-bottom: 0;
+
+    &--textarea {
+      grid-column: 1 / span 3;
+    }
+  }
+}
+
+.form__input {
+  width: 100%;
+  background-color: $core-color-neutral;
+  padding: ($core-padding * 1.25) $core-padding;
+  border: $core-border-width $core-border-style $core-border-color;
+  @include font-size($p-font-sizes);
+
+  &--valid {
+    border-color: $core-color-brand;
+  }
+
+  &--invalid {
+    border-color: #de0000;
+  }
+}
+
+.form__textarea {
+  width: 100%;
+  background-color: $core-color-neutral;
+  padding: ($core-padding * 1.25) $core-padding;
+  border: $core-border-width $core-border-style $core-border-color;
+  @include font-size($p-font-sizes);
+
+  &--valid {
+    border-color: $core-color-brand;
+  }
+
+  &--invalid {
+    border-color: #de0000;
+  }
+}
+
+.form__validation {
+  color: #de0000;
+  @include font-size($small-font-sizes);
+}
+
+.form__btn {
+  margin-right: 0;
+  justify-self: start;
+}

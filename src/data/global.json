@@ -17,6 +17,7 @@
       "title": "Facebook",
       "title-attr": "Go to Alex's Facebook profile.",
       "icon": "facebook",
+      "handle": "AlexMClapperton",
       "external": true
     },
     {
@@ -24,6 +25,7 @@
       "title": "Twitter",
       "title-attr": "Go to Alex's Twitter profile.",
       "icon": "twitter",
+      "handle": "@AlexMClapperton",
       "external": true
     },
     {
@@ -31,6 +33,7 @@
       "title": "LinkedIn",
       "title-attr": "Go to Alex's LinkedIn profile.",
       "icon": "linkedin",
+      "handle": "AlexClapperton",
       "external": true
     },
     {

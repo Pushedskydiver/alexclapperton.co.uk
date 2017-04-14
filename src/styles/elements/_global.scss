@@ -130,6 +130,10 @@ svg {
   }
 }
 
+legend {
+  display: none;
+}
+
 button {
   background-color: transparent;
   margin: 0;
@@ -139,6 +143,10 @@ button {
   @include font-size($p-font-sizes);
 
   @include respond-to(l) {
+    &:hover {
+      cursor: pointer;
+    }
+
     @include transition-03;
   }
 }

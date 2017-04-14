@@ -27,7 +27,7 @@
 
   @include respond-to(m) {
     grid-template-areas:
-      "logo . nav";
+      "logo nav";
   }
 
   @include respond-to(l) {

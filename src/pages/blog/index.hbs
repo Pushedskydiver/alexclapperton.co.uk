@@ -1,39 +1,53 @@
 ---
 page: blog
-title: Blog homepage
-keywords: web development, front end, developer, web developer, website portfolio, blog
-slug: blog
 layout: default.hbs
+title: Blog
 description: Alex Clapperton's Blog &mdash; Manchester, UK based front-end developer
 changefreq: monthly
 priority: 1.0
 ---
 
-<!-- ******************** BANNER : Start ********************-->
-<section class="banner banner--small">
+<!-- ******************** BAR : Start ******************** -->
+<section class="bar">
   <!-- BEGIN : CONTAINER -->
   <div class="container">
-
+    <!-- BEGIN : BAR CONTENT -->
+    <div class="bar__content">
+      <h1 class="bar__title">Blog</h1>
+      <ul class="breadcrumbs">
+        <li class="breadcrumbs__item"><a class="breadcrumbs__link" href="/" title="Breadcrumb link to the homepage.">Home</a></li>
+        <li class="breadcrumbs__item">Blog</li>
+      </ul>
+      <!-- BEGIN : SYMBOL -->
+      <div class="symbol symbol--primary">
+        <svg class="symbol__icon symbol__icon--primary" width="20" height="20">
+          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/icons/sprite.svg#blog"></use>
+        </svg>
+      </div>
+      <!-- END : SYMBOL /-->
+    </div>
+    <!-- END : BAR CONTENT /-->
   </div>
-  <!-- END : CONTAINER -->
+  <!-- END : CONTAINER /-->
 </section>
-<!-- ******************** BANNER : End ******************** /-->
+<!-- ******************** BAR : End ******************** /-->
 
 
-<!-- ******************** SITE BLOG : Start ******************** /-->
-<main class="site-blog site-blog--white" id="content" role="main">
+<!-- ******************** BLOG : Start ******************** -->
+<main class="blog" role="main" id="content">
   <!-- BEGIN : CONTAINER -->
   <div class="container">
-    <!-- BEGIN : SITE BLOG FLEX -->
-    <div class="site-blog__flex">
-      {{#each articles.[2016]}}
-        <!-- END : SITE BLOG ITEM /-->
+    <!-- BEGIN : BLOG CONTENT -->
+    <div class="blog__content">
+      {{#each articles.[2017]}}
         {{>article}}
-        <!-- END : SITE BLOG ITEM /-->
+      {{/each}}
+      {{#each articles.[2016]}}
+        {{>article}}
       {{/each}}
     </div>
-    <!-- END : SITE BLOG FLEX /-->
+    <!-- END : BLOG CONTENT /-->
   </div>
   <!-- END : CONTAINER /-->
 </main>
-<!-- ******************** SITE BLOG : End /******************** /-->
+<!-- ******************** BLOG : End ******************** /-->

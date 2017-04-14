@@ -2,6 +2,11 @@
 
 .blog {
   padding: 30px 0;
+
+  @include respond-to(m) {
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
 }
 
 .blog__content {
@@ -12,7 +17,8 @@
     grid-template-rows: auto;
 
     @include respond-to(l) {
-      grid-gap: 30px;
+      grid-gap: 40px 30px;
+      grid-template-columns: repeat(3, 1fr);
     }
   }
 }

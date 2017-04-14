@@ -36,6 +36,8 @@
       "title": "Performance and optimisation: Getting your website up to speed",
       "slug": "performance-and-optimisation-getting-your-website-up-to-speed",
       "title-attr": "Performance and optimisation: Getting your website up to speed blog post page.",
+      "src": "website-performance",
+      "alt": "Performance dial with indicator at 100%.",
       "readableDate": "October 28, 2016",
       "pubDate": "2016-10-28",
       "summary": "A taste into some of the fantastic methods I have come across to optimise my website and increase performance."
@@ -44,6 +46,8 @@
       "title": "The digital industry: A developers perspective",
       "slug": "the-digital-industry-a-developers-perspective",
       "title-attr": "Internal link to The digital industry: A developers perspective blog post page.",
+      "src": "uk-digital",
+      "alt": "World view of UK digitalised.",
       "readableDate": "30 Sept, 2016",
       "pubDate": "2016-09-30",
       "summary": "My look into the digital industry after reading the Manchester Digital 2016 slide deck and the 2016 Tech Nation report."

@@ -49,17 +49,21 @@ priority: 1.0
     </div>
     <!-- END : SYMBOL /-->
     <p class="info__body">I am Alex a 24 year old Front-End Website Developer from Manchester. I have had a passion for Web Development since 2012 where I started my own little Wordpress site where I blogged about my love for Apple products.</p>
-    <a class="btn btn--primary" href="/about-me" title="Go to the about page.">
-      <span class="btn__body">More about Alex</span>
-      <svg class="btn__icon btn__icon--primary btn__icon--rotate" width="20" height="20">
-        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/icons/sprite.svg#arrow"></use>
-      </svg>
+    <a class="btn" href="/about-me" title="Go to the about page.">
+      <span class="btn__body btn__body--primary">
+        More about Alex
+        <svg class="btn__icon btn__icon--primary btn__icon--rotate" width="20" height="20">
+          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/icons/sprite.svg#arrow"></use>
+        </svg>
+      </span>
     </a>
-    <a class="btn btn--primary" href="/pdf/alex-clapperton-cv.pdf" title="Download Alex's CV.">
-      <span class="btn__body">Download my CV</span>
-      <svg class="btn__icon btn__icon--primary" width="20" height="20">
-        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/icons/sprite.svg#download"></use>
-      </svg>
+    <a class="btn" href="/pdf/alex-clapperton-cv.pdf" title="Download Alex's CV.">
+      <span class="btn__body btn__body--primary">
+        Download my CV
+        <svg class="btn__icon btn__icon--primary" width="20" height="20">
+          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/icons/sprite.svg#download"></use>
+        </svg>
+      </span>
     </a>
   </div>
   <!-- END : CONTAINER /-->
@@ -91,14 +95,18 @@ priority: 1.0
 
 <!-- ******************** PORTFOLIO : Start ******************** -->
 <section class="portfolio">
+  <!-- BEGIN : CONTAINER -->
   <div class="container">
+    <!-- BEGIN : PORTFOLIO CONTENT -->
     <div class="portfolio__content">
       {{#each_upto portfolio.[2016] 3}}
         {{>portfolio}}
       {{/each_upto}}
       <a class="portfolio__link" href="#" title="Go to portfolio page.">All Projects</a>
     </div>
+    <!-- END : PORTFOLIO CONTENT /-->
   </div>
+  <!-- END : CONTAINER /-->
 </section>
 <!-- ******************** PORTFOLIO : End ******************** /-->
 

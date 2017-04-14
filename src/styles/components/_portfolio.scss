@@ -23,6 +23,24 @@
   }
 }
 
+.portfolio__item {
+  @include respond-to(l) {
+    transition: none;
+  }
+
+  @at-root {
+    .portfolio__page {
+      .portfolio__item {
+        width: 100%;
+
+        @include respond-to(m) {
+          width: 50%;
+        }
+      }
+    }
+  }
+}
+
 .portfolio__figure {
   position: relative;
   z-index: z(alpha);

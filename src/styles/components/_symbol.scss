@@ -51,11 +51,16 @@
       @include respond-to(s) {
         top: calc(50% - 18px);
         right: 72px;
+        width: 75px;
+        height: 75px;
       }
 
       @include respond-to(l) {
         top: calc(50% - 25px);
         right: 62px;
+        width: 100px;
+        height: 100px;
+        padding: 1.5%;
       }
     }
 
@@ -91,6 +96,7 @@
         right: 72px;
         width: 125px;
         height: 125px;
+        padding: 1.5%;
       }
     }
 
@@ -121,17 +127,6 @@
       }
     }
   }
-
-  @include respond-to(s) {
-    width: 75px;
-    height: 75px;
-  }
-
-  @include respond-to(l) {
-    width: 100px;
-    height: 100px;
-    padding: 1.5%;
-  }
 }
 
 .symbol__icon {
@@ -148,5 +143,9 @@
 
   &--tertiary {
     fill: $core-color-brand;
+  }
+
+  &--quaternary {
+    fill: $core-color-light;
   }
 }
