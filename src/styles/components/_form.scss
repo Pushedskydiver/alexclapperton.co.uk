@@ -1,5 +1,9 @@
 // Form...............Contact form styles.
 
+.form {
+  margin-top: ($core-margin * 2);
+}
+
 .form__fieldset {
   margin: 0;
   padding: 0;
@@ -82,4 +86,61 @@
 .form__btn {
   margin-right: 0;
   justify-self: start;
+}
+
+.form__message {
+  grid-column: 1 / span 2;
+  grid-row: 4;
+  margin-top: ($core-margin * 1.5);
+  padding: $core-padding ($core-padding * 2);
+  @include flex(wrap, row, flex-start, center);
+
+  &--success {
+    background-color: #dff2bf;
+    color: #307a00;
+
+    @include respond-to(m) {
+      &::before {
+        content: '\2713';
+        width: 25px;
+        height: 25px;
+        background-color: #307a00;
+        color: #dff2bf;
+        margin-right: ($core-margin / 1.5);
+        padding: ($core-padding / 2);
+        border-radius: 50%;
+        font-family: $core-secondary-font-family;
+        font-weight: $core-secondary-font-weight;
+        border-radius: 50%;
+        @include font-size($p-font-sizes);
+        @include flex(null, column, center, center);
+      }
+    }
+  }
+
+  &--error {
+    background-color: #ffbaba;
+    color: #b10000;
+
+    @include respond-to(m) {
+      &::before {
+        content: '\2715';
+        width: 25px;
+        height: 25px;
+        background-color: #b10000;
+        color: #ffbaba;
+        margin-right: ($core-margin / 1.5);
+        padding: ($core-padding / 2);
+        font-family: $core-secondary-font-family;
+        font-weight: $core-secondary-font-weight;
+        border-radius: 50%;
+        @include font-size($p-font-sizes);
+        @include flex(null, column, center, center);
+      }
+    }
+  }
+
+  @include respond-to(m) {
+    margin-top: 0;
+  }
 }

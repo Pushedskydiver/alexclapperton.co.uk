@@ -18,7 +18,7 @@
   <body>
   <table width='50%' border='0' align='center' cellpadding='0' cellspacing='0'>
   <tr>
-  <td colspan='2' align='center' valign='top'><img width='150' height='69' style='margin-top: 15px;' src='http://www.alexclapperton.co.uk/images/logo.png'></td>
+  <td colspan='2' align='center' valign='top'><img width='150' height='69' style='margin-top: 15px;' src='https://www.alexclapperton.co.uk/images/logo.png'></td>
   </tr>
   <tr>
   <td width='50%' align='right'>&nbsp;</td>

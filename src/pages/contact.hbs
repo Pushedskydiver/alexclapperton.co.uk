@@ -82,7 +82,7 @@ priority: 1.0
         <h3 class="contact__title">Try out the form</h3>
         <p class="contact__body">Got a question to ask? Then please, don’t hesitate to get in touch with me by using the super simple form below.</p>
         <!-- BEGIN : FORM -->
-        <form class="form" action="" method="post" data-form>
+        <form class="form" action="/forms/mailer.php" method="post" data-form>
           <!-- BEGIN : FORM FIELDSET -->
           <fieldset class="form__fieldset">
             <legend>Enter your name, email, subject (optional) and your message.</legend>
@@ -115,9 +115,9 @@ priority: 1.0
                 <small class="form__validation" data-form-validation></small>
               </div>
               <!-- END : FORM ITEM /-->
-              <button class="form__btn btn" type="submit" name="submit" data-form-submit>
-                <span class="btn__body btn__body--primary">Submit</span>
-              </button>
+              <button class="form__btn btn" type="submit" name="submit" data-form-submit><span class="btn__body btn__body--primary">Submit</span></button>
+
+              <div class="form__message" data-form-message></div>
             </div>
             <!-- END : FORM CONTENT /-->
           </fieldset>

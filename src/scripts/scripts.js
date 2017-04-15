@@ -59,7 +59,9 @@
           ELEMENT_item = document.querySelector('[data-portfolio-item]'),
           ELEMENT_filter = document.querySelector('[data-filter-block]');
 
-      var SELECTOR_btn = document.querySelector('[data-filter-btn]'),
+      var SELECTOR_filter = document.querySelectorAll('[data-filter-block]'),
+          SELECTOR_btn = document.querySelector('[data-filter-btn]'),
+          SELECTOR_filterBtnActive = '.filter__btn--active',
           SELECTOR_iso;
 
       var CLASS_filterBtnActive = 'filter__btn--active',
@@ -86,8 +88,8 @@
         });
 
         // Change is-checked class on buttons
-        for (var i=0, len = ELEMENT_filter.length; i < len; i++) {
-          var SELECTOR_filterBtn = ELEMENT_filter[i];
+        for (var i=0, len = SELECTOR_filter.length; i < len; i++) {
+          var SELECTOR_filterBtn = SELECTOR_filter[i];
           radioButtonGroup(SELECTOR_filterBtn);
         }
         function radioButtonGroup(SELECTOR_filterBtn) {
@@ -96,7 +98,7 @@
             if (!matchesSelector(event.target, 'button')) {
               return;
             }
-            SELECTOR_filterBtn.querySelector(CLASS_filterBtnActive).classList.remove(CLASS_filterBtnActive);
+            SELECTOR_filterBtn.querySelector(SELECTOR_filterBtnActive).classList.remove(CLASS_filterBtnActive);
             event.target.classList.add(CLASS_filterBtnActive);
           });
         }
@@ -265,6 +267,54 @@
 
 
     // ==============================================
+    //    Send form | Contact page
+    // ==============================================
+    function init_send_form() {
+      var ELEMENT_form = document.querySelector(['[data-form]']),
+          ELEMENT_formMessage = document.querySelector('[data-form-message]');
+
+      var CLASS_formMessageSuccess = 'form__message--success',
+          CLASS_formMessageError = 'form__message--error';
+
+      ELEMENT_form.addEventListener('submit', function(event){
+
+        var ELEMENT_this = event.target;
+
+        var SELECTOR_data = new FormData(ELEMENT_this),
+            SELECTOR_request = new XMLHttpRequest();
+
+        event.preventDefault()
+
+        SELECTOR_request.onreadystatechange = function(){
+          if (SELECTOR_request.readyState == XMLHttpRequest.DONE ) {
+
+            if (SELECTOR_request.status == 200) {
+              ELEMENT_formMessage.classList.remove(CLASS_formMessageError);
+              ELEMENT_formMessage.classList.add(CLASS_formMessageSuccess);
+              ELEMENT_formMessage.textContent = SELECTOR_request.responseText;
+              return;
+            }
+
+            if (SELECTOR_request.status == 400) {
+              ELEMENT_formMessage.classList.remove(CLASS_formMessageSuccess);
+              ELEMENT_formMessage.classList.add(CLASS_formMessageError);
+              ELEMENT_formMessage.textContent = 'Oops! Something went wrong. Please submit the form again.';
+              return;
+            }
+
+            ELEMENT_formMessage.classList.remove(CLASS_formMessageSuccess);
+            ELEMENT_formMessage.classList.add(CLASS_formMessageError);
+            ELEMENT_formMessage.textContent = 'Oops! Something went wrong. The form could not be sent.';
+          }
+        }
+
+        SELECTOR_request.open(ELEMENT_this.method, ELEMENT_this.action)
+        SELECTOR_request.send(SELECTOR_data)
+      });
+    }
+
+
+    // ==============================================
     //    Initialise plugins
     // ==============================================
     init_active_nav();
@@ -278,6 +328,7 @@
     }
     if(window.location.pathname == '/contact/') {
       init_form_validation();
+      init_send_form();
     }
 
 })();
