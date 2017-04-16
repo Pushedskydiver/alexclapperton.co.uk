@@ -36,10 +36,10 @@
       if (window.location.pathname == '/') {
         ELEMENT_navItemHome.classList.add(CLASS_navItemActive);
       }
-      if (window.location.href.indexOf('about-me/') > -1) {
+      if (window.location.pathname == '/about-me/') {
         ELEMENT_navItemAbout.classList.add(CLASS_navItemActive);
       }
-      if (window.location.pathname == '/portfolio/') {
+      if (window.location.href.indexOf('portfolio/') > -1) {
         ELEMENT_navItemPortfolio.classList.add(CLASS_navItemActive);
       }
       if (window.location.href.indexOf('blog/') > -1) {

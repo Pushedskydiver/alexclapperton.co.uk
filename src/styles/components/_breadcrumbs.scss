@@ -8,19 +8,33 @@
 
 .breadcrumbs__item {
   display: inline-block;
-  color: $core-color-light;
   text-transform: capitalize;
   line-height: $core-line-height;
 
   &::after {
     content: '/';
-    color: $core-color-light;
     margin: 0 0 0 ($core-margin / 2);
   }
 
   &:last-child {
     &::after {
       display: none;
+    }
+  }
+
+  &:not(&--dark) {
+    color: $core-color-light;
+
+    &::after {
+      color: $core-color-light;
+    }
+  }
+
+  &--dark {
+    color: $core-color-dark;
+
+    &::after {
+      color: $core-color-dark;
     }
   }
 }
@@ -30,8 +44,16 @@
   text-decoration: none;
 
   @include respond-to(l) {
-    &:hover {
-      border-bottom: 1px dotted $core-color-light;
+    &:not(&--dark) {
+      &:hover {
+        border-bottom: 1px dotted $core-color-light;
+      }
+    }
+
+    &--dark {
+      &:hover {
+        border-bottom: 1px dotted $core-color-dark;
+      }
     }
   }
 }

@@ -1,0 +1,67 @@
+// Browser............Portfolio page browser window styles.
+
+.browser {
+  background-color: #232b35;
+  border-radius: 4px;
+  box-shadow: 0 0 200px 0 rgba(0,0,0,.3);
+
+  @include respond-to(l) {
+
+    @supports (display: grid) {
+      grid-column: 1 / span 2;
+    }
+  }
+}
+
+.browser__bar {
+  height: ($core-grid-unit * 2);
+  background-color: $core-color-dark;
+  padding: 0 ($core-padding / 1.5);
+  border-radius: 3px 3px 0 0;
+  @include flex(wrap, row, flex-start, center);
+
+  @include respond-to(s) {
+    height: ($core-grid-unit * 3);
+    padding-right: ($core-padding / 1.2);
+    padding-left: ($core-padding / 1.2);
+  }
+
+  @include respond-to(m) {
+    padding-right: $core-padding;
+    padding-left: $core-padding;
+  }
+}
+
+.browser__dot {
+  width: ($core-grid-unit / 1.5);
+  height: ($core-grid-unit / 1.5);
+  margin-right: ($core-margin / 1.5);
+  border-radius: 50%;
+
+  &--close {
+    background-color: #fc635d;
+  }
+
+  &--minimize {
+    background-color: #fdbc40;
+  }
+
+  &--expand {
+    background-color: #34c84a;
+  }
+
+  @include respond-to(s) {
+    width: $core-grid-unit;
+    height: $core-grid-unit;
+    margin-right: ($core-margin / 1.2);
+  }
+
+  @include respond-to(s) {
+    margin-right: $core-margin;
+  }
+}
+
+.browser__window {
+  width: 100%;
+  border-radius: 0 0 3px 3px;
+}

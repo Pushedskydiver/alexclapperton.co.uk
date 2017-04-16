@@ -1,7 +1,7 @@
 // Footer.............Footer styles.
 
 .footer {
-  background-color: $core-color-neutral;
+  background-color: darken($core-color-neutral, 5%);
   padding: 30px 0 0 0;
 }
 
@@ -24,7 +24,7 @@
   @include font-size($h4-font-sizes);
 
   &--first {
-    color: #0078b4;
+    color: #0070a8;
   }
 
   &--second {
@@ -32,7 +32,7 @@
   }
 
   &--third {
-    color: #d32d65;
+    color: #d0095c;
   }
 
   &--fourth {
@@ -75,7 +75,7 @@
 }
 
 .footer__bottom {
-  background-color: darken($core-color-neutral, 5%);
+  background-color: darken($core-color-neutral, 10%);
   margin-top: 30px;
   padding: $core-padding 0;
 }

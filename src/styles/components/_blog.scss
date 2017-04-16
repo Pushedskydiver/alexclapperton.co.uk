@@ -1,6 +1,7 @@
 // Blog...............Blog page styles.
 
 .blog {
+  background-color: $core-color-neutral;
   padding: 30px 0;
 
   @include respond-to(m) {
@@ -24,7 +25,13 @@
 }
 
 .blog__item {
+  background-color: $core-color-light;
   text-decoration: none;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+
+  @include respond-to(m) {
+    @include flex(null, column, null, null);
+  }
 
   @include respond-to(l) {
     &:hover {
@@ -47,8 +54,6 @@
 }
 
 .blog__thumbnail {
-  margin-bottom: ($core-margin * 2);
-
   @include respond-to(l) {
     position: relative;
 
@@ -72,6 +77,15 @@
   }
 }
 
+.blog__details {
+  padding: ($core-padding * 1.5);
+
+  @include respond-to(m) {
+    flex: 1;
+    @include flex(null, column, space-between, null);
+  }
+}
+
 .blog__title {
   margin-bottom: ($core-margin * 1.4);
 }
@@ -82,6 +96,12 @@
   margin-bottom: ($core-margin / 2);
   font-weight: $core-secondary-font-weight;
   @include font-size($p-font-sizes);
+}
+
+.blog__body {
+  @include respond-to(m) {
+    flex: 1;
+  }
 }
 
 .blog__link {

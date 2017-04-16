@@ -2,10 +2,12 @@
 
 .banner {
   @include respond-to(m) {
-    background-image: url('../images/banner/banner--desktop.jpg');
-    background-size: cover;
-    background-position: top center;
-    background-repeat: no-repeat;
+    &--home {
+      background-image: url('../images/banner/banner--desktop.jpg');
+      background-size: cover;
+      background-position: top center;
+      background-repeat: no-repeat;
+    }
   }
 }
 

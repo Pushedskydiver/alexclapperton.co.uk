@@ -23,6 +23,17 @@
   }
 }
 
+.portfolio__intro {
+  @include respond-to(l) {
+
+    @supports (display: grid) {
+      display: grid;
+      grid-gap: 30px;
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+}
+
 .portfolio__item {
   @include respond-to(l) {
     transition: none;

@@ -44,6 +44,7 @@
 *  Blocks.............Blocks styles on about page.
 *  Blog...............Blog page styles.
 *  Breadcrumbs........Simple breadcrumbs styles.
+*  Browser............Portfolio page browser window styles.
 *  Butons.............Button styles.
 *  Contact............Contact section styles.
 *  Figure.............Figure and figcaption styles.
@@ -62,6 +63,7 @@
 *  Prism - code snippet syntax highlighter
 *  Scroll to top......Scroll to top button styles.
 *  Share..............Blog post share styles.
+*  Showcase...........Portfolio items showcase styles.
 *  Skip links.........The sites skip to links.
 *  Social.............Social block styles.
 *  Symbol.............Symbol block styles.
@@ -93,6 +95,7 @@
 @import "/Users/alih2106/Desktop/website/src/styles/components/_blocks.scss";
 @import "/Users/alih2106/Desktop/website/src/styles/components/_blog.scss";
 @import "/Users/alih2106/Desktop/website/src/styles/components/_breadcrumbs.scss";
+@import "/Users/alih2106/Desktop/website/src/styles/components/_browser.scss";
 @import "/Users/alih2106/Desktop/website/src/styles/components/_buttons.scss";
 @import "/Users/alih2106/Desktop/website/src/styles/components/_contact.scss";
 @import "/Users/alih2106/Desktop/website/src/styles/components/_figure.scss";
@@ -111,6 +114,7 @@
 @import "/Users/alih2106/Desktop/website/src/styles/components/_prism.scss";
 @import "/Users/alih2106/Desktop/website/src/styles/components/_scroll-top.scss";
 @import "/Users/alih2106/Desktop/website/src/styles/components/_share.scss";
+@import "/Users/alih2106/Desktop/website/src/styles/components/_showcase.scss";
 @import "/Users/alih2106/Desktop/website/src/styles/components/_skip-links.scss";
 @import "/Users/alih2106/Desktop/website/src/styles/components/_social.scss";
 @import "/Users/alih2106/Desktop/website/src/styles/components/_symbol.scss";

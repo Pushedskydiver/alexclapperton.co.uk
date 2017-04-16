@@ -31,6 +31,14 @@
       <div class="post__content">
         <!-- BEGIN : POST ARTICLE -->
         <article class="post__article">
+          <ul class="breadcrumbs">
+            <li class="breadcrumbs__item breadcrumbs__item--dark"><a class="breadcrumbs__link" href="/" title="Breadcrumb link to the homepage.">Home</a></li>
+            <li class="breadcrumbs__item breadcrumbs__item--dark"><a class="breadcrumbs__link" href="/blog">Blog</a></li>
+            <li class="breadcrumbs__item breadcrumbs__item--dark">{{title}}</li>
+          </ul>
+
+          <hr>
+
           <!-- BEGIN : POST DETAILS -->
           <div class="post__details">
             <span class="post__date">Posted on <strong><time datetime="{{{dateTime}}}">{{pubDate}}</time></strong></span>
