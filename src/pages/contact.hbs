@@ -130,6 +130,13 @@ priority: 1.0
       <div class="contact__details">
         <h3 class="contact__title">Not a fan of forms?</h3>
         <p class="contact__body">If you don't like to fill in forms just use one of the following alternate methods below.</p>
+        <ul>
+          <li class="list__item">Phone: <strong>{{global.phone}}</strong></li>
+          <li class="list__item">Email: <a href="mailto:{{global.email}}"><strong>{{global.email}}</strong></a></li>
+          {{#each_upto global.social 3}}
+            <li class="list__item">{{title}}: <a href="{{url}}"><strong>{{handle}}</strong></a></li>
+          {{/each_upto}}
+        </ul>
       </div>
       <!-- END : CONTACT DETAILS /-->
     </div>
