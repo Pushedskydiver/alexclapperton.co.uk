@@ -23,6 +23,10 @@ body {
   @include fadeIn;
 
   @include respond-to(s) {
+    padding-bottom: 77px;
+  }
+
+  @include respond-to(m) {
     padding-bottom: 0;
   }
 }

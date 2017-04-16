@@ -152,16 +152,18 @@
 }
 
 .portfolio__intro {
-  padding-bottom: 30px;
-
-  @include respond-to(l) {
-    padding-bottom: 50px;
-  }
-
   @supports (display: grid) {
     display: grid;
     grid-gap: 30px;
     grid-auto-rows: 200px auto;
+
+    @include respond-to(xs) {
+      grid-auto-rows: 300px auto;
+    }
+
+    @include respond-to(s) {
+      grid-auto-rows: 400px auto;
+    }
 
     @include respond-to(m) {
       grid-auto-rows: 440px auto;
@@ -170,15 +172,12 @@
     @include respond-to(l) {
       grid-gap: 50px;
       grid-template-columns: repeat(12, 1fr);
+      grid-auto-rows: auto;
     }
   }
 }
 
 .portfolio__brief {
-  @include respond-to(l) {
-    @include flex(null, column, null, null);
-  }
-
   @supports (display: grid) {
     @include respond-to(l) {
       grid-column: 8 / -1;
@@ -186,14 +185,14 @@
   }
 }
 
-.portfolio__brief-body {
-  @include respond-to(l) {
-    flex: 1;
-  }
+.portfolio__brief-subtitle {
+  color: $core-color-dark;
 }
 
 .portfolio__brief-btn {
-  @include respond-to(l) {
-    align-self: flex-start;
-  }
+  margin-bottom: ($core-margin * 2);
+}
+
+.portfolio__brief-img {
+  margin-bottom: ($core-margin * 2);
 }

@@ -1,13 +1,15 @@
 // Browser............Portfolio page browser window styles.
 
 .browser {
-  position: relative;
   border: $core-border-width $core-border-style darken($core-border-color, 10%);
   border-radius: 4px;
   overflow: scroll;
 
   @supports (display: grid) {
     @include respond-to(l) {
+      position: sticky;
+      top: 100px;
+      max-height: calc(100vh - 140px);
       grid-column: 1 / span 7;
     }
   }
@@ -68,11 +70,6 @@
 }
 
 .browser__window {
-  // max-height: 200px;
   border-radius: 0 0 4px 4px;
-  // overflow: scroll;
-
-  // @include respond-to(m) {
-  //   max-height: 450px;
-  // }
+  overflow: scroll;
 }

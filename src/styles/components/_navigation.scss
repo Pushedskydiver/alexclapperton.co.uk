@@ -39,7 +39,7 @@
 
   @include respond-to(xs) {
     padding-top: ($core-padding / 1.4);
-    padding-bottom: ($core-padding / 1.4);
+    padding-bottom: ($core-padding / 2);
   }
 
   @include respond-to(s) {
@@ -108,11 +108,6 @@
   @include respond-to(xs) {
     width: 32px;
     height: 32px;
-  }
-
-  @include respond-to(s) {
-    width: 36px;
-    height: 36px;
   }
 
   @include respond-to(m) {

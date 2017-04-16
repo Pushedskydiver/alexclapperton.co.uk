@@ -3,6 +3,7 @@
 .filter {
   background-color: $core-color-light;
   margin-bottom: ($core-margin * 2.5);
+  padding: 0 ($core-padding * 2);
 
   @include respond-to(xs) {
     box-shadow: 3px 4px 9px 0 rgba(0, 0, 0, 0.15);
@@ -16,24 +17,17 @@
     margin-left: auto;
     border: $core-border-width $core-border-style $core-border-color;
     box-shadow: 20px 20px 0px 0px rgba($core-color-neutral, 1);
-  }
-
-  @supports (display: grid) {
-    display: grid;
-    grid-gap: 10px;
-    grid-template-columns: 1fr;
-    grid-template-rows: auto;
-
-    @include respond-to(xs) {
-      grid-gap: 0;
-      grid-template-columns: repeat(5, 1fr);
-    }
+    @include flex(wrap, row, space-between, null);
   }
 }
 
 .filter__btn {
   position: relative;
-  padding: ($core-padding * 1.5);
+  display: block;
+  width: 100%;
+  padding-top: ($core-padding * 1.5);
+  padding-bottom: ($core-padding * 1.5);
+  text-align: center;
 
   &--active {
     color: $core-color-brand;
@@ -52,6 +46,8 @@
   }
 
   @include respond-to(s) {
+    width: auto;
+    flex: 1;
     padding-top: ($core-padding * 2);
     padding-bottom: ($core-padding * 2);
   }
