@@ -1,23 +1,22 @@
 // Browser............Portfolio page browser window styles.
 
 .browser {
-  background-color: #232b35;
   border-radius: 4px;
-  box-shadow: 0 0 200px 0 rgba(0,0,0,.3);
 
   @include respond-to(l) {
 
     @supports (display: grid) {
-      grid-column: 1 / span 2;
+      grid-column: 1 / span 7;
     }
   }
 }
 
 .browser__bar {
   height: ($core-grid-unit * 2);
-  background-color: $core-color-dark;
+  background-color: $core-color-neutral;
   padding: 0 ($core-padding / 1.5);
-  border-radius: 3px 3px 0 0;
+  border: $core-border-width $core-border-style darken($core-border-color, 10%);
+  border-radius: 4px 4px 0 0;
   @include flex(wrap, row, flex-start, center);
 
   @include respond-to(s) {
@@ -63,5 +62,5 @@
 
 .browser__window {
   width: 100%;
-  border-radius: 0 0 3px 3px;
+  border-radius: 0 0 4px 4px;
 }

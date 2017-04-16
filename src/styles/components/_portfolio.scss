@@ -28,8 +28,16 @@
 
     @supports (display: grid) {
       display: grid;
-      grid-gap: 30px;
-      grid-template-columns: repeat(3, 1fr);
+      grid-gap: 50px;
+      grid-template-columns: repeat(12, 1fr);
+    }
+  }
+}
+
+.portfolio__brief {
+  @supports (display: grid) {
+    @include respond-to(l) {
+      grid-column: 8 / -1;
     }
   }
 }
