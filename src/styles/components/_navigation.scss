@@ -7,6 +7,7 @@
   width: 100%;
   background-color: $core-color-brand;
   z-index: z(kilo);
+  @include flex(wrap, row, space-between, null);
 
   @include respond-to(m) {
     position: static;
@@ -14,23 +15,14 @@
   }
 
   @supports (display: grid) {
-    display: grid;
-    grid-gap: 0;
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: auto;
-
-    @include respond-to(s) {
-      grid-template-columns: repeat(5, 1fr);
-    }
-
     @include respond-to(m) {
       grid-area: nav;
-      grid-template-rows: 4.5em;
     }
   }
 }
 
 .nav__item {
+  flex: 1;
   padding: ($core-padding / 2) 0;
   color: $core-color-light;
   text-align: center;

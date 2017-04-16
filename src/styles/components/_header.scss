@@ -23,16 +23,16 @@
   grid-template-rows: auto;
   grid-template-areas:
     "logo . header-btn";
-  align-items: center;
+  align-items: strecth;
 
   @include respond-to(m) {
     grid-template-areas:
-      "logo nav";
+      "logo nav nav";
   }
 
   @include respond-to(l) {
     grid-template-areas:
-      "logo . . . nav";
+      "logo . . . nav nav";
   }
 }
 
