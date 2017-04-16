@@ -23,25 +23,6 @@
   }
 }
 
-.portfolio__intro {
-  @include respond-to(l) {
-
-    @supports (display: grid) {
-      display: grid;
-      grid-gap: 50px;
-      grid-template-columns: repeat(12, 1fr);
-    }
-  }
-}
-
-.portfolio__brief {
-  @supports (display: grid) {
-    @include respond-to(l) {
-      grid-column: 8 / -1;
-    }
-  }
-}
-
 .portfolio__item {
   @include respond-to(l) {
     transition: none;
@@ -167,5 +148,52 @@
     &:hover {
       background-color: $core-color-dark;
     }
+  }
+}
+
+.portfolio__intro {
+  padding-bottom: 30px;
+
+  @include respond-to(l) {
+    padding-bottom: 50px;
+  }
+
+  @supports (display: grid) {
+    display: grid;
+    grid-gap: 30px;
+    grid-auto-rows: 200px auto;
+
+    @include respond-to(m) {
+      grid-auto-rows: 440px auto;
+    }
+
+    @include respond-to(l) {
+      grid-gap: 50px;
+      grid-template-columns: repeat(12, 1fr);
+    }
+  }
+}
+
+.portfolio__brief {
+  @include respond-to(l) {
+    @include flex(null, column, null, null);
+  }
+
+  @supports (display: grid) {
+    @include respond-to(l) {
+      grid-column: 8 / -1;
+    }
+  }
+}
+
+.portfolio__brief-body {
+  @include respond-to(l) {
+    flex: 1;
+  }
+}
+
+.portfolio__brief-btn {
+  @include respond-to(l) {
+    align-self: flex-start;
   }
 }
