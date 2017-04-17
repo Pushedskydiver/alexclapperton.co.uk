@@ -12,10 +12,10 @@ import runSeq from 'run-sequence'
 const argv = yargs.argv
 
 const data = {
-  paths: require('./global/paths.json'),
-  performance: require('./global/performance.json'),
-  site: require('./global/site.json'),
-  stylelint: require('./global/stylelint.json'),
+  paths: require('./config/paths.json'),
+  performance: require('./config/performance.json'),
+  site: require('./config/site.json'),
+  stylelint: require('./config/stylelint.json'),
 }
 
 
@@ -25,6 +25,7 @@ const data = {
 
 require('./tasks/html.js')(gulp, data, argv);
 require('./tasks/styles.js')(gulp, data, argv);
+require('./tasks/imports.js')(gulp, data);
 require('./tasks/scripts.js')(gulp, data, argv);
 require('./tasks/images.js')(gulp, data);
 require('./tasks/icons.js')(gulp, data);
@@ -54,7 +55,8 @@ gulp.task('dev', function (callback) {
 gulp.task('default', function (callback) {
   runSeq(
     'clean:all',
-    ['html:build', 'styles:sass', 'scripts', 'icons', 'images', 'fonts', 'copy:forms', 'copy:favicons', 'copy:pdf', 'copy:twitter'],
+    'imports:sass',
+    ['html:build', 'styles:sass', 'scripts', 'icons', 'images', 'fonts', 'copy:forms', 'copy:favicons', 'copy:manifest', 'copy:pdf', 'copy:serviceWorker', 'copy:twitter'],
     'clean:fonts',
     callback
   )
@@ -74,24 +76,24 @@ gulp.task('perf', function (callback) {
 
 gulp.task('watch', function() {
 
-    // Watch .scss files
-    gulp.watch(data.paths.styles.src + '**/*.scss', ['styles:sass']);
+    // Watch image files
+    gulp.watch(`${data.paths.source.images}**/*`, ['images']);
 
     // Watch svg files
-    gulp.watch(data.paths.icons.src, ['icons']);
+    gulp.watch(data.paths.source.icons, ['icons']);
+
+    // Watch .scss files
+    gulp.watch(`${data.paths.source.styles}**/*.scss`, ['styles:sass']);
 
     // Watch .js files
-    gulp.watch(data.paths.js.src, ['scripts']);
+    gulp.watch(`${data.paths.source.scripts}**/*.js`, ['scripts']);
 
-    // Watch .hbs files
+    // Watch .hbs & .json files
     gulp.watch([
-      data.paths.source.content + '**/*.hbs',
-      data.paths.source.partials + '*.hbs',
-      data.paths.source.layouts + '*.json',
-      data.paths.source.data + '*.json'
+      `${data.paths.source.content}**/*.hbs`,
+      `${data.paths.source.partials}*.hbs`,
+      `${data.paths.source.layouts}*.hbs`,
+      `${data.paths.source.data}*.json`
     ], ['html:build']);
-
-    // Watch image files
-    gulp.watch(data.paths.images.src, ['images']);
 
 });

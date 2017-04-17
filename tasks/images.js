@@ -10,8 +10,8 @@
 
 module.exports = function (gulp, data) {
   gulp.task('images', function () {
-      gulp.src(data.paths.images.src)
+      gulp.src(data.paths.source.images)
           .pipe($.imagemin(config.plugin.imgmin))
-          .pipe(gulp.dest(data.paths.images.dest));
+          .pipe(gulp.dest(data.paths.dist.images));
   });
 }

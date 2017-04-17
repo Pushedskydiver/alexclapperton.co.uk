@@ -1,0 +1,70 @@
+// Header.............The sites header styles.
+
+.header {
+  padding-top: $core-padding;
+  padding-bottom: $core-padding;
+
+  @include respond-to(m) {
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+
+  @include respond-to(l) {
+    background-color: $core-color-neutral;
+    z-index: z(kilo);
+
+    @supports (position: sticky) {
+      position: sticky;
+      top: 0;
+    }
+
+    @supports not (position: sticky) {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+    }
+  }
+}
+
+.header__content {
+  @supports (display: grid) {
+    display: grid;
+    grid-gap: 0;
+    grid-template-rows: auto;
+    grid-template-areas:
+      "logo . header-btn";
+  }
+
+  @supports not (display: grid) {
+    @include flex(wrap, row, space-between, null);
+  }
+
+  @include respond-to(m) {
+    @supports (display: grid) {
+      grid-template-areas:
+        "logo nav nav";
+    }
+  }
+
+  @include respond-to(l) {
+    @supports (display: grid) {
+      grid-template-areas:
+        "logo . . . nav nav";
+    }
+  }
+}
+
+.header__btn {
+  @include respond-to(m) {
+    display: none;
+    width: 0;
+    height: 0;
+    visibility: hidden;
+  }
+
+  @supports (display: grid) {
+    grid-area: header-btn;
+    justify-self: end;
+  }
+}

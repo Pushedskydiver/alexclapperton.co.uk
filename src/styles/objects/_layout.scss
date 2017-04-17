@@ -1,17 +1,36 @@
-.site-container {
+// Layout.............Generic layout module.
+
+.container {
   position: relative;
-  padding: 0 $core-padding;
+  padding-right: 20px;
+  padding-left: 20px;
+
+  @include respond-to(xs) {
+    padding-right: 30px;
+    padding-left: 30px;
+  }
+
+  @include respond-to(s) {
+    padding-right: 40px;
+    padding-left: 40px;
+  }
 
   @include respond-to(m) {
-    width: 668px;
+    width: 750px;
     margin: 0 auto;
+    padding-right: 20px;
+    padding-left: 20px;
   }
 
   @include respond-to(l) {
-    width: 962px;
+    width: 970px;
   }
 
   @include respond-to(xl) {
-    width: 1200px;
+    width: 1170px;
+  }
+
+  @include respond-to(xxl) {
+    width: 80%;
   }
 }

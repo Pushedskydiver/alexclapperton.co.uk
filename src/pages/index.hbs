@@ -1,103 +1,153 @@
 ---
 page: home
 layout: default.hbs
-title: Homepage
+title:
 description: Alex Clapperton &mdash; Manchester, UK based front-end developer
-keywords: web development, front-end, front end, developer, web developer, website portfolio, html, css, js, javascript, ux, user experience, web design, sass, git, gulp, handlebars
 changefreq: monthly
 priority: 1.0
 ---
 
-<!-- ******************** SITE BANNER : Start ******************** -->
-<section class="site-banner site-banner--large">
+<!-- ******************** BANNER : Start ******************** -->
+<section class="banner">
   <!-- BEGIN : CONTAINER -->
-  <div class="site-container">
-    <!-- BEGIN : GRID GUIDES -->
-    <div class="grid-guides">
-      <div class="grid-guides__guide"></div>
-      <div class="grid-guides__guide"></div>
-      <div class="grid-guides__guide"></div>
-      <div class="grid-guides__guide"></div>
-    </div>
-    <!-- END : GRID GUIDES /-->
-    <!-- BEGIN : SITE BANNER FLEX -->
-    <div class="site-banner__flex">
-      <h1 class="site-banner__title">Hello! <br> My name is <br> {{{global.name}}}</h1>
-      <p class="site-banner__text">
-        I am a <strong>Manchester</strong> based Junior/Freelance <strong>{{{global.jobTitle}}}</strong> and a final year University student.
-      </p>
-      <picture>
-        <source srcset="/images/banner/alex.png" media="(min-width: 768px)">
-          <source srcset="/images/banner/alex-looking-up.png">
-          <img class="site-banner__img site-banner__img--home" src="/images/banner/alex.png" alt="Portrait of Alex smiling and wearing a black t-shirt." />
-      </picture>
-    </div>
-    <!-- END : SITE BANNER FLEX -->
-  </div>
-  <!-- END : CONTAINER -->
-</section>
-<!-- ******************** SITE BANNER : End /******************** /-->
-
-
-<!-- ******************** SITE MAIN : Start ******************** -->
-<main class="site-main" id="content" role="main">
-  <!-- BEGIN : CONTAINER -->
-  <div class="site-container">
-    <!-- BEGIN : SITE PORTFOLIO FLEX -->
-    <div class="site-portfolio__flex site-portfolio__flex--padding">
-      <!-- BEGIN : SITE PORTFOLIO FLEX ITEM -->
-      <div class="site-portfolio__flex-item">
-        <h2>My latest work</h2>
-      </div>
-      <!-- END : SITE PORTFOLIO FLEX ITEM /-->
-      <!-- BEGIN : SITE PORTFOLIO FLEX ITEM -->
-      <div class="site-portfolio__flex-item">
-        <!-- BEGIN : BTN PRIMARY FLEX -->
-        <div class="btn-primary__flex btn-primary__flex--home">
-          <a class="btn-primary btn-primary--blue btn-primary--large btn-primary__text--large" href="/my-work" title="Internal link to my work page.">View all my work</a>
+  <div class="container">
+    <!-- BEGIN : BANNER CONTENT -->
+    <div class="banner__content">
+      <!-- BEGIN : BANNER BLOCK -->
+      <div class="banner__blocks">
+        <div class="banner__block1">
+          <h1 class="banner__title">{{global.name}}</h1>
+          <p class="banner__body">{{global.jobTitle}} Manchester, UK</p>
         </div>
-        <!-- END : BTN PRIMARY FLEX /-->
+        <div class="banner__block2"></div>
       </div>
-      <!-- END : SITE PORTFOLIO FLEX ITEM /-->
+      <!-- END : BANNER BLOCK /-->
+      <a class="banner__scroll" href="#content">
+        <svg class="banner__scroll-icon" width="30" height="30">
+          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/icons/sprite.svg#arrow"></use>
+        </svg>
+        <span class="visually-hidden visually-hidden--white">Scroll to content</span>
+      </a>
     </div>
-    <!-- END : SITE PORTFOLIO FLEX /-->
-    <!-- BEGIN : SITE PORTFOLIO GRID -->
-    <div class="site-portfolio__grid">
-      {{#each_upto portfolio.[2016] 4}}
-        <!-- BEGIN : SITE PORTFOLIO ITEM -->
-        {{>work-item-preview}}
-        <!-- END : SITE PORTFOLIO ITEM /-->
-      {{/each_upto}}
+    <!-- END : BANNER CONTENT /-->
+  </div>
+  <!-- END : CONTAINER /-->
+</section>
+<!-- ******************** BANNER : End ******************** /-->
+
+
+<!-- ******************** INFO : Start ******************** -->
+<main class="info" role="main" id="content">
+  <!-- BEGIN : CONTAINER -->
+  <div class="container">
+    <h2 class="info__title">A little bit about me</h2>
+    <!-- BEGIN : SYMBOL -->
+    <div class="symbol symbol--secondary">
+      <svg class="symbol__icon symbol__icon--secondary" width="20" height="20">
+        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/icons/sprite.svg#about"></use>
+      </svg>
     </div>
-    <!-- END : SITE PORTFOLIO GRID /-->
+    <!-- END : SYMBOL /-->
+    <p class="info__body">I am Alex a 24 year old Front-End Website Developer from Manchester. I have had a passion for Web Development since 2012 where I started my own little Wordpress site where I blogged about my love for Apple products.</p>
+    <a class="btn" href="/about-me" title="Go to the about page.">
+      <span class="btn__body btn__body--primary">
+        More about Alex
+        <svg class="btn__icon btn__icon--primary btn__icon--rotate" width="20" height="20">
+          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/icons/sprite.svg#arrow"></use>
+        </svg>
+      </span>
+    </a>
+    <a class="btn" href="/pdf/alex-clapperton-cv.pdf" title="Download Alex's CV.">
+      <span class="btn__body btn__body--primary">
+        Download my CV
+        <svg class="btn__icon btn__icon--primary" width="20" height="20">
+          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/icons/sprite.svg#download"></use>
+        </svg>
+      </span>
+    </a>
   </div>
   <!-- END : CONTAINER /-->
 </main>
-<!-- ******************** SITE MAIN : End ******************** /-->
+<!-- ******************** INFO : End ******************** /-->
 
 
-<!-- ******************** SITE BLOG : Start ******************** -->
-<section class="site-blog">
+<!-- ******************** BAR : Start ******************** -->
+<section class="bar">
   <!-- BEGIN : CONTAINER -->
-  <div class="site-container">
-    <!-- BEGIN : GRID GUIDES -->
-    <div class="grid-guides">
-      <div class="grid-guides__guide"></div>
-      <div class="grid-guides__guide"></div>
-      <div class="grid-guides__guide"></div>
-      <div class="grid-guides__guide"></div>
+  <div class="container">
+    <!-- BEGIN : BAR CONTENT -->
+    <div class="bar__content">
+      <h2 class="bar__title">Browse through my recent projects</h2>
+      <!-- BEGIN : SYMBOL -->
+      <div class="symbol symbol--primary">
+        <svg class="symbol__icon symbol__icon--primary" width="20" height="20">
+          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/icons/sprite.svg#portfolio"></use>
+        </svg>
+      </div>
+      <!-- END : SYMBOL /-->
     </div>
-    <!-- END : GRID GUIDES /-->
-    <!-- BEGIN : SITE BLOG FLEX -->
-    <div class="site-blog__flex">
-      {{#each_upto articles.[2017] 4}}
-        <!-- BEGIN : SITE BLOG ITEM -->
-        {{>article-section}}
-        <!-- END : SITE BLOG ITEM /-->
-      {{/each_upto}}
-    </div>
-    <!-- END : SITE BLOG FLEX /-->
+    <!-- END : BAR CONTENT /-->
   </div>
   <!-- END : CONTAINER /-->
 </section>
-<!-- ******************** SITE BLOG : End ******************** /-->
+<!-- ******************** BAR : End ******************** /-->
+
+
+<!-- ******************** PORTFOLIO : Start ******************** -->
+<section class="portfolio">
+  <!-- BEGIN : CONTAINER -->
+  <div class="container">
+    <!-- BEGIN : PORTFOLIO CONTENT -->
+    <div class="portfolio__content">
+      {{#each_upto portfolio.[2016] 3}}
+        {{>portfolio}}
+      {{/each_upto}}
+      <a class="portfolio__link" href="#" title="Go to portfolio page.">All Projects</a>
+    </div>
+    <!-- END : PORTFOLIO CONTENT /-->
+  </div>
+  <!-- END : CONTAINER /-->
+</section>
+<!-- ******************** PORTFOLIO : End ******************** /-->
+
+
+<!-- ******************** BAR : Start ******************** -->
+<section class="bar">
+  <!-- BEGIN : CONTAINER -->
+  <div class="container">
+    <!-- BEGIN : BAR CONTENT -->
+    <div class="bar__content">
+      <h2 class="bar__title">Read my recent blog posts</h2>
+      <!-- BEGIN : SYMBOL -->
+      <div class="symbol symbol--primary">
+        <svg class="symbol__icon symbol__icon--primary" width="20" height="20">
+          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/icons/sprite.svg#blog"></use>
+        </svg>
+      </div>
+      <!-- END : SYMBOL /-->
+    </div>
+    <!-- END : BAR CONTENT /-->
+  </div>
+  <!-- END : CONTAINER /-->
+</section>
+<!-- ******************** BAR : End ******************** /-->
+
+
+<!-- ******************** BLOG : Start ******************** -->
+<section class="blog">
+  <!-- BEGIN : CONTAINER -->
+  <div class="container">
+    <!-- BEGIN : BLOG CONTENT -->
+    <div class="blog__content">
+      {{#each_upto articles.[2017] 3}}
+        {{>article}}
+      {{/each_upto}}
+      {{#each_upto articles.[2016] 1}}
+        {{>article}}
+      {{/each_upto}}
+    </div>
+    <!-- END : BLOG CONTENT /-->
+  </div>
+  <!-- END : CONTAINER /-->
+</section>
+<!-- ******************** BLOG : End ******************** /-->

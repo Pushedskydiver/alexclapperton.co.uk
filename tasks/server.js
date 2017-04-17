@@ -4,7 +4,6 @@
  * @see {@link https://www.browsersync.io/docs/gulp}
  */
 
-import config from '../tasks/config'
 import browserSync from 'browser-sync'
 
 module.exports = function (gulp, data) {
@@ -16,7 +15,7 @@ module.exports = function (gulp, data) {
       ],
       ghostMode: false,
       notify: false,
-      online: false,
+      online: true,
       server: {
         baseDir: data.paths.dist.base
       }

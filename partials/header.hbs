@@ -1,51 +1,41 @@
-<!-- ******************** SITE HEADER : Start ******************** /-->
-<header class="site-header" role="banner">
+
+<!-- ******************** HEADER : Start ******************** -->
+<header class="header" role="banner">
+  <!-- BEGIN : SKIP LINKS -->
+  <a href="#nav" class="skip-link hidden focusable">Navigation</a>
+  <a href="#content" class="skip-link hidden focusable">Skip to content</a>
+  <a href="#footer" class="skip-link hidden focusable">Skip to footer</a>
+  <!-- END : SKIP LINKS /-->
   <!-- BEGIN : CONTAINER -->
-  <div class="site-container">
-    <!-- BEGIN : SKIP LINKS -->
-    <div class="skip-links">
-      <a href="#nav" class="skip-link hidden focusable">Skip to navigation</a>
-      <a href="#content" class="skip-link hidden focusable scroll-to" data-offset-top="130">Skip to content</a>
-    </div>
-    <!-- END : SKIP LINKS /-->
-    <!-- BEGIN : SITE HEADER FLEX -->
-    <div class="site-flex site-flex--align-center">
-      <!-- BEGIN : MAIN HEADER -->
-      <div class="site-logo">
-        <a href="/" class="site-logo__link" title="Internal link to homepage."><img class="site-logo__img" src="/images/logo.png" alt="Alex Clapperton's website logo." /></a>
-      </div>
-      <!-- END : MAIN HEADER /-->
-      <!-- BEGIN : SITE NAV -->
-      <nav class="site-nav site-flex site-flex--align-center" id="nav" role="navigation">
+  <div class="container">
+    <!-- BEGIN : HEADER CONTNET -->
+    <div class="header__content">
+      <a class="logo" href="/" title="Go to the homepage."><<span class="logo--core">Alex</span>/></a>
+      <a class="header__btn btn" href="mailto:{{global.email}}" title="Email Alex about freelance work.">
+        <span class="btn__body btn__body--primary">
+          Hire me
+          <svg class="btn__icon btn__icon--primary" width="20" height="20">
+            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/icons/sprite.svg#send"></use>
+          </svg>
+        </span>
+      </a>
+      <!-- BEGIN : NAV -->
+      <nav class="nav" id="nav" role="navigation">
         {{#each global.navigation}}
-          <!-- BEGIN : SITE NAV LINK -->
-          <a href="{{{this.url}}}" class="site-nav__link site-nav__link--{{{this.slug}}}" title="{{{this.title-attr}}}">
-            <svg width="20" height="20" class="site-nav__icon">
-              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/icons/sprite.svg#{{{this.icon}}}"></use>
+        <!-- BEGIN : NAV ITEM -->
+          <a class="nav__item" href="{{url}}" title="{{title-attr}}" data-item-{{slug}}>
+            <svg width="20" height="20" class="nav__icon" data-nav-icon>
+              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/icons/sprite.svg#{{icon}}"></use>
             </svg>
-            <span class="site-nav__text">{{{this.title}}}</span>
+            {{title}}
           </a>
-          <!-- END : SITE NAV LINK /-->
+          <!-- END : NAV ITEM /-->
         {{/each}}
       </nav>
-      <!-- END : SITE NAV /-->
-      <!-- BEGIN : SOCIAL HEADER -->
-      <div class="social-header">
-        {{#each global.social}}
-          <!-- BEGIN : SOCIAL HEADER ICON -->
-          <a href="{{{this.url}}}" class="social-header__link" title="{{{this.title-attr}}}">
-            <svg width="20" height="20" class="social-header__icon">
-              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/icons/sprite.svg#{{{this.icon}}}"></use>
-            </svg>
-            <span class="visually-hidden">{{{this.icon}}}</span>
-          </a>
-          <!-- END : SOCIAL HEADER ICON /-->
-        {{/each}}
-      </div>
-      <!-- END : SOCIAL HEADER -->
+      <!-- END : NAV /-->
     </div>
-    <!-- END : SITE HEADER FLEX /-->
+    <!-- END : HEADER CONTENT /-->
   </div>
   <!-- END : CONTAINER /-->
 </header>
-<!-- ******************** SITE HEADER : End ******************** /-->
+<!-- ******************** HEADER : End ******************** /-->

@@ -1,49 +1,45 @@
-// Typography
+// Typography.........The sites typography faces.
 
-/**
-* Main font family
-*/
+// Maven Pro
 @font-face {
-  font-family: "Josefin Slab";
-  src: url("../fonts/josefin-slab/josefin-slab-regular.eot"); /* IE9 */
-  src: url("../fonts/josefin-slab/josefin-slab-regular.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
-  url("../fonts/josefin-slab/josefin-slab-regular.woff") format("woff"), /* chrome, firefox */
-  url("../fonts/josefin-slab/josefin-slab-regular.ttf") format("truetype"), /* chrome, firefox, opera, Safari, Android, iOS 4.2+ */
-  url("../fonts/josefin-slab/josefin-slab-regular.svg#josefin-slab") format("svg"); /* iOS 4.1- */
+  font-family: "Maven Pro";
+  src: url("../fonts/maven-pro/maven-pro-regular.eot"); /* IE9 */
+  src: url("../fonts/maven-pro/maven-pro-regular.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
+  url("../fonts/maven-pro/maven-pro-regular.woff") format("woff"), /* chrome, firefox */
+  url("../fonts/maven-pro/maven-pro-regular.ttf") format("truetype"), /* chrome, firefox, opera, Safari, Android, iOS 4.2+ */
+  url("../fonts/maven-pro/maven-pro-regular.svg#maven-pro") format("svg"); /* iOS 4.1- */
+  font-style: normal;
+  font-weight: $core-font-weight;
+}
+
+// prompt
+@font-face {
+  font-family: "Prompt";
+  src: url("../fonts/prompt/prompt-regular.eot"); /* IE9 */
+  src: url("../fonts/prompt/prompt-regular.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
+  url("../fonts/prompt/prompt-regular.woff") format("woff"), /* chrome, firefox */
+  url("../fonts/prompt/prompt-regular.ttf") format("truetype"), /* chrome, firefox, opera, Safari, Android, iOS 4.2+ */
+  url("../fonts/prompt/prompt-regular.svg#maven-pro") format("svg"); /* iOS 4.1- */
   font-style: normal;
   font-weight: $core-font-weight;
 }
 @font-face {
-  font-family: "Josefin Slab";
-  src: url("../fonts/josefin-slab/josefin-slab-semi-bold.eot"); /* IE9 */
-  src: url("../fonts/josefin-slab/josefin-slab-semi-bold.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
-  url("../fonts/josefin-slab/josefin-slab-semi-bold.woff") format("woff"), /* chrome, firefox */
-  url("../fonts/josefin-slab/josefin-slab-semi-bold.ttf") format("truetype"), /* chrome, firefox, opera, Safari, Android, iOS 4.2+ */
-  url("../fonts/josefin-slab/josefin-slab-semi-bold.svg#josefin-slab") format("svg"); /* iOS 4.1- */
-  font-style: normal;
-  font-weight: $core-tertiary-font-weight;
-}
-
-/**
-* Secondary font family
-*/
-@font-face {
-  font-family: "Ubuntu";
-  src: url("../fonts/ubuntu/ubuntu-light.eot"); /* IE9 */
-  src: url("../fonts/ubuntu/ubuntu-light.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
-  url("../fonts/ubuntu/ubuntu-light.woff") format("woff"), /* chrome, firefox */
-  url("../fonts/ubuntu/ubuntu-light.ttf") format("truetype"), /* chrome, firefox, opera, Safari, Android, iOS 4.2+ */
-  url("../fonts/ubuntu/ubuntu-light.svg#ubuntu") format("svg"); /* iOS 4.1- */
-  font-style: normal;
-  font-weight: $core-font-weight;
-}
-@font-face {
-  font-family: "Ubuntu";
-  src: url("../fonts/ubuntu/ubuntu-regular.eot"); /* IE9 */
-  src: url("../fonts/ubuntu/ubuntu-regular.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
-  url("../fonts/ubuntu/ubuntu-regular.woff") format("woff"), /* chrome, firefox */
-  url("../fonts/ubuntu/ubuntu-regular.ttf") format("truetype"), /* chrome, firefox, opera, Safari, Android, iOS 4.2+ */
-  url("../fonts/ubuntu/ubuntu-regular.svg#ubuntu") format("svg"); /* iOS 4.1- */
+  font-family: "Prompt";
+  src: url("../fonts/prompt/prompt-bold.eot"); /* IE9 */
+  src: url("../fonts/prompt/prompt-bold.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
+  url("../fonts/prompt/prompt-bold.woff") format("woff"), /* chrome, firefox */
+  url("../fonts/prompt/prompt-bold.ttf") format("truetype"), /* chrome, firefox, opera, Safari, Android, iOS 4.2+ */
+  url("../fonts/prompt/prompt-bold.svg#maven-pro") format("svg"); /* iOS 4.1- */
   font-style: normal;
   font-weight: $core-secondary-font-weight;
+}
+@font-face {
+  font-family: "Prompt";
+  src: url("../fonts/prompt/prompt-light.eot"); /* IE9 */
+  src: url("../fonts/prompt/prompt-light.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
+  url("../fonts/prompt/prompt-light.woff") format("woff"), /* chrome, firefox */
+  url("../fonts/prompt/prompt-light.ttf") format("truetype"), /* chrome, firefox, opera, Safari, Android, iOS 4.2+ */
+  url("../fonts/prompt/prompt-light.svg#maven-pro") format("svg"); /* iOS 4.1- */
+  font-style: normal;
+  font-weight: $core-tertiary-font-weight;
 }

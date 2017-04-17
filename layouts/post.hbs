@@ -3,87 +3,77 @@
 {{>header}}
 
 <div itemscope itemtype="http://schema.org/BlogPosting">
-  <!-- ******************** SITE BANNER : Start ********************-->
-  <section class="site-banner site-banner--no-img">
+  <!-- ******************** HERO : Start ********************-->
+  <section class="hero" style="background-image: url(/images/blog/featured/{{hero}}.jpg);">
     <!-- BEGIN : CONTAINER -->
-    <div class="site-container">
-      <!-- BEGIN : GRID GUIDES -->
-      <div class="grid-guides">
-        <div class="grid-guides__guide"></div>
-        <div class="grid-guides__guide"></div>
-        <div class="grid-guides__guide"></div>
-        <div class="grid-guides__guide"></div>
+    <div class="container">
+      <!-- BEGIN : HERO CONTENT -->
+      <div class="hero__content">
+        <h1 class="hero__title">{{title}}
+          {{#if subtitle}}
+          <br>
+          {{subtitle}}
+          {{/if}}
+        </h1>
       </div>
-      <!-- END : GRID GUIDES /-->
-      <!-- BEGIN : SITE BANNER FLEX -->
-      <div class="site-banner__flex site-banner__flex--blog">
-        <h1 class="site-banner__title">{{{bannerTitle}}}
-        {{#if subtitle}}
-        <br>
-        {{{subtitle}}}
-        {{/if}}</h1>
-
-        <div class="breadcrumbs">
-          <span class="breadcrumbs__item"><a class="breadcrumbs__link" href="/">Home</a></span>
-          <span class="breadcrumbs__item"><a class="breadcrumbs__link" href="/blog">Blog</a></span>
-          <span class="breadcrumbs__item">{{{title}}}{{#if subtitle}}{{{subtitle}}}{{/if}}</span>
-        </div>
-      </div>
-      <!-- END : SITE BANNER FLEX /-->
+      <!-- END : HERO CONTENT /-->
     </div>
     <!-- END : CONTAINER /-->
   </section>
-  <!-- ******************** SITE BANNER : End ******************** /-->
+  <!-- ******************** HERO : End ******************** /-->
 
-  <!-- ******************** SITE BLOG POST : Start ******************** -->
-  <main class="site-post" role="main">
+
+  <!-- ******************** POST : Start ******************** -->
+  <main class="post" role="main">
     <!-- BEGIN : CONTAINER -->
-    <div class="site-container">
-      <!-- BEGIN : ARTICLE BODY -->
-      <article class="article__body">
-        <!-- BEGIN : ARTICLE DETAILS -->
-        <div class="article__details">
-          <span class="article__date">Posted on <strong><time datetime="{{{dateTime}}}">{{{pubDate}}}</time></strong></span>
-          <span class="article__category">Category: <strong>{{{category}}}</strong></span>
-        </div>
-        <!-- END : ARTICLE DETAILS /-->
+    <div class="container">
+      <!-- BEGIN : POST CONTENT -->
+      <div class="post__content">
+        <!-- BEGIN : POST ARTICLE -->
+        <article class="post__article">
+          <ul class="breadcrumbs">
+            <li class="breadcrumbs__item breadcrumbs__item--dark"><a class="breadcrumbs__link" href="/" title="Breadcrumb link to the homepage.">Home</a></li>
+            <li class="breadcrumbs__item breadcrumbs__item--dark"><a class="breadcrumbs__link" href="/blog">Blog</a></li>
+            <li class="breadcrumbs__item breadcrumbs__item--dark">{{title}}</li>
+          </ul>
 
-        {{{contents}}}
+          <hr>
 
-      </article>
-      <!-- END : ARTICLE BODY -->
-      <!-- BEGIN : ARTICLE SECTION -->
-      <aside class="article__section">
-        <h3>Share this post</h3>
-        <!-- BEGIN : ARTICLE SECTION FLEX -->
-        <div class="article__section--flex">
-          <a href="https://twitter.com/intent/tweet?text={{{title}}}&amp;url={{{global.url}}}/blog/{{{slug}}}&amp;via=AlexMClapperton" target="_blank" rel="external" title="External link to Twitter share post." class="post__share-link" data-ga-category="Post share - Twitter" data-ga-action="click" data-ga-label="{{{title}}}">
+          <!-- BEGIN : POST DETAILS -->
+          <div class="post__details">
+            <span class="post__date">Posted on <strong><time datetime="{{{dateTime}}}">{{pubDate}}</time></strong></span>
+            <span class="post__category">Category: <strong>{{{category}}}</strong></span>
+          </div>
+          <!-- END : POST DETAILS /-->
+          {{{contents}}}
+        </article>
+        <!-- END : POST ARTICLE -->
+        <!-- BEGIN : POST ASIDE -->
+        <aside class="post__aside">
+          <h4 class="post__subtitle">Share this post</h4>
+          <a class="share" href="https://twitter.com/intent/tweet?text={{{title}}}&amp;url={{{global.url}}}/blog/{{{slug}}}&amp;via=AlexMClapperton" target="_blank" rel="external" title="External link to Twitter share post." data-ga-category="Post share - Twitter" data-ga-action="click" data-ga-label="{{{title}}}">
             <span class="visually-hidden">Twitter</span>
-            <svg class="post__share-icon post__share-icon--twitter">
+            <svg class="share__icon share__icon--twitter" width="24" height="24">
               <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/icons/sprite.svg#twitter"></use>
             </svg>
           </a>
-          <a href="https://www.linkedin.com/shareArticle?mini=true&url={{{global.url}}}/blog/{{{slug}}}&amp;title={{{title}}}&amp;source={{{global.url}}}/blog/" target="_blank" rel="external" title="External link to LinkedIn share article." class="post__share-link" data-ga-category="Post share - LinkedIn" data-ga-action="click" data-ga-label="{{{title}}}">
+          <a class="share" href="https://www.linkedin.com/shareArticle?mini=true&url={{{global.url}}}/blog/{{{slug}}}&amp;title={{{title}}}&amp;source={{{global.url}}}/blog/" target="_blank" rel="external" title="External link to LinkedIn share article." data-ga-category="Post share - LinkedIn" data-ga-action="click" data-ga-label="{{{title}}}">
             <span class="visually-hidden">LinkedIn</span>
-            <svg class="post__share-icon post__share-icon--linkedin">
-              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/icons/sprite.svg#linkedin"></use>
+            <svg class="share__icon share__icon--linkedin" width="24" height="24">
+              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/icons/sprite.svg#linkedin-BG"></use>
             </svg>
           </a>
-        </div>
-        <!-- END : ARTICLE SECTION FLEX /-->
-      </aside>
-      <!-- END : ARTICLE SECTION /-->
-      <!-- BEGIN : ARTICLE SECTION -->
-      <aside class="article__section">
-        <h3>Comment on this post</h3>
-        <div id="disqus_thread" class="disqus-thread"></div>
-        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-      </aside>
-      <!-- END : ARTICLE SECTION /-->
+          <h4 class="post__subtitle">Comment on this post</h4>
+          <div id="disqus_thread" class="disqus-thread"></div>
+          <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+        </aside>
+        <!-- END : POST ASIDE /-->
+      </div>
+      <!-- END : POST CONTENT /-->
     </div>
     <!-- END : CONTAINER /-->
   </main>
-  <!-- ******************** SITE BLOG POST : End ******************** /-->
+  <!-- ******************** POST : End ******************** /-->
 </div>
 
 {{>footer}}

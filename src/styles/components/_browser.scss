@@ -1,0 +1,80 @@
+// Browser............Portfolio page browser window styles.
+
+.browser {
+  border: $core-border-width $core-border-style darken($core-border-color, 10%);
+  border-radius: 4px;
+  overflow: scroll;
+
+  @include respond-to(l) {
+    position: sticky;
+    top: 100px;
+    max-height: calc(100vh - 140px);
+
+    @supports (display: grid) {
+      grid-column: 1 / span 7;
+    }
+
+    @supports not (display: grid) {
+      width: 48%;
+    }
+  }
+}
+
+.browser__bar {
+  height: ($core-grid-unit * 2);
+  background-color: $core-color-neutral;
+  padding: 0 ($core-padding / 1.5);
+  border-bottom: $core-border-width $core-border-style darken($core-border-color, 10%);
+  border-radius: 4px 4px 0 0;
+  @include flex(wrap, row, flex-start, center);
+
+  @include respond-to(s) {
+    height: ($core-grid-unit * 3);
+    padding-right: ($core-padding / 1.2);
+    padding-left: ($core-padding / 1.2);
+  }
+
+  @include respond-to(m) {
+    padding-right: $core-padding;
+    padding-left: $core-padding;
+  }
+
+  @supports (position: sticky) {
+    position: sticky;
+    top: 0;
+  }
+}
+
+.browser__dot {
+  width: ($core-grid-unit / 1.5);
+  height: ($core-grid-unit / 1.5);
+  margin-right: ($core-margin / 1.5);
+  border-radius: 50%;
+
+  &--close {
+    background-color: #fc635d;
+  }
+
+  &--minimize {
+    background-color: #fdbc40;
+  }
+
+  &--expand {
+    background-color: #34c84a;
+  }
+
+  @include respond-to(s) {
+    width: $core-grid-unit;
+    height: $core-grid-unit;
+    margin-right: ($core-margin / 1.2);
+  }
+
+  @include respond-to(s) {
+    margin-right: $core-margin;
+  }
+}
+
+.browser__window {
+  border-radius: 0 0 4px 4px;
+  overflow: scroll;
+}

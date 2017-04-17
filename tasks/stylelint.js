@@ -3,7 +3,6 @@
  * @author Alex Clapperton <hi@alexclapperton.co.uk>
  */
 
-import config from '../tasks/config'
 import stylelint from 'stylelint'
 import reporter from 'postcss-reporter'
 import scss from 'postcss-scss'

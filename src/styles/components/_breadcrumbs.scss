@@ -1,18 +1,19 @@
-// Breadcrumbs - breadcrumb links
+// Breadcrumbs........Simple breadcrumbs styles.
 
 .breadcrumbs {
-  @include flex(wrap, row, null);
+  @include respond-to(m) {
+    margin-top: ($core-margin / 2);
+  }
 }
 
 .breadcrumbs__item {
-  @include font-size($p-font-sizes);
+  display: inline-block;
   text-transform: capitalize;
   line-height: $core-line-height;
 
   &::after {
     content: '/';
-    color: $core-color-brand;
-    margin: 0 5px;
+    margin: 0 0 0 ($core-margin / 2);
   }
 
   &:last-child {
@@ -20,17 +21,39 @@
       display: none;
     }
   }
-}
 
-.breadcrumbs__item--active {
-  display: block;
-  color: $core-color-dark;
+  &:not(&--dark) {
+    color: $core-color-light;
+
+    &::after {
+      color: $core-color-light;
+    }
+  }
+
+  &--dark {
+    color: $core-color-dark;
+
+    &::after {
+      color: $core-color-dark;
+    }
+  }
 }
 
 .breadcrumbs__link {
+  color: inherit;
+  text-decoration: none;
+
   @include respond-to(l) {
-    &:hover {
-      color: $core-color-dark;
+    &:not(&--dark) {
+      &:hover {
+        border-bottom: 1px dotted $core-color-light;
+      }
+    }
+
+    &--dark {
+      &:hover {
+        border-bottom: 1px dotted $core-color-dark;
+      }
     }
   }
 }

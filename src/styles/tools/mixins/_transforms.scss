@@ -1,4 +1,4 @@
-// Transforms - css transform properties
+// Transforms.........Simple mixins for css transform properties.
 
 @mixin transform($transforms) {
   transform: $transforms;

@@ -1,163 +1,133 @@
-// Navigation - site navigation
+// Nav primary........The sites main nav.
 
-.site-header {
-  position: relative;
-  width: 100%;
-  background: $core-color-light;
-  z-index: z(charlie);
-
-  @include respond-to(m) {
-    position: fixed;
-    top: 0;
-    left: 0;
-    padding: 5px 0;
-  }
-}
-
-.site-logo {
-  width: 100%;
-  height: auto;
-  margin: 0 auto;
-  padding: 10px 0;
-
-  @include respond-to(m) {
-    width: auto;
-    margin: 0;
-    padding: 0;
-    flex-grow: 1;
-  }
-
-  @include respond-to(l) {
-    @include justify-content(flex-start);
-    width: 29.333333%;
-  }
-}
-
-.site-logo__link {
-  display: inline-block;
-}
-
-.site-logo__img {
-  width: 60px;
-}
-
-.site-nav {
+.nav {
   position: fixed;
   bottom: 0;
-  right: 0;
+  left: 0;
   width: 100%;
-  height: 60px;
-  background: $core-color-light;
-  margin: 0 auto;
-  padding: 0;
-  z-index: z(charlie);
-  @include transition-03;
+  background-color: $core-color-brand;
+  z-index: z(kilo);
+  @include flex(wrap, row, space-between, null);
 
   @include respond-to(m) {
-    position: initial;
-    width: auto;
-    height: 55px;
-    flex-grow: 1;
-  }
+    position: static;
+    background-color: transparent;
 
-  @include respond-to(l) {
-    @include justify-content(center);
-    width: 41.333333%;
-  }
-}
-
-.site-nav__link {
-  position: relative;
-  width: 20%;
-  height: 100%;
-  text-decoration: none;
-  @include flex(null, column, center);
-  @include align-items(center);
-
-  @include respond-to(l) {
-    width: auto;
-    margin-right: 30px;
-
-    &:last-child {
-      margin-right: 0;
+    @supports (display: grid) {
+      grid-area: nav;
     }
+  }
 
-    &:hover {
-      .site-nav__icon {
-        fill: $core-color-brand;
-      }
+  @include respond-to(m) {
+    @supports not (display: grid) {
+      width: 80%;
+    }
+  }
 
-      .site-nav__text {
-        color: $core-color-brand;
-      }
+  @include respond-to(l) {
+    @supports not (display: grid) {
+      width: 50%;
     }
   }
 }
 
-.site-nav__icon {
-  width: 25px;
-  height: 25px;
-  fill: $core-color-dark;
-  margin-bottom: 3px;
-
-  @include respond-to(l) {
-    @include transition-025;
-  }
-}
-
-.site-nav__text {
-  display: block;
-  color: $core-color-dark;
-  @include font-size($p-font-sizes);
+.nav__item {
+  flex: 1;
+  padding: ($core-padding / 2) 0;
+  color: $core-color-light;
   text-align: center;
+  text-decoration: none;
+  @include font-size($nav-font-sizes);
+
+  &:first-child {
+    display: none;
+  }
+
+  &--active {
+    background-color: darken($core-color-brand, 10%);
+  }
+
+  @include respond-to(xs) {
+    padding-top: ($core-padding / 1.4);
+    padding-bottom: ($core-padding / 2);
+  }
+
+  @include respond-to(s) {
+    &:first-child {
+      @include flex(null, column, center, center);
+    }
+  }
+
+  @include respond-to(m) {
+    position: relative;
+    color: $core-color-dark;
+    padding: 0;
+    @include flex(null, column, center, center);
+
+    &--active {
+      background-color: transparent;
+      color: $core-color-brand;
+
+      &::after {
+        content: '';
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        width: 1px;
+        height: ($core-grid-unit * 1.3);
+        background-color: $core-color-brand;
+        margin: 0 auto;
+      }
+    }
+
+    @supports not (display: grid) {
+      padding: $core-padding 0;
+    }
+  }
 
   @include respond-to(l) {
-    @include transition-025;
-  }
-}
-
-.site-nav__link--active {
-  .site-nav__text {
-    color: $core-color-brand;
-  }
-
-  .site-nav__icon {
-    fill: $core-color-brand;
-  }
-}
-
-.social-header {
-  display: none;
-
-  @include respond-to(l) {
-    width: 29.333333%;
-    @include flex(null, row, flex-end);
-  }
-}
-
-.social-header__link {
-  display: block;
-  width: 28px;
-  height: 28px;
-
-  @include respond-to(l) {
-    margin-right: ($core-margin * 2.5);
-    @include transition-025;
-
-    &:last-child {
-      margin-right: 0;
+    &:not(&--active) {
+      &::after {
+        content: '';
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        width: 1px;
+        height: 0;
+        background-color: $core-color-brand;
+        margin: 0 auto;
+        @include transition-03;
+      }
     }
 
     &:hover {
-      .social-header__icon {
-        fill: $core-color-brand;
+      color: $core-color-brand;
+
+      &::after {
+        height: ($core-grid-unit * 1.3);
       }
     }
   }
 }
 
-.social-header__icon {
-  width: 100%;
-  height: 100%;
-  fill: $core-color-dark;
+.nav__icon {
+  display: block;
+  width: 30px;
+  height: 30px;
+  fill: $core-color-light;
+  margin: 0 auto;
+
+  @include respond-to(xs) {
+    width: 32px;
+    height: 32px;
+  }
+
+  @include respond-to(m) {
+    display: none;
+    width: 0;
+    height: 0;
+    visibility: hidden;
+  }
 }

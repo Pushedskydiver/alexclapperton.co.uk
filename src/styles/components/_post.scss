@@ -1,0 +1,41 @@
+// Post...............Blog post styles.
+
+.post {
+  background-color: $core-color-neutral;
+  padding: 30px 0;
+
+  @include respond-to(l) {
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+}
+
+.post__content {
+  max-width: 50em;
+  margin: 0 auto;
+}
+
+.post__details {
+  margin-bottom: ($core-margin * 3);
+}
+
+.post__date {
+  margin-right: $core-margin;
+  @include font-size($p-font-sizes);
+}
+
+.post__category {
+  @include font-size($p-font-sizes);
+}
+
+.post__title {
+  font-weight: $core-font-weight;
+}
+
+.post__subtitle {
+  color: $core-color-dark;
+}
+
+.post__body {
+  color: $core-color-dark;
+}

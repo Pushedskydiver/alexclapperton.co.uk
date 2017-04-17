@@ -1,11 +1,12 @@
-// Grid - site wide grid configuration
+// Grid...............site wide grid configuration.
 
 $breakpoints: (
   xs: 400px,
   s: 600px,
   m: 768px,
   l: 992px,
-  xl: 1230px
+  xl: 1200px,
+  xxl: 1400px
 );
 
 @mixin respond-to($name) {

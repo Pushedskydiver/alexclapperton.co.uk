@@ -12,11 +12,11 @@ module.exports = function (gulp, data, argv) {
   gulp.task('scripts', function () {
       let source = [];
 
-      source.push(`${data.paths.js.src}*.js`)
-      source.push(`${data.paths.js.src}vendor/cookies.js`)
+      source.push(`${data.paths.source.scripts}*.js`)
+      source.push(`${data.paths.source.scripts}vendor/cookies.js`)
 
       if (!argv.prod) {
-        source.push(`${data.paths.js.src}vendor/tota11y.js`)
+        source.push(`${data.paths.source.scripts}vendor/tota11y.js`)
       }
 
       gulp.src(source)
@@ -27,6 +27,6 @@ module.exports = function (gulp, data, argv) {
           ]))
           .pipe($.concat('main.js'))
           .pipe($.if(argv.prod, $.uglify(config.plugin.uglify)))
-          .pipe(gulp.dest(data.paths.js.dest));
+          .pipe(gulp.dest(data.paths.dist.scripts));
   });
 }

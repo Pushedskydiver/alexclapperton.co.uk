@@ -1,0 +1,165 @@
+// Form...............Contact form styles.
+
+.form {
+  margin-top: ($core-margin * 2);
+}
+
+.form__fieldset {
+  margin: 0;
+  padding: 0;
+  border: none;
+}
+
+.form__content {
+  @include respond-to(m) {
+    @supports (display: grid) {
+      display: grid;
+      grid-gap: 40px 20px;
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    @supports not (display: grid) {
+      @include flex(wrap, row, space-between, null);
+    }
+  }
+}
+
+.form__item {
+  margin-bottom: ($core-margin * 1.5);
+
+  @include respond-to(m) {
+    @supports (display: grid) {
+      margin-bottom: 0;
+
+      &--textarea {
+        grid-column: 1 / span 3;
+      }
+    }
+
+    @supports not (display: grid) {
+      &:not(&--textarea) {
+        flex: 1;
+      }
+
+      &:nth-of-type(2) {
+        margin-right: 2%;
+        margin-left: 2%;
+      }
+    }
+  }
+}
+
+.form__label {
+  display: inline-block;
+  color: $core-color-dark;
+  margin-bottom: ($core-margin / 2);
+  font-weight: $core-secondary-font-weight;
+  @include font-size($btn-font-sizes);
+
+  &--required {
+    color: $core-color-brand;
+  }
+
+  @include respond-to(l) {
+    cursor: pointer;
+  }
+}
+
+.form__input {
+  width: 100%;
+  background-color: $core-color-neutral;
+  padding: ($core-padding * 1.25) $core-padding;
+  border: ($core-border-width * 2) $core-border-style $core-border-color;
+  @include font-size($p-font-sizes);
+
+  &--valid {
+    border-color: $core-color-brand;
+  }
+
+  &--invalid {
+    border-color: #de0000;
+  }
+}
+
+.form__textarea {
+  width: 100%;
+  background-color: $core-color-neutral;
+  padding: ($core-padding * 1.25) $core-padding;
+  border: ($core-border-width * 2) $core-border-style $core-border-color;
+  @include font-size($p-font-sizes);
+
+  &--valid {
+    border-color: $core-color-brand;
+  }
+
+  &--invalid {
+    border-color: #de0000;
+  }
+}
+
+.form__validation {
+  color: #de0000;
+  font-size: inherit;
+}
+
+.form__btn {
+  margin-right: 0;
+  justify-self: start;
+}
+
+.form__message {
+  grid-column: 1 / span 2;
+  grid-row: 4;
+  margin-top: ($core-margin * 1.5);
+  padding: $core-padding ($core-padding * 2);
+  @include flex(wrap, row, flex-start, center);
+
+  &--success {
+    background-color: #dff2bf;
+    color: #307a00;
+
+    @include respond-to(m) {
+      &::before {
+        content: '\2713';
+        width: 25px;
+        height: 25px;
+        background-color: #307a00;
+        color: #dff2bf;
+        margin-right: ($core-margin / 1.5);
+        padding: ($core-padding / 2);
+        border-radius: 50%;
+        font-family: $core-secondary-font-family;
+        font-weight: $core-secondary-font-weight;
+        border-radius: 50%;
+        @include font-size($p-font-sizes);
+        @include flex(null, column, center, center);
+      }
+    }
+  }
+
+  &--error {
+    background-color: #ffbaba;
+    color: #b10000;
+
+    @include respond-to(m) {
+      &::before {
+        content: '\2715';
+        width: 25px;
+        height: 25px;
+        background-color: #b10000;
+        color: #ffbaba;
+        margin-right: ($core-margin / 1.5);
+        padding: ($core-padding / 2);
+        font-family: $core-secondary-font-family;
+        font-weight: $core-secondary-font-weight;
+        border-radius: 50%;
+        @include font-size($p-font-sizes);
+        @include flex(null, column, center, center);
+      }
+    }
+  }
+
+  @include respond-to(m) {
+    margin-top: 0;
+  }
+}

@@ -2,183 +2,188 @@
 page: contact
 layout: default.hbs
 title: Contact
-description: Contact Alex Clapperton &mdash; Manchester, UK based front-end developer
-keywords: web development, front end, developer, web developer, website portfolio, contact
+description: Alex Clapperton &mdash; Manchester, UK based front-end developer
 changefreq: monthly
-priority: 0.9
+priority: 1.0
 ---
 
-<!-- ******************** SITE BANNER : Start ********************-->
-<section class="site-banner site-banner--small">
+
+<!-- ******************** BAR : Start ******************** -->
+<section class="bar">
   <!-- BEGIN : CONTAINER -->
-  <div class="site-container">
-    <!-- BEGIN : GRID GUIDES -->
-    <div class="grid-guides">
-      <div class="grid-guides__guide"></div>
-      <div class="grid-guides__guide"></div>
-      <div class="grid-guides__guide"></div>
-      <div class="grid-guides__guide"></div>
-    </div>
-    <!-- END : GRID GUIDES /-->
-    <!-- BEGIN : SITE BANNER FLEX -->
-    <div class="site-banner__flex">
-      <h1 class="site-banner__title">Got a question? <br> Get in touch</h1>
-      <!-- BEGIN : BREADCRUMBS -->
-      <div class="breadcrumbs">
-        <span class="breadcrumbs__item"><a class="breadcrumbs__link" href="/">Home</a></span>
-        <span class="breadcrumbs__item">Contact</span>
+  <div class="container">
+    <!-- BEGIN : BAR CONTENT -->
+    <div class="bar__content">
+      <h1 class="bar__title">Contact</h1>
+      <ul class="breadcrumbs">
+        <li class="breadcrumbs__item"><a class="breadcrumbs__link" href="/" title="Breadcrumb link to the homepage.">Home</a></li>
+        <li class="breadcrumbs__item">Contact</li>
+      </ul>
+      <!-- BEGIN : SYMBOL -->
+      <div class="symbol symbol--primary">
+        <svg class="symbol__icon symbol__icon--primary" width="20" height="20">
+          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/icons/sprite.svg#contact"></use>
+        </svg>
       </div>
-      <!-- END : BREADCRUMBS /-->
-      <img class="site-banner__img" src="/images/banner/contact-frame.png" alt="Chrome browser frame mockup of contact form fields and a map." />
+      <!-- END : SYMBOL /-->
     </div>
-    <!-- END : SITE BANNER FLEX -->
+    <!-- END : BAR CONTENT /-->
   </div>
-  <!-- END : CONTAINER -->
+  <!-- END : CONTAINER /-->
 </section>
-<!-- ******************** SITE BANNER : End ******************** /-->
+<!-- ******************** BAR : End ******************** /-->
 
 
-<!-- ******************** SITE CONTACT : Start ******************** -->
-<main class="site-contact" id="content" role="main">
+<!-- ******************** SOCIAL : Start ******************** -->
+<section class="social">
   <!-- BEGIN : CONTAINER -->
-  <div class="site-container">
-    <!-- BEGIN : SITE CONTACT FLEX -->
-    <div class="site-contact__flex">
-      <!-- BEGIN : SITE CONTACT FLEX ITEM -->
-      <div class="site-contact__item">
-        <h2 class="site-contact__title">Ye olde form...</h2>
-        <p>
-          Got a question to ask? Then please, don't hesitate to get in touch with me by using the super simple form below.
-        </p>
-        <!-- BEGIN : SITE CONTACT FORM -->
-        <form class="site-contact__form" action="javascript:void(0)" method="post">
-
-          <label class="site-contact__label" for="name">Name *</label>
-          <input class="site-contact__input" id="name" type="text" name="name" placeholder="My name is..." required="">
-
-          <label class="site-contact__label" for="email">Email *</label>
-          <input class="site-contact__input" id="email" type="email" name="email" placeholder="My awesome email is..." required="">
-
-          <label class="site-contact__label" for="message">Message *</label>
-          <textarea class="site-contact__textarea" id="message" name="message" placeholder="Communicate with you I will..." rows="6" cols="50" required=""></textarea>
-
-          <button class="btn-primary btn-primary--blue btn-primary--contact" type="submit">
-            <span class="btn-primary__text">Ship Ahoy!</span>
-            <svg width="20" height="20" class="btn-primary__icon  btn-primary__icon--white">
-              <title>Front facing ship icon</title>
-              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/icons/sprite.svg#ship"></use>
-            </svg>
-          </button>
-
-          <span class="site-contact__loading  site-contact__loading--hide">Loading...</span>
-          <div class="site-contact__message"></div>
-        </form>
-        <!-- END : SITE CONTACT FORM /-->
-      </div>
-      <!-- END : SITE CONTACT FLEX ITEM /-->
-      <!-- BEGIN : SITE CONTACT FLEX ITEM -->
-      <div class="site-contact__item">
-        <h2>Don't fancy the form?</h2>
-        <p>
-          If you don't like to fill in forms but still want to contact me, then you're in luck, just use one of the following alternate methods below.
-        </p>
-        <!-- BEGIN : SITE CONTACT DETAILS -->
-        <div class="site-contact__details">
-          <!-- BEGIN : SITE CONTACT DETAILS ICON WRAPPER -->
-          <div class="site-contact__details-icon-wrapper">
-            <svg width="20" height="20" class="site-contact__details-icon">
-              <title>Mobile phone icon</title>
-              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/icons/sprite.svg#mobile"></use>
+  <div class="container">
+    <!-- BEGIN : SOCIAL CONTENT -->
+    <div class="social__content">
+      {{#each_upto global.social 3}}
+      <!-- BEGIN : SOCIAL ITEM -->
+      <a class="social__item" href="{{url}}" title="{{title-attr}}" {{#if external}}rel="external"{{/if}}>
+        <!-- BEGIN : SOCIAL BLOCK -->
+        <div class="social__block">
+          <!-- BEGIN : SOCIAL BODY -->
+          <div class="social__body">
+            <svg class="social__icon" width="20" height="20">
+              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/icons/sprite.svg#{{icon}}"></use>
             </svg>
           </div>
-          <!-- END : SITE CONTACT DETAILS ICON WRAPPER /-->
-          <span class="site-contact__details-text">{{{global.phone}}}</span>
+          <!-- END : SOCIAL BODY /-->
         </div>
-        <!-- END : SITE CONTACT DETAILS -->
-        <!-- BEGIN : SITE CONTACT DETAILS -->
-        <div class="site-contact__details">
-          <!-- BEGIN : SITE CONTACT DETAILS ICON WRAPPER -->
-          <div class="site-contact__details-icon-wrapper">
-            <svg width="20" height="20" class="site-contact__details-icon">
-              <title>Mail icon</title>
-              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/icons/sprite.svg#mail"></use>
-            </svg>
-          </div>
-          <!-- END : SITE CONTACT DETAILS ICON WRAPPER /-->
-          <a class="site-contact__details-text" href="mailto:alex@alexclapperton.co.uk">{{{global.email}}}</a>
+        <!-- END : SOCIAL BLOCK /-->
+        <!-- BEGIN : SOCIAL INFO -->
+        <div class="social__info">
+          <h2 class="social__title">{{title}}</h2>
+          <span class="social__link">{{handle}}</span>
         </div>
-        <!-- END : SITE CONTACT DETAILS /-->
-        <!-- BEGIN : SITE CONTACT DETAILS -->
-        <div class="site-contact__details">
-          <!-- BEGIN : SITE CONTACT DETAILS ICON WRAPPER -->
-          <div class="site-contact__details-icon-wrapper">
-            <svg width="20" height="20" class="site-contact__details-icon">
-              <title>Facebook icon</title>
-              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/icons/sprite.svg#facebook"></use>
-            </svg>
-          </div>
-          <!-- END : SITE CONTACT DETAILS ICON WRAPPER /-->
-          <a class="site-contact__details-text" href="https://www.facebook.com/AlexMClapperton" title="External link to Alex's Facebook profile.">{{{global.facebookName}}}</a>
-        </div>
-        <!-- END : SITE CONTACT DETAILS /-->
-        <!-- BEGIN : SITE CONTACT DETAILS -->
-        <div class="site-contact__details">
-          <!-- BEGIN : SITE CONTACT DETAILS ICON WRAPPER -->
-          <div class="site-contact__details-icon-wrapper">
-            <svg width="20" height="20" class="site-contact__details-icon">
-              <title>Twitter icon</title>
-              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/icons/sprite.svg#twitter"></use>
-            </svg>
-          </div>
-          <!-- END : SITE CONTACT DETAILS ICON WRAPPER -->
-          <a class="site-contact__details-text" href="https://twitter.com/AlexMClapperton" title="External link to Alex's Twitter profile.">{{{global.twitterHandle}}}</a>
-        </div>
-        <!-- END : SITE CONTACT DETAILS /-->
-        <!-- BEGIN : SITE CONTACT DETAILS -->
-        <div class="site-contact__details">
-          <!-- BEGIN : SITE CONTACT DETAILS ICON WRAPPER -->
-          <div class="site-contact__details-icon-wrapper">
-            <svg width="20" height="20" class="site-contact__details-icon">
-              <title>LinkedIn icon</title>
-              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/icons/sprite.svg#linkedin"></use>
-            </svg>
-          </div>
-          <!-- END : SITE CONTACT DETAILS ICON WRAPPER /-->
-          <a class="site-contact__details-text" href="https://uk.linkedin.com/in/alexclapperton" title="External link to Alex's LinkedIn profile.">{{{global.linkedinName}}}</a>
-        </div>
-        <!-- END : SITE CONTACT DETAILS /-->
-      </div>
-      <!-- END : SITE CONTACT FLEX ITEM /-->
+        <!-- END : SOCIAL INFO /-->
+      </a>
+      <!-- END : SOCIAL ITEM /-->
+      {{/each_upto}}
     </div>
-    <!-- END : SITE CONTACT FLEX /-->
+    <!-- END : SOCIAL CONTENT /-->
+  </div>
+  <!-- END : CONTAINER /-->
+</section>
+<!-- ******************** SOCIAL : End ******************** /-->
+
+
+<!-- ******************** ABOUT : Start ******************** -->
+<main class="contact" role="main" id="content">
+  <!-- BEGIN : CONTAINER -->
+  <div class="container">
+    <!-- BEGIN : CONTACT CONTENT -->
+    <div class="contact__content">
+      <!-- BEGIN : CONTACT FORM -->
+      <div class="contact__form">
+        <h3 class="contact__title">Try out the form</h3>
+        <p class="contact__body">Got a question to ask? Then please, don’t hesitate to get in touch with me by using the super simple form below.</p>
+        <!-- BEGIN : FORM -->
+        <form class="form" action="/forms/mailer.php" method="post" data-form>
+          <!-- BEGIN : FORM FIELDSET -->
+          <fieldset class="form__fieldset">
+            <legend>Enter your name, email, subject (optional) and your message.</legend>
+            <!-- BEGIN : FORM CONTENT -->
+            <div class="form__content">
+              <!-- BEGIN : FORM ITEM -->
+              <div class="form__item" data-form-item>
+                <label class="form__label" for="name">Name <span class="form__label--required">*</span></label>
+                <input class="form__input" type="text" name="name" id="name" data-input-field required aria-required="true" title="Please type in your name" pattern="^[a-zA-Z \-']+$">
+                <small class="form__validation" data-form-validation></small>
+              </div>
+              <!-- END : FORM ITEM /-->
+              <!-- BEGIN : FORM ITEM -->
+              <div class="form__item" data-form-item>
+                <label class="form__label" for="email">Email <span class="form__label--required">*</span></label>
+                <input class="form__input" type="email" name="email" id="email" data-input-field required aria-required="true" title="Please enter a valid email address" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$">
+                <small class="form__validation" data-form-validation></small>
+              </div>
+              <!-- END : FORM ITEM /-->
+              <!-- BEGIN : FORM ITEM -->
+              <div class="form__item">
+                <label class="form__label" for="subject">Subject (optional)</label>
+                <input class="form__input" type="text" name="subject" id="subject">
+              </div>
+              <!-- END : FORM ITEM /-->
+              <!-- BEGIN : FORM ITEM -->
+              <div class="form__item form__item--textarea">
+                <label class="form__label" for="message">Your Message <span class="form__label--required">*</span></label>
+                <textarea class="form__textarea" name="message" rows="12" cols="80" id="message" data-textarea-field required title="Please fill in the message field"></textarea>
+                <small class="form__validation" data-form-validation></small>
+              </div>
+              <!-- END : FORM ITEM /-->
+              <button class="form__btn btn" type="submit" name="submit" data-form-submit><span class="btn__body btn__body--primary">Submit</span></button>
+
+              <div class="form__message" data-form-message></div>
+            </div>
+            <!-- END : FORM CONTENT /-->
+          </fieldset>
+          <!-- END : FORM FIELDSET /-->
+        </form>
+        <!-- END : FORM /-->
+      </div>
+      <!-- END : CONTACT FORM /-->
+      <!-- BEGIN : CONTACT DETAILS -->
+      <div class="contact__details">
+        <h3 class="contact__title">Not a fan of forms?</h3>
+        <p class="contact__body">If you don't like to fill in forms just use one of the following alternate methods below.</p>
+        <ul>
+          <li class="list__item">Phone: <strong>{{global.phone}}</strong></li>
+          <li class="list__item">Email: <a href="mailto:{{global.email}}"><strong>{{global.email}}</strong></a></li>
+          {{#each_upto global.social 3}}
+            <li class="list__item">{{title}}: <a href="{{url}}"><strong>{{handle}}</strong></a></li>
+          {{/each_upto}}
+        </ul>
+      </div>
+      <!-- END : CONTACT DETAILS /-->
+    </div>
+    <!-- END : CONTACT CONTENT /-->
   </div>
   <!-- END : CONTAINER /-->
 </main>
-<!-- ******************** SITE CONTACT : End ******************** /-->
+<!-- ******************** ABOUT : End ******************** /-->
 
 
-<!-- ******************** SITE BLOG : Start ******************** /-->
-<section class="site-blog">
+<!-- ******************** BAR : Start ******************** -->
+<section class="bar">
   <!-- BEGIN : CONTAINER -->
-  <div class="site-container">
-    <!-- BEGIN : GRID GUIDES -->
-    <div class="grid-guides">
-      <div class="grid-guides__guide"></div>
-      <div class="grid-guides__guide"></div>
-      <div class="grid-guides__guide"></div>
-      <div class="grid-guides__guide"></div>
+  <div class="container">
+    <!-- BEGIN : BAR CONTENT -->
+    <div class="bar__content">
+      <h2 class="bar__title">Read my recent blog posts</h2>
+      <!-- BEGIN : SYMBOL -->
+      <div class="symbol symbol--primary">
+        <svg class="symbol__icon symbol__icon--primary" width="20" height="20">
+          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/icons/sprite.svg#blog"></use>
+        </svg>
+      </div>
+      <!-- END : SYMBOL /-->
     </div>
-    <!-- END : GRID GUIDES /-->
-    <!-- BEGIN : SITE BLOG FLEX -->
-    <div class="site-blog__flex">
-      {{#each articles.[2017]}}
-        <!-- BEGIN : SITE BLOG ITEM -->
-        {{>article-section}}
-        <!-- END : SITE BLOG ITEM /-->
-      {{/each}}
-    </div>
-    <!-- END : SITE BLOG FLEX /-->
+    <!-- END : BAR CONTENT /-->
   </div>
   <!-- END : CONTAINER /-->
 </section>
-<!-- ******************** SITE BLOG : End /******************** /-->
+<!-- ******************** BAR : End ******************** /-->
+
+
+<!-- ******************** BLOG : Start ******************** -->
+<section class="blog">
+  <!-- BEGIN : CONTAINER -->
+  <div class="container">
+    <!-- BEGIN : BLOG CONTENT -->
+    <div class="blog__content">
+      {{#each_upto articles.[2017] 3}}
+        {{>article}}
+      {{/each_upto}}
+      {{#each_upto articles.[2016] 1}}
+        {{>article}}
+      {{/each_upto}}
+    </div>
+    <!-- END : BLOG CONTENT /-->
+  </div>
+  <!-- END : CONTAINER /-->
+</section>
+<!-- ******************** BLOG : End ******************** /-->

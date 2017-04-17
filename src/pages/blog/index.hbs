@@ -1,63 +1,53 @@
 ---
 page: blog
-title: Blog homepage
-keywords: web development, front end, developer, web developer, website portfolio, blog
-slug: blog
 layout: default.hbs
+title: Blog
 description: Alex Clapperton's Blog &mdash; Manchester, UK based front-end developer
 changefreq: monthly
 priority: 1.0
 ---
 
-<!-- ******************** SITE BANNER : Start ********************-->
-<section class="site-banner site-banner--small">
+<!-- ******************** BAR : Start ******************** -->
+<section class="bar">
   <!-- BEGIN : CONTAINER -->
-  <div class="site-container">
-    <!-- BEGIN : GRID GUIDES -->
-    <div class="grid-guides">
-      <div class="grid-guides__guide"></div>
-      <div class="grid-guides__guide"></div>
-      <div class="grid-guides__guide"></div>
-      <div class="grid-guides__guide"></div>
-    </div>
-    <!-- END : GRID GUIDES /-->
-    <!-- BEGIN : SITE BANNER FLEX -->
-    <div class="site-banner__flex">
-      <h1 class="site-banner__title">Check out <br> my latest posts</h1>
-
-      <div class="breadcrumbs">
-        <span class="breadcrumbs__item"><a class="breadcrumbs__link" href="/">Home</a></span>
-        <span class="breadcrumbs__item">Blog</span>
+  <div class="container">
+    <!-- BEGIN : BAR CONTENT -->
+    <div class="bar__content">
+      <h1 class="bar__title">Blog</h1>
+      <ul class="breadcrumbs">
+        <li class="breadcrumbs__item"><a class="breadcrumbs__link" href="/" title="Breadcrumb link to the homepage.">Home</a></li>
+        <li class="breadcrumbs__item">Blog</li>
+      </ul>
+      <!-- BEGIN : SYMBOL -->
+      <div class="symbol symbol--primary">
+        <svg class="symbol__icon symbol__icon--primary" width="20" height="20">
+          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/icons/sprite.svg#blog"></use>
+        </svg>
       </div>
-
-      <img class="site-banner__img" src="/images/banner/wordpress-frame.png" alt="" />
+      <!-- END : SYMBOL /-->
     </div>
-    <!-- END : SITE BANNER FLEX -->
+    <!-- END : BAR CONTENT /-->
   </div>
-  <!-- END : CONTAINER -->
+  <!-- END : CONTAINER /-->
 </section>
-<!-- ******************** SITE BANNER : End ******************** /-->
+<!-- ******************** BAR : End ******************** /-->
 
 
-<!-- ******************** SITE BLOG : Start ******************** /-->
-<main class="site-blog site-blog--white" id="content" role="main">
+<!-- ******************** BLOG : Start ******************** -->
+<main class="blog" role="main" id="content">
   <!-- BEGIN : CONTAINER -->
-  <div class="site-container">
-    <!-- BEGIN : SITE BLOG FLEX -->
-    <div class="site-blog__flex">
+  <div class="container">
+    <!-- BEGIN : BLOG CONTENT -->
+    <div class="blog__content">
       {{#each articles.[2017]}}
-        <!-- END : SITE BLOG ITEM /-->
-        {{>article-preview}}
-        <!-- END : SITE BLOG ITEM /-->
+        {{>article}}
       {{/each}}
       {{#each articles.[2016]}}
-        <!-- END : SITE BLOG ITEM /-->
-        {{>article-preview}}
-        <!-- END : SITE BLOG ITEM /-->
+        {{>article}}
       {{/each}}
     </div>
-    <!-- END : SITE BLOG FLEX /-->
+    <!-- END : BLOG CONTENT /-->
   </div>
   <!-- END : CONTAINER /-->
 </main>
-<!-- ******************** SITE BLOG : End /******************** /-->
+<!-- ******************** BLOG : End ******************** /-->

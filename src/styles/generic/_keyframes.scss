@@ -1,4 +1,4 @@
-// Keyframes - animation keyframes
+// Keyframes..........Keyframe animations.
 
 /* - Fsde In - */
 @-webkit-keyframes fadein {
@@ -52,116 +52,66 @@
 @-webkit-keyframes fadeInOutDown {
   0% {
     opacity: 0;
-
-    -webkit-transform: translate3d(0, -20%, 0);
-       -moz-transform: translate3d(0, -20%, 0);
-        -ms-transform: translate3d(0, -20%, 0);
-         -o-transform: translate3d(0, -20%, 0);
-            transform: translate3d(0, -20%, 0);
+    transform: translate3d(0, -20%, 0);
   }
   50% {
       opacity: 1
   }
   100% {
     opacity: 0;
-
-    -webkit-transform: translate3d(0, 20%, 0);
-       -moz-transform: translate3d(0, 20%, 0);
-        -ms-transform: translate3d(0, 20%, 0);
-         -o-transform: translate3d(0, 20%, 0);
-            transform: translate3d(0, 20%, 0);
+    transform: translate3d(0, 20%, 0);
   }
 }
 @-moz-keyframes fadeInOutDown {
   0% {
     opacity: 0;
-
-    -webkit-transform: translate3d(0, -20%, 0);
-       -moz-transform: translate3d(0, -20%, 0);
-        -ms-transform: translate3d(0, -20%, 0);
-         -o-transform: translate3d(0, -20%, 0);
-            transform: translate3d(0, -20%, 0);
+    transform: translate3d(0, -20%, 0);
   }
   50% {
       opacity: 1
   }
   100% {
     opacity: 0;
-
-    -webkit-transform: translate3d(0, 20%, 0);
-       -moz-transform: translate3d(0, 20%, 0);
-        -ms-transform: translate3d(0, 20%, 0);
-         -o-transform: translate3d(0, 20%, 0);
-            transform: translate3d(0, 20%, 0);
+    transform: translate3d(0, 20%, 0);
   }
 }
 @-ms-keyframes fadeInOutDown {
   0% {
     opacity: 0;
-
-    -webkit-transform: translate3d(0, -20%, 0);
-       -moz-transform: translate3d(0, -20%, 0);
-        -ms-transform: translate3d(0, -20%, 0);
-         -o-transform: translate3d(0, -20%, 0);
-            transform: translate3d(0, -20%, 0);
+    transform: translate3d(0, -20%, 0);
   }
   50% {
       opacity: 1
   }
   100% {
     opacity: 0;
-
-    -webkit-transform: translate3d(0, 20%, 0);
-       -moz-transform: translate3d(0, 20%, 0);
-        -ms-transform: translate3d(0, 20%, 0);
-         -o-transform: translate3d(0, 20%, 0);
-            transform: translate3d(0, 20%, 0);
+    transform: translate3d(0, 20%, 0);
   }
 }
 @-o-keyframes fadeInOutDown {
   0% {
     opacity: 0;
-
-    -webkit-transform: translate3d(0, -20%, 0);
-       -moz-transform: translate3d(0, -20%, 0);
-        -ms-transform: translate3d(0, -20%, 0);
-         -o-transform: translate3d(0, -20%, 0);
-            transform: translate3d(0, -20%, 0);
+    transform: translate3d(0, -20%, 0);
   }
   50% {
       opacity: 1
   }
   100% {
     opacity: 0;
-
-    -webkit-transform: translate3d(0, 20%, 0);
-       -moz-transform: translate3d(0, 20%, 0);
-        -ms-transform: translate3d(0, 20%, 0);
-         -o-transform: translate3d(0, 20%, 0);
-            transform: translate3d(0, 20%, 0);
+    transform: translate3d(0, 20%, 0);
   }
 }
 @keyframes fadeInOutDown {
   0% {
     opacity: 0;
-
-    -webkit-transform: translate3d(0, -20%, 0);
-       -moz-transform: translate3d(0, -20%, 0);
-        -ms-transform: translate3d(0, -20%, 0);
-         -o-transform: translate3d(0, -20%, 0);
-            transform: translate3d(0, -20%, 0);
+    transform: translate3d(0, -20%, 0);
   }
   50% {
     opacity: 1
   }
   100% {
     opacity: 0;
-
-    -webkit-transform: translate3d(0, 20%, 0);
-       -moz-transform: translate3d(0, 20%, 0);
-        -ms-transform: translate3d(0, 20%, 0);
-         -o-transform: translate3d(0, 20%, 0);
-            transform: translate3d(0, 20%, 0);
+    transform: translate3d(0, 20%, 0);
   }
 }
 
@@ -180,8 +130,24 @@
         box-shadow: 0 0 0 0 $core-color-brand;
     }
     80% {
-    box-shadow: 0 0 0 13px rgba(255, 150, 44, 0);
+        box-shadow: 0 0 0 13px rgba(255, 150, 44, 0);
+    }
 }
+@-ms-keyframes cd-pulse {
+    0% {
+        box-shadow: 0 0 0 0 $core-color-brand;
+    }
+    80% {
+        box-shadow: 0 0 0 13px rgba(255, 150, 44, 0);
+    }
+}
+@-o-keyframes cd-pulse {
+    0% {
+        box-shadow: 0 0 0 0 $core-color-brand;
+    }
+    80% {
+        box-shadow: 0 0 0 13px rgba(255, 150, 44, 0);
+    }
 }
 @keyframes cd-pulse {
     0% {
@@ -192,50 +158,58 @@
     }
 }
 
-@mixin fadein {
-  -webkit-animation: fadein 2s;
-     -moz-animation: fadein 2s;
-      -ms-animation: fadein 2s;
-       -o-animation: fadein 2s;
-          animation: fadein 2s;
+
+/* - Blinking cursor - */
+@-webkit-keyframes blink {
+    100% {
+        opacity: 0;
+    }
+}
+@-moz-keyframes blink {
+    100% {
+        opacity: 0;
+    }
+}
+@-ms-keyframes blink {
+    100% {
+        opacity: 0;
+    }
+}
+@-o-keyframes blink {
+    100% {
+        opacity: 0;
+    }
+}
+@keyframes blink {
+    100% {
+        opacity: 0;
+    }
 }
 
-@mixin animation-fadeInOutDown {
-  -webkit-animation-name: fadeInOutDown;
-     -moz-animation-name: fadeInOutDown;
-      -ms-animation-name: fadeInOutDown;
-       -o-animation-name: fadeInOutDown;
-          animation-name: fadeInOutDown;
 
-  -webkit-animation-iteration-count: infinite;
-     -moz-animation-iteration-count: infinite;
-      -ms-animation-iteration-count: infinite;
-       -o-animation-iteration-count: infinite;
-          animation-iteration-count: infinite;
-
-  -webkit-animation-duration: 1.2s;
-     -moz-animation-duration: 1.2s;
-      -ms-animation-duration: 1.2s;
-       -o-animation-duration: 1.2s;
-          animation-duration: 1.2s;
-
-  -webkit-animation-timing-function: ease-in-out;
-     -moz-animation-timing-function: ease-in-out;
-      -ms-animation-timing-function: ease-in-out;
-       -o-animation-timing-function: ease-in-out;
-          animation-timing-function: ease-in-out;
+/* - Loading screen - */
+@-webkit-keyframes loading_screen {
+    50% {
+        transform: rotate(359deg) scale(2.5);
+    }
 }
-
-@mixin cd-pulse {
-  -webkit-animation: cd-pulse 1s infinite;
-     -moz-animation: cd-pulse 1s infinite;
-      -ms-animation: cd-pulse 1s infinite;
-       -o-animation: cd-pulse 1s infinite;
-          animation: cd-pulse 1s infinite;
-
-  -webkit-animation-delay: 0.5s;
-     -moz-animation-delay: 0.5s;
-      -ms-animation-delay: 0.5s;
-       -o-animation-delay: 0.5s;
-          animation-delay: 0.5s;
+@-moz-keyframes loading_screen {
+    50% {
+        transform: rotate(359deg) scale(2.5);
+    }
+}
+@-ms-keyframes loading_screen {
+    50% {
+        transform: rotate(359deg) scale(2.5);
+    }
+}
+@-o-keyframes loading_screen {
+    50% {
+        transform: rotate(359deg) scale(2.5);
+    }
+}
+@keyframes loading_screen {
+    50% {
+        transform: rotate(359deg) scale(2.5);
+    }
 }

@@ -1,164 +1,141 @@
-// Footer - footer section
+// Footer.............Footer styles.
 
-.site-footer {
-  background: $core-color-dark;
-  color: $core-color-light;
-  padding: 30px 0;
-
-  p {
-    color: $core-color-light;
-  }
-
-  @include respond-to(m) {
-    padding: 20px 0;
-  }
+.footer {
+  background-color: darken($core-color-neutral, 5%);
+  padding: 30px 0 0 0;
 }
 
-.site-footer__flex {
-  @include respond-to(m) {
-    @include flex(wrap, row, space-between);
+.footer__content {
+  @supports (display: grid) {
+    display: grid;
+    grid-gap: 40px 0;
+    grid-template-columns: auto auto;
   }
-}
-
-.site-footer__item {
-  margin-bottom: 30px;
 
   @include respond-to(m) {
-    width: 48%;
+    @supports (display: grid) {
+      grid-gap: 4em;
+      grid-template-columns: repeat(2, 1fr) auto;
+    }
 
-    &:last-child {
-      display: none;
+    @supports not (display: grid) {
+      @include flex(wrap, row, space-between, null);
     }
   }
 
   @include respond-to(l) {
-    width: 31%;
+    @supports (display: grid) {
+      grid-template-columns: repeat(4, auto);
+    }
+  }
 
+  @include respond-to(xl) {
+    @supports (display: grid) {
+      grid-gap: 8em;
+    }
+  }
+}
+
+.footer__list {
+  &:last-child {
+    display: none;
+  }
+
+  @supports not (display: grid) {
+    margin-bottom: ($core-margin * 2);
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  @include respond-to(m) {
+    @supports not (display: grid) {
+      width: 48%;
+    }
+  }
+
+  @include respond-to(l) {
     &:last-child {
       display: block;
     }
-  }
-}
 
-.site-footer__title {
-  font-family: $core-font-family;
-  font-weight: $core-secondary-font-weight;
-  @include font-size($h6-font-sizes);
-}
+    @supports not (display: grid) {
+      width: auto;
+      flex: 1;
 
-.twitter-feed__container {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-
-.twitter-feed__item {
-  color: $core-color-light;
-  margin-bottom: ($core-margin * 1.2);
-  @include flex(nowrap, row, flex-start);
-
-  &:last-child {
-    margin-bottom: 0;
-  }
-
-  span {
-    flex: 1;
-  }
-}
-
-.twitter-feed__icon {
-  width: 25px;
-  height: 25px;
-  fill: $core-color-brand;
-  margin-right: 5px;
-}
-
-.footer-social {
-  @include flex(null, row, null);
-}
-
-.footer-social__link {
-  position: relative;
-  width: 27px;
-  height: 27px;
-  margin-right: 15px;
-  z-index: 1;
-
-  &:first-child::before,
-  &:nth-of-type(3)::before {
-    content: '';
-    position: absolute;
-    top: 1px;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    width: calc(100% - 2px);
-    height: calc(100% - 2px);
-    background: $core-color-light;
-    margin: 0 auto;
-    border-radius: 4px;
-    z-index: -1;
-
-    @include respond-to(l) {
-      width: calc(100% - 4px);
-      height: calc(100% - 2px);
+      &:nth-child(3),
+      &:nth-child(4) {
+        flex: 2;
+      }
     }
   }
 }
 
-.footer-social__icon {
-  width: 100%;
-  height: 100%;
+.footer__title {
+  display: block;
+  margin-bottom: ($core-margin / 1.2);
+  font-family: $core-secondary-font-family;
+  @include font-size($h4-font-sizes);
+
+  &--first {
+    color: #0070a8;
+  }
+
+  &--second {
+    color: $core-color-brand;
+  }
+
+  &--third {
+    color: #d0095c;
+  }
+
+  &--fourth {
+    color: #469800;
+  }
 }
 
-.footer-social__icon--facebook {
-  position: relative;
-  fill: $core-facebook-color;
-}
-
-.footer-social__icon--twitter {
-  fill: $core-twitter-color;
-}
-
-.footer-social__icon--linkedin {
-  fill: $core-linkedin-color;
-}
-
-.footer-social__icon--github {
-  fill: $core-color-light;
-}
-
-.site-footer__posts {
-  margin-bottom: 25px;
-  overflow: hidden;
+.footer__item {
+  margin-bottom: ($core-margin / 2);
 
   &:last-child {
     margin-bottom: 0;
   }
 }
 
-.site-footer__post-date {
-  display: inline-block;
-  min-width: 58px;
-  background: $core-color-brand;
-  color: $core-color-light;
-  font-size: ($core-font-size * 1.15);
-  font-weight: $core-secondary-font-weight;
-  text-align: center;
-  margin-right: 5px;
-  padding: 4px 15px;
-  vertical-align: middle;
-  float: left;
+.footer__link {
+  color: inherit;
+
+  &:not(&--email) {
+    text-decoration: none;
+  }
+
+  &--email {
+    font-weight: $core-secondary-font-weight;
+  }
+
+  @include respond-to(l) {
+    &:not(&--email) {
+      &:hover {
+        border-bottom: 1px dotted $core-color-dark;
+      }
+    }
+
+    &--email {
+      &:hover {
+        color: $core-color-brand;
+      }
+    }
+  }
 }
 
-.site-footer__post-date--small {
-  display: block;
+.footer__bottom {
+  background-color: darken($core-color-neutral, 10%);
+  margin-top: 30px;
+  padding: $core-padding 0;
 }
 
-.site-footer__post-title {
-  display: block;
-  color: $core-color-light;
-  font-size: ($core-font-size * 1.2);
-  text-decoration: none;
-  vertical-align: middle;
+.footer__bottom-body {
+  color: lighten($core-color-body, 10%);
+  margin-bottom: 0;
 }

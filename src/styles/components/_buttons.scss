@@ -1,145 +1,108 @@
-// Buttons
+// Butons.............Button styles.
 
-.btn-primary {
+.btn {
+  position: relative;
   display: inline-block;
-  font-family: $core-font-family;
-  @include font-size($p-font-sizes);
-  padding: 8px 15px 11px 15px;
+  text-align: center;
   text-decoration: none;
+  @include font-size($btn-font-sizes);
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: $core-color-dark;
+    transform: scaleX(0);
+    transform-origin: center left;
+  }
+
+  &:nth-of-type(1) {
+    margin-right: ($core-margin / 2);
+  }
 
   @include respond-to(l) {
-    cursor: pointer;
+    &::after {
+      @include transition-03;
+    }
+
+    &:hover {
+      &::after {
+        transform: scaleX(1);
+      }
+    }
+  }
+}
+
+.btn__body {
+  display: inline-block;
+  position: relative;
+  padding: $core-padding ($core-padding * 2);
+  font-weight: $core-secondary-font-weight;
+  text-transform: uppercase;
+  line-height: ($core-grid-unit * 2);
+  vertical-align: middle;
+  transform: translate(-3px,-3px);
+  z-index: z(alpha);
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 2px $core-border-style $core-color-dark;
+    transform: translate(3px,3px);
+    z-index: -2;
+  }
+
+  &--primary {
+    color: $core-color-light;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: $core-color-brand;
+      z-index: -1;
+    }
+  }
+
+  @include respond-to(l) {
+    @include transition-03;
+
+    &::after {
+      @include transition-03;
+    }
 
     &:hover,
-    &:focus {
-      @include cd-pulse;
+    &:hover::after {
+      transform: translate(0);
     }
   }
 }
 
-.btn-primary--large {
-  padding: 12px 60px 16px 60px;
-}
-
-.btn-primary--contact {
-  margin-top: 25px;
-}
-
-.btn-primary--margin {
-  margin-bottom: $core-grid-unit;
-
-  @include respond-to(m) {
-    margin-right: $core-grid-unit;
-    margin-bottom: 0;
-  }
-}
-
-.btn-primary--no-padding {
-  display: inline-block;
-  font-size: ($core-font-size * 1.15);
-  font-weight: $core-secondary-font-weight;
-  text-decoration: none;
-
-  @include respond-to(l) {
-
-    &:hover .btn-primary__icon {
-      margin-left: 10px;
-    }
-  }
-}
-
-.btn-primary--no-padding-blue {
-  color: $core-color-brand;
-}
-
-.btn-primary--blue {
-  background: $core-color-brand;
-  color: $core-color-light;
-}
-
-.btn-primary--grey {
-  background: $core-color-dark;
-  color: $core-color-light;
-}
-
-.btn-primary__text {
-  display: inline-block;
-  text-decoration: none;
-  vertical-align: middle;
-}
-
-.btn-primary__text--large {
-  @include font-size($h4-font-sizes);
-}
-
-.btn-primary__flex {
-  margin-top: ($core-margin * 2);
-  @include flex(wrap, row, center);
-
-  @include respond-to(m) {
-    margin-top: 0;
-  }
-}
-
-.btn-primary__flex--center {
+.btn__icon {
+  width: 22px;
   height: 100%;
-  @include align-items(center);
-}
+  margin-left: ($core-margin / 2);
+  vertical-align: bottom;
 
-.btn-primary__flex--home {
-  @include justify-content(flex-start);
-
-  @include respond-to(m) {
-    @include justify-content(flex-end);
+  &--primary {
+    fill: $core-color-light;
   }
-}
 
-.btn-primary__icon {
-  width: 19px;
-  height: 19px;
-  margin-left: 2px;
-  vertical-align: middle;
-}
-
-.btn-primary__icon--blue {
-  fill: $core-color-brand;
-}
-
-.btn-primary__icon--white {
-  fill: $core-color-light;
-}
-
-.btn-portfolio {
-  background: $core-color-brand;
-  color: $core-color-light;
-  font-family: $core-font-family;
-  font-weight: $core-font-weight;
-  margin-bottom: 10px;
-  padding: $core-grid-unit;
-  text-align: center;
-
-  &:last-child {
-    margin-bottom: 0;
+  &--rotate {
+    @include rotate(180);
   }
 
   @include respond-to(s) {
-    min-width: 150px;
-    margin-right: 10px;
-    margin-bottom: 0;
-    padding: $core-grid-unit 15px;
+    width: 25px;
   }
-
-  @include respond-to(l) {
-    padding: 8px 15px;
-    cursor: pointer;
-    @include transition-025;
-
-    &:hover {
-      background: $core-color-dark;
-    }
-  }
-}
-
-.btn-portfolio--active {
-  background: $core-color-dark;
 }

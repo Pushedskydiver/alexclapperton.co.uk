@@ -1,179 +1,52 @@
-(function($) {
+(function() {
 
     'use strict';
-
-    var AC = function() {
-        this.VERSION = "1.1.0";
-        this.AUTHOR = "Alex Clapperton";
-        this.SUPPORT = "alexclapperton@nuttersons.co.uk";
-
-        this.pageScrollElement = 'html, body';
-        this.$body = $('body');
-
-        this.setUserOS();
-        this.setUserAgent();
-    }
-
-    // Set environment vars
-    AC.prototype.setUserOS = function() {
-        var OSName = "";
-        if (navigator.appVersion.indexOf("Win") != -1) OSName = "windows";
-        if (navigator.appVersion.indexOf("Mac") != -1) OSName = "mac";
-        if (navigator.appVersion.indexOf("X11") != -1) OSName = "unix";
-        if (navigator.appVersion.indexOf("Linux") != -1) OSName = "linux";
-
-        this.$body.addClass(OSName);
-    }
-
-    AC.prototype.setUserAgent = function() {
-        if (navigator.userAgent.match(/Android|BlackBerry|iPhone|iPad|iPod|Opera Mini|IEMobile/i)) {
-            this.$body.addClass('mobile');
-        } else {
-            this.$body.addClass('desktop');
-            if (navigator.userAgent.match(/MSIE 9.0/)) {
-                this.$body.addClass('ie9');
-            }
-        }
-    }
-
-    // AC util functions
-    AC.prototype.getUserAgent = function() {
-        return $('body').hasClass('mobile') ? "mobile" : "desktop";
-    }
-
-    $.AC = new AC();
-    $.AC.Constructor = AC;
-
-})(window.jQuery);
-
-
-(function($) {
-
-    'use strict';
-
-
-    // ======================================
-    //    Smooth Scroll to element
-    // ======================================
-  	function init_scroll_to() {
-      var $scrollTo = $('.scroll-to');
-    	$scrollTo.on('click', function(event){
-    		var $elemOffsetTop = $(this).data('offset-top');
-    		$('html').velocity("scroll", { offset:$(this.hash).offset().top-$elemOffsetTop, duration: 1500, easing:'easeInOutCubic', mobileHA: false});
-    		event.preventDefault();
-    	});
-  	}
 
 
     // ======================================
     //    Smooth scroll to top button
     // ======================================
-    function init_smooth_scroll_top() {
-      // Animated Scroll to Top Button
-      var $scrollTop = $('.scroll-top');
-      if ($scrollTop.length > 0) {
-        $(window).on('scroll', function(){
-          if ($(window).scrollTop() > 600) {
-            $scrollTop.addClass('scroll-top--isVisible');
-          } else {
-            $scrollTop.removeClass('scroll-top--isVisible');
-          }
-        });
-        $scrollTop.on('click', function(e){
-          e.preventDefault();
-          $('html').velocity("scroll", { offset: 0, duration: 1500, easing:'easeInOutCubic', mobileHA: false });
-        });
-      };
+    function init_scroll_top() {
+      var ELEMENT_scrollBtn = document.querySelector('[data-scroll-top]');
+
+      var CLASS_scrollBtnVisible = 'scroll-top--visible';
+
+      window.addEventListener('scroll', function(){
+        if (window.pageYOffset > 600) {
+          ELEMENT_scrollBtn.classList.add(CLASS_scrollBtnVisible);
+          return;
+        }
+        ELEMENT_scrollBtn.classList.remove(CLASS_scrollBtnVisible);
+      });
     }
 
 
     // ==============================================
-    //    Active nav links
+    //    Active navigation links
     // ==============================================
     function init_active_nav() {
-      if(window.location.pathname == '/') {
-        $('.site-nav__link--home').addClass('site-nav__link--active');
-      }
-      if(window.location.href.indexOf('my-work/') > -1) {
-        $('.site-nav__link--work').addClass('site-nav__link--active');
-      }
-      if(window.location.pathname == '/about/') {
-        $('.site-nav__link--about').addClass('site-nav__link--active');
-      }
-      if(window.location.href.indexOf('blog/') > -1) {
-        $('.site-nav__link--blog').addClass('site-nav__link--active');
-      }
-      if(window.location.pathname == '/contact/') {
-        $('.site-nav__link--contact').addClass('site-nav__link--active');
-      }
-    }
+      var ELEMENT_navItemHome = document.querySelector('[data-item-home]'),
+          ELEMENT_navItemAbout = document.querySelector('[data-item-about]'),
+          ELEMENT_navItemPortfolio = document.querySelector('[data-item-portfolio]'),
+          ELEMENT_navItemBlog = document.querySelector('[data-item-blog]'),
+          ELEMENT_navItemContact = document.querySelector('[data-item-contact]');
 
+      var CLASS_navItemActive = 'nav__item--active';
 
-    // ==============================================
-    //    Contact form
-    // ==============================================
-    function init_contact_form() {
-      //contact form button event
-      $(".btn-primary--contact").on('click',function (event) {
-          var error = init_validate_form();
-          var _this = $(this);
-          if (error) {
-              _this.next('.site-contact__loading').removeClass('site-contact__loading--displayNone');
-              _this.prop('disabled', true);
-              $.ajax({
-                  type: "POST",
-                  url: "/forms/mailer.php",
-                  data: $(".site-contact__form").serialize(),
-                  success: function (result) {
-                      $('.site-contact__input, .site-contact__textarea').each(function () {
-                          $(this).val('');
-                      })
-                      $(".site-contact__message").html(result);
-                      $(".site-contact__message").fadeIn("slow").removeClass('site-contact__input--error').addClass('site-contact__message--success');
-                      $('.site-contact__message').delay(4000).fadeOut("slow");
-                      _this.next('.site-contact__loading').addClass('site-contact__loading--displayNone');
-                      _this.prop('disabled', false);
-                  },
-                  error: function () {
-                      _this.next('.site-contact__loading').addClass('site-contact__loading--displayNone');
-                      _this.prop('disabled', false);
-                  }
-              });
-          }
-      });
-
-      function init_validate_form() {
-          var error = true;
-          $('.site-contact__input').each(function (index) {
-              if (index == 0) {
-                  if ($(this).val() == null || $(this).val() == "") {
-                      $(".site-contact__form").find(".site-contact__input:eq(" + index + ")").addClass("site-contact__input--error");
-                      error = false;
-                  }
-                  else {
-                      $(".site-contact__form").find(".site-contact__input:eq(" + index + ")").removeClass("site-contact__input--error");
-                  }
-              }
-              else if (index == 1) {
-                  if (!(/(.+)@(.+){2,}\.(.+){2,}/.test($(this).val()))) {
-                      $(".site-contact__form").find(".site-contact__input:eq(" + index + ")").addClass("site-contact__input--error");
-                      error = false;
-                  } else {
-                      $(".site-contact__form").find(".site-contact__input:eq(" + index + ")").removeClass("site-contact__input--error");
-                  }
-              }
-          });
-
-          $('.site-contact__textarea').each(function() {
-            if ($(this).val() == null || $(this).val() == "") {
-                $(".site-contact__form").find(".site-contact__textarea").addClass("site-contact__input--error");
-                error = false;
-            }
-            else {
-                $(".site-contact__form").find(".site-contact__textarea").removeClass("site-contact__input--error");
-            }
-          });
-          return error;
+      if (window.location.pathname == '/') {
+        ELEMENT_navItemHome.classList.add(CLASS_navItemActive);
+      }
+      if (window.location.pathname == '/about-me/') {
+        ELEMENT_navItemAbout.classList.add(CLASS_navItemActive);
+      }
+      if (window.location.href.indexOf('portfolio/') > -1) {
+        ELEMENT_navItemPortfolio.classList.add(CLASS_navItemActive);
+      }
+      if (window.location.href.indexOf('blog/') > -1) {
+        ELEMENT_navItemBlog.classList.add(CLASS_navItemActive);
+      }
+      if (window.location.pathname == '/contact/') {
+        ELEMENT_navItemContact.classList.add(CLASS_navItemActive);
       }
     }
 
@@ -182,27 +55,261 @@
     //    Portfolio grid & filter
     // ==============================================
     function init_portfolio() {
-      var $grid = $('.site-portfolio__grid'),
-          $grid_filter = $('.site-portfolio__filter'),
-          $grid_selectors = $('.btn-portfolio'),
-          $grid_items = $('.site-portfolio__item');
+      var ELEMENT_grid = document.querySelector('[data-portfolio]'),
+          ELEMENT_item = document.querySelector('[data-portfolio-item]'),
+          ELEMENT_filter = document.querySelector('[data-filter-block]');
 
-      $grid_items.addClass('site-portfolio__item--isotope');
+      var SELECTOR_filter = document.querySelectorAll('[data-filter-block]'),
+          SELECTOR_btn = document.querySelector('[data-filter-btn]'),
+          SELECTOR_filterBtnActive = '.filter__btn--active',
+          SELECTOR_iso;
 
-      $(window).load(function(){
-        $grid.imagesLoaded( function(){
-          $grid.isotope({
-            itemSelector: '.site-portfolio__item',
-            percentPosition: true,
-            layoutMode: 'fitRows'
-          });
-          $grid_selectors.on( 'click', function() {
-            $grid_selectors.removeClass('btn-portfolio--active');
-            $(this).addClass('btn-portfolio--active');
-            var filterValue = $(this).attr('data-filter');
-            $grid.isotope({ filter: filterValue });
-          });
+      var CLASS_filterBtnActive = 'filter__btn--active',
+          CLASS_portfolioPage = 'portfolio__page';
+
+      document.body.classList.add(CLASS_portfolioPage);
+
+      imagesLoaded(ELEMENT_grid, function() {
+        // Initialise isotope
+        SELECTOR_iso = new Isotope(ELEMENT_grid, {
+          itemSelector: '.portfolio__item',
+          percentPosition: true,
+          layoutMode: 'fitRows'
         });
+
+        // Bind filter button click
+        ELEMENT_filter.addEventListener('click', function(event) {
+          // Only work with buttons
+          if (!matchesSelector(event.target, 'button')) {
+            return;
+          }
+          var SELECTOR_filter = event.target.getAttribute('data-filter');
+          SELECTOR_iso.arrange({filter: SELECTOR_filter});
+        });
+
+        // Change is-checked class on buttons
+        for (var i=0, len = SELECTOR_filter.length; i < len; i++) {
+          var SELECTOR_filterBtn = SELECTOR_filter[i];
+          radioButtonGroup(SELECTOR_filterBtn);
+        }
+        function radioButtonGroup(SELECTOR_filterBtn) {
+          SELECTOR_filterBtn.addEventListener('click', function(event) {
+            // Only work with buttons
+            if (!matchesSelector(event.target, 'button')) {
+              return;
+            }
+            SELECTOR_filterBtn.querySelector(SELECTOR_filterBtnActive).classList.remove(CLASS_filterBtnActive);
+            event.target.classList.add(CLASS_filterBtnActive);
+          });
+        }
+      });
+    }
+
+
+    // ==============================================
+    //    Form validation | Contact page
+    // ==============================================
+    function init_form_validation() {
+      var ELEMENT_form = document.querySelector('[data-form]'),
+          ELEMENT_formItem = document.querySelectorAll('[data-form-item]'),
+          ELEMENT_inputField = document.querySelectorAll('[data-input-field]'),
+          ELEMENT_textareaField = document.querySelector('[data-textarea-field]'),
+          ELEMENT_formSubmit = document.querySelector('[data-form-submit]');
+
+      var CLASS_formInputValid = 'form__input--valid',
+          CLASS_formInputInvalid = 'form__input--invalid',
+          CLASS_formTextareaValid = 'form__textarea--valid',
+          CLASS_formTextareaInvalid = 'form__textarea--invalid',
+          CLASS_formValidationInvalid = 'form__validation--invalid',
+          CLASS_formValidationValid = 'form__validation--valid';
+
+      var ATTR_pattern = 'pattern',
+          ATTR_title = 'title',
+          ATTR_required = 'required';
+
+      var allInputsAreValid = true;
+
+      function isInputValid(regex, inputValue) {
+        if (regex === undefined) {
+          return inputValue.length > 0;
+        }
+
+        return new RegExp(regex, 'i').test(inputValue);
+      }
+
+      function getCurrentInputInformation(ELEMENT_currentInput) {
+        return {
+          inputValue: ELEMENT_currentInput.value,
+          regexString: ELEMENT_currentInput.getAttribute(ATTR_pattern),
+          errorMessage: ELEMENT_currentInput.getAttribute(ATTR_title),
+          isValid: true
+        }
+      }
+
+      function setCurrentInputToValid(ELEMENT_currentInput) {
+        var ELEMENT_currentValidation = ELEMENT_currentInput.nextElementSibling;
+        ELEMENT_currentInput.classList.add(CLASS_formInputValid);
+        ELEMENT_currentInput.classList.remove(CLASS_formInputInvalid);
+        ELEMENT_currentValidation.classList.remove(CLASS_formValidationInvalid);
+        ELEMENT_currentValidation.classList.add(CLASS_formValidationValid);
+        ELEMENT_currentValidation.textContent = '';
+      }
+
+      function setCurrentInputToInvalid(ELEMENT_currentInput, errorMessage, isTyping) {
+        var ELEMENT_currentValidation = ELEMENT_currentInput.nextElementSibling;
+        ELEMENT_currentInput.classList.remove(CLASS_formInputValid);
+        ELEMENT_currentInput.classList.add(CLASS_formInputInvalid);
+        ELEMENT_currentValidation.classList.remove(CLASS_formValidationValid);
+        ELEMENT_currentValidation.classList.add(CLASS_formValidationInvalid);
+        ELEMENT_currentValidation.textContent = errorMessage;
+
+        if (isTyping) {
+          return;
+        }
+      }
+
+      function setTextareaToValid() {
+        var ELEMENT_currentValidation = ELEMENT_textareaField.nextElementSibling;
+        ELEMENT_textareaField.classList.add(CLASS_formTextareaValid);
+        ELEMENT_textareaField.classList.remove(CLASS_formTextareaInvalid);
+        ELEMENT_currentValidation.classList.remove(CLASS_formValidationInvalid);
+        ELEMENT_currentValidation.classList.add(CLASS_formValidationValid);
+        ELEMENT_currentValidation.textContent = '';
+      }
+
+      function setTextareaToInvalid(errorMessage, isTyping) {
+        var ELEMENT_currentValidation = ELEMENT_textareaField.nextElementSibling;
+        ELEMENT_textareaField.classList.remove(CLASS_formTextareaValid);
+        ELEMENT_textareaField.classList.add(CLASS_formTextareaInvalid);
+        ELEMENT_currentValidation.classList.remove(CLASS_formValidationValid);
+        ELEMENT_currentValidation.classList.add(CLASS_formValidationInvalid);
+        ELEMENT_currentValidation.textContent = errorMessage;
+
+        if (isTyping) {
+          return;
+        }
+      }
+
+      function checkIfCurrentInputIsValid(ELEMENT_currentInput, isTyping) {
+
+        if (ELEMENT_currentInput.getAttribute(ATTR_required) === undefined) {
+          return;
+        }
+
+        var currentInputObj = getCurrentInputInformation(ELEMENT_currentInput);
+        currentInputObj.isValid = isInputValid(currentInputObj.regexString, currentInputObj.inputValue);
+
+        if (currentInputObj.isValid) {
+          setCurrentInputToValid(ELEMENT_currentInput)
+        } else {
+          setCurrentInputToInvalid(ELEMENT_currentInput, currentInputObj.errorMessage, isTyping)
+        }
+      }
+
+      function CheckIfTextareaIsValid(isTyping) {
+        var textareaObj = getCurrentInputInformation(ELEMENT_textareaField);
+        textareaObj.isValid = textareaObj.inputValue;
+
+        if (textareaObj.isValid) {
+          setTextareaToValid()
+        } else {
+          setTextareaToInvalid(textareaObj.errorMessage, isTyping)
+        }
+      }
+
+      function handleKeypressOnInput(event) {
+        var ELEMENT_currentInputs = event.target;
+        var isTyping = true;
+        checkIfCurrentInputIsValid(ELEMENT_currentInputs, isTyping)
+      }
+
+      function handleKeypressOnTextarea(event) {
+        var ELEMENT_currentInputs = event.target;
+        var isTyping = true;
+        CheckIfTextareaIsValid(isTyping)
+      }
+
+      function checkIfAllInputsAreValid(event) {
+
+        var firstErrorFound = false;
+        var isTyping = false;
+
+        [].forEach.call(ELEMENT_inputField, function(ELEMENT_this) {
+          checkIfCurrentInputIsValid(ELEMENT_this, isTyping);
+          if (ELEMENT_this.classList.contains(CLASS_formInputInvalid) && firstErrorFound === false) {
+            ELEMENT_this.focus();
+            firstErrorFound = true;
+          }
+        });
+
+        CheckIfTextareaIsValid(ELEMENT_textareaField, isTyping);
+
+        if (ELEMENT_textareaField.classList.contains(CLASS_formTextareaInvalid) && firstErrorFound === false) {
+          ELEMENT_textareaField.focus();
+          firstErrorFound = true;
+        }
+
+        if (firstErrorFound) {
+          event.preventDefault();
+        }
+      }
+
+      function init() {
+        [].forEach.call(ELEMENT_formItem, function(ELEMENT_this) {
+          ELEMENT_this.addEventListener('keyup', handleKeypressOnInput);
+        });
+        ELEMENT_textareaField.addEventListener('keyup', handleKeypressOnTextarea);
+        ELEMENT_formSubmit.addEventListener('click', checkIfAllInputsAreValid);
+      }
+
+      init();
+    }
+
+
+    // ==============================================
+    //    Send form | Contact page
+    // ==============================================
+    function init_send_form() {
+      var ELEMENT_form = document.querySelector(['[data-form]']),
+          ELEMENT_formMessage = document.querySelector('[data-form-message]');
+
+      var CLASS_formMessageSuccess = 'form__message--success',
+          CLASS_formMessageError = 'form__message--error';
+
+      ELEMENT_form.addEventListener('submit', function(event){
+
+        var ELEMENT_this = event.target;
+
+        var SELECTOR_data = new FormData(ELEMENT_this),
+            SELECTOR_request = new XMLHttpRequest();
+
+        event.preventDefault()
+
+        SELECTOR_request.onreadystatechange = function(){
+          if (SELECTOR_request.readyState == XMLHttpRequest.DONE ) {
+
+            if (SELECTOR_request.status == 200) {
+              ELEMENT_formMessage.classList.remove(CLASS_formMessageError);
+              ELEMENT_formMessage.classList.add(CLASS_formMessageSuccess);
+              ELEMENT_formMessage.textContent = SELECTOR_request.responseText;
+              return;
+            }
+
+            if (SELECTOR_request.status == 400) {
+              ELEMENT_formMessage.classList.remove(CLASS_formMessageSuccess);
+              ELEMENT_formMessage.classList.add(CLASS_formMessageError);
+              ELEMENT_formMessage.textContent = 'Oops! Something went wrong. Please submit the form again.';
+              return;
+            }
+
+            ELEMENT_formMessage.classList.remove(CLASS_formMessageSuccess);
+            ELEMENT_formMessage.classList.add(CLASS_formMessageError);
+            ELEMENT_formMessage.textContent = 'Oops! Something went wrong. The form could not be sent.';
+          }
+        }
+
+        SELECTOR_request.open(ELEMENT_this.method, ELEMENT_this.action)
+        SELECTOR_request.send(SELECTOR_data)
       });
     }
 
@@ -210,16 +317,18 @@
     // ==============================================
     //    Initialise plugins
     // ==============================================
-    init_scroll_to();
     init_active_nav();
-    init_contact_form();
 
-    if(window.location.pathname == '/my-work/') {
+    if (window.outerWidth > 768) {
+      init_scroll_top();
+    }
+
+    if(window.location.pathname == '/portfolio/') {
       init_portfolio();
     }
-
-    if (!$('body').hasClass('mobile')) {
-      init_smooth_scroll_top();
+    if(window.location.pathname == '/contact/') {
+      init_form_validation();
+      init_send_form();
     }
 
-})(window.jQuery);
+})();

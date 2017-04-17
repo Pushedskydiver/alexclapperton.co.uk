@@ -1,358 +1,234 @@
-// Portfolio - portfolio pages, filter buttons and items
+// Portfolio..........Portfolio styles.
 
-.site-portfolio {
-  background-color: $core-color-light;
+.portfolio {
   padding: 30px 0;
-}
-
-.site-portfolio__filter {
-  @include flex(wrap, column, center);
-  margin-bottom: ($core-grid-unit * 2);
-
-  @include respond-to(s) {
-    @include flex-direction(row);
-    justify-content: flex-start;
-  }
-}
-
-.site-portfolio__grid {
-  @include respond-to(s) {
-    @include flex(wrap, row, space-between);
-  }
-}
-
-.site-portfolio__item {
-  display: block;
-  position: relative;
-  width: 100%;
-  background-color: $core-color-dark;
-  text-decoration: none;
-  margin-top: $core-grid-unit;
-  overflow: hidden;
-  transition: none;
-
-  &:first-child {
-    margin-top: 0;
-  }
-
-  @include respond-to(l) {
-    width: calc(50% - 12px);
-    margin: 0;
-    overflow: hidden;
-
-    &:hover {
-      .site-portfolio__item-img {
-        opacity: 0.2;
-        -webkit-transform: translate3d(0,0,0) scale(1);
-      	transform: translate3d(0,0,0) scale(1);
-      }
-
-      .site-portfolio__item-desc {
-        opacity: 1;
-        -webkit-transform: translate3d(0,0,0);
-      	transform: translate3d(0,0,0);
-      }
-    }
-  }
-}
-
-.site-portfolio__flex-item--margin {
-  margin-top: ($core-margin * 2);
 
   @include respond-to(m) {
-    margin: 0;
+    padding-top: 50px;
+    padding-bottom: 50px;
   }
 }
 
-.site-portfolio__item--isotope {
+.portfolio__content {
+  @supports (display: grid) {
+    display: grid;
+    grid-gap: 25px;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+  }
+
   @include respond-to(l) {
-    &:nth-of-type(odd) {
-      margin-right: ($core-margin * 2);
+    @supports (display: grid) {
+      grid-gap: 0;
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @supports not (display: grid) {
+      @include flex(wrap, row, space-between, null);
     }
   }
 }
 
-.site-portfolio__figure {
-  position: relative;
+.portfolio__item {
+  @supports not (display: grid) {
+    display: block;
+    margin-bottom: ($core-margin * 2);
+  }
+
+  @include respond-to(l) {
+    transition: none;
+
+    @supports not (display: grid) {
+      width: 50%;
+      margin-bottom: 0;
+    }
+  }
+
+  @at-root {
+    .portfolio__page {
+      .portfolio__item {
+        width: 100%;
+
+        @include respond-to(m) {
+          width: 50%;
+        }
+      }
+    }
+  }
 }
 
-.site-portfolio__figure-wrapper {
-  @include flex(wrap, row, space-between);
-  @include align-items(center);
+.portfolio__figure {
+  position: relative;
+  z-index: z(alpha);
+
+  @include respond-to(l) {
+    &:hover {
+      .portfolio__caption {
+        background-color: rgba($core-color-dark, 0.9);
+
+        &::before {
+          opacity: 1;
+          @include scale(1);
+        }
+      }
+
+      .portfolio__title {
+        transform: translate3d(0,0,0);
+      }
+
+      .portfolio__body {
+        opacity: 1;
+        @include scale(1);
+      }
+    }
+  }
+}
+
+.portfolio__img {
+  @include respond-to(xs) {
+    width: 100%;
+  }
+}
+
+.portfolio__caption {
   position: absolute;
   bottom: 0;
   left: 0;
   width: 100%;
-  background-color: rgba($core-color-brand, 0.85);
-  padding: $core-padding ($core-padding * 2);
-  z-index: z(beta);
-}
-
-.site-portfolio__item-title {
-  color: $core-color-light;
-  font-weight: $core-font-weight;
-  margin: 0;
-}
-
-.site-portfolio__item-icon {
-  width: 25px;
-  height: 25px;
-  fill: $core-color-light;
-  @include respond-to(s) {
-    width: 30px;
-    height: 30px;
-  }
-
-  @include respond-to(m) {
-    width: 35px;
-    height: 35px;
-  }
-}
-
-.site-image--center {
-  text-align: center;
-  margin: 0 auto ($core-margin * 2) auto;
-}
-
-.site-portfolio__item-img {
-  display: block;
-  width: 100%;
-  opacity: 0.2;
+  background-color: $core-color-dark;
+  padding: $core-padding;
+  z-index: z(alpha);
 
   @include respond-to(l) {
-    opacity: 1;
-  	-webkit-transform: translate3d(-20px,0,0) scale(1.12);
-  	transform: translate3d(-20px,0,0) scale(1.12);
-  	-webkit-backface-visibility: hidden;
-  	backface-visibility: hidden;
-    @include transition-025;
+    top: 0;
+    bottom: initial;
+    height: 100%;
+    background-color: rgba($core-color-dark, 0.6);
+    @include flex(null, column, center, center);
+    @include transition-03;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 30px;
+      right: 30px;
+      bottom: 30px;
+      left: 30px;
+      border: 1px $core-border-style $core-color-light;
+      opacity: 0;
+      @include scale(0);
+      @include transition-03;
+    }
   }
 }
 
-.site-portfolio__item-desc {
-  position: absolute;
-  top: ($core-grid-unit * 2);
-  left: ($core-grid-unit * 2);
-  width: 80%;
-  padding-right: 5px;
-  border-right: 1px solid #fff;
+.portfolio__title {
+  color: $core-color-light;
+  margin-bottom: 0;
+
+  @include respond-to(l) {
+    margin-bottom: ($core-margin * 1.5);
+    transform: translate3d(0,50%,0);
+    @include transition-03;
+  }
+}
+
+.portfolio__body {
+  color: $core-color-light;
+  margin-bottom: 0;
 
   @include respond-to(l) {
     opacity: 0;
-    @include transition-025;
-    -webkit-transform: translate3d(-40px,0,0);
-  	transform: translate3d(-40px,0,0);
+    @include scale(0);
+    @include transition-03;
   }
 }
 
-.site-portfolio__item-text {
-  color: $core-color-light;
-
-  &:last-child {
-    margin-bottom: 0;
-  }
-
-  @include respond-to(m) {
-    font-size: ($core-font-size * 1.2);
-  }
-}
-
-.site-portfolio__content {
-  margin-bottom: ($core-grid-unit * 2);
-  padding: ($core-grid-unit * 2) 0;
-
-  @include respond-to(m) {
-    width: calc(75% - 6px);
-  }
-}
-
-.site-portfolio__title--blue {
-  color: $core-color-brand;
-}
-
-.site-portfolio__flex {
-
-  &--padding {
-    padding: ($core-padding * 1.5) 0 ($core-padding * 3) 0;
-    @include align-items(center);
-  }
-
-  @include respond-to(m) {
-    @include flex(wrap, row, space-between);
-  }
-}
-
-.site-portfolio__flex-item {
-  @include respond-to(m) {
-    width: calc(50% - 12px);
-
-    h2 {
-      margin: 0;
-    }
-  }
-}
-
-.site-portfolio__flex-img {
-  max-width: 350px;
-}
-
-.site-portfolio__img {
-  width: 100%;
-  margin-top: ($core-grid-unit * 2);
-
-  @include respond-to(m) {
-    margin-top: 0;
-  }
-}
-
-.site-portfolio__palette {
-  padding: ($core-padding * 4) 0;
-
-  @include respond-to(s) {
-    @include flex(wrap, row, space-between);
-  }
-
-  @include respond-to(l) {
-    padding: ($core-padding * 10) 0;
-  }
-}
-
-.site-portfolio__palette-item {
-  margin-top: ($core-margin * 2);
-
-  &:first-child {
-    margin-top: 0;
-  }
-
-  @include respond-to(s) {
-    width: calc(50% - 12px);
-
-    &:nth-of-type(2) {
-      margin-top: 0;
-    }
-  }
-
-  @include respond-to(m) {
-    width: calc(25% - 12px);
-    margin-top: 0;
-  }
-}
-
-.site-portfolio__palette-color {
-  width: 120px;
-  height: 120px;
-  margin: 0 auto;
-  box-shadow: 0 5px 20px 0 rgba(0,0,0,.33);
-  border-radius: 50%;
-
-  @include respond-to(xs) {
-    width: 160px;
-    height: 160px;
-  }
-
-  @include respond-to(s) {
-    width: 180px;
-    height: 180px;
-  }
-
-  @include respond-to(m) {
-    width: 130px;
-    height: 130px;
-  }
-
-  @include respond-to(l) {
-    width: 160px;
-    height: 160px;
-  }
-
-  @include respond-to(xl) {
-    width: 190px;
-    height: 190px;
-  }
-}
-
-@each $theme in $palettes {
-  .site-portfolio__palette--#{nth($theme,1)} {
-    .site-portfolio__palette--#{nth($theme,2)} {
-      background-color: nth($theme,3);
-    }
-  }
-}
-
-.site-portfolio__palette-name {
-  display: block;
-  @include font-size($h5-font-sizes);
-  text-align: center;
-  margin-top: ($core-margin * 2);
-}
-
-.site-portfolio__font {
-  padding: 0 0 ($core-padding * 3) 0;
-}
-
-.site-portfolio__share {
-  margin-top: ($core-margin * 2);
-}
-
-.site-portfolio__share-item {
-  margin-right: ($core-margin / 2);
-}
-
-.site-portfolio__cta {
-
-  .site-container {
-    padding: 30px $core-padding;
-
-    @include respond-to(m) {
-      padding: 60px $core-grid-unit;
-    }
-  }
-}
-
-.site-portfolio__cta-flex {
-  @include flex(wrap, row, space-between);
-}
-
-.site-portfolio__cta-link {
-  display: block;
+.portfolio__link {
+  min-height: 270px;
   background-color: $core-color-brand;
-  padding: $core-grid-unit;
+  color: $core-color-light;
+  padding: 10%;
+  font-family: $core-secondary-font-family;
+  font-weight: $core-secondary-font-weight;
+  text-align: center;
   text-decoration: none;
+  @include font-size($h1-font-sizes);
+  @include flex(null, column, center, center);
 
-  &--disabled {
-    background-color: darken($core-color-neutral, 10%);
-    pointer-events: none;
-  }
-
-  &--left {
-    align-self: flex-start;
-  }
-
-  &--right {
-    align-self: flex-end;
+  @include respond-to(s) {
+    min-height: 375px;
   }
 
   @include respond-to(l) {
     &:hover {
-      @include cd-pulse;
+      background-color: $core-color-dark;
+    }
+
+    @supports not (display: grid) {
+      width: 50%;
     }
   }
 }
 
-.site-portfolio__cta-icon {
-  width: 20px;
-  height: 20px;
-  fill: $core-color-light;
-  vertical-align: middle;
+.portfolio__intro {
+  @supports (display: grid) {
+    display: grid;
+    grid-gap: 30px;
+    grid-auto-rows: 200px auto;
+  }
 
-  &--left {
-    @include rotate(180);
+  @include respond-to(xs) {
+    @supports (display: grid) {
+      grid-auto-rows: 300px auto;
+    }
+  }
+
+  @include respond-to(s) {
+    @supports (display: grid) {
+      grid-auto-rows: 400px auto;
+    }
+  }
+
+  @include respond-to(m) {
+    @supports (display: grid) {
+      grid-auto-rows: 440px auto;
+    }
+  }
+
+  @include respond-to(l) {
+    @supports (display: grid) {
+      grid-gap: 50px;
+      grid-template-columns: repeat(12, 1fr);
+      grid-auto-rows: auto;
+    }
+
+    @supports not (display: grid) {
+      @include flex(wrap, row, space-between, null);
+    }
   }
 }
 
-.site-portfolio__cta-text {
-  color: $core-color-light;
-  @include font-size($p-font-sizes);
-  font-weight: $core-secondary-font-weight;
-  vertical-align: middle;
+.portfolio__brief {
+  @include respond-to(l) {
+    @supports (display: grid) {
+      grid-column: 8 / -1;
+    }
+
+    @supports not (display: grid) {
+      width: 48%;
+    }
+  }
+}
+
+.portfolio__brief-subtitle {
+  color: $core-color-dark;
+}
+
+.portfolio__brief-btn {
+  margin-bottom: ($core-margin * 2);
+}
+
+.portfolio__brief-img {
+  margin-bottom: ($core-margin * 2);
 }

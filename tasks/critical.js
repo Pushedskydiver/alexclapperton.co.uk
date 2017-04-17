@@ -3,7 +3,6 @@
  * @author Alex Clapperton <hi@alexclapperton.co.uk>
  */
 
-import config from '../tasks/config'
 import critical from 'critical'
 
 module.exports = function (gulp, data, argv) {

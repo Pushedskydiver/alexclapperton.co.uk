@@ -1,50 +1,39 @@
 <!-- JAVASCRIPT -->
 <script src="/js/main.js"></script>
 <script>
-  function listTweets(data) {
-    var output = '<ul data-role="listview" class="twitter-feed__container">';
+  function listTweets(data, key, val) {
+    var output = '<ul data-role="listview" class="twitter__feed">';
 
-    $.each(data, function(key, val) {
-      var text = data[key].text;
-      var thumbnail = data[key].user.profile_image_url;
-      var name = data[key].user.name;
+    for (var i = 0; i < data.length; i++) {
+      var text = data[i].text;
+      var thumbnail = data[i].user.profile_image_url;
+      var name = data[i].user.name;
 
       text=text.replace(/[A-Za-z]+:\/\/[A-Za-z0-9-_]+\.[A-Za-z0-9-_:%&~\?\/.=]+/g, function(i) {
         var url=i.link(i);
         return url;
       });
-
       text=text.replace(/[@]+[A-Za-z0-9-_]+/g, function(i) {
         var item = i.replace("@",'');
         var	url = i.link("http://twitter.com/"+ item);
         return url;
       });
-
       text=text.replace(/[#]+[A-Za-z0-9-_]+/g, function(i) {
         var item = i.replace("#", '%23');
         var url = i.link("http://search.twitter.com/search?q="+item);
         return url;
       });
-
-      output += '<li class="twitter-feed__item">';
-      output += '<svg class="twitter-feed__icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/icons/sprite.svg#twitter"></use></svg>' + '<span>' + text + '</span>';
+      output += '<li class="twitter__item">';
+      output += '<svg class="twitter__icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/icons/sprite.svg#twitter"></use></svg>' + '<span class="twitter__body">' + text + '</span>';
       output += '</li>';
-    }); //go through each tweet
+    }//go through each tweet
+
     output += '</ul>';
-    $('.twitter-feed').html(output);
+    document.querySelector('.twitter').innerHTML = output;
   }
 </script>
-<script src="/twitter/tweets_json.php?count=2&callback=listTweets"></script>
+<script src="https://alexclapperton.co.uk/twitter/tweets_json.php?count=2&callback=listTweets"></script>
 <script>
-  $(document).ready(function() {
-    var refreshID = (function() {
-      $.getJSON('/twitter/tweets_json.php?count=2', function(data) {
-        listTweets(data);
-        $('.twitter-feed').trigger('create');
-      });
-    });
-  });
-
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
   m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
@@ -66,6 +55,14 @@
       (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
     })();
   {{/if}}
+
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', function() {
+      navigator.serviceWorker.register('/sw.js').then(function(registration) {
+      }).catch(function(err) {
+      });
+    });
+  }
 </script>
 
 </body>

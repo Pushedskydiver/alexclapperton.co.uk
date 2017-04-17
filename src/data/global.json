@@ -1,7 +1,7 @@
 {
   "url": "http://alexclapperton.co.uk",
   "name": "Alex Clapperton",
-  "jobTitle": "Front-End Developer",
+  "jobTitle": "Front-End Web Developer",
   "employer": "Supremo",
   "employerUrl": "https://www.supremo.tv/",
   "university": "Manchester Metropolitan University",
@@ -14,55 +14,71 @@
   "social": [
     {
       "url": "https://www.facebook.com/AlexMClapperton",
-      "title-attr": "External link to Alex's Facebook profile.",
-      "icon": "facebook"
+      "title": "Facebook",
+      "title-attr": "Go to Alex's Facebook profile.",
+      "icon": "facebook",
+      "handle": "AlexMClapperton",
+      "external": true
     },
     {
       "url": "https://twitter.com/AlexMClapperton",
-      "title-attr": "External link to Alex's Twitter profile.",
-      "icon": "twitter"
+      "title": "Twitter",
+      "title-attr": "Go to Alex's Twitter profile.",
+      "icon": "twitter",
+      "handle": "@AlexMClapperton",
+      "external": true
     },
     {
       "url": "https://uk.linkedin.com/in/alexclapperton",
-      "title-attr": "External link to Alex's LinkedIn profile.",
-      "icon": "linkedin"
+      "title": "LinkedIn",
+      "title-attr": "Go to Alex's LinkedIn profile.",
+      "icon": "linkedin",
+      "handle": "AlexClapperton",
+      "external": true
+    },
+    {
+      "url": "https://github.com/Pushedskydiver",
+      "title": "GitHub",
+      "title-attr": "Go to Alex's GitHub profile.",
+      "icon": "github",
+      "external": true
     }
   ],
   "navigation": [
     {
       "url": "/",
       "title": "Home",
+      "title-attr": "Go to the homepage.",
       "slug": "home",
-      "title-attr": "Internal link to the homepage.",
       "icon": "home"
     },
     {
-      "url": "/my-work",
-      "title": "Work",
-      "slug": "work",
-      "title-attr": "Internal link to the my work page.",
-      "icon": "work"
+      "url": "/about-me",
+      "title": "About me",
+      "title-attr": "Go to the about page.",
+      "slug": "about",
+      "icon": "about"
     },
     {
-      "url": "/about",
-      "title": "About Me",
-      "slug": "about",
-      "title-attr": "Internal link to the about page.",
-      "icon": "user"
+      "url": "/portfolio",
+      "title": "Portfolio",
+      "title-attr": "Go to the portfolio page.",
+      "slug": "portfolio",
+      "icon": "portfolio"
     },
     {
       "url": "/blog",
       "title": "Blog",
+      "title-attr": "Go to the blog page.",
       "slug": "blog",
-      "title-attr": "Internal link to the blog page.",
       "icon": "blog"
     },
     {
       "url": "/contact",
       "title": "Contact",
-      "title-attr": "Internal link to the contact page.",
+      "title-attr": "Go to the contact page.",
       "slug": "contact",
-      "icon": "mail"
+      "icon": "contact"
     }
   ]
 }

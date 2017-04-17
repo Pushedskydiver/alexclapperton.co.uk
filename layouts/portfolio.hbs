@@ -1,0 +1,76 @@
+{{>head}}
+
+{{>header}}
+
+<!-- ******************** BAR : Start ******************** -->
+<section class="bar">
+  <!-- BEGIN : CONTAINER -->
+  <div class="container">
+    <!-- BEGIN : BAR CONTENT -->
+    <div class="bar__content">
+      <h1 class="bar__title">{{title}}</h1>
+      <ul class="breadcrumbs">
+        <li class="breadcrumbs__item"><a class="breadcrumbs__link" href="/" title="Breadcrumb link to the homepage.">Home</a></li>
+        <li class="breadcrumbs__item"><a class="breadcrumbs__link" href="/portfolio" title="Breadcrumb link to portfolio page.">Portfolio</a></li>
+        <li class="breadcrumbs__item">{{title}}</li>
+      </ul>
+      <!-- BEGIN : SYMBOL -->
+      <div class="symbol symbol--primary">
+        <svg class="symbol__icon symbol__icon--primary" width="20" height="20">
+          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/icons/sprite.svg#portfolio"></use>
+        </svg>
+      </div>
+      <!-- END : SYMBOL /-->
+    </div>
+    <!-- END : BAR CONTENT /-->
+  </div>
+  <!-- END : CONTAINER /-->
+</section>
+<!-- ******************** BAR : End ******************** /-->
+
+
+<!-- ******************** PORTFOLIO : Start ********************-->
+<main class="portfolio" role="main" id="content">
+  <!-- BEGIN : CONTAINER -->
+  <div class="container">
+    {{{contents}}}
+  </div>
+  <!-- END : CONTAINER /-->
+</main>
+<!-- ******************** PORTFOLIO : End ******************** /-->
+
+
+<!-- ******************** SHOWCASE : Start ********************-->
+<section class="showcase">
+  <!-- BEGIN : SHOWCASE ITEM -->
+  {{#if previousItemTitle}}
+    <a class="showcase__item" href="/portfolio/{{previousItemURL}}" style="background-image: url(/images/portfolio/{{previousItemURL}}/{{previousItemImg}}.jpg);">
+      <small class="showcase__small">Previous project</small>
+      <span class="showcase__title">{{previousItemTitle}}</span>
+    </a>
+    {{else}}
+  {{/if}}
+  <!-- END : SHOWCASE ITEM /-->
+  <!-- BEGIN : SHOWCASE ALL -->
+  <a class="showcase__all" href="/portfolio">
+    <svg class="showcase__icon" width="20" height="20">
+      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/icons/sprite.svg#blocks"></use>
+    </svg>
+    <span class="showcase__title">Back to all projects</span>
+  </a>
+  <!-- END : SHOWCASE ALL /-->
+  <!-- BEGIN : SHOWCASE ITEM -->
+  {{#if nextItemTitle}}
+    <a class="showcase__item" href="/portfolio/{{nextItemURL}}" style="background-image: url(/images/portfolio/{{nextItemURL}}/{{nextItemImg}}.jpg);">
+      <small class="showcase__small">Next project</small>
+      <span class="showcase__title">{{nextItemTitle}}</span>
+    </a>
+    {{else}}
+  {{/if}}
+  <!-- END : SHOWCASE ITEM /-->
+</section>
+<!-- ******************** SHOWCASE : End ******************** /-->
+
+{{>footer}}
+
+{{>foot}}

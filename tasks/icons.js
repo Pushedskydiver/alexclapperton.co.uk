@@ -10,8 +10,8 @@
 
 module.exports = function (gulp, data) {
   gulp.task('icons', function () {
-      gulp.src(data.paths.icons.src)
+      gulp.src(data.paths.source.icons)
           .pipe($.svgSprite(config.plugin.svgSprite))
-          .pipe(gulp.dest(data.paths.icons.dest));
+          .pipe(gulp.dest(data.paths.dist.icons));
   });
 }

@@ -1,39 +1,35 @@
-// Skip links - skip to nav and content links
-
-.skip-links {
-  position: absolute;
-  top: 10px;
-  left: 0;
-  width: 100%;
-  text-align: center;
-  z-index: z(juliet);
-}
+// Skip links.........The sites skip to links.
 
 .skip-link {
   position: absolute;
-  top: 40%;
-  left: 10%;
+  top: 0;
+  left: 20px;
+  background-color: $core-color-brand;
   margin: 0;
-  text-align: center;
-  color: $core-color-brand;
+  padding: 0 ($core-padding / 2);
+  color: $core-color-light;
   font-size: ($core-font-size * 1.05);
   font-weight: $core-secondary-font-weight;
+  text-align: center;
+  @include flex(null, column, center, center);
 }
 
 .hidden {
-  border: 0;
-  /* clip: rect(0 0 0 0); */
-  width: 130px;
-  height: 0.0625rem;
-  overflow: hidden;
-  padding: 0;
   position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
 
   &:active,
   &:focus {
-    clip: auto;
-    width: 130px;
+    width: auto;
     height: auto;
+    margin: 0;
     overflow: visible;
+    clip: auto;
+    overflow: visible;
+    z-index: z(juliet);
   }
 }

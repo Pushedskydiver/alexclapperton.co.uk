@@ -1,0 +1,36 @@
+{
+  "source": {
+    "base": "./src/",
+    "data": "./src/data/",
+    "layouts": "./layouts/",
+    "partials": "./partials/",
+    "content": "./src/pages/",
+    "fonts": "./src/fonts/**/*.ttf",
+    "icons": "./src/icons/*",
+    "favicons": "./src/favicons/",
+    "images": "./src/images/**/*",
+    "forms": "./src/forms/",
+    "html": "./src/pages/**/*.hbs",
+    "scripts": "./src/scripts/",
+    "styles": "./src/styles/"
+  },
+  "dist": {
+    "base": "./dist/",
+    "fonts": "./dist/fonts/",
+    "icons": "./dist/images/icons/",
+    "favicons": "./dist/favicons/",
+    "images": "./dist/images/",
+    "forms": "./dist/forms/",
+    "html": "./dist/",
+    "scripts": "./dist/js/",
+    "styles": "./dist/css/"
+  },
+  "sass": {
+    "settings": "./src/styles/settings/**/*.scss",
+    "tools": "./src/styles/tools/**/*.scss",
+    "generic": "./src/styles/generic/**/*.scss",
+    "elements": "./src/styles/elements/**/*.scss",
+    "objects": "./src/styles/objects/**/*.scss",
+    "components": "./src/styles/components/**/*.scss"
+  }
+}
