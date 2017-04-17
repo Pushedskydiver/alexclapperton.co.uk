@@ -16,10 +16,16 @@
     grid-gap: 40px;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     grid-template-rows: auto;
+  }
 
-    @include respond-to(l) {
+  @include respond-to(l) {
+    @supports (display: grid) {
       grid-gap: 40px 30px;
       grid-template-columns: repeat(3, 1fr);
+    }
+
+    @supports not (display: grid) {
+      @include flex(wrap, row, space-between, null);
     }
   }
 }
@@ -28,6 +34,15 @@
   background-color: $core-color-light;
   text-decoration: none;
   box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+
+  @supports not (display: grid) {
+    display: block;
+    margin-bottom: ($core-margin * 2);
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
 
   @include respond-to(m) {
     @include flex(null, column, null, null);
@@ -49,6 +64,11 @@
       .blog__link-icon {
         margin-left: $core-margin;
       }
+    }
+
+    @supports not (display: grid) {
+      width: 32%;
+      margin-bottom: 0;
     }
   }
 }

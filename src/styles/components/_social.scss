@@ -10,18 +10,42 @@
 }
 
 .social__content {
-  display: grid;
-  grid-gap: 60px;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  @supports (display: grid) {
+    display: grid;
+    grid-gap: 60px;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  }
 
   @include respond-to(m) {
-    grid-gap: 30px;
+    @supports (display: grid) {
+      grid-gap: 30px;
+    }
+
+    @supports not (display: grid) {
+      @include flex(wrap, row, space-between, null);
+
+    }
   }
 }
 
 .social__item {
   text-decoration: none;
   @include flex(wrap, row, flex-start, center);
+
+  @supports not (display: grid) {
+    margin-bottom: ($core-margin * 2);
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  @include respond-to(m) {
+    @supports not (display: grid) {
+      flex: 1;
+      margin-right: 2%;
+    }
+  }
 
   @include respond-to(l) {
     &:hover .social__block::before {

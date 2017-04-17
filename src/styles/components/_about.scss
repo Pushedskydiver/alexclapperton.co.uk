@@ -10,6 +10,10 @@
 }
 
 .about__content {
+  @supports not (display: grid) {
+    @include flex(wrap, column, space-between, center);
+  }
+
   @supports (display: grid) {
     display: grid;
     grid-gap: 20px;
@@ -21,6 +25,12 @@
       grid-gap: 40px;
     }
   }
+
+  @include respond-to(m) {
+    @supports not (display: grid) {
+      @include flex-direction(row);
+    }
+  }
 }
 
 .about__hero {
@@ -29,7 +39,6 @@
   z-index: z(alpha);
 
   @include respond-to(xs) {
-    width: 90%;
     margin-bottom: ($core-margin * 6);
 
     &::before {
@@ -42,16 +51,34 @@
       background-color: $core-color-neutral;
       z-index: -1;
     }
+
+    @supports (display: grid) {
+      width: 90%;
+    }
+  }
+
+  @include respond-to(m) {
+    width: 40%;
   }
 
   @include respond-to(l) {
-    width: 80%;
+    @supports (display: grid) {
+      width: 80%;
+    }
   }
 }
 
 .about__hero-img {
   @include respond-to(xs) {
     width: 100%;
+  }
+}
+
+.about__item {
+  @include respond-to(m) {
+    @supports not (display: grid) {
+      width: 50%;
+    }
   }
 }
 

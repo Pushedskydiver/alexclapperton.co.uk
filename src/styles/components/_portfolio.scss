@@ -15,17 +15,33 @@
     grid-gap: 25px;
     grid-template-columns: 1fr;
     grid-template-rows: auto;
+  }
 
-    @include respond-to(l) {
+  @include respond-to(l) {
+    @supports (display: grid) {
       grid-gap: 0;
       grid-template-columns: repeat(2, 1fr);
+    }
+
+    @supports not (display: grid) {
+      @include flex(wrap, row, space-between, null);
     }
   }
 }
 
 .portfolio__item {
+  @supports not (display: grid) {
+    display: block;
+    margin-bottom: ($core-margin * 2);
+  }
+
   @include respond-to(l) {
     transition: none;
+
+    @supports not (display: grid) {
+      width: 50%;
+      margin-bottom: 0;
+    }
   }
 
   @at-root {
@@ -148,6 +164,10 @@
     &:hover {
       background-color: $core-color-dark;
     }
+
+    @supports not (display: grid) {
+      width: 50%;
+    }
   }
 }
 
@@ -156,31 +176,47 @@
     display: grid;
     grid-gap: 30px;
     grid-auto-rows: 200px auto;
+  }
 
-    @include respond-to(xs) {
+  @include respond-to(xs) {
+    @supports (display: grid) {
       grid-auto-rows: 300px auto;
     }
+  }
 
-    @include respond-to(s) {
+  @include respond-to(s) {
+    @supports (display: grid) {
       grid-auto-rows: 400px auto;
     }
+  }
 
-    @include respond-to(m) {
+  @include respond-to(m) {
+    @supports (display: grid) {
       grid-auto-rows: 440px auto;
     }
+  }
 
-    @include respond-to(l) {
+  @include respond-to(l) {
+    @supports (display: grid) {
       grid-gap: 50px;
       grid-template-columns: repeat(12, 1fr);
       grid-auto-rows: auto;
+    }
+
+    @supports not (display: grid) {
+      @include flex(wrap, row, space-between, null);
     }
   }
 }
 
 .portfolio__brief {
-  @supports (display: grid) {
-    @include respond-to(l) {
+  @include respond-to(l) {
+    @supports (display: grid) {
       grid-column: 8 / -1;
+    }
+
+    @supports not (display: grid) {
+      width: 48%;
     }
   }
 }

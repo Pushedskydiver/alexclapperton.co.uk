@@ -12,11 +12,21 @@
   @include respond-to(m) {
     position: static;
     background-color: transparent;
+
+    @supports (display: grid) {
+      grid-area: nav;
+    }
   }
 
-  @supports (display: grid) {
-    @include respond-to(m) {
-      grid-area: nav;
+  @include respond-to(m) {
+    @supports not (display: grid) {
+      width: 80%;
+    }
+  }
+
+  @include respond-to(l) {
+    @supports not (display: grid) {
+      width: 50%;
     }
   }
 }
@@ -69,6 +79,10 @@
         background-color: $core-color-brand;
         margin: 0 auto;
       }
+    }
+
+    @supports not (display: grid) {
+      padding: $core-padding 0;
     }
   }
 

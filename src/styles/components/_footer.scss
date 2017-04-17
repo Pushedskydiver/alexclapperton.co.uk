@@ -6,21 +6,69 @@
 }
 
 .footer__content {
-  display: grid;
-  grid-gap: 40px 0;
-  grid-template-columns: auto auto;
+  @supports (display: grid) {
+    display: grid;
+    grid-gap: 40px 0;
+    grid-template-columns: auto auto;
+  }
 
   @include respond-to(m) {
-    grid-gap: 4em;
-    grid-template-columns: repeat(2, 1fr) auto;
+    @supports (display: grid) {
+      grid-gap: 4em;
+      grid-template-columns: repeat(2, 1fr) auto;
+    }
+
+    @supports not (display: grid) {
+      @include flex(wrap, row, space-between, null);
+    }
   }
 
   @include respond-to(l) {
-    grid-template-columns: repeat(4, auto);
+    @supports (display: grid) {
+      grid-template-columns: repeat(4, auto);
+    }
   }
 
   @include respond-to(xl) {
-    grid-gap: 8em;
+    @supports (display: grid) {
+      grid-gap: 8em;
+    }
+  }
+}
+
+.footer__list {
+  &:last-child {
+    display: none;
+  }
+
+  @supports not (display: grid) {
+    margin-bottom: ($core-margin * 2);
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  @include respond-to(m) {
+    @supports not (display: grid) {
+      width: 48%;
+    }
+  }
+
+  @include respond-to(l) {
+    &:last-child {
+      display: block;
+    }
+
+    @supports not (display: grid) {
+      width: auto;
+      flex: 1;
+
+      &:nth-child(3),
+      &:nth-child(4) {
+        flex: 2;
+      }
+    }
   }
 }
 

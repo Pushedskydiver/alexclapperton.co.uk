@@ -7,6 +7,12 @@
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     grid-template-rows: auto;
   }
+
+  @include respond-to(l) {
+    @supports not (display: grid) {
+      @include flex(wrap, row, space-between, null);
+    }
+  }
 }
 
 .blocks__item {
@@ -22,6 +28,10 @@
 
   @include respond-to(l) {
     padding: 50px;
+
+    @supports not (display: grid) {
+      width: 33.333333%;
+    }
   }
 }
 

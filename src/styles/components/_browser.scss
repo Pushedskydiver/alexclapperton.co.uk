@@ -5,12 +5,17 @@
   border-radius: 4px;
   overflow: scroll;
 
-  @supports (display: grid) {
-    @include respond-to(l) {
-      position: sticky;
-      top: 100px;
-      max-height: calc(100vh - 140px);
+  @include respond-to(l) {
+    position: sticky;
+    top: 100px;
+    max-height: calc(100vh - 140px);
+
+    @supports (display: grid) {
       grid-column: 1 / span 7;
+    }
+
+    @supports not (display: grid) {
+      width: 48%;
     }
   }
 }

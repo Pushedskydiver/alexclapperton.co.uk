@@ -12,9 +12,40 @@
 
 .form__content {
   @include respond-to(m) {
-    display: grid;
-    grid-gap: 40px 20px;
-    grid-template-columns: repeat(3, 1fr);
+    @supports (display: grid) {
+      display: grid;
+      grid-gap: 40px 20px;
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    @supports not (display: grid) {
+      @include flex(wrap, row, space-between, null);
+    }
+  }
+}
+
+.form__item {
+  margin-bottom: ($core-margin * 1.5);
+
+  @include respond-to(m) {
+    @supports (display: grid) {
+      margin-bottom: 0;
+
+      &--textarea {
+        grid-column: 1 / span 3;
+      }
+    }
+
+    @supports not (display: grid) {
+      &:not(&--textarea) {
+        flex: 1;
+      }
+
+      &:nth-of-type(2) {
+        margin-right: 2%;
+        margin-left: 2%;
+      }
+    }
   }
 }
 
@@ -31,18 +62,6 @@
 
   @include respond-to(l) {
     cursor: pointer;
-  }
-}
-
-.form__item {
-  margin-bottom: ($core-margin * 1.5);
-
-  @include respond-to(m) {
-    margin-bottom: 0;
-
-    &--textarea {
-      grid-column: 1 / span 3;
-    }
   }
 }
 

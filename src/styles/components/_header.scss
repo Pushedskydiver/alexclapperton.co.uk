@@ -27,13 +27,21 @@
     grid-template-rows: auto;
     grid-template-areas:
       "logo . header-btn";
+  }
 
-    @include respond-to(m) {
+  @supports not (display: grid) {
+    @include flex(wrap, row, space-between, null);
+  }
+
+  @include respond-to(m) {
+    @supports (display: grid) {
       grid-template-areas:
         "logo nav nav";
     }
+  }
 
-    @include respond-to(l) {
+  @include respond-to(l) {
+    @supports (display: grid) {
       grid-template-areas:
         "logo . . . nav nav";
     }

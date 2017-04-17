@@ -7,6 +7,12 @@
     background-position: top center;
     background-repeat: no-repeat;
   }
+
+  @include respond-to(l) {
+    @supports not (position: sticky) {
+      padding-top: 55px;
+    }
+  }
 }
 
 .banner__content {
@@ -20,8 +26,14 @@
       "blocks blocks blocks"
       ". arrow ."
       ". . .";
+  }
 
-    @include respond-to(m) {
+  @supports not (display: grid) {
+    @include flex(null, column, null, null);
+  }
+
+  @include respond-to(m) {
+    @supports (display: grid) {
       grid-gap: 50px;
       grid-template-areas:
         ". . ."
@@ -30,8 +42,10 @@
         ". arrow ."
         ". . .";
     }
+  }
 
-    @include respond-to(m) {
+  @include respond-to(m) {
+    @supports (display: grid) {
       grid-gap: 30px;
       grid-template-areas:
         ". . ."
@@ -52,17 +66,28 @@
     grid-gap: 0;
     grid-template-columns: 1fr;
     grid-template-rows: repeat(2, 135px);
+  }
 
-    @include respond-to(xs) {
+  @supports not (display: grid) {
+    margin-bottom: ($core-margin * 2);
+    align-self: flex-start;
+  }
+
+  @include respond-to(xs) {
+    @supports (display: grid) {
       grid-template-columns: repeat(6, 1fr);
       grid-template-rows: repeat(3, minmax(120px, 1fr));
     }
+  }
 
-    @include respond-to(m) {
+  @include respond-to(m) {
+    @supports (display: grid) {
       grid-template-columns: repeat(5, 1fr);
     }
+  }
 
-    @include respond-to(l) {
+  @include respond-to(l) {
+    @supports (display: grid) {
       grid-template-columns: repeat(7, 1fr);
     }
   }
@@ -88,18 +113,20 @@
     z-index: -1;
   }
 
-  @include respond-to(m) {
-    padding: 60px 40px;
-  }
-
   @supports (display: grid) {
     grid-row: 1 / span 2;
+  }
 
-    @include respond-to(xs) {
+  @include respond-to(xs) {
+    @supports (display: grid) {
       grid-column: 1 / span 4;
     }
+  }
 
-    @include respond-to(m) {
+  @include respond-to(m) {
+    padding: 60px 40px;
+
+    @supports (display: grid) {
       grid-column-end: span 2;
     }
   }
@@ -115,18 +142,18 @@
     background-position: center center;
     background-repeat: no-repeat;
     border: 10px $core-border-style $core-color-brand;
-  }
 
-  @supports (display: grid) {
-    @include respond-to(xs) {
+    @supports (display: grid) {
       grid-column: 3 / span 4;
       grid-row: 2 / span 2;
     }
+  }
 
-    @include respond-to(m) {
-      grid-column: 2/ span 2;
-      background-image: none;
-    }
+  @include respond-to(m) {
+    @supports (display: grid) {
+
+    }grid-column: 2/ span 2;
+    background-image: none;
   }
 }
 
@@ -157,6 +184,11 @@
   @supports (display: grid) {
     grid-area: arrow;
     justify-self: center;
+  }
+
+  @supports not (display: grid) {
+    margin-bottom: ($core-margin * 2);
+    align-self: center;
   }
 }
 

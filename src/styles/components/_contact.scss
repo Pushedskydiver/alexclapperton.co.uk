@@ -10,19 +10,54 @@
 }
 
 .contact__content {
-  display: grid;
-  grid-gap: 30px;
-  grid-template-columns: 1fr;
+  @supports (display: grid) {
+    display: grid;
+    grid-gap: 30px;
+    grid-template-columns: 1fr;
+  }
+
+  @include respond-to(m) {
+    @supports not (display: grid) {
+      @include flex(wrap, row, space-between, null);
+    }
+  }
 
   @include respond-to(l) {
-    grid-gap: 60px;
-    grid-template-columns: repeat(3, 1fr);
+    @supports (display: grid) {
+      grid-gap: 60px;
+      grid-template-columns: repeat(3, 1fr);
+    }
   }
 }
 
 .contact__form {
+  @include respond-to(m) {
+    @supports not (display: grid) {
+      width: 48%;
+    }
+  }
 
   @include respond-to(l) {
-    grid-column: 1 / span 2;
+    @supports (display: grid) {
+      grid-column: 1 / span 2;
+    }
+
+    @supports not (display: grid) {
+      width: 58%;
+    }
+  }
+}
+
+.contact__details {
+  @include respond-to(m) {
+    @supports not (display: grid) {
+      width: 48%;
+    }
+  }
+
+  @include respond-to(l) {
+    @supports not (display: grid) {
+      width: 38%;
+    }
   }
 }

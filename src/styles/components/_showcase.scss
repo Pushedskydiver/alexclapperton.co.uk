@@ -1,8 +1,16 @@
 // Showcase...........Portfolio items showcase styles.
 
 .showcase {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  @supports (display: grid) {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  }
+
+  @include respond-to(m) {
+    @supports not (display: grid) {
+      @include flex(wrap, row, space-between, null);
+    }
+  }
 }
 
 .showcase__item {
@@ -28,6 +36,12 @@
     height: 100%;
     background-color: $core-color-neutral;
     z-index: -1;
+  }
+
+  @include respond-to(m) {
+    @supports not (display: grid) {
+      flex: 1;
+    }
   }
 
   @include respond-to(l) {
@@ -60,6 +74,12 @@
   text-decoration: none;
   @include font-size($h4-font-sizes);
   @include flex(null, column, center, center);
+
+  @include respond-to(m) {
+    @supports not (display: grid) {
+      flex: 1;
+    }
+  }
 
   @include respond-to(l) {
     &:hover {

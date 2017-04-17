@@ -1,13 +1,5 @@
 // Twitter............Twitter feed styles.
 
-.twitter {
-  display: none;
-
-  @include respond-to(l) {
-    display: block;
-  }
-}
-
 .twitter__item {
   color: $core-color-dark;
   margin-bottom: ($core-margin * 1.5);
