@@ -5,8 +5,8 @@
   "description": "Front-End Web Developer",
   "start_url": "/",
   "display": "browser",
-  "background_color": "#21252b",
-  "theme_color": "#de656f",
+  "background_color": "#ffffff",
+  "theme_color": "#6622cc",
   "icons": [
     {
       "src": "/favicons/favicon-16x16.png",
