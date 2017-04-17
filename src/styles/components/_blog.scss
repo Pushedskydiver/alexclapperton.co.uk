@@ -25,7 +25,7 @@
     }
 
     @supports not (display: grid) {
-      @include flex(wrap, row, space-between, null);
+      @include flex(wrap, row, flex-start, null);
     }
   }
 }
@@ -67,8 +67,14 @@
     }
 
     @supports not (display: grid) {
-      width: 32%;
-      margin-bottom: 0;
+      width: 31%;
+      margin-right: 2.333%;
+      margin-bottom: 30px;
+
+      &:last-child {
+        margin-right: 0;
+        margin-bottom: 30px;
+      }
     }
   }
 }
