@@ -11,6 +11,7 @@ install:
   - npm install
 script:
   - gulp default --prod
+  - gulp imports:sass
   - gulp html:min --prod
   - gulp scripts --prod
   - gulp critical --prod
