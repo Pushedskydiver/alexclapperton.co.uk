@@ -1,6 +1,6 @@
 {
   "name": "Alex Clapperton's Website",
-  "short_name": "Alex Clapperton",
+  "short_name": "Alex C",
   "description": "Front-End Web Developer",
   "start_url": "/?utm_source=homescreen",
   "display": "standalone",
@@ -20,6 +20,16 @@
     {
       "src": "/favicons/favicon-96x96.png",
       "sizes": "96x96",
+      "type": "image/png"
+    },
+    {
+      "src": "/favicons/favicon-144x144.png",
+      "sizes": "144x144",
+      "type": "image/png"
+    },
+    {
+      "src": "/favicons/favicon-256x256.png",
+      "sizes": "256x256",
       "type": "image/png"
     }
   ]
