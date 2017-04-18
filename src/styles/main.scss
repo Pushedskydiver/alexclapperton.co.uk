@@ -1,0 +1,121 @@
+/* ============================================================ *\
+
+  #MAIN
+
+  Author:  Alex Clapperton
+  Website: alexclapperton.co.uk
+
+/* ============================================================ */
+
+/**
+* CONTENTS
+*
+* SETTINGS
+*  Variables..........The sites core sass variables.
+*
+* FUNCTIONS
+*  Typography.........Responsive typography & convert px to em.
+*  Z-index............Z-index map configuration.
+*
+* MIXINS
+*  Flexbox............Simple flexbox mixin.
+*  Grid...............site wide grid configuration.
+*  Keyframes..........Simple mixins for keyframe animations.
+*  Transforms.........Simple mixins for css transform properties.
+*  Transitions........Simple mixxins for css transition properties.
+*  Typography.........Mixin to add responsive typography to breakpoints map.
+*
+* GENERIC
+*  Keyframes..........Keyframe animations.
+*  Typography.........The sites typography faces.
+*
+* ELEMENTS
+*  Global.............The sites core styles.
+*  Hidden.............Hidden styles to hide text behind icons with links.
+*
+* OBJECTS
+*  Layout.............Generic layout module.
+*  Loader.............The sire's pre loader when site first loads.
+*
+* COMPONENTS
+*  About..............About me section styles.
+*  Banner.............Top page banner styles.
+*  Bar................Title bar styles.
+*  Blocks.............Blocks styles on about page.
+*  Blog...............Blog page styles.
+*  Breadcrumbs........Simple breadcrumbs styles.
+*  Browser............Portfolio page browser window styles.
+*  Butons.............Button styles.
+*  Contact............Contact section styles.
+*  Figure.............Figure and figcaption styles.
+*  Filter.............Portfolio filter button styles.
+*  Footer.............Footer styles.
+*  Form...............Contact form styles.
+*  Header.............The sites header styles.
+*  Hero...............Blog post hero image styles.
+*  Info...............About me info block styles.
+*  List...............Blog post list styles.
+*  Logo...............Site logo styles.
+*  Nav primary........The sites main nav.
+*  Notices............The sites notice styles for JS turned off etc.
+*  Portfolio..........Portfolio styles.
+*  Post...............Blog post styles.
+*  Prism - code snippet syntax highlighter
+*  Scroll to top......Scroll to top button styles.
+*  Share..............Blog post share styles.
+*  Showcase...........Portfolio items showcase styles.
+*  Skip links.........The sites skip to links.
+*  Social.............Social block styles.
+*  Symbol.............Symbol block styles.
+*  Twitter............Twitter feed styles.
+*
+*/
+
+
+
+
+@import "settings/_variables.scss";
+@import "tools/functions/_typography.scss";
+@import "tools/functions/_z-index.scss";
+@import "tools/mixins/_flexbox.scss";
+@import "tools/mixins/_grid.scss";
+@import "tools/mixins/_keyframes.scss";
+@import "tools/mixins/_transforms.scss";
+@import "tools/mixins/_transitions.scss";
+@import "tools/mixins/_typography.scss";
+@import "generic/_keyframes.scss";
+@import "generic/_typography.scss";
+@import "elements/_global.scss";
+@import "elements/_visually-hidden.scss";
+@import "objects/_layout.scss";
+@import "objects/_loader.scss";
+@import "components/_about.scss";
+@import "components/_banner.scss";
+@import "components/_bar.scss";
+@import "components/_blocks.scss";
+@import "components/_blog.scss";
+@import "components/_breadcrumbs.scss";
+@import "components/_browser.scss";
+@import "components/_buttons.scss";
+@import "components/_contact.scss";
+@import "components/_figure.scss";
+@import "components/_filter.scss";
+@import "components/_footer.scss";
+@import "components/_form.scss";
+@import "components/_header.scss";
+@import "components/_hero.scss";
+@import "components/_info.scss";
+@import "components/_list.scss";
+@import "components/_logo.scss";
+@import "components/_navigation.scss";
+@import "components/_notices.scss";
+@import "components/_portfolio.scss";
+@import "components/_post.scss";
+@import "components/_prism.scss";
+@import "components/_scroll-top.scss";
+@import "components/_share.scss";
+@import "components/_showcase.scss";
+@import "components/_skip-links.scss";
+@import "components/_social.scss";
+@import "components/_symbol.scss";
+@import "components/_twitter.scss";

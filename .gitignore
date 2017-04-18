@@ -5,7 +5,6 @@ node_modules
 dist
 
 # Sass
-main.scss
 .sass-cache
 
 # misc
