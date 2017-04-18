@@ -19,7 +19,7 @@ module.exports = function (gulp, data, argv) {
   function getPostCssPlugins () {
     const postCssPlugins = [
       autoprefixer({
-        browsers: ['> 5%']
+        browsers: ['last 2 versions']
       }),
       mqpacker({
         sort: true
