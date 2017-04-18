@@ -1,11 +1,10 @@
 {
-  "lang": "en",
-  "short_name": "Alex Clapperton's Website",
-  "name": "Alex Clapperton",
+  "name": "Alex Clapperton's Website",
+  "short_name": "Alex Clapperton",
   "description": "Front-End Web Developer",
-  "start_url": "/",
-  "display": "browser",
-  "background_color": "#ffffff",
+  "start_url": "/?utm_source=homescreen",
+  "display": "standalone",
+  "background_color": "#fff",
   "theme_color": "#6622cc",
   "icons": [
     {
