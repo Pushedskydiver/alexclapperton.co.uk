@@ -45,6 +45,15 @@ module.exports = {
                 global_defs: {}
             }
         },
+        autoprefixer: {
+          browsers: [
+            'last 2 versions',
+            'not ie <= 11'
+          ]
+        },
+        mqpacker: {
+          sort: true
+        },
         cssnano: {
             autoprefixer: true,
             calc: true,

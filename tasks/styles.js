@@ -18,15 +18,11 @@ const $ = plugins()
 module.exports = function (gulp, data, argv) {
   function getPostCssPlugins () {
     const postCssPlugins = [
-      autoprefixer({
-        browsers: ['last 2 versions']
-      }),
-      mqpacker({
-        sort: true
-      }),
       devtools(),
       focus(),
       cleanselectors(),
+      autoprefixer(config.plugin.autoprefixer),
+      mqpacker(config.plugin.mqpacker),
       cssnano(config.plugin.cssnano)
     ]
 
