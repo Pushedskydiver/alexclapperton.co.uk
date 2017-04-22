@@ -56,8 +56,9 @@
     // ==============================================
     function init_portfolio() {
       var ELEMENT_grid = document.querySelector('[data-portfolio]'),
+          ELEMENT_filter = document.querySelector('[data-filter-block]'),
           ELEMENT_item = document.querySelector('[data-portfolio-item]'),
-          ELEMENT_filter = document.querySelector('[data-filter-block]');
+          ELEMENT_portfolioMessage = document.querySelector('[data-portfolio-message]');
 
       var SELECTOR_filter = document.querySelectorAll('[data-filter-block]'),
           SELECTOR_btn = document.querySelector('[data-filter-btn]'),
@@ -65,7 +66,9 @@
           SELECTOR_iso;
 
       var CLASS_filterBtnActive = 'filter__btn--active',
-          CLASS_portfolioPage = 'portfolio__page';
+          CLASS_portfolioPage = 'portfolio__page',
+          CLASS_portfolioItemHidden = 'portfolio__item--hidden',
+          CLASS_portfolioMessageVisible = 'portfolio__message--visible';
 
       document.body.classList.add(CLASS_portfolioPage);
 
@@ -102,6 +105,29 @@
             event.target.classList.add(CLASS_filterBtnActive);
           });
         }
+
+        var itemReveal = Isotope.Item.prototype.reveal;
+        Isotope.Item.prototype.reveal = function() {
+            itemReveal.apply( this, arguments );
+            this.element.classList.remove(CLASS_portfolioItemHidden);
+        };
+        var itemHide = Isotope.Item.prototype.hide;
+        Isotope.Item.prototype.hide = function() {
+            itemHide.apply( this, arguments );
+            this.element.classList.add(CLASS_portfolioItemHidden);
+        };
+
+        SELECTOR_iso.on('layoutComplete', function() {
+          var SELECTOR_item =       document.querySelectorAll('[data-portfolio-item]'),
+              SELECTOR_itemHidden = document.querySelectorAll('.portfolio__item--hidden');
+
+          if(SELECTOR_itemHidden.length == SELECTOR_item.length) {
+            ELEMENT_portfolioMessage.classList.add(CLASS_portfolioMessageVisible)
+            return;
+          }
+
+          ELEMENT_portfolioMessage.classList.remove(CLASS_portfolioMessageVisible)
+      	});
       });
     }
 
@@ -191,7 +217,6 @@
       }
 
       function checkIfCurrentInputIsValid(ELEMENT_currentInput, isTyping) {
-
         if (ELEMENT_currentInput.getAttribute(ATTR_required) === undefined) {
           return;
         }
@@ -230,7 +255,6 @@
       }
 
       function checkIfAllInputsAreValid(event) {
-
         var firstErrorFound = false;
         var isTyping = false;
 

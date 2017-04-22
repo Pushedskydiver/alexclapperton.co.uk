@@ -1,17 +1,17 @@
 var cacheName = 'alexclapperton:0025';
 var cacheFiles = [
   '/',
-  '/about-me/',
-  '/blog/',
+  '/about-me',
+  '/blog',
   '/blog/creating-my-website-part-one-research-and-design/',
   '/blog/from-https-to-css-what-i-have-changed-on-my-website/',
   '/blog/performance-and-optimisation-getting-your-website-up-to-speed/',
   '/blog/the-digital-industry-a-developers-perspective/',
   '/blog/working-with-grid-the-holy-grail-of-css-layout/',
-  '/portfolio/',
+  '/portfolio',
   '/portfolio/love-manchester-website/',
   '/portfolio/website-portfolio-2015/',
-  '/contact/',
+  '/contact',
 ];
 
 

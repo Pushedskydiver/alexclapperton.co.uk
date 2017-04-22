@@ -127,6 +127,10 @@
       }
     }
   }
+
+  @include respond-to(s) {
+    padding: 2.2%;
+  }
 }
 
 .symbol__icon {

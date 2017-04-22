@@ -171,6 +171,26 @@
   }
 }
 
+.portfolio__message {
+  position: relative;
+  height: 0;
+  margin: 0 auto;
+  padding: 0;
+  text-align: center;
+  opacity: 0;
+  @include font-size($h4-font-sizes);
+  @include scale(0);
+  @include transition-03;
+
+  &--visible {
+    height: auto;
+    padding: ($core-padding * 5) 0;
+    opacity: 1;
+    z-index: -1;
+    @include scale(1);
+  }
+}
+
 .portfolio__intro {
   @supports (display: grid) {
     display: grid;
