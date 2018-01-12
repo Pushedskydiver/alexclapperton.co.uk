@@ -20,7 +20,7 @@ const options = {
 };
 
 // view engine setup
-app.set('views', path.join(__dirname, 'views'));
+app.set('views', path.join(__dirname, 'views/_pages'));
 app.enable('strict routing');
 app.engine('.hbs', hbs({
   extname: '.hbs',
