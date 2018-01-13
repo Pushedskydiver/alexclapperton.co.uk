@@ -56,6 +56,21 @@ module.exports = app => {
     });
   });
 
+  app.get('/articles/:post/', cache, (req, res) => {
+    const post = req.params.post;
+
+  	res.render(`articles/${post}`, {
+      title: post.replace(/-/g, ' '),
+      layout: 'post.hbs',
+      articles: true,
+      post: true,
+      data: {
+        global: data,
+        articles: articles
+      }
+    });
+  });
+
   app.get('/contact/', cache, (req, res) => {
   	res.render('contact', {
       title: 'Contact',
@@ -80,6 +95,14 @@ module.exports = app => {
     }
 
     res.render('404', {
+      title: '404',
+      layout: '404.hbs',
+      home: true
+    });
+  });
+
+  app.use(function (req, res, next) {
+    res.status(404).render('404', {
       title: '404',
       layout: '404.hbs',
       home: true

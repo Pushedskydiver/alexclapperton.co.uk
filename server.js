@@ -9,9 +9,10 @@ import methodOverride from 'express-method-override'
 import bodyParser from 'body-parser'
 import compression from 'compression'
 import json from 'express-json'
-import minifyHTML from 'express-minify-html'
+import minifyHtml from 'express-minify-html'
 
 const helpers = require(path.resolve(__dirname, 'utils', 'helpers.js'))();
+const minifyHtmlData = require(path.resolve(__dirname, 'utils', 'minifyHtml.js'));
 const port = process.env.PORT || 3001;
 
 const app = express();
@@ -40,29 +41,7 @@ app.use(json());
 app.use(methodOverride());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
-app.use(minifyHTML({
-  override:      true,
-  exception_url: false,
-  htmlMinifier: {
-    collapseWhitespace: true,
-    conservativeCollapse: true,
-    collapseBooleanAttributes: true,
-    decodeEntities: true,
-    keepClosingSlash: true,
-    minifyCSS: true,
-    minifyJS: true,
-    processConditionalComments: true,
-    removeAttributeQuotes: false,
-    removeComments: true,
-    removeEmptyAttributes: true,
-    removeOptionalTags: true,
-    removeRedundantAttributes: true,
-    removeScriptTypeAttributes: true,
-    sortAttributes: true,
-    sortClassName: true,
-    useShortDoctype: true
-  }
-}));
+app.use(minifyHtml(minifyHtmlData));
 
 require('./routes/index')(app);
 

@@ -1,4 +1,9 @@
 <section class="banner{{#if home}} banner--home{{/if}}{{#unless home}} banner--dark{{/unless}} 📱">
+{{#if post}}
+    <div class="banner__content banner__content--center 🖼">
+        <h1 class="banner__title banner__title--light banner__title--center">{{title}}</h1>
+    </div>
+{{else}}
     <div class="banner__content 🖼">
     {{#if home}}
         <h1 class="banner__title banner__title--home">Alex Clapperton</h1>
@@ -17,4 +22,5 @@
         {{>breadcrumbs}}
     {{/if}}
     </div>
+{{/if}}
 </section>
