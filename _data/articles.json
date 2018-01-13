@@ -1,0 +1,73 @@
+{
+  "2018": [
+    {
+      "picture": true,
+      "title": "How to use Grid and Flexbox together",
+      "slug": "how-to-use-grid-and-flexbox-together",
+      "title-attr": "How to use Grid and Flexbox together.",
+      "src-mobile": "grid-code",
+      "src-desktop": "grid-code--desktop",
+      "alt": "laptop screen displaying css code on a text editor.",
+      "readableDate": "January 20, 2018",
+      "pubDate": "2018-01-20",
+      "category": "CSS Grid",
+      "summary": "Ladies and gentlemen and to the snake in my bedroom, I present to you the future of CSS layout and boy is it a game changer."
+    }
+  ],
+  "2017": [
+    {
+      "picture": true,
+      "title": "Working with Grid: The holy grail of CSS layout",
+      "slug": "working-with-grid-the-holy-grail-of-css-layout",
+      "title-attr": "Working with Grid: The holy grail of CSS layout blog post page.",
+      "src-mobile": "grid-code",
+      "src-desktop": "grid-code--desktop",
+      "alt": "laptop screen displaying css code on a text editor.",
+      "readableDate": "February 20, 2017",
+      "pubDate": "2017-02-20",
+      "category": "CSS Grid",
+      "summary": "Ladies and gentlemen and to the snake in my bedroom, I present to you the future of CSS layout and boy is it a game changer."
+    },
+    {
+      "picture": true,
+      "title": "From HTTPS to CSS: What I have changed on my website",
+      "slug": "from-https-to-css-what-i-have-changed-on-my-website",
+      "title-attr": "From HTTPS to CSS: What I've changed on my website blog post page.",
+      "src-mobile": "alex-clapperton-https",
+      "src-desktop": "grid-code--desktop",
+      "alt": "Google Chrome address bar showing alexclapperton.co.uk with https enabled.",
+      "readableDate": "January 13, 2017",
+      "pubDate": "2017-01-13",
+      "category": "Performance",
+      "summary": "I've made some interesting changes to my website since my last post and I'm very excited to share what I have been up to."
+    }
+  ],
+  "2016": [
+    {
+      "picture": true,
+      "title": "Performance and optimisation: Getting your website up to speed",
+      "slug": "performance-and-optimisation-getting-your-website-up-to-speed",
+      "title-attr": "Performance and optimisation: Getting your website up to speed blog post page.",
+      "src-mobile": "website-performance",
+      "src-desktop": "grid-code--desktop",
+      "alt": "Performance dial with indicator at 100%.",
+      "readableDate": "October 28, 2016",
+      "pubDate": "2016-10-28",
+      "category": "Performance",
+      "summary": "A taste into some of the fantastic methods I have come across to optimise my website and increase performance."
+    },
+    {
+      "picture": true,
+      "title": "The digital industry: A developers perspective",
+      "slug": "the-digital-industry-a-developers-perspective",
+      "title-attr": "Internal link to The digital industry: A developers perspective blog post page.",
+      "src-mobile": "uk-digital",
+      "src-desktop": "grid-code--desktop",
+      "alt": "World view of UK digitalised.",
+      "readableDate": "September 30, 2016",
+      "pubDate": "2016-09-30",
+      "category": "Industry",
+      "summary": "My look into the digital industry after reading the Manchester Digital 2016 slide deck and the 2016 Tech Nation report."
+    }
+  ]
+}

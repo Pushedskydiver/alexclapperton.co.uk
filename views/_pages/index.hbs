@@ -1,2 +1,70 @@
-<h1>{{title}}</h1>
-<p>Welcome to {{title}}</p>
+<main class="info-block 📱" id="main">
+    {{!-- <picture class="info-block__picture info-block__picture--home lazyload" data-info-block-picture>
+        <source media="(max-width: 640px)" data-srcset="/images/alex/alex-square.jpg">
+        <source media="(min-width: 640px)" data-srcset="/images/alex/alex-landscape.jpg">
+        <img class="info-block__image lazyload__image lazyload__image--lazy" data-src="/images/alex/alex-landscape.jpg" alt="Portrait of Alex Clapperton." data-lazy>
+
+        <noscript>
+            <source media="(max-width: 640px)" data-srcset="/images/alex/alex-square.jpg">
+            <source media="(min-width: 640px)" data-srcset="/images/alex/alex-landscape.jpg">
+            <img class="info-block__image" data-src="/images/alex/alex-landscape.jpg" alt="Portrait of Alex Clapperton.">
+        </noscript>
+    </picture> --}}
+
+    <div class="info-block__inner info-block__inner--home hide" data-fade>
+        <h2>Hi there</h2>
+        <p>I'm Alex, a Front-end Web Developer from the UK. My passion is to build beautiful and responsive websites with accessibility at the heart of it. I am currently working as a {{data.global.jobTitle}} for <a class="link" href="{{global.employerUrl}}" rel="external">{{data.global.employer}}</a>, a digital agency based in Manchester.</p>
+        <a class="info-block__button button button--primary" href="/about-me/">
+            More about Alex
+            {{!-- <svg class="button__icon" width="20" height="20">
+                <title>Right Arrow</title>
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/icons/sprite.svg#arrow"></use>
+            </svg> --}}
+        </a>
+    </div>
+</main>
+
+<section class="portfolio 📱">
+    <div class="portfolio__inner hide 🖼" data-fade>
+        <small class="portfolio__title-small">Recent</small>
+        <h3 class="portfolio__title-main">Work &amp; projects</h3>
+        <div class="portfolio__content">
+            {{#eachUpTo data.portfolio.[2016] 4}}
+                {{>portfolio}}
+            {{/eachUpTo}}
+
+            {{!-- {{#each data.portfolio.[2016]}}
+              {{>portfolio}}
+            {{/each}} --}}
+        </div>
+        <a class="portfolio__button button button--secondary" href="/portfolio/">
+            View portfolio
+            {{!-- <svg class="button__icon" width="20" height="20">
+                <title>Right Arrow</title>
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/icons/sprite.svg#arrow"></use>
+            </svg> --}}
+        </a>
+    </div>
+</section>
+
+<section class="articles 📱">
+    <div class="articles__inner hide 🖼" data-fade>
+        <small class="articles__title-small">Read my</small>
+        <h3 class="articles__title-main">Latest articles</h3>
+        {{!-- <div class="articles__content">
+            {{#each_upto articles.[2018] 1}}
+              {{>articles}}
+            {{/each_upto}}
+            {{#each_upto articles.[2017] 2}}
+              {{>articles}}
+            {{/each_upto}}
+        </div> --}}
+        <a class="button button--secondary" href="/articles/">
+            View articles
+            {{!-- <svg class="button__icon" width="20" height="20">
+                <title>Right Arrow</title>
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/icons/sprite.svg#arrow"></use>
+            </svg> --}}
+        </a>
+    </div>
+</section>

@@ -1,13 +1,36 @@
 <!DOCTYPE html>
-<html>
+<html lang="en-GB">
     <head>
+        <!-- META TAGS  -->
         <meta charset="utf-8">
-        <title>{{title}}</title>
+        <meta name="viewport" content="width=device-width, minimum-scale=1, user-scalable=yes, initial-scale=1, viewport-fit=cover">
+        <meta name="description" content="{{#if description}}{{{description}}}{{else}}{{#if title}}{{{title}}} - {{/if}}Alex Clapperton &mdash; Front-End Developer{{/if}}">
+        {{#if nofollow}}
+        <meta name="robots" content="noindex, nofollow">
+        {{/if}}
 
-        <link rel='preload' as="style" href='/stylesheets/style.css'/>
+        <!-- PAGE TITLE -->
+        <title>
+        {{#if title}}{{{title}}} &mdash; {{/if}}{{{global.name}}}
+        {{#if global.jobTitle}} &mdash; {{{global.jobTitle}}}{{/if}}
+        </title>
 
-        <link rel='stylesheet' href='/stylesheets/style.css'/>
+        <!-- PRELOAD FILES -->
+        <link rel="preload" as="style" href="/css/main.css">
 
-        <script src="/scripts/main.js" async defer></script>
+        <!-- STYLESHEET -->
+        <link rel="stylesheet" href="/css/main.css">
+
+        <!-- JAVASCRIPT -->
+        <script src="/js/main.js" defer></script>
     </head>
-    <body>
+
+    <body id="top">
+
+    <!-- JAVASCRIPT ALERT -->
+    <noscript>
+        <div class="support-notice support-notice--javascript">
+          <p>You currently have JavaScript in your browser turned off, so some features of this site may not work fully.</p>
+          <p>Find out <a href="http://enable-javascript.com" rel="external" target="_blank">how to turn JavaScript on</a>.</p>
+        </div>
+    </noscript>

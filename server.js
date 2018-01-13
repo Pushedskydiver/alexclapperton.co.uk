@@ -9,6 +9,8 @@ const methodOverride = require('express-method-override');
 const bodyParser = require('body-parser');
 const compression = require('compression');
 const json = require('express-json');
+const helpers = require(path.resolve(__dirname, 'utils', 'helpers.js'))();
+const port = process.env.PORT || 3001;
 
 const app = express();
 
@@ -26,7 +28,8 @@ app.engine('.hbs', hbs({
   extname: '.hbs',
   layoutsDir: path.join(__dirname, 'views'),
 	defaultLayout: 'default.hbs',
-  partialsDir: [path.join(__dirname, 'views/_partials')]
+  partialsDir: [path.join(__dirname, 'views/_partials')],
+  helpers: helpers
 }));
 app.set('view engine', '.hbs');
 app.use(compression());
@@ -37,23 +40,6 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
 require('./routes/index')(app);
-
-app.get('*', (req, res, next) => {
-  const err = new Error();
-  err.status = 404;
-  next(err);
-});
-
-// handling 404 errors
-app.use(function(err, req, res, next) {
-  if (err.status !== 404) {
-    return next();
-  }
-
-  res.render('404', { title: '404' });
-});
-
-const port = process.env.PORT || 3001;
 
 module.exports = app;
 

@@ -1,0 +1,40 @@
+{
+  "2016": [
+    {
+      "title": "Portfolio 2017",
+      "description": "Sass, Vanilla JS, Gulp, SVG, Handlebars",
+      "category": "Web Development",
+      "slug": "website-portfolio-2017/",
+      "title-attr": "Link to website portfolio 2017 portfolio page.",
+      "src": "website-portfolio-2017/website-portfolio-2017-thumbnail",
+      "alt": "Wide shot of Manchester Central building at the rear."
+    },
+    {
+      "title": "Portfolio 2015",
+      "description": "HTML, Sass, jQuery, Gulp",
+      "category": "Web Development",
+      "slug": "website-portfolio-2015/",
+      "title-attr": "Link to website portfolio 2015 portfolio page.",
+      "src": "website-portfolio-2015/website-portfolio-2015-thumbnail",
+      "alt": "Two portrait images of Alex Clapperton in a diamond shape."
+    },
+    {
+      "title": "Portfolio 2015",
+      "description": "HTML, Sass, jQuery, Gulp",
+      "category": "Web Development",
+      "slug": "website-portfolio-2015/",
+      "title-attr": "Link to website portfolio 2015 portfolio page.",
+      "src": "website-portfolio-2015/website-portfolio-2015-thumbnail",
+      "alt": "Two portrait images of Alex Clapperton in a diamond shape."
+    },
+    {
+      "title": "Love Manchester",
+      "description": "PHP, Sass, jQuery, Gulp, SVG, Agile, Group Project",
+      "category": "Web Development",
+      "slug": "love-manchester-website/",
+      "title-attr": "Link to Love Manchester portfolio page.",
+      "src": "love-manchester-website/love-manchester-thumbnail",
+      "alt": "Wide shot of Manchester Central building at the rear."
+    }
+  ]
+}

@@ -1,2 +1,30 @@
+        <footer class="footer 📱">
+            <div class="hide 🖼" data-fade>
+                <div class="footer__content">
+                    <ul class="footer__list">
+                        <li class="footer__list-item footer__list-item--title">Useful links</li>
+                        {{!-- {{#each global.navigation}}
+                        <li class="footer__list-item"><a class="footer__list-🔗" href="{{url}}" title="{{title-attr}}" data-item-{{slug}}>{{title}}</a></li>
+                        {{/each}} --}}
+                    </ul>
+                    <ul class="footer__list">
+                        <li class="footer__list-item footer__list-item--title">Send me an email</li>
+                        <li class="footer__list-item"><a class="footer__list-🔗" href="mailto:{{global.email}}">{{global.email}}</a></li>
+                    </ul>
+                    <ul class="footer__list">
+                        <li class="footer__list-item footer__list-item--title">Let's have a chat</li>
+                        <li class="footer__list-item footer__list-item--phone">{{global.phone}}</li>
+                    </ul>
+                    <ul class="footer__list">
+                        <li class="footer__list-item footer__list-item--title">Let's be social</li>
+                        {{#each data.social}}
+                          <li class="footer__list-item footer__list-item--social"><a class="footer__list-🔗" href="{{url}}" title="{{title-attr}}" {{#if external}}rel="external"{{/if}}>{{title}}</a></li>
+                        {{/each}}
+                    </ul>
+                </div>
+
+                <small class="footer__body">Copyright &copy; 2017 {{data.name}}. All rights reserved.</small>
+            </div>
+        </footer>
     </body>
 </html>

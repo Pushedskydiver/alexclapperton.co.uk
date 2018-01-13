@@ -1,9 +1,53 @@
-<header class="site-header" data-site-header>
-    <nav data-nav class="nav">
-        <a href="/" class="nav__link{{#if active_home}} nav__link--active{{/if}}">Home</a>
-        <a href="/about-me/" class="nav__link{{#if active_about}} nav__link--active{{/if}}">About me</a>
-        <a href="/portfolio/" class="nav__link{{#if active_portfolio}} nav__link--active{{/if}}">Portfolio</a>
-        <a href="/articles/" class="nav__link{{#if active_articles}} nav__link--active{{/if}}">Articles</a>
-        <a href="/contact/" class="nav__link{{#if active_contact}} nav__link--active{{/if}}">Contact</a>
-    </nav>
+<!-- ******************** HEADER : Start ******************** -->
+<header class="header 📱">
+    <!-- BEGIN : SKIP LINKS -->
+    <a href="#nav" class="skip-🔗 skip-🔗--hidden">Skip to navigation</a>
+    <a href="#main" class="skip-🔗 skip-🔗--hidden">Skip to main content</a>
+    <a href="#footer" class="skip-🔗 skip-🔗--hidden">Skip to footer</a>
+    <!-- END : SKIP LINKS /-->
+    <!-- BEGIN : CONTAINER -->
+    <div class="🖼">
+        <!-- BEGIN : HEADER CONTNET -->
+        <div class="header__content">
+            <a class="logo {{#if isHome}}logo--header{{/if}} {{#unless isHome}}logo--white{{/unless}}" href="/" title="Go to the homepage." data-logo>
+                {{!-- <svg width="20" height="20" class="logo__icon">
+                    <title>Alex Clapperton Logo</title>
+                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/icons/sprite.svg#logo"></use>
+                </svg> --}}
+            </a>
+
+            <button class="button button--nav" aria-controls="nav" aria-expanded="false" data-navigation-trigger>
+                Menu
+                {{!-- <svg width="20" height="20" class="button--nav-icon">
+                    <title>Plus</title>
+                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/icons/sprite.svg#plus"></use>
+                </svg> --}}
+            </button>
+            <!-- BEGIN : NAV -->
+            <nav class="nav" id="nav" data-navigation>
+                <ul class="nav__list" data-navigation-list>
+                    <li>
+                        <a href="/" class="nav__🔗{{#if active_home}} nav__🔗--active nav__🔗--light{{/if}}"><span class="nav__🔗-index">.01</span>Home</a>
+                    </li>
+                    <li>
+                        <a href="/about-me/" class="nav__🔗{{#if active_about}} nav__🔗--active{{/if}}"><span class="nav__🔗-index">.02</span>About me</a>
+                    </li>
+                    <li>
+                        <a href="/portfolio/" class="nav__🔗{{#if active_portfolio}} nav__🔗--active{{/if}}"><span class="nav__🔗-index">.03</span>Portfolio</a>
+                    </li>
+                    <li>
+                        <a href="/articles/" class="nav__🔗{{#if active_articles}} nav__🔗--active{{/if}}"><span class="nav__🔗-index">.04</span>Articles</a>
+                    </li>
+                    <li>
+                        <a href="/contact/" class="nav__🔗{{#if active_contact}} nav__🔗--active{{/if}}"><span class="nav__🔗-index">.05</span>Contact</a>
+                    </li>
+                </ul>
+                <span class="nav__item-active" data-nav-item-active></span>
+            </nav>
+            <!-- END : NAV /-->
+        </div>
+        <!-- END : HEADER CONTENT /-->
+    </div>
+    <!-- END : CONTAINER /-->
 </header>
+<!-- ******************** HEADER : End ******************** /-->
