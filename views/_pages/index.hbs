@@ -32,10 +32,6 @@
             {{#eachUpTo data.portfolio.[2016] 4}}
                 {{>portfolio}}
             {{/eachUpTo}}
-
-            {{!-- {{#each data.portfolio.[2016]}}
-              {{>portfolio}}
-            {{/each}} --}}
         </div>
         <a class="portfolio__button button button--secondary" href="/portfolio/">
             View portfolio
@@ -51,14 +47,14 @@
     <div class="articles__inner hide 🖼" data-fade>
         <small class="articles__title-small">Read my</small>
         <h3 class="articles__title-main">Latest articles</h3>
-        {{!-- <div class="articles__content">
-            {{#each_upto articles.[2018] 1}}
+        <div class="articles__content">
+            {{#eachUpTo data.articles.[2018] 1}}
               {{>articles}}
-            {{/each_upto}}
-            {{#each_upto articles.[2017] 2}}
+            {{/eachUpTo}}
+            {{#eachUpTo data.articles.[2017] 2}}
               {{>articles}}
-            {{/each_upto}}
-        </div> --}}
+            {{/eachUpTo}}
+        </div>
         <a class="button button--secondary" href="/articles/">
             View articles
             {{!-- <svg class="button__icon" width="20" height="20">
