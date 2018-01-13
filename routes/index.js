@@ -75,6 +75,10 @@ module.exports = app => {
       return next();
     }
 
-    res.render('404', { title: '404' });
+    res.render('404', {
+      title: '404',
+      layout: '404.hbs',
+      home: true
+    });
   });
 };
