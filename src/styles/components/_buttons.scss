@@ -1,0 +1,93 @@
+// Butons.............Button styles.
+
+.button {
+  @include text(bodyCopy);
+  @include transition-03(all);
+  display: block;
+  margin-bottom: 0;
+  padding-top: ($core-padding / 1.5);
+  padding-right: $core-padding;
+  padding-bottom: ($core-padding / 1.5);
+  padding-left: $core-padding;
+  text-align: center;
+  border-radius: $core-border-radius;
+
+  @include min(m) {
+    display: inline-block;
+  }
+
+  @include min(l) {
+    font-weight: $core-tertiary-font-weight;
+    padding-top: $core-padding;
+    padding-right: ($core-padding * 2);
+    padding-bottom: $core-padding;
+    padding-left: ($core-padding * 2);
+  }
+}
+
+.button--primary {
+  @include button(primary);
+}
+
+.button--secondary {
+  @include button(secondary);
+}
+
+.button--nav {
+  @include button(navigation);
+  @include transition-03(all);
+  position: fixed;
+  bottom: ($core-grid-unit * 2);
+  left: 50%;
+  color: $core-color-background;
+  margin: 0 auto;
+  transform: translateX(-50%);
+  vertical-align: middle;
+  z-index: z(kilo);
+
+  @include min(m) {
+    display: none;
+  }
+}
+
+@supports (bottom: env(safe-area-inset-bottom)) {
+  .button--nav {
+    bottom: ($core-grid-unit * 5);
+  }
+}
+
+.button--nav-active {
+  background-color: $core-color-background;
+  color: $core-color-foreground;
+}
+
+.button__icon {
+  @include rotate(-90);
+  margin-top: -0.15em;
+  margin-left: ($core-margin / 2);
+  stroke: $core-color-brand;
+  stroke-width: 3;
+  vertical-align: middle;
+
+  .button--primary:hover &,
+  .button--secondary:hover & {
+    stroke: $core-color-background;
+  }
+}
+
+.button--nav-icon {
+  @include transition-03(transform);
+  width: 24px;
+  height: 24px;
+  fill: $core-color-background;
+  vertical-align: bottom;
+
+  .button--nav-active &,
+  .button--nav:hover & {
+    fill: $core-color-foreground;
+  }
+
+  .button--nav-active & {
+    @include rotate(45);
+  }
+}

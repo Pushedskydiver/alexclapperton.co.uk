@@ -2,7 +2,7 @@
 <a class="portfolio__item {{#if picture}}portfolio__item--large{{/if}}" href="/portfolio/{{slug}}" title="{{title-attr}}" data-portfolio-item>
     <figure class="portfolio__figure">
         <div class="portfolio__image-wrapper {{#unless picture}}lazyload{{/unless}}">
-        {{!-- {{#if picture}}
+        {{#if picture}}
             <picture class="lazyload">
                 <source media="(max-width: 50em)" data-srcset="/images/portfolio/{{src-mobile}}.jpg">
                 <img class="portfolio__📷 lazyload__image lazyload__image--lazy" data-src="/images/portfolio/{{src-desktop}}.jpg" alt="{{alt}}" data-lazy>
@@ -18,7 +18,7 @@
             <noscript>
                 <img class="portfolio__📷" src="/images/portfolio/{{src}}.jpg" alt="{{alt}}">
             </noscript>
-        {{/if}} --}}
+        {{/if}}
         </div>
         <figcaption class="portfolio__caption">
             <p class="portfolio__caption-title">{{title}}</p>

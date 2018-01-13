@@ -1,0 +1,62 @@
+// Buttons............Mixin to add button styles.
+
+// button styles map configuration
+$buttons: (
+  primary: (
+    default: (
+      background-color: $core-color-link,
+      color: $core-color-foreground,
+      border-width: 2px,
+      border-style: $core-border-style,
+      border-color: $core-color-link
+    ),
+    hover: (
+      background-color: $core-color-brand,
+      color: $core-color-background,
+      border-color: $core-color-brand
+    )
+  ),
+  secondary: (
+    default: (
+      background-color: transparent,
+      color: $core-color-brand,
+      border-width: 2px,
+      border-style: $core-border-style,
+      border-color: $core-color-brand
+    ),
+    hover: (
+      background-color: $core-color-brand,
+      color: $core-color-background
+    )
+  ),
+  navigation: (
+    default: (
+      background-color: $core-color-foreground,
+      color: $core-color-background,
+      box-shadow: 3px 3px 5px 1px rgba($core-color-foreground, 0.1)
+    ),
+    hover: (
+      background-color: $core-color-background,
+      color: $core-color-foreground
+    )
+  )
+);
+
+@mixin button($style) {
+  $props: map-get($buttons, $style);
+  $default: map-get($props, default);
+  $hover: map-get($props, hover);
+
+  @if $props == null {
+    @warn 'button style \"#{$style}\" not found';
+  } @else {
+    @include map-to-props($default);
+
+    @if map-has-key($props, hover) {
+      &:hover,
+      &:active {
+        @include map-to-props($hover);
+      }
+    }
+  }
+}

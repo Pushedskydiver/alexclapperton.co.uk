@@ -1,0 +1,139 @@
+// Banner.............Top page banner styles.
+
+.banner {
+  &:not(&--home):not(&--404) {
+    height: 550px;
+  }
+
+  @include min(l) {
+    &:not(&--404) {
+      height: 750px;
+    }
+  }
+}
+
+.banner--home,
+.banner--404 {
+  height: 100vh;
+
+  @media screen and (max-width: 48em) and (orientation: landscape) {
+    min-height: 550px;
+  }
+}
+
+.banner--dark {
+  background-color: $core-color-brand;
+}
+
+.banner__content {
+  @include flex(null, column, center, null);
+  height: 100%;
+}
+
+.banner__content--404 {
+  @include min(l) {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+.banner__content--center {
+  text-align: center;
+}
+
+.banner__item--404 {
+  position: relative;
+  overflow: hidden;
+
+  @include min(l) {
+    width: 50%;
+  }
+}
+
+.banner__img--404 {
+  display: none;
+
+  @include min(l) {
+    display: block;
+  }
+}
+
+.banner__title {
+  &:not(&--center):not(&--404) {
+    max-width: 450px;
+  }
+}
+
+.banner__title--home {
+  @include text(sun);
+
+  @include min(xs) {
+    font-size: calc(3.8em + 0.5vw);
+  }
+
+  @include min(l) {
+    font-size: calc(4.5em + 0.5vw);
+  }
+}
+
+.banner__title--light {
+  color: $core-color-background;
+}
+
+.banner__title--center {
+  max-width: 800px;
+  margin-right: auto;
+  margin-bottom: 0;
+  margin-left: auto;
+}
+
+.banner__title--404 {
+  max-width: 450px;
+
+  @include min(l) {
+    max-width: none;
+  }
+}
+
+.banner__title--offline {
+  margin-bottom: 0;
+}
+
+.banner__body {
+  @include text(earth);
+
+  @include max(m) {
+    max-width: 250px;
+  }
+
+  @media screen and (max-width: 47.9375em) and (orientation: landscape) {
+    max-width: none;
+  }
+}
+
+.banner__body--404 {
+  max-width: 450px;
+
+  @include min(l) {
+    max-width: none;
+  }
+}
+
+.banner__scroll-🔗 {
+  @include text(earth);
+  @include flex(null, row, null, center);
+  color: $core-color-brand;
+  align-self: flex-start;
+  text-decoration: none;
+}
+
+.banner__scroll-icon {
+  width: 16px;
+  height: 16px;
+  margin-left: ($core-margin / 2);
+  stroke: $core-color-brand;
+  stroke-width: 3;
+  vertical-align: middle;
+}

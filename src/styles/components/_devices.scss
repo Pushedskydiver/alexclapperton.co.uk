@@ -1,0 +1,116 @@
+// Devices............Mobile device view styles.
+
+.devices {
+  background-color: darken($core-color-background, 1%);
+  padding-top: ($core-padding * 3);
+  padding-bottom: ($core-padding * 3);
+
+  @include min(m) {
+    padding-top: ($core-padding * 4);
+    padding-bottom: ($core-padding * 4);
+  }
+}
+
+.devices__inner {
+  @include flex(wrap, row, space-between, null);
+}
+
+.devices__item {
+  position: relative;
+  width: 47%;
+  background-color: $core-color-brand;
+  overflow: hidden;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3%;
+    background-color: darken($core-color-background, 1%);
+    z-index: z(charlie);
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 3%;
+    background-color: darken($core-color-background, 1%);
+    z-index: z(charlie);
+  }
+
+  &:last-child {
+    display: none;
+  }
+
+  @include min(l) {
+    width: 30%;
+
+    &:last-child {
+      display: block;
+    }
+  }
+}
+
+.devices__item-inner {
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 6%;
+    height: 100%;
+    background-color: darken($core-color-background, 1%);
+    z-index: z(charlie);
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 6%;
+    height: 100%;
+    background-color: darken($core-color-background, 1%);
+    z-index: z(charlie);
+  }
+}
+
+.devices__frame {
+  display: block;
+  position: relative;
+  width: 100%;
+  height: auto;
+  z-index: z(delta);
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #f0f0f0;
+  }
+}
+
+.devices__image-wrapper {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  transform: translate(-50%, -50%);
+  z-index: z(alpha);
+}
+
+.devices__image {
+  padding-top: 13%;
+  padding-right: 5.5%;
+  padding-bottom: 13%;
+  padding-left: 5.5%;
+}

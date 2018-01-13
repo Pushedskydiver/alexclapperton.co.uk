@@ -1,0 +1,106 @@
+---
+page: working-with-grid-the-holy-grail-of-css-layout
+layout: post.hbs
+title: Working with grid - the holy grail of css layout
+description: Ladies and gentlemen, boys and girls, and to the snake in my bedroom, I present to you the future of CSS layout and boy is it a game changer.
+pubDate: 2017-02-20
+readableDate: February 20, 2017
+isHome: false
+isArticle: true
+isPost: true
+tags:
+- css
+- grid
+- css grid
+changefreq: never
+priority: 0.2
+---
+
+<p class="post__body">Ladies and gentlemen, boys and girls, and to the snake in my bedroom, I present to you the future of CSS layout and boy is it a game changer. CSS Grid is finally upon us and totally changes the way in which we as web developers create layouts on a webpage. As it says in the title, it is the holy grail of CSS layout, making it easier to create simple and complex layouts. With that said I decided to take on and learn grid as a self-initiated project, so allow me to show you want I've achieved.</p>
+
+<h2 class="post__title">A bit more detail about Grid</h2>
+
+<p class="post__body">Before I go into detail about what I came up with while learning grid it's best to have a better understanding of what it is first. CSS Grid (aka Grid) is a two-dimensional grid based system allowing the ability to place items in both columns and rows, unlike <a class="link" href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/" title="External link to CSS Tricks web page about CSS Grid." rel="external">flexbox</a> which is one-dimensional and can only place items in either a column or a row, it can't handle both. Grid is the very first CSS module created specifically to solve the layout problems we've all been hacking our way around for as long as we've been making websites.</p>
+
+<h3 class="post__subtitle">Current browser support</h3>
+
+<p class="post__body">Being a new feature for browsers, it shouldn't be a surprise to know that grid isn't widely supported across all browsers (yet 😉). However, in the past week it has been released in the latest update on Firefox (version 52) and Google Chrome (version 57), with Apple getting ready to release it on Safari (version 10.1) within the coming weeks.</p>
+
+<figure class="figure">
+    <div class="lazyload">
+        <img class="figure__img lazyload__image lazyload__image--lazy" data-src="/images/articles/post/grid-support-1.jpg" alt="Browser versions that do and don't support grid." data-lazy>
+    </div>
+    <noscript>
+        <img class="figure__img" src="/images/articles/post/grid-support-1.jpg" alt="Browser versions that do and don't support grid.">
+    </noscript>
+    <figcaption class="figure__caption">Latest Firefox &amp; Chrome versions support Grid</figcaption>
+</figure>
+
+<figure class="figure">
+    <div class="lazyload">
+        <img class="figure__img lazyload__image lazyload__image--lazy" data-src="/images/articles/post/grid-support-2.jpg" alt="Browser versions that do and don't support grid." data-lazy>
+    </div>
+    <noscript>
+        <img class="figure__img" src="/images/articles/post/grid-support-2.jpg" alt="Browser versions that do and don't support grid.">
+    </noscript>
+    <figcaption class="figure__caption">Next version of Safari &amp; Opera will support Grid</figcaption>
+</figure>
+
+<h3 class="post__subtitle">My project set-up</h3>
+
+<p class="post__body">At the time of learning grid, none of the browsers mentioned above supported grid natively. So, in order to play around with grid, I had to download developer versions of the browsers which contain experimental features (such as grid at the time) that aren't available on their native counterparts. For Safari, you can download <a class="link" href="https://developer.apple.com/safari/technology-preview/" title="External link to Safari Tecnhology Preview website." rel="external">Safari Technology Preview</a>, for Firefox you can use <a class="link" href="https://www.mozilla.org/en-GB/firefox/developer/" title="External link to Firefox Developer Edition website." rel="external">Firefox Developer Edition</a> and for Google Chrome you can either download <a class="link" href="https://www.google.co.uk/chrome/browser/canary.html" title="External link to Google Chrome Canary website." rel="external">Chrome Canary</a> or enable <strong><em>experimental web platform features</em></strong> in Google Chrome by typing <strong><em>chrome://flags</em></strong> in the address bar.</p>
+
+<figure class="figure">
+    <div class="lazyload">
+        <img class="figure__img lazyload__image lazyload__image--lazy" data-src="/images/articles/post/chrome-flags.jpg" alt="Enabling experimental web features in Google Chrome." data-lazy>
+    </div>
+    <noscript>
+        <img class="figure__img" src="/images/articles/post/chrome-flags.jpg" alt="Enabling experimental web features in Google Chrome.">
+    </noscript>
+    <figcaption class="figure__caption">Enabling experimental web features in Google Chrome</figcaption>
+</figure>
+
+<p class="post__body">In addition to this, I used two online resources, Rachel Andrew's <a class="link" href="http://gridbyexample.com/" title="External link to Rachel Andrew's Grid by Example website." rel="external">Grid by Example</a> website and Chris House's <a class="link" href="https://css-tricks.com/snippets/css/complete-guide-grid/" title="External link to CSS Tricks web page about CSS Grid." rel="external">A Complete Guide to Grid</a> article from CSS Tricks. Both these sites contained excellent information about grid as well as some excellent demonstrations.</p>
+
+<h3 class="post__subtitle">Putting Grid into practice</h3>
+
+<p class="post__body">With Grid being a self-initiated project, I decided to have a bit of fun with it. I created two little games for myself on CodePen, where I sliced up two images in Photoshop and just using Grid, I had to place the sliced parts of the images in the correct place to re-build the images. You can have a look at what I created below. <strong>Make sure you are using a browser that supports Grid</strong>.</p>
+
+<p><a class="link" href="https://codepen.io/Pushedskydiver/pen/bqNvRb/">CSS Grid Game - Codepen</a></p>
+
+<p><a class="link" href="https://codepen.io/Pushedskydiver/pen/NpxpGQ/">CSS Grid Game 2 - Codepen</a></p>
+
+<h3 class="post__subtitle">I've not finished yet</h3>
+
+<p class="post__body">While learning grid, I wanted to find a way to make it quick and easy to write the grid property names as there are quite a few of them and some are quite long. One thing I tried was to find a snippet package for my text editor <a class="link" href="https://atom.io/" title="External link to Atom.io website" rel="external">Atom</a> where I could write shorthand's for the grid property names without having to write the whole thing. To my disbelief there wasn't a single snippet package for grid that I could find for Atom, so I took it upon myself to create the package myself. If you are interested, you can install the package yourself in the settings section of Atom, or you can check it out on my <a class="link" href="https://github.com/Pushedskydiver/atom-css-grid-snippets" title="External link to css grid snippets GitHub repo." rel="external">GitHub repo</a>. I also made a Sublime Text version which you can find on my <a class="link" href="https://github.com/Pushedskydiver/sublime-text-css-grid-snippets" rel="external">GitHub repo</a>.</p>
+
+<figure class="figure">
+    <div class="lazyload">
+        <img class="figure__img lazyload__image lazyload__image--lazy" data-src="/images/articles/post/grid-snippets.jpg" alt="My CSS Grid snippets plugin in action on Atom." data-lazy>
+    </div>
+    <noscript>
+        <img class="figure__img" src="/images/articles/post/grid-snippets.jpg" alt="My CSS Grid snippets plugin in action on Atom.">
+    </noscript>
+    <figcaption class="figure__caption">Using my CSS Grid snippets package in Atom</figcaption>
+</figure>
+
+<h3 class="post__subtitle">How to learn Grid</h3>
+
+<p class="post__body">There are now a variety of articles and tutorials that you can find on the web to learn about Grid. The biggest hurdle to overcome is finding out the grid system works as you can't physically see the grid lines in the browser (Not entirely true, more on that below) and so you have to try and plot out mentally where the grid lines would be. This is where Rachel Andrew's <a class="link" href="http://gridbyexample.com/" title="External link to Rachel Andrew's Grid by Example website." rel="enoreferrer">Grid by Example</a> website and the <a class="link" href="https://css-tricks.com/snippets/css/complete-guide-grid/" title="External link to CSS Tricks web page about CSS Grid." rel="external">A Complete Guide to Grid</a> article on CSS Tricks are the places to go. Like I mentioned earlier, these sites provide an in depth look on how grid works, the property names of the grid container and grid items and provide a variety of examples of how grid can be used.</p>
+
+<h3 class="post__subtitle">Does this mean the end of Flexbox?</h3>
+
+<p class="post__body">I would imagine some of you are thinking "well if grid is so great then what's the point of using flexbox anymore?". My answer to that is by no means is flexbox dead. Grid is not a replacement of flexbox. It is simply an alternative layout method and there are occasions where both can work together. Don't believe me? Then maybe this <a class="link" href="https://codepen.io/rachelandrew/pen/RGwyAb" title="External link to a CodePen made by Rachel Andrew." rel="external">CodePen from Rachel Andrew</a> will change your mind. To convince you further, checkout this <a class="link" href="https://rachelandrew.co.uk/archives/2016/03/30/should-i-use-grid-or-flexbox/" title="External link to an article about using Flexbox or Grid by Rachel Andrew." rel="external">article from Rachel</a> on when to use grid and when to use flexbox.</p>
+
+<h4 class="post__subtitle">Final thoughts</h4>
+
+<p class="post__body">When I started looking into grid, I thought that it was going to be too complex to get my head around how it would work and trying to remember the property names. But since then I feel I have come a long way and found that it isn't that complex at all. The main barrier is understanding how it works and the purpose of the property names and I feel with creating the snippet for my text editor, has contributed to me learning grid in a short space of time.</p>
+
+<hr>
+
+<h4 class="post__subtitle">Bibliography</h4>
+
+<ul class="list">
+    <li class="list__item">House C. (2017). A Complete Guide to Grid [ONLINE] [Accessed 20 February 2017]. URL: <a class="link" href="https://css-tricks.com/snippets/css/complete-guide-grid/" title="External link to CSS Tricks web page about CSS Grid.">CSS Tricks</a></li>
+    <li class="list__item">Andrew R. (2017). Grid by Example [ONLINE] [Accessed 20 February 2017]. URL: <a class="link" href="http://gridbyexample.com" title="External link to Rachel Andrew's Grid by Example website.">Grid by Example</a></li>
+</ul>

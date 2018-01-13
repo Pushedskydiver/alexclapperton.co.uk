@@ -1,0 +1,35 @@
+// Breadcrumbs........Breadcrumb banner styles.
+
+.breadcrumbs__item {
+  display: inline-block;
+  position: relative;
+  color: $core-color-background;
+  margin-bottom: 0;
+
+  &::after {
+    content: '/';
+    padding-left: ($core-padding / 2);
+  }
+
+  &:last-child::after {
+    display: none;
+  }
+}
+
+.breadcrumbs__item--active {
+  color: $core-color-neutral;
+}
+
+.breadcrumbs__🔗 {
+  color: inherit;
+  border-bottom-width: $core-border-width;
+  border-bottom-style: $core-border-style;
+  border-bottom-color: $core-color-link;
+
+  @include min(l) {
+    &:hover {
+      background-color: $core-color-link;
+      color: $core-color-brand;
+    }
+  }
+}

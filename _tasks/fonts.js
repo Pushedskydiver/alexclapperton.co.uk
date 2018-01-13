@@ -1,0 +1,16 @@
+/**
+ * @file fonts.js - Minify and produce fonts for browsers
+ * @author Alex Clapperton <hi@alexclapperton.co.uk>
+ */
+
+import plugins from 'gulp-load-plugins'
+
+const $ = plugins()
+
+module.exports = (gulp, data) => {
+  gulp.task('fonts', () => {
+      return gulp.src(data.paths.source.fonts)
+          .pipe($.fontmin())
+          .pipe(gulp.dest(data.paths.dist.fonts));
+  });
+}

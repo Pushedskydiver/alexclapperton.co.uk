@@ -1,0 +1,25 @@
+---
+page: articles
+layout: default.hbs
+title: Articles
+description: Check out my latest articles regarding all things web.
+isHome: false
+changefreq: monthly
+priority: 1.0
+---
+
+<main class="articles 📱" id="main">
+    <div class="articles__inner hide 🖼" data-fade>
+        <div class="articles__content">
+            {{#each articles.[2018]}}
+              {{>articles}}
+            {{/each}}
+            {{#each articles.[2017]}}
+              {{>articles}}
+            {{/each}}
+            {{#each articles.[2016]}}
+              {{>articles}}
+            {{/each}}
+        </div>
+    </div>
+</main>

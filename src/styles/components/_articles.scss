@@ -1,0 +1,107 @@
+// Articles...........Article section styles.
+
+.articles {
+  background-color: darken($core-color-background, 4%);
+  padding-top: ($core-padding * 3);
+  padding-bottom: ($core-padding * 3);
+
+  @include min(l) {
+    padding-top: ($core-padding * 4.5);
+    padding-bottom: ($core-padding * 4.5);
+  }
+}
+
+.articles__content {
+  @include min(m) {
+    display: grid;
+    grid-gap: ($core-grid-unit * 2);
+    grid-template-columns: repeat(2, 1fr);
+    margin-bottom: ($core-margin * 2.2);
+
+    @supports not (display: grid) {
+      @include flex(wrap, row, space-between, null);
+    }
+  }
+
+  @include min(l) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.articles__item {
+  display: block;
+  position: relative;
+  margin-bottom: ($core-margin * 2.2);
+
+  @include min(m) {
+    margin-bottom: 0;
+
+    @supports not (display: grid) {
+      width: 49%;
+      margin-bottom: ($core-margin * 2);
+    }
+  }
+
+  @include min(l) {
+    @supports not (display: grid) {
+      width: 32.333333%;
+    }
+
+    &:hover .articles__img {
+      @include transform(scale(1.2) rotate(5deg));
+    }
+  }
+}
+
+.article__content {
+  @include flex(null, column, null, null);
+  min-height: 100%;
+}
+
+.articles__picture {
+  display: block;
+  min-height: 175px;
+  overflow: hidden;
+}
+
+.articles__img {
+  @include min(l) {
+    @include transition-05(transform);
+  }
+}
+
+.articles__details {
+  @include flex(null, column, space-between, null);
+  padding-top: $core-padding;
+  padding-bottom: $core-padding;
+  flex: 1;
+
+  @include min(l) {
+    padding-top: ($core-padding * 2);
+    padding-bottom: ($core-padding * 2);
+  }
+}
+
+.articles__title-small {
+  @include text(pluto);
+}
+
+.articles__title {
+  @include text(venus);
+  display: block;
+
+  @include min(l) {
+    font-size: calc(1em + 0.5vw);
+  }
+}
+
+.articles__body {
+  flex: 1;
+}
+
+.articles__date {
+  @include text(moon);
+  display: block;
+  margin-bottom: 0;
+  font-weight: $core-tertiary-font-weight;
+}

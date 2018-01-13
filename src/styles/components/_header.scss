@@ -1,0 +1,19 @@
+// Header.............Header styles.
+
+.header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: transparent;
+  z-index: z(juliet);
+}
+
+.header__content {
+  @include flex(null, row, flex-start, center);
+  height: ($core-grid-unit * 6);
+
+  @include min(m) {
+    justify-content: space-between;
+  }
+}

@@ -9,38 +9,35 @@
     <div class="🖼">
         <!-- BEGIN : HEADER CONTNET -->
         <div class="header__content">
-            <a class="logo {{#if isHome}}logo--header{{/if}} {{#unless isHome}}logo--white{{/unless}}" href="/" title="Go to the homepage." data-logo>
-                {{!-- <svg width="20" height="20" class="logo__icon">
+            <a class="logo {{#if home}}logo--header{{/if}} {{#unless home}}logo--white{{/unless}}" href="/" title="Go to the homepage." data-logo>
+                <svg width="20" height="20" class="logo__icon">
                     <title>Alex Clapperton Logo</title>
                     <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/icons/sprite.svg#logo"></use>
-                </svg> --}}
+                </svg>
             </a>
 
             <button class="button button--nav" aria-controls="nav" aria-expanded="false" data-navigation-trigger>
                 Menu
-                {{!-- <svg width="20" height="20" class="button--nav-icon">
+                <svg width="20" height="20" class="button--nav-icon">
                     <title>Plus</title>
                     <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/icons/sprite.svg#plus"></use>
-                </svg> --}}
+                </svg>
             </button>
             <!-- BEGIN : NAV -->
             <nav class="nav" id="nav" data-navigation>
                 <ul class="nav__list" data-navigation-list>
-                    <li>
-                        <a href="/" class="nav__🔗{{#if active_home}} nav__🔗--active nav__🔗--light{{/if}}"><span class="nav__🔗-index">.01</span>Home</a>
-                    </li>
-                    <li>
-                        <a href="/about-me/" class="nav__🔗{{#if active_about}} nav__🔗--active{{/if}}"><span class="nav__🔗-index">.02</span>About me</a>
-                    </li>
-                    <li>
-                        <a href="/portfolio/" class="nav__🔗{{#if active_portfolio}} nav__🔗--active{{/if}}"><span class="nav__🔗-index">.03</span>Portfolio</a>
-                    </li>
-                    <li>
-                        <a href="/articles/" class="nav__🔗{{#if active_articles}} nav__🔗--active{{/if}}"><span class="nav__🔗-index">.04</span>Articles</a>
-                    </li>
-                    <li>
-                        <a href="/contact/" class="nav__🔗{{#if active_contact}} nav__🔗--active{{/if}}"><span class="nav__🔗-index">.05</span>Contact</a>
-                    </li>
+                    <!-- BEGIN : NAV ITEM -->
+                    <li class="nav__item"><a class="nav__🔗{{#if about}} nav__🔗--active{{/if}}{{#unless home}} nav__🔗--light{{/unless}}" href="/about-me/" title="Go to the about page." data-nav-item><span class="nav__🔗-index">.01</span>About Me</a></li>
+                    <!-- END : NAV ITEM /-->
+                    <!-- BEGIN : NAV ITEM -->
+                    <li class="nav__item"><a class="nav__🔗{{#if portfolio}} nav__🔗--active{{/if}}{{#unless home}} nav__🔗--light{{/unless}}" href="/portfolio/" title="Go to the portfolio page." data-nav-item><span class="nav__🔗-index">.02</span>Portfolio</a></li>
+                    <!-- END : NAV ITEM /-->
+                    <!-- BEGIN : NAV ITEM -->
+                    <li class="nav__item"><a class="nav__🔗{{#if articles}} nav__🔗--active{{/if}}{{#unless home}} nav__🔗--light{{/unless}}" href="/articles/" title="Go to the articles page." data-nav-item><span class="nav__🔗-index">.03</span>Articles</a></li>
+                    <!-- END : NAV ITEM /-->
+                    <!-- BEGIN : NAV ITEM -->
+                    <li class="nav__item"><a class="nav__🔗{{#if contact}} nav__🔗--active{{/if}}{{#unless home}} nav__🔗--light{{/unless}}" href="/contact/" title="Go to the contact page." data-nav-item><span class="nav__🔗-index">.04</span>Contact</a></li>
+                    <!-- END : NAV ITEM /-->
                 </ul>
                 <span class="nav__item-active" data-nav-item-active></span>
             </nav>

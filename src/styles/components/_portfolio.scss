@@ -1,0 +1,141 @@
+// Portfolio..........Portfolio section styles.
+
+.portfolio {
+  position: relative;
+  padding-top: ($core-padding * 3);
+  padding-bottom: ($core-padding * 3);
+
+  @include min(l) {
+    padding-top: ($core-padding * 4.5);
+    padding-bottom: ($core-padding * 4.5);
+  }
+}
+
+.portfolio__title {
+  margin-bottom: ($core-margin / 2);
+}
+
+.portfolio__title-small {
+  @include text(pluto);
+}
+
+.portfolio__subText {
+  max-width: 550px;
+  margin-bottom: ($core-margin * 3);
+}
+
+.portfolio__content {
+  @include min(m) {
+    column-count: 2;
+    column-gap: ($core-margin * 2.2);
+  }
+}
+
+.portfolio__item {
+  display: block;
+  background-color: $core-color-brand;
+  margin-bottom: ($core-margin * 2.2);
+
+  @include min(m) {
+    display: inline-block;
+    width: 100%;
+    margin-bottom: ($core-margin * 2);
+  }
+
+  @include min(l) {
+    overflow: hidden;
+
+    &:hover .portfolio__📷 {
+      @include transform(scale(1.2) rotate(5deg));
+    }
+  }
+}
+
+.portfolio__figure {
+  position: relative;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba($core-color-foreground, 0.1) 0%,$core-color-foreground 100%);
+    z-index: z(alpha);
+  }
+}
+
+.portfolio__image-wrapper {
+  position: relative;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: calc(100% - #{$core-grid-unit * 2});
+    height: calc(100% - #{$core-grid-unit * 2});
+    border-width: $core-border-width;
+    border-style: $core-border-style;
+    border-color: $core-color-link;
+    transform: translate(-50%, -50%);
+    z-index: z(charlie);
+  }
+
+  @include min(xs) {
+    &::before {
+      width: calc(100% - #{$core-grid-unit * 3});
+      height: calc(100% - #{$core-grid-unit * 3});
+    }
+  }
+
+  @include min(l) {
+    &::before {
+      width: calc(100% - #{$core-grid-unit * 4});
+      height: calc(100% - #{$core-grid-unit * 4});
+    }
+  }
+}
+
+.portfolio__📷 {
+  @include min(l) {
+    @include transition-05(transform);
+  }
+}
+
+.portfolio__caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding-top: 0;
+  padding-right: ($core-padding * 2);
+  padding-bottom: ($core-padding * 2.5);
+  padding-left: ($core-padding * 2);
+  color: $core-color-background;
+  z-index: z(beta);
+
+  @include min(xs) {
+    padding-right: ($core-padding * 2.5);
+    padding-left: ($core-padding * 2.5);
+  }
+
+  @include min(l) {
+    padding-top: ($core-padding * 4);
+    padding-right: ($core-padding * 4);
+    padding-bottom: ($core-padding * 4);
+    padding-left: ($core-padding * 4);
+  }
+}
+
+.portfolio__caption-title {
+  @include text(mars);
+  color: $core-color-background;
+}
+
+.portfolio__caption-category {
+  @include text(earth);
+  color: $core-color-link;
+  margin-bottom: 0;
+}

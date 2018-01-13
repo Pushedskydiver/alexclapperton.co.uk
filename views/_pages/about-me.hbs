@@ -1,0 +1,75 @@
+<main class="info-block 📱" id="main">
+    <picture class="info-block__picture lazyload" data-info-block-picture>
+        <source media="(max-width: 640px)" data-srcset="/images/banner/banner-about-mobile.jpg">
+        <source media="(min-width: 640px)" data-srcset="/images/banner/banner-about-desktop.jpg">
+        <img class="info-block__image lazyload__image lazyload__image--lazy" data-src="/images/banner/banner-about-desktop.jpg" alt="Wide shot of Alex Clapperton sat down working on his laptop." data-lazy>
+
+        <noscript>
+            <source media="(max-width: 640px)" data-srcset="/images/banner/banner-about-mobile.jpg">
+            <source media="(min-width: 640px)" data-srcset="/images/banner/banner-about-desktop.jpg">
+            <img class="info-block__image" data-src="/images/banner/banner-about-desktop.jpg" alt="Wide shot of Alex Clapperton sat down working on his laptop.">
+        </noscript>
+    </picture>
+
+    <div class="info-block__inner hide" data-fade>
+        <h2>Who am I?</h2>
+
+        <p>I'm Alex, a Front-end Web Developer from the UK. My passion is to build beautiful and responsive websites with accessibility at the heart of it. I am currently working as a {{data.global.jobTitle}} for <a class="link" href="{{data.global.employerUrl}}" rel="external">{{data.global.employer}}</a>, a digital agency based in Manchester.</p>
+
+        <p>I thrive off learning new skills, being challenged daily and having to prove myself under pressure and being part of such young and dynamic industry is the perfect motivation for me to keep improving myself both professionally and personally.</p>
+
+        <a class="info-block__button button button--primary" href="/contact/">
+            Get in touch
+            <svg class="button__icon" width="20" height="20">
+                <title>Right Arrow</title>
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/icons/sprite.svg#arrow"></use>
+            </svg>
+        </a>
+    </div>
+</main>
+
+<section class="blocks 📱">
+    <div class="blocks__inner 🖼">
+        <h3 class="blocks__title hide" data-fade>Fun facts</h3>
+        <p class="blocks__subText hide" data-fade>Here are some facts about me that I think you may find interesting and hopefully make you giggle along the way.</p>
+
+        <div class="blocks__content hide" data-fade>
+            <div class="blocks__item">
+                <h4 class="blocks__item-title">To pun or <span class="blocks__item-title--strike">not</span> to pun?</h4>
+                <p class="blocks__item-body">I absolutley love a good pun, and by good pun, I mean a bad pun. Bad puns are the best. Making puns is something I do on a daily basis. I am in constant competiton with my work colleagues and I usually come out on top.</p>
+            </div>
+
+            <div class="blocks__item hide" data-fade>
+                <h4 class="blocks__item-title">Football is my game</h4>
+                <p class="blocks__item-body">Football has been a big part of my life ever since my childhood. It is my favourite sport and I play the 5-a-side format on a regular basis. I support none other than the almighty boys in blue, Manchester City.</p>
+            </div>
+
+            <div class="blocks__item hide" data-fade>
+                <h4 class="blocks__item-title">Super addicted to Apple</h4>
+                <p class="blocks__item-body">If there is definitely one thing I am known for then it's my love for Apple. I am absolutley obsessed with buying the latest Apple products. It is like a drug. I have been a fan of Apple since the launch of the original iPhone back in 2007.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="articles 📱">
+    <div class="articles__inner hide 🖼" data-fade>
+        <small class="articles__title-small">Read my</small>
+        <h3 class="articles__title-main">Latest articles</h3>
+        <div class="articles__content">
+            {{#eachUpTo articles.[2018] 1}}
+              {{>articles}}
+            {{/eachUpTo}}
+            {{#eachUpTo articles.[2017] 2}}
+              {{>articles}}
+            {{/eachUpTo}}
+        </div>
+        <a class="button button--secondary" href="/articles/">
+            View articles
+            <svg class="button__icon" width="20" height="20">
+                <title>Right Arrow</title>
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/icons/sprite.svg#arrow"></use>
+            </svg>
+        </a>
+    </div>
+</section>

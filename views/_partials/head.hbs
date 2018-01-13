@@ -11,15 +11,52 @@
 
         <!-- PAGE TITLE -->
         <title>
-        {{#if title}}{{{title}}} &mdash; {{/if}}{{{global.name}}}
-        {{#if global.jobTitle}} &mdash; {{{global.jobTitle}}}{{/if}}
+            {{#if title}}{{{title}}} &mdash; {{/if}}{{{data.global.name}}}
+            {{#if global.jobTitle}} &mdash; {{{data.global.jobTitle}}}{{/if}}
         </title>
 
         <!-- PRELOAD FILES -->
-        <link rel="preload" as="style" href="/css/main.css">
+        <link rel="preload" href="/css/main.css" as="style">
+        <link rel="preload" href="/fonts/ubuntu/ubuntu-regular.woff" as="font" type="font/woff" crossorigin>
+        <link rel="preload" href="/fonts/ubuntu/ubuntu-medium.woff" as="font" type="font/woff" crossorigin>
+        <link rel="preload" href="/fonts/nunito-sans/nunito-sans-regular.woff" as="font" type="font/woff" media="(min-width: 62em)" crossorigin>
+        <link rel="preload" href="/fonts/nunito-sans/nunito-sans-semi-bold.woff" as="font" type="font/woff" media="(min-width: 62em)" crossorigin>
 
         <!-- STYLESHEET -->
         <link rel="stylesheet" href="/css/main.css">
+
+        <!-- MANIFEST -->
+        <link rel="manifest" href="/manifest.json">
+
+        <!-- FACEBOOK -->
+        <meta property="og:title" content="{{#if title}}{{{title}}} &mdash; {{/if}}{{{data.global.name}}}{{#if global.jobTitle}} &mdash; {{{data.global.jobTitle}}}{{/if}}" />
+        <meta property="og:type" content="{{#if pubDate}}article{{else}}website{{/if}}" />
+        <meta property="og:url" content="{{{data.global.url}}}{{#if pubDate}}/articles{{/if}}{{#if slug}}/{{{slug}}}{{/if}}" />
+        <meta property="og:image" content="{{{data.global.url}}}{{#if ogImage}}{{{ogImage}}}{{else}}/images/profile/alex-clapperton.jpg{{/if}}" />
+        <meta property="og:description" content="{{#if summary}}{{{summary}}}{{else}}{{{data.global.name}}} &mdash; blog{{/if}}">
+        <meta property="og:locale" content="en_GB">
+        <meta property="article:author" content="{{{data.global.name}}}">
+        <meta property="og:site_name" content="{{{data.global.name}}} &mdash; blog">
+
+        <!-- TWITTER -->
+        <meta name="twitter:card" content="summary">
+        <meta name="twitter:site" content="{{{data.global.twitterHandle}}}">
+        <meta name="twitter:creator" content="{{{data.global.twitterHandle}}}">
+        <meta name="twitter:url" content="{{{data.global.url}}}{{#if pubDate}}/articles{{/if}}{{#if slug}}/{{{slug}}}{{/if}}">
+        <meta name="twitter:title" content="{{#if title}}{{{title}}} &mdash; {{/if}}{{{data.global.name}}}{{#if global.jobTitle}} &mdash; {{{data.global.jobTitle}}}{{/if}}">
+        <meta name="twitter:description" content="{{#if summary}}{{{summary}}}{{else}}{{{data.global.name}}} &mdash; blog{{/if}}">
+        <meta name="twitter:image" content="{{{data.global.url}}}{{#if ogImage}}{{{ogImage}}}{{else}}/images/profile/alex-clapperton.jpg{{/if}}">
+
+
+        <!-- FAVICONS -->
+        <link rel="icon" type="image/png" href="/favicons/favicon-16x16.png" sizes="16x16">
+        <link rel="icon" type="image/png" href="/favicons/favicon-32x32.png" sizes="32x32">
+        <link rel="icon" type="image/png" sizes="96x96" href="/favicons/favicon-96x96.png">
+        <link rel="icon" type="image/png" sizes="144x144" href="/favicons/favicon-144x144.png">
+        <link rel="icon" type="image/png" sizes="256x256" href="/favicons/favicon-256x256.png">
+        <link rel="apple-touch-icon" sizes="152x152" href="/favicons/apple-touch-icon.png">
+        <link rel="mask-icon" href="/favicons/safari-pinned-tab.svg" color="#6622cc">
+        <meta name="theme-color" content="#6622cc">
 
         <!-- JAVASCRIPT -->
         <script src="/js/main.js" defer></script>

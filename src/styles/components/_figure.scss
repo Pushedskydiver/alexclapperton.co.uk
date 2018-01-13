@@ -1,0 +1,22 @@
+// Figure.............Figure and figcaption styles.
+
+.figure {
+  margin-bottom: ($core-margin * 2.5);
+}
+
+.figure__img {
+  padding-top: $core-padding;
+  padding-right: $core-padding;
+  padding-bottom: $core-padding;
+  padding-left: $core-padding;
+  border-width: 1px;
+  border-style: $core-border-style;
+  border-color: darken($core-color-background, 15%);
+}
+
+.figure__caption {
+  @include text(moon);
+  margin-top: ($core-margin / 2);
+  margin-bottom: 0;
+  text-align: center;
+}

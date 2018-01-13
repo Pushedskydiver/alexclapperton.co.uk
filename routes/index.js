@@ -12,8 +12,8 @@ const cache = expresslru({
 module.exports = app => {
   app.get('/', cache, (req, res) => {
   	res.render('index', {
-      title: 'Express',
-      active_home: true,
+      title: 'Alex Clapperton',
+      home: true,
       data: {
         global: data,
         articles: articles,
@@ -22,10 +22,44 @@ module.exports = app => {
     });
   });
 
+  app.get('/about-me/', cache, (req, res) => {
+  	res.render('about-me', {
+      title: 'About Me',
+      about: true,
+      data: {
+        global: data,
+        articles: articles
+      }
+    });
+  });
+
+  app.get('/portfolio/', cache, (req, res) => {
+  	res.render('portfolio/index', {
+      title: 'Portfolio',
+      portfolio: true,
+      data: {
+        global: data,
+        articles: articles,
+        portfolio: portfolio
+      }
+    });
+  });
+
+  app.get('/articles/', cache, (req, res) => {
+  	res.render('articles/index', {
+      title: 'Articles',
+      articles: true,
+      data: {
+        global: data,
+        articles: articles
+      }
+    });
+  });
+
   app.get('/contact/', cache, (req, res) => {
   	res.render('contact', {
       title: 'Contact',
-      active_contact: true
+      contact: true
     });
   });
 

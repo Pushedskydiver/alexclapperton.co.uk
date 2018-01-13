@@ -32,5 +32,30 @@
       "handle": "AlexClapperton",
       "external": true
     }
+  ],
+  "navigation": [
+    {
+      "url": "/about-me/",
+      "title": "About Me",
+      "title-attr": "Go to the about page.",
+      "slug": "about"
+    },
+    {
+      "url": "/portfolio/",
+      "title": "Portfolio",
+      "title-attr": "Go to the portfolio page.",
+      "slug": "portfolio"
+    },
+    {
+      "url": "/articles/",
+      "title": "Articles",
+      "title-attr": "Go to the articles page.",
+      "slug": "articles"
+    },
+    {
+      "url": "/contact/",
+      "title": "Contact",
+      "title-attr": "Go to the contact page."
+    }
   ]
 }

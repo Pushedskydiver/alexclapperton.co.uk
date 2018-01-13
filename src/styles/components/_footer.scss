@@ -1,0 +1,80 @@
+// Footer.............Generic footer styles.
+
+.footer {
+  background-color: $core-color-brand;
+  color: $core-color-background;
+  padding-top: ($core-padding * 3.5);
+
+
+  @include max(l) {
+    padding-bottom: ($core-padding * 10);
+  }
+
+  @include min(l) {
+    padding-bottom: ($core-padding * 3.5);
+  }
+}
+
+.footer__content {
+  @include min(l) {
+    @include flex(wrap, row, space-between, null);
+    margin-bottom: ($core-margin * 4);
+  }
+}
+
+.footer__list {
+  @include max(l) {
+    margin-bottom: ($core-margin * 3);
+  }
+}
+
+.footer__list-item {
+  margin-bottom: $core-margin;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.footer__list-item--title {
+  @include text(venus);
+  color: $core-color-background;
+}
+
+.footer__list-item--phone {
+  color: $core-color-link;
+  font-weight: $core-tertiary-font-weight;
+
+  a[href^=tel] {
+    color: $core-color-link;
+    border-bottom-width: 1px;
+    border-bottom-style: $core-border-style;
+    border-bottom-color: $core-color-link;
+  }
+}
+
+.footer__list-item--social {
+  display: inline-block;
+  margin-right: $core-margin;
+}
+
+.footer__list-🔗 {
+  color: $core-color-link;
+  font-weight: $core-tertiary-font-weight;
+  border-bottom-width: 1px;
+  border-bottom-style: $core-border-style;
+  border-bottom-color: $core-color-link;
+
+  @include min(l) {
+    @include transition-03(all);
+
+    &:hover {
+      background-color: $core-color-link;
+      color: $core-color-brand;
+    }
+  }
+}
+
+.footer__body {
+  color: $core-color-neutral;
+}
