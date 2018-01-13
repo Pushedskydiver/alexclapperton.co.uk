@@ -59,7 +59,11 @@ module.exports = app => {
   app.get('/contact/', cache, (req, res) => {
   	res.render('contact', {
       title: 'Contact',
-      contact: true
+      contact: true,
+      data: {
+        global: data,
+        articles: articles
+      }
     });
   });
 

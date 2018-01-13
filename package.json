@@ -14,9 +14,11 @@
     "url": "https://github.com/Pushedskydiver/alexclapperton.co.uk"
   },
   "scripts": {
-    "start": "NODE_ENV=production nodemon server.js"
+    "start": "nodemon --exec npm run babel-node",
+    "babel-node": "NODE_ENV=production babel-node server.js"
   },
   "dependencies": {
+    "babel-cli": "^6.26.0",
     "babel-core": "^6.22.1",
     "body-parser": "~1.18.2",
     "compression": "^1.7.1",

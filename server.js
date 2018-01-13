@@ -1,15 +1,16 @@
 'use strict';
 
-const express = require('express');
-const hbs = require('express-handlebars');
-const spdy = require('spdy');
-const fs = require('fs');
-const path = require('path');
-const methodOverride = require('express-method-override');
-const bodyParser = require('body-parser');
-const compression = require('compression');
-const json = require('express-json');
-const minifyHTML = require('express-minify-html');
+import express from 'express'
+import hbs from 'express-handlebars'
+import spdy from 'spdy'
+import fs from 'fs'
+import path from 'path'
+import methodOverride from 'express-method-override'
+import bodyParser from 'body-parser'
+import compression from 'compression'
+import json from 'express-json'
+import minifyHTML from 'express-minify-html'
+
 const helpers = require(path.resolve(__dirname, 'utils', 'helpers.js'))();
 const port = process.env.PORT || 3001;
 
@@ -28,7 +29,7 @@ app.enable('strict routing');
 app.engine('.hbs', hbs({
   extname: '.hbs',
   layoutsDir: path.join(__dirname, 'views/_layouts'),
-	defaultLayout: 'default.hbs',
+  defaultLayout: 'default.hbs',
   partialsDir: [path.join(__dirname, 'views/_partials')],
   helpers: helpers
 }));
