@@ -1,9 +1,8 @@
-var cacheName = 'alexclapperton:0030';
+var cacheName = 'alexclapperton:0031';
 var cacheFiles = [
   '/',
   '/about-me/',
   '/contact/',
-  '/offline/',
   '/articles/how-to-use-grid-and-flexbox-together/',
   '/articles/working-with-grid-the-holy-grail-of-css-layout/',
   '/articles/from-https-to-css-what-i-have-changed-on-my-website/',
@@ -38,7 +37,7 @@ self.addEventListener('fetch', function(event) {
 // Empty out any caches that don’t match the ones listed.
 self.addEventListener('activate', function(event) {
 
-  var cacheWhitelist = ['alexclapperton:0030'];
+  var cacheWhitelist = ['alexclapperton:0031'];
 
   event.waitUntil(
     caches.keys().then(function(cacheNames) {
