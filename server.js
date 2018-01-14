@@ -60,11 +60,13 @@ require('./routes/errors')(app);
 
 module.exports = app;
 
-spdy.createServer(options, app).listen(port, error => {
-  if (error) {
-    console.error(error);
-    return process.exit(1)
-  } else {
-    console.log('Listening on port: ' + port + '.');
-  }
-});
+if ((app.get('env') === 'development')) {
+  spdy.createServer(options, app).listen(port, error => {
+    if (error) {
+      console.error(error);
+      return process.exit(1)
+    } else {
+      console.log('Listening on port: ' + port + '.');
+    }
+  });
+}
