@@ -16,6 +16,7 @@ const cache = expresslru({
 router.param('slug', (req, res, next, slug) => {
   articles.getArticle(slug).then(article => {
     req.article = article.items[0];
+    console.log(req.article.fields);
     next();
   });
 });
