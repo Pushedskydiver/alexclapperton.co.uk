@@ -14,15 +14,24 @@
     "url": "https://github.com/Pushedskydiver/alexclapperton.co.uk"
   },
   "scripts": {
-    "start": "nodemon --exec npm run babel-node",
-    "babel-node": "NODE_ENV=production babel-node server.js"
+    "start": "npm run production",
+    "heroku-prebuild": "npm install",
+    "production": "cross-env NODE_ENV=production babel-node server.js",
+    "dev": "cross-env NODE_ENV=development nodemon --exec npm run babel-node",
+    "babel-node": "babel-node server.js"
+  },
+  "config": {
+    "accessToken": "73940eda44dadba56db69ec6395029036dbd43845eb476473e17a79f627d351a",
+    "space": "66vjslfacivy"
   },
   "dependencies": {
     "babel-cli": "^6.26.0",
     "babel-core": "^6.22.1",
     "body-parser": "~1.18.2",
     "compression": "^1.7.1",
+    "contentful": "^5.0.5",
     "cookie-parser": "~1.4.3",
+    "cross-env": "^5.1.3",
     "debug": "~2.6.9",
     "express": "~4.15.5",
     "express-handlebars": "^3.0.0",
@@ -33,6 +42,8 @@
     "gulp": "^3.9.1",
     "gulp-serve": "^1.4.0",
     "hbs": "~4.0.1",
+    "helmet": "^3.9.0",
+    "morgan": "^1.9.0",
     "nodemon": "^1.14.11",
     "spdy": "^3.4.7",
     "stylelint-selector-bem-pattern": "^2.0.0",

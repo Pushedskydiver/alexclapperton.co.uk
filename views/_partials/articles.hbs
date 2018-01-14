@@ -1,5 +1,5 @@
 <!-- BEGIN : ARTICLES ITEM -->
-<a class="articles__item" href="/articles/{{slug}}/" title="{{title-attr}}">
+<a class="articles__item" href="/articles/{{slug}}/" title="{{title-attr}}" {{#if external}} rel="external"{{/if}}>
     <div class="article__content">
         <!-- BEGIN : ARTICLES THUMBNAIL -->
         {{#if picture}}
@@ -24,7 +24,7 @@
         <!-- END : ARTICLES THUMBNAIL /-->
         <!-- BEGIN : ARTICLES DETAILS -->
         <div class="articles__details">
-            <span class="articles__title">{{#if external}} rel="external">{{/if}}{{title}}{{#if subtitle}}: <em>{{subtitle}}</em>{{/if}}</span>
+            <span class="articles__title">{{title}}{{#if subtitle}}: <em>{{subtitle}}</em>{{/if}}</span>
             <p class="articles__body">{{summary}}</p>
             <time class="articles__date" datetime="{{pubDate}}">{{readableDate}}</time>
         </div>

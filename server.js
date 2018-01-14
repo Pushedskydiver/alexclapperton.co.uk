@@ -1,15 +1,16 @@
 'use strict';
 
 import express from 'express'
+import path from 'path'
+import fs from 'fs'
 import hbs from 'express-handlebars'
 import spdy from 'spdy'
-import fs from 'fs'
-import path from 'path'
 import methodOverride from 'express-method-override'
 import bodyParser from 'body-parser'
 import compression from 'compression'
 import json from 'express-json'
 import minifyHtml from 'express-minify-html'
+import helmet from 'helmet'
 
 const helpers = require(path.resolve(__dirname, 'utils', 'helpers.js'))();
 const minifyHtmlData = require(path.resolve(__dirname, 'utils', 'minifyHtml.js'));
@@ -26,6 +27,9 @@ const options = {
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views/_pages'));
+app.set('view engine', '.hbs');
+app.set('view cache', true);
+app.use(helmet());
 app.enable('strict routing');
 app.engine('.hbs', hbs({
   extname: '.hbs',
@@ -34,14 +38,13 @@ app.engine('.hbs', hbs({
   partialsDir: [path.join(__dirname, 'views/_partials')],
   helpers: helpers
 }));
-app.set('view engine', '.hbs');
 app.use(compression());
-app.use(express.static(path.join(__dirname, 'public'), { maxAge: 31557600 }));
 app.use(json());
 app.use(methodOverride());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(minifyHtml(minifyHtmlData));
+app.use(express.static(path.join(__dirname, 'public'), { maxAge: 31557600 }));
 
 require('./routes/index')(app);
 
