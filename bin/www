@@ -5,16 +5,11 @@
  */
 
 import fs from 'fs'
+import http from 'http'
 import spdy from 'spdy'
 
 const app = require('../server');
 const debug = require('debug')('contentful_express_tutorial:server');
-const options = {
-  key: fs.readFileSync(__dirname + '/..' + '/ssl/server.key'),
-  cert: fs.readFileSync(__dirname + '/..' + '/ssl/server.crt'),
-  requestCert: false,
-  rejectUnauthorized: false
-};
 
 
 /**
@@ -28,7 +23,7 @@ app.set('port', port);
  * Create HTTP server.
  */
 
-const server = spdy.createServer(options, app);
+const server = http.createServer(app);
 
 /**
  * Listen on provided port, on all network interfaces.
