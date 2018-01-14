@@ -15,7 +15,6 @@
   },
   "scripts": {
     "start": "npm run production",
-    "heroku-prebuild": "npm install",
     "production": "cross-env NODE_ENV=production babel-node server.js",
     "dev": "cross-env NODE_ENV=development nodemon --exec npm run babel-node",
     "babel-node": "babel-node server.js"
