@@ -16,9 +16,9 @@
   "scripts": {
     "start": "npm run production",
     "heroku-prebuild": "yarn && gulp default --prod",
-    "production": "cross-env NODE_ENV=production babel-node server.js",
+    "production": "cross-env NODE_ENV=production babel-node ./bin/www",
     "dev": "cross-env NODE_ENV=development nodemon --exec npm run babel-node",
-    "babel-node": "babel-node server.js"
+    "babel-node": "babel-node ./bin/www"
   },
   "config": {
     "accessToken": "73940eda44dadba56db69ec6395029036dbd43845eb476473e17a79f627d351a",

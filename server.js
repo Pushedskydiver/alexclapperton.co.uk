@@ -2,9 +2,7 @@
 
 import express from 'express'
 import path from 'path'
-import fs from 'fs'
 import hbs from 'express-handlebars'
-import spdy from 'spdy'
 import methodOverride from 'express-method-override'
 import bodyParser from 'body-parser'
 import compression from 'compression'
@@ -18,16 +16,8 @@ const projects = require('./routes/projects');
 
 const helpers = require(path.resolve(__dirname, 'utils', 'helpers.js'))();
 const minifyHtmlData = require(path.resolve(__dirname, 'utils', 'minifyHtml.js'));
-const port = process.env.PORT || 3001;
 
 const app = express();
-
-const options = {
-  key: fs.readFileSync(__dirname + '/ssl/server.key'),
-  cert: fs.readFileSync(__dirname + '/ssl/server.crt'),
-  requestCert: false,
-  rejectUnauthorized: false
-};
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views/_pages'));
@@ -59,14 +49,3 @@ app.use('/portfolio/', projects);
 require('./routes/errors')(app);
 
 module.exports = app;
-
-if ((app.get('env') === 'development')) {
-  spdy.createServer(options, app).listen(port, error => {
-    if (error) {
-      console.error(error);
-      return process.exit(1)
-    } else {
-      console.log('Listening on port: ' + port + '.');
-    }
-  });
-}
