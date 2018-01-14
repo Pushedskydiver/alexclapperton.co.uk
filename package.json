@@ -46,6 +46,7 @@
     "helmet": "^3.9.0",
     "morgan": "^1.9.0",
     "nodemon": "^1.14.11",
+    "run-sequence": "^1.2.2",
     "spdy": "^3.4.7",
     "stylelint-selector-bem-pattern": "^2.0.0",
     "vinyl-ftp": "^0.6.0"
@@ -78,8 +79,7 @@
     "postcss-minify-selectors": "^2.1.1",
     "postcss-reporter": "^3.0.0",
     "postcss-short": "^3.0.1",
-    "require-dir": "^0.3.1",
-    "run-sequence": "^1.2.2"
+    "require-dir": "^0.3.1"
   },
   "babel": {
     "presets": [
