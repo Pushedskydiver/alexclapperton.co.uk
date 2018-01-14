@@ -26,5 +26,15 @@
                 <small class="footer__body">Copyright &copy; 2017 {{data.global.name}}. All rights reserved.</small>
             </div>
         </footer>
+
+        <script>
+            if ('serviceWorker' in navigator) {
+                window.addEventListener('load', function() {
+                  navigator.serviceWorker.register('/sw.js').then(function(registration) {
+                  }).catch(function(err) {
+                  });
+                });
+            }
+        </script>
     </body>
 </html>
