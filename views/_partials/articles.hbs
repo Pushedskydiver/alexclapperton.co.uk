@@ -1,6 +1,6 @@
 <!-- BEGIN : ARTICLES ITEM -->
-<a class="articles__item" href="/articles/{{fields.slug}}/" title="{{fields.articleData.title-attr}}" {{#if external}} rel="external"{{/if}}>
-    <div class="article__content">
+<a class="articles__item" href="/articles/{{fields.slug}}/" title="{{fields.articleData.title-attr}}" {{#if fields.articleData.external}} rel="external"{{/if}}>
+    <div class="article__content{{#unless fields.articleData.picture}} lazyload{{/unless}}">
         <!-- BEGIN : ARTICLES THUMBNAIL -->
         {{#if fields.articleData.picture}}
             <picture class="articles__picture lazyload">

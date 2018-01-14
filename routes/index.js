@@ -3,8 +3,8 @@ import expresslru from 'express-lru'
 
 const router = express.Router();
 const data = require('../_data/global.json');
-const portfolio = require('../_data/portfolio.json');
 const articles = require('../services/articles');
+const projects = require('../services/portfolio');
 
 const cache = expresslru({
   max: 1000,
@@ -19,15 +19,22 @@ router.use(function (req, res, next) {
   });
 });
 
+router.use(function (req, res, next) {
+  projects.getProjects().then(projectsCollection => {
+    req.projects = projectsCollection.items;
+    next();
+  });
+});
+
 /* GET static pages. */
 router.get('/', cache, (req, res, next) => {
   res.render('index', {
     title: 'Alex Clapperton',
     articles: req.articles,
+    projects: req.projects,
     home: true,
     data: {
-      global: data,
-      portfolio: portfolio
+      global: data
     }
   });
 });

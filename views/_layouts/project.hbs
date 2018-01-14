@@ -1,0 +1,36 @@
+{{> head}}
+
+{{> navigation}}
+
+{{> banner}}
+
+<main class="project 📱" id="main">
+    <div class="project__inner 🖼">
+        <div class="project__content">
+            <h2 class="project__title">Project details</h2>
+            {{{body}}}
+        </div>
+
+        <div class="browser hide" data-fade>
+            <svg class="browser__bar" xmlns="http://www.w3.org/2000/svg" width="801" height="23" viewBox="0 0 801 23"><path fill="#f1f1f1" d="M801 23H0V4c0-2.8 3.3-4 6.1-4H797c2.8 0 4.1 1.2 4.1 4v19z"/><path fill="#e74c3c" d="M9.4 11.5a4.7 4.7 0 1 0 9.4 0 4.7 4.7 0 1 0-9.4 0"/><path fill="#f1c40f" d="M24.8 11.5a4.7 4.7 0 1 0 9.4 0 4.7 4.7 0 1 0-9.4 0"/><path fill="#2ecc71" d="M40.2 11.5a4.7 4.7 0 1 0 9.4 0 4.7 4.7 0 1 0-9.4 0"/></svg>
+
+            <div class="browser__wrapper">
+                <picture class="browser__picture lazyload">
+                    <source media="(max-width: 50em)" data-srcset="/images/portfolio/{{project.fields.slug}}/{{project.fields.slug}}-mobile.jpg">
+                    <img class="browser__image lazyload__image lazyload__image--lazy" data-src="/images/portfolio/{{project.fields.slug}}/{{project.fields.slug}}-desktop.jpg" alt="{{project.fields.browserAlt}}" data-lazy>
+                </picture>
+
+                <noscript>
+                    <picture class="browser__picture">
+                        <source media="(max-width: 50em)" srcset="/images/portfolio/{{project.fields.slug}}/{{project.fields.slug}}-mobile.jpg">
+                        <img class="browser__image" src="/images/portfolio/{{project.fields.slug}}/{{project.fields.slug}}-desktop.jpg" alt="{{project.fields.browserAlt}}">
+                    </picture>
+                </noscript>
+            </div>
+        </div>
+    </div>
+</main>
+
+{{> devices}}
+
+{{> footer}}

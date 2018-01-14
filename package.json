@@ -2,7 +2,7 @@
   "name": "node-express",
   "version": "0.0.0",
   "description": "My personal website and blog",
-  "main": "server.js",
+  "main": "app.js",
   "private": true,
   "author": {
     "name": "Alex Clapperton",

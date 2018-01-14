@@ -1,29 +1,29 @@
 <!-- BEGIN : PORTFOLIO ITEM -->
-<a class="portfolio__item {{#if picture}}portfolio__item--large{{/if}}" href="/portfolio/{{slug}}" title="{{title-attr}}" data-portfolio-item>
+<a class="portfolio__item{{#if fields.projectData.picture}} portfolio__item--large{{/if}}" href="/portfolio/{{fields.slug}}" title="{{fields.projectData.title-attr}}" data-portfolio-item>
     <figure class="portfolio__figure">
-        <div class="portfolio__image-wrapper {{#unless picture}}lazyload{{/unless}}">
-        {{#if picture}}
+        <div class="portfolio__image-wrapper{{#unless fields.projectData.picture}} lazyload{{/unless}}">
+        {{#if fields.projectData.picture}}
             <picture class="lazyload">
-                <source media="(max-width: 50em)" data-srcset="/images/portfolio/{{src-mobile}}.jpg">
-                <img class="portfolio__📷 lazyload__image lazyload__image--lazy" data-src="/images/portfolio/{{src-desktop}}.jpg" alt="{{alt}}" data-lazy>
+                <source media="(max-width: 50em)" data-srcset="/images/portfolio/{{fields.projectData.src-mobile}}.jpg">
+                <img class="portfolio__📷 lazyload__image lazyload__image--lazy" data-src="/images/portfolio/{{fields.projectData.src-desktop}}.jpg" alt="{{fields.projectData.alt}}" data-lazy>
 
                 <noscript>
-                    <source media="(max-width: 50em)" srcset="/images/portfolio/{{src-mobile}}.jpg">
-                    <img class="portfolio__📷" src="/images/portfolio/{{src-desktop}}.jpg" alt="{{alt}}">
+                    <source media="(max-width: 50em)" srcset="/images/portfolio/{{fields.projectData.src-mobile}}.jpg">
+                    <img class="portfolio__📷" src="/images/portfolio/{{fields.projectData.src-desktop}}.jpg" alt="{{fields.projectData.alt}}">
                 </noscript>
             </picture>
         {{else}}
-            <img class="portfolio__📷 lazyload__image lazyload__image--lazy" data-src="/images/portfolio/{{src}}.jpg" alt="{{alt}}" data-lazy>
+            <img class="portfolio__📷 lazyload__image lazyload__image--lazy" data-src="/images/portfolio/{{fields.projectData.src}}.jpg" alt="{{fields.projectData.alt}}" data-lazy>
 
             <noscript>
-                <img class="portfolio__📷" src="/images/portfolio/{{src}}.jpg" alt="{{alt}}">
+                <img class="portfolio__📷" src="/images/portfolio/{{fields.projectData.src}}.jpg" alt="{{fields.projectData.alt}}">
             </noscript>
         {{/if}}
         </div>
         <figcaption class="portfolio__caption">
-            <p class="portfolio__caption-title">{{title}}</p>
-            <p class="portfolio__caption-body">{{description}}</p>
-            <p class="portfolio__caption-category">{{category}}</p>
+            <p class="portfolio__caption-title">{{fields.projectName}}</p>
+            <p class="portfolio__caption-body">{{fields.tags}}</p>
+            <p class="portfolio__caption-category">{{fields.category}}</p>
         </figcaption>
     </figure>
 </a>

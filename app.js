@@ -12,7 +12,7 @@ import helmet from 'helmet'
 
 const main = require('./routes/index');
 const articles = require('./routes/articles');
-const projects = require('./routes/projects');
+const portfolio = require('./routes/portfolio');
 
 const helpers = require(path.resolve(__dirname, 'utils', 'helpers.js'))();
 const minifyHtmlData = require(path.resolve(__dirname, 'utils', 'minifyHtml.js'));
@@ -44,7 +44,7 @@ app.use('/', main);
 app.use('/about-me/', main);
 app.use('/contact/', main);
 app.use('/articles/', articles);
-app.use('/portfolio/', projects);
+app.use('/portfolio/', portfolio);
 
 require('./routes/errors')(app);
 

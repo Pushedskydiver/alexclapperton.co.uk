@@ -4,9 +4,9 @@
         <p class="portfolio__subText">We engage with our clients in order to understand their needs and impact their business. See how we’ve helped our clients!</p>
 
         <div class="portfolio__content">
-            {{#eachUpTo data.portfolio.[2016] 4}}
+            {{#each projects}}
                 {{>portfolio}}
-            {{/eachUpTo}}
+            {{/each}}
         </div>
     </div>
 </main>
