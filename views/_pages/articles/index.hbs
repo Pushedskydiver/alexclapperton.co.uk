@@ -1,13 +1,7 @@
 <main class="articles 📱" id="main">
     <div class="articles__inner hide 🖼" data-fade>
         <div class="articles__content">
-            {{#each data.articles.[2018]}}
-              {{>articles}}
-            {{/each}}
-            {{#each data.articles.[2017]}}
-              {{>articles}}
-            {{/each}}
-            {{#each data.articles.[2016]}}
+            {{#each articles}}
               {{>articles}}
             {{/each}}
         </div>

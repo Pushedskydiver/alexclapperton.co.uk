@@ -16,10 +16,7 @@
         <small class="articles__title-small">Read my</small>
         <h3 class="articles__title-main">Latest articles</h3>
         <div class="articles__content">
-            {{#eachUpTo data.articles.[2018] 1}}
-              {{>articles}}
-            {{/eachUpTo}}
-            {{#eachUpTo data.articles.[2017] 2}}
+            {{#eachUpTo articles 3}}
               {{>articles}}
             {{/eachUpTo}}
         </div>

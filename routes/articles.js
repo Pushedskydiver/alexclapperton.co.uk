@@ -1,7 +1,9 @@
 import express from 'express'
 import expresslru from 'express-lru'
+import dateFormat from 'dateformat'
 
 const router = express.Router();
+const data = require('../_data/global.json');
 const articles = require('../services/articles');
 
 const cache = expresslru({
@@ -25,21 +27,28 @@ router.use(function (req, res, next) {
   });
 });
 
-router.get('/articles/:slug', cache, (req, res, next) => {
-  res.render('article', {
+router.get('/:slug', cache, (req, res, next) => {
+  res.render('articles/post', {
     title: req.article.fields.articleName,
     article: req.article,
+    readableDate: dateFormat(req.article.fields.date, 'fullDate'),
     layout: 'post.hbs',
     blog: true,
-    post: true
+    post: true,
+    data: {
+      global: data
+    }
   });
 });
 
-router.get('/articles/', cache, (req, res, next) => {
+router.get('/', cache, (req, res, next) => {
   res.render('articles/index', {
     title: 'Articles',
     articles: req.articles,
-    blog: true
+    blog: true,
+    data: {
+      global: data
+    }
   })
 });
 

@@ -7,7 +7,7 @@
 import fs from 'fs'
 import http from 'http'
 
-const app = require('../server');
+const app = require('../app');
 const debug = require('debug')('contentful_express_tutorial:server');
 
 

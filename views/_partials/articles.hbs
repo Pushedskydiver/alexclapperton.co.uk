@@ -1,32 +1,32 @@
 <!-- BEGIN : ARTICLES ITEM -->
-<a class="articles__item" href="/articles/{{slug}}/" title="{{title-attr}}" {{#if external}} rel="external"{{/if}}>
+<a class="articles__item" href="/articles/{{fields.slug}}/" title="{{fields.articleData.title-attr}}" {{#if external}} rel="external"{{/if}}>
     <div class="article__content">
         <!-- BEGIN : ARTICLES THUMBNAIL -->
-        {{#if picture}}
+        {{#if fields.articleData.picture}}
             <picture class="articles__picture lazyload">
-                <source media="(max-width: 50em)" data-srcset="/images/articles/featured/{{src-mobile}}.jpg">
-                <img class="articles__img lazyload__image lazyload__image--lazy" data-src="/images/articles/featured/{{src-desktop}}.jpg" alt="{{alt}}" data-lazy>
+                <source media="(max-width: 50em)" data-srcset="/images/articles/featured/{{fields.articleData.src-mobile}}.jpg">
+                <img class="articles__img lazyload__image lazyload__image--lazy" data-src="/images/articles/featured/{{fields.articleData.src-desktop}}.jpg" alt="{{fields.articleData.alt}}" data-lazy>
 
                 <noscript>
-                    <source media="(max-width: 50em)" srcset="/images/articles/featured/{{src-mobile}}.jpg">
-                    <img class="articles__img" src="/images/articles/featured/{{src-desktop}}.jpg" alt="{{alt}}">
+                    <source media="(max-width: 50em)" srcset="/images/articles/featured/{{fields.articleData.src-mobile}}.jpg">
+                    <img class="articles__img" src="/images/articles/featured/{{fields.articleData.src-desktop}}.jpg" alt="{{alt}}">
                 </noscript>
             </picture>
         {{else}}
             <div class="articles__picture lazyload">
-                <img class="articles__img lazyload__image lazyload__image--lazy" data-src="/images/articles/featured/{{src}}.jpg" alt="{{alt}}" data-lazy>
+                <img class="articles__img lazyload__image lazyload__image--lazy" data-src="/images/articles/featured/{{fields.articleData.src}}.jpg" alt="{{fields.articleData.alt}}" data-lazy>
 
                 <noscript>
-                    <img class="articles__img" src="/images/articles/featured/{{src}}.jpg" alt="{{alt}}">
+                    <img class="articles__img" src="/images/articles/featured/{{fields.articleData.src}}.jpg" alt="{{fields.articleData.alt}}">
                 </noscript>
             </div>
         {{/if}}
         <!-- END : ARTICLES THUMBNAIL /-->
         <!-- BEGIN : ARTICLES DETAILS -->
         <div class="articles__details">
-            <span class="articles__title">{{title}}{{#if subtitle}}: <em>{{subtitle}}</em>{{/if}}</span>
-            <p class="articles__body">{{summary}}</p>
-            <time class="articles__date" datetime="{{pubDate}}">{{readableDate}}</time>
+            <span class="articles__title">{{fields.articleName}}</span>
+            <p class="articles__body">{{fields.articleDescription}}</p>
+            <time class="articles__date" datetime="{{fields.date}}">{{readableDate}}</time>
         </div>
         <!-- END : ARTICLES DETAILS /-->
     </div>
