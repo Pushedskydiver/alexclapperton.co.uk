@@ -12,6 +12,10 @@ import json from 'express-json'
 import minifyHtml from 'express-minify-html'
 import helmet from 'helmet'
 
+const main = require('./routes/index');
+const articles = require('./routes/articles');
+const projects = require('./routes/projects');
+
 const helpers = require(path.resolve(__dirname, 'utils', 'helpers.js'))();
 const minifyHtmlData = require(path.resolve(__dirname, 'utils', 'minifyHtml.js'));
 const port = process.env.PORT || 3001;
@@ -46,7 +50,13 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(minifyHtml(minifyHtmlData));
 app.use(express.static(path.join(__dirname, 'public'), { maxAge: 31557600 }));
 
-require('./routes/index')(app);
+app.use('/', main);
+app.use('/about-me/', main);
+app.use('/contact/', main);
+app.use('/articles/', articles);
+app.use('/portfolio/', projects);
+
+require('./routes/errors')(app);
 
 module.exports = app;
 
