@@ -1,4 +1,4 @@
-var cacheName = 'alexclapperton:0027';
+var cacheName = 'alexclapperton:0031';
 var cacheFiles = [
   '/',
   '/about-me/',
@@ -37,7 +37,7 @@ self.addEventListener('fetch', function(event) {
 // Empty out any caches that don’t match the ones listed.
 self.addEventListener('activate', function(event) {
 
-  var cacheWhitelist = ['alexclapperton:0027'];
+  var cacheWhitelist = ['alexclapperton:0031'];
 
   event.waitUntil(
     caches.keys().then(function(cacheNames) {

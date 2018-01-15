@@ -8,16 +8,25 @@ const articles = require('../services/articles');
 const projects = require('../services/portfolio');
 
 const cache = expresslru({
-  max: 1000,
-  ttl: 60000,
+  max: 250,
+  ttl: 30000,
   skip: req => !!req.user
 });
 
 /* router params */
 router.param('slug', (req, res, next, slug) => {
   projects.getProject(slug).then(project => {
-    req.project = project.items[0].fields;
-    next();
+    if (project.total > 0) {
+      req.project = project.items[0].fields;
+      next();
+    } else {
+      res.status(404);
+      res.render('404', {
+        title: '404',
+        layout: '404.hbs',
+        home: true
+      });
+    }
   });
 });
 

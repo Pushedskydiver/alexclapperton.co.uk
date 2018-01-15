@@ -7,16 +7,25 @@ const data = require('../_data/global.json');
 const articles = require('../services/articles');
 
 const cache = expresslru({
-  max: 1000,
-  ttl: 60000,
+  max: 250,
+  ttl: 30000,
   skip: req => !!req.user
 });
 
 /* router params */
 router.param('slug', (req, res, next, slug) => {
   articles.getArticle(slug).then(article => {
-    req.article = article.items[0].fields;
-    next();
+    if (article.total > 0) {
+      req.article = article.items[0].fields;
+      next();
+    } else {
+      res.status(404);
+      res.render('404', {
+        title: '404',
+        layout: '404.hbs',
+        home: true
+      });
+    }
   });
 });
 
