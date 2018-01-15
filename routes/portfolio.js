@@ -16,7 +16,7 @@ const cache = expresslru({
 /* router params */
 router.param('slug', (req, res, next, slug) => {
   projects.getProject(slug).then(project => {
-    req.project = project.items[0];
+    req.project = project.items[0].fields;
     next();
   });
 });
@@ -37,7 +37,7 @@ router.use(function (req, res, next) {
 
 router.get('/:slug', cache, (req, res, next) => {
   res.render('portfolio/project', {
-    title: req.project.fields.projectName,
+    title: req.project.projectName,
     project: req.project,
     layout: 'project.hbs',
     portfolio: true,

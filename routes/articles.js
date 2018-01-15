@@ -15,7 +15,7 @@ const cache = expresslru({
 /* router params */
 router.param('slug', (req, res, next, slug) => {
   articles.getArticle(slug).then(article => {
-    req.article = article.items[0];
+    req.article = article.items[0].fields;
     next();
   });
 });
@@ -29,9 +29,9 @@ router.use(function (req, res, next) {
 
 router.get('/:slug', cache, (req, res, next) => {
   res.render('articles/post', {
-    title: req.article.fields.articleName,
+    title: req.article.articleName,
     article: req.article,
-    readableDate: dateFormat(req.article.fields.date, 'fullDate'),
+    readableDate: dateFormat(req.article.date, 'fullDate'),
     layout: 'post.hbs',
     blog: true,
     post: true,
@@ -49,7 +49,7 @@ router.get('/', cache, (req, res, next) => {
     data: {
       global: data
     }
-  })
+  });
 });
 
 module.exports = router;
