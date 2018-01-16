@@ -1,2 +1,854 @@
-"use strict";var docCookies={getItem:function e(t){if(!t)return null;return decodeURIComponent(document.cookie.replace(new RegExp("(?:(?:^|.*;)\\s*"+encodeURIComponent(t).replace(/[\-\.\+\*]/g,"\\$&")+"\\s*\\=\\s*([^;]*).*$)|^.*$"),"$1"))||null},setItem:function e(t,n,o,a,i,r){if(!t||/^(?:expires|max\-age|path|domain|secure)$/i.test(t))return false;var s="";if(o)switch(o.constructor){case Number:s=o===1/0?"; expires=Fri, 31 Dec 9999 23:59:59 GMT":"; max-age="+o;break;case String:s="; expires="+o;break;case Date:s="; expires="+o.toUTCString();break}return document.cookie=encodeURIComponent(t)+"="+encodeURIComponent(n)+s+(i?"; domain="+i:"")+(a?"; path="+a:"")+(r?"; secure":""),true},removeItem:function e(t,n,o){if(!this.hasItem(t))return false;return document.cookie=encodeURIComponent(t)+"=; expires=Thu, 01 Jan 1970 00:00:00 GMT"+(o?"; domain="+o:"")+(n?"; path="+n:""),true},hasItem:function e(t){if(!t)return false;return new RegExp("(?:^|;\\s*)"+encodeURIComponent(t).replace(/[\-\.\+\*]/g,"\\$&")+"\\s*\\=").test(document.cookie)},keys:function e(){for(var t=document.cookie.replace(/((?:^|\s*;)[^\=]+)(?=;|$)|^\s*|\s*(?:\=[^;]*)?(?:\1|$)/g,"").split(/\s*(?:\=[^;]*)?;\s*/),n=t.length,o=0;o<n;o++)t[o]=decodeURIComponent(t[o]);return t}};"use strict";var _typeof="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e};!function(e,t){var n=t(e,e.document);e.lazySizes=n,"object"==("undefined"==typeof module?"undefined":_typeof(module))&&module.exports&&(module.exports=n)}(window,function(e,t){if(t.getElementsByClassName){var n,o,a=t.documentElement,i=e.Date,r=e.HTMLPictureElement,s="addEventListener",l="getAttribute",c=e[s],u=e.setTimeout,d=e.requestAnimationFrame||u,f=e.requestIdleCallback,g=/^picture$/i,m=["load","error","lazyincluded","_lazyloaded"],p={},v=Array.prototype.forEach,h=function e(t,n){return p[n]||(p[n]=new RegExp("(\\s|^)"+n+"(\\s|$)")),p[n].test(t[l]("class")||"")&&p[n]},b=function e(t,n){h(t,n)||t.setAttribute("class",(t[l]("class")||"").trim()+" "+n)},y=function e(t,n){var o;(o=h(t,n))&&t.setAttribute("class",(t[l]("class")||"").replace(o," "))},w=function e(t,n,o){var a=o?s:"removeEventListener";o&&e(t,n),m.forEach(function(e){t[a](e,n)})},j=function e(o,a,i,r,s){var l=t.createEvent("CustomEvent");return i||(i={}),i.instance=n,l.initCustomEvent(a,!r,!s,i),o.dispatchEvent(l),l},z=function t(n,a){var i;!r&&(i=e.picturefill||o.pf)?i({reevaluate:!0,elements:[n]}):a&&a.src&&(n.src=a.src)},k=function e(t,n){return(getComputedStyle(t,null)||{})[n]},A=function e(t,n,a){for(a=a||t.offsetWidth;a<o.minSize&&n&&!t._lazysizesWidth;)a=n.offsetWidth,n=n.parentNode;return a},C=function(){var e,n,o=[],a=[],i=o,r=function t(){var r=i;for(i=o.length?a:o,e=!0,n=!1;r.length;)r.shift()();e=!1},s=function o(a,s){e&&!s?a.apply(this,arguments):(i.push(a),n||(n=!0,(t.hidden?u:d)(r)))};return s._lsFlush=r,s}(),L=function e(t,n){return n?function(){C(t)}:function(){var e=this,n=arguments;C(function(){t.apply(e,n)})}},T=function e(t){var n,a=0,r=o.ricTimeout,s=function e(){n=!1,a=i.now(),t()},l=f&&o.ricTimeout?function(){f(s,{timeout:r}),r!==o.ricTimeout&&(r=o.ricTimeout)}:L(function(){u(s)},!0);return function(e){var t;(e=!0===e)&&(r=33),n||(n=!0,t=125-(i.now()-a),0>t&&(t=0),e||9>t&&f?l():u(l,t))}},E=function e(t){var n,o,a=99,r=function e(){n=null,t()},s=function e(){var t=i.now()-o;a>t?u(e,a-t):(f||r)(r)};return function(){o=i.now(),n||(n=u(s,a))}};!function(){var t,n={lazyClass:"lazyload",loadedClass:"lazyloaded",loadingClass:"lazyloading",preloadClass:"lazypreload",errorClass:"lazyerror",autosizesClass:"lazyautosizes",srcAttr:"data-src",srcsetAttr:"data-srcset",sizesAttr:"data-sizes",minSize:40,customMedia:{},init:!0,expFactor:1.5,hFac:.8,loadMode:2,loadHidden:!0,ricTimeout:300};o=e.lazySizesConfig||e.lazysizesConfig||{};for(t in n)t in o||(o[t]=n[t]);e.lazySizesConfig=o,u(function(){o.init&&S()})}();var x=function(){var r,d,f,m,p,A,x,S,I,N,M,_,O,W,B=/^img$/i,F=/^iframe$/i,R="onscroll"in e&&!/glebot/.test(navigator.userAgent),D=0,$=0,H=0,Y=-1,q=function e(t){H--,t&&t.target&&w(t.target,e),(!t||0>H||!t.target)&&(H=0)},U=function e(n,o){var i,r=n,s="hidden"==k(t.body,"visibility")||"hidden"!=k(n,"visibility");for(S-=o,M+=o,I-=o,N+=o;s&&(r=r.offsetParent)&&r!=t.body&&r!=a;)s=(k(r,"opacity")||1)>0,s&&"visible"!=k(r,"overflow")&&(i=r.getBoundingClientRect(),s=N>i.left&&I<i.right&&M>i.top-1&&S<i.bottom+1);return s},G=function e(){var i,s,c,u,f,g,p,v,h,b=n.elements;if((m=o.loadMode)&&8>H&&(i=b.length)){s=0,Y++,null==O&&("expand"in o||(o.expand=a.clientHeight>500&&a.clientWidth>500?500:370),_=o.expand,O=_*o.expFactor),O>$&&1>H&&Y>2&&m>2&&!t.hidden?($=O,Y=0):$=m>1&&Y>1&&6>H?_:0;for(;i>s;s++)if(b[s]&&!b[s]._lazyRace)if(R)if((v=b[s][l]("data-expand"))&&(g=1*v)||(g=$),h!==g&&(A=innerWidth+g*W,x=innerHeight+g,p=-1*g,h=g),c=b[s].getBoundingClientRect(),(M=c.bottom)>=p&&(S=c.top)<=x&&(N=c.right)>=p*W&&(I=c.left)<=A&&(M||N||I||S)&&(o.loadHidden||"hidden"!=k(b[s],"visibility"))&&(d&&3>H&&!v&&(3>m||4>Y)||U(b[s],g))){if(te(b[s]),f=!0,H>9)break}else!f&&d&&!u&&4>H&&4>Y&&m>2&&(r[0]||o.preloadAfterLoad)&&(r[0]||!v&&(M||N||I||S||"auto"!=b[s][l](o.sizesAttr)))&&(u=r[0]||b[s]);else te(b[s]);u&&!f&&te(u)}},K=T(G),Z=function e(t){b(t.target,o.loadedClass),y(t.target,o.loadingClass),w(t.target,V),j(t.target,"lazyloaded")},J=L(Z),V=function e(t){J({target:t.target})},Q=function e(t,n){try{t.contentWindow.location.replace(n)}catch(e){t.src=n}},X=function e(t){var n,a=t[l](o.srcsetAttr);(n=o.customMedia[t[l]("data-media")||t[l]("media")])&&t.setAttribute("media",n),a&&t.setAttribute("srcset",a)},ee=L(function(e,t,n,a,i){var r,s,c,d,m,p;(m=j(e,"lazybeforeunveil",t)).defaultPrevented||(a&&(n?b(e,o.autosizesClass):e.setAttribute("sizes",a)),s=e[l](o.srcsetAttr),r=e[l](o.srcAttr),i&&(c=e.parentNode,d=c&&g.test(c.nodeName||"")),p=t.firesLoad||"src"in e&&(s||r||d),m={target:e},p&&(w(e,q,!0),clearTimeout(f),f=u(q,2500),b(e,o.loadingClass),w(e,V,!0)),d&&v.call(c.getElementsByTagName("source"),X),s?e.setAttribute("srcset",s):r&&!d&&(F.test(e.nodeName)?Q(e,r):e.src=r),i&&(s||d)&&z(e,{src:r})),e._lazyRace&&delete e._lazyRace,y(e,o.lazyClass),C(function(){(!p||e.complete&&e.naturalWidth>1)&&(p?q(m):H--,Z(m))},!0)}),te=function e(t){var n,a=B.test(t.nodeName),i=a&&(t[l](o.sizesAttr)||t[l]("sizes")),r="auto"==i;(!r&&d||!a||!t[l]("src")&&!t.srcset||t.complete||h(t,o.errorClass)||!h(t,o.lazyClass))&&(n=j(t,"lazyunveilread").detail,r&&P.updateElem(t,!0,t.offsetWidth),t._lazyRace=!0,H++,ee(t,n,r,i,a))},ne=function e(){if(!d){if(i.now()-p<999)return void u(e,999);var t=E(function(){o.loadMode=3,K()});d=!0,o.loadMode=3,K(),c("scroll",function(){3==o.loadMode&&(o.loadMode=2),t()},!0)}};return{_:function l(){p=i.now(),n.elements=t.getElementsByClassName(o.lazyClass),r=t.getElementsByClassName(o.lazyClass+" "+o.preloadClass),W=o.hFac,c("scroll",K,!0),c("resize",K,!0),e.MutationObserver?new MutationObserver(K).observe(a,{childList:!0,subtree:!0,attributes:!0}):(a[s]("DOMNodeInserted",K,!0),a[s]("DOMAttrModified",K,!0),setInterval(K,999)),c("hashchange",K,!0),["focus","mouseover","click","load","transitionend","animationend","webkitAnimationEnd"].forEach(function(e){t[s](e,K,!0)}),/d$|^c/.test(t.readyState)?ne():(c("load",ne),t[s]("DOMContentLoaded",K),u(ne,2e4)),n.elements.length?(G(),C._lsFlush()):K()},checkElems:K,unveil:te}}(),P=function(){var e,n=L(function(e,t,n,o){var a,i,r;if(e._lazysizesWidth=o,o+="px",e.setAttribute("sizes",o),g.test(t.nodeName||""))for(a=t.getElementsByTagName("source"),i=0,r=a.length;r>i;i++)a[i].setAttribute("sizes",o);n.detail.dataAttr||z(e,n.detail)}),a=function e(t,o,a){var e,i=t.parentNode;i&&(a=A(t,i,a),e=j(t,"lazybeforesizes",{width:a,dataAttr:!!o}),e.defaultPrevented||(a=e.detail.width,a&&a!==t._lazysizesWidth&&n(t,i,e,a)))},i=function t(){var n,o=e.length;if(o)for(n=0;o>n;n++)a(e[n])},r=E(i);return{_:function n(){e=t.getElementsByClassName(o.autosizesClass),c("resize",r)},checkElems:r,updateElem:a}}(),S=function e(){e.i||(e.i=!0,P._(),x._())};return n={cfg:o,autoSizer:P,loader:x,init:S,uP:z,aC:b,rC:y,hC:h,fire:j,gW:A,rAF:C}}}),function(e){var t="localhost"===e.location.hostname?null:e.location.hostname,n=function e(){docCookies.hasItem("browserNoticeDismissed")||(document.body.className+=" browser-notice-active"),docCookies.hasItem("cssNoticeDismissed")||(document.body.className+=" css-notice-active")},o=function e(){for(var t=document.getElementsByClassName("js-close-notice"),n=0;n<t.length;++n)t[n].addEventListener("click",a),t[n].addEventListener("click",i)},a=function e(t){t.target.parentNode.style.display="none"},i=function e(n){var o=n.target.parentNode.classList[1].replace("support-notice--","");docCookies.setItem(o+"NoticeDismissed",true,"Fri, 31 Dec 9999 23:59:59 GMT","/",t)};!function e(){n(),o()}()}(window);var _self="undefined"!=typeof window?window:"undefined"!=typeof WorkerGlobalScope&&self instanceof WorkerGlobalScope?self:{},Prism=function(){var e=/\blang(?:uage)?-(\w+)\b/i,t=0,n=_self.Prism={manual:_self.Prism&&_self.Prism.manual,util:{encode:function e(t){return t instanceof o?new o(t.type,n.util.encode(t.content),t.alias):"Array"===n.util.type(t)?t.map(n.util.encode):t.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/\u00a0/g," ")},type:function e(t){return Object.prototype.toString.call(t).match(/\[object (\w+)\]/)[1]},objId:function e(n){return n.__id||Object.defineProperty(n,"__id",{value:++t}),n.__id},clone:function e(t){switch(n.util.type(t)){case"Object":var o={};for(var a in t)t.hasOwnProperty(a)&&(o[a]=n.util.clone(t[a]));return o;case"Array":return t.map&&t.map(function(e){return n.util.clone(e)})}return t}},languages:{extend:function e(t,o){var a=n.util.clone(n.languages[t]);for(var i in o)a[i]=o[i];return a},insertBefore:function e(t,o,a,i){i=i||n.languages;var r=i[t];if(2==arguments.length){a=arguments[1];for(var s in a)a.hasOwnProperty(s)&&(r[s]=a[s]);return r}var l={};for(var c in r)if(r.hasOwnProperty(c)){if(c==o)for(var s in a)a.hasOwnProperty(s)&&(l[s]=a[s]);l[c]=r[c]}return n.languages.DFS(n.languages,function(e,n){n===i[t]&&e!=t&&(this[e]=l)}),i[t]=l},DFS:function e(t,o,a,i){i=i||{};for(var r in t)t.hasOwnProperty(r)&&(o.call(t,r,t[r],a||r),"Object"!==n.util.type(t[r])||i[n.util.objId(t[r])]?"Array"!==n.util.type(t[r])||i[n.util.objId(t[r])]||(i[n.util.objId(t[r])]=!0,n.languages.DFS(t[r],o,r,i)):(i[n.util.objId(t[r])]=!0,n.languages.DFS(t[r],o,null,i)))}},plugins:{},highlightAll:function e(t,o){var a={callback:o,selector:'code[class*="language-"], [class*="language-"] code, code[class*="lang-"], [class*="lang-"] code'};n.hooks.run("before-highlightall",a);for(var i,r=a.elements||document.querySelectorAll(a.selector),s=0;i=r[s++];)n.highlightElement(i,!0===t,a.callback)},highlightElement:function t(o,a,i){for(var r,s,l=o;l&&!e.test(l.className);)l=l.parentNode;l&&(r=(l.className.match(e)||[,""])[1].toLowerCase(),s=n.languages[r]),o.className=o.className.replace(e,"").replace(/\s+/g," ")+" language-"+r,l=o.parentNode,/pre/i.test(l.nodeName)&&(l.className=l.className.replace(e,"").replace(/\s+/g," ")+" language-"+r);var c=o.textContent,u={element:o,language:r,grammar:s,code:c};if(n.hooks.run("before-sanity-check",u),!u.code||!u.grammar)return u.code&&(u.element.textContent=u.code),n.hooks.run("complete",u),void 0;if(n.hooks.run("before-highlight",u),a&&_self.Worker){var d=new Worker(n.filename);d.onmessage=function(e){u.highlightedCode=e.data,n.hooks.run("before-insert",u),u.element.innerHTML=u.highlightedCode,i&&i.call(u.element),n.hooks.run("after-highlight",u),n.hooks.run("complete",u)},d.postMessage(JSON.stringify({language:u.language,code:u.code,immediateClose:!0}))}else u.highlightedCode=n.highlight(u.code,u.grammar,u.language),n.hooks.run("before-insert",u),u.element.innerHTML=u.highlightedCode,i&&i.call(o),n.hooks.run("after-highlight",u),n.hooks.run("complete",u)},highlight:function e(t,a,i){var r=n.tokenize(t,a);return o.stringify(n.util.encode(r),i)},tokenize:function e(t,o){var a=n.Token,i=[t],r=o.rest;if(r){for(var s in r)o[s]=r[s];delete o.rest}e:for(var s in o)if(o.hasOwnProperty(s)&&o[s]){var l=o[s];l="Array"===n.util.type(l)?l:[l];for(var c=0;c<l.length;++c){var u=l[c],d=u.inside,f=!!u.lookbehind,g=!!u.greedy,m=0,p=u.alias;if(g&&!u.pattern.global){var v=u.pattern.toString().match(/[imuy]*$/)[0];u.pattern=RegExp(u.pattern.source,v+"g")}u=u.pattern||u;for(var h=0,b=0;h<i.length;b+=i[h].length,++h){var y=i[h];if(i.length>t.length)break e;if(!(y instanceof a)){u.lastIndex=0;var w=u.exec(y),j=1;if(!w&&g&&h!=i.length-1){if(u.lastIndex=b,w=u.exec(t),!w)break;for(var z=w.index+(f?w[1].length:0),k=w.index+w[0].length,A=h,C=b,L=i.length;L>A&&k>C;++A)C+=i[A].length,z>=C&&(++h,b=C);if(i[h]instanceof a||i[A-1].greedy)continue;j=A-h,y=t.slice(b,C),w.index-=b}if(w){f&&(m=w[1].length);var z=w.index+m,w=w[0].slice(m),k=z+w.length,T=y.slice(0,z),E=y.slice(k),x=[h,j];T&&x.push(T);var P=new a(s,d?n.tokenize(w,d):w,p,w,g);x.push(P),E&&x.push(E),Array.prototype.splice.apply(i,x)}}}}}return i},hooks:{all:{},add:function e(t,o){var a=n.hooks.all;a[t]=a[t]||[],a[t].push(o)},run:function e(t,o){var a=n.hooks.all[t];if(a&&a.length)for(var i,r=0;i=a[r++];)i(o)}}},o=n.Token=function(e,t,n,o,a){this.type=e,this.content=t,this.alias=n,this.length=0|(o||"").length,this.greedy=!!a};if(o.stringify=function(e,t,a){if("string"==typeof e)return e;if("Array"===n.util.type(e))return e.map(function(n){return o.stringify(n,t,e)}).join("");var i={type:e.type,content:o.stringify(e.content,t,a),tag:"span",classes:["token",e.type],attributes:{},language:t,parent:a};if("comment"==i.type&&(i.attributes.spellcheck="true"),e.alias){var r="Array"===n.util.type(e.alias)?e.alias:[e.alias];Array.prototype.push.apply(i.classes,r)}n.hooks.run("wrap",i);var s=Object.keys(i.attributes).map(function(e){return e+'="'+(i.attributes[e]||"").replace(/"/g,"&quot;")+'"'}).join(" ");return"<"+i.tag+' class="'+i.classes.join(" ")+'"'+(s?" "+s:"")+">"+i.content+"</"+i.tag+">"},!_self.document)return _self.addEventListener?(_self.addEventListener("message",function(e){var t=JSON.parse(e.data),o=t.language,a=t.code,i=t.immediateClose;_self.postMessage(n.highlight(a,n.languages[o],o)),i&&_self.close()},!1),_self.Prism):_self.Prism;var a=document.currentScript||[].slice.call(document.getElementsByTagName("script")).pop();return a&&(n.filename=a.src,!document.addEventListener||n.manual||a.hasAttribute("data-manual")||("loading"!==document.readyState?window.requestAnimationFrame?window.requestAnimationFrame(n.highlightAll):window.setTimeout(n.highlightAll,16):document.addEventListener("DOMContentLoaded",n.highlightAll))),_self.Prism}();"undefined"!=typeof module&&module.exports&&(module.exports=Prism),"undefined"!=typeof global&&(global.Prism=Prism),Prism.languages.markup={comment:/<!--[\w\W]*?-->/,prolog:/<\?[\w\W]+?\?>/,doctype:/<!DOCTYPE[\w\W]+?>/i,cdata:/<!\[CDATA\[[\w\W]*?]]>/i,tag:{pattern:/<\/?(?!\d)[^\s>\/=$<]+(?:\s+[^\s>\/=]+(?:=(?:("|')(?:\\\1|\\?(?!\1)[\w\W])*\1|[^\s'">=]+))?)*\s*\/?>/i,inside:{tag:{pattern:/^<\/?[^\s>\/]+/i,inside:{punctuation:/^<\/?/,namespace:/^[^\s>\/:]+:/}},"attr-value":{pattern:/=(?:('|")[\w\W]*?(\1)|[^\s>]+)/i,inside:{punctuation:/[=>"']/}},punctuation:/\/?>/,"attr-name":{pattern:/[^\s>\/]+/,inside:{namespace:/^[^\s>\/:]+:/}}}},entity:/&#?[\da-z]{1,8};/i},Prism.hooks.add("wrap",function(e){"entity"===e.type&&(e.attributes.title=e.content.replace(/&amp;/,"&"))}),Prism.languages.xml=Prism.languages.markup,Prism.languages.html=Prism.languages.markup,Prism.languages.mathml=Prism.languages.markup,Prism.languages.svg=Prism.languages.markup,Prism.languages.css={comment:/\/\*[\w\W]*?\*\//,atrule:{pattern:/@[\w-]+?.*?(;|(?=\s*\{))/i,inside:{rule:/@[\w-]+/}},url:/url\((?:(["'])(\\(?:\r\n|[\w\W])|(?!\1)[^\\\r\n])*\1|.*?)\)/i,selector:/[^\{\}\s][^\{\};]*?(?=\s*\{)/,string:{pattern:/("|')(\\(?:\r\n|[\w\W])|(?!\1)[^\\\r\n])*\1/,greedy:!0},property:/(\b|\B)[\w-]+(?=\s*:)/i,important:/\B!important\b/i,function:/[-a-z0-9]+(?=\()/i,punctuation:/[(){};:]/},Prism.languages.css.atrule.inside.rest=Prism.util.clone(Prism.languages.css),Prism.languages.markup&&(Prism.languages.insertBefore("markup","tag",{style:{pattern:/(<style[\w\W]*?>)[\w\W]*?(?=<\/style>)/i,lookbehind:!0,inside:Prism.languages.css,alias:"language-css"}}),Prism.languages.insertBefore("inside","attr-value",{"style-attr":{pattern:/\s*style=("|').*?\1/i,inside:{"attr-name":{pattern:/^\s*style/i,inside:Prism.languages.markup.tag.inside},punctuation:/^\s*=\s*['"]|['"]\s*$/,"attr-value":{pattern:/.+/i,inside:Prism.languages.css}},alias:"language-css"}},Prism.languages.markup.tag)),Prism.languages.clike={comment:[{pattern:/(^|[^\\])\/\*[\w\W]*?\*\//,lookbehind:!0},{pattern:/(^|[^\\:])\/\/.*/,lookbehind:!0}],string:{pattern:/(["'])(\\(?:\r\n|[\s\S])|(?!\1)[^\\\r\n])*\1/,greedy:!0},"class-name":{pattern:/((?:\b(?:class|interface|extends|implements|trait|instanceof|new)\s+)|(?:catch\s+\())[a-z0-9_\.\\]+/i,lookbehind:!0,inside:{punctuation:/(\.|\\)/}},keyword:/\b(if|else|while|do|for|return|in|instanceof|function|new|try|throw|catch|finally|null|break|continue)\b/,boolean:/\b(true|false)\b/,function:/[a-z0-9_]+(?=\()/i,number:/\b-?(?:0x[\da-f]+|\d*\.?\d+(?:e[+-]?\d+)?)\b/i,operator:/--?|\+\+?|!=?=?|<=?|>=?|==?=?|&&?|\|\|?|\?|\*|\/|~|\^|%/,punctuation:/[{}[\];(),.:]/},Prism.languages.javascript=Prism.languages.extend("clike",{keyword:/\b(as|async|await|break|case|catch|class|const|continue|debugger|default|delete|do|else|enum|export|extends|finally|for|from|function|get|if|implements|import|in|instanceof|interface|let|new|null|of|package|private|protected|public|return|set|static|super|switch|this|throw|try|typeof|var|void|while|with|yield)\b/,number:/\b-?(0x[\dA-Fa-f]+|0b[01]+|0o[0-7]+|\d*\.?\d+([Ee][+-]?\d+)?|NaN|Infinity)\b/,function:/[_$a-zA-Z\xA0-\uFFFF][_$a-zA-Z0-9\xA0-\uFFFF]*(?=\()/i,operator:/--?|\+\+?|!=?=?|<=?|>=?|==?=?|&&?|\|\|?|\?|\*\*?|\/|~|\^|%|\.{3}/}),Prism.languages.insertBefore("javascript","keyword",{regex:{pattern:/(^|[^\/])\/(?!\/)(\[.+?]|\\.|[^\/\\\r\n])+\/[gimyu]{0,5}(?=\s*($|[\r\n,.;})]))/,lookbehind:!0,greedy:!0}}),Prism.languages.insertBefore("javascript","string",{"template-string":{pattern:/`(?:\\\\|\\?[^\\])*?`/,greedy:!0,inside:{interpolation:{pattern:/\$\{[^}]+\}/,inside:{"interpolation-punctuation":{pattern:/^\$\{|\}$/,alias:"punctuation"},rest:Prism.languages.javascript}},string:/[\s\S]+/}}}),Prism.languages.markup&&Prism.languages.insertBefore("markup","tag",{script:{pattern:/(<script[\w\W]*?>)[\w\W]*?(?=<\/script>)/i,lookbehind:!0,inside:Prism.languages.javascript,alias:"language-javascript"}}),Prism.languages.js=Prism.languages.javascript,function(e){window.obj={},obj.config={elements:{body:"body",logo:"[data-logo]",nav:"[data-navigation]",navList:"[data-navigation-list]",navItem:"[data-nav-item]",navItemActive:"[data-nav-item-active]",navTrigger:"[data-navigation-trigger]",fade:"[data-fade]",fadeDelay:"data-fade-delay",image:"[data-lazy]",infoBlockPicture:"[data-info-block-picture]"},classes:{bodyNavOpen:"body--nav-open",logoWhite:"logo--white",navOpen:"nav--open",navListUnload:"nav__list--unload",navItemActive:"nav__item--active",navTriggerActive:"button--nav-active",hideElement:"hide",fadeInElement:"fade-in",lazyload:"lazyload__image--lazy",lazyloaded:"lazyload__image--loaded",imageLoaded:"lazyload--image-loaded"}},obj.init=function(e){obj.html=document.documentElement,obj.body=document.querySelector(obj.config.elements.body),obj.logo=document.querySelector(obj.config.elements.logo),obj.nav=document.querySelector(obj.config.elements.nav),obj.navItem=document.querySelectorAll(obj.config.elements.navItem),obj.navItemActive=document.querySelector(obj.config.elements.navItemActive),obj.navList=document.querySelector(obj.config.elements.navList),obj.mobileNavTrigger=document.querySelector(obj.config.elements.navTrigger),obj.fade=document.querySelectorAll(obj.config.elements.fade),obj.image=document.querySelectorAll(obj.config.elements.image),obj.infoBlockPicture=document.querySelector(obj.config.elements.infoBlockPicture),obj.attachMethods(),obj.attachListeners()},obj.attachMethods=function(){obj.lazyloadConfig(),obj.fadeElementsOnScroll(),obj.handleAciveNavItem(),obj.activeMenuMouseLeave()},obj.attachListeners=function(e){window.addEventListener("scroll",obj.fadeElementsOnScroll),window.addEventListener("resize",obj.handleLazyImageSizes),Array.from(obj.image).map(function(e){e.addEventListener("lazyloaded",function(e){return obj.lazyLoadImages(e)}),e.addEventListener("lazybeforeunveil",function(e){return obj.loadImages(e)})}),window.innerWidth<768?(obj.mobileNavTrigger.addEventListener("click",obj.triggerMobileNav),obj.nav.addEventListener("touchmove",obj.preventMobileNavScroll)):Array.from(obj.navItem).map(function(e){e.parentNode.addEventListener("mouseover",obj.activeMenuMouseOver),e.parentNode.addEventListener("mouseleave",obj.activeMenuMouseLeave),e.addEventListener("focus",obj.activeMenuFocus)})},obj.lazyloadConfig=function(){window.lazySizesConfig.lazyClass=obj.config.classes.lazyload,window.lazySizesConfig.loadedClass=obj.config.classes.lazyloaded,window.lazySizesConfig.expand=50},obj.fadeElementsOnScroll=function(){Array.from(obj.fade).map(function(e){e.getBoundingClientRect().top-window.innerHeight<=0&&(e.classList.remove(obj.config.classes.hideElement),e.classList.add(obj.config.classes.fadeInElement),e.style.transitionDelay=e.getAttribute(obj.config.elements.fadeDelay))})},obj.handleAciveNavItem=function(){Array.from(obj.navItem).map(function(e){0===window.location.pathname.indexOf(e.getAttribute("href"))&&(e.classList.add(obj.config.classes.navLinkctive),e.parentNode.classList.add(obj.config.classes.navItemActive))})},obj.triggerMobileNav=function(){obj.triggerMobileNavAnimation(),obj.body.classList.toggle(obj.config.classes.bodyNavOpen),obj.html.classList.toggle(obj.config.classes.bodyNavOpen),obj.nav.classList.add(obj.config.classes.navOpen),obj.mobileNavTrigger.classList.toggle(obj.config.classes.navTriggerActive),"/"===window.location.pathname&&obj.logo.classList.toggle(obj.config.classes.logoWhite)},obj.triggerMobileNavAnimation=function(){obj.nav.classList.contains(obj.config.classes.navOpen)&&(obj.navList.classList.add(obj.config.classes.navListUnload),obj.navAnimationTimer=setTimeout(function(){obj.nav.classList.remove(obj.config.classes.navOpen),obj.navList.classList.remove(obj.config.classes.navListUnload),clearTimeout(obj.navAnimationTimer)},850))},obj.preventMobileNavScroll=function(e){obj.nav.classList.contains(obj.config.classes.navOpen)&&e.preventDefault()},obj.activeMenuMouseOver=function(e){e=e.currentTarget,obj.navItemActive.style.left=e.firstChild.offsetLeft+"px",obj.navItemActive.style.width=e.firstChild.clientWidth+"px"},obj.activeMenuFocus=function(e){e=e.currentTarget,obj.navItemActive.style.left=e.offsetLeft+"px",obj.navItemActive.style.width=e.clientWidth+"px"},obj.activeMenuMouseLeave=function(){var e=document.querySelectorAll("."+obj.config.classes.navItemActive);if(e.length>0){var t=e[0];obj.navItemActive.style.left=t.firstChild.offsetLeft+"px",obj.navItemActive.style.width=t.firstChild.clientWidth+"px"}else obj.navItemActive.style.left="0px",obj.navItemActive.style.width="0px"},obj.handleLazyImageSizes=function(){Array.from(obj.image).map(function(e){obj.delayImageResize=setTimeout(function(){var t=e.naturalWidth,n=e.naturalHeight,o=(Math.round(n)/Math.round(t)*100).toFixed(2);e.parentNode.style.paddingTop=o.replace(".00","")+"%",window.innerWidth>=992&&document.body.contains(obj.infoBlockPicture)&&(obj.infoBlockPicture.style.paddingTop=""),clearTimeout(obj.delayImageResize)},10)})},obj.lazyLoadImages=function(e){e=e.currentTarget;var t=e.naturalWidth,n=e.naturalHeight,o=(Math.round(n)/Math.round(t)*100).toFixed(2);e.parentNode.style.paddingTop=o.replace(".00","")+"%",window.innerWidth>=992&&document.body.contains(obj.infoBlockPicture)&&(obj.infoBlockPicture.style.paddingTop="")},obj.loadImages=function(e){e=e.currentTarget,e.parentNode.classList.add(obj.config.classes.imageLoaded),e.removeEventListener("lazybeforeunveil",obj.loadImages)},window.addEventListener("DOMContentLoaded",obj.init(e))}();var _typeof="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e};!function(e,t){"function"==typeof define&&define.amd?define([],t()):"object"==("undefined"==typeof module?"undefined":_typeof(module))&&module.exports?module.exports=t():function n(){e=document||document.body,document&&document.body?e.zenscroll=t():setTimeout(n,9)}()}(void 0,function(){var e=function e(t){return"getComputedStyle"in window&&"smooth"===window.getComputedStyle(t)["scroll-behavior"]};if("undefined"==typeof window||!("document"in window))return{};var t=function t(n,o,a){o=o||999,a||0===a||(a=9);var i,r=function e(t){i=t},s=function e(){clearTimeout(i),r(0)},l=function e(t){return Math.max(0,n.getTopOf(t)-a)},c=function t(a,i,l){if(s(),0===i||i&&i<0||e(n.body))n.toY(a),l&&l();else{var t=n.getY(),c=Math.max(0,a)-t,u=(new Date).getTime();i=i||Math.min(Math.abs(c),o),function e(){r(setTimeout(function(){var o=Math.min(1,((new Date).getTime()-u)/i),a=Math.max(0,Math.floor(t+c*(o<.5?2*o*o:o*(4-2*o)-1)));n.toY(a),o<1&&n.getHeight()+a<n.body.scrollHeight?e():(setTimeout(s,99),l&&l())},9))}()}},u=function e(t,n,o){c(l(t),n,o)},d=function e(t,o,i){var r=t.getBoundingClientRect().height,s=n.getTopOf(t)+r,e=n.getHeight(),d=n.getY(),f=d+e;l(t)<d||r+a>e?u(t,o,i):s+a>f?c(s-e+a,o,i):i&&i()},f=function e(t,o,a,i){c(Math.max(0,n.getTopOf(t)-n.getHeight()/2+(a||t.getBoundingClientRect().height/2)),o,i)};return{setup:function e(t,n){return(0===t||t)&&(o=t),(0===n||n)&&(a=n),{defaultDuration:o,edgeOffset:a}},to:u,toY:c,intoView:d,center:f,stop:s,moving:function e(){return!!i},getY:n.getY,getTopOf:n.getTopOf}},n=document.documentElement,o=function e(){return window.scrollY||n.scrollTop},a=t({body:document.scrollingElement||document.body,toY:function e(t){window.scrollTo(0,t)},getY:o,getHeight:function e(){return window.innerHeight||n.clientHeight},getTopOf:function e(t){return t.getBoundingClientRect().top+o()-n.offsetTop}});if(a.createScroller=function(e,o,a){return t({body:e,toY:function t(n){e.scrollTop=n},getY:function t(){return e.scrollTop},getHeight:function t(){return Math.min(e.clientHeight,window.innerHeight||n.clientHeight)},getTopOf:function e(t){return t.offsetTop}},o,a)},"addEventListener"in window&&!window.noZensmooth&&!e(document.body)){var i="scrollRestoration"in history;i&&(history.scrollRestoration="auto"),window.addEventListener("load",function(){i&&(setTimeout(function(){history.scrollRestoration="manual"},9),window.addEventListener("popstate",function(e){e.state&&"zenscrollY"in e.state&&a.toY(e.state.zenscrollY)},!1)),window.location.hash&&setTimeout(function(){var e=a.setup().edgeOffset;if(e){var t=document.getElementById(window.location.href.split("#")[1]);if(t){var n=Math.max(0,a.getTopOf(t)-e),o=a.getY()-n;0<=o&&o<9&&window.scrollTo(0,n)}}},9)},!1);var r=new RegExp("(^|\\s)noZensmooth(\\s|$)");window.addEventListener("click",function(e){for(var t=e.target;t&&"A"!==t.tagName;)t=t.parentNode;if(!(!t||1!==e.which||e.shiftKey||e.metaKey||e.ctrlKey||e.altKey)){if(i)try{history.replaceState({zenscrollY:a.getY()},"")}catch(e){}var n=t.getAttribute("href")||"";if(0===n.indexOf("#")&&!r.test(t.className)){var o=0,s=document.getElementById(n.substring(1));if("#"!==n){if(!s)return;o=a.getTopOf(s)}e.preventDefault();var l=function e(){window.location=n},c=a.setup().edgeOffset;c&&(o=Math.max(0,o-c),l=function e(){history.pushState(null,"",n)}),a.toY(o,null,l)}}},!1)}return a});
+"use strict";
+
+/*\
+|*|
+|*|  :: cookies.js ::
+|*|
+|*|  A complete cookies reader/writer framework with full unicode support.
+|*|
+|*|  Revision #1 - September 4, 2014
+|*|
+|*|  https://developer.mozilla.org/en-US/docs/Web/API/document.cookie
+|*|  https://developer.mozilla.org/User:fusionchess
+|*|
+|*|  This framework is released under the GNU Public License, version 3 or later.
+|*|  http://www.gnu.org/licenses/gpl-3.0-standalone.html
+|*|
+|*|  Syntaxes:
+|*|
+|*|  * docCookies.setItem(name, value[, end[, path[, domain[, secure]]]])
+|*|  * docCookies.getItem(name)
+|*|  * docCookies.removeItem(name[, path[, domain]])
+|*|  * docCookies.hasItem(name)
+|*|  * docCookies.keys()
+|*|
+\*/
+
+var docCookies = {
+  getItem: function getItem(sKey) {
+    if (!sKey) {
+      return null;
+    }
+    return decodeURIComponent(document.cookie.replace(new RegExp("(?:(?:^|.*;)\\s*" + encodeURIComponent(sKey).replace(/[\-\.\+\*]/g, "\\$&") + "\\s*\\=\\s*([^;]*).*$)|^.*$"), "$1")) || null;
+  },
+  setItem: function setItem(sKey, sValue, vEnd, sPath, sDomain, bSecure) {
+    if (!sKey || /^(?:expires|max\-age|path|domain|secure)$/i.test(sKey)) {
+      return false;
+    }
+    var sExpires = "";
+    if (vEnd) {
+      switch (vEnd.constructor) {
+        case Number:
+          sExpires = vEnd === Infinity ? "; expires=Fri, 31 Dec 9999 23:59:59 GMT" : "; max-age=" + vEnd;
+          break;
+        case String:
+          sExpires = "; expires=" + vEnd;
+          break;
+        case Date:
+          sExpires = "; expires=" + vEnd.toUTCString();
+          break;
+      }
+    }
+    document.cookie = encodeURIComponent(sKey) + "=" + encodeURIComponent(sValue) + sExpires + (sDomain ? "; domain=" + sDomain : "") + (sPath ? "; path=" + sPath : "") + (bSecure ? "; secure" : "");
+    return true;
+  },
+  removeItem: function removeItem(sKey, sPath, sDomain) {
+    if (!this.hasItem(sKey)) {
+      return false;
+    }
+    document.cookie = encodeURIComponent(sKey) + "=; expires=Thu, 01 Jan 1970 00:00:00 GMT" + (sDomain ? "; domain=" + sDomain : "") + (sPath ? "; path=" + sPath : "");
+    return true;
+  },
+  hasItem: function hasItem(sKey) {
+    if (!sKey) {
+      return false;
+    }
+    return new RegExp("(?:^|;\\s*)" + encodeURIComponent(sKey).replace(/[\-\.\+\*]/g, "\\$&") + "\\s*\\=").test(document.cookie);
+  },
+  keys: function keys() {
+    var aKeys = document.cookie.replace(/((?:^|\s*;)[^\=]+)(?=;|$)|^\s*|\s*(?:\=[^;]*)?(?:\1|$)/g, "").split(/\s*(?:\=[^;]*)?;\s*/);
+    for (var nLen = aKeys.length, nIdx = 0; nIdx < nLen; nIdx++) {
+      aKeys[nIdx] = decodeURIComponent(aKeys[nIdx]);
+    }
+    return aKeys;
+  }
+};
+"use strict";
+
+var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
+
+/*! lazysizes - v4.0.1 */
+!function (a, b) {
+  var c = b(a, a.document);a.lazySizes = c, "object" == (typeof module === "undefined" ? "undefined" : _typeof(module)) && module.exports && (module.exports = c);
+}(window, function (a, b) {
+  "use strict";
+  if (b.getElementsByClassName) {
+    var c,
+        d,
+        e = b.documentElement,
+        f = a.Date,
+        g = a.HTMLPictureElement,
+        h = "addEventListener",
+        i = "getAttribute",
+        j = a[h],
+        k = a.setTimeout,
+        l = a.requestAnimationFrame || k,
+        m = a.requestIdleCallback,
+        n = /^picture$/i,
+        o = ["load", "error", "lazyincluded", "_lazyloaded"],
+        p = {},
+        q = Array.prototype.forEach,
+        r = function r(a, b) {
+      return p[b] || (p[b] = new RegExp("(\\s|^)" + b + "(\\s|$)")), p[b].test(a[i]("class") || "") && p[b];
+    },
+        s = function s(a, b) {
+      r(a, b) || a.setAttribute("class", (a[i]("class") || "").trim() + " " + b);
+    },
+        t = function t(a, b) {
+      var c;(c = r(a, b)) && a.setAttribute("class", (a[i]("class") || "").replace(c, " "));
+    },
+        u = function u(a, b, c) {
+      var d = c ? h : "removeEventListener";c && u(a, b), o.forEach(function (c) {
+        a[d](c, b);
+      });
+    },
+        v = function v(a, d, e, f, g) {
+      var h = b.createEvent("CustomEvent");return e || (e = {}), e.instance = c, h.initCustomEvent(d, !f, !g, e), a.dispatchEvent(h), h;
+    },
+        w = function w(b, c) {
+      var e;!g && (e = a.picturefill || d.pf) ? e({ reevaluate: !0, elements: [b] }) : c && c.src && (b.src = c.src);
+    },
+        x = function x(a, b) {
+      return (getComputedStyle(a, null) || {})[b];
+    },
+        y = function y(a, b, c) {
+      for (c = c || a.offsetWidth; c < d.minSize && b && !a._lazysizesWidth;) {
+        c = b.offsetWidth, b = b.parentNode;
+      }return c;
+    },
+        z = function () {
+      var a,
+          c,
+          d = [],
+          e = [],
+          f = d,
+          g = function g() {
+        var b = f;for (f = d.length ? e : d, a = !0, c = !1; b.length;) {
+          b.shift()();
+        }a = !1;
+      },
+          h = function h(d, e) {
+        a && !e ? d.apply(this, arguments) : (f.push(d), c || (c = !0, (b.hidden ? k : l)(g)));
+      };return h._lsFlush = g, h;
+    }(),
+        A = function A(a, b) {
+      return b ? function () {
+        z(a);
+      } : function () {
+        var b = this,
+            c = arguments;z(function () {
+          a.apply(b, c);
+        });
+      };
+    },
+        B = function B(a) {
+      var b,
+          c = 0,
+          e = 125,
+          g = d.ricTimeout,
+          h = function h() {
+        b = !1, c = f.now(), a();
+      },
+          i = m && d.ricTimeout ? function () {
+        m(h, { timeout: g }), g !== d.ricTimeout && (g = d.ricTimeout);
+      } : A(function () {
+        k(h);
+      }, !0);return function (a) {
+        var d;(a = a === !0) && (g = 33), b || (b = !0, d = e - (f.now() - c), 0 > d && (d = 0), a || 9 > d && m ? i() : k(i, d));
+      };
+    },
+        C = function C(a) {
+      var b,
+          c,
+          d = 99,
+          e = function e() {
+        b = null, a();
+      },
+          g = function g() {
+        var a = f.now() - c;d > a ? k(g, d - a) : (m || e)(e);
+      };return function () {
+        c = f.now(), b || (b = k(g, d));
+      };
+    };!function () {
+      var b,
+          c = { lazyClass: "lazyload", loadedClass: "lazyloaded", loadingClass: "lazyloading", preloadClass: "lazypreload", errorClass: "lazyerror", autosizesClass: "lazyautosizes", srcAttr: "data-src", srcsetAttr: "data-srcset", sizesAttr: "data-sizes", minSize: 40, customMedia: {}, init: !0, expFactor: 1.5, hFac: .8, loadMode: 2, loadHidden: !0, ricTimeout: 300 };d = a.lazySizesConfig || a.lazysizesConfig || {};for (b in c) {
+        b in d || (d[b] = c[b]);
+      }a.lazySizesConfig = d, k(function () {
+        d.init && F();
+      });
+    }();var D = function () {
+      var g,
+          l,
+          m,
+          o,
+          p,
+          y,
+          D,
+          F,
+          G,
+          H,
+          I,
+          J,
+          K,
+          L,
+          M = /^img$/i,
+          N = /^iframe$/i,
+          O = "onscroll" in a && !/glebot/.test(navigator.userAgent),
+          P = 0,
+          Q = 0,
+          R = 0,
+          S = -1,
+          T = function T(a) {
+        R--, a && a.target && u(a.target, T), (!a || 0 > R || !a.target) && (R = 0);
+      },
+          U = function U(a, c) {
+        var d,
+            f = a,
+            g = "hidden" == x(b.body, "visibility") || "hidden" != x(a, "visibility");for (F -= c, I += c, G -= c, H += c; g && (f = f.offsetParent) && f != b.body && f != e;) {
+          g = (x(f, "opacity") || 1) > 0, g && "visible" != x(f, "overflow") && (d = f.getBoundingClientRect(), g = H > d.left && G < d.right && I > d.top - 1 && F < d.bottom + 1);
+        }return g;
+      },
+          V = function V() {
+        var a,
+            f,
+            h,
+            j,
+            k,
+            m,
+            n,
+            p,
+            q,
+            r = c.elements;if ((o = d.loadMode) && 8 > R && (a = r.length)) {
+          f = 0, S++, null == K && ("expand" in d || (d.expand = e.clientHeight > 500 && e.clientWidth > 500 ? 500 : 370), J = d.expand, K = J * d.expFactor), K > Q && 1 > R && S > 2 && o > 2 && !b.hidden ? (Q = K, S = 0) : Q = o > 1 && S > 1 && 6 > R ? J : P;for (; a > f; f++) {
+            if (r[f] && !r[f]._lazyRace) if (O) {
+              if ((p = r[f][i]("data-expand")) && (m = 1 * p) || (m = Q), q !== m && (y = innerWidth + m * L, D = innerHeight + m, n = -1 * m, q = m), h = r[f].getBoundingClientRect(), (I = h.bottom) >= n && (F = h.top) <= D && (H = h.right) >= n * L && (G = h.left) <= y && (I || H || G || F) && (d.loadHidden || "hidden" != x(r[f], "visibility")) && (l && 3 > R && !p && (3 > o || 4 > S) || U(r[f], m))) {
+                if (ba(r[f]), k = !0, R > 9) break;
+              } else !k && l && !j && 4 > R && 4 > S && o > 2 && (g[0] || d.preloadAfterLoad) && (g[0] || !p && (I || H || G || F || "auto" != r[f][i](d.sizesAttr))) && (j = g[0] || r[f]);
+            } else ba(r[f]);
+          }j && !k && ba(j);
+        }
+      },
+          W = B(V),
+          X = function X(a) {
+        s(a.target, d.loadedClass), t(a.target, d.loadingClass), u(a.target, Z), v(a.target, "lazyloaded");
+      },
+          Y = A(X),
+          Z = function Z(a) {
+        Y({ target: a.target });
+      },
+          $ = function $(a, b) {
+        try {
+          a.contentWindow.location.replace(b);
+        } catch (c) {
+          a.src = b;
+        }
+      },
+          _ = function _(a) {
+        var b,
+            c = a[i](d.srcsetAttr);(b = d.customMedia[a[i]("data-media") || a[i]("media")]) && a.setAttribute("media", b), c && a.setAttribute("srcset", c);
+      },
+          aa = A(function (a, b, c, e, f) {
+        var g, h, j, l, o, p;(o = v(a, "lazybeforeunveil", b)).defaultPrevented || (e && (c ? s(a, d.autosizesClass) : a.setAttribute("sizes", e)), h = a[i](d.srcsetAttr), g = a[i](d.srcAttr), f && (j = a.parentNode, l = j && n.test(j.nodeName || "")), p = b.firesLoad || "src" in a && (h || g || l), o = { target: a }, p && (u(a, T, !0), clearTimeout(m), m = k(T, 2500), s(a, d.loadingClass), u(a, Z, !0)), l && q.call(j.getElementsByTagName("source"), _), h ? a.setAttribute("srcset", h) : g && !l && (N.test(a.nodeName) ? $(a, g) : a.src = g), f && (h || l) && w(a, { src: g })), a._lazyRace && delete a._lazyRace, t(a, d.lazyClass), z(function () {
+          (!p || a.complete && a.naturalWidth > 1) && (p ? T(o) : R--, X(o));
+        }, !0);
+      }),
+          ba = function ba(a) {
+        var b,
+            c = M.test(a.nodeName),
+            e = c && (a[i](d.sizesAttr) || a[i]("sizes")),
+            f = "auto" == e;(!f && l || !c || !a[i]("src") && !a.srcset || a.complete || r(a, d.errorClass) || !r(a, d.lazyClass)) && (b = v(a, "lazyunveilread").detail, f && E.updateElem(a, !0, a.offsetWidth), a._lazyRace = !0, R++, aa(a, b, f, e, c));
+      },
+          ca = function ca() {
+        if (!l) {
+          if (f.now() - p < 999) return void k(ca, 999);var a = C(function () {
+            d.loadMode = 3, W();
+          });l = !0, d.loadMode = 3, W(), j("scroll", function () {
+            3 == d.loadMode && (d.loadMode = 2), a();
+          }, !0);
+        }
+      };return { _: function _() {
+          p = f.now(), c.elements = b.getElementsByClassName(d.lazyClass), g = b.getElementsByClassName(d.lazyClass + " " + d.preloadClass), L = d.hFac, j("scroll", W, !0), j("resize", W, !0), a.MutationObserver ? new MutationObserver(W).observe(e, { childList: !0, subtree: !0, attributes: !0 }) : (e[h]("DOMNodeInserted", W, !0), e[h]("DOMAttrModified", W, !0), setInterval(W, 999)), j("hashchange", W, !0), ["focus", "mouseover", "click", "load", "transitionend", "animationend", "webkitAnimationEnd"].forEach(function (a) {
+            b[h](a, W, !0);
+          }), /d$|^c/.test(b.readyState) ? ca() : (j("load", ca), b[h]("DOMContentLoaded", W), k(ca, 2e4)), c.elements.length ? (V(), z._lsFlush()) : W();
+        }, checkElems: W, unveil: ba };
+    }(),
+        E = function () {
+      var a,
+          c = A(function (a, b, c, d) {
+        var e, f, g;if (a._lazysizesWidth = d, d += "px", a.setAttribute("sizes", d), n.test(b.nodeName || "")) for (e = b.getElementsByTagName("source"), f = 0, g = e.length; g > f; f++) {
+          e[f].setAttribute("sizes", d);
+        }c.detail.dataAttr || w(a, c.detail);
+      }),
+          e = function e(a, b, d) {
+        var e,
+            f = a.parentNode;f && (d = y(a, f, d), e = v(a, "lazybeforesizes", { width: d, dataAttr: !!b }), e.defaultPrevented || (d = e.detail.width, d && d !== a._lazysizesWidth && c(a, f, e, d)));
+      },
+          f = function f() {
+        var b,
+            c = a.length;if (c) for (b = 0; c > b; b++) {
+          e(a[b]);
+        }
+      },
+          g = C(f);return { _: function _() {
+          a = b.getElementsByClassName(d.autosizesClass), j("resize", g);
+        }, checkElems: g, updateElem: e };
+    }(),
+        F = function F() {
+      F.i || (F.i = !0, E._(), D._());
+    };return c = { cfg: d, autoSizer: E, loader: D, init: F, uP: w, aC: s, rC: t, hC: r, fire: v, gW: y, rAF: z };
+  }
+});
+'use strict';
+
+(function (window) {
+
+  var hostname = window.location.hostname === 'localhost' ? null : window.location.hostname;
+
+  /**
+  * @function init
+  * @memberOf notices
+  */
+  var init = function init() {
+    hideNotices();
+    bindEvents();
+  };
+
+  /**
+  * @function hideNotices
+  * @memberOf notices
+  */
+  var hideNotices = function hideNotices() {
+    if (!docCookies.hasItem('browserNoticeDismissed')) {
+      document.body.className += ' browser-notice-active';
+    }
+
+    if (!docCookies.hasItem('cssNoticeDismissed')) {
+      document.body.className += ' css-notice-active';
+    }
+  };
+
+  /**
+  * @function bindEvents
+  * @memberOf notices
+  */
+  var bindEvents = function bindEvents() {
+    var buttons = document.getElementsByClassName('js-close-notice');
+
+    for (var i = 0; i < buttons.length; ++i) {
+      buttons[i].addEventListener('click', closeNotice);
+      buttons[i].addEventListener('click', setCookie);
+    }
+  };
+
+  /**
+  * @function closeNotice
+  * @memberof notices
+  */
+  var closeNotice = function closeNotice(button) {
+    var notice = button.target.parentNode;
+
+    notice.style.display = 'none';
+  };
+
+  /**
+  * @function setCookie
+  * @memberof notices
+  * @todo set cookie with docCookies
+  */
+  var setCookie = function setCookie(button) {
+    var noticeName = button.target.parentNode.classList[1].replace('support-notice--', '');
+
+    docCookies.setItem(noticeName + 'NoticeDismissed', true, 'Fri, 31 Dec 9999 23:59:59 GMT', '/', hostname);
+  };
+
+  init();
+})(window);
+"use strict";
+
+/* http://prismjs.com/download.html?themes=prism-okaidia&languages=markup+css+clike+javascript */
+var _self = "undefined" != typeof window ? window : "undefined" != typeof WorkerGlobalScope && self instanceof WorkerGlobalScope ? self : {},
+    Prism = function () {
+  var e = /\blang(?:uage)?-(\w+)\b/i,
+      t = 0,
+      n = _self.Prism = { manual: _self.Prism && _self.Prism.manual, util: { encode: function encode(e) {
+        return e instanceof a ? new a(e.type, n.util.encode(e.content), e.alias) : "Array" === n.util.type(e) ? e.map(n.util.encode) : e.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/\u00a0/g, " ");
+      }, type: function type(e) {
+        return Object.prototype.toString.call(e).match(/\[object (\w+)\]/)[1];
+      }, objId: function objId(e) {
+        return e.__id || Object.defineProperty(e, "__id", { value: ++t }), e.__id;
+      }, clone: function clone(e) {
+        var t = n.util.type(e);switch (t) {case "Object":
+            var a = {};for (var r in e) {
+              e.hasOwnProperty(r) && (a[r] = n.util.clone(e[r]));
+            }return a;case "Array":
+            return e.map && e.map(function (e) {
+              return n.util.clone(e);
+            });}return e;
+      } }, languages: { extend: function extend(e, t) {
+        var a = n.util.clone(n.languages[e]);for (var r in t) {
+          a[r] = t[r];
+        }return a;
+      }, insertBefore: function insertBefore(e, t, a, r) {
+        r = r || n.languages;var l = r[e];if (2 == arguments.length) {
+          a = arguments[1];for (var i in a) {
+            a.hasOwnProperty(i) && (l[i] = a[i]);
+          }return l;
+        }var o = {};for (var s in l) {
+          if (l.hasOwnProperty(s)) {
+            if (s == t) for (var i in a) {
+              a.hasOwnProperty(i) && (o[i] = a[i]);
+            }o[s] = l[s];
+          }
+        }return n.languages.DFS(n.languages, function (t, n) {
+          n === r[e] && t != e && (this[t] = o);
+        }), r[e] = o;
+      }, DFS: function DFS(e, t, a, r) {
+        r = r || {};for (var l in e) {
+          e.hasOwnProperty(l) && (t.call(e, l, e[l], a || l), "Object" !== n.util.type(e[l]) || r[n.util.objId(e[l])] ? "Array" !== n.util.type(e[l]) || r[n.util.objId(e[l])] || (r[n.util.objId(e[l])] = !0, n.languages.DFS(e[l], t, l, r)) : (r[n.util.objId(e[l])] = !0, n.languages.DFS(e[l], t, null, r)));
+        }
+      } }, plugins: {}, highlightAll: function highlightAll(e, t) {
+      var a = { callback: t, selector: 'code[class*="language-"], [class*="language-"] code, code[class*="lang-"], [class*="lang-"] code' };n.hooks.run("before-highlightall", a);for (var r, l = a.elements || document.querySelectorAll(a.selector), i = 0; r = l[i++];) {
+        n.highlightElement(r, e === !0, a.callback);
+      }
+    }, highlightElement: function highlightElement(t, a, r) {
+      for (var l, i, o = t; o && !e.test(o.className);) {
+        o = o.parentNode;
+      }o && (l = (o.className.match(e) || [, ""])[1].toLowerCase(), i = n.languages[l]), t.className = t.className.replace(e, "").replace(/\s+/g, " ") + " language-" + l, o = t.parentNode, /pre/i.test(o.nodeName) && (o.className = o.className.replace(e, "").replace(/\s+/g, " ") + " language-" + l);var s = t.textContent,
+          u = { element: t, language: l, grammar: i, code: s };if (n.hooks.run("before-sanity-check", u), !u.code || !u.grammar) return u.code && (u.element.textContent = u.code), n.hooks.run("complete", u), void 0;if (n.hooks.run("before-highlight", u), a && _self.Worker) {
+        var g = new Worker(n.filename);g.onmessage = function (e) {
+          u.highlightedCode = e.data, n.hooks.run("before-insert", u), u.element.innerHTML = u.highlightedCode, r && r.call(u.element), n.hooks.run("after-highlight", u), n.hooks.run("complete", u);
+        }, g.postMessage(JSON.stringify({ language: u.language, code: u.code, immediateClose: !0 }));
+      } else u.highlightedCode = n.highlight(u.code, u.grammar, u.language), n.hooks.run("before-insert", u), u.element.innerHTML = u.highlightedCode, r && r.call(t), n.hooks.run("after-highlight", u), n.hooks.run("complete", u);
+    }, highlight: function highlight(e, t, r) {
+      var l = n.tokenize(e, t);return a.stringify(n.util.encode(l), r);
+    }, tokenize: function tokenize(e, t) {
+      var a = n.Token,
+          r = [e],
+          l = t.rest;if (l) {
+        for (var i in l) {
+          t[i] = l[i];
+        }delete t.rest;
+      }e: for (var i in t) {
+        if (t.hasOwnProperty(i) && t[i]) {
+          var o = t[i];o = "Array" === n.util.type(o) ? o : [o];for (var s = 0; s < o.length; ++s) {
+            var u = o[s],
+                g = u.inside,
+                c = !!u.lookbehind,
+                h = !!u.greedy,
+                f = 0,
+                d = u.alias;if (h && !u.pattern.global) {
+              var p = u.pattern.toString().match(/[imuy]*$/)[0];u.pattern = RegExp(u.pattern.source, p + "g");
+            }u = u.pattern || u;for (var m = 0, y = 0; m < r.length; y += r[m].length, ++m) {
+              var v = r[m];if (r.length > e.length) break e;if (!(v instanceof a)) {
+                u.lastIndex = 0;var b = u.exec(v),
+                    k = 1;if (!b && h && m != r.length - 1) {
+                  if (u.lastIndex = y, b = u.exec(e), !b) break;for (var w = b.index + (c ? b[1].length : 0), _ = b.index + b[0].length, P = m, A = y, j = r.length; j > P && _ > A; ++P) {
+                    A += r[P].length, w >= A && (++m, y = A);
+                  }if (r[m] instanceof a || r[P - 1].greedy) continue;k = P - m, v = e.slice(y, A), b.index -= y;
+                }if (b) {
+                  c && (f = b[1].length);var w = b.index + f,
+                      b = b[0].slice(f),
+                      _ = w + b.length,
+                      x = v.slice(0, w),
+                      O = v.slice(_),
+                      S = [m, k];x && S.push(x);var N = new a(i, g ? n.tokenize(b, g) : b, d, b, h);S.push(N), O && S.push(O), Array.prototype.splice.apply(r, S);
+                }
+              }
+            }
+          }
+        }
+      }return r;
+    }, hooks: { all: {}, add: function add(e, t) {
+        var a = n.hooks.all;a[e] = a[e] || [], a[e].push(t);
+      }, run: function run(e, t) {
+        var a = n.hooks.all[e];if (a && a.length) for (var r, l = 0; r = a[l++];) {
+          r(t);
+        }
+      } } },
+      a = n.Token = function (e, t, n, a, r) {
+    this.type = e, this.content = t, this.alias = n, this.length = 0 | (a || "").length, this.greedy = !!r;
+  };if (a.stringify = function (e, t, r) {
+    if ("string" == typeof e) return e;if ("Array" === n.util.type(e)) return e.map(function (n) {
+      return a.stringify(n, t, e);
+    }).join("");var l = { type: e.type, content: a.stringify(e.content, t, r), tag: "span", classes: ["token", e.type], attributes: {}, language: t, parent: r };if ("comment" == l.type && (l.attributes.spellcheck = "true"), e.alias) {
+      var i = "Array" === n.util.type(e.alias) ? e.alias : [e.alias];Array.prototype.push.apply(l.classes, i);
+    }n.hooks.run("wrap", l);var o = Object.keys(l.attributes).map(function (e) {
+      return e + '="' + (l.attributes[e] || "").replace(/"/g, "&quot;") + '"';
+    }).join(" ");return "<" + l.tag + ' class="' + l.classes.join(" ") + '"' + (o ? " " + o : "") + ">" + l.content + "</" + l.tag + ">";
+  }, !_self.document) return _self.addEventListener ? (_self.addEventListener("message", function (e) {
+    var t = JSON.parse(e.data),
+        a = t.language,
+        r = t.code,
+        l = t.immediateClose;_self.postMessage(n.highlight(r, n.languages[a], a)), l && _self.close();
+  }, !1), _self.Prism) : _self.Prism;var r = document.currentScript || [].slice.call(document.getElementsByTagName("script")).pop();return r && (n.filename = r.src, !document.addEventListener || n.manual || r.hasAttribute("data-manual") || ("loading" !== document.readyState ? window.requestAnimationFrame ? window.requestAnimationFrame(n.highlightAll) : window.setTimeout(n.highlightAll, 16) : document.addEventListener("DOMContentLoaded", n.highlightAll))), _self.Prism;
+}();"undefined" != typeof module && module.exports && (module.exports = Prism), "undefined" != typeof global && (global.Prism = Prism);
+Prism.languages.markup = { comment: /<!--[\w\W]*?-->/, prolog: /<\?[\w\W]+?\?>/, doctype: /<!DOCTYPE[\w\W]+?>/i, cdata: /<!\[CDATA\[[\w\W]*?]]>/i, tag: { pattern: /<\/?(?!\d)[^\s>\/=$<]+(?:\s+[^\s>\/=]+(?:=(?:("|')(?:\\\1|\\?(?!\1)[\w\W])*\1|[^\s'">=]+))?)*\s*\/?>/i, inside: { tag: { pattern: /^<\/?[^\s>\/]+/i, inside: { punctuation: /^<\/?/, namespace: /^[^\s>\/:]+:/ } }, "attr-value": { pattern: /=(?:('|")[\w\W]*?(\1)|[^\s>]+)/i, inside: { punctuation: /[=>"']/ } }, punctuation: /\/?>/, "attr-name": { pattern: /[^\s>\/]+/, inside: { namespace: /^[^\s>\/:]+:/ } } } }, entity: /&#?[\da-z]{1,8};/i }, Prism.hooks.add("wrap", function (a) {
+  "entity" === a.type && (a.attributes.title = a.content.replace(/&amp;/, "&"));
+}), Prism.languages.xml = Prism.languages.markup, Prism.languages.html = Prism.languages.markup, Prism.languages.mathml = Prism.languages.markup, Prism.languages.svg = Prism.languages.markup;
+Prism.languages.css = { comment: /\/\*[\w\W]*?\*\//, atrule: { pattern: /@[\w-]+?.*?(;|(?=\s*\{))/i, inside: { rule: /@[\w-]+/ } }, url: /url\((?:(["'])(\\(?:\r\n|[\w\W])|(?!\1)[^\\\r\n])*\1|.*?)\)/i, selector: /[^\{\}\s][^\{\};]*?(?=\s*\{)/, string: { pattern: /("|')(\\(?:\r\n|[\w\W])|(?!\1)[^\\\r\n])*\1/, greedy: !0 }, property: /(\b|\B)[\w-]+(?=\s*:)/i, important: /\B!important\b/i, "function": /[-a-z0-9]+(?=\()/i, punctuation: /[(){};:]/ }, Prism.languages.css.atrule.inside.rest = Prism.util.clone(Prism.languages.css), Prism.languages.markup && (Prism.languages.insertBefore("markup", "tag", { style: { pattern: /(<style[\w\W]*?>)[\w\W]*?(?=<\/style>)/i, lookbehind: !0, inside: Prism.languages.css, alias: "language-css" } }), Prism.languages.insertBefore("inside", "attr-value", { "style-attr": { pattern: /\s*style=("|').*?\1/i, inside: { "attr-name": { pattern: /^\s*style/i, inside: Prism.languages.markup.tag.inside }, punctuation: /^\s*=\s*['"]|['"]\s*$/, "attr-value": { pattern: /.+/i, inside: Prism.languages.css } }, alias: "language-css" } }, Prism.languages.markup.tag));
+Prism.languages.clike = { comment: [{ pattern: /(^|[^\\])\/\*[\w\W]*?\*\//, lookbehind: !0 }, { pattern: /(^|[^\\:])\/\/.*/, lookbehind: !0 }], string: { pattern: /(["'])(\\(?:\r\n|[\s\S])|(?!\1)[^\\\r\n])*\1/, greedy: !0 }, "class-name": { pattern: /((?:\b(?:class|interface|extends|implements|trait|instanceof|new)\s+)|(?:catch\s+\())[a-z0-9_\.\\]+/i, lookbehind: !0, inside: { punctuation: /(\.|\\)/ } }, keyword: /\b(if|else|while|do|for|return|in|instanceof|function|new|try|throw|catch|finally|null|break|continue)\b/, "boolean": /\b(true|false)\b/, "function": /[a-z0-9_]+(?=\()/i, number: /\b-?(?:0x[\da-f]+|\d*\.?\d+(?:e[+-]?\d+)?)\b/i, operator: /--?|\+\+?|!=?=?|<=?|>=?|==?=?|&&?|\|\|?|\?|\*|\/|~|\^|%/, punctuation: /[{}[\];(),.:]/ };
+Prism.languages.javascript = Prism.languages.extend("clike", { keyword: /\b(as|async|await|break|case|catch|class|const|continue|debugger|default|delete|do|else|enum|export|extends|finally|for|from|function|get|if|implements|import|in|instanceof|interface|let|new|null|of|package|private|protected|public|return|set|static|super|switch|this|throw|try|typeof|var|void|while|with|yield)\b/, number: /\b-?(0x[\dA-Fa-f]+|0b[01]+|0o[0-7]+|\d*\.?\d+([Ee][+-]?\d+)?|NaN|Infinity)\b/, "function": /[_$a-zA-Z\xA0-\uFFFF][_$a-zA-Z0-9\xA0-\uFFFF]*(?=\()/i, operator: /--?|\+\+?|!=?=?|<=?|>=?|==?=?|&&?|\|\|?|\?|\*\*?|\/|~|\^|%|\.{3}/ }), Prism.languages.insertBefore("javascript", "keyword", { regex: { pattern: /(^|[^\/])\/(?!\/)(\[.+?]|\\.|[^\/\\\r\n])+\/[gimyu]{0,5}(?=\s*($|[\r\n,.;})]))/, lookbehind: !0, greedy: !0 } }), Prism.languages.insertBefore("javascript", "string", { "template-string": { pattern: /`(?:\\\\|\\?[^\\])*?`/, greedy: !0, inside: { interpolation: { pattern: /\$\{[^}]+\}/, inside: { "interpolation-punctuation": { pattern: /^\$\{|\}$/, alias: "punctuation" }, rest: Prism.languages.javascript } }, string: /[\s\S]+/ } } }), Prism.languages.markup && Prism.languages.insertBefore("markup", "tag", { script: { pattern: /(<script[\w\W]*?>)[\w\W]*?(?=<\/script>)/i, lookbehind: !0, inside: Prism.languages.javascript, alias: "language-javascript" } }), Prism.languages.js = Prism.languages.javascript;
+'use strict';
+
+(function (event) {
+
+  'use strict';
+
+  window.obj = {};
+
+  // ==============================================
+  //    Configuration
+  // ==============================================
+  obj.config = {
+    elements: {
+      body: 'body',
+      logo: '[data-logo]',
+      nav: '[data-navigation]',
+      navList: '[data-navigation-list]',
+      navItem: '[data-nav-item]',
+      navItemActive: '[data-nav-item-active]',
+      navTrigger: '[data-navigation-trigger]',
+      fade: '[data-fade]',
+      fadeDelay: 'data-fade-delay',
+      image: '[data-lazy]',
+      infoBlockPicture: '[data-info-block-picture]'
+    },
+    classes: {
+      bodyNavOpen: 'body--nav-open',
+      logoWhite: 'logo--white',
+      navOpen: 'nav--open',
+      navListUnload: 'nav__list--unload',
+      navItemActive: 'nav__item--active',
+      navTriggerActive: 'button--nav-active',
+      hideElement: 'hide',
+      fadeInElement: 'fade-in',
+      lazyload: 'lazyload__image--lazy',
+      lazyloaded: 'lazyload__image--loaded',
+      imageLoaded: 'lazyload--image-loaded'
+    }
+  };
+
+  // ==============================================
+  //    Initialise
+  // ==============================================
+  obj.init = function (event) {
+    obj.html = document.documentElement;
+    obj.body = document.querySelector(obj.config.elements.body);
+    obj.logo = document.querySelector(obj.config.elements.logo);
+    obj.nav = document.querySelector(obj.config.elements.nav);
+    obj.navItem = document.querySelectorAll(obj.config.elements.navItem);
+    obj.navItemActive = document.querySelector(obj.config.elements.navItemActive);
+    obj.navList = document.querySelector(obj.config.elements.navList);
+    obj.mobileNavTrigger = document.querySelector(obj.config.elements.navTrigger);
+    obj.fade = document.querySelectorAll(obj.config.elements.fade);
+    obj.image = document.querySelectorAll(obj.config.elements.image);
+    obj.infoBlockPicture = document.querySelector(obj.config.elements.infoBlockPicture);
+    obj.attachMethods();
+    obj.attachListeners();
+  };
+
+  // ==============================================
+  //    Attach methods
+  // ==============================================
+  obj.attachMethods = function () {
+    obj.lazyloadConfig();
+    obj.fadeElementsOnScroll();
+    obj.handleAciveNavItem();
+    obj.activeMenuMouseLeave();
+  };
+
+  // ==============================================
+  //    Attach event listeners
+  // ==============================================
+  obj.attachListeners = function (event) {
+    window.addEventListener('scroll', obj.fadeElementsOnScroll);
+    window.addEventListener('resize', obj.handleLazyImageSizes);
+
+    Array.from(obj.image).map(function (el) {
+      el.addEventListener('lazyloaded', function (el) {
+        return obj.lazyLoadImages(el);
+      });
+      el.addEventListener('lazybeforeunveil', function (el) {
+        return obj.loadImages(el);
+      });
+    });
+
+    if (window.innerWidth < 768) {
+      obj.mobileNavTrigger.addEventListener('click', obj.triggerMobileNav);
+      obj.nav.addEventListener('touchmove', obj.preventMobileNavScroll);
+    } else {
+      Array.from(obj.navItem).map(function (el) {
+        el.parentNode.addEventListener('mouseover', obj.activeMenuMouseOver);
+        el.parentNode.addEventListener('mouseleave', obj.activeMenuMouseLeave);
+        el.addEventListener('focus', obj.activeMenuFocus);
+      });
+    }
+  };
+
+  // ==============================================
+  //    Lazy load configuration
+  // ==============================================
+  obj.lazyloadConfig = function () {
+    window.lazySizesConfig.lazyClass = obj.config.classes.lazyload;
+    window.lazySizesConfig.loadedClass = obj.config.classes.lazyloaded;
+    window.lazySizesConfig.expand = 50;
+  };
+
+  // ==============================================
+  //    Fade in elements when in viewport
+  // ==============================================
+  obj.fadeElementsOnScroll = function () {
+    Array.from(obj.fade).map(function (el) {
+      var objectPosition = el.getBoundingClientRect().top;
+      var windowHeight = window.innerHeight;
+
+      if (objectPosition - windowHeight <= 0) {
+        el.classList.remove(obj.config.classes.hideElement);
+        el.classList.add(obj.config.classes.fadeInElement);
+        el.style.transitionDelay = el.getAttribute(obj.config.elements.fadeDelay);
+      }
+    });
+  };
+
+  // ==============================================
+  //    Add active class to correct nav item
+  // ==============================================
+  obj.handleAciveNavItem = function () {
+    Array.from(obj.navItem).map(function (el) {
+      if (window.location.pathname.indexOf(el.getAttribute('href')) === 0) {
+        el.classList.add(obj.config.classes.navLinkctive);
+        el.parentNode.classList.add(obj.config.classes.navItemActive);
+      }
+    });
+  };
+
+  // ==============================================
+  //    Mobile menu trigger
+  // ==============================================
+  obj.triggerMobileNav = function () {
+    obj.triggerMobileNavAnimation();
+    obj.body.classList.toggle(obj.config.classes.bodyNavOpen);
+    obj.html.classList.toggle(obj.config.classes.bodyNavOpen);
+    obj.nav.classList.add(obj.config.classes.navOpen);
+    obj.mobileNavTrigger.classList.toggle(obj.config.classes.navTriggerActive);
+
+    if (window.location.pathname === '/') {
+      obj.logo.classList.toggle(obj.config.classes.logoWhite);
+    }
+  };
+
+  obj.triggerMobileNavAnimation = function () {
+    if (obj.nav.classList.contains(obj.config.classes.navOpen)) {
+      obj.navList.classList.add(obj.config.classes.navListUnload);
+
+      obj.navAnimationTimer = setTimeout(function () {
+        obj.nav.classList.remove(obj.config.classes.navOpen);
+        obj.navList.classList.remove(obj.config.classes.navListUnload);
+        clearTimeout(obj.navAnimationTimer);
+      }, 850);
+    }
+  };
+
+  obj.preventMobileNavScroll = function (ev) {
+    if (obj.nav.classList.contains(obj.config.classes.navOpen)) {
+      ev.preventDefault();
+    }
+  };
+
+  // ==============================================
+  //    Desktop nav item on hover/focus
+  // ==============================================
+  obj.activeMenuMouseOver = function (el) {
+    el = el.currentTarget;
+
+    obj.navItemActive.style.left = el.firstChild.offsetLeft + 'px';
+    obj.navItemActive.style.width = el.firstChild.clientWidth + 'px';
+  };
+
+  obj.activeMenuFocus = function (el) {
+    el = el.currentTarget;
+
+    obj.navItemActive.style.left = el.offsetLeft + 'px';
+    obj.navItemActive.style.width = el.clientWidth + 'px';
+  };
+
+  obj.activeMenuMouseLeave = function () {
+    var navItemActiveClass = document.querySelectorAll('.' + obj.config.classes.navItemActive);
+
+    if (navItemActiveClass.length > 0) {
+      var activeNavItem = navItemActiveClass[0];
+
+      obj.navItemActive.style.left = activeNavItem.firstChild.offsetLeft + 'px';
+      obj.navItemActive.style.width = activeNavItem.firstChild.clientWidth + 'px';
+    } else {
+      obj.navItemActive.style.left = '0px';
+      obj.navItemActive.style.width = '0px';
+    }
+  };
+
+  // ==============================================
+  //    Resize lazy images on orientation
+  // ==============================================
+  obj.handleLazyImageSizes = function () {
+    Array.from(obj.image).map(function (el) {
+      obj.delayImageResize = setTimeout(function () {
+        var width = el.naturalWidth;
+        var height = el.naturalHeight;
+        var ratio = (Math.round(height) / Math.round(width) * 100).toFixed(2);
+
+        el.parentNode.style.paddingTop = ratio.replace('.00', '') + '%';
+
+        if (window.innerWidth >= 992 && document.body.contains(obj.infoBlockPicture)) {
+          obj.infoBlockPicture.style.paddingTop = '';
+        }
+
+        clearTimeout(obj.delayImageResize);
+      }, 10);
+    });
+  };
+
+  // ==============================================
+  //    Lazy load images
+  // ==============================================
+  obj.lazyLoadImages = function (el) {
+    el = el.currentTarget;
+
+    var width = el.naturalWidth;
+    var height = el.naturalHeight;
+    var ratio = (Math.round(height) / Math.round(width) * 100).toFixed(2);
+
+    el.parentNode.style.paddingTop = ratio.replace('.00', '') + '%';
+
+    if (window.innerWidth >= 992 && document.body.contains(obj.infoBlockPicture)) {
+      obj.infoBlockPicture.style.paddingTop = '';
+    }
+  };
+
+  obj.loadImages = function (el) {
+    el = el.currentTarget;
+
+    el.parentNode.classList.add(obj.config.classes.imageLoaded);
+    el.removeEventListener('lazybeforeunveil', obj.loadImages);
+  };
+
+  window.addEventListener('DOMContentLoaded', obj.init(event));
+})();
+"use strict";
+
+var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
+
+!function (t, e) {
+  "function" == typeof define && define.amd ? define([], e()) : "object" == (typeof module === "undefined" ? "undefined" : _typeof(module)) && module.exports ? module.exports = e() : function n() {
+    t = document || document.body;document && document.body ? t.zenscroll = e() : setTimeout(n, 9);
+  }();
+}(undefined, function () {
+  "use strict";
+  var t = function t(_t) {
+    return "getComputedStyle" in window && "smooth" === window.getComputedStyle(_t)["scroll-behavior"];
+  };if ("undefined" == typeof window || !("document" in window)) return {};var e = function e(_e, n, o) {
+    n = n || 999, o || 0 === o || (o = 9);var i,
+        r = function r(t) {
+      i = t;
+    },
+        u = function u() {
+      clearTimeout(i), r(0);
+    },
+        c = function c(t) {
+      return Math.max(0, _e.getTopOf(t) - o);
+    },
+        f = function f(o, i, c) {
+      if (u(), 0 === i || i && i < 0 || t(_e.body)) _e.toY(o), c && c();else {
+        var f = _e.getY(),
+            a = Math.max(0, o) - f,
+            l = new Date().getTime();i = i || Math.min(Math.abs(a), n), function t() {
+          r(setTimeout(function () {
+            var n = Math.min(1, (new Date().getTime() - l) / i),
+                o = Math.max(0, Math.floor(f + a * (n < .5 ? 2 * n * n : n * (4 - 2 * n) - 1)));_e.toY(o), n < 1 && _e.getHeight() + o < _e.body.scrollHeight ? t() : (setTimeout(u, 99), c && c());
+          }, 9));
+        }();
+      }
+    },
+        a = function a(t, e, n) {
+      f(c(t), e, n);
+    },
+        l = function l(t, n, i) {
+      var r = t.getBoundingClientRect().height,
+          u = _e.getTopOf(t) + r,
+          l = _e.getHeight(),
+          s = _e.getY(),
+          d = s + l;c(t) < s || r + o > l ? a(t, n, i) : u + o > d ? f(u - l + o, n, i) : i && i();
+    },
+        s = function s(t, n, o, i) {
+      f(Math.max(0, _e.getTopOf(t) - _e.getHeight() / 2 + (o || t.getBoundingClientRect().height / 2)), n, i);
+    };return { setup: function setup(t, e) {
+        return (0 === t || t) && (n = t), (0 === e || e) && (o = e), { defaultDuration: n, edgeOffset: o };
+      }, to: a, toY: f, intoView: l, center: s, stop: u, moving: function moving() {
+        return !!i;
+      }, getY: _e.getY, getTopOf: _e.getTopOf };
+  },
+      n = document.documentElement,
+      o = function o() {
+    return window.scrollY || n.scrollTop;
+  },
+      i = e({ body: document.scrollingElement || document.body, toY: function toY(t) {
+      window.scrollTo(0, t);
+    }, getY: o, getHeight: function getHeight() {
+      return window.innerHeight || n.clientHeight;
+    }, getTopOf: function getTopOf(t) {
+      return t.getBoundingClientRect().top + o() - n.offsetTop;
+    } });if (i.createScroller = function (t, o, i) {
+    return e({ body: t, toY: function toY(e) {
+        t.scrollTop = e;
+      }, getY: function getY() {
+        return t.scrollTop;
+      }, getHeight: function getHeight() {
+        return Math.min(t.clientHeight, window.innerHeight || n.clientHeight);
+      }, getTopOf: function getTopOf(t) {
+        return t.offsetTop;
+      } }, o, i);
+  }, "addEventListener" in window && !window.noZensmooth && !t(document.body)) {
+    var r = "scrollRestoration" in history;r && (history.scrollRestoration = "auto"), window.addEventListener("load", function () {
+      r && (setTimeout(function () {
+        history.scrollRestoration = "manual";
+      }, 9), window.addEventListener("popstate", function (t) {
+        t.state && "zenscrollY" in t.state && i.toY(t.state.zenscrollY);
+      }, !1)), window.location.hash && setTimeout(function () {
+        var t = i.setup().edgeOffset;if (t) {
+          var e = document.getElementById(window.location.href.split("#")[1]);if (e) {
+            var n = Math.max(0, i.getTopOf(e) - t),
+                o = i.getY() - n;0 <= o && o < 9 && window.scrollTo(0, n);
+          }
+        }
+      }, 9);
+    }, !1);var u = new RegExp("(^|\\s)noZensmooth(\\s|$)");window.addEventListener("click", function (t) {
+      for (var e = t.target; e && "A" !== e.tagName;) {
+        e = e.parentNode;
+      }if (!(!e || 1 !== t.which || t.shiftKey || t.metaKey || t.ctrlKey || t.altKey)) {
+        if (r) try {
+          history.replaceState({ zenscrollY: i.getY() }, "");
+        } catch (t) {}var n = e.getAttribute("href") || "";if (0 === n.indexOf("#") && !u.test(e.className)) {
+          var o = 0,
+              c = document.getElementById(n.substring(1));if ("#" !== n) {
+            if (!c) return;o = i.getTopOf(c);
+          }t.preventDefault();var f = function f() {
+            window.location = n;
+          },
+              a = i.setup().edgeOffset;a && (o = Math.max(0, o - a), f = function f() {
+            history.pushState(null, "", n);
+          }), i.toY(o, null, f);
+        }
+      }
+    }, !1);
+  }return i;
+});
 //# sourceMappingURL=main.js.map
