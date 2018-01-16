@@ -12,7 +12,7 @@ module.exports = (gulp, data, argv) => {
       let source = [];
 
       if (!argv.prod) {
-        source.push(`${data.paths.source.scripts}dev/tota11y.js`)
+        source.push(`${data.paths.source.scripts.dev}*.js`)
       }
 
       source.push(`${data.paths.source.scripts.common}*.js`)

@@ -1,0 +1,96 @@
+// Form...............Contact form styles.
+
+.form {
+  margin-bottom: ($core-margin * 2.5);
+  padding-top: $core-padding;
+}
+
+.form__fieldset {
+  margin: 0;
+  padding: 0;
+  border: none;
+}
+
+.form__content {
+  @include min(m) {
+    display: grid;
+    grid-gap: 40px 20px;
+    grid-template-columns: repeat(3, 1fr);
+    grid-area: form;
+
+    @supports not (display: grid) {
+      @include flex(wrap, row, space-between, null);
+    }
+  }
+}
+
+.form__inner {
+  @include min(m) {
+    @include flex(wrap, row, space-between, null);
+  }
+}
+
+.form__field {
+  margin-bottom: ($core-margin * 2);
+
+  @include min(m) {
+    flex-basis: 48%;
+
+    &:last-child {
+      flex-basis: 100%;
+    }
+  }
+}
+
+.form__item {
+  margin-bottom: ($core-margin * 1.5);
+}
+
+.form__label {
+  display: inline-block;
+  color: $core-color-foreground;
+  font-weight: $core-secondary-font-weight;
+  margin-bottom: ($core-margin / 2);
+}
+
+.form__input {
+  width: 100%;
+  background-color: darken($core-color-background, 5%);
+  margin-bottom: 0;
+  padding-top: $core-padding;
+  padding-right: $core-padding;
+  padding-bottom: $core-padding;
+  padding-left: $core-padding;
+  border-width: $core-border-width;
+  border-style: $core-border-style;
+  border-color: darken($core-color-background, 5%);
+}
+
+.form__input-describe {
+  display: block;
+  color: #de0000;
+  margin-top: ($core-margin / 2);
+}
+
+.form__textarea {
+  width: 100%;
+  background-color: darken($core-color-background, 5%);
+  margin-bottom: 0;
+  padding-top: $core-padding;
+  padding-right: $core-padding;
+  padding-bottom: $core-padding;
+  padding-left: $core-padding;
+  border-width: $core-border-width;
+  border-style: $core-border-style;
+  border-color: darken($core-color-background, 5%);
+}
+
+.form__input--valid,
+.form__textarea--valid {
+  border-color: #74e22d;
+}
+
+.form__input--invalid,
+.form__textarea--invalid {
+  border-color: #de0000;
+}

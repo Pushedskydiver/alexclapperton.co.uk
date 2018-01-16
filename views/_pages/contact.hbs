@@ -1,35 +1,51 @@
 <main class="contact 📱" id="main">
     <article class="contact__content 🖼">
-        <h2 class="contact__title">Drop me a line</h2>
-        <p>Got a question to ask? Then please, don't hesitate to get in touch with me. Whether it's a question rearding potential work, about my website, or if you just want to say hi.</p>
-        <p>You can contact me by filling in the super simple form below:</p>
+        <div class="contact__inner">
+            <h2 class="contact__title">Drop me a line</h2>
+            <p>Got a question to ask? Then please, don't hesitate to get in touch with me. Whether it's a question rearding potential work, about my website, or if you just want to say hi.</p>
+            <p>You can contact me by filling in the super simple form below:</p>
+        </div>
 
         <form class="form" action="" method="post">
             <fieldset class="form__fieldset">
                 <legend class="form__legend">Enter your name, email and your message.</legend>
 
-                <div class="form__field">
-                    <label class="form__label" id="nameLabel" for="name">Name *</label>
-                    <input class="form__input" id="name" type="text" aria-required="true" aria-labelledby="nameLabel" aria-describedby="nameDescribe" required>
-                    <small class="form__input-describe" id="nameDescribe">Your name is required</small>
-                </div>
+                <div class="form__inner">
+                    <div class="form__field">
+                        <label class="form__label" id="nameLabel" for="name">Name</label>
+                        <input class="form__input" id="name" type="text" aria-required="true" aria-labelledby="nameLabel" aria-describedby="nameDescribe" required>
+                        <small class="form__input-describe" id="nameDescribe">Your name is required</small>
+                    </div>
 
-                <div class="form__field">
-                    <label class="form__label" id="emailLabel" for="email">Email *</label>
-                    <input class="form__input" id="email" type="email" aria-required="true" aria-labelledby="emailLabel" aria-describedby="emailDescribe" required>
-                    <small class="form__input-describe" id="emailDescribe">Please enter a valid email address</small>
-                </div>
+                    <div class="form__field">
+                        <label class="form__label" id="emailLabel" for="email">Email</label>
+                        <input class="form__input" id="email" type="email" aria-required="true" aria-labelledby="emailLabel" aria-describedby="emailDescribe" required>
+                        <small class="form__input-describe" id="emailDescribe">Please enter a valid email address</small>
+                    </div>
 
-                <div class="form__field">
-                    <label class="form__label" id="messageLabel" for="message">Name *</label>
-                    <textarea class="form__textarea" name="message" aria-required="true" aria-labelledby="messageLabel" aria-describedby="messageDescribe" required></textarea>
-                    <small class="form__input-describe" id="messageDescribe">Please enter your message</small>
+                    <div class="form__field">
+                        <label class="form__label" id="messageLabel" for="message">Message</label>
+                        <textarea class="form__textarea" name="message" rows="6" cols="80" aria-required="true" aria-labelledby="messageLabel" aria-describedby="messageDescribe" required></textarea>
+                        <small class="form__input-describe" id="messageDescribe">Please enter your message</small>
+                    </div>
                 </div>
             </fieldset>
         </form>
 
         <aside class="contact__sidebar">
-
+            <dl class="contact__list">
+                <dt class="contact__list-title">Email</dt>
+                <dd class="contact__list-body"><a class="link" href="mailto:{{data.global.email}}">{{data.global.email}}</a></dd>
+                <dt class="contact__list-title">Phone Number</dt>
+                <dd class="contact__list-body contact__list-body--📱">{{data.global.phone}}</dd>
+                <dt class="contact__list-title">Social Links</dt>
+                <dd class="contact__list-body">
+                {{#each data.global.social}}
+                    <a class="contact__list-🔗 link" href="{{url}}" title="{{title-attr}}"{{#if external}} rel="external"{{/if}}>{{title}}</a>
+                    <br>
+                {{/each}}
+                </dd>
+            </dl>
         </aside>
     </article>
 </main>

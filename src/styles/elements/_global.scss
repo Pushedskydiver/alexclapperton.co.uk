@@ -76,10 +76,16 @@ strong {
   color: $core-color-brand;
 }
 
-ul {
+ul,
+ol,
+dl {
   margin: 0;
   padding: 0;
   list-style: none;
+}
+
+dd {
+  margin-left: 0;
 }
 
 li {
@@ -107,11 +113,13 @@ legend {
 }
 
 input {
+  @include text(bodyCopy);
   border-radius: 0;
   appearance: none;
 }
 
 textarea {
+  @include text(bodyCopy);
   border-radius: 0;
   appearance: none;
 }

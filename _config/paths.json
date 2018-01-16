@@ -12,7 +12,8 @@
     "forms": "./src/forms/",
     "scripts": {
       "common": "./src/scripts/common/",
-      "vendor": "./src/scripts/vendor/"
+      "vendor": "./src/scripts/vendor/",
+      "dev": "./src/scripts/dev/"
     },
     "styles": "./src/styles/"
   },
