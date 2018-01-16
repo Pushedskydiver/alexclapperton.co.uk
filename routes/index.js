@@ -60,4 +60,15 @@ router.get('/contact/', cache, (req, res, next) => {
   });
 });
 
+router.get('/offline/', cache, (req, res, next) => {
+  res.render('offline', {
+    title: 'Oops! It looks like you\'re offline',
+    articles: req.articles,
+    offline: true,
+    data: {
+      global: data
+    }
+  });
+});
+
 module.exports = router;

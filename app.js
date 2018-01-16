@@ -43,6 +43,7 @@ app.use(express.static(path.join(__dirname, 'public'), { maxAge: 31557600 }));
 app.use('/', main);
 app.use('/about-me/', main);
 app.use('/contact/', main);
+app.use('/offline/', main);
 app.use('/articles/', articles);
 app.use('/portfolio/', portfolio);
 
