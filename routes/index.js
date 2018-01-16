@@ -7,8 +7,8 @@ const articles = require('../services/articles');
 const projects = require('../services/portfolio');
 
 const cache = expresslru({
-  max: 1000,
-  ttl: 60000,
+  max: 250,
+  ttl: 30000,
   skip: req => !!req.user
 });
 
@@ -65,6 +65,7 @@ router.get('/offline/', cache, (req, res, next) => {
     title: 'Oops! It looks like you\'re offline',
     articles: req.articles,
     offline: true,
+    nofollow: true,
     data: {
       global: data
     }

@@ -4,15 +4,15 @@
         <!-- META TAGS  -->
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, minimum-scale=1, user-scalable=yes, initial-scale=1, viewport-fit=cover">
-        <meta name="description" content="{{#if description}}{{{description}}}{{else}}{{#if title}}{{{title}}} - {{/if}}Alex Clapperton &mdash; Front-End Developer{{/if}}">
+        <meta name="description" content="{{#if description}}{{{description}}}{{else}}{{#if title}}{{{title}}}{{/if}}{{#unless home}} &mdash; Alex Clapperton{{/unless}} &mdash; Front-End Web Developer{{/if}}">
         {{#if nofollow}}
         <meta name="robots" content="noindex, nofollow">
         {{/if}}
 
         <!-- PAGE TITLE -->
         <title>
-            {{#if title}}{{{title}}} &mdash; {{/if}}{{{data.global.name}}}
-            {{#if global.jobTitle}} &mdash; {{{data.global.jobTitle}}}{{/if}}
+            {{#if title}}{{{title}}}{{/if}}{{#unless home}} &mdash; {{{data.global.name}}}{{/unless}}
+            {{#if data.global.jobTitle}} &mdash; {{{data.global.jobTitle}}}{{/if}}
         </title>
 
         <!-- PRELOAD FILES -->
@@ -25,28 +25,60 @@
         <!-- STYLESHEET -->
         <link rel="stylesheet" href="/css/main.css">
 
+        <!-- SITEMAP -->
+        <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml" />
+
         <!-- MANIFEST -->
         <link rel="manifest" href="/manifest.json">
 
+        <link rel="alternate" href="{{{data.global.url}}}" hreflang="en-gb">
+        <link rel="canonical" href="{{{data.global.url}}}{{#if article.date}}/articles{{/if}}{{#if article.slug}}/{{{article.slug}}}{{/if}}">
+
+        <script type="application/ld+json">
+            {
+                "@context": "http://schema.org",
+                {{#if article.date}}
+                    "@type": "NewsArticle",
+                    "author": {{{data.global.name}}}
+                    "publisher": {{{data.global.name}}}
+                    "headline": "{{{title}}}",
+                    "datePublished": "{{{article.date}}}",
+                    "dateModified":  "{{{article.date}}}",
+                    "mainEntityOfPage": "{{{data.global.url}}}{{#if article.date}}/articles{{/if}}{{#if article.slug}}/{{{article.slug}}}{{/if}}",
+                {{else}}
+                    "@type": "Person",
+                    "name": "{{{data.global.name}}}",
+                {{/if}}
+                    "url": "{{{data.global.url}}}{{#if article.date}}/articles{{/if}}{{#if article.slug}}/{{{article.slug}}}{{/if}}",
+                    "image" : "{{#if ogImage}}{{{ogImage}}}{{else}}{{{data.global.url}}}/images/profile/alex-clapperton.jpg{{/if}}",
+                {{#unless article.date}}
+                    "sameAs" : [
+                        "{{{data.global.twitterHandle}}}",
+                        "{{{data.global.linkedinName}}}",
+                        "{{{data.global.githubRepo}}}"
+                    ]
+                {{/unless}}
+            }
+        </script>
+
         <!-- FACEBOOK -->
-        <meta property="og:title" content="{{#if title}}{{{title}}} &mdash; {{/if}}{{{data.global.name}}}{{#if global.jobTitle}} &mdash; {{{data.global.jobTitle}}}{{/if}}" />
-        <meta property="og:type" content="{{#if pubDate}}article{{else}}website{{/if}}" />
-        <meta property="og:url" content="{{{data.global.url}}}{{#if pubDate}}/articles{{/if}}{{#if slug}}/{{{slug}}}{{/if}}" />
+        <meta property="og:title" content="{{#if title}}{{{title}}} &mdash; {{/if}}{{{data.global.name}}}{{#if data.global.jobTitle}} &mdash; {{{data.global.jobTitle}}}{{/if}}" />
+        <meta property="og:type" content="{{#if article.date}}article{{else}}website{{/if}}" />
+        <meta property="og:url" content="{{{data.global.url}}}{{#if article.date}}/articles{{/if}}{{#if article.slug}}/{{{article.slug}}}{{/if}}" />
         <meta property="og:image" content="{{{data.global.url}}}{{#if ogImage}}{{{ogImage}}}{{else}}/images/profile/alex-clapperton.jpg{{/if}}" />
         <meta property="og:description" content="{{#if summary}}{{{summary}}}{{else}}{{{data.global.name}}} &mdash; blog{{/if}}">
         <meta property="og:locale" content="en_GB">
         <meta property="article:author" content="{{{data.global.name}}}">
-        <meta property="og:site_name" content="{{{data.global.name}}} &mdash; blog">
+        <meta property="og:site_name" content="{{{data.global.name}}} &mdash; Articles">
 
         <!-- TWITTER -->
         <meta name="twitter:card" content="summary">
         <meta name="twitter:site" content="{{{data.global.twitterHandle}}}">
         <meta name="twitter:creator" content="{{{data.global.twitterHandle}}}">
-        <meta name="twitter:url" content="{{{data.global.url}}}{{#if pubDate}}/articles{{/if}}{{#if slug}}/{{{slug}}}{{/if}}">
-        <meta name="twitter:title" content="{{#if title}}{{{title}}} &mdash; {{/if}}{{{data.global.name}}}{{#if global.jobTitle}} &mdash; {{{data.global.jobTitle}}}{{/if}}">
-        <meta name="twitter:description" content="{{#if summary}}{{{summary}}}{{else}}{{{data.global.name}}} &mdash; blog{{/if}}">
+        <meta name="twitter:url" content="{{{data.global.url}}}{{#if article.date}}/articles{{/if}}{{#if article.slug}}/{{{article.slug}}}{{/if}}">
+        <meta name="twitter:title" content="{{#if title}}{{{title}}} &mdash; {{/if}}{{{data.global.name}}}{{#if data.global.jobTitle}} &mdash; {{{data.global.jobTitle}}}{{/if}}">
+        <meta name="twitter:description" content="{{#if summary}}{{{summary}}}{{else}}{{{data.global.name}}} &mdash; Articles{{/if}}">
         <meta name="twitter:image" content="{{{data.global.url}}}{{#if ogImage}}{{{ogImage}}}{{else}}/images/profile/alex-clapperton.jpg{{/if}}">
-
 
         <!-- FAVICONS -->
         <link rel="icon" type="image/png" href="/favicons/favicon-16x16.png" sizes="16x16">
