@@ -10,20 +10,26 @@
   }
 }
 
-.contact__inner {
+.contact__content {
   @include min(m) {
-    grid-area: title;
+    display: grid;
+    grid-gap: 30px 60px;
+    grid-template-columns: repeat(3, 1fr);
   }
 }
 
-.contact__sidebar {
+.contact__inner {
   @include min(m) {
-    grid-area: sidebar;
+    grid-column-end: span 3;
   }
+}
+
+.contact__body {
+  max-width: 80ch;
 }
 
 .contact__list-title {
-  @include text(mars);
+  @include text(venus);
 }
 
 .contact__list-body {

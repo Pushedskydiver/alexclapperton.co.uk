@@ -6,18 +6,21 @@
   padding-top: ($core-padding * 3.5);
 
 
-  @include max(l) {
+  @include max(m) {
     padding-bottom: ($core-padding * 10);
   }
 
-  @include min(l) {
+  @include min(m) {
     padding-bottom: ($core-padding * 3.5);
   }
 }
 
 .footer__content {
-  @include min(l) {
+  @include min(m) {
     @include flex(wrap, row, space-between, null);
+  }
+
+  @include min(l) {
     margin-bottom: ($core-margin * 4);
   }
 }

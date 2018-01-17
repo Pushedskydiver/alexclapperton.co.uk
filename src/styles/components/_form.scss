@@ -3,6 +3,12 @@
 .form {
   margin-bottom: ($core-margin * 2.5);
   padding-top: $core-padding;
+
+  @include min(m) {
+    grid-column-end: span 2;
+    margin-bottom: 0;
+    padding-top: 0;
+  }
 }
 
 .form__fieldset {
@@ -31,6 +37,7 @@
 }
 
 .form__field {
+  position: relative;
   margin-bottom: ($core-margin * 2);
 
   @include min(m) {
@@ -53,9 +60,13 @@
   margin-bottom: ($core-margin / 2);
 }
 
+.form__input-wrapper,
+.form__textarea-wrapper {
+  position: relative;
+}
+
 .form__input,
 .form__textarea {
-  @include text(bodyCopy);
   @include transition-03(border-color);
   width: 100%;
   background-color: darken($core-color-background, 3%);
@@ -76,18 +87,66 @@
   }
 }
 
-.form__input-describe {
-  display: block;
-  color: #de0000;
-  margin-top: ($core-margin / 2);
-}
-
 .form__input--valid,
 .form__textarea--valid {
-  border-color: #74e22d;
+  border-color: #70c041;
 }
 
 .form__input--invalid,
 .form__textarea--invalid {
   border-color: #de0000;
+}
+
+.input__icons {
+  @include transition-03(opacity);
+  position: absolute;
+  top: 50%;
+  right: 0.2em;
+  width: 50px;
+  height: calc(100% - 0.4em);
+  background-color: darken($core-color-background, 3%);
+  transform: translateY(-50%);
+  overflow: hidden;
+  opacity: 0;
+}
+
+.input__icons--visible {
+  opacity: 1;
+}
+
+.input__icon {
+  @include transition-03(opacity);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: ($core-padding * 0.8);
+  opacity: 0;
+}
+
+.input__icon--visiblw {
+  opacity: 1;
+}
+
+.input__icon--warning {
+  fill: #de0000;
+}
+
+.input__icon--check {
+  fill: #70c041;
+}
+
+.form__validation-message {
+  @include transition-03(opacity);
+  display: block;
+  position: absolute;
+  top: 3px;
+  right: 0;
+  color: #de0000;
+  opacity: 0;
+}
+
+.form__validation-message--visible {
+  opacity: 1;
 }
