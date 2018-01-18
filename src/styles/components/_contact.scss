@@ -29,7 +29,13 @@
 }
 
 .contact__list-title {
-  @include text(venus);
+  color: $core-color-brand;
+  font-family: $core-secondary-font-family;
+  font-size: calc(1em + 0.25vw);
+  line-height: $core-secondary-line-height;
+  font-weight: $core-secondary-font-weight;
+  margin-top: 0;
+  margin-bottom: ($core-margin / 2);
 }
 
 .contact__list-body {

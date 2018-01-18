@@ -22,11 +22,6 @@
     display: grid;
     grid-gap: 40px 20px;
     grid-template-columns: repeat(3, 1fr);
-    grid-area: form;
-
-    @supports not (display: grid) {
-      @include flex(wrap, row, space-between, null);
-    }
   }
 }
 
@@ -54,15 +49,10 @@
 }
 
 .form__label {
-  display: inline-block;
+  display: block;
   color: $core-color-foreground;
-  font-weight: $core-secondary-font-weight;
+  font-weight: $core-tertiary-font-weight;
   margin-bottom: ($core-margin / 2);
-}
-
-.form__input-wrapper,
-.form__textarea-wrapper {
-  position: relative;
 }
 
 .form__input,
@@ -87,6 +77,10 @@
   }
 }
 
+.form__textarea {
+  resize: none;
+}
+
 .form__input--valid,
 .form__textarea--valid {
   border-color: #70c041;
@@ -95,46 +89,6 @@
 .form__input--invalid,
 .form__textarea--invalid {
   border-color: #de0000;
-}
-
-.input__icons {
-  @include transition-03(opacity);
-  position: absolute;
-  top: 50%;
-  right: 0.2em;
-  width: 50px;
-  height: calc(100% - 0.4em);
-  background-color: darken($core-color-background, 3%);
-  transform: translateY(-50%);
-  overflow: hidden;
-  opacity: 0;
-}
-
-.input__icons--visible {
-  opacity: 1;
-}
-
-.input__icon {
-  @include transition-03(opacity);
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  padding: ($core-padding * 0.8);
-  opacity: 0;
-}
-
-.input__icon--visiblw {
-  opacity: 1;
-}
-
-.input__icon--warning {
-  fill: #de0000;
-}
-
-.input__icon--check {
-  fill: #70c041;
 }
 
 .form__validation-message {
