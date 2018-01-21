@@ -1,7 +1,6 @@
 import cookies from 'cookies'
 
 module.exports = (function(window) {
-  'use strict';
 
   const hostname = window.location.hostname === 'localhost' ? null : window.location.hostname;
 
@@ -17,7 +16,7 @@ module.exports = (function(window) {
     if (!cookies.docCookies.hasItem('cssNoticeDismissed')) {
       document.body.className += ' css-notice-active';
     }
-  };
+  }
 
   /**
   * @function bindEvents
@@ -30,7 +29,7 @@ module.exports = (function(window) {
       buttons[i].addEventListener('click', closeNotice);
       buttons[i].addEventListener('click', setCookie);
     }
-  };
+  }
 
   /**
   * @function closeNotice
@@ -40,7 +39,7 @@ module.exports = (function(window) {
     const notice = button.target.parentNode;
 
     notice.style.display = 'none';
-  };
+  }
 
   /**
   * @function setCookie
@@ -51,7 +50,7 @@ module.exports = (function(window) {
     const noticeName = button.target.parentNode.classList[1].replace('support-notice--', '');
 
     cookies.docCookies.setItem(noticeName + 'NoticeDismissed', true, 'Fri, 31 Dec 9999 23:59:59 GMT', '/', hostname);
-  };
+  }
 
   /**
   * @function init
@@ -60,7 +59,7 @@ module.exports = (function(window) {
   function init() {
     hideNotices();
     bindEvents();
-  };
+  }
 
   return {
     init: init

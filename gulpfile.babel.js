@@ -53,6 +53,7 @@ gulp.task('default', function (callback) {
   runSeq(
     'clean:all',
     'imports:sass',
+    ['stylelint', 'eslint'],
     ['styles:sass', 'scripts:compile'],
     ['images', 'icons', 'fonts'],
     ['copy:favicons', 'copy:manifest', 'copy:serviceWorker'],

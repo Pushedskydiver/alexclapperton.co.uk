@@ -1,7 +1,6 @@
 import nav from './navigation'
 
 module.exports = (function() {
-  'use strict';
 
   function addActiveClass(item) {
     item = item.target;

@@ -1,7 +1,7 @@
 import nav from './navigation'
 
 module.exports = (function() {
-  'use strict';
+
 
   function removeNavigationClasses() {
     nav.nav.classList.remove('nav--open');

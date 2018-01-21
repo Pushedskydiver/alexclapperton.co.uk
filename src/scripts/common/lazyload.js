@@ -1,5 +1,4 @@
 module.exports = (function() {
-  'use strict';
 
   const lazyImages = document.querySelectorAll('[data-lazy]');
   const infoBlockPicture = document.querySelector('[data-info-block-picture]');

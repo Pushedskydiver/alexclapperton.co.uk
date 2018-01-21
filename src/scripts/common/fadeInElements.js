@@ -1,5 +1,4 @@
 module.exports = (function() {
-  'use strict';
 
   const elementsToFade = document.querySelectorAll('[data-fade]');
 
