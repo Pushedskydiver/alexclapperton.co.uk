@@ -27,6 +27,7 @@
   "dependencies": {
     "babel-cli": "^6.26.0",
     "babel-core": "^6.22.1",
+    "babel-loader": "^7.1.2",
     "babel-preset-env": "^1.6.1",
     "body-parser": "~1.18.2",
     "compression": "^1.7.1",
@@ -41,6 +42,7 @@
     "express-lru": "^1.0.0",
     "express-method-override": "^0.0.3",
     "express-minify-html": "^0.12.0",
+    "glob": "^7.1.2",
     "gulp": "^3.9.1",
     "gulp-serve": "^1.4.0",
     "hbs": "~4.0.1",
@@ -49,7 +51,9 @@
     "morgan": "^1.9.0",
     "nodemon": "^1.14.11",
     "stylelint-selector-bem-pattern": "^2.0.0",
-    "vinyl-ftp": "^0.6.0"
+    "vinyl-ftp": "^0.6.0",
+    "webpack": "^3.10.0",
+    "webpack-bundle-analyzer": "^2.9.2"
   },
   "devDependencies": {
     "autoprefixer": "^6.5.1",
@@ -74,6 +78,7 @@
     "gulp-uglify": "^2.0.0",
     "gulp-util": "^3.0.7",
     "gulp-watch": "^4.3.10",
+    "gulp-webpack": "^1.5.0",
     "postcss-devtools": "^1.1.0",
     "postcss-focus": "^1.0.0",
     "postcss-minify-selectors": "^2.1.1",

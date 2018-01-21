@@ -76,7 +76,12 @@
     }
   },
   "uglify": {
-    "mangle": true,
+    "minimize": true,
+    "warnings": false,
+    "sourceMap": true,
+    "mangle": {
+      "except": ["exports", "require"]
+    },
     "compress": {
       "sequences": true,
       "properties": false,

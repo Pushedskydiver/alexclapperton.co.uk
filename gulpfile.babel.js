@@ -8,7 +8,6 @@
 import gulp from 'gulp'
 import yargs from 'yargs'
 import runSeq from 'run-sequence'
-// import browserSync from 'browser-sync'
 
 const argv = yargs.argv
 

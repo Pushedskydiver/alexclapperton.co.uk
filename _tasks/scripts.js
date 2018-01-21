@@ -3,31 +3,17 @@
  * @author Alex Clapperton <hi@alexclapperton.co.uk>
  */
 
+import webpack from 'webpack'
 import plugins from 'gulp-load-plugins'
 
-const $ = plugins()
+const $ = plugins();
 
 module.exports = (gulp, data, argv) => {
   gulp.task('scripts:compile', () => {
-      let source = [];
+      const webpackConfig = require('../webpack.config')(argv);
 
-      if (!argv.prod) {
-        source.push(`${data.paths.source.scripts.dev}*.js`)
-      }
-
-      source.push(`${data.paths.source.scripts.common}*.js`)
-      source.push(`${data.paths.source.scripts.vendor}*.js`)
-
-      return gulp.src(source)
-          .pipe($.sourcemaps.init())
-          .pipe($.babel())
-          .pipe($.order([
-              '*',
-              'scripts.js'
-          ]))
-          .pipe($.concat('main.js'))
-          .pipe($.if(argv.prod, $.uglify(data.plugin.uglify)))
-          .pipe($.sourcemaps.write('.'))
+      return gulp.src('')
+          .pipe($.webpack(webpackConfig, webpack))
           .pipe(gulp.dest(data.paths.dist.scripts));
   });
 }
