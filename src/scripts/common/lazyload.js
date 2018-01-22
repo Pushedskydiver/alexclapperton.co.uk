@@ -10,7 +10,7 @@ module.exports = (function() {
   }
 
   function lazyloaded(image) {
-    image = image.currentTarget || image;
+    image = image.currentTarget;
 
     const width = image.naturalWidth;
     const height = image.naturalHeight;
@@ -24,7 +24,7 @@ module.exports = (function() {
   }
 
   function lazyBeforeUnveil(image) {
-    image = image.currentTarget || image;
+    image = image.currentTarget;
 
     image.parentNode.classList.add('lazyload--image-loaded');
     image.removeEventListener('lazybeforeunveil', lazyBeforeUnveil);
