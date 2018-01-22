@@ -10,7 +10,7 @@ module.exports = (function() {
   }
 
   function lazyloaded(image) {
-    image = image.currentTarget;
+    image = image.currentTarget || image;
 
     const width = image.naturalWidth;
     const height = image.naturalHeight;
