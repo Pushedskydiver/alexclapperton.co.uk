@@ -3,6 +3,8 @@ module.exports = (function() {
   const lazyImages = document.querySelectorAll('[data-lazy]');
   const infoBlockPicture = document.querySelector('[data-info-block-picture]');
 
+  console.log('fdfdffdf', lazyImages);
+
   function lazyloadConfig() {
     window.lazySizesConfig.lazyClass = 'lazyload__image--lazy';
     window.lazySizesConfig.loadedClass = 'lazyload__image--loaded';
