@@ -20,12 +20,35 @@
 
 .contact__inner {
   @include min(m) {
-    grid-column-end: span 3;
+    grid-column-end: span 2;
   }
 }
 
 .contact__body {
   max-width: 80ch;
+}
+
+.contact__sidebar {
+  background-color: darken($core-color-background, 3%);
+  padding-top: ($core-padding * 2.5);
+  padding-right: ($core-padding * 2);
+  padding-bottom: ($core-padding * 2.5);
+  padding-left: ($core-padding * 2);
+
+  @include min(m) {
+    grid-row: 1 / span 2;
+    grid-column: 3;
+    padding-right: ($core-padding * 2.5);
+    padding-left: ($core-padding * 2.5);
+  }
+}
+
+.contact__sidebar-title {
+  @include text(mars);
+}
+
+.contact__list {
+  margin-top: ($core-margin * 2.5);
 }
 
 .contact__list-title {

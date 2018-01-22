@@ -10,7 +10,7 @@ module.exports = (gulp, data) => {
   });
 
   gulp.task('copy:manifest', () => {
-      return gulp.src('./_config/site.manifest')
+      return gulp.src('./_config/site.webmanifest')
           .pipe(gulp.dest(data.paths.dist.base))
   });
 
