@@ -13,13 +13,13 @@
                 <div class="form__inner">
                     <div class="form__field">
                         <label class="form__label" id="nameLabel" for="name">Name</label>
-                        <input class="form__input" id="name" type="text" aria-required="true" aria-labelledby="nameLabel" aria-describedby="nameDescribe" required data-input>
+                        <input class="form__input" id="name" type="text" aria-required="true" aria-labelledby="nameLabel" aria-describedby="nameDescribe" pattern="^[a-zA-Z \-']+$" required data-input>
                         <small class="form__validation-message" id="nameDescribe" data-validation>Your name is required</small>
                     </div>
 
                     <div class="form__field">
                         <label class="form__label" id="emailLabel" for="email">Email</label>
-                        <input class="form__input" id="email" type="email" aria-required="true" aria-labelledby="emailLabel" aria-describedby="emailDescribe" required data-input>
+                        <input class="form__input" id="email" type="email" aria-required="true" aria-labelledby="emailLabel" aria-describedby="emailDescribe" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" required data-input>
                         <small class="form__validation-message" id="emailDescribe" data-validation>Please enter a valid email address</small>
                     </div>
 
