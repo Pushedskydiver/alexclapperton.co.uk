@@ -24,7 +24,7 @@ module.exports = (function() {
   }
 
   function lazyBeforeUnveil(image) {
-    image = image.currentTarget;
+    image = image.currentTarget || image;
 
     image.parentNode.classList.add('lazyload--image-loaded');
     image.removeEventListener('lazybeforeunveil', lazyBeforeUnveil);
