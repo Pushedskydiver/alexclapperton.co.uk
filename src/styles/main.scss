@@ -18,12 +18,14 @@
 *  Z-index............Z-index map configuration.
 *
 * MIXINS
+*  Properties.........Convert map to CSS properties.
+*  Buttons............Mixin to add button styles.
 *  Flexbox............Simple flexbox mixin.
-*  Grid...............site wide grid configuration.
 *  Keyframes..........Simple mixins for keyframe animations.
+*  Responsive.........Responsive media queries configuration.
 *  Transforms.........Simple mixins for css transform properties.
 *  Transitions........Simple mixxins for css transition properties.
-*  Typography.........Mixin to add responsive typography to breakpoints map.
+*  Typography.........Mixin to add typography.
 *
 * GENERIC
 *  Keyframes..........Keyframe animations.
@@ -31,91 +33,77 @@
 *
 * ELEMENTS
 *  Global.............The sites core styles.
-*  Hidden.............Hidden styles to hide text behind icons with links.
 *
 * OBJECTS
 *  Layout.............Generic layout module.
-*  Loader.............The sire's pre loader when site first loads.
+*  Lazy load..........Generic styles for lazy loading images.
 *
 * COMPONENTS
-*  About..............About me section styles.
+*  Articles...........Article section styles.
 *  Banner.............Top page banner styles.
-*  Bar................Title bar styles.
 *  Blocks.............Blocks styles on about page.
-*  Blog...............Blog page styles.
-*  Breadcrumbs........Simple breadcrumbs styles.
-*  Browser............Portfolio page browser window styles.
+*  Breadcrumbs........Breadcrumb banner styles.
+*  Browser............Browser window styles for project item.
 *  Butons.............Button styles.
-*  Contact............Contact section styles.
+*  Contact............Contact page styles.
+*  Devices............Mobile device view styles.
 *  Figure.............Figure and figcaption styles.
-*  Filter.............Portfolio filter button styles.
-*  Footer.............Footer styles.
+*  Footer.............Generic footer styles.
 *  Form...............Contact form styles.
-*  Header.............The sites header styles.
-*  Hero...............Blog post hero image styles.
-*  Info...............About me info block styles.
+*  Header.............Header styles.
+*  Info Block.........Info block styles.
+*  Links..............Generic link styles.
 *  List...............Blog post list styles.
 *  Logo...............Site logo styles.
-*  Nav primary........The sites main nav.
+*  Navigation.........Desktop/Mobile navigation styles.
 *  Notices............The sites notice styles for JS turned off etc.
-*  Portfolio..........Portfolio styles.
+*  Portfolio..........Portfolio section styles.
 *  Post...............Blog post styles.
-*  Prism - code snippet syntax highlighter
-*  Scroll to top......Scroll to top button styles.
-*  Share..............Blog post share styles.
-*  Showcase...........Portfolio items showcase styles.
+*  Prism..............Code snippet styles.
+*  Project............Portfolio item styles.
 *  Skip links.........The sites skip to links.
-*  Social.............Social block styles.
-*  Symbol.............Symbol block styles.
-*  Twitter............Twitter feed styles.
 *
 */
 
 
 
 
-@import "/Users/alih2106/Desktop/website/src/styles/settings/_variables.scss";
-@import "/Users/alih2106/Desktop/website/src/styles/tools/functions/_typography.scss";
-@import "/Users/alih2106/Desktop/website/src/styles/tools/functions/_z-index.scss";
-@import "/Users/alih2106/Desktop/website/src/styles/tools/mixins/_flexbox.scss";
-@import "/Users/alih2106/Desktop/website/src/styles/tools/mixins/_grid.scss";
-@import "/Users/alih2106/Desktop/website/src/styles/tools/mixins/_keyframes.scss";
-@import "/Users/alih2106/Desktop/website/src/styles/tools/mixins/_transforms.scss";
-@import "/Users/alih2106/Desktop/website/src/styles/tools/mixins/_transitions.scss";
-@import "/Users/alih2106/Desktop/website/src/styles/tools/mixins/_typography.scss";
-@import "/Users/alih2106/Desktop/website/src/styles/generic/_keyframes.scss";
-@import "/Users/alih2106/Desktop/website/src/styles/generic/_typography.scss";
-@import "/Users/alih2106/Desktop/website/src/styles/elements/_global.scss";
-@import "/Users/alih2106/Desktop/website/src/styles/elements/_visually-hidden.scss";
-@import "/Users/alih2106/Desktop/website/src/styles/objects/_layout.scss";
-@import "/Users/alih2106/Desktop/website/src/styles/objects/_loader.scss";
-@import "/Users/alih2106/Desktop/website/src/styles/components/_about.scss";
-@import "/Users/alih2106/Desktop/website/src/styles/components/_banner.scss";
-@import "/Users/alih2106/Desktop/website/src/styles/components/_bar.scss";
-@import "/Users/alih2106/Desktop/website/src/styles/components/_blocks.scss";
-@import "/Users/alih2106/Desktop/website/src/styles/components/_blog.scss";
-@import "/Users/alih2106/Desktop/website/src/styles/components/_breadcrumbs.scss";
-@import "/Users/alih2106/Desktop/website/src/styles/components/_browser.scss";
-@import "/Users/alih2106/Desktop/website/src/styles/components/_buttons.scss";
-@import "/Users/alih2106/Desktop/website/src/styles/components/_contact.scss";
-@import "/Users/alih2106/Desktop/website/src/styles/components/_figure.scss";
-@import "/Users/alih2106/Desktop/website/src/styles/components/_filter.scss";
-@import "/Users/alih2106/Desktop/website/src/styles/components/_footer.scss";
-@import "/Users/alih2106/Desktop/website/src/styles/components/_form.scss";
-@import "/Users/alih2106/Desktop/website/src/styles/components/_header.scss";
-@import "/Users/alih2106/Desktop/website/src/styles/components/_hero.scss";
-@import "/Users/alih2106/Desktop/website/src/styles/components/_info.scss";
-@import "/Users/alih2106/Desktop/website/src/styles/components/_list.scss";
-@import "/Users/alih2106/Desktop/website/src/styles/components/_logo.scss";
-@import "/Users/alih2106/Desktop/website/src/styles/components/_navigation.scss";
-@import "/Users/alih2106/Desktop/website/src/styles/components/_notices.scss";
-@import "/Users/alih2106/Desktop/website/src/styles/components/_portfolio.scss";
-@import "/Users/alih2106/Desktop/website/src/styles/components/_post.scss";
-@import "/Users/alih2106/Desktop/website/src/styles/components/_prism.scss";
-@import "/Users/alih2106/Desktop/website/src/styles/components/_scroll-top.scss";
-@import "/Users/alih2106/Desktop/website/src/styles/components/_share.scss";
-@import "/Users/alih2106/Desktop/website/src/styles/components/_showcase.scss";
-@import "/Users/alih2106/Desktop/website/src/styles/components/_skip-links.scss";
-@import "/Users/alih2106/Desktop/website/src/styles/components/_social.scss";
-@import "/Users/alih2106/Desktop/website/src/styles/components/_symbol.scss";
-@import "/Users/alih2106/Desktop/website/src/styles/components/_twitter.scss";
+@import "/Users/alexclapperton/Desktop/node-express/src/styles/settings/_variables.scss";
+@import "/Users/alexclapperton/Desktop/node-express/src/styles/tools/functions/_typography.scss";
+@import "/Users/alexclapperton/Desktop/node-express/src/styles/tools/functions/_z-index.scss";
+@import "/Users/alexclapperton/Desktop/node-express/src/styles/tools/mixins/_properties.scss";
+@import "/Users/alexclapperton/Desktop/node-express/src/styles/tools/mixins/_buttons.scss";
+@import "/Users/alexclapperton/Desktop/node-express/src/styles/tools/mixins/_flexbox.scss";
+@import "/Users/alexclapperton/Desktop/node-express/src/styles/tools/mixins/_keyframes.scss";
+@import "/Users/alexclapperton/Desktop/node-express/src/styles/tools/mixins/_responsive.scss";
+@import "/Users/alexclapperton/Desktop/node-express/src/styles/tools/mixins/_transforms.scss";
+@import "/Users/alexclapperton/Desktop/node-express/src/styles/tools/mixins/_transitions.scss";
+@import "/Users/alexclapperton/Desktop/node-express/src/styles/tools/mixins/_typography.scss";
+@import "/Users/alexclapperton/Desktop/node-express/src/styles/generic/_keyframes.scss";
+@import "/Users/alexclapperton/Desktop/node-express/src/styles/generic/_typography.scss";
+@import "/Users/alexclapperton/Desktop/node-express/src/styles/elements/_global.scss";
+@import "/Users/alexclapperton/Desktop/node-express/src/styles/objects/_layout.scss";
+@import "/Users/alexclapperton/Desktop/node-express/src/styles/objects/_lazyload.scss";
+@import "/Users/alexclapperton/Desktop/node-express/src/styles/components/_articles.scss";
+@import "/Users/alexclapperton/Desktop/node-express/src/styles/components/_banner.scss";
+@import "/Users/alexclapperton/Desktop/node-express/src/styles/components/_blocks.scss";
+@import "/Users/alexclapperton/Desktop/node-express/src/styles/components/_breadcrumbs.scss";
+@import "/Users/alexclapperton/Desktop/node-express/src/styles/components/_browser.scss";
+@import "/Users/alexclapperton/Desktop/node-express/src/styles/components/_buttons.scss";
+@import "/Users/alexclapperton/Desktop/node-express/src/styles/components/_contact.scss";
+@import "/Users/alexclapperton/Desktop/node-express/src/styles/components/_devices.scss";
+@import "/Users/alexclapperton/Desktop/node-express/src/styles/components/_figure.scss";
+@import "/Users/alexclapperton/Desktop/node-express/src/styles/components/_footer.scss";
+@import "/Users/alexclapperton/Desktop/node-express/src/styles/components/_form.scss";
+@import "/Users/alexclapperton/Desktop/node-express/src/styles/components/_header.scss";
+@import "/Users/alexclapperton/Desktop/node-express/src/styles/components/_info-block.scss";
+@import "/Users/alexclapperton/Desktop/node-express/src/styles/components/_links.scss";
+@import "/Users/alexclapperton/Desktop/node-express/src/styles/components/_list.scss";
+@import "/Users/alexclapperton/Desktop/node-express/src/styles/components/_logo.scss";
+@import "/Users/alexclapperton/Desktop/node-express/src/styles/components/_navigation.scss";
+@import "/Users/alexclapperton/Desktop/node-express/src/styles/components/_notices.scss";
+@import "/Users/alexclapperton/Desktop/node-express/src/styles/components/_portfolio.scss";
+@import "/Users/alexclapperton/Desktop/node-express/src/styles/components/_post.scss";
+@import "/Users/alexclapperton/Desktop/node-express/src/styles/components/_prism.scss";
+@import "/Users/alexclapperton/Desktop/node-express/src/styles/components/_project.scss";
+@import "/Users/alexclapperton/Desktop/node-express/src/styles/components/_skip-links.scss";

@@ -11,106 +11,85 @@ html {
 }
 
 body {
-  background: $core-color-light;
-  color: $core-color-dark;
-  font-family: $core-font-family;
-  font-weight: $core-font-weight;
-  line-height: $core-line-height;
+  @include text(bodyCopy);
+  color: $core-color-body;
+  font-family: Helvetica, sans-serif;
+  background-color: $core-color-background;
   margin: 0;
-  padding-bottom: 67px;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
-  @include fadeIn;
 
-  @include respond-to(s) {
-    padding-bottom: 77px;
-  }
-
-  @include respond-to(m) {
-    padding-bottom: 0;
+  @include min(l) {
+    font-family: $core-font-family;
   }
 }
 
 body ::-moz-selection {
   background: $core-color-brand;
-  color: $core-color-light;
+  color: $core-color-background;
 }
 
 body ::selection {
   background: $core-color-brand;
-  color: $core-color-light;
+  color: $core-color-background;
 }
 
 h1 {
-  color: $core-color-brand;
-  font-family: $core-secondary-font-family;
-  font-weight: $core-font-weight;
-  margin: 0 0 $core-margin 0;
-  line-height: $core-secondary-line-height;
-  @include font-size($h1-font-sizes);
+  @include text(jupiter);
+
+  @include min(l) {
+    font-size: calc(2.5em + 0.5vw);
+  }
 }
 
 h2 {
-  color: $core-color-brand;
-  font-family: $core-secondary-font-family;
-  font-weight: $core-font-weight;
-  margin: 0 0 $core-margin 0;
-  line-height: $core-secondary-line-height;
-  @include font-size($h2-font-sizes);
+  @include text(saturn);
 }
 
 h3 {
-  color: $core-color-brand;
-  font-family: $core-secondary-font-family;
-  font-weight: $core-font-weight;
-  margin: 0 0 $core-margin 0;
-  line-height: $core-secondary-line-height;
-  @include font-size($h3-font-sizes);
+  @include text(uranus);
 }
 
 h4 {
-  color: $core-color-brand;
-  font-family: $core-secondary-font-family;
-  font-weight: $core-font-weight;
-  margin: 0 0 $core-margin 0;
-  line-height: $core-secondary-line-height;
-  @include font-size($h4-font-sizes);
+  @include text(mars);
 }
 
 h5 {
-  color: $core-color-brand;
-  font-family: $core-secondary-font-family;
-  font-weight: $core-font-weight;
-  margin: 0 0 $core-margin 0;
-  line-height: $core-secondary-line-height;
-  @include font-size($h5-font-sizes);
-}
-
-h6 {
-  color: $core-color-brand;
-  font-family: $core-secondary-font-family;
-  font-weight: $core-font-weight;
-  margin: 0 0 $core-margin 0;
-  line-height: $core-secondary-line-height;
-  @include font-size($h6-font-sizes);
+  @include text(earth);
 }
 
 p {
-  color: $core-color-body;
-  font-weight: $core-font-weight;
-  line-height: $core-line-height;
-  margin: 0 0 ($core-margin * 1.5) 0;
-  @include font-size($p-font-sizes);
+  @include text(bodyCopy);
 }
 
-ul {
+a {
+  color: $core-color-brand;
+  text-decoration: none;
+
+  @include min(l) {
+    @include transition-03(all);
+    cursor: pointer;
+  }
+}
+
+strong {
+  color: $core-color-brand;
+}
+
+ul,
+ol,
+dl {
   margin: 0;
   padding: 0;
   list-style: none;
 }
 
+dd {
+  margin-left: 0;
+}
+
 li {
-  @include font-size($p-font-sizes);
+  @include text(bodyCopy);
 }
 
 figure {
@@ -119,15 +98,14 @@ figure {
 }
 
 img {
+  width: 100%;
   max-width: 100%;
   margin: 0 auto;
   vertical-align: middle;
 }
 
-svg {
-  @include respond-to(l) {
-    @include transition-03;
-  }
+img:not([src]) {
+  visibility: hidden;
 }
 
 legend {
@@ -135,49 +113,55 @@ legend {
 }
 
 input {
+  @include text(bodyCopy);
+  font-family: Helvetica, sans-serif;
   border-radius: 0;
   appearance: none;
-}
 
-textarea {
-  border-radius: 0;
-  appearance: none;
-}
-
-button {
-  background-color: transparent;
-  margin: 0;
-  padding: 0;
-  border: none;
-  appearance: none;
-  @include font-size($p-font-sizes);
-
-  @include respond-to(l) {
-    &:hover {
-      cursor: pointer;
-    }
-
-    @include transition-03;
+  @include min(l) {
+    font-family: $core-font-family;
   }
 }
 
-a {
-  color: $core-color-brand;
-  text-decoration: underline;
+textarea {
+  @include text(bodyCopy);
+  font-family: Helvetica, sans-serif;
+  border-radius: 0;
+  appearance: none;
 
-  @include respond-to(l) {
-    cursor: pointer;
-    @include transition-03;
+  @include min(l) {
+    font-family: $core-font-family;
+  }
+}
+
+button {
+  margin: 0;
+  padding: 0;
+  border: none;
+  border-radius: 0;
+  appearance: none;
+
+  @include min(l) {
+    @include transition-03(all);
+    font-family: $core-font-family;
+
+    &:hover {
+      cursor: pointer;
+    }
   }
 }
 
 pre {
   margin-top: 0;
-	margin-bottom: ($core-margin * 3);
+  margin-bottom: ($core-margin * 3);
 }
 
 hr {
   margin: ($core-margin * 2) 0;
-  border-color: $core-color-dark;
+  border-color: $core-color-foreground;
   opacity: 0.1;
+}
+
+svg {
+  @include transition-03(all);
 }

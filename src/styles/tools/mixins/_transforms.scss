@@ -1,6 +1,6 @@
 // Transforms.........Simple mixins for css transform properties.
 
-@mixin transform($transforms) {
+@mixin transform($transforms...) {
   transform: $transforms;
 }
 // rotate

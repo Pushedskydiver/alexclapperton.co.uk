@@ -2,7 +2,7 @@
 
 // Convert px to em
 @function em($px, $base: $core-font-size) {
-    @return ($px / $base) * 1em;
+  @return ($px / $base) * 1em;
 }
 
 $p-font-sizes: (

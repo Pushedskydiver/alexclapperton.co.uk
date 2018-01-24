@@ -21,7 +21,7 @@
     flex-direction: row;
   }
   @else {
-    @warn "The value must be either row or column";
+    @warn 'The value must be either row or column';
   }
 }
 

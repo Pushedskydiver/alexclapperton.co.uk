@@ -1,0 +1,16 @@
+// Links..............Generic link styles.
+
+.link {
+  font-weight: $core-tertiary-font-weight;
+  border-bottom-width: $core-border-width;
+  border-bottom-style: $core-border-style;
+  border-bottom-color: $core-color-link;
+
+  @include min(l) {
+    @include transition-03(background-color);
+
+    &:hover {
+      background-color: $core-color-link;
+    }
+  }
+}

@@ -2,13 +2,9 @@
 node_modules
 
 # production
-dist
-
-# Sass
-.sass-cache
+public
 
 # misc
-style-guide
 [Tt]humbs.db
 .DS_Store
 npm-debug.log*

@@ -1,0 +1,44 @@
+        <footer class="footer 📱">
+            <div class="hide 🖼" data-fade>
+                <div class="footer__content">
+                    <ul class="footer__list">
+                        <li class="footer__list-item footer__list-item--title">Useful links</li>
+                    {{#each data.global.navigation}}
+                        <li class="footer__list-item"><a class="footer__list-🔗" href="{{url}}" title="{{title-attr}}" data-item-{{slug}}>{{title}}</a></li>
+                    {{/each}}
+                    </ul>
+                    <ul class="footer__list">
+                        <li class="footer__list-item footer__list-item--title">Send me an email</li>
+                        <li class="footer__list-item"><a class="footer__list-🔗" href="mailto:{{data.global.email}}">{{data.global.email}}</a></li>
+                    </ul>
+                    <ul class="footer__list">
+                        <li class="footer__list-item footer__list-item--title">Let's have a chat</li>
+                        <li class="footer__list-item footer__list-item--phone">{{data.global.phone}}</li>
+                    </ul>
+                    <ul class="footer__list">
+                        <li class="footer__list-item footer__list-item--title">Let's be social</li>
+                    {{#each data.global.social}}
+                        <li class="footer__list-item footer__list-item--social"><a class="footer__list-🔗" href="{{url}}" title="{{title-attr}}" {{#if external}}rel="external"{{/if}}>{{title}}</a></li>
+                    {{/each}}
+                    </ul>
+                </div>
+
+                <small class="footer__body">Copyright &copy; 2017 {{data.global.name}}. All rights reserved.</small>
+            </div>
+        </footer>
+
+        <script>
+            if ('serviceWorker' in navigator) {
+                window.addEventListener('load', function() {
+                    navigator.serviceWorker.register('/sw.js').then(function(registration) {
+                        // Successfully registered the Service Worker
+                        //console.log('Service Worker registration successful with scope: ', registration.scope);
+                    }).catch(function(err) {
+                        // Failed to register the Service Worker
+                        //console.log('Service Worker registration failed: ', err);
+                    });
+                });
+            }
+        </script>
+    </body>
+</html>

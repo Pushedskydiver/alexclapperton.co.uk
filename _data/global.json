@@ -1,0 +1,61 @@
+{
+  "url": "https://alexclapperton.co.uk",
+  "name": "Alex Clapperton",
+  "jobTitle": "Foundation Front-End Web Developer",
+  "employer": "Code Computerlove",
+  "employerUrl": "https://www.codecomputerlove.com/",
+  "university": "Manchester Metropolitan University",
+  "email": "hi@alexclapperton.co.uk",
+  "phone": "+44 7930 946 211",
+  "twitterHandle": "@AlexMClapperton",
+  "facebookName": "AlexMClapperton",
+  "linkedinName": "AlexClapperton",
+  "githubRepo": "https://github.com/Pushedskydiver/alexclapperton.co.uk",
+  "social": [
+    {
+      "url": "https://github.com/Pushedskydiver",
+      "title": "GitHub",
+      "title-attr": "Go to Alex's GitHub profile.",
+      "external": true
+    },
+    {
+      "url": "https://twitter.com/AlexMClapperton",
+      "title": "Twitter",
+      "title-attr": "Go to Alex's Twitter profile.",
+      "handle": "@AlexMClapperton",
+      "external": true
+    },
+    {
+      "url": "https://uk.linkedin.com/in/alexclapperton",
+      "title": "LinkedIn",
+      "title-attr": "Go to Alex's LinkedIn profile.",
+      "handle": "AlexClapperton",
+      "external": true
+    }
+  ],
+  "navigation": [
+    {
+      "url": "/about-me/",
+      "title": "About Me",
+      "title-attr": "Go to the about page.",
+      "slug": "about"
+    },
+    {
+      "url": "/portfolio/",
+      "title": "Portfolio",
+      "title-attr": "Go to the portfolio page.",
+      "slug": "portfolio"
+    },
+    {
+      "url": "/articles/",
+      "title": "Articles",
+      "title-attr": "Go to the articles page.",
+      "slug": "articles"
+    },
+    {
+      "url": "/contact/",
+      "title": "Contact",
+      "title-attr": "Go to the contact page."
+    }
+  ]
+}

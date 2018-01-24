@@ -1,22 +1,13 @@
-var cacheName = 'alexclapperton:0025';
+var cacheName = 'alexclapperton:0036';
 var cacheFiles = [
   '/',
-  '/about-me',
-  '/blog',
-  '/blog/creating-my-website-part-one-research-and-design/',
-  '/blog/from-https-to-css-what-i-have-changed-on-my-website/',
-  '/blog/performance-and-optimisation-getting-your-website-up-to-speed/',
-  '/blog/the-digital-industry-a-developers-perspective/',
-  '/blog/working-with-grid-the-holy-grail-of-css-layout/',
-  '/portfolio',
-  '/portfolio/love-manchester-website/',
-  '/portfolio/website-portfolio-2015/',
-  '/contact',
+  '/about-me/',
+  '/contact/',
+  '/offline/',
+  '/articles/how-to-use-grid-and-flexbox-together/',
+  '/articles/working-with-grid-the-holy-grail-of-css-layout/',
+  '/articles/from-https-to-css-what-i-have-changed-on-my-website/',
 ];
-
-
-
-
 
 self.addEventListener('install', function(event) {
   event.waitUntil(
@@ -27,10 +18,6 @@ self.addEventListener('install', function(event) {
       })
   );
 });
-
-
-
-
 
 self.addEventListener('fetch', function(event) {
   event.respondWith(
@@ -48,14 +35,10 @@ self.addEventListener('fetch', function(event) {
   );
 });
 
-
-
-
-
 // Empty out any caches that don’t match the ones listed.
 self.addEventListener('activate', function(event) {
 
-  var cacheWhitelist = ['alexclapperton:0024'];
+  var cacheWhitelist = ['alexclapperton:0036'];
 
   event.waitUntil(
     caches.keys().then(function(cacheNames) {

@@ -4,13 +4,12 @@
   position: fixed;
   bottom: 0;
   width: 100%;
-  background: #ffd600;
+  background-color: $core-color-link;
   padding: ($core-padding / 2);
   text-align: center;
-  border-top: 1px solid;
   opacity: 0.9;
   transition: opacity 250ms;
-  z-index: 999;
+  z-index: z(kilo);
 
   &:hover {
     opacity: 1;

@@ -1,0 +1,30 @@
+// Project............Portfolio item styles.
+
+.project {
+  padding-top: ($core-padding * 3);
+
+  @include min(m) {
+    padding-top: ($core-padding * 4);
+  }
+
+  @include min(l) {
+    padding-top: ($core-padding * 4.5);
+  }
+}
+
+.project__inner {
+  @include min(l) {
+    @include flex(wrap, row, space-between, null);
+  }
+}
+
+.project__content {
+  @include min(l) {
+    width: 42%;
+    order: 2;
+  }
+}
+
+.project__subTitle {
+  @include text(venus);
+}

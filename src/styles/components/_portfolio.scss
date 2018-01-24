@@ -1,92 +1,106 @@
-// Portfolio..........Portfolio styles.
+// Portfolio..........Portfolio section styles.
 
 .portfolio {
-  padding: 30px 0;
+  position: relative;
+  padding-top: ($core-padding * 3);
+  padding-bottom: ($core-padding * 3);
 
-  @include respond-to(m) {
-    padding-top: 50px;
-    padding-bottom: 50px;
+  @include min(l) {
+    padding-top: ($core-padding * 4.5);
+    padding-bottom: ($core-padding * 4.5);
   }
 }
 
+.portfolio__title {
+  margin-bottom: ($core-margin / 2);
+}
+
+.portfolio__title-small {
+  @include text(pluto);
+}
+
+.portfolio__subText {
+  max-width: 550px;
+  margin-bottom: ($core-margin * 3);
+}
+
 .portfolio__content {
-  @supports (display: grid) {
-    display: grid;
-    grid-gap: 25px;
-    grid-template-columns: 1fr;
-    grid-template-rows: auto;
-  }
-
-  @include respond-to(l) {
-    @supports (display: grid) {
-      grid-gap: 0;
-      grid-template-columns: repeat(2, 1fr);
-    }
-
-    @supports not (display: grid) {
-      @include flex(wrap, row, space-between, null);
-    }
+  @include min(m) {
+    column-count: 2;
+    column-gap: ($core-margin * 2.2);
   }
 }
 
 .portfolio__item {
-  @supports not (display: grid) {
-    display: block;
+  display: block;
+  background-color: $core-color-brand;
+  margin-bottom: ($core-margin * 2.2);
+
+  @include min(m) {
+    display: inline-block;
+    width: 100%;
     margin-bottom: ($core-margin * 2);
   }
 
-  @include respond-to(l) {
-    transition: none;
+  @include min(l) {
+    overflow: hidden;
 
-    @supports not (display: grid) {
-      width: 50%;
-      margin-bottom: 0;
-    }
-  }
-
-  @at-root {
-    .portfolio__page {
-      .portfolio__item {
-        width: 100%;
-
-        @include respond-to(m) {
-          width: 50%;
-        }
-      }
+    &:hover .portfolio__📷 {
+      @include transform(scale(1.2) rotate(5deg));
     }
   }
 }
 
 .portfolio__figure {
   position: relative;
-  z-index: z(alpha);
 
-  @include respond-to(l) {
-    &:hover {
-      .portfolio__caption {
-        background-color: rgba($core-color-dark, 0.9);
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba($core-color-foreground, 0.1) 0%,$core-color-foreground 100%);
+    z-index: z(alpha);
+  }
+}
 
-        &::before {
-          opacity: 1;
-          @include scale(1);
-        }
-      }
+.portfolio__image-wrapper {
+  position: relative;
 
-      .portfolio__title {
-        transform: translate3d(0,0,0);
-      }
+  &::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: calc(100% - #{$core-grid-unit * 2});
+    height: calc(100% - #{$core-grid-unit * 2});
+    border-width: $core-border-width;
+    border-style: $core-border-style;
+    border-color: $core-color-link;
+    transform: translate(-50%, -50%);
+    z-index: z(charlie);
+  }
 
-      .portfolio__body {
-        opacity: 1;
-        @include scale(1);
-      }
+  @include min(xs) {
+    &::before {
+      width: calc(100% - #{$core-grid-unit * 3});
+      height: calc(100% - #{$core-grid-unit * 3});
+    }
+  }
+
+  @include min(l) {
+    &::before {
+      width: calc(100% - #{$core-grid-unit * 4});
+      height: calc(100% - #{$core-grid-unit * 4});
     }
   }
 }
 
-.portfolio__img {
-  @include respond-to(xs) {
-    width: 100%;
+.portfolio__📷 {
+  @include min(l) {
+    @include transition-05(transform);
   }
 }
 
@@ -95,160 +109,33 @@
   bottom: 0;
   left: 0;
   width: 100%;
-  background-color: $core-color-dark;
-  padding: $core-padding;
-  z-index: z(alpha);
+  padding-top: 0;
+  padding-right: ($core-padding * 2);
+  padding-bottom: ($core-padding * 2.5);
+  padding-left: ($core-padding * 2);
+  color: $core-color-background;
+  z-index: z(beta);
 
-  @include respond-to(l) {
-    top: 0;
-    bottom: initial;
-    height: 100%;
-    background-color: rgba($core-color-dark, 0.6);
-    @include flex(null, column, center, center);
-    @include transition-03;
+  @include min(xs) {
+    padding-right: ($core-padding * 2.5);
+    padding-left: ($core-padding * 2.5);
+  }
 
-    &::before {
-      content: '';
-      position: absolute;
-      top: 30px;
-      right: 30px;
-      bottom: 30px;
-      left: 30px;
-      border: 1px $core-border-style $core-color-light;
-      opacity: 0;
-      @include scale(0);
-      @include transition-03;
-    }
+  @include min(l) {
+    padding-top: ($core-padding * 4);
+    padding-right: ($core-padding * 4);
+    padding-bottom: ($core-padding * 4);
+    padding-left: ($core-padding * 4);
   }
 }
 
-.portfolio__title {
-  color: $core-color-light;
+.portfolio__caption-title {
+  @include text(mars);
+  color: $core-color-background;
+}
+
+.portfolio__caption-category {
+  @include text(earth);
+  color: $core-color-link;
   margin-bottom: 0;
-
-  @include respond-to(l) {
-    margin-bottom: ($core-margin * 1.5);
-    transform: translate3d(0,50%,0);
-    @include transition-03;
-  }
-}
-
-.portfolio__body {
-  color: $core-color-light;
-  margin-bottom: 0;
-
-  @include respond-to(l) {
-    opacity: 0;
-    @include scale(0);
-    @include transition-03;
-  }
-}
-
-.portfolio__link {
-  min-height: 270px;
-  background-color: $core-color-brand;
-  color: $core-color-light;
-  padding: 10%;
-  font-family: $core-secondary-font-family;
-  font-weight: $core-secondary-font-weight;
-  text-align: center;
-  text-decoration: none;
-  @include font-size($h1-font-sizes);
-  @include flex(null, column, center, center);
-
-  @include respond-to(s) {
-    min-height: 375px;
-  }
-
-  @include respond-to(l) {
-    &:hover {
-      background-color: $core-color-dark;
-    }
-
-    @supports not (display: grid) {
-      width: 50%;
-    }
-  }
-}
-
-.portfolio__message {
-  position: relative;
-  height: 0;
-  margin: 0 auto;
-  padding: 0;
-  text-align: center;
-  opacity: 0;
-  @include font-size($h4-font-sizes);
-  @include scale(0);
-  @include transition-03;
-
-  &--visible {
-    height: auto;
-    padding: ($core-padding * 5) 0;
-    opacity: 1;
-    z-index: -1;
-    @include scale(1);
-  }
-}
-
-.portfolio__intro {
-  @supports (display: grid) {
-    display: grid;
-    grid-gap: 30px;
-    grid-auto-rows: 200px auto;
-  }
-
-  @include respond-to(xs) {
-    @supports (display: grid) {
-      grid-auto-rows: 300px auto;
-    }
-  }
-
-  @include respond-to(s) {
-    @supports (display: grid) {
-      grid-auto-rows: 400px auto;
-    }
-  }
-
-  @include respond-to(m) {
-    @supports (display: grid) {
-      grid-auto-rows: 440px auto;
-    }
-  }
-
-  @include respond-to(l) {
-    @supports (display: grid) {
-      grid-gap: 50px;
-      grid-template-columns: repeat(12, 1fr);
-      grid-auto-rows: auto;
-    }
-
-    @supports not (display: grid) {
-      @include flex(wrap, row, space-between, null);
-    }
-  }
-}
-
-.portfolio__brief {
-  @include respond-to(l) {
-    @supports (display: grid) {
-      grid-column: 8 / -1;
-    }
-
-    @supports not (display: grid) {
-      width: 48%;
-    }
-  }
-}
-
-.portfolio__brief-subtitle {
-  color: $core-color-dark;
-}
-
-.portfolio__brief-btn {
-  margin-bottom: ($core-margin * 2);
-}
-
-.portfolio__brief-img {
-  margin-bottom: ($core-margin * 2);
 }

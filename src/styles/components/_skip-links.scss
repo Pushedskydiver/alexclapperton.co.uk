@@ -1,35 +1,32 @@
 // Skip links.........The sites skip to links.
 
-.skip-link {
+.skip-🔗 {
+  @include text(earth);
   position: absolute;
   top: 0;
-  left: 20px;
+  left: 0;
   background-color: $core-color-brand;
+  color: $core-color-background;
   margin: 0;
-  padding: 0 ($core-padding / 2);
-  color: $core-color-light;
-  font-size: ($core-font-size * 1.05);
-  font-weight: $core-secondary-font-weight;
+  padding-top: $core-padding;
+  padding-right: ($core-padding/ 2);
+  padding-bottom: $core-padding;
+  padding-left: ($core-padding/ 2);
   text-align: center;
-  @include flex(null, column, center, center);
+  text-decoration: none;
 }
 
-.hidden {
+.skip-🔗--hidden {
   position: absolute;
-  width: 1px;
-  height: 1px;
-  margin: -1px;
+  width: 100%;
+  height: auto;
   overflow: hidden;
   clip: rect(0 0 0 0);
 
   &:active,
   &:focus {
-    width: auto;
-    height: auto;
-    margin: 0;
-    overflow: visible;
     clip: auto;
     overflow: visible;
-    z-index: z(juliet);
+    z-index: z(kilo);
   }
 }

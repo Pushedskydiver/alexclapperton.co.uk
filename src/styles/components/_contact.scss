@@ -1,63 +1,80 @@
-// Contact............Contact section styles.
+// Contact............Contact page styles.
 
 .contact {
-  padding: 30px 0;
+  padding-top: ($core-padding * 3);
+  padding-bottom: ($core-padding * 3);
 
-  @include respond-to(l) {
-    padding-top: 50px;
-    padding-bottom: 50px;
+  @include min(l) {
+    padding-top: ($core-padding * 4.5);
+    padding-bottom: ($core-padding * 4.5);
   }
 }
 
 .contact__content {
-  @supports (display: grid) {
+  @include min(m) {
     display: grid;
-    grid-gap: 0;
-    grid-template-columns: 1fr;
-  }
-
-  @include respond-to(m) {
-    @supports not (display: grid) {
-      @include flex(wrap, row, space-between, null);
-    }
-  }
-
-  @include respond-to(l) {
-    @supports (display: grid) {
-      grid-gap: 60px;
-      grid-template-columns: repeat(3, 1fr);
-    }
+    grid-gap: 30px 60px;
+    grid-template-columns: repeat(3, 1fr);
   }
 }
 
-.contact__form {
-  @include respond-to(m) {
-    @supports not (display: grid) {
-      width: 48%;
-    }
-  }
-
-  @include respond-to(l) {
-    @supports (display: grid) {
-      grid-column: 1 / span 2;
-    }
-
-    @supports not (display: grid) {
-      width: 58%;
-    }
+.contact__inner {
+  @include min(m) {
+    grid-column-end: span 2;
   }
 }
 
-.contact__details {
-  @include respond-to(m) {
-    @supports not (display: grid) {
-      width: 48%;
-    }
-  }
+.contact__body {
+  max-width: 80ch;
+}
 
-  @include respond-to(l) {
-    @supports not (display: grid) {
-      width: 38%;
-    }
+.contact__sidebar {
+  background-color: darken($core-color-background, 3%);
+  padding-top: ($core-padding * 2.5);
+  padding-right: ($core-padding * 2);
+  padding-bottom: ($core-padding * 2.5);
+  padding-left: ($core-padding * 2);
+
+  @include min(m) {
+    grid-row: 1 / span 2;
+    grid-column: 3;
+    padding-right: ($core-padding * 2.5);
+    padding-left: ($core-padding * 2.5);
   }
+}
+
+.contact__sidebar-title {
+  @include text(mars);
+}
+
+.contact__list {
+  margin-top: ($core-margin * 2.5);
+}
+
+.contact__list-title {
+  color: $core-color-brand;
+  font-family: $core-secondary-font-family;
+  font-size: calc(1em + 0.25vw);
+  line-height: $core-secondary-line-height;
+  font-weight: $core-secondary-font-weight;
+  margin-top: 0;
+  margin-bottom: ($core-margin / 2);
+}
+
+.contact__list-body {
+  margin-bottom: ($core-margin * 2);
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.contact__list-body--📱 {
+  color: $core-color-foreground;
+  font-weight: $core-tertiary-font-weight;
+}
+
+.contact__list-🔗 {
+  display: inline-block;
+  margin-bottom: $core-margin;
 }

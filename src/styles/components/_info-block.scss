@@ -1,0 +1,59 @@
+// Info Block.........Info block styles.
+
+.info-block {
+  @include min(l) {
+    @include flex(wrap, row, space-between, null);
+  }
+}
+
+.info-block__picture {
+  display: block;
+
+  @include min(l) {
+    padding-top: 0;
+    flex-basis: 50%;
+    order: 2;
+  }
+}
+
+.info-block__picture--home {
+  @include min(xl) {
+    flex-basis: 55%;
+  }
+}
+
+.info-block__image {
+  @include min(l) {
+    object-fit: cover;
+  }
+}
+
+.info-block__inner {
+  padding-top: ($core-padding * 3);
+  padding-right: ($core-padding * 2);
+  padding-bottom: ($core-padding * 3);
+  padding-left: ($core-padding * 2);
+
+  @include min(l) {
+    @include flex(null, column, center, null);
+    background-color: darken($core-color-background, 1%);
+    padding-top: ($core-padding * 4.5);
+    padding-right: 4vw;
+    padding-bottom: ($core-padding * 4.5);
+    padding-left: 4vw;
+    flex-basis: 50%;
+    order: 1;
+  }
+}
+
+.info-block__inner--home {
+  @include min(xl) {
+    flex-basis: 45%;
+  }
+}
+
+.info-block__button {
+  @include min(l) {
+    align-self: flex-start;
+  }
+}

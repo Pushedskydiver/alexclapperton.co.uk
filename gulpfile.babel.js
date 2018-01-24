@@ -12,10 +12,11 @@ import runSeq from 'run-sequence'
 const argv = yargs.argv
 
 const data = {
-  paths: require('./config/paths.json'),
-  performance: require('./config/performance.json'),
-  site: require('./config/site.json'),
-  stylelint: require('./config/stylelint.json'),
+  paths: require('./_config/paths.json'),
+  plugin: require('./_config/plugins.json'),
+  site: require('./_config/site.json'),
+  stylelint: './_config/stylelint.json',
+  eslint: './_config/eslint.json'
 }
 
 
@@ -23,20 +24,17 @@ const data = {
     Require tasks
 \* ============================================================ */
 
-require('./tasks/html.js')(gulp, data, argv);
-require('./tasks/styles.js')(gulp, data, argv);
-require('./tasks/imports.js')(gulp, data);
-require('./tasks/scripts.js')(gulp, data, argv);
-require('./tasks/images.js')(gulp, data);
-require('./tasks/icons.js')(gulp, data);
-require('./tasks/copy.js')(gulp, data);
-require('./tasks/fonts.js')(gulp, data);
-require('./tasks/critical.js')(gulp, data, argv);
-require('./tasks/stylelint.js')(gulp, data);
-require('./tasks/perf.js')(gulp, data, argv);
-require('./tasks/server.js')(gulp, data, argv);
-require('./tasks/deploy.js')(gulp, data, argv);
-require('./tasks/clean.js')(gulp, data, argv);
+require('./_tasks/clean.js')(gulp, data, argv);
+require('./_tasks/copy.js')(gulp, data);
+require('./_tasks/deploy.js')(gulp, data, argv);
+require('./_tasks/fonts.js')(gulp, data);
+require('./_tasks/icons.js')(gulp, data);
+require('./_tasks/images.js')(gulp, data);
+require('./_tasks/imports.js')(gulp, data);
+require('./_tasks/eslint.js')(gulp, data, argv);
+require('./_tasks/scripts.js')(gulp, data, argv);
+require('./_tasks/stylelint.js')(gulp, data, argv);
+require('./_tasks/styles.js')(gulp, data, argv);
 
 
 /* ============================================================ *\
@@ -47,7 +45,6 @@ gulp.task('dev', function (callback) {
   runSeq(
     'default',
     'watch',
-    'browser-sync',
     callback
   )
 });
@@ -56,15 +53,11 @@ gulp.task('default', function (callback) {
   runSeq(
     'clean:all',
     'imports:sass',
-    ['html:build', 'styles:sass', 'scripts', 'icons', 'images', 'fonts', 'copy:forms', 'copy:favicons', 'copy:manifest', 'copy:pdf', 'copy:serviceWorker', 'copy:twitter'],
+    ['stylelint', 'eslint'],
+    ['styles:sass', 'scripts:compile'],
+    ['images', 'icons', 'fonts'],
+    ['copy:favicons', 'copy:manifest', 'copy:serviceWorker'],
     'clean:fonts',
-    callback
-  )
-});
-
-gulp.task('perf', function (callback) {
-  runSeq(
-    'webpagetest',
     callback
   )
 });
@@ -75,25 +68,13 @@ gulp.task('perf', function (callback) {
 \* ============================================================ */
 
 gulp.task('watch', function() {
-
     // Watch image files
     gulp.watch(`${data.paths.source.images}**/*`, ['images']);
 
-    // Watch svg files
-    gulp.watch(data.paths.source.icons, ['icons']);
-
     // Watch .scss files
-    gulp.watch(`${data.paths.source.styles}**/*.scss`, ['styles:sass']);
+    gulp.watch(`${data.paths.source.styles}**/*.scss`, ['styles:sass', 'stylelint']);
 
     // Watch .js files
-    gulp.watch(`${data.paths.source.scripts}**/*.js`, ['scripts']);
-
-    // Watch .hbs & .json files
-    gulp.watch([
-      `${data.paths.source.content}**/*.hbs`,
-      `${data.paths.source.partials}*.hbs`,
-      `${data.paths.source.layouts}*.hbs`,
-      `${data.paths.source.data}*.json`
-    ], ['html:build']);
+    gulp.watch(`${data.paths.source.scripts.common}*.js`, ['scripts:compile', 'eslint']);
 
 });

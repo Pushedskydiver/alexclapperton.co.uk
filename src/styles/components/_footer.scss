@@ -1,141 +1,83 @@
-// Footer.............Footer styles.
+// Footer.............Generic footer styles.
 
 .footer {
-  background-color: darken($core-color-neutral, 5%);
-  padding: 30px 0 0 0;
+  background-color: $core-color-brand;
+  color: $core-color-background;
+  padding-top: ($core-padding * 3.5);
+
+
+  @include max(m) {
+    padding-bottom: ($core-padding * 10);
+  }
+
+  @include min(m) {
+    padding-bottom: ($core-padding * 3.5);
+  }
 }
 
 .footer__content {
-  @supports (display: grid) {
-    display: grid;
-    grid-gap: 40px 0;
-    grid-template-columns: auto auto;
+  @include min(m) {
+    @include flex(wrap, row, space-between, null);
   }
 
-  @include respond-to(m) {
-    @supports (display: grid) {
-      grid-gap: 4em;
-      grid-template-columns: repeat(2, 1fr) auto;
-    }
-
-    @supports not (display: grid) {
-      @include flex(wrap, row, space-between, null);
-    }
-  }
-
-  @include respond-to(l) {
-    @supports (display: grid) {
-      grid-template-columns: repeat(4, auto);
-    }
-  }
-
-  @include respond-to(xl) {
-    @supports (display: grid) {
-      grid-gap: 8em;
-    }
+  @include min(l) {
+    margin-bottom: ($core-margin * 4);
   }
 }
 
 .footer__list {
-  &:last-child {
-    display: none;
-  }
-
-  @supports not (display: grid) {
-    margin-bottom: ($core-margin * 2);
-
-    &:last-child {
-      margin-bottom: 0;
-    }
-  }
-
-  @include respond-to(m) {
-    @supports not (display: grid) {
-      width: 48%;
-    }
-  }
-
-  @include respond-to(l) {
-    &:last-child {
-      display: block;
-    }
-
-    @supports not (display: grid) {
-      width: auto;
-      flex: 1;
-
-      &:nth-child(3),
-      &:nth-child(4) {
-        flex: 2;
-      }
-    }
+  @include max(l) {
+    margin-bottom: ($core-margin * 3);
   }
 }
 
-.footer__title {
-  display: block;
-  margin-bottom: ($core-margin / 1.2);
-  font-family: $core-secondary-font-family;
-  @include font-size($h4-font-sizes);
-
-  &--first {
-    color: #0070a8;
-  }
-
-  &--second {
-    color: $core-color-brand;
-  }
-
-  &--third {
-    color: #d0095c;
-  }
-
-  &--fourth {
-    color: #469800;
-  }
-}
-
-.footer__item {
-  margin-bottom: ($core-margin / 2);
+.footer__list-item {
+  margin-bottom: $core-margin;
 
   &:last-child {
     margin-bottom: 0;
   }
 }
 
-.footer__link {
-  color: inherit;
+.footer__list-item--title {
+  @include text(venus);
+  color: $core-color-background;
+}
 
-  &:not(&--email) {
-    text-decoration: none;
+.footer__list-item--phone {
+  color: $core-color-link;
+  font-weight: $core-tertiary-font-weight;
+
+  a[href^=tel] {
+    color: $core-color-link;
+    border-bottom-width: 1px;
+    border-bottom-style: $core-border-style;
+    border-bottom-color: $core-color-link;
   }
+}
 
-  &--email {
-    font-weight: $core-secondary-font-weight;
-  }
+.footer__list-item--social {
+  display: inline-block;
+  margin-right: $core-margin;
+}
 
-  @include respond-to(l) {
-    &:not(&--email) {
-      &:hover {
-        border-bottom: 1px dotted $core-color-dark;
-      }
-    }
+.footer__list-🔗 {
+  color: $core-color-link;
+  font-weight: $core-tertiary-font-weight;
+  border-bottom-width: 1px;
+  border-bottom-style: $core-border-style;
+  border-bottom-color: $core-color-link;
 
-    &--email {
-      &:hover {
-        color: $core-color-brand;
-      }
+  @include min(l) {
+    @include transition-03(all);
+
+    &:hover {
+      background-color: $core-color-link;
+      color: $core-color-brand;
     }
   }
 }
 
-.footer__bottom {
-  background-color: darken($core-color-neutral, 10%);
-  margin-top: 30px;
-  padding: $core-padding 0;
-}
-
-.footer__bottom-body {
-  color: lighten($core-color-body, 10%);
-  margin-bottom: 0;
+.footer__body {
+  color: $core-color-neutral;
 }

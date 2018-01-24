@@ -1,18 +1,38 @@
 // Logo...............Site logo styles.
 
 .logo {
-  color: $core-color-dark;
-  font-weight: $core-font-weight;
-  text-decoration: none;
-  @include font-size($logo-font-sizes);
+  display: inline-block;
+  position: relative;
+  width: 35px;
+  height: 35px;
+  vertical-align: middle;
+  z-index: z(kilo);
 
-  &--core {
-    color: $core-color-brand;
+  @include min(xs) {
+    width: 45px;
+    height: 45px;
+  }
+}
+
+.logo--footer {
+  margin-bottom: ($core-margin * 3);
+}
+
+.logo__icon {
+  @include transition-03(fill);
+  width: 100%;
+  height: 100%;
+
+  .logo--header & {
+    fill: $core-color-foreground;
   }
 
-  @supports (display: grid) {
-    grid-area: logo;
-    justify-self: start;
-    align-self: center;
+  .logo--footer & {
+    fill: $core-color-background;
+  }
+
+  .logo--white & {
+    fill: $core-color-background;
+    transition-delay: 1000ms;
   }
 }

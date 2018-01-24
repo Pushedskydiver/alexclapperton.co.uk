@@ -1,0 +1,31 @@
+<main class="portfolio 📱" id="main">
+    <div class="portfolio__inner hide 🖼" data-fade>
+        <h2 class="portfolio__title">Professional &amp; personal work</h2>
+        <p class="portfolio__subText">We engage with our clients in order to understand their needs and impact their business. See how we’ve helped our clients!</p>
+
+        <div class="portfolio__content">
+            {{#each projects}}
+                {{>portfolio}}
+            {{/each}}
+        </div>
+    </div>
+</main>
+
+<section class="articles 📱">
+    <div class="articles__inner hide 🖼" data-fade>
+        <small class="articles__title-small">Read my</small>
+        <h3 class="articles__title-main">Latest articles</h3>
+        <div class="articles__content">
+            {{#eachUpTo articles 3}}
+              {{>articles}}
+            {{/eachUpTo}}
+        </div>
+        <a class="button button--secondary" href="/articles/">
+            View articles
+            <svg class="button__icon" width="20" height="20">
+                <title>Right Arrow</title>
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/icons/sprite.svg#arrow"></use>
+            </svg>
+        </a>
+    </div>
+</section>

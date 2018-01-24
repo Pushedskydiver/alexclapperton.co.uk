@@ -1,11 +1,11 @@
 // List...............Blog post list styles.
 
 .list {
+  margin-left: ($core-margin / 2);
   padding-left: $core-padding;
   list-style-type: disc;
 }
 
 .list__item {
   margin-bottom: ($core-margin * 1.5);
-  line-height: $core-secondary-line-height;
 }
