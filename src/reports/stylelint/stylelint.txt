@@ -1,45 +1,45 @@
 
 37 of 40 sources checked
- /Users/alexclapperton/Desktop/website/src/styles/main.scss (ignored)
- /Users/alexclapperton/Desktop/website/src/styles/elements/_global.scss
- /Users/alexclapperton/Desktop/website/src/styles/components/_articles.scss
- /Users/alexclapperton/Desktop/website/src/styles/components/_banner.scss
- /Users/alexclapperton/Desktop/website/src/styles/components/_blocks.scss
- /Users/alexclapperton/Desktop/website/src/styles/components/_breadcrumbs.scss
- /Users/alexclapperton/Desktop/website/src/styles/components/_browser.scss
- /Users/alexclapperton/Desktop/website/src/styles/components/_buttons.scss
- /Users/alexclapperton/Desktop/website/src/styles/components/_contact.scss
- /Users/alexclapperton/Desktop/website/src/styles/components/_devices.scss
- /Users/alexclapperton/Desktop/website/src/styles/components/_figure.scss
- /Users/alexclapperton/Desktop/website/src/styles/components/_footer.scss
- /Users/alexclapperton/Desktop/website/src/styles/components/_form.scss
- /Users/alexclapperton/Desktop/website/src/styles/components/_header.scss
- /Users/alexclapperton/Desktop/website/src/styles/components/_info-block.scss
- /Users/alexclapperton/Desktop/website/src/styles/components/_links.scss
- /Users/alexclapperton/Desktop/website/src/styles/components/_list.scss
- /Users/alexclapperton/Desktop/website/src/styles/components/_logo.scss
- /Users/alexclapperton/Desktop/website/src/styles/components/_navigation.scss
- /Users/alexclapperton/Desktop/website/src/styles/components/_notices.scss
- /Users/alexclapperton/Desktop/website/src/styles/components/_portfolio.scss
- /Users/alexclapperton/Desktop/website/src/styles/components/_post.scss
- /Users/alexclapperton/Desktop/website/src/styles/components/_prism.scss
- /Users/alexclapperton/Desktop/website/src/styles/components/_project.scss
- /Users/alexclapperton/Desktop/website/src/styles/components/_skip-links.scss
- /Users/alexclapperton/Desktop/website/src/styles/generic/_keyframes.scss (ignored)
- /Users/alexclapperton/Desktop/website/src/styles/generic/_typography.scss (ignored)
- /Users/alexclapperton/Desktop/website/src/styles/objects/_layout.scss
- /Users/alexclapperton/Desktop/website/src/styles/objects/_lazyload.scss
- /Users/alexclapperton/Desktop/website/src/styles/settings/_variables.scss
- /Users/alexclapperton/Desktop/website/src/styles/tools/functions/_typography.scss
- /Users/alexclapperton/Desktop/website/src/styles/tools/functions/_z-index.scss
- /Users/alexclapperton/Desktop/website/src/styles/tools/mixins/_buttons.scss
- /Users/alexclapperton/Desktop/website/src/styles/tools/mixins/_flexbox.scss
- /Users/alexclapperton/Desktop/website/src/styles/tools/mixins/_keyframes.scss
- /Users/alexclapperton/Desktop/website/src/styles/tools/mixins/_properties.scss
- /Users/alexclapperton/Desktop/website/src/styles/tools/mixins/_responsive.scss
- /Users/alexclapperton/Desktop/website/src/styles/tools/mixins/_transforms.scss
- /Users/alexclapperton/Desktop/website/src/styles/tools/mixins/_transitions.scss
- /Users/alexclapperton/Desktop/website/src/styles/tools/mixins/_typography.scss
+ /Users/alih2106/Desktop/website/src/styles/main.scss (ignored)
+ /Users/alih2106/Desktop/website/src/styles/components/_articles.scss
+ /Users/alih2106/Desktop/website/src/styles/components/_banner.scss
+ /Users/alih2106/Desktop/website/src/styles/components/_blocks.scss
+ /Users/alih2106/Desktop/website/src/styles/components/_breadcrumbs.scss
+ /Users/alih2106/Desktop/website/src/styles/components/_browser.scss
+ /Users/alih2106/Desktop/website/src/styles/components/_buttons.scss
+ /Users/alih2106/Desktop/website/src/styles/components/_contact.scss
+ /Users/alih2106/Desktop/website/src/styles/components/_devices.scss
+ /Users/alih2106/Desktop/website/src/styles/components/_figure.scss
+ /Users/alih2106/Desktop/website/src/styles/components/_footer.scss
+ /Users/alih2106/Desktop/website/src/styles/components/_form.scss
+ /Users/alih2106/Desktop/website/src/styles/components/_header.scss
+ /Users/alih2106/Desktop/website/src/styles/components/_info-block.scss
+ /Users/alih2106/Desktop/website/src/styles/components/_links.scss
+ /Users/alih2106/Desktop/website/src/styles/components/_list.scss
+ /Users/alih2106/Desktop/website/src/styles/components/_logo.scss
+ /Users/alih2106/Desktop/website/src/styles/components/_navigation.scss
+ /Users/alih2106/Desktop/website/src/styles/components/_notices.scss
+ /Users/alih2106/Desktop/website/src/styles/components/_portfolio.scss
+ /Users/alih2106/Desktop/website/src/styles/components/_post.scss
+ /Users/alih2106/Desktop/website/src/styles/components/_prism.scss
+ /Users/alih2106/Desktop/website/src/styles/components/_project.scss
+ /Users/alih2106/Desktop/website/src/styles/components/_skip-links.scss
+ /Users/alih2106/Desktop/website/src/styles/elements/_global.scss
+ /Users/alih2106/Desktop/website/src/styles/generic/_keyframes.scss (ignored)
+ /Users/alih2106/Desktop/website/src/styles/generic/_typography.scss (ignored)
+ /Users/alih2106/Desktop/website/src/styles/objects/_layout.scss
+ /Users/alih2106/Desktop/website/src/styles/objects/_lazyload.scss
+ /Users/alih2106/Desktop/website/src/styles/settings/_variables.scss
+ /Users/alih2106/Desktop/website/src/styles/tools/functions/_typography.scss
+ /Users/alih2106/Desktop/website/src/styles/tools/functions/_z-index.scss
+ /Users/alih2106/Desktop/website/src/styles/tools/mixins/_buttons.scss
+ /Users/alih2106/Desktop/website/src/styles/tools/mixins/_flexbox.scss
+ /Users/alih2106/Desktop/website/src/styles/tools/mixins/_keyframes.scss
+ /Users/alih2106/Desktop/website/src/styles/tools/mixins/_properties.scss
+ /Users/alih2106/Desktop/website/src/styles/tools/mixins/_responsive.scss
+ /Users/alih2106/Desktop/website/src/styles/tools/mixins/_transforms.scss
+ /Users/alih2106/Desktop/website/src/styles/tools/mixins/_transitions.scss
+ /Users/alih2106/Desktop/website/src/styles/tools/mixins/_typography.scss
 
 0 problems found
 
