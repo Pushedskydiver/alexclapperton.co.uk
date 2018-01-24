@@ -9,6 +9,7 @@ import gutil from 'gulp-util'
 module.exports = (gulp, data, argv) => {
   gulp.task('deploy', () => {
     const remotePath = '/httpdocs/';
+
     const conn = ftp.create({
       host: '80.82.114.113',
       user: argv.user,
