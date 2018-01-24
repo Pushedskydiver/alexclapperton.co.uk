@@ -5,11 +5,10 @@ module.exports = (function() {
   const submitButton = document.querySelector('[data-submit-button]');
 
   function getInputPattern(input) {
-    const inputValue = input.value;
     const pattern = input.getAttribute('pattern');
     const regex = RegExp(pattern);
 
-    return new RegExp(regex, 'i').test(inputValue);
+    return new RegExp(regex, 'i').test(input.value);
   }
 
   function validateInput(input) {
@@ -72,9 +71,7 @@ module.exports = (function() {
   }
 
   function init() {
-    inputs.forEach(input => {
-      input.addEventListener('blur', validateInput);
-    });
+    inputs.forEach(input => input.addEventListener('blur', validateInput));
     textarea.addEventListener('blur', validateTextarea);
     submitButton.addEventListener('click', validateAllFields);
   }
@@ -82,5 +79,4 @@ module.exports = (function() {
   return {
     init: init
   };
-
 }());

@@ -75,6 +75,12 @@
     border-color: $core-color-link;
     outline: none;
   }
+
+  @include min(l) {
+    &:hover {
+      border-color: $core-color-link;
+    }
+  }
 }
 
 .form__textarea {
