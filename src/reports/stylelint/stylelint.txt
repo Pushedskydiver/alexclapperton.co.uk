@@ -30,8 +30,6 @@
  /Users/alih2106/Desktop/website/src/styles/objects/_layout.scss
  /Users/alih2106/Desktop/website/src/styles/objects/_lazyload.scss
  /Users/alih2106/Desktop/website/src/styles/settings/_variables.scss
- /Users/alih2106/Desktop/website/src/styles/tools/functions/_typography.scss
- /Users/alih2106/Desktop/website/src/styles/tools/functions/_z-index.scss
  /Users/alih2106/Desktop/website/src/styles/tools/mixins/_buttons.scss
  /Users/alih2106/Desktop/website/src/styles/tools/mixins/_flexbox.scss
  /Users/alih2106/Desktop/website/src/styles/tools/mixins/_keyframes.scss
@@ -40,6 +38,8 @@
  /Users/alih2106/Desktop/website/src/styles/tools/mixins/_transforms.scss
  /Users/alih2106/Desktop/website/src/styles/tools/mixins/_transitions.scss
  /Users/alih2106/Desktop/website/src/styles/tools/mixins/_typography.scss
+ /Users/alih2106/Desktop/website/src/styles/tools/functions/_typography.scss
+ /Users/alih2106/Desktop/website/src/styles/tools/functions/_z-index.scss
 
 0 problems found
 
