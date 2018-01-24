@@ -1,6 +1,7 @@
 
 37 of 40 sources checked
  /Users/alexclapperton/Desktop/website/src/styles/main.scss (ignored)
+ /Users/alexclapperton/Desktop/website/src/styles/elements/_global.scss
  /Users/alexclapperton/Desktop/website/src/styles/components/_articles.scss
  /Users/alexclapperton/Desktop/website/src/styles/components/_banner.scss
  /Users/alexclapperton/Desktop/website/src/styles/components/_blocks.scss
@@ -24,12 +25,11 @@
  /Users/alexclapperton/Desktop/website/src/styles/components/_prism.scss
  /Users/alexclapperton/Desktop/website/src/styles/components/_project.scss
  /Users/alexclapperton/Desktop/website/src/styles/components/_skip-links.scss
- /Users/alexclapperton/Desktop/website/src/styles/elements/_global.scss
  /Users/alexclapperton/Desktop/website/src/styles/generic/_keyframes.scss (ignored)
  /Users/alexclapperton/Desktop/website/src/styles/generic/_typography.scss (ignored)
+ /Users/alexclapperton/Desktop/website/src/styles/settings/_variables.scss
  /Users/alexclapperton/Desktop/website/src/styles/objects/_layout.scss
  /Users/alexclapperton/Desktop/website/src/styles/objects/_lazyload.scss
- /Users/alexclapperton/Desktop/website/src/styles/settings/_variables.scss
  /Users/alexclapperton/Desktop/website/src/styles/tools/functions/_typography.scss
  /Users/alexclapperton/Desktop/website/src/styles/tools/functions/_z-index.scss
  /Users/alexclapperton/Desktop/website/src/styles/tools/mixins/_buttons.scss
