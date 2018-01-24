@@ -9,18 +9,12 @@ import fs from 'fs'
 const $ = plugins()
 
 module.exports = (gulp, data, argv) => {
-  const eslintDir = './src/reports/eslint';
-
   function isFixed(file) {
     return file.eslint && typeof file.eslint.output === 'string';
   }
 
   gulp.task('eslint', () => {
-    if(!fs.existsSync(eslintDir)){
-      fs.mkdirSync(eslintDir)
-    }
-
-    return gulp.src(`${data.paths.source.scripts.common}*.js`)
+      return gulp.src(`${data.paths.source.scripts.common}*.js`)
         .pipe($.eslint({
           configFile: data.eslint,
           fix: true
