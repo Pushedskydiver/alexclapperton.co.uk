@@ -9,12 +9,18 @@ import fs from 'fs'
 const $ = plugins()
 
 module.exports = (gulp, data, argv) => {
+  const eslintDir = './src/reports/eslint';
+
   function isFixed(file) {
     return file.eslint && typeof file.eslint.output === 'string';
   }
 
- gulp.task('eslint', () => {
-      return gulp.src(`${data.paths.source.scripts.common}*.js`)
+  gulp.task('eslint', () => {
+    if(!fs.existsSync(eslintDir)){
+      fs.mkdirSync(eslintDir)
+    }
+
+    return gulp.src(`${data.paths.source.scripts.common}*.js`)
         .pipe($.eslint({
           configFile: data.eslint,
           fix: true
@@ -23,5 +29,5 @@ module.exports = (gulp, data, argv) => {
         .pipe($.eslint.format('html', fs.createWriteStream(`${data.paths.reports.eslint}eslint.html`)))
         .pipe($.if(isFixed, gulp.dest(data.paths.source.scripts.common)))
         .pipe($.if(argv.prod, $.eslint.failAfterError()));
- });
+  });
 }
