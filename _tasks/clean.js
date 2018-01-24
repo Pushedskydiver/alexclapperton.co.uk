@@ -13,10 +13,4 @@ module.exports = (gulp, data, argv) => {
         ])
       }
   });
-
-  gulp.task('clean:fonts', () => {
-      return del([
-        `${data.paths.dist.fonts}**/*.css`,
-      ]);
-  });
 }

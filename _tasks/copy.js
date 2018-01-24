@@ -1,5 +1,5 @@
 /**
- * @file copy.js - Copy assets to dist with Gulp task
+ * @file copy.js - Copy assets to public with Gulp task
  * @author Alex Clapperton <hi@alexclapperton.co.uk>
  */
 
@@ -12,6 +12,11 @@ module.exports = (gulp, data) => {
   gulp.task('copy:manifest', () => {
       return gulp.src('./_config/site.webmanifest')
           .pipe(gulp.dest(data.paths.dist.base))
+  });
+
+  gulp.task('copy:fonts', () => {
+      return gulp.src(data.paths.source.fonts)
+          .pipe(gulp.dest(data.paths.dist.fonts))
   });
 
   gulp.task('copy:serviceWorker', () => {

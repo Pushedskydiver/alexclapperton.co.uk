@@ -5,7 +5,7 @@
     "layouts": "./_layouts/",
     "partials": "./_partials/",
     "content": "./src/pages/",
-    "fonts": "./src/fonts/**/*.ttf",
+    "fonts": "./src/fonts/**/*",
     "icons": "./src/icons/*",
     "favicons": "./src/favicons/",
     "images": "./src/images/**/*",
