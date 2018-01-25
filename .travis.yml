@@ -4,9 +4,6 @@ node_js:
 cache:
   yarn: true
   directories: "— node_modules"
-before_deploy:
-  - yarn
-  - gulp default --prod
 deploy:
   provider: heroku
   app:
