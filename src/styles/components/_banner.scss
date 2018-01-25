@@ -5,6 +5,12 @@
     height: 550px;
   }
 
+  @media screen and (max-height: 26.25em) and (orientation: landscape) {
+    &:not(&--home):not(&--404) {
+      height: 450px;
+    }
+  }
+
   @include min(l) {
     &:not(&--404) {
       height: 750px;
@@ -16,7 +22,7 @@
 .banner--404 {
   height: 100vh;
 
-  @media screen and (max-width: 48em) and (orientation: landscape) {
+  @media screen and (max-height: 26.25em) and (orientation: landscape) {
     min-height: 550px;
   }
 }
@@ -125,8 +131,9 @@
   @include text(earth);
   @include flex(null, row, null, center);
   color: $core-color-brand;
-  align-self: flex-start;
+  margin-bottom: 0;
   text-decoration: none;
+  align-self: flex-start;
 }
 
 .banner__scroll-icon {

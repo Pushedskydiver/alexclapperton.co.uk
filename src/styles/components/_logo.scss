@@ -6,7 +6,11 @@
   width: 35px;
   height: 35px;
   vertical-align: middle;
-  z-index: z(kilo);
+
+
+  @media screen and (min-height: 30em) {
+    z-index: z(kilo);
+  }
 
   @include min(xs) {
     width: 45px;

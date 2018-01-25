@@ -37,7 +37,19 @@ module.exports = (function() {
     }
   }
 
+  function detectResize() {
+    const delayResize = setTimeout(() => {
+      if (window.innerWidth < 768) {
+        nav.navTrigger.addEventListener('click', toggleNavigation);
+        nav.nav.addEventListener('touchmove', preventScrollWhenNavigationOpen);
+      }
+      clearTimeout(delayResize);
+    }, 500);
+  }
+
   function init() {
+    window.addEventListener('resize', detectResize);
+
     if (window.innerWidth < 768) {
       nav.navTrigger.addEventListener('click', toggleNavigation);
       nav.nav.addEventListener('touchmove', preventScrollWhenNavigationOpen);

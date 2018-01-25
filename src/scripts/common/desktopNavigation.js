@@ -23,13 +23,31 @@ module.exports = (function() {
     }
   }
 
+  function detectResize() {
+    const delayResize = setTimeout(() => {
+      if (window.innerWidth >= 768) {
+        removeActiveClass();
+        nav.navItem.forEach(item => {
+          item.parentNode.addEventListener('mouseover', addActiveClass);
+          item.parentNode.addEventListener('mouseleave', removeActiveClass);
+          item.addEventListener('focus', addActiveClass);
+        });
+      }
+      clearTimeout(delayResize);
+    }, 500);
+  }
+
   function init() {
-    removeActiveClass();
-    nav.navItem.forEach(item => {
-      item.parentNode.addEventListener('mouseover', addActiveClass);
-      item.parentNode.addEventListener('mouseleave', removeActiveClass);
-      item.addEventListener('focus', addActiveClass);
-    });
+    window.addEventListener('resize', detectResize);
+
+    if (window.innerWidth >= 768) {
+      removeActiveClass();
+      nav.navItem.forEach(item => {
+        item.parentNode.addEventListener('mouseover', addActiveClass);
+        item.parentNode.addEventListener('mouseleave', removeActiveClass);
+        item.addEventListener('focus', addActiveClass);
+      });
+    }
   }
 
   return {

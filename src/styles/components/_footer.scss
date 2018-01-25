@@ -16,7 +16,7 @@
 }
 
 .footer__content {
-  @include min(m) {
+  @include min(s) {
     @include flex(wrap, row, space-between, null);
   }
 
@@ -26,8 +26,16 @@
 }
 
 .footer__list {
+  @media screen and (max-height: 26.25em) and (orientation: landscape) {
+    margin-right: $core-margin;
+  }
+
   @include max(l) {
     margin-bottom: ($core-margin * 3);
+
+    &:last-child {
+      display: none;
+    }
   }
 }
 
