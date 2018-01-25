@@ -71,8 +71,8 @@ module.exports = (function() {
   }
 
   function init() {
-    inputs.forEach(input => input.addEventListener('blur', validateInput));
-    textarea.addEventListener('blur', validateTextarea);
+    inputs.forEach(input => input.addEventListener('change', validateInput));
+    textarea.addEventListener('change', validateTextarea);
     submitButton.addEventListener('click', validateAllFields);
   }
 
