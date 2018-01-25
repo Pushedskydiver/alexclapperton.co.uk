@@ -4,17 +4,12 @@ node_js:
 cache:
   yarn: true
   directories: "— node_modules"
-branches:
-  only:
-  - master
-install:
-- yarn
-script:
-- gulp default --prod
+before_deploy:
+  - yarn
+  - gulp default --prod
 deploy:
   provider: heroku
+  app:
+    master: alexclapperton
   api_key:
     secure: itOc3mZ9bMHS0UiOXotzcwTZrO0zpEVqCLIMre1O2vtoVAcOeheqUekx/FQRh21rB/a5vHT6PQEALNmdwT68/MAPc9SD/UKi5P72wxf0uSYx5OkXce9XE9Im+MaKkA5IlP52CO8THRsYTb2tBpALrVMDTWLBBGo9Ke3mIJjcnyG1SEamxJT8JyR4/RO0vNNOgPCONKx/I1Y0sFa/MPBe7210Ihy8dCsqzp66FqN2psofG8x6+sDA4INHGeTh+wqrD4VRa23mrvHyn3np3EuGuc+LWhb761tmye7cl/XkMhIflhWvoxR1wvsKwtJkbssLB5XH08tMgm+7nx0sbgO00sjwuxBeHf4AAS9pxMxlNBp6r8io0qlKyQlhUngp+uvX7xVeWU2SG3dBm2Wvvk0MlGpGRtQ7dpb5ZtCpcu29wQGlbRG6VHVI3PEzySs3McL929s9i5p6iJmjJARVPI0L1jiEGt6b/9X0uSfld+Ji8JYuKi0Y00W2JMH7wwSMWJ5QW5O1DBQkR1ZrR8C7OTapklZV4gKmIXi/XVR/H/ykpEuyYRhrIpCPqFp3Q9rkFyGXlaiB1ZVAIXWNrN5VILFHWcvxaQfYodBGyysj7BqwvT47K2HzTeqtEtzjtPTfp48a80FFqjiY9rbHotngLl5N2npl3Ulp3BmgLZR7mMbDVYk=
-  app: alexclapperton
-  on:
-    repo: pushedskydiver/alexclapperton.co.uk
