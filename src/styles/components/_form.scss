@@ -70,16 +70,11 @@
   border-style: $core-border-style;
   border-color: darken($core-color-background, 5%);
 
+  &:hover,
   &:focus,
   &:active {
     border-color: $core-color-link;
     outline: none;
-  }
-
-  @include min(l) {
-    &:hover {
-      border-color: $core-color-link;
-    }
   }
 }
 
@@ -95,6 +90,11 @@
 .form__input--invalid,
 .form__textarea--invalid {
   border-color: #de0000;
+
+  &:focus,
+  &:active {
+    border-color: #de0000;
+  }
 }
 
 .form__validation-message {
