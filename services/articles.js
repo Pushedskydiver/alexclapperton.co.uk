@@ -10,6 +10,7 @@ function getArticle(slug, query) {
 function getArticles(query) {
   query = query || {};
   query.content_type = '2PqfXUJwE8qSYKuM0U6w8M';
+  query.order = 'sys.createdAt';
   return client.getEntries(query);
 }
 
