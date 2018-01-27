@@ -72,7 +72,7 @@ module.exports = function(argv) {
       new webpack.optimize.UglifyJsPlugin({
         minimize: false,
         warnings: false,
-        sourceMap: false,
+        sourceMap: true,
         mangle: false
       }),
       new webpack.DefinePlugin({

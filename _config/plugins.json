@@ -78,7 +78,7 @@
   "uglify": {
     "minimize": true,
     "warnings": false,
-    "sourceMap": true,
+    "sourceMap": false,
     "mangle": {
       "except": ["exports", "require"]
     },

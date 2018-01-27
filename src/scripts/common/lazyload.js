@@ -45,9 +45,11 @@ module.exports = (function() {
   }
 
   function init() {
-    lazyloadConfig();
-    lazyImages.forEach(image => lazyloadEventListeners(image));
-    window.addEventListener('resize', lazyLoadImagesOnResize);
+    if (lazyImages) {
+      lazyloadConfig();
+      lazyImages.forEach(image => lazyloadEventListeners(image));
+      window.addEventListener('resize', lazyLoadImagesOnResize);
+    }
   }
 
   return {

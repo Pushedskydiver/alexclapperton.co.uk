@@ -18,8 +18,10 @@ module.exports = (function() {
   }
 
   function init() {
-    fadeIn();
-    window.addEventListener('scroll', fadeIn);
+    if (elementsToFade) {
+      fadeIn();
+      window.addEventListener('scroll', fadeIn);
+    }
   }
 
   return {

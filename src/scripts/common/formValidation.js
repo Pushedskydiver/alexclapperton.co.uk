@@ -1,5 +1,6 @@
 module.exports = (function() {
 
+  const form = document.querySelector('[data-form]');
   const inputs = document.querySelectorAll('[data-input]');
   const textarea = document.querySelector('[data-textarea]');
   const submitButton = document.querySelector('[data-submit-button]');
@@ -71,9 +72,11 @@ module.exports = (function() {
   }
 
   function init() {
-    inputs.forEach(input => input.addEventListener('change', validateInput));
-    textarea.addEventListener('change', validateTextarea);
-    submitButton.addEventListener('click', validateAllFields);
+    if (form) {
+      inputs.forEach(input => input.addEventListener('change', validateInput));
+      textarea.addEventListener('change', validateTextarea);
+      submitButton.addEventListener('click', validateAllFields);
+    }
   }
 
   return {
