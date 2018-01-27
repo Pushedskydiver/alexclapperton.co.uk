@@ -22,7 +22,8 @@ module.exports = (gulp, data) => {
         data.paths.sass.generic,
         data.paths.sass.elements,
         data.paths.sass.objects,
-        data.paths.sass.components
+        data.paths.sass.components,
+        data.paths.sass.trumps
       ])
       .pipe($.sassGenerateContents(`${data.paths.source.styles}main.scss`, creds))
       .pipe(gulp.dest(data.paths.source.styles));

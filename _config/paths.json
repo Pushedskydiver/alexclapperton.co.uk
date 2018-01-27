@@ -41,6 +41,7 @@
     "generic": "./src/styles/generic/**/*.scss",
     "elements": "./src/styles/elements/**/*.scss",
     "objects": "./src/styles/objects/**/*.scss",
-    "components": "./src/styles/components/**/*.scss"
+    "components": "./src/styles/components/**/*.scss",
+    "trumps": "./src/styles/trumps/**/*.scss"
   }
 }

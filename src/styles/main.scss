@@ -59,9 +59,11 @@
 *  Notices............The sites notice styles for JS turned off etc.
 *  Portfolio..........Portfolio section styles.
 *  Post...............Blog post styles.
-*  Prism..............Code snippet styles.
 *  Project............Portfolio item styles.
 *  Skip links.........The sites skip to links.
+* 
+* TRUMPS
+*  Prism..............Code snippet styles.
 *
 */
 
@@ -104,6 +106,6 @@
 @import "/Users/alih2106/Desktop/website/src/styles/components/_notices.scss";
 @import "/Users/alih2106/Desktop/website/src/styles/components/_portfolio.scss";
 @import "/Users/alih2106/Desktop/website/src/styles/components/_post.scss";
-@import "/Users/alih2106/Desktop/website/src/styles/components/_prism.scss";
 @import "/Users/alih2106/Desktop/website/src/styles/components/_project.scss";
 @import "/Users/alih2106/Desktop/website/src/styles/components/_skip-links.scss";
+@import "/Users/alih2106/Desktop/website/src/styles/trumps/_prism.scss";

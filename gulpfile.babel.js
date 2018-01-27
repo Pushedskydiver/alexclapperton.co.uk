@@ -40,7 +40,7 @@ require('./_tasks/styles.js')(gulp, data, argv);
     Task aliases
 \* ============================================================ */
 
-gulp.task('dev', function (callback) {
+gulp.task('dev', callback => {
   runSeq(
     'default',
     'watch',
@@ -48,11 +48,10 @@ gulp.task('dev', function (callback) {
   )
 });
 
-gulp.task('default', function (callback) {
+gulp.task('default', callback => {
   runSeq(
     'clean:all',
     'imports:sass',
-    ['stylelint', 'eslint'],
     ['styles:sass', 'scripts:compile'],
     ['images', 'icons'],
     ['copy:favicons', 'copy:manifest', 'copy:fonts', 'copy:serviceWorker'],
@@ -65,7 +64,7 @@ gulp.task('default', function (callback) {
     Watch tasks
 \* ============================================================ */
 
-gulp.task('watch', function() {
+gulp.task('watch', () => {
     // Watch image files
     gulp.watch(`${data.paths.source.images}**/*`, ['images']);
 
@@ -74,5 +73,4 @@ gulp.task('watch', function() {
 
     // Watch .js files
     gulp.watch(`${data.paths.source.scripts.common}*.js`, ['scripts:compile', 'eslint']);
-
 });
