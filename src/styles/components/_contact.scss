@@ -38,7 +38,9 @@
   @include min(m) {
     grid-row: 1 / span 2;
     grid-column: 3;
+    padding-top: ($core-padding * 3);
     padding-right: ($core-padding * 2.5);
+    padding-bottom: ($core-padding * 3);
     padding-left: ($core-padding * 2.5);
   }
 }

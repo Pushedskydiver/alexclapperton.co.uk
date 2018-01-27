@@ -2,6 +2,10 @@
 37 of 40 sources checked
  /Users/alih2106/Desktop/website/src/styles/main.scss (ignored)
  /Users/alih2106/Desktop/website/src/styles/elements/_global.scss
+ /Users/alih2106/Desktop/website/src/styles/generic/_keyframes.scss (ignored)
+ /Users/alih2106/Desktop/website/src/styles/generic/_typography.scss (ignored)
+ /Users/alih2106/Desktop/website/src/styles/objects/_layout.scss
+ /Users/alih2106/Desktop/website/src/styles/objects/_lazyload.scss
  /Users/alih2106/Desktop/website/src/styles/components/_articles.scss
  /Users/alih2106/Desktop/website/src/styles/components/_banner.scss
  /Users/alih2106/Desktop/website/src/styles/components/_blocks.scss
@@ -25,10 +29,6 @@
  /Users/alih2106/Desktop/website/src/styles/components/_prism.scss
  /Users/alih2106/Desktop/website/src/styles/components/_project.scss
  /Users/alih2106/Desktop/website/src/styles/components/_skip-links.scss
- /Users/alih2106/Desktop/website/src/styles/generic/_keyframes.scss (ignored)
- /Users/alih2106/Desktop/website/src/styles/generic/_typography.scss (ignored)
- /Users/alih2106/Desktop/website/src/styles/objects/_layout.scss
- /Users/alih2106/Desktop/website/src/styles/objects/_lazyload.scss
  /Users/alih2106/Desktop/website/src/styles/settings/_variables.scss
  /Users/alih2106/Desktop/website/src/styles/tools/functions/_typography.scss
  /Users/alih2106/Desktop/website/src/styles/tools/functions/_z-index.scss

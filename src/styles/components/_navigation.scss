@@ -82,11 +82,11 @@
 
   @include min-max(xs, m) {
     font-size: calc(2.5em + 0.5vw);
+    font-weight: $core-tertiary-font-weight;
   }
 
   @include min(m) {
     font-size: calc(#{$core-font-size} + 0.1vw);
-    font-weight: $core-tertiary-font-weight;
     margin-bottom: 0;
     padding-right: ($core-margin * 0.75);
     padding-left: ($core-margin * 0.75);
