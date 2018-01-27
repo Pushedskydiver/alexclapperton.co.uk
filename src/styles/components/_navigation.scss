@@ -87,22 +87,22 @@
 
   @include min(m) {
     font-size: calc(#{$core-font-size} + 0.1vw);
+    margin-right: ($core-margin * 0.75);
     margin-bottom: 0;
-    padding-right: ($core-margin * 0.75);
-    padding-left: ($core-margin * 0.75);
+    margin-left: ($core-margin * 0.75);
 
     &:first-child {
-      padding-left: 0;
+      margin-left: 0;
     }
 
     &:last-child {
-      padding-right: 0;
+      margin-right: 0;
     }
   }
 
   @include min(l) {
-    padding-right: ($core-margin * 1.25);
-    padding-left: ($core-margin * 1.25);
+    margin-right: ($core-margin * 1.25);
+    margin-left: ($core-margin * 1.25);
   }
 }
 

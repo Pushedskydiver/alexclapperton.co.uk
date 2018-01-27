@@ -108,6 +108,10 @@ img:not([src]) {
   visibility: hidden;
 }
 
+blockquote {
+  margin: 0;
+}
+
 legend {
   display: none;
 }
