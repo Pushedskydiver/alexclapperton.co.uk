@@ -47,7 +47,9 @@ router.use(function (req, res, next) {
 router.get('/:slug', cache, (req, res, next) => {
   res.render('portfolio/project', {
     title: req.project.projectName,
+    slug: req.project.slug,
     project: req.project,
+    projectData: req.project.projectData,
     layout: 'project.hbs',
     portfolio: true,
     data: {

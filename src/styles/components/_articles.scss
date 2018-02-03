@@ -17,10 +17,6 @@
     grid-gap: ($core-grid-unit * 2);
     grid-template-columns: repeat(2, 1fr);
     margin-bottom: ($core-margin * 2.2);
-
-    @supports not (display: grid) {
-      @include flex(wrap, row, space-between, null);
-    }
   }
 
   @include min(l) {

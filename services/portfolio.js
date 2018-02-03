@@ -10,7 +10,7 @@ function getProject(slug, query) {
 function getProjects(query) {
   query = query || {};
   query.content_type = 'sFzTZbSuM8coEwygeUYes';
-  query.order = 'fields.date';
+  query.order = '-fields.date';
   return client.getEntries(query);
 }
 

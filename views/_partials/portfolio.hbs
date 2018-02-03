@@ -22,7 +22,11 @@
         </div>
         <figcaption class="portfolio__caption">
             <p class="portfolio__caption-title">{{fields.projectName}}</p>
-            <p class="portfolio__caption-body">{{fields.tags}}</p>
+            <p class="portfolio__caption-body">
+            {{#each fields.tags}}
+              <span class="portfolio__caption-tags">{{this}}</span>
+            {{/each}}
+            </p>
             <p class="portfolio__caption-category">{{fields.category}}</p>
         </figcaption>
     </figure>
