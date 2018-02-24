@@ -4,7 +4,7 @@ module.exports = (function() {
 
   obj.html = document.documentElement;
   obj.body = document.body;
-  obj.logo = document.querySelector('[data-logo]');
+  obj.logo = document.querySelector('[data-navigation-logo]');
   obj.nav = document.querySelector('[data-navigation]');
   obj.navItem = document.querySelectorAll('[data-nav-item]');
   obj.navList = document.querySelector('[data-navigation-list]');

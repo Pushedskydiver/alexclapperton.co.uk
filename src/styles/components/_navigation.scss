@@ -6,12 +6,17 @@
   }
 
   @include max(m) {
+    @include flex(null, column, space-between, null);
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
     background-color: $core-color-foreground;
+    padding-top: ($core-padding * 2.5);
+    padding-right: 25px;
+    padding-bottom: ($core-padding * 2.5);
+    padding-left: 25px;
     transform: translateY(-100vh);
     transition: all 700ms cubic-bezier(0.86, 0, 0.07, 1);
     visibility: hidden;
@@ -33,8 +38,20 @@
   overflow: hidden;
 }
 
+.nav__logo {
+  @include max(xs) {
+    width: 35px;
+    height: 35px;
+  }
+
+  @include min(m) {
+    display: none;
+  }
+}
+
 .nav__list {
   @include flex(null, column, center, null);
+  margin-bottom: ($core-margin * 3);
 
   .nav--open & {
     opacity: 1;
@@ -42,25 +59,19 @@
     transition: all 1300ms cubic-bezier(0.86, 0, 0.07, 1);
   }
 
-  @media screen and (min-width: 23.375em) and (min-height: 37.5em) {
-    height: calc(100% - 60px);
-  }
-
-  @include max(xs) {
-    height: 100%;
-  }
-
   @include max(m) {
-    padding-top: ($core-padding * 2.5);
-    padding-right: 25px;
-    padding-bottom: ($core-padding * 2.5);
-    padding-left: 25px;
+    flex: 1;
     opacity: 0;
     transform: translateY(5vw);
   }
 
+  @include min(xs) {
+    margin-bottom: ($core-margin * 4);
+  }
+
   @include min(m) {
     flex-direction: row;
+    margin-bottom: 0;
   }
 }
 
@@ -74,7 +85,7 @@
 
 .nav__item {
   @include text(uranus);
-  margin-bottom: ($core-margin * 3);
+  margin-bottom: ($core-margin * 2);
 
   &:last-child {
     margin-bottom: 0;
@@ -83,6 +94,10 @@
   @include min-max(xs, m) {
     font-size: calc(2.5em + 0.5vw);
     font-weight: $core-tertiary-font-weight;
+  }
+
+  @include min(xs) {
+    margin-bottom: ($core-margin * 3);
   }
 
   @include min(m) {

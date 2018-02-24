@@ -25,10 +25,6 @@ module.exports = (function() {
     nav.html.classList.toggle('body--nav-open');
     nav.nav.classList.add('nav--open');
     nav.navTrigger.classList.toggle('button--nav-active');
-
-    if (window.location.pathname === '/') {
-      nav.logo.classList.toggle('logo--white');
-    }
   }
 
   function preventScrollWhenNavigationOpen(event) {

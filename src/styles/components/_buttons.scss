@@ -63,6 +63,8 @@
 
 .button__icon {
   @include rotate(-90);
+  width: 18px;
+  height: 18px;
   margin-top: -0.15em;
   margin-left: ($core-margin / 2);
   stroke: $core-color-brand;
@@ -77,8 +79,6 @@
 
 .button--nav-icon {
   @include transition-03(transform);
-  width: 24px;
-  height: 24px;
   fill: $core-color-background;
   vertical-align: bottom;
 

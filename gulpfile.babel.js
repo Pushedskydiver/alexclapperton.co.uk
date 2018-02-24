@@ -26,8 +26,6 @@ const data = {
 
 require('./_tasks/clean.js')(gulp, data, argv);
 require('./_tasks/copy.js')(gulp, data);
-require('./_tasks/deploy.js')(gulp, data, argv);
-require('./_tasks/icons.js')(gulp, data);
 require('./_tasks/images.js')(gulp, data);
 require('./_tasks/imports.js')(gulp, data);
 require('./_tasks/eslint.js')(gulp, data, argv);
@@ -53,7 +51,7 @@ gulp.task('default', callback => {
     'clean:all',
     'imports:sass',
     ['styles:sass', 'scripts:compile'],
-    ['images', 'icons'],
+    ['images', 'copy:icons'],
     ['copy:favicons', 'copy:manifest', 'copy:fonts', 'copy:serviceWorker'],
     callback
   )

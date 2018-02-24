@@ -19,6 +19,11 @@ module.exports = (gulp, data) => {
           .pipe(gulp.dest(data.paths.dist.fonts))
   });
 
+  gulp.task('copy:icons', () => {
+      return gulp.src(data.paths.source.icons)
+          .pipe(gulp.dest(data.paths.dist.icons))
+  });
+
   gulp.task('copy:serviceWorker', () => {
       return gulp.src(`${data.paths.source.base}sw.js`)
           .pipe(gulp.dest(data.paths.dist.base))

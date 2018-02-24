@@ -42,6 +42,7 @@ module.exports = (function() {
 
     if (window.innerWidth >= 768) {
       removeActiveClass();
+      nav.nav.removeChild(nav.logo);
       nav.navItem.forEach(item => {
         item.parentNode.addEventListener('mouseover', addActiveClass);
         item.parentNode.addEventListener('mouseleave', removeActiveClass);

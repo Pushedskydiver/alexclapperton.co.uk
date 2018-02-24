@@ -54,27 +54,6 @@
       {"formatter": "verbose", "save": "stylelint.txt"}
     ]
   },
-  "svgSprite": {
-    "shape": {
-      "dimension": {
-        "maxWidth": 32
-      },
-      "spacing": {
-        "padding": 1
-      }
-    },
-    "mode": {
-      "symbol": {
-        "dest": "./",
-        "render": {
-          "css": false,
-          "scss": false
-        },
-        "sprite": "sprite.svg",
-        "example": false
-      }
-    }
-  },
   "uglify": {
     "minimize": true,
     "warnings": false,
