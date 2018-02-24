@@ -72,7 +72,7 @@ module.exports = (function() {
   }
 
   function init() {
-    if (form) {
+    if (form !== null) {
       inputs.forEach(input => input.addEventListener('change', validateInput));
       textarea.addEventListener('change', validateTextarea);
       submitButton.addEventListener('click', validateAllFields);

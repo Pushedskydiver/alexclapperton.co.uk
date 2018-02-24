@@ -18,7 +18,7 @@ module.exports = (function() {
   }
 
   function init() {
-    if (elementsToFade) {
+    if (elementsToFade.length > 0) {
       fadeIn();
       window.addEventListener('scroll', fadeIn);
     }
