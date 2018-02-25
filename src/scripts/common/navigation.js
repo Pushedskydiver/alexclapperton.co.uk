@@ -18,6 +18,7 @@ module.exports = (function() {
   }
 
   obj.navItem.forEach(item => handleActiveClassPerPage(item));
+  obj.body.classList.add('js');
 
   return obj;
 }());

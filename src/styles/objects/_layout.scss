@@ -55,8 +55,10 @@
 }
 
 .hide {
-  opacity: 0;
-  transform: translateY(25px);
+  .js & {
+    opacity: 0;
+    transform: translateY(25px);
+  }
 }
 
 .fade-in {

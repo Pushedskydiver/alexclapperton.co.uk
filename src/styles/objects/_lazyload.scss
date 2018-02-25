@@ -1,8 +1,7 @@
-// Lazy load..........Generic styles for lazy loading images.
+// Lazyload...........Generic styles for lazy loading images.
 
 .lazyload {
   position: relative;
-  padding-top: 75%;
 }
 
 .lazyload__image {
@@ -14,7 +13,9 @@
 }
 
 .lazyload__image--lazy {
-  opacity: 0;
+  .js & {
+    opacity: 0;
+  }
 }
 
 .lazyload--image-loaded {
