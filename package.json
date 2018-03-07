@@ -50,6 +50,7 @@
     "helmet": "^3.9.0",
     "http": "^0.0.0",
     "morgan": "^1.9.0",
+    "nodemailer": "^4.6.0",
     "nodemon": "^1.14.11",
     "stylelint-selector-bem-pattern": "^2.0.0",
     "vinyl-ftp": "^0.6.0",

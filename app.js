@@ -9,10 +9,12 @@ import compression from 'compression'
 import json from 'express-json'
 import minifyHtml from 'express-minify-html'
 import helmet from 'helmet'
+// import nodemailer from 'nodemailer'
 
 const main = require('./routes/index');
 const articles = require('./routes/articles');
 const portfolio = require('./routes/portfolio');
+const contact = require('./routes/contact');
 
 const helpers = require(path.resolve(__dirname, 'utils', 'helpers.js'))();
 const minifyHtmlData = require(path.resolve(__dirname, 'utils', 'minifyHtml.js'));
@@ -42,10 +44,10 @@ app.use(express.static(path.join(__dirname, 'public'), { maxAge: 31557600 }));
 
 app.use('/', main);
 app.use('/about-me/', main);
-app.use('/contact/', main);
 app.use('/offline/', main);
 app.use('/articles/', articles);
 app.use('/portfolio/', portfolio);
+app.use('/contact/', contact);
 
 require('./routes/errors')(app);
 

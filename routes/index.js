@@ -50,16 +50,6 @@ router.get('/about-me/', cache, (req, res, next) => {
   });
 });
 
-router.get('/contact/', cache, (req, res, next) => {
-  res.render('contact', {
-    title: 'Contact',
-    contact: true,
-    data: {
-      global: data
-    }
-  });
-});
-
 router.get('/offline/', cache, (req, res, next) => {
   res.render('offline', {
     title: 'Oops! It looks like you\'re offline',
