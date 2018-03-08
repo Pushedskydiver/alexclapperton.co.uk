@@ -84,16 +84,16 @@
 
 .form__input--valid,
 .form__textarea--valid {
-  border-color: #70c041;
+  border-color: $core-color-success;
 }
 
 .form__input--invalid,
 .form__textarea--invalid {
-  border-color: #de0000;
+  border-color: $core-color-danger;
 
   &:focus,
   &:active {
-    border-color: #de0000;
+    border-color: $core-color-danger;
   }
 }
 
@@ -103,7 +103,7 @@
   position: absolute;
   top: 3px;
   right: 0;
-  color: #de0000;
+  color: $core-color-danger;
   opacity: 0;
 }
 

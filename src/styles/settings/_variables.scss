@@ -1,32 +1,31 @@
 // Variables..........The sites core sass variables.
 
-$core-grid-width: 1170px !default;
-$core-grid-unit: 12px !default;
+$core-grid-width: 1170px;
+$core-grid-unit: 12px;
 
-$core-color-brand: #0e0d0d !default;
-$core-color-background: #ffffff !default;
-$core-color-foreground: #040f0f !default;
-$core-color-neutral: #b6bcce !default;
-$core-color-link: #fbd664 !default;
-$core-color-body: rgba($core-color-brand, 0.7) !default;
+$core-color-brand: #0e0d0d;
+$core-color-background: #ffffff;
+$core-color-foreground: #040f0f;
+$core-color-neutral: #b6bcce;
+$core-color-link: #fbd664;
+$core-color-body: rgba($core-color-brand, 0.7);
 
-$core-facebook-color: #3b5998 !default;
-$core-twitter-color: #55acee !default;
-$core-linkedin-color: #007bb5 !default;
+$core-color-success: #70c041;
+$core-color-danger: #de0000;
 
-$core-border-width: 0.2em !default;
-$core-border-style: solid !default;
-$core-border-color: $core-color-brand !default;
-$core-border-radius: 3px !default;
+$core-border-width: 0.2em;
+$core-border-style: solid;
+$core-border-color: $core-color-brand;
+$core-border-radius: 3px;
 
-$core-font-family: 'Nunito Sans', sans-serif !default;
-$core-secondary-font-family: 'Ubuntu', sans-serif !default;
-$core-font-size: 16px !default;
-$core-line-height: 1.7 !default;
-$core-secondary-line-height: 1.3 !default;
-$core-font-weight: 400 !default;
-$core-secondary-font-weight: 500 !default;
-$core-tertiary-font-weight: 600 !default;
+$core-font-family: 'Nunito Sans', sans-serif;
+$core-secondary-font-family: 'Ubuntu', sans-serif;
+$core-font-size: 16px;
+$core-line-height: 1.7;
+$core-secondary-line-height: 1.3;
+$core-font-weight: 400;
+$core-secondary-font-weight: 500;
+$core-tertiary-font-weight: 600;
 
-$core-margin: $core-grid-unit !default;
-$core-padding: $core-grid-unit !default;
+$core-margin: $core-grid-unit;
+$core-padding: $core-grid-unit;
