@@ -108,7 +108,8 @@ $headings: (
       margin-bottom: ($core-margin * 2)
     ),
     variable-fonts: (
-      font-weight: $core-font-weight,
+      font-weight: normal,
+      font-variation-settings: 'wght' $core-secondary-font-weight
     )
   ),
   earth: (
@@ -121,6 +122,7 @@ $headings: (
       margin-bottom: ($core-margin * 2)
     ),
     variable-fonts: (
+      font-weight: normal,
       font-variation-settings: 'wght' $core-secondary-font-weight
     )
   ),
@@ -134,19 +136,21 @@ $headings: (
       margin-bottom: ($core-margin / 2)
     ),
     variable-fonts: (
+      font-weight: normal,
       font-variation-settings: 'wght' $core-tertiary-font-weight
     )
   ),
   bodyCopy: (
     default: (
       font-size: calc(#{$core-font-size} + 0.1vw),
+      font-weight: $core-font-weight,
       line-height: $core-line-height,
       margin-top: 0,
       margin-bottom: ($core-margin * 2)
     ),
     variable-fonts: (
-      font-weight: $core-font-weight,
-      font-variation-settings: 'wght' $core-secondary-font-weight,
+      font-weight: normal,
+      font-variation-settings: 'wght' $core-secondary-font-weight
     )
   )
 );
