@@ -40,26 +40,12 @@ router.post('/', (req, res) => {
 
   smtpTrans.sendMail(mailOpts, (error, response) => {
     if (error) {
-      res.render('contact', {
-        title: 'Contact',
-        contact: true,
-        msg: 'Error occured, message not sent.',
-        err: true,
-        data: {
-          global: data
-        }
-      });
+      console.log(err);
     } else {
-      res.render('contact', {
-        title: 'Contact',
-        contact: true,
-        msg: 'Message sent! Thank you.',
-        err: false,
-        data: {
-          global: data
-        }
-      });
+      console.log('Message sent');
     }
+
+    smtpTrans.close();
   });
 });
 
