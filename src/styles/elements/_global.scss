@@ -20,7 +20,13 @@ body {
   -webkit-font-smoothing: antialiased;
 
   @include min(l) {
-    font-family: $core-font-family;
+    font-family: $core-variable-font-family;
+  }
+
+  @supports (font-variation-settings: 'wght' 400) {
+    @include min(l) {
+      font-family: $core-variable-font-family;
+    }
   }
 }
 
@@ -74,6 +80,11 @@ a {
 
 strong {
   color: $core-color-brand;
+
+  @supports (font-variation-settings: 'wght' 400) {
+    font-weight: 400;
+    font-variation-settings: 'wght' $core-tertiary-font-weight;
+  }
 }
 
 ul,

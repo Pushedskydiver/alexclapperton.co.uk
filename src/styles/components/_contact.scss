@@ -61,6 +61,12 @@
   font-weight: $core-secondary-font-weight;
   margin-top: 0;
   margin-bottom: ($core-margin / 2);
+
+  @supports (font-variation-settings: 'wght' 400) {
+    font-family: $core-secondary-variable-font-family;
+    font-weight: 400;
+    font-variation-settings: 'wght' $core-tertiary-font-weight;
+  }
 }
 
 .contact__list-body {
@@ -74,6 +80,11 @@
 .contact__list-body--📱 {
   color: $core-color-foreground;
   font-weight: $core-tertiary-font-weight;
+
+  @supports (font-variation-settings: 'wght' 400) {
+    font-weight: 400;
+    font-variation-settings: 'wght' $core-secondary-font-weight;
+  }
 }
 
 .contact__list-🔗 {

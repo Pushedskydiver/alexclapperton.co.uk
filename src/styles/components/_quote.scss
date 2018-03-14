@@ -30,6 +30,11 @@
   font-weight: $core-secondary-font-weight;
   line-height: 4rem;
   border-radius: 50%;
+
+  @supports (font-variation-settings: 'wght' 400) {
+    font-weight: 400;
+    font-variation-settings: 'wght' $core-tertiary-font-weight;
+  }
 }
 
 .quote__body {
@@ -39,4 +44,10 @@
   font-size: calc(1.1em + 0.5vw);
   font-style: italic;
   font-weight: $core-font-weight;
+
+  @supports (font-variation-settings: 'wght' 400) {
+    font-family: $core-secondary-variable-font-family;
+    font-weight: 400;
+    font-variation-settings: 'wght' $core-tertiary-font-weight;
+  }
 }

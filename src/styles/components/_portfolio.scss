@@ -15,6 +15,10 @@
   margin-bottom: ($core-margin / 2);
 }
 
+.portfolio__title-main {
+  @include text(uranus);
+}
+
 .portfolio__title-small {
   @include text(pluto);
 }

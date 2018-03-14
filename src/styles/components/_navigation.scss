@@ -96,6 +96,13 @@
     font-weight: $core-tertiary-font-weight;
   }
 
+  @supports (font-variation-settings: 'wght' 400) {
+    @include min-max(xs, m) {
+      font-weight: 400;
+      font-variation-settings: 'wght' $core-secondary-font-weight;
+    }
+  }
+
   @include min(xs) {
     margin-bottom: ($core-margin * 3);
   }

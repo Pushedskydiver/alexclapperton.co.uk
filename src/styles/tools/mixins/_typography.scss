@@ -3,98 +3,168 @@
 // Font styles map configuration
 $headings: (
   sun: (
-    color: $core-color-brand,
-    font-family: $core-secondary-font-family,
-    font-size: calc(3em + 0.5vw),
-    line-height: 1.1,
-    font-weight: $core-secondary-font-weight,
-    margin-top: 0,
-    margin-bottom: ($core-margin * 1.75)
+    default: (
+      color: $core-color-brand,
+      font-family: $core-secondary-font-family,
+      font-size: calc(3em + 0.5vw),
+      font-weight: $core-secondary-font-weight,
+      line-height: 1.1,
+      margin-top: 0,
+      margin-bottom: ($core-margin * 1.75)
+    ),
+    variable-fonts: (
+      font-family: $core-secondary-variable-font-family,
+      font-weight: normal,
+      font-variation-settings: 'wght' $core-tertiary-font-weight
+    )
   ),
   jupiter: (
-    color: $core-color-brand,
-    font-family: $core-secondary-font-family,
-    font-size: calc(2.3em + 0.5vw),
-    line-height: $core-secondary-line-height,
-    font-weight: $core-secondary-font-weight,
-    margin-top: 0,
-    margin-bottom: ($core-margin * 1.75)
+    default: (
+      color: $core-color-brand,
+      font-family: $core-secondary-font-family,
+      font-size: calc(2.3em + 0.5vw),
+      font-weight: $core-secondary-font-weight,
+      line-height: $core-secondary-line-height,
+      margin-top: 0,
+      margin-bottom: ($core-margin * 1.75)
+    ),
+    variable-fonts: (
+      font-family: $core-secondary-variable-font-family,
+      font-weight: normal,
+      font-variation-settings: 'wght' $core-tertiary-font-weight
+    )
   ),
   saturn: (
-    color: $core-color-brand,
-    font-family: $core-secondary-font-family,
-    font-size: calc(2em + 0.5vw),
-    line-height: $core-secondary-line-height,
-    font-weight: $core-secondary-font-weight,
-    margin-top: 0,
-    margin-bottom: ($core-margin * 1.5)
+    default: (
+      color: $core-color-brand,
+      font-family: $core-secondary-font-family,
+      font-size: calc(2em + 0.5vw),
+      font-weight: $core-secondary-font-weight,
+      line-height: $core-secondary-line-height,
+      margin-top: 0,
+      margin-bottom: ($core-margin * 1.5)
+    ),
+    variable-fonts: (
+      font-family: $core-secondary-variable-font-family,
+      font-weight: normal,
+      font-variation-settings: 'wght' $core-tertiary-font-weight
+    )
   ),
   uranus: (
-    color: $core-color-brand,
-    font-family: $core-secondary-font-family,
-    font-size: calc(1.7em + 0.5vw),
-    line-height: $core-secondary-line-height,
-    font-weight: $core-secondary-font-weight,
-    margin-top: 0,
-    margin-bottom: ($core-margin * 1.5)
+    default: (
+      color: $core-color-brand,
+      font-family: $core-secondary-font-family,
+      font-size: calc(1.7em + 0.5vw),
+      font-weight: $core-secondary-font-weight,
+      line-height: $core-secondary-line-height,
+      margin-top: 0,
+      margin-bottom: ($core-margin * 1.5)
+    ),
+    variable-fonts: (
+      font-family: $core-secondary-variable-font-family,
+      font-weight: normal,
+      font-variation-settings: 'wght' $core-tertiary-font-weight
+    )
   ),
   mars: (
-    color: $core-color-brand,
-    font-family: $core-secondary-font-family,
-    font-size: calc(1.3em + 0.5vw),
-    line-height: $core-secondary-line-height,
-    font-weight: $core-secondary-font-weight,
-    margin-top: 0,
-    margin-bottom: $core-margin
+    default: (
+      color: $core-color-brand,
+      font-family: $core-secondary-font-family,
+      font-size: calc(1.3em + 0.5vw),
+      font-weight: $core-secondary-font-weight,
+      line-height: $core-secondary-line-height,
+      margin-top: 0,
+      margin-bottom: $core-margin
+    ),
+    variable-fonts: (
+      font-family: $core-secondary-variable-font-family,
+      font-weight: normal,
+      font-variation-settings: 'wght' $core-tertiary-font-weight
+    )
   ),
   venus: (
-    color: $core-color-brand,
-    font-family: $core-secondary-font-family,
-    font-size: calc(1.1em + 0.5vw),
-    line-height: $core-secondary-line-height,
-    font-weight: $core-secondary-font-weight,
-    margin-top: 0,
-    margin-bottom: $core-margin
+    default: (
+      color: $core-color-brand,
+      font-family: $core-secondary-font-family,
+      font-size: calc(1.1em + 0.5vw),
+      font-weight: $core-secondary-font-weight,
+      line-height: $core-secondary-line-height,
+      margin-top: 0,
+      margin-bottom: $core-margin
+    ),
+    variable-fonts: (
+      font-family: $core-secondary-variable-font-family,
+      font-weight: normal,
+      font-variation-settings: 'wght' 650
+    )
   ),
   pluto: (
-    color: $core-color-body,
-    font-size: calc(1em + 0.5vw),
-    line-height: 1.1,
-    font-weight: $core-font-weight,
-    margin-top: 0,
-    margin-bottom: ($core-margin * 2)
+    default: (
+      color: $core-color-body,
+      font-size: calc(1em + 0.5vw),
+      font-variation-settings: 'wght' $core-font-weight,
+      line-height: 1.1,
+      margin-top: 0,
+      margin-bottom: ($core-margin * 2)
+    ),
+    variable-fonts: (
+      font-weight: $core-font-weight,
+    )
   ),
   earth: (
-    color: $core-color-body,
-    font-size: calc(#{$core-font-size} + 0.15vw),
-    line-height: $core-line-height,
-    font-weight: $core-tertiary-font-weight,
-    margin-top: 0,
-    margin-bottom: ($core-margin * 2)
+    default: (
+      color: $core-color-body,
+      font-size: calc(#{$core-font-size} + 0.15vw),
+      font-weight: $core-tertiary-font-weight,
+      line-height: $core-line-height,
+      margin-top: 0,
+      margin-bottom: ($core-margin * 2)
+    ),
+    variable-fonts: (
+      font-variation-settings: 'wght' $core-secondary-font-weight
+    )
   ),
   moon: (
-    color: $core-color-body,
-    font-size: calc(0.8em + 0.15vw),
-    line-height: $core-line-height,
-    font-weight: $core-tertiary-font-weight,
-    margin-top: 0,
-    margin-bottom: ($core-margin / 2)
+    default: (
+      color: $core-color-body,
+      font-size: calc(0.8em + 0.15vw),
+      font-weight: $core-tertiary-font-weight,
+      line-height: $core-line-height,
+      margin-top: 0,
+      margin-bottom: ($core-margin / 2)
+    ),
+    variable-fonts: (
+      font-variation-settings: 'wght' $core-tertiary-font-weight
+    )
   ),
   bodyCopy: (
-    font-size: calc(#{$core-font-size} + 0.1vw),
-    line-height: $core-line-height,
-    font-weight: $core-font-weight,
-    margin-top: 0,
-    margin-bottom: ($core-margin * 2)
+    default: (
+      font-size: calc(#{$core-font-size} + 0.1vw),
+      line-height: $core-line-height,
+      margin-top: 0,
+      margin-bottom: ($core-margin * 2)
+    ),
+    variable-fonts: (
+      font-weight: $core-font-weight,
+      font-variation-settings: 'wght' $core-secondary-font-weight,
+    )
   )
 );
 
 @mixin text($style) {
   $props: map-get($headings, $style);
+  $default: map-get($props, default);
+  $variable-fonts: map-get($props, variable-fonts);
 
   @if $props == null {
     @warn 'text style \"#{$style}\" not found';
   } @else {
-    @include map-to-props($props);
+    @include map-to-props($default);
+
+    @if map-has-key($props, variable-fonts) {
+      @supports (font-variation-settings: 'wght' 400) {
+        @include map-to-props($variable-fonts);
+      }
+    }
   }
 }

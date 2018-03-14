@@ -1,33 +1,52 @@
 // Typography.........The sites typography faces.
 
+// Variable Fonts
+
+// Selawik
+@font-face {
+  font-family: 'Selawik Variable';
+  src: url('../fonts/selawik-variable.woff2') format('woff2-variations'),
+       url('../fonts/selawik-variable.woff2') format('woff2');
+}
+
+// Avenir Next
+@font-face {
+  font-family: 'Avenir Next Variable';
+  src: url('../fonts/avenir-next-variable.woff2') format('woff2-variations'),
+       url('../fonts/avenir-next-variable.woff2') format('woff2');
+}
+
+// Fallback fonts
+// TODO: Remove these  fonts when support for variable fonts increases
+
 // Nunito Sans
 @font-face {
-  font-family: "Nunito Sans";
-  src: url("../fonts/nunito-sans/nunito-sans-regular.woff2") format("woff2"),
-  url("../fonts/nunito-sans/nunito-sans-regular.woff") format("woff");
+  font-family: 'Nunito Sans';
+  src: url('../fonts/nunito-sans/nunito-sans-regular.woff2') format('woff2'),
+  url('../fonts/nunito-sans/nunito-sans-regular.woff') format('woff');
   font-style: normal;
   font-weight: $core-font-weight;
 }
 @font-face {
-  font-family: "Nunito Sans";
-  src: url("../fonts/nunito-sans/nunito-sans-semi-bold.woff2") format("woff2"),
-  url("../fonts/nunito-sans/nunito-sans-semi-bold.woff") format("woff"),;
+  font-family: 'Nunito Sans';
+  src: url('../fonts/nunito-sans/nunito-sans-semi-bold.woff2') format('woff2'),
+  url('../fonts/nunito-sans/nunito-sans-semi-bold.woff') format('woff'),;
   font-style: normal;
   font-weight: $core-tertiary-font-weight;
 }
 
 // Ubuntu
 @font-face {
-  font-family: "Ubuntu";
-  src: url("../fonts/ubuntu/ubuntu-regular.woff2") format("woff2"),
-  url("../fonts/ubuntu/ubuntu-regular.woff") format("woff");
+  font-family: 'Ubuntu';
+  src: url('../fonts/ubuntu/ubuntu-regular.woff2') format('woff2'),
+  url('../fonts/ubuntu/ubuntu-regular.woff') format('woff');
   font-style: normal;
   font-weight: $core-font-weight;
 }
 @font-face {
-  font-family: "Ubuntu";
-  src: url("../fonts/ubuntu/ubuntu-medium.woff2") format("woff2"),
-  url("../fonts/ubuntu/ubuntu-medium.woff") format("woff");
+  font-family: 'Ubuntu';
+  src: url('../fonts/ubuntu/ubuntu-medium.woff2') format('woff2'),
+  url('../fonts/ubuntu/ubuntu-medium.woff') format('woff');
   font-style: normal;
   font-weight: $core-secondary-font-weight;
 }

@@ -53,6 +53,11 @@
   color: $core-color-foreground;
   font-weight: $core-tertiary-font-weight;
   margin-bottom: ($core-margin / 2);
+
+  @supports (font-variation-settings: 'wght' 400) {
+    font-weight: 400;
+    font-variation-settings: 'wght' $core-font-weight;
+  }
 }
 
 .form__input,

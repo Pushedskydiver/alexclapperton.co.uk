@@ -76,6 +76,11 @@
   border-bottom-style: $core-border-style;
   border-bottom-color: $core-color-link;
 
+  @supports (font-variation-settings: 'wght' 400) {
+    font-weight: 400;
+    font-variation-settings: 'wght' $core-secondary-font-weight;
+  }
+
   @include min(l) {
     @include transition-03(all);
 
