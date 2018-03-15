@@ -22,7 +22,7 @@ module.exports = (gulp, data, argv) => {
       autoprefixer(data.plugin.autoprefixer),
       mqpacker(data.plugin.mqpacker),
       cssnano(data.plugin.cssnano)
-    ]
+    ];
 
     if (argv.prod) {
       postCssPlugins.push(cssnano({
@@ -38,7 +38,7 @@ module.exports = (gulp, data, argv) => {
           .pipe($.sourcemaps.init())
           .pipe($.sass({outputStyle: 'expanded'}).on('error', $.sass.logError))
           .pipe($.postcss(getPostCssPlugins()))
-          .pipe($.if(argv.prod, $.cleanCss()))
+          .pipe($.if(argv.prod, $.cleanCss(data.plugin.cleancss)))
           .pipe($.sourcemaps.write('sourcemaps'))
           .pipe(gulp.dest(data.paths.dist.styles));
   });
