@@ -14,7 +14,10 @@ module.exports = (function() {
   }
 
   function fadeIn() {
-    elementsToFade.forEach(element => toggleFadeClass(element));
+    const delayFade = setTimeout(() => {
+      elementsToFade.forEach(element => toggleFadeClass(element));
+      clearTimeout(delayFade);
+    }, 500);
   }
 
   function init() {

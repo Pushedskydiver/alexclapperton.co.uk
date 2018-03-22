@@ -37,7 +37,7 @@ module.exports = (function() {
     const delayResize = setTimeout(() => {
       if (window.innerWidth < 768) {
         nav.navTrigger.addEventListener('click', toggleNavigation);
-        nav.nav.addEventListener('touchmove', preventScrollWhenNavigationOpen);
+        nav.nav.addEventListener('touchmove', preventScrollWhenNavigationOpen, {passive: true});
       }
       clearTimeout(delayResize);
     }, 500);
@@ -48,7 +48,7 @@ module.exports = (function() {
 
     if (window.innerWidth < 768) {
       nav.navTrigger.addEventListener('click', toggleNavigation);
-      nav.nav.addEventListener('touchmove', preventScrollWhenNavigationOpen);
+      nav.nav.addEventListener('touchmove', preventScrollWhenNavigationOpen, {passive: true});
     }
   }
 
