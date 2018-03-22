@@ -10,24 +10,21 @@ module.exports = (function() {
   }
 
   function lazyloaded(image) {
-    image = image.currentTarget || image;
-
-    const width = image.naturalWidth;
-    const height = image.naturalHeight;
+    const element = image.currentTarget || image;
+    const width = element.naturalWidth;
+    const height = element.naturalHeight;
     const ratio = (Math.round(height) / Math.round(width) * 100).toFixed(2);
 
-    image.parentNode.style.paddingTop = ratio.replace('.00', '') + '%';
+    element.parentNode.style.paddingTop = ratio.replace('.00', '') + '%';
 
     if (window.innerWidth >= 992 && document.body.contains(infoBlockPicture)) {
       infoBlockPicture.style.paddingTop = '';
     }
   }
 
-  function lazyBeforeUnveil(image) {
-    image = image.currentTarget;
-
-    image.parentNode.classList.add('lazyload--image-loaded');
-    image.removeEventListener('lazybeforeunveil', lazyBeforeUnveil);
+  function lazyBeforeUnveil({currentTarget}) {
+    currentTarget.parentNode.classList.add('lazyload--image-loaded');
+    currentTarget.removeEventListener('lazybeforeunveil', lazyBeforeUnveil);
   }
 
   function lazyLoadImagesOnResize() {

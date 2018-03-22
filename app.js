@@ -40,7 +40,7 @@ app.use(methodOverride());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(minifyHtml(minifyHtmlData));
-app.use(express.static(path.join(__dirname, 'public'), { maxAge: 31557600 }));
+app.use(express.static(path.join(__dirname, 'public'), { maxAge: 2592000 }));
 
 app.use('/', main);
 app.use('/about-me/', main);

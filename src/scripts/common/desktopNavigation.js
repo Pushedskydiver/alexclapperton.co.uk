@@ -2,11 +2,9 @@ import nav from './navigation'
 
 module.exports = (function() {
 
-  function addActiveClass(item) {
-    item = item.target;
-
-    nav.activeNavItem.style.left = `${item.offsetLeft}px`;
-    nav.activeNavItem.style.width = `${item.clientWidth}px`;
+  function addActiveClass({target}) {
+    nav.activeNavItem.style.left = `${target.offsetLeft}px`;
+    nav.activeNavItem.style.width = `${target.clientWidth}px`;
   }
 
   function removeActiveClass() {

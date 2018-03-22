@@ -13,36 +13,34 @@ module.exports = (function() {
   }
 
   function validateInput(input) {
-    input = input.currentTarget || input;
-
-    const isValid = getInputPattern(input);
-    const isNotEmpty = input.value.length !== 0;
-    const validationMessage = input.nextElementSibling;
+    const element = input.currentTarget || input;
+    const isValid = getInputPattern(element);
+    const isNotEmpty = element.value.length !== 0;
+    const validationMessage = element.nextElementSibling;
 
     if (isValid && isNotEmpty) {
-      input.classList.remove('form__input--invalid');
-      input.classList.add('form__input--valid');
+      element.classList.remove('form__input--invalid');
+      element.classList.add('form__input--valid');
       validationMessage.classList.remove('form__validation-message--visible');
     } else {
-      input.classList.add('form__input--invalid');
-      input.classList.remove('form__input--valid');
+      element.classList.add('form__input--invalid');
+      element.classList.remove('form__input--valid');
       validationMessage.classList.add('form__validation-message--visible');
     }
   }
 
   function validateTextarea(input) {
-    input = input.currentTarget || input;
-
-    const isNotEmpty = input.value.length !== 0;
-    const validationMessage = input.nextElementSibling;
+    const element = input.currentTarget || input;
+    const isNotEmpty = element.value.length !== 0;
+    const validationMessage = element.nextElementSibling;
 
     if (isNotEmpty) {
-      input.classList.remove('form__textarea--invalid');
-      input.classList.add('form__textarea--valid');
+      element.classList.remove('form__textarea--invalid');
+      element.classList.add('form__textarea--valid');
       validationMessage.classList.remove('form__validation-message--visible');
     } else {
-      input.classList.add('form__textarea--invalid');
-      input.classList.remove('form__textarea--valid');
+      element.classList.add('form__textarea--invalid');
+      element.classList.remove('form__textarea--valid');
       validationMessage.classList.add('form__validation-message--visible');
     }
   }
@@ -53,7 +51,7 @@ module.exports = (function() {
     inputs.forEach(input => {
       validateInput(input);
 
-      if (input.classList.contains('form__input--invalid') && firstErrorFound === false) {
+      if (input.classList.contains('form__input--invalid') && !firstErrorFound) {
         input.focus();
         firstErrorFound = true;
       }
@@ -61,7 +59,7 @@ module.exports = (function() {
 
     validateTextarea(textarea);
 
-    if (textarea.classList.contains('form__textarea--invalid') && firstErrorFound === false) {
+    if (textarea.classList.contains('form__textarea--invalid') && !firstErrorFound) {
       textarea.focus();
       firstErrorFound = true;
     }
