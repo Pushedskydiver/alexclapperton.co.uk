@@ -40,6 +40,7 @@
     "express": "~4.15.5",
     "express-handlebars": "^3.0.0",
     "express-json": "^1.0.0",
+    "express-legacy-expires": "^1.0.0",
     "express-lru": "^1.0.0",
     "express-method-override": "^0.0.3",
     "express-minify-html": "^0.12.0",

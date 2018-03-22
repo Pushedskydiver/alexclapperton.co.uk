@@ -7,7 +7,7 @@ const data = require('../_data/global.json');
 const articles = require('../services/articles');
 
 const cache = expresslru({
-  max: 250,
+  max: 2592000,
   ttl: 30000,
   skip: req => !!req.user
 });
