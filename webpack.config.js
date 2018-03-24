@@ -10,6 +10,10 @@ module.exports = function(argv) {
   const plugin = require('./_config/plugins.json');
 
   let webpackConfig = {
+    cache: false,
+
+    devtool: !argv.prod ? 'source-map' : 'eval',
+
     entry : {
       common: path.resolve(__dirname, 'src/scripts/main.js'),
       vendor: argv.prod ?
@@ -34,12 +38,6 @@ module.exports = function(argv) {
         }
       }]
     },
-
-    cache: false,
-
-    watch: false,
-
-    devtool: !argv.prod ? 'source-map' : 'eval',
 
     optimization: {
       minimizer: argv.prod ?
@@ -68,7 +66,9 @@ module.exports = function(argv) {
         'prism' : path.join(vendorPath, 'prism')
       },
       extensions: ['.js']
-    }
+    },
+
+    watch: false
   };
 
   return webpackConfig;
