@@ -74,9 +74,6 @@
     "uglifyOptions": {
       "minimize": true,
       "warnings": false,
-      "mangle": {
-        "except": ["exports", "require"]
-      },
       "compress": {
         "sequences": true,
         "properties": false,
