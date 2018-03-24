@@ -90,7 +90,6 @@
         "hoist_vars": false,
         "if_return": false,
         "join_vars": true,
-        "cascade": true,
         "side_effects": false,
         "warnings": false,
         "global_defs": {}
