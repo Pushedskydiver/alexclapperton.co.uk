@@ -14,6 +14,10 @@ module.exports = (function() {
   }
 
   function fadeIn() {
+    elementsToFade.forEach(element => toggleFadeClass(element));
+  }
+
+  function fadeInOnScroll() {
     const delayFade = setTimeout(() => {
       elementsToFade.forEach(element => toggleFadeClass(element));
       clearTimeout(delayFade);
@@ -23,7 +27,7 @@ module.exports = (function() {
   function init() {
     if (elementsToFade.length > 0) {
       fadeIn();
-      window.addEventListener('scroll', fadeIn);
+      window.addEventListener('scroll', fadeInOnScroll);
     }
   }
 

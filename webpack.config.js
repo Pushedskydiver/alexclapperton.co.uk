@@ -1,15 +1,20 @@
-const webpack = require('webpack');
-const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
-const glob = require('glob');
-const path = require('path');
-const vendorPath = path.resolve(__dirname, 'src/scripts/vendor');
-const plugin = require('./_config/plugins.json');
+import webpack from 'webpack'
+import UglifyJsPlugin from 'uglifyjs-webpack-plugin'
+import BundleAnalyzerPlugin from 'webpack-bundle-analyzer';
+import glob from 'glob'
+import path from 'path'
 
 module.exports = function(argv) {
+  const env = process.env.NODE_ENV;
+  const vendorPath = path.resolve(__dirname, 'src/scripts/vendor');
+  const plugin = require('./_config/plugins.json');
+
   let webpackConfig = {
     entry : {
       common: path.resolve(__dirname, 'src/scripts/main.js'),
-      vendor: glob.sync('./src/scripts/vendor/*.js')
+      vendor: argv.prod ?
+      glob.sync('./src/scripts/vendor/*.js') :
+      glob.sync('./src/scripts/vendor/**/*.js')
     },
 
     output: {
@@ -17,39 +22,46 @@ module.exports = function(argv) {
       filename: '[name].bundle.js',
     },
 
+    mode: env || 'development',
+
     module: {
-      rules: [
-        {
-          test: /\.js*/,
-          exclude: /node_modules/,
-          loader: 'babel-loader',
-          options: {
-            presets: 'env'
-          }
+      rules: [{
+        test: /\.js*/,
+        exclude: /node_modules/,
+        loader: 'babel-loader',
+        options: {
+          presets: 'env'
         }
-      ]
+      }]
     },
 
     cache: false,
 
     watch: false,
 
-    devtool: 'source-map',
+    devtool: !argv.prod ? 'source-map' : 'eval',
+
+    optimization: {
+      minimizer: argv.prod ?
+      [new UglifyJsPlugin(plugin.uglify)] :
+      [new UglifyJsPlugin({
+        uglifyOptions: {
+          minimize: false,
+          warnings: false,
+          mangle: false
+        },
+      })]
+    },
 
     plugins: [
       new webpack.LoaderOptionsPlugin({
         debug: true
-      }),
-      new webpack.optimize.CommonsChunkPlugin({
-        name: ['vendor'],
-        minChunks: Infinity,
       }),
       // new BundleAnalyzerPlugin()
     ],
 
     resolve: {
       alias: {
-        // Make it so that 'require' finds the right file.
         'cookies': path.join(vendorPath, 'cookies'),
         'zenscroll': path.join(vendorPath, 'zenscroll-min'),
         'lazyload': path.join(vendorPath, 'lazyload.min'),
@@ -58,28 +70,6 @@ module.exports = function(argv) {
       extensions: ['.js']
     }
   };
-
-  if(argv.prod) {
-    webpackConfig.plugins.push(
-      new webpack.optimize.UglifyJsPlugin(plugin.uglify),
-      new webpack.DefinePlugin({
-        'process.env.NODE_ENV': '"production"'
-      })
-    );
-  } else {
-    webpackConfig.entry.vendor = glob.sync('./src/scripts/vendor/**/*.js'),
-    webpackConfig.plugins.push(
-      new webpack.optimize.UglifyJsPlugin({
-        minimize: false,
-        warnings: false,
-        sourceMap: true,
-        mangle: false
-      }),
-      new webpack.DefinePlugin({
-        'process.env.NODE_ENV': '"development"'
-      })
-    );
-  }
 
   return webpackConfig;
 };

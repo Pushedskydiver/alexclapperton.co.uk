@@ -9,7 +9,6 @@ import compression from 'compression'
 import json from 'express-json'
 import minifyHtml from 'express-minify-html'
 import helmet from 'helmet'
-import legacyExpires from 'express-legacy-expires'
 // import nodemailer from 'nodemailer'
 
 const main = require('./routes/index');
@@ -27,7 +26,6 @@ app.set('views', path.join(__dirname, 'views/_pages'));
 app.set('view engine', '.hbs');
 app.set('view cache', true);
 app.use(helmet());
-app.use(legacyExpires());
 app.enable('strict routing');
 app.engine('.hbs', hbs({
   extname: '.hbs',
