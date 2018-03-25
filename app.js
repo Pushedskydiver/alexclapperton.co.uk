@@ -42,7 +42,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(minifyHtml(minifyHtmlData));
 app.use(express.static(path.join(__dirname, 'public'), { maxAge: 2592000 }));
 
-app.use('/', main);
+app.use('/', main, require('./routes/sitemap'));
 app.use('/about-me/', main);
 app.use('/offline/', main);
 app.use('/articles/', articles);
