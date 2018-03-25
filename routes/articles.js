@@ -1,16 +1,9 @@
 import express from 'express'
-import expresslru from 'express-lru'
 import dateFormat from 'dateformat'
 
 const router = express.Router();
 const data = require('../_data/global.json');
 const articles = require('../services/articles');
-
-const cache = expresslru({
-  max: 2592000,
-  ttl: 30000,
-  skip: req => !!req.user
-});
 
 /* router params */
 router.param('slug', (req, res, next, slug) => {
@@ -36,7 +29,8 @@ router.use(function (req, res, next) {
   });
 });
 
-router.get('/:slug', cache, (req, res, next) => {
+router.get('/:slug', (req, res, next) => {
+  res.header('Cache-Control', 'max-age=2592000000');
   res.render('articles/post', {
     title: req.article.articleName,
     article: req.article,
@@ -50,7 +44,8 @@ router.get('/:slug', cache, (req, res, next) => {
   });
 });
 
-router.get('/', cache, (req, res, next) => {
+router.get('/', (req, res, next) => {
+  res.header('Cache-Control', 'max-age=2592000000');
   res.render('articles/index', {
     title: 'Articles',
     articles: req.articles,

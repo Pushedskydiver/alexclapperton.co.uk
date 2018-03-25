@@ -319,12 +319,6 @@ assign-symbols@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/assign-symbols/-/assign-symbols-1.0.0.tgz#59667f41fadd4f20ccbc2bb96b8d4f7f78ec0367"
 
-async-cache@0.1.5:
-  version "0.1.5"
-  resolved "https://registry.yarnpkg.com/async-cache/-/async-cache-0.1.5.tgz#b7cd396d295aa8c52829bbe30ec33b62426006da"
-  dependencies:
-    lru-cache "~2.3"
-
 async-each-series@^1.1.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/async-each-series/-/async-each-series-1.1.0.tgz#f42fd8155d38f21a5b8ea07c28e063ed1700b138"
@@ -2834,12 +2828,6 @@ express-json@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/express-json/-/express-json-1.0.0.tgz#9fdd53239ad0a6f3e076f54585d8a2243075fb36"
 
-express-lru@^1.0.0:
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/express-lru/-/express-lru-1.0.0.tgz#e6bf7fc2152001a2bf3c9b02741b965c12fef6aa"
-  dependencies:
-    async-cache "0.1.5"
-
 express-method-override@^0.0.3:
   version "0.0.3"
   resolved "https://registry.yarnpkg.com/express-method-override/-/express-method-override-0.0.3.tgz#ad1c00636304ed82ce7c94cc0f50221b12acd187"
@@ -5298,10 +5286,6 @@ lru-cache@^4.0.1, lru-cache@^4.1.1:
   dependencies:
     pseudomap "^1.0.2"
     yallist "^2.1.2"
-
-lru-cache@~2.3:
-  version "2.3.1"
-  resolved "https://registry.yarnpkg.com/lru-cache/-/lru-cache-2.3.1.tgz#b3adf6b3d856e954e2c390e6cef22081245a53d6"
 
 lru-queue@0.1:
   version "0.1.0"
