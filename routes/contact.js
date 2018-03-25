@@ -18,7 +18,7 @@ router.get('/', (req, res, next) => {
 
 router.post('/', (req, res) => {
   let smtpTrans = nodemailer.createTransport({
-    host: 'smtp.34sp.com',
+    host: process.env.EMAIL_HOST,
     auth: {
       user: process.env.EMAIL_ADDRESS,
       pass: process.env.EMAIL_PASS
@@ -27,7 +27,7 @@ router.post('/', (req, res) => {
 
   let mailOpts = {
     from: req.body.name + ' &lt;' + req.body.email + '&gt;',
-    to: 'hi@alexclapperton.co.uk',
+    to: process.env.EMAIL_ADDRESS,
     subject: 'Website contact form',
     text: req.body.message
   };
