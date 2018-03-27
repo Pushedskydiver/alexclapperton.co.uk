@@ -10,7 +10,6 @@ import http from 'http'
 const app = require('../app');
 const debug = require('debug')('contentful_express_tutorial:server');
 
-
 /**
  * Get port from environment and store in Express.
  */
