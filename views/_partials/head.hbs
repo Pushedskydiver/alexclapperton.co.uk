@@ -64,14 +64,14 @@
         </script>
 
         <!-- FACEBOOK -->
-        <meta property="og:title" content="{{#if title}}{{{title}}} &mdash; {{/if}}{{{data.global.name}}}{{#if data.global.jobTitle}} &mdash; {{{data.global.jobTitle}}}{{/if}}" />
+        <meta property="og:title" content="{{#if title}}{{{title}}}{{/if}}{{#unless home}} &mdash; {{{data.global.name}}}{{/unless}}{{#if data.global.jobTitle}} &mdash; {{{data.global.jobTitle}}}{{/if}}" />
         <meta property="og:type" content="{{#if article.date}}article{{else}}website{{/if}}" />
         <meta property="og:url" content="{{{data.global.url}}}{{#if article.date}}/articles{{/if}}{{#if article.slug}}/{{{article.slug}}}{{/if}}" />
         <meta property="og:image" content="{{{data.global.url}}}{{#if ogImage}}{{{ogImage}}}{{else}}/images/profile/alex-clapperton.jpg{{/if}}" />
-        <meta property="og:description" content="{{#if summary}}{{{summary}}}{{else}}{{{data.global.name}}} &mdash; blog{{/if}}">
+        <meta property="og:description" content="{{#if summary}}{{{summary}}}{{else}}{{{data.global.name}}}{{/if}}">
         <meta property="og:locale" content="en_GB">
         <meta property="article:author" content="{{{data.global.name}}}">
-        <meta property="og:site_name" content="{{{data.global.name}}} &mdash; Articles">
+        <meta property="og:site_name" content="{{{data.global.name}}}">
 
         <!-- TWITTER -->
         <meta name="twitter:card" content="summary">

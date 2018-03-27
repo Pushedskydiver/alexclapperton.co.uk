@@ -9,6 +9,7 @@ import compression from 'compression'
 import json from 'express-json'
 import minifyHtml from 'express-minify-html'
 import helmet from 'helmet'
+import inlineCss from 'express-inline-css'
 // import nodemailer from 'nodemailer'
 
 const main = require('./routes/index');
@@ -41,6 +42,10 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(minifyHtml(minifyHtmlData));
 app.use(express.static(path.join(__dirname, 'public'), { maxAge: '365 days' }));
+app.use(inlineCss({
+  override: true,
+  cssFilePath: path.join(__dirname, 'public/css/main.css')
+}));
 
 app.use('/', main, require('./routes/sitemap'));
 app.use('/about-me/', main);
