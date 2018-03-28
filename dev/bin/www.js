@@ -17,6 +17,7 @@ const debug = require('debug')('contentful_express_tutorial:server');
 const port = process.env.PORT || 3001;
 
 app.set('port', port);
+
 http.globalAgent.maxSockets = Infinity;
 
 /**
