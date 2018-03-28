@@ -14,11 +14,13 @@
     "url": "https://github.com/Pushedskydiver/alexclapperton.co.uk"
   },
   "scripts": {
-    "start": "npm run production",
-    "heroku-prebuild": "yarn && gulp default --prod",
-    "production": "cross-env NODE_ENV=production babel-node ./bin/www",
+    "babel-node": "babel-node ./dev/bin/www.js",
+    "build": "babel dev -d prod",
     "dev": "cross-env NODE_ENV=development nodemon --exec npm run babel-node",
-    "babel-node": "babel-node ./bin/www",
+    "heroku-prebuild": "yarn && yarn global add pm2 && gulp default --prod",
+    "production": "cross-env NODE_ENV=production npm run build && npm run serve",
+    "start": "npm run production",
+    "serve": "pm2 start ./prod/bin/www.js -i max",
     "test": "echo \"Error: no test specified\""
   },
   "config": {

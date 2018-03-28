@@ -1,26 +1,32 @@
-import express from 'express'
+'use strict';
 
-const router = express.Router();
-const data = require('../_data/global.json');
-const articles = require('../services/articles');
-const projects = require('../services/portfolio');
+var _express = require('express');
+
+var _express2 = _interopRequireDefault(_express);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var router = _express2.default.Router();
+var data = require('../../_data/global.json');
+var articles = require('../services/articles');
+var projects = require('../services/portfolio');
 
 router.use(function (req, res, next) {
-  articles.getArticles().then(articleCollection => {
+  articles.getArticles().then(function (articleCollection) {
     req.articles = articleCollection.items;
     next();
   });
 });
 
 router.use(function (req, res, next) {
-  projects.getProjects().then(projectsCollection => {
+  projects.getProjects().then(function (projectsCollection) {
     req.projects = projectsCollection.items;
     next();
   });
 });
 
 /* GET static pages. */
-router.get('/', (req, res, next) => {
+router.get('/', function (req, res, next) {
   res.header('Cache-Control', 'public, max-age=2592000000');
   res.render('index', {
     title: 'Alex Clapperton',
@@ -33,7 +39,7 @@ router.get('/', (req, res, next) => {
   });
 });
 
-router.get('/about-me/', (req, res, next) => {
+router.get('/about-me/', function (req, res, next) {
   res.header('Cache-Control', 'public, max-age=2592000000');
   res.render('about-me', {
     title: 'About Me',
@@ -45,7 +51,7 @@ router.get('/about-me/', (req, res, next) => {
   });
 });
 
-router.get('/offline/', (req, res, next) => {
+router.get('/offline/', function (req, res, next) {
   res.header('Cache-Control', 'public, ax-age=2592000000');
   res.render('offline', {
     title: 'Oops! It looks like you\'re offline',

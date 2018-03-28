@@ -1,13 +1,22 @@
-import express from 'express'
-import dateFormat from 'dateformat'
+'use strict';
 
-const router = express.Router();
-const data = require('../_data/global.json');
-const articles = require('../services/articles');
+var _express = require('express');
+
+var _express2 = _interopRequireDefault(_express);
+
+var _dateformat = require('dateformat');
+
+var _dateformat2 = _interopRequireDefault(_dateformat);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var router = _express2.default.Router();
+var data = require('../../_data/global.json');
+var articles = require('../services/articles');
 
 /* router params */
-router.param('slug', (req, res, next, slug) => {
-  articles.getArticle(slug).then(article => {
+router.param('slug', function (req, res, next, slug) {
+  articles.getArticle(slug).then(function (article) {
     if (article.total > 0) {
       req.article = article.items[0].fields;
       next();
@@ -23,18 +32,18 @@ router.param('slug', (req, res, next, slug) => {
 });
 
 router.use(function (req, res, next) {
-  articles.getArticles().then(articleCollection => {
+  articles.getArticles().then(function (articleCollection) {
     req.articles = articleCollection.items;
     next();
   });
 });
 
-router.get('/:slug', (req, res, next) => {
+router.get('/:slug', function (req, res, next) {
   res.header('Cache-Control', 'public, max-age=2592000000');
   res.render('articles/post', {
     title: req.article.articleName,
     article: req.article,
-    readableDate: dateFormat(req.article.date, 'fullDate'),
+    readableDate: (0, _dateformat2.default)(req.article.date, 'fullDate'),
     layout: 'post.hbs',
     blog: true,
     post: true,
@@ -44,7 +53,7 @@ router.get('/:slug', (req, res, next) => {
   });
 });
 
-router.get('/', (req, res, next) => {
+router.get('/', function (req, res, next) {
   res.header('Cache-Control', 'public, max-age=2592000000');
   res.render('articles/index', {
     title: 'Articles',

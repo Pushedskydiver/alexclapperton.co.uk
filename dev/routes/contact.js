@@ -2,7 +2,7 @@ import express from 'express'
 import nodemailer from 'nodemailer'
 
 const router = express.Router();
-const data = require('../_data/global.json');
+const data = require('../../_data/global.json');
 
 /* router params */
 router.get('/', (req, res, next) => {

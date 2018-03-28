@@ -17,22 +17,22 @@ const articles = require('./routes/articles');
 const portfolio = require('./routes/portfolio');
 const contact = require('./routes/contact');
 
-const helpers = require(path.resolve(__dirname, 'utils', 'helpers.js'))();
-const minifyHtmlData = require(path.resolve(__dirname, 'utils', 'minifyHtml.js'));
+const helpers = require(path.resolve(__dirname, '../utils', 'helpers.js'))();
+const minifyHtmlData = require(path.resolve(__dirname, '../utils', 'minifyHtml.js'));
 
 const app = express();
 
 // view engine setup
-app.set('views', path.join(__dirname, 'views/_pages'));
+app.set('views', path.join(__dirname, '../views/_pages'));
 app.set('view engine', '.hbs');
 app.set('view cache', true);
 app.use(helmet());
 app.enable('strict routing');
 app.engine('.hbs', hbs({
   extname: '.hbs',
-  layoutsDir: path.join(__dirname, 'views/_layouts'),
+  layoutsDir: path.join(__dirname, '../views/_layouts'),
   defaultLayout: 'default.hbs',
-  partialsDir: [path.join(__dirname, 'views/_partials')],
+  partialsDir: [path.join(__dirname, '../views/_partials')],
   helpers: helpers
 }));
 app.use(compression());
@@ -41,10 +41,10 @@ app.use(methodOverride());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(minifyHtml(minifyHtmlData));
-app.use(express.static(path.join(__dirname, 'public'), { maxAge: '365 days' }));
+app.use(express.static(path.join(__dirname, '../public'), { maxAge: '365 days' }));
 app.use(inlineCss({
   override: true,
-  cssFilePath: path.join(__dirname, 'public/css/main.css')
+  cssFilePath: path.join(__dirname, '../public/css/main.css')
 }));
 
 app.use('/', main, require('./routes/sitemap'));
