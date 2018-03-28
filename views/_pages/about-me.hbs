@@ -1,17 +1,11 @@
 <main class="info-block notch" id="main">
-    <picture class="info-block__picture lazyload" data-info-block-picture>
-        <source media="(max-width: 640px)" data-srcset="/images/banner/banner-about-mobile.jpg">
-        <source media="(min-width: 640px)" data-srcset="/images/banner/banner-about-desktop.jpg">
-        <img class="info-block__image lazyload__image lazyload__image--lazy" data-src="/images/banner/banner-about-desktop.jpg" alt="Wide shot of Alex Clapperton sat down working on his laptop." data-lazy>
-
-        <noscript>
-            <source media="(max-width: 640px)" srcset="/images/banner/banner-about-mobile.jpg">
-            <source media="(min-width: 640px)" srcset="/images/banner/banner-about-desktop.jpg">
-            <img class="info-block__image" src="/images/banner/banner-about-desktop.jpg" alt="Wide shot of Alex Clapperton sat down working on his laptop.">
-        </noscript>
+    <picture class="info-block__picture">
+        <source media="(max-width: 640px)" srcset="/images/banner/banner-about-mobile.jpg">
+        <source media="(min-width: 640px)" srcset="/images/banner/banner-about-desktop.jpg">
+        <img class="info-block__image" src="/images/banner/banner-about-desktop.jpg" alt="Wide shot of Alex Clapperton sat down working on his laptop.">
     </picture>
 
-    <div class="info-block__inner hide" data-fade>
+    <div class="info-block__inner">
         <h2>Who am I?</h2>
 
         <p>I'm Alex, a Front-end Web Developer from the UK. My passion is to build beautiful and responsive websites with accessibility at the heart of it. I am currently working as a {{data.global.jobTitle}} for <a class="link" href="{{data.global.employerUrl}}" rel="external">{{data.global.employer}}</a>, a digital agency based in Manchester.</p>

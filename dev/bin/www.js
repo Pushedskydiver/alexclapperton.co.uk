@@ -24,7 +24,7 @@ if (cluster.isMaster) {
    * Get port from environment and store in Express.
    */
 
-  const port = '/tmp/nginx.socket' || 3001;
+  const port = process.env.NODE_ENV === 'production' ? '/tmp/nginx.socket' : 3001;
 
   app.set('port', port);
 
