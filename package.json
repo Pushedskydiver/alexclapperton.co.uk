@@ -17,7 +17,6 @@
     "babel-node": "babel-node ./dev/bin/www.js",
     "build": "babel dev -d prod",
     "dev": "cross-env NODE_ENV=development nodemon --exec npm run babel-node",
-    "preinstall": "npm i -g pm2",
     "heroku-prebuild": "yarn && gulp default --prod",
     "production": "cross-env NODE_ENV=production npm run build && npm run serve",
     "start": "npm run production",
