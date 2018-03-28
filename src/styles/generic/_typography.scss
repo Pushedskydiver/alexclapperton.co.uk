@@ -5,6 +5,7 @@
 // Selawik
 @font-face {
   font-family: 'Selawik Variable';
+  font-display: swap;
   src: url('../fonts/selawik-variable.woff2') format('woff2-variations'),
        url('../fonts/selawik-variable.woff2') format('woff2');
 }
@@ -12,6 +13,7 @@
 // Avenir Next
 @font-face {
   font-family: 'Avenir Next Variable';
+  font-display: swap;
   src: url('../fonts/avenir-next-variable.woff2') format('woff2-variations'),
        url('../fonts/avenir-next-variable.woff2') format('woff2');
 }
@@ -22,6 +24,7 @@
 // Nunito Sans
 @font-face {
   font-family: 'Nunito Sans';
+  font-display: swap;
   src: url('../fonts/nunito-sans/nunito-sans-regular.woff2') format('woff2'),
   url('../fonts/nunito-sans/nunito-sans-regular.woff') format('woff');
   font-style: normal;
@@ -29,6 +32,7 @@
 }
 @font-face {
   font-family: 'Nunito Sans';
+  font-display: swap;
   src: url('../fonts/nunito-sans/nunito-sans-semi-bold.woff2') format('woff2'),
   url('../fonts/nunito-sans/nunito-sans-semi-bold.woff') format('woff'),;
   font-style: normal;
@@ -38,6 +42,7 @@
 // Ubuntu
 @font-face {
   font-family: 'Ubuntu';
+  font-display: swap;
   src: url('../fonts/ubuntu/ubuntu-regular.woff2') format('woff2'),
   url('../fonts/ubuntu/ubuntu-regular.woff') format('woff');
   font-style: normal;
@@ -45,6 +50,7 @@
 }
 @font-face {
   font-family: 'Ubuntu';
+  font-display: swap;
   src: url('../fonts/ubuntu/ubuntu-medium.woff2') format('woff2'),
   url('../fonts/ubuntu/ubuntu-medium.woff') format('woff');
   font-style: normal;
