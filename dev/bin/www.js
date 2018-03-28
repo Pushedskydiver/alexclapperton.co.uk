@@ -24,7 +24,7 @@ if (cluster.isMaster) {
    * Get port from environment and store in Express.
    */
 
-  const port = process.env.PORT || 3001;
+  const port = '/tmp/nginx.socket' || 3001;
 
   app.set('port', port);
 
@@ -99,6 +99,10 @@ if (cluster.isMaster) {
   function onListening() {
     const addr = server.address()
     const bind = typeof addr === 'string' ? 'pipe ' + addr : 'port ' + addr.port;
+
+    if (process.env.DYNO) {
+      fs.openSync('/tmp/app-initialized', 'w');
+    }
 
     console.log('Listening on ' + bind);
   }
