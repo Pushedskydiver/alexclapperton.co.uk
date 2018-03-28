@@ -41,7 +41,11 @@ app.use(methodOverride());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(minifyHtml(minifyHtmlData));
-app.use(express.static(path.join(__dirname, '../public'), { maxAge: '365 days' }));
+
+if (process.env.NODE_ENV === 'development') {
+  app.use(express.static(path.join(__dirname, '../public'), { maxAge: '365 days' }));
+}
+
 app.use(inlineCss({
   override: true,
   cssFilePath: path.join(__dirname, '../public/css/main.css')
