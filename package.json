@@ -20,7 +20,7 @@
     "heroku-prebuild": "yarn && gulp default --prod",
     "production": "cross-env NODE_ENV=production npm run build && npm run serve",
     "start": "npm run production",
-    "serve": "node ./node_modules/.bin/pm2 start ./prod/bin/www.js -i max",
+    "serve": "node ./prod/bin/www.js -i max",
     "test": "echo \"Error: no test specified\""
   },
   "config": {
