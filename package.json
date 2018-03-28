@@ -21,7 +21,7 @@
     "heroku-prebuild": "yarn && gulp default --prod",
     "production": "cross-env NODE_ENV=production npm run build && npm run serve",
     "start": "npm run production",
-    "serve": "pm2 start ./prod/bin/www.js -i max",
+    "serve": "node ./node_modules/.bin/pm2 start ./prod/bin/www.js -i max",
     "test": "echo \"Error: no test specified\""
   },
   "config": {
@@ -55,6 +55,7 @@
     "morgan": "^1.9.0",
     "nodemailer": "^4.6.0",
     "nodemon": "^1.14.11",
+    "pm2": "^2.10.1",
     "sitemap": "^1.13.0",
     "stylelint-selector-bem-pattern": "^2.0.0",
     "uglifyjs-webpack-plugin": "^1.2.4",
