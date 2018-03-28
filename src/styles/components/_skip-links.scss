@@ -1,6 +1,6 @@
 // Skip links.........The sites skip to links.
 
-.skip-🔗 {
+.skip-link {
   @include text(earth);
   position: absolute;
   top: 0;
@@ -16,7 +16,7 @@
   text-decoration: none;
 }
 
-.skip-🔗--hidden {
+.skip-link--hidden {
   position: absolute;
   width: 100%;
   height: auto;

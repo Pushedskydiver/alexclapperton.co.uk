@@ -21,7 +21,7 @@ router.use(function (req, res, next) {
 
 /* GET static pages. */
 router.get('/', (req, res, next) => {
-  res.header('Cache-Control', 'max-age=2592000000');
+  res.header('Cache-Control', 'public, max-age=2592000000');
   res.render('index', {
     title: 'Alex Clapperton',
     articles: req.articles,
@@ -34,7 +34,7 @@ router.get('/', (req, res, next) => {
 });
 
 router.get('/about-me/', (req, res, next) => {
-  res.header('Cache-Control', 'max-age=2592000000');
+  res.header('Cache-Control', 'public, max-age=2592000000');
   res.render('about-me', {
     title: 'About Me',
     articles: req.articles,
@@ -46,7 +46,7 @@ router.get('/about-me/', (req, res, next) => {
 });
 
 router.get('/offline/', (req, res, next) => {
-  res.header('Cache-Control', 'max-age=2592000000');
+  res.header('Cache-Control', 'public, ax-age=2592000000');
   res.render('offline', {
     title: 'Oops! It looks like you\'re offline',
     articles: req.articles,

@@ -1,7 +1,6 @@
 module.exports = (function() {
 
   const lazyImages = document.querySelectorAll('[data-lazy]');
-  const infoBlockPicture = document.querySelector('[data-info-block-picture]');
 
   function lazyloadConfig() {
     window.lazySizesConfig.lazyClass = 'lazyload__image--lazy';
@@ -16,10 +15,6 @@ module.exports = (function() {
     const ratio = (Math.round(height) / Math.round(width) * 100).toFixed(2);
 
     element.parentNode.style.paddingTop = ratio.replace('.00', '') + '%';
-
-    if (window.innerWidth >= 992 && document.body.contains(infoBlockPicture)) {
-      infoBlockPicture.style.paddingTop = '';
-    }
   }
 
   function lazyBeforeUnveil({currentTarget}) {

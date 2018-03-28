@@ -1,6 +1,6 @@
 // Layout.............Generic layout module.
 
-.🖼 {
+.container {
   position: relative;
   padding-right: 15px;
   padding-left: 15px;
@@ -16,7 +16,7 @@
   }
 }
 
-.📱 {
+.notch {
   @supports (padding-left: env(safe-area-inset-left)) {
     padding-right: env(safe-area-inset-left);
     padding-left: env(safe-area-inset-left);

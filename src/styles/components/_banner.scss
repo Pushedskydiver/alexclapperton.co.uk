@@ -127,7 +127,7 @@
   }
 }
 
-.banner__scroll-🔗 {
+.banner__scroll-link {
   @include text(earth);
   @include flex(null, row, null, center);
   color: $core-color-brand;

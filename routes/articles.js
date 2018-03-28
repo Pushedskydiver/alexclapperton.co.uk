@@ -30,7 +30,7 @@ router.use(function (req, res, next) {
 });
 
 router.get('/:slug', (req, res, next) => {
-  res.header('Cache-Control', 'max-age=2592000000');
+  res.header('Cache-Control', 'public, max-age=2592000000');
   res.render('articles/post', {
     title: req.article.articleName,
     article: req.article,
@@ -45,7 +45,7 @@ router.get('/:slug', (req, res, next) => {
 });
 
 router.get('/', (req, res, next) => {
-  res.header('Cache-Control', 'max-age=2592000000');
+  res.header('Cache-Control', 'public, max-age=2592000000');
   res.render('articles/index', {
     title: 'Articles',
     articles: req.articles,

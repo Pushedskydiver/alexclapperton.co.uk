@@ -1,17 +1,11 @@
-<main class="info-block 📱" id="main">
-    <picture class="info-block__picture info-block__picture--home lazyload" data-info-block-picture>
-        <source media="(max-width: 640px)" data-srcset="/images/alex/alex-square.jpg">
-        <source media="(min-width: 640px)" data-srcset="/images/alex/alex-landscape.jpg">
-        <img class="info-block__image lazyload__image lazyload__image--lazy" data-src="/images/alex/alex-landscape.jpg" alt="Portrait of Alex Clapperton." data-lazy>
-
-        <noscript>
-            <source media="(max-width: 640px)" srcset="/images/alex/alex-square.jpg">
-            <source media="(min-width: 640px)" srcset="/images/alex/alex-landscape.jpg">
-            <img class="info-block__image" src="/images/alex/alex-landscape.jpg" alt="Portrait of Alex Clapperton.">
-        </noscript>
+<main class="info-block notch" id="main">
+    <picture class="info-block__picture info-block__picture--home">
+        <source media="(max-width: 640px)" srcset="/images/alex/alex-square.jpg">
+        <source media="(min-width: 640px)" srcset="/images/alex/alex-landscape.jpg">
+        <img class="info-block__image" src="/images/alex/alex-landscape.jpg" alt="Portrait of Alex Clapperton.">
     </picture>
 
-    <div class="info-block__inner info-block__inner--home hide" data-fade>
+    <div class="info-block__inner info-block__inner--home">
         <h2>Hi there</h2>
         <p>I'm Alex, a Front-end Web Developer from the UK. My passion is to build beautiful and responsive websites with accessibility at the heart of it. I am currently working as a {{data.global.jobTitle}} for <a class="link" href="{{data.global.employerUrl}}" rel="external">{{data.global.employer}}</a>, a digital agency based in Manchester.</p>
         <a class="info-block__button button button--primary" href="/about-me/">
@@ -21,8 +15,8 @@
     </div>
 </main>
 
-<section class="portfolio 📱">
-    <div class="portfolio__inner hide 🖼" data-fade>
+<section class="portfolio notch">
+    <div class="portfolio__inner hide container" data-fade>
         <small class="portfolio__title-small">Recent</small>
         <h3 class="portfolio__title-main">Work &amp; projects</h3>
         <div class="portfolio__content">
@@ -37,8 +31,8 @@
     </div>
 </section>
 
-<section class="articles 📱">
-    <div class="articles__inner hide 🖼" data-fade>
+<section class="articles notch">
+    <div class="articles__inner hide container" data-fade>
         <small class="articles__title-small">Read my</small>
         <h3 class="articles__title-main">Latest articles</h3>
         <div class="articles__content">

@@ -143,7 +143,7 @@
   }
 }
 
-.nav__🔗 {
+.nav__link {
   display: block;
   text-decoration: none;
 
@@ -152,19 +152,19 @@
   }
 }
 
-.nav__🔗--light {
+.nav__link--light {
   @include min(m) {
     color: $core-color-background;
   }
 }
 
-.nav__🔗--active {
+.nav__link--active {
   @include max(m) {
     color: $core-color-background;
   }
 }
 
-.nav__🔗-index {
+.nav__link-index {
   display: inline-block;
   font-size: calc(1rem + 0.5vw);
   margin-right: ($core-margin * 2);

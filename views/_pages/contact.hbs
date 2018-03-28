@@ -1,5 +1,5 @@
-<main class="contact 📱" id="main">
-    <article class="contact__content 🖼">
+<main class="contact notch" id="main">
+    <article class="contact__content container">
         <div class="contact__inner">
             <h2 class="contact__title">Drop me a line</h2>
             <p class="contact__body">Got a question to ask? Then please, don't hesitate to get in touch with me. Whether it's a question regarding potential work, about my website, or if you just want to say hi.</p>
@@ -42,11 +42,11 @@
                 <dt class="contact__list-title">Email</dt>
                 <dd class="contact__list-body"><a class="link" href="mailto:{{data.global.email}}">{{data.global.email}}</a></dd>
                 <dt class="contact__list-title">Phone Number</dt>
-                <dd class="contact__list-body contact__list-body--📱">{{data.global.phone}}</dd>
+                <dd class="contact__list-body contact__list-body--notch">{{data.global.phone}}</dd>
                 <dt class="contact__list-title">Social Links</dt>
                 <dd class="contact__list-body">
                 {{#each data.global.social}}
-                    <a class="contact__list-🔗 link" href="{{url}}" title="{{title-attr}}"{{#if external}} rel="external"{{/if}}>{{title}}</a>
+                    <a class="contact__list-link link" href="{{url}}" title="{{title-attr}}"{{#if external}} rel="external"{{/if}}>{{title}}</a>
                     <br>
                 {{/each}}
                 </dd>

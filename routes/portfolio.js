@@ -38,7 +38,7 @@ router.use(function (req, res, next) {
 });
 
 router.get('/:slug', (req, res, next) => {
-  res.header('Cache-Control', 'max-age=2592000000');
+  res.header('Cache-Control', 'public, max-age=2592000000');
   res.render('portfolio/project', {
     title: req.project.projectName,
     slug: req.project.slug,
@@ -53,7 +53,7 @@ router.get('/:slug', (req, res, next) => {
 });
 
 router.get('/', (req, res, next) => {
-  res.header('Cache-Control', 'max-age=2592000000');
+  res.header('Cache-Control', 'public, max-age=2592000000');
   res.render('portfolio/index', {
     title: 'Portfolio',
     projects: req.projects,

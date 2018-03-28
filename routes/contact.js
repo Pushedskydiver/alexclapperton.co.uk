@@ -6,7 +6,7 @@ const data = require('../_data/global.json');
 
 /* router params */
 router.get('/', (req, res, next) => {
-  res.header('Cache-Control', 'max-age=2592000000');
+  res.header('Cache-Control', 'public, max-age=2592000000');
   res.render('contact', {
     title: 'Contact',
     contact: true,

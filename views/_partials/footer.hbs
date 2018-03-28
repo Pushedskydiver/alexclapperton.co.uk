@@ -1,15 +1,15 @@
-        <footer class="footer 📱" id="footer">
-            <div class="hide 🖼" data-fade>
+        <footer class="footer notch" id="footer">
+            <div class="hide container" data-fade>
                 <div class="footer__content">
                     <ul class="footer__list">
                         <li class="footer__list-item footer__list-item--title">Useful links</li>
                     {{#each data.global.navigation}}
-                        <li class="footer__list-item"><a class="footer__list-🔗" href="{{url}}" title="{{title-attr}}" data-item-{{slug}}>{{title}}</a></li>
+                        <li class="footer__list-item"><a class="footer__list-link" href="{{url}}" title="{{title-attr}}" data-item-{{slug}}>{{title}}</a></li>
                     {{/each}}
                     </ul>
                     <ul class="footer__list">
                         <li class="footer__list-item footer__list-item--title">Send me an email</li>
-                        <li class="footer__list-item"><a class="footer__list-🔗" href="mailto:{{data.global.email}}">{{data.global.email}}</a></li>
+                        <li class="footer__list-item"><a class="footer__list-link" href="mailto:{{data.global.email}}">{{data.global.email}}</a></li>
                     </ul>
                     <ul class="footer__list">
                         <li class="footer__list-item footer__list-item--title">Let's have a chat</li>
@@ -18,7 +18,7 @@
                     <ul class="footer__list">
                         <li class="footer__list-item footer__list-item--title">Let's be social</li>
                     {{#each data.global.social}}
-                        <li class="footer__list-item footer__list-item--social"><a class="footer__list-🔗" href="{{url}}" title="{{title-attr}}" {{#if external}}rel="external"{{/if}}>{{title}}</a></li>
+                        <li class="footer__list-item footer__list-item--social"><a class="footer__list-link" href="{{url}}" title="{{title-attr}}" {{#if external}}rel="external"{{/if}}>{{title}}</a></li>
                     {{/each}}
                     </ul>
                 </div>
