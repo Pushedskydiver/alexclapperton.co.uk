@@ -3,7 +3,7 @@
   "short_name": "Alex",
   "description": "Front-End Web Developer",
   "start_url": "/?utm_source=homescreen",
-  "display": "fullscreen",
+  "display": "standalone",
   "background_color": "#ffffff",
   "theme_color": "#0e0d0d",
   "icons": [

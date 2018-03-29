@@ -14,6 +14,11 @@ module.exports = (gulp, data) => {
           .pipe(gulp.dest(data.paths.dist.base))
   });
 
+  gulp.task('copy:browser-config', () => {
+      return gulp.src('./_config/browserconfig.xml')
+          .pipe(gulp.dest(data.paths.dist.base))
+  });
+
   gulp.task('copy:fonts', () => {
       return gulp.src(data.paths.source.fonts)
           .pipe(gulp.dest(data.paths.dist.fonts))

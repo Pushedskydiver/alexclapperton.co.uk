@@ -52,7 +52,7 @@ gulp.task('default', callback => {
     'imports:sass',
     ['styles:sass', 'scripts:compile'],
     ['images', 'copy:icons'],
-    ['copy:favicons', 'copy:manifest', 'copy:fonts', 'copy:serviceWorker'],
+    ['copy:favicons', 'copy:manifest', 'copy:browser-config', 'copy:fonts', 'copy:serviceWorker'],
     callback
   )
 });
