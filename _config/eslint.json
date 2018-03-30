@@ -10,6 +10,8 @@
     "document": true,
     "window": true,
     "navigator": true,
+    "Notification": true,
+    "fetch": true,
     "obj": true
   },
   "rules": {

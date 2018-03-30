@@ -40,6 +40,10 @@
   @include button(secondary);
 }
 
+.button--disabled {
+  @include button(disabled);
+}
+
 .button--nav {
   @include button(navigation);
   @include transition-03(all);

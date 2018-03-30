@@ -29,6 +29,16 @@ $buttons: (
       color: $core-color-background
     )
   ),
+  disabled: (
+    default: (
+      background-color: $core-color-neutral,
+      color: $core-color-brand,
+      border-width: 2px,
+      border-style: $core-border-style,
+      border-color: $core-color-neutral,
+      pointer-events: none
+    ),
+  ),
   navigation: (
     default: (
       background-color: $core-color-foreground,

@@ -10,7 +10,6 @@ import json from 'express-json'
 import minifyHtml from 'express-minify-html'
 import helmet from 'helmet'
 import inlineCss from 'express-inline-css'
-// import nodemailer from 'nodemailer'
 
 const main = require('./routes/index');
 const articles = require('./routes/articles');
@@ -48,6 +47,13 @@ app.use(inlineCss({
   cssFilePath: path.join(__dirname, '../public/css/main.css')
 }));
 
+//To allow cross origin request
+app.use((req, res, next) => {
+  res.header('Access-Control-Allow-Origin', '*');
+  res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
+  next();
+});
+
 app.use('/', main, require('./routes/sitemap'));
 app.use('/about-me/', main);
 app.use('/offline/', main);
@@ -55,6 +61,7 @@ app.use('/articles/', articles);
 app.use('/portfolio/', portfolio);
 app.use('/contact/', contact);
 
+require('./routes/push')(app);
 require('./routes/errors')(app);
 
 module.exports = app;
