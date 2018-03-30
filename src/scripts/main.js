@@ -7,5 +7,6 @@
   require('./common/fadeInElements.js').init();
   require('./common/notices.js').init();
   require('./common/formValidation.js').init();
+  require('./common/swRegister.js').init();
 
 }());

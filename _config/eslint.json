@@ -9,6 +9,7 @@
   "globals": {
     "document": true,
     "window": true,
+    "navigator": true,
     "obj": true
   },
   "rules": {
