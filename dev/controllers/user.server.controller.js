@@ -45,7 +45,7 @@ module.exports = {
         message: 'Delete Successful'
       });
 
-      next();
+      res.end();
     });
   }
 };
