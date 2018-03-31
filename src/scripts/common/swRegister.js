@@ -113,7 +113,7 @@ module.exports = (function() {
     const encodedKey = btoa(String.fromCharCode.apply(null, new Uint8Array(key)));
     const encodedAuth = btoa(String.fromCharCode.apply(null, new Uint8Array(auth)));
 
-    fetch('http://localhost:3001/api/users/', {
+    fetch('https://alexclapperton.co.uk/api/users/', {
       method: 'post',
       headers: {
         'Accept': 'application/json',
@@ -131,7 +131,7 @@ module.exports = (function() {
   function deleteSubscriptionID(endpoint) {
     const subscription = endpoint.substring(endpoint.lastIndexOf('/') + 1, endpoint.length);
 
-    fetch('http://localhost:3001/api/user/' + subscription, {
+    fetch('https://alexclapperton.co.uk/api/user/' + subscription, {
       method: 'delete',
       headers: {
         'Accept': 'application/json',
