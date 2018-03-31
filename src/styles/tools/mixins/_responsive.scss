@@ -41,3 +41,21 @@ $breakpoints: (
       + 'Please make sure it is defined in `$breakpoints` map.';
   }
 }
+
+@mixin container {
+  &__container {
+    position: relative;
+    padding-right: 15px;
+    padding-left: 15px;
+
+    @include min(xs) {
+      padding-right: 5vw;
+      padding-left: 5vw;
+    }
+
+    @include min(xl) {
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+  }
+}

@@ -1,0 +1,49 @@
+// Push strips........Push notification strip styles.
+
+.push-strip {
+  @include container;
+  background-color: $core-color-background;
+  padding-top: ($core-padding * 1.5);
+  padding-bottom: ($core-padding * 1.8);
+
+  &--hide {
+    display: none;
+  }
+}
+
+.push-strip__container {
+  @include flex(null, column, null, center);
+
+  @include min(m) {
+    flex-direction: row;
+    justify-content: center;
+  }
+}
+
+.push-strip__icon {
+  width: 80px;
+  height: 80px;
+}
+
+.push-strip__body {
+  @include text(venus);
+  margin-top: $core-margin;
+  margin-bottom: $core-margin;
+
+  @include max(m) {
+    text-align: center;
+  }
+
+  @include min(m) {
+    max-width: 380px;
+    margin-top: 0;
+    margin-right: ($core-margin * 2);
+    margin-bottom: 0;
+    margin-left: ($core-margin * 1.5);
+  }
+
+  @include min(l) {
+    max-width: 65%;
+    margin-left: ($core-margin * 2);
+  }
+}

@@ -7,12 +7,13 @@
     "sourceType": "module"
   },
   "globals": {
+    "btoa": true,
     "document": true,
-    "window": true,
+    "fetch": true,
     "navigator": true,
     "Notification": true,
-    "fetch": true,
-    "obj": true
+    "obj": true,
+    "window": true
   },
   "rules": {
     "comma-dangle": [2,"never"],

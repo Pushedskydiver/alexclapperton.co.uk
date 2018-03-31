@@ -1,19 +1,36 @@
 module.exports = (function() {
 
-  const fabPushElement = document.querySelector('[data-push]');
+  const applicationServerKey = 'BBZfIKcG1E4t_KR-whw7Z6hRBiRi4vC216bdtN1mrXNdohzQ26XnYdZh8eaLOWmHagBLja5nuLSoLd_XPTEbYCM';
+  const pushBanner = document.querySelector('[data-push]');
+  const pushButton = document.querySelector('[data-push-button]');
+
+  function urlB64ToUint8Array(base64String) {
+    const padding = '='.repeat((4 - base64String.length % 4) % 4);
+    const base64 = (base64String + padding)
+          .replace(/\-/g, '+')
+          .replace(/_/g, '/');
+
+    const rawData = window.atob(base64);
+    const outputArray = new Uint8Array(rawData.length);
+
+    for (let i = 0; i < rawData.length; ++i) {
+      outputArray[i] = rawData.charCodeAt(i);
+    }
+    return outputArray;
+  }
 
   function changePushStatus(status) {
-    fabPushElement.dataset.checked = status;
-    fabPushElement.checked = status;
+    pushButton.dataset.checked = status;
+    pushButton.checked = status;
 
     if (status) {
-      fabPushElement.classList.remove('button--primary');
-      fabPushElement.classList.add('button--secondary');
-      fabPushElement.textContent = 'Disable push notifications';
+      pushButton.classList.remove('button--primary');
+      pushButton.classList.add('button--secondary');
+      pushButton.textContent = 'Disable notifications';
     } else {
-      fabPushElement.classList.add('button--primary');
-      fabPushElement.classList.remove('button--secondary');
-      fabPushElement.textContent = 'Enable push notifications';
+      pushButton.classList.add('button--primary');
+      pushButton.classList.remove('button--secondary');
+      pushButton.textContent = 'Enable notifications';
     }
   }
 
@@ -23,6 +40,7 @@ module.exports = (function() {
     }
 
     if (!('PushManager' in window)) {
+      pushBanner.classList.add('push-strip--hide');
       return;
     }
 
@@ -45,14 +63,17 @@ module.exports = (function() {
         return false;
       }
 
-      registration.pushManager
-      .subscribe({
-        userVisibleOnly: true
+      registration.pushManager.subscribe({
+        userVisibleOnly: true,
+        applicationServerKey: urlB64ToUint8Array(applicationServerKey)
       })
       .then(subscription => {
-        saveSubscriptionID(subscription);
+        const endpoint = subscription.endpoint;
+        const key = subscription.getKey('p256dh');
+        const auth = subscription.getKey('auth');
+
+        saveSubscriptionID(endpoint, key, auth);
         changePushStatus(true);
-        return subscription;
       })
       .catch(error => {
         changePushStatus(false);
@@ -74,7 +95,7 @@ module.exports = (function() {
 
         subscription.unsubscribe()
         .then(() => {
-          deleteSubscriptionID(subscription);
+          deleteSubscriptionID(subscription.endpoint);
           changePushStatus(false);
         })
         .catch(error => {
@@ -87,8 +108,10 @@ module.exports = (function() {
     })
   }
 
-  function saveSubscriptionID(subscription) {
-    const subscriptionId = subscription.endpoint.split('gcm/send/')[1];
+  function saveSubscriptionID(endpoint, key, auth) {
+    const subscription = endpoint.substring(endpoint.lastIndexOf('/') + 1, endpoint.length);
+    const encodedKey = btoa(String.fromCharCode.apply(null, new Uint8Array(key)));
+    const encodedAuth = btoa(String.fromCharCode.apply(null, new Uint8Array(auth)));
 
     fetch('http://localhost:3001/api/users/', {
       method: 'post',
@@ -96,14 +119,19 @@ module.exports = (function() {
         'Accept': 'application/json',
         'Content-Type': 'application/json'
       },
-      body: JSON.stringify({ id : subscriptionId })
+      body: JSON.stringify({
+        id: subscription,
+        publicKey: encodedKey,
+        auth: encodedAuth,
+        notificationEndPoint: endpoint
+      })
     });
   }
 
-  function deleteSubscriptionID(subscription) {
-    const subscriptionId = subscription.endpoint.split('gcm/send/')[1];
+  function deleteSubscriptionID(endpoint) {
+    const subscription = endpoint.substring(endpoint.lastIndexOf('/') + 1, endpoint.length);
 
-    fetch('http://localhost:3001/api/user/' + subscriptionId, {
+    fetch('http://localhost:3001/api/user/' + subscription, {
       method: 'delete',
       headers: {
         'Accept': 'application/json',
@@ -113,7 +141,7 @@ module.exports = (function() {
   }
 
   function togglePush() {
-    const isSubscribed = fabPushElement.dataset.checked === 'true';
+    const isSubscribed = pushButton.dataset.checked === 'true';
 
     isSubscribed ? unsubscribePush() : subscribePush();
   }
@@ -140,6 +168,7 @@ module.exports = (function() {
       navigator.serviceWorker.register('/sw.js', { scope: '/' })
       .then(registration => {
         checkForPageUpdate(registration);
+        isPushSupported();
       })
       .catch(error => {
         return error;
@@ -149,10 +178,9 @@ module.exports = (function() {
 
   function init() {
     registerServiceWorker();
-    isPushSupported();
 
-    if (fabPushElement !== null) {
-      fabPushElement.addEventListener('click', togglePush);
+    if (pushBanner !== null) {
+      pushButton.addEventListener('click', togglePush);
     }
   }
 

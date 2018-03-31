@@ -13,7 +13,10 @@ module.exports = {
   createNewUser: function(req, res) {
     const user = new User();
 
-    user.id = req.body.id;
+    user.id = req.body['id'];
+    user.endpoint = req.body['notificationEndPoint'];
+    user.keys.p256dh = req.body['publicKey'];
+    user.keys.auth = req.body['auth'];
 
     user.save((err, users) => {
       if(err) {
@@ -34,6 +37,7 @@ module.exports = {
 
     User.remove({id: userId}, (err, user) => {
       if(err) {
+        console.log(err, 'err');
         return res.status(404).json({
           success: false,
           message: 'User Details Not Found'

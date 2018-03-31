@@ -2,10 +2,27 @@ import mongoose from 'mongoose'
 import bcrypt from 'bcrypt'
 
 const userSchema = mongoose.Schema({
-  id:       {
+  id: {
     type: String,
     required: true,
     unique: true
+  },
+  endpoint: {
+    type: String,
+    required: true,
+    unique: true
+  },
+  keys: {
+    p256dh: {
+      type: String,
+      required: true,
+      unique: true
+    },
+    auth: {
+      type: String,
+      required: true,
+      unique: true
+    }
   },
   registered_on: {
     type: Date,
