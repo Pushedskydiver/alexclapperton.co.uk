@@ -12,23 +12,23 @@ const cacheFiles = [
 self.addEventListener('install', event => {
   event.waitUntil(
     caches
-      .open(cacheName)
-      .then(cache => cache.addAll(cacheFiles))
+    .open(cacheName)
+    .then(cache => cache.addAll(cacheFiles))
   );
 });
 
 self.addEventListener('fetch', function(event) {
   event.respondWith(
     caches
-      .match(event.request)
-      .then(response => {
-        // Grab the asset from SW cache.
-        if (response) {
-          return response;
-        }
-        return fetch(event.request);
-      })
-      .catch(() => caches.match('/offline/'))
+    .match(event.request)
+    .then(response => {
+      // Grab the asset from SW cache.
+      if (response) {
+        return response;
+      }
+      return fetch(event.request);
+    })
+    .catch(() => caches.match('/offline/'))
   );
 });
 
@@ -38,15 +38,15 @@ self.addEventListener('activate', event => {
 
   event.waitUntil(
     caches
-      .keys()
-      .then(cacheNames => {
-        return Promise.all(
-          cacheNames.map(cacheName => {
-            if (cacheWhitelist.indexOf(cacheName) === -1) {
-              return caches.delete(cacheName);
-            }
-          })
-        );
+    .keys()
+    .then(cacheNames => {
+      return Promise.all(
+        cacheNames.map(cacheName => {
+          if (cacheWhitelist.indexOf(cacheName) === -1) {
+            return caches.delete(cacheName);
+          }
+        })
+      );
       })
   );
 });
@@ -65,30 +65,36 @@ self.addEventListener('push', event => {
 
 //Adding `notification` click event listener
 self.addEventListener('notificationclick', event => {
-  const url = 'http://localhost:3001';
+  const page = '/articles/';
+  const url = new URL(page, self.location.origin).href;
 
   event.notification.close();
 
-  event.waitUntil(
-    clients
-      .matchAll({
-        type: 'window'
-      })
-      .then(clients => {
-        for (let i = 0; i < clients.length; i++) {
-          const client = clients[i];
+  const promiseChain = clients.matchAll({
+    type: 'window',
+    includeUncontrolled: true
+  })
+  .then((windowClients) => {
+    let matchingClient = null;
 
-          if (client.url === url && 'focus' in client) {
-            return client.focus();
-          }
-        }
+    for (let i = 0; i < windowClients.length; i++) {
+      const client = windowClients[i];
 
-        if (clients.openWindow) {
-          return clients.openWindow('/');
-        }
-      })
-      .catch(error => {
-        return error;
-      })
-  );
+      if (client.url === url) {
+        matchingClient = client;
+        break;
+      }
+    }
+
+    if (matchingClient) {
+      return matchingClient.focus();
+    } else {
+      return clients.openWindow(url);
+    }
+  })
+  .catch(error => {
+    return error;
+  })
+
+  event.waitUntil(promiseChain);
 });
