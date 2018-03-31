@@ -1,6 +1,7 @@
 // Footer.............Generic footer styles.
 
 .footer {
+  @include container;
   background-color: $core-color-brand;
   color: $core-color-background;
   padding-top: ($core-padding * 3.5);

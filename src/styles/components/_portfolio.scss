@@ -1,6 +1,7 @@
 // Portfolio..........Portfolio section styles.
 
 .portfolio {
+  @include container;
   position: relative;
   padding-top: ($core-padding * 3);
   padding-bottom: ($core-padding * 3);

@@ -1,6 +1,7 @@
 // Articles...........Article section styles.
 
 .articles {
+  @include container;
   background-color: darken($core-color-background, 4%);
   padding-top: ($core-padding * 3);
   padding-bottom: ($core-padding * 3);

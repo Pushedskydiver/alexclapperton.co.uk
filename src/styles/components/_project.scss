@@ -1,6 +1,7 @@
 // Project............Portfolio item styles.
 
 .project {
+  @include container;
   padding-top: ($core-padding * 3);
 
   @include min(m) {
@@ -12,7 +13,7 @@
   }
 }
 
-.project__inner {
+.project__container {
   @include min(l) {
     @include flex(wrap, row, space-between, null);
   }

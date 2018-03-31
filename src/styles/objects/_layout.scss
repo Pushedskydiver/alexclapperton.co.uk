@@ -1,21 +1,5 @@
 // Layout.............Generic layout module.
 
-.container {
-  position: relative;
-  padding-right: 15px;
-  padding-left: 15px;
-
-  @include min(xs) {
-    padding-right: 5vw;
-    padding-left: 5vw;
-  }
-
-  @include min(xl) {
-    max-width: 1400px;
-    margin: 0 auto;
-  }
-}
-
 .notch {
   @supports (padding-left: env(safe-area-inset-left)) {
     padding-right: env(safe-area-inset-left);
@@ -24,6 +8,7 @@
 }
 
 .offline {
+  @include container;
   padding-top: ($core-padding * 3);
   padding-bottom: ($core-padding * 3);
 

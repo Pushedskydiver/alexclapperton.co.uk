@@ -109,6 +109,8 @@ if (cluster.isMaster) {
       fs.openSync('/tmp/app-initialized', 'w');
     }
 
-    console.log('Listening on ' + bind);
+    if (process.env.NODE_ENV !== 'production') {
+      console.log('Listening on ' + bind);
+    }
   }
 }

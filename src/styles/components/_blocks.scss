@@ -1,6 +1,7 @@
 // Blocks.............Blocks styles on about page.
 
 .blocks {
+  @include container;
   padding-top: ($core-padding * 3);
   padding-bottom: ($core-padding * 3);
 

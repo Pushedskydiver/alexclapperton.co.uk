@@ -1,6 +1,7 @@
 // Post...............Blog post styles.
 
 .post {
+  @include container;
   padding-top: ($core-padding * 3);
   padding-bottom: ($core-padding * 3);
 

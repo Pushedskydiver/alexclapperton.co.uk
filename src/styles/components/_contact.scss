@@ -1,6 +1,7 @@
 // Contact............Contact page styles.
 
 .contact {
+  @include container;
   padding-top: ($core-padding * 3);
   padding-bottom: ($core-padding * 3);
 

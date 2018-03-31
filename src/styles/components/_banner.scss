@@ -1,6 +1,8 @@
 // Banner.............Top page banner styles.
 
 .banner {
+  @include container;
+
   &:not(&--home):not(&--404) {
     height: 550px;
   }
@@ -31,12 +33,12 @@
   background-color: $core-color-brand;
 }
 
-.banner__content {
+.banner__container {
   @include flex(null, column, center, null);
   height: 100%;
 }
 
-.banner__content--404 {
+.banner__container--404 {
   @include min(l) {
     flex-direction: row;
     flex-wrap: wrap;
@@ -45,7 +47,7 @@
   }
 }
 
-.banner__content--center {
+.banner__container--center {
   text-align: center;
 }
 

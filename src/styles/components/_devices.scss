@@ -1,6 +1,7 @@
 // Devices............Mobile device view styles.
 
 .devices {
+  @include container;
   background-color: darken($core-color-background, 1%);
   padding-top: ($core-padding * 3);
   padding-bottom: ($core-padding * 3);
@@ -11,7 +12,7 @@
   }
 }
 
-.devices__inner {
+.devices__container {
   @include flex(wrap, row, space-between, null);
 }
 
