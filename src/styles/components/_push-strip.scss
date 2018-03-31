@@ -29,10 +29,7 @@
   @include text(venus);
   margin-top: $core-margin;
   margin-bottom: $core-margin;
-
-  @include max(m) {
-    text-align: center;
-  }
+  text-align: center;
 
   @include min(m) {
     max-width: 380px;
@@ -40,6 +37,7 @@
     margin-right: ($core-margin * 2);
     margin-bottom: 0;
     margin-left: ($core-margin * 1.5);
+    text-align: left;
   }
 
   @include min(l) {

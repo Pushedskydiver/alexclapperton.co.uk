@@ -22,9 +22,10 @@ const minifyHtmlData = require(path.resolve(__dirname, '../utils', 'minifyHtml.j
 
 const app = express();
 
-mongoose.connect('mongodb://admin:test123@ds227939.mlab.com:27939/web-push-notifications');
+// Connect to mongodb for push notifications
+mongoose.connect(process.env.MONGO_URL);
 
-// view engine setup
+// View engine setup
 app.set('views', path.join(__dirname, '../views/_pages'));
 app.set('view engine', '.hbs');
 app.set('view cache', true);
@@ -50,7 +51,7 @@ app.use(inlineCss({
   cssFilePath: path.join(__dirname, '../public/css/main.css')
 }));
 
-//To allow cross origin request
+// To allow cross origin request
 app.use((req, res, next) => {
   res.header('Access-Control-Allow-Origin', '*');
   res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');

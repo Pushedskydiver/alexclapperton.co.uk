@@ -8,6 +8,10 @@ import cluster from 'cluster'
 import fs from 'fs'
 import http from 'http'
 
+if (process.env.NODE_ENV !== 'production') {
+  require('dotenv').config()
+}
+
 if (cluster.isMaster) {
   const cpuCount = require('os').cpus().length;
 
@@ -20,6 +24,7 @@ if (cluster.isMaster) {
   });
 } else {
   const app = require('../app');
+
   /**
    * Get port from environment and store in Express.
    */

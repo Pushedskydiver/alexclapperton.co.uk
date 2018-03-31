@@ -5,6 +5,7 @@ node_modules
 prod
 public
 reports
+.env
 
 # misc
 [Tt]humbs.db

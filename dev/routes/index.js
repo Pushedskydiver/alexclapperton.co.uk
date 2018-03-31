@@ -21,7 +21,7 @@ router.use(function (req, res, next) {
   });
 });
 
-/* GET static pages. */
+// Get static pages
 router.get('/', (req, res, next) => {
   res.header('Cache-Control', 'public, max-age=2592000000');
   res.render('index', {
@@ -48,7 +48,7 @@ router.get('/about-me/', (req, res, next) => {
 });
 
 router.get('/offline/', (req, res, next) => {
-  res.header('Cache-Control', 'public, ax-age=2592000000');
+  res.header('Cache-Control', 'public, max-age=2592000000');
   res.render('offline', {
     title: 'Oops! It looks like you\'re offline',
     articles: req.articles,
@@ -60,6 +60,7 @@ router.get('/offline/', (req, res, next) => {
   });
 });
 
+// Handle push notificatios
 router.get('/api/', manageUsers.welcome);
 router.post('/api/users/', manageUsers.createNewUser);
 router.delete('/api/user/:id', manageUsers.deleteOneUser);
