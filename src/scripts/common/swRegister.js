@@ -40,9 +40,10 @@ module.exports = (function() {
     }
 
     if (!('PushManager' in window)) {
-      pushBanner.classList.add('push-strip--hide');
       return;
     }
+
+    pushBanner.classList.remove('push-strip--hide');
 
     navigator.serviceWorker.ready
     .then(registration => {
