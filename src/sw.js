@@ -1,4 +1,4 @@
-const cacheName = 'alexclapperton:0036';
+const cacheName = 'alexclapperton:0037';
 const cacheFiles = [
   '/',
   '/about-me/',
