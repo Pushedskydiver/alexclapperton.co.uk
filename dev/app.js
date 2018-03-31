@@ -1,6 +1,7 @@
 'use strict';
 
 import express from 'express'
+import mongoose from 'mongoose'
 import path from 'path'
 import hbs from 'express-handlebars'
 import methodOverride from 'express-method-override'
@@ -20,6 +21,8 @@ const helpers = require(path.resolve(__dirname, '../utils', 'helpers.js'))();
 const minifyHtmlData = require(path.resolve(__dirname, '../utils', 'minifyHtml.js'));
 
 const app = express();
+
+mongoose.connect('mongodb://admin:test123@ds227939.mlab.com:27939/web-push-notifications');
 
 // view engine setup
 app.set('views', path.join(__dirname, '../views/_pages'));
@@ -61,7 +64,6 @@ app.use('/articles/', articles);
 app.use('/portfolio/', portfolio);
 app.use('/contact/', contact);
 
-require('./routes/push')(app);
 require('./routes/errors')(app);
 
 module.exports = app;

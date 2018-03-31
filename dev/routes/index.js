@@ -4,6 +4,8 @@ const router = express.Router();
 const data = require('../../_data/global.json');
 const articles = require('../services/articles');
 const projects = require('../services/portfolio');
+const manageUsers = require('../controllers/user.server.controller');
+const notification = require('../controllers/notification.server.controller');
 
 router.use(function (req, res, next) {
   articles.getArticles().then(articleCollection => {
@@ -57,5 +59,10 @@ router.get('/offline/', (req, res, next) => {
     }
   });
 });
+
+router.get('/api/', manageUsers.welcome);
+router.post('/api/users/', manageUsers.createNewUser);
+router.delete('/api/user/:id', manageUsers.deleteOneUser);
+router.post('/api/notify/', notification.notifyUsers);
 
 module.exports = router;

@@ -47,11 +47,11 @@ module.exports = (function() {
 
       registration.pushManager
       .subscribe({
-        userVisibleOnly: true //Always show notification when received
+        userVisibleOnly: true
       })
       .then(subscription => {
+        saveSubscriptionID(subscription);
         changePushStatus(true);
-        sendPushNotification();
         return subscription;
       })
       .catch(error => {
@@ -74,6 +74,7 @@ module.exports = (function() {
 
         subscription.unsubscribe()
         .then(() => {
+          deleteSubscriptionID(subscription);
           changePushStatus(false);
         })
         .catch(error => {
@@ -86,25 +87,29 @@ module.exports = (function() {
     })
   }
 
-  function sendPushNotification() {
-    navigator.serviceWorker.ready
-    .then(registration => {
+  function saveSubscriptionID(subscription) {
+    const subscriptionId = subscription.endpoint.split('gcm/send/')[1];
 
-      registration.pushManager.getSubscription()
-      .then(subscription => {
-        fetch('http://localhost:3001/send_notification/', {
-          method: 'post',
-          headers: {
-            'Accept': 'application/json',
-            'Content-Type': 'application/json'
-          },
-          body: JSON.stringify(subscription)
-        })
-        .then(response => {
-          return response.json();
-        })
-      })
-    })
+    fetch('http://localhost:3001/api/users/', {
+      method: 'post',
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ id : subscriptionId })
+    });
+  }
+
+  function deleteSubscriptionID(subscription) {
+    const subscriptionId = subscription.endpoint.split('gcm/send/')[1];
+
+    fetch('http://localhost:3001/api/user/' + subscriptionId, {
+      method: 'delete',
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+      }
+    });
   }
 
   function togglePush() {

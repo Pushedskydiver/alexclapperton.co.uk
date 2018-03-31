@@ -53,10 +53,9 @@ self.addEventListener('activate', event => {
 
 //Adding `push` event listener
 self.addEventListener('push', event => {
-  const title = 'Push notification demo';
+  const title = 'New article published';
   const body = {
-    'body': 'click to return to application',
-    'tag': 'demo',
+    'body': 'Press to see the latest article',
     'icon': '/favicons/favicon-192x192.png',
     'badge': '/favicons/favicon-192x192.png'
   };
