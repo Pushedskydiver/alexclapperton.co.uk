@@ -41,6 +41,7 @@
   display: block;
   background-color: $core-color-brand;
   margin-bottom: ($core-margin * 2.2);
+  overflow: hidden;
 
   @include min(m) {
     display: inline-block;
