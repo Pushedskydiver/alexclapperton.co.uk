@@ -109,14 +109,12 @@ legend {
 
 input {
   @include text(bodyCopy);
-  font-family: Helvetica, sans-serif;
   border-radius: 0;
   appearance: none;
 }
 
 textarea {
   @include text(bodyCopy);
-  font-family: Helvetica, sans-serif;
   border-radius: 0;
   appearance: none;
 }
