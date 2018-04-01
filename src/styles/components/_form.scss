@@ -55,8 +55,8 @@
   margin-bottom: ($core-margin / 2);
 
   @supports (font-variation-settings: 'wght' 400) {
-    font-weight: 400;
-    font-variation-settings: 'wght' $core-font-weight;
+    font-weight: $core-font-weight;
+    font-variation-settings: 'wght' $core-secondary-font-family;
   }
 }
 

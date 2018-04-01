@@ -69,7 +69,7 @@
 
   @supports (font-variation-settings: 'wght' 400) {
     font-family: $core-secondary-variable-font-family;
-    font-weight: 400;
+    font-weight: $core-font-weight;
     font-variation-settings: 'wght' $core-tertiary-font-weight;
   }
 }
@@ -87,8 +87,9 @@
   font-weight: $core-tertiary-font-weight;
 
   @supports (font-variation-settings: 'wght' 400) {
-    font-weight: 400;
-    font-variation-settings: 'wght' $core-secondary-font-weight;
+    font-family: $core-variable-font-family;
+    font-weight: $core-font-weight;
+    font-variation-settings: 'wght' $core-tertiary-font-weight;
   }
 }
 
