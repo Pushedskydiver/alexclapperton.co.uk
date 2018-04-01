@@ -101,6 +101,7 @@ $headings: (
   pluto: (
     default: (
       color: $core-color-body,
+      font-family: (Helvetica, sans-serif),
       font-size: calc(1em + 0.5vw),
       font-variation-settings: 'wght' $core-font-weight,
       line-height: 1.1,
@@ -108,13 +109,15 @@ $headings: (
       margin-bottom: ($core-margin * 2)
     ),
     variable-fonts: (
-      font-weight: normal,
+      font-family: $core-variable-font-family,
+      font-weight: $core-tertiary-font-weight,
       font-variation-settings: 'wght' $core-secondary-font-weight
     )
   ),
   earth: (
     default: (
       color: $core-color-body,
+      font-family: (Helvetica, sans-serif),
       font-size: calc(#{$core-font-size} + 0.15vw),
       font-weight: $core-tertiary-font-weight,
       line-height: $core-line-height,
@@ -122,13 +125,15 @@ $headings: (
       margin-bottom: ($core-margin * 2)
     ),
     variable-fonts: (
-      font-weight: normal,
-      font-variation-settings: 'wght' $core-tertiary-font-weight
+      font-family: $core-variable-font-family,
+      font-weight: $core-font-weight,
+      font-variation-settings: 'wght' 550
     )
   ),
   moon: (
     default: (
       color: $core-color-body,
+      font-family: (Helvetica, sans-serif),
       font-size: calc(0.8em + 0.15vw),
       font-weight: $core-tertiary-font-weight,
       line-height: $core-line-height,
@@ -136,12 +141,14 @@ $headings: (
       margin-bottom: ($core-margin / 2)
     ),
     variable-fonts: (
-      font-weight: normal,
-      font-variation-settings: 'wght' $core-tertiary-font-weight
+      font-family: $core-variable-font-family,
+      font-weight: $core-tertiary-font-weight,
+      font-variation-settings: 'wght' $core-secondary-font-weight
     )
   ),
   bodyCopy: (
     default: (
+      font-family: (Helvetica, sans-serif),
       font-size: calc(#{$core-font-size} + 0.1vw),
       font-weight: $core-font-weight,
       line-height: $core-line-height,
@@ -149,6 +156,7 @@ $headings: (
       margin-bottom: ($core-margin * 2)
     ),
     variable-fonts: (
+      font-family: $core-variable-font-family,
       font-weight: normal,
       font-variation-settings: 'wght' $core-secondary-font-weight
     )

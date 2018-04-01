@@ -13,21 +13,24 @@ self.addEventListener('install', event => {
   event.waitUntil(
     caches
     .open(cacheName)
-    .then(cache => cache.addAll(cacheFiles))
+    .then((cache) => cache.addAll(cacheFiles))
   );
 });
 
-self.addEventListener('fetch', function(event) {
+// Adding `fetch` event listener
+self.addEventListener('fetch', event => {
   event.respondWith(
     caches
     .match(event.request)
-    .then(response => {
+    .then((response) => {
       // Grab the asset from SW cache.
       if (response) {
         return response;
       }
+
       return fetch(event.request);
     })
+    // Can't access the network return an offline page from the cache
     .catch(() => caches.match('/offline/'))
   );
 });
@@ -39,7 +42,7 @@ self.addEventListener('activate', event => {
   event.waitUntil(
     caches
     .keys()
-    .then(cacheNames => {
+    .then((cacheNames) => {
       return Promise.all(
         cacheNames.map(cacheName => {
           if (cacheWhitelist.indexOf(cacheName) === -1) {

@@ -17,6 +17,15 @@
 }
 
 .post__date {
+  @include text(bodyCopy);
   display: block;
   margin-bottom: ($core-margin * 2);
+}
+
+.post__sub-title {
+  @include text(saturn);
+}
+
+.post__small-title {
+  @include text(mars);
 }

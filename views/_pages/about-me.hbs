@@ -6,7 +6,7 @@
     </picture>
 
     <div class="info-block__inner">
-        <h2>Who am I?</h2>
+        <h2 class="info-block__heading">Who am I?</h2>
 
         <p>I'm Alex, a Front-end Web Developer from the UK. My passion is to build beautiful and responsive websites with accessibility at the heart of it. I am currently working as a {{data.global.jobTitle}} for <a class="link" href="{{data.global.employerUrl}}" rel="external">{{data.global.employer}}</a>, a digital agency based in Manchester.</p>
 
@@ -21,8 +21,8 @@
 
 <section class="blocks notch">
     <div class="blocks__container">
-        <h3 class="blocks__title hide" data-fade>Fun facts</h3>
-        <p class="blocks__subText hide" data-fade>Here are some facts about me that I think you may find interesting and hopefully make you giggle along the way.</p>
+        <h3 class="blocks__heading hide" data-fade>Fun facts</h3>
+        <p class="blocks__sub-text hide" data-fade>Here are some facts about me that I think you may find interesting and hopefully make you giggle along the way.</p>
 
         <div class="blocks__content hide" data-fade>
             <div class="blocks__item">
@@ -45,12 +45,12 @@
 
 <section class="articles notch">
     <div class="articles__container hide" data-fade>
-        <small class="articles__title-small">Read my</small>
-        <h3 class="articles__title-main">Latest articles</h3>
+        <small class="articles__heading-small">Read my</small>
+        <h3 class="articles__heading-main">Latest articles</h3>
         <div class="articles__content">
-            {{#eachUpTo articles 3}}
-              {{>articles}}
-            {{/eachUpTo}}
+        {{#eachUpTo articles 3}}
+          {{>articles}}
+        {{/eachUpTo}}
         </div>
         <a class="button button--secondary" href="/articles/">
             View articles

@@ -35,8 +35,9 @@
 *  Global.............The sites core styles.
 * 
 * OBJECTS
-*  Layout.............Generic layout module.
 *  Lazyload...........Generic styles for lazy loading images.
+*  Notch..............iPhone X notch styles.
+*  Offline............Offline page styles.
 * 
 * COMPONENTS
 *  Articles...........Article section styles.
@@ -86,8 +87,9 @@
 @import "/Users/alih2106/Desktop/website/src/styles/generic/_keyframes.scss";
 @import "/Users/alih2106/Desktop/website/src/styles/generic/_typography.scss";
 @import "/Users/alih2106/Desktop/website/src/styles/elements/_global.scss";
-@import "/Users/alih2106/Desktop/website/src/styles/objects/_layout.scss";
 @import "/Users/alih2106/Desktop/website/src/styles/objects/_lazyload.scss";
+@import "/Users/alih2106/Desktop/website/src/styles/objects/_notch.scss";
+@import "/Users/alih2106/Desktop/website/src/styles/objects/_offline.scss";
 @import "/Users/alih2106/Desktop/website/src/styles/components/_articles.scss";
 @import "/Users/alih2106/Desktop/website/src/styles/components/_banner.scss";
 @import "/Users/alih2106/Desktop/website/src/styles/components/_blocks.scss";

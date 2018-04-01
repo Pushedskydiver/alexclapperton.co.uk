@@ -26,6 +26,10 @@
   }
 }
 
-.project__subTitle {
+.project__heading {
+  @include text(saturn);
+}
+
+.project__sub-title {
   @include text(venus);
 }

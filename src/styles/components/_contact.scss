@@ -25,6 +25,10 @@
   }
 }
 
+.contact__heading {
+  @include text(saturn);
+}
+
 .contact__body {
   max-width: 80ch;
 }

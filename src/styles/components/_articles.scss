@@ -71,17 +71,21 @@
   }
 }
 
-.articles__title-small {
+.articles__heading-small {
   @include text(pluto);
 }
 
-.articles__title {
+.articles__heading {
   @include text(venus);
   display: block;
 
   @include min(l) {
     font-size: calc(1em + 0.5vw);
   }
+}
+
+.articles__heading-main {
+  @include text(uranus);
 }
 
 .articles__body {

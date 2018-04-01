@@ -11,19 +11,11 @@ html {
 }
 
 body {
-  @include text(bodyCopy);
   color: $core-color-body;
-  font-family: Helvetica, sans-serif;
   background-color: $core-color-background;
   margin: 0;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
-
-  @supports (font-variation-settings: 'wght' 400) {
-    @include min(l) {
-      font-family: $core-variable-font-family;
-    }
-  }
 }
 
 body ::-moz-selection {
@@ -37,27 +29,9 @@ body ::selection {
 }
 
 h1 {
-  @include text(jupiter);
-
   @include min(l) {
     font-size: calc(2.5em + 0.5vw);
   }
-}
-
-h2 {
-  @include text(saturn);
-}
-
-h3 {
-  @include text(uranus);
-}
-
-h4 {
-  @include text(mars);
-}
-
-h5 {
-  @include text(earth);
 }
 
 p {
@@ -67,6 +41,14 @@ p {
 a {
   color: $core-color-brand;
   text-decoration: none;
+
+  @supports (font-variation-settings: 'wght' 400) {
+    @include min(l) {
+      font-family: $core-variable-font-family;
+      font-weight: $core-tertiary-font-weight;
+      font-variation-settings: 'wght' 550;
+    }
+  }
 
   @include min(l) {
     @include transition-03(all);

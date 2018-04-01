@@ -17,4 +17,8 @@
   @include min(m) {
     justify-content: space-between;
   }
+
+  @include min(l) {
+    height: 100px;
+  }
 }

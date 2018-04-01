@@ -12,19 +12,20 @@
   }
 }
 
-.portfolio__title {
+.portfolio__heading {
+  @include text(saturn);
   margin-bottom: ($core-margin / 2);
 }
 
-.portfolio__title-main {
+.portfolio__heading-main {
   @include text(uranus);
 }
 
-.portfolio__title-small {
+.portfolio__heading-small {
   @include text(pluto);
 }
 
-.portfolio__subText {
+.portfolio__sub-text {
   max-width: 550px;
   margin-bottom: ($core-margin * 3);
 }
@@ -85,6 +86,10 @@
 
 .portfolio__image-wrapper {
   position: relative;
+
+  .js & {
+    padding-top: 50%;
+  }
 
   &::before {
     content: '';

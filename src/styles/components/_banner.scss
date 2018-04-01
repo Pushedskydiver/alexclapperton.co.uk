@@ -68,45 +68,47 @@
   }
 }
 
-.banner__title {
+.banner__heading {
+  @include text(jupiter);
+
   &:not(&--center):not(&--404) {
     max-width: 450px;
   }
-}
 
-.banner__title--home {
-  @include text(sun);
+  &--home {
+    @include text(sun);
 
-  @include min(xs) {
-    font-size: calc(3.8em + 0.5vw);
+    @include min(xs) {
+      font-size: calc(3.8em + 0.5vw);
+    }
+
+    @include min(l) {
+      font-size: calc(4.5em + 0.5vw);
+    }
   }
 
-  @include min(l) {
-    font-size: calc(4.5em + 0.5vw);
+  &--light {
+    color: $core-color-background;
   }
-}
 
-.banner__title--light {
-  color: $core-color-background;
-}
-
-.banner__title--center {
-  max-width: 800px;
-  margin-right: auto;
-  margin-bottom: 0;
-  margin-left: auto;
-}
-
-.banner__title--404 {
-  max-width: 450px;
-
-  @include min(l) {
-    max-width: none;
+  &--center {
+    max-width: 800px;
+    margin-right: auto;
+    margin-bottom: 0;
+    margin-left: auto;
   }
-}
 
-.banner__title--offline {
-  margin-bottom: 0;
+  &--404 {
+    max-width: 450px;
+
+    @include min(l) {
+      max-width: none;
+    }
+  }
+
+  &--offline {
+    margin-bottom: 0;
+  }
 }
 
 .banner__body {
@@ -119,13 +121,13 @@
   @media screen and (max-width: 47.9375em) and (orientation: landscape) {
     max-width: none;
   }
-}
 
-.banner__body--404 {
-  max-width: 450px;
+  &--404 {
+    max-width: 450px;
 
-  @include min(l) {
-    max-width: none;
+    @include min(l) {
+      max-width: none;
+    }
   }
 }
 

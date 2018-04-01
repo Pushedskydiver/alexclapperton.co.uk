@@ -1,21 +1,21 @@
 <section class="banner{{#if home}} banner--home{{/if}}{{#unless home}} banner--dark{{/unless}} notch">
 {{#if post}}
     <div class="banner__container banner__container--center">
-        <h1 class="banner__title banner__title--light banner__title--center">{{title}}</h1>
+        <h1 class="banner__heading banner__heading--light banner__heading--center">{{title}}</h1>
     </div>
 {{else}}
     <div class="banner__container">
     {{#if home}}
-        <h1 class="banner__title banner__title--home">Alex Clapperton</h1>
+        <h1 class="banner__heading banner__heading--home">Alex Clapperton</h1>
         <span class="banner__body">Front-End Web Developer, Manchester UK</span>
         <a class="banner__scroll-link" href="#main">
           Scroll
           <svg class="banner__scroll-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" stroke-linecap="round" stroke-linejoin="round" d="M4.5 16.61l7.06 5.65 7.05-5.65m-7.05 5.65V2.5"/></svg>
         </a>
     {{else if offline}}
-        <h1 class="banner__title banner__title--light banner__title--offline">{{title}}</h1>
+        <h1 class="banner__heading banner__heading--light banner__heading--offline">{{title}}</h1>
     {{else}}
-        <h1 class="banner__title banner__title--light">{{title}}</h1>
+        <h1 class="banner__heading banner__heading--light">{{title}}</h1>
         {{>breadcrumbs}}
     {{/if}}
     </div>

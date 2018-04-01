@@ -1,0 +1,41 @@
+// Offline............Offline page styles.
+
+.offline {
+  @include container;
+  padding-top: ($core-padding * 3);
+  padding-bottom: ($core-padding * 3);
+
+  @include min(l) {
+    padding-top: ($core-padding * 4.5);
+    padding-bottom: ($core-padding * 4.5);
+  }
+}
+
+.offline__content {
+  @include min(l) {
+    @include flex(wrap, row, space-between, null);
+  }
+}
+
+.offline__item {
+  margin-bottom: ($core-margin * 3.5);
+
+  @include min(l) {
+    width: 58%;
+    margin-bottom: 0;
+  }
+}
+
+.offline__heading {
+  @include text(saturn);
+}
+
+.offline__sub-heading {
+  @include text(uranus);
+}
+
+.offline__sidebar {
+  @include min(l) {
+    width: 35%;
+  }
+}

@@ -11,7 +11,11 @@
   }
 }
 
-.blocks__subText {
+.blocks__heading {
+  @include text(saturn);
+}
+
+.blocks__sub-text {
   max-width: 550px;
 }
 
@@ -43,8 +47,12 @@
   }
 }
 
-.blocks__item-title--strike {
-  text-decoration: line-through;
+.blocks__item-title {
+  @include text(mars);
+
+  &--strike {
+    text-decoration: line-through;
+  }
 }
 
 .blocks__item-body {

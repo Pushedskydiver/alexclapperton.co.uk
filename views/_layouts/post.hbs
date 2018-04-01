@@ -5,25 +5,17 @@
 {{> banner}}
 
 <div class="notch" itemscope itemtype="http://schema.org/BlogPosting">
-    <!-- ******************** POST : Start ******************** -->
     <main class="post" id="main">
-        <!-- BEGIN : CONTAINER -->
         <div class="post__container">
-            <!-- BEGIN : POST CONTENT -->
             <div class="post__content">
-                <!-- BEGIN : POST ARTICLE -->
                 <article class="post__article">
                     <time class="post__date" datetime="{{article.date}}" itemprop="datePublished"><strong>Published on:</strong> {{readableDate}}</time>
 
                     {{{body}}}
                 </article>
-                <!-- END : POST ARTICLE -->
             </div>
-            <!-- END : POST CONTENT /-->
         </div>
-        <!-- END : CONTAINER /-->
     </main>
-    <!-- ******************** POST : End ******************** /-->
 
     {{>push}}
 </div>
