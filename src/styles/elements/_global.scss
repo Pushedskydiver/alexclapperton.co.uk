@@ -128,7 +128,6 @@ button {
 
   @include min(l) {
     @include transition-03(all);
-    font-family: $core-font-family;
 
     &:hover {
       cursor: pointer;
