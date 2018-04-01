@@ -50,7 +50,7 @@ self.addEventListener('activate', event => {
   );
 });
 
-//Adding `push` event listener
+// Adding `push` event listener
 self.addEventListener('push', event => {
   const title = 'New article published';
   const body = {
@@ -62,7 +62,7 @@ self.addEventListener('push', event => {
   event.waitUntil(self.registration.showNotification(title, body));
 });
 
-//Adding `notification` click event listener
+// Adding `notification` click event listener
 self.addEventListener('notificationclick', event => {
   const page = '/articles/';
   const url = new URL(page, self.location.origin).href;
