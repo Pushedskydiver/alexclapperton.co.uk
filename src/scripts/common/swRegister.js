@@ -51,9 +51,7 @@ module.exports = (function() {
       .then(subscription => {
         subscription ? changePushStatus(true) : changePushStatus(false);
       })
-      .catch(error => {
-        return error;
-      });
+      .catch(error => error);
     });
   }
 
@@ -99,13 +97,9 @@ module.exports = (function() {
           deleteSubscriptionID(subscription.endpoint);
           changePushStatus(false);
         })
-        .catch(error => {
-          return error;
-        });
+        .catch(error => error);
       })
-      .catch(error => {
-        return error;
-      });
+      .catch(error => error);
     })
   }
 
@@ -147,33 +141,11 @@ module.exports = (function() {
     isSubscribed ? unsubscribePush() : subscribePush();
   }
 
-  function checkForPageUpdate(registration) {
-    registration.addEventListener('updatefound', () => {
-      if (navigator.serviceWorker.controller) {
-        const installingSW = registration.installing;
-
-        installingSW.onstatechange = () => {
-          switch(installingSW.state) {
-            case 'installed':
-              break;
-            case 'redundant':
-              throw new Error('The installing service worker became redundant.');
-          }
-        }
-      }
-    });
-  }
-
   function registerServiceWorker() {
     if ('serviceWorker' in navigator) {
-      navigator.serviceWorker.register('/sw.js', { scope: '/' })
-      .then(registration => {
-        checkForPageUpdate(registration);
-        isPushSupported();
-      })
-      .catch(error => {
-        return error;
-      });
+      navigator.serviceWorker.register('/sw.js')
+      .then(() => isPushSupported())
+      .catch(error => error);
     }
   }
 
