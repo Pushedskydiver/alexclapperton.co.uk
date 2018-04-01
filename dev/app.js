@@ -10,7 +10,6 @@ import compression from 'compression'
 import json from 'express-json'
 import minifyHtml from 'express-minify-html'
 import helmet from 'helmet'
-import inlineCss from 'express-inline-css'
 
 const main = require('./routes/index');
 const articles = require('./routes/articles');
@@ -45,11 +44,6 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(minifyHtml(minifyHtmlData));
 app.use(express.static(path.join(__dirname, '../public'), { maxAge: '365 days' }));
-
-// app.use(inlineCss({
-//   override: true,
-//   cssFilePath: path.join(__dirname, '../public/css/main.css')
-// }));
 
 // To allow cross origin request
 app.use((req, res, next) => {

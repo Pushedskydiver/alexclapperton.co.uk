@@ -40,6 +40,8 @@ p {
 
 a {
   color: $core-color-brand;
+  font-family: Helvetica, sans-serif;
+  font-weight: $core-tertiary-font-weight;
   text-decoration: none;
 
   @supports (font-variation-settings: 'wght' 400) {
