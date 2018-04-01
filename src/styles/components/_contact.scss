@@ -84,12 +84,15 @@
 
 .contact__list-body--notch {
   color: $core-color-foreground;
+  font-family: Helvetica, sans-serif;
   font-weight: $core-tertiary-font-weight;
 
   @supports (font-variation-settings: 'wght' 400) {
-    font-family: $core-variable-font-family;
-    font-weight: $core-font-weight;
-    font-variation-settings: 'wght' $core-tertiary-font-weight;
+    @include min(l) {
+      font-family: $core-variable-font-family;
+      font-weight: $core-font-weight;
+      font-variation-settings: 'wght' $core-tertiary-font-weight;
+    }
   }
 }
 
