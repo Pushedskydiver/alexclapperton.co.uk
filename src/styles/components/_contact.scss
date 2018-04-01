@@ -11,7 +11,7 @@
   }
 }
 
-.contact__content {
+.contact__container {
   @include min(m) {
     display: grid;
     grid-gap: 30px 60px;
