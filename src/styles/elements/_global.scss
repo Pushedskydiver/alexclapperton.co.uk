@@ -45,8 +45,8 @@ a {
   @supports (font-variation-settings: 'wght' 400) {
     @include min(l) {
       font-family: $core-variable-font-family;
-      font-weight: $core-tertiary-font-weight;
-      font-variation-settings: 'wght' 550;
+      font-weight: $core-font-weight;
+      font-variation-settings: 'wght' $core-tertiary-font-weight;
     }
   }
 
@@ -60,7 +60,7 @@ strong {
   color: $core-color-brand;
 
   @supports (font-variation-settings: 'wght' 400) {
-    font-weight: 400;
+    font-weight: $core-font-weight;
     font-variation-settings: 'wght' $core-tertiary-font-weight;
   }
 }
