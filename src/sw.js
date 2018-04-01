@@ -6,7 +6,7 @@ const cacheFiles = [
   '/offline/',
   '/articles/how-to-use-grid-and-flexbox-together/',
   '/articles/working-with-grid-the-holy-grail-of-css-layout/',
-  '/articles/from-https-to-css-what-i-have-changed-on-my-website/',
+  '/articles/from-https-to-css-what-i-have-changed-on-my-website/'
 ];
 
 self.addEventListener('install', event => {
@@ -20,28 +20,24 @@ self.addEventListener('install', event => {
 // Adding `fetch` event listener
 self.addEventListener('fetch', event => {
   event.respondWith(
-    caches
-    .match(event.request)
+    caches.match(event.request)
     .then((response) => {
-      // Grab the asset from SW cache.
       if (response) {
         return response;
       }
 
       return fetch(event.request);
     })
-    // Can't access the network return an offline page from the cache
     .catch(() => caches.match('/offline/'))
   );
 });
 
 // Empty out any caches that don’t match the ones listed.
 self.addEventListener('activate', event => {
-  const cacheWhitelist = ['alexclapperton:0036'];
+  const cacheWhitelist = ['alexclapperton:0038'];
 
   event.waitUntil(
-    caches
-    .keys()
+    caches.keys()
     .then((cacheNames) => {
       return Promise.all(
         cacheNames.map(cacheName => {
@@ -50,7 +46,7 @@ self.addEventListener('activate', event => {
           }
         })
       );
-      })
+    })
   );
 });
 
