@@ -46,10 +46,10 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(minifyHtml(minifyHtmlData));
 app.use(express.static(path.join(__dirname, '../public'), { maxAge: '365 days' }));
 
-app.use(inlineCss({
-  override: true,
-  cssFilePath: path.join(__dirname, '../public/css/main.css')
-}));
+// app.use(inlineCss({
+//   override: true,
+//   cssFilePath: path.join(__dirname, '../public/css/main.css')
+// }));
 
 // To allow cross origin request
 app.use((req, res, next) => {

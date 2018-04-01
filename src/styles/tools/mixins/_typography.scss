@@ -167,15 +167,26 @@ $headings: (
   $props: map-get($headings, $style);
   $default: map-get($props, default);
   $variable-fonts: map-get($props, variable-fonts);
+  $font-family: map-get($default, font-family);
 
   @if $props == null {
     @warn 'text style \"#{$style}\" not found';
   } @else {
     @include map-to-props($default);
 
-    @if map-has-key($props, variable-fonts) {
-      @supports (font-variation-settings: 'wght' 400) {
-        @include map-to-props($variable-fonts);
+    @if $font-family != (Helvetica, sans-serif) {
+      @if map-has-key($props, variable-fonts) {
+        @supports (font-variation-settings: 'wght' 400) {
+          @include map-to-props($variable-fonts);
+        }
+      }
+    } @else {
+      @if map-has-key($props, variable-fonts) {
+        @include min(l) {
+          @supports (font-variation-settings: 'wght' 400) {
+            @include map-to-props($variable-fonts);
+          }
+        }
       }
     }
   }

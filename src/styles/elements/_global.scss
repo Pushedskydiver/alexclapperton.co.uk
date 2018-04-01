@@ -110,10 +110,6 @@ input {
   font-family: Helvetica, sans-serif;
   border-radius: 0;
   appearance: none;
-
-  @include min(l) {
-    font-family: $core-font-family;
-  }
 }
 
 textarea {
@@ -121,10 +117,6 @@ textarea {
   font-family: Helvetica, sans-serif;
   border-radius: 0;
   appearance: none;
-
-  @include min(l) {
-    font-family: $core-font-family;
-  }
 }
 
 button {
