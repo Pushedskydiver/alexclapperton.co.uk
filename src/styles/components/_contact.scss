@@ -84,7 +84,7 @@
 
 .contact__list-body--notch {
   color: $core-color-foreground;
-  font-family: Helvetica, sans-serif;
+  font-family: $core-font-family;
   font-weight: $core-tertiary-font-weight;
 
   @supports (font-variation-settings: 'wght' 400) {

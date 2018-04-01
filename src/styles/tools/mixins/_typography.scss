@@ -101,7 +101,7 @@ $headings: (
   pluto: (
     default: (
       color: $core-color-body,
-      font-family: (Helvetica, sans-serif),
+      font-family: $core-font-family,
       font-size: calc(1em + 0.5vw),
       font-variation-settings: 'wght' $core-font-weight,
       line-height: 1.1,
@@ -117,7 +117,7 @@ $headings: (
   earth: (
     default: (
       color: $core-color-body,
-      font-family: (Helvetica, sans-serif),
+      font-family: $core-font-family,
       font-size: calc(#{$core-font-size} + 0.15vw),
       font-weight: $core-tertiary-font-weight,
       line-height: $core-line-height,
@@ -133,7 +133,7 @@ $headings: (
   moon: (
     default: (
       color: $core-color-body,
-      font-family: (Helvetica, sans-serif),
+      font-family: $core-font-family,
       font-size: calc(0.8em + 0.15vw),
       font-weight: $core-tertiary-font-weight,
       line-height: $core-line-height,
@@ -148,7 +148,7 @@ $headings: (
   ),
   bodyCopy: (
     default: (
-      font-family: (Helvetica, sans-serif),
+      font-family: $core-font-family,
       font-size: calc(#{$core-font-size} + 0.1vw),
       font-weight: $core-font-weight,
       line-height: $core-line-height,
@@ -174,7 +174,7 @@ $headings: (
   } @else {
     @include map-to-props($default);
 
-    @if $font-family != (Helvetica, sans-serif) {
+    @if $font-family != $core-font-family {
       @if map-has-key($props, variable-fonts) {
         @supports (font-variation-settings: 'wght' 400) {
           @include map-to-props($variable-fonts);

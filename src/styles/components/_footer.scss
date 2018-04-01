@@ -89,7 +89,7 @@
 
 .footer__body {
   color: $core-color-neutral;
-  font-family: Helvetica, sans-serif;
+  font-family: $core-font-family;
   font-size: calc(14px + 0.1vw);
 
   @include min(l) {
