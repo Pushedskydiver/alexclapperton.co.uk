@@ -32,7 +32,7 @@ module.exports = {
     });
   },
 
-  deleteOneUser: function(req, res, next) {
+  deleteOneUser: function(req, res) {
     const userId = req.params.id;
 
     User.remove({id: userId}, (err, user) => {

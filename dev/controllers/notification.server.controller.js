@@ -26,7 +26,13 @@ module.exports = {
         webpush.sendNotification(user, message, {})
         .then((response) => res.json(response))
         .catch((err) =>{
-          console.error(err);
+          if (err.statusCode === 410) {
+            User.remove({id: user.id}, (err, user) => {
+              res.end();
+            });
+          } else {
+            console.log('Subscription is no longer valid: ', err);
+          }
         });
       });
     });
