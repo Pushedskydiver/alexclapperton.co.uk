@@ -22,8 +22,12 @@
   margin-bottom: ($core-margin * 2);
 }
 
-.post__sub-title {
+.post__heading {
   @include text(saturn);
+}
+
+.post__sub-title {
+  @include text(uranus);
 }
 
 .post__small-title {

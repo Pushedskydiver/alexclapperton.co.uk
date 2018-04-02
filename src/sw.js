@@ -13,7 +13,7 @@ self.addEventListener('install', event => {
   event.waitUntil(
     caches
     .open(cacheName)
-    .then((cache) => cache.addAll(cacheFiles))
+    .then(cache => cache.addAll(cacheFiles))
   );
 });
 
@@ -21,7 +21,7 @@ self.addEventListener('install', event => {
 self.addEventListener('fetch', event => {
   event.respondWith(
     caches.match(event.request)
-    .then((response) => {
+    .then(response => {
       if (response) {
         return response;
       }
@@ -38,7 +38,7 @@ self.addEventListener('activate', event => {
 
   event.waitUntil(
     caches.keys()
-    .then((cacheNames) => {
+    .then(cacheNames => {
       return Promise.all(
         cacheNames.map(cacheName => {
           if (cacheWhitelist.indexOf(cacheName) === -1) {
@@ -52,14 +52,44 @@ self.addEventListener('activate', event => {
 
 // Adding `push` event listener
 self.addEventListener('push', event => {
-  const title = 'New article published';
+  let title = 'Alex has published a new article';
   const body = {
     'body': 'Press to see the latest article',
     'icon': '/favicons/favicon-192x192.png',
-    'badge': '/favicons/favicon-badge-192x192.png'
+    'badge': '/favicons/favicon-badge-192x192.png',
+    'tag': 'article',
+    'data': {
+      'messageCount': 1
+    }
   };
 
-  event.waitUntil(self.registration.showNotification(title, body));
+  event.waitUntil(
+    self.registration.getNotifications({tag} = body)
+    .then(notifications => {
+      let currentNotification;
+
+      for(let i = 0; i < notifications.length; i++) {
+        if (tag) {
+          currentNotification = notifications[i];
+        }
+      }
+
+      return currentNotification;
+    })
+    .then(currentNotification => {
+      if (currentNotification) {
+        const messageCount = currentNotification.data.messageCount + 1;
+
+        title = `Alex has published ${messageCount} new articles`;
+        body.body = 'Press to see the latest articles';
+        body.data.messageCount = messageCount;
+        currentNotification.close();
+      }
+    })
+    .then(() => {
+      return self.registration.showNotification(title, body);
+    })
+  );
 });
 
 // Adding `notification` click event listener
@@ -73,7 +103,7 @@ self.addEventListener('notificationclick', event => {
     type: 'window',
     includeUncontrolled: true
   })
-  .then((windowClients) => {
+  .then(windowClients => {
     let matchingClient = null;
 
     for (let i = 0; i < windowClients.length; i++) {

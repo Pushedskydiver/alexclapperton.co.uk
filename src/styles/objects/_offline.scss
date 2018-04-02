@@ -11,7 +11,7 @@
   }
 }
 
-.offline__content {
+.offline__container {
   @include min(l) {
     @include flex(wrap, row, space-between, null);
   }
