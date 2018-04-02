@@ -56,7 +56,7 @@ self.addEventListener('push', event => {
   const body = {
     'body': 'Press to see the latest article',
     'icon': '/favicons/favicon-192x192.png',
-    'badge': '/favicons/favicon-192x192.png'
+    'badge': '/favicons/favicon-badge-192x192.png'
   };
 
   event.waitUntil(self.registration.showNotification(title, body));

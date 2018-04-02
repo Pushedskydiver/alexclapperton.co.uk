@@ -7,6 +7,7 @@ const User = require('../models/user.server.model');
 module.exports = {
 
   notifyUsers: function(req, res) {
+    const message = JSON.stringify(req.body);
     const vapidKeys = {
       publicKey: process.env.VAPID_PUBLIC_KEY,
       privateKey: process.env.VAPID_PRIVATE_KEY
@@ -22,12 +23,6 @@ module.exports = {
 
     User.find({}, (err, users) => {
       users.forEach(user => {
-        const message = JSON.stringify({
-          title: 'New article published',
-          icon: 'ic_launcher',
-          body: 'Press to see the latest article'
-        });
-
         webpush.sendNotification(user, message, {})
         .then((response) => res.json(response))
         .catch((err) =>{
