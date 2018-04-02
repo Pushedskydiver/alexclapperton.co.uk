@@ -37,7 +37,6 @@ module.exports = {
 
     User.remove({id: userId}, (err, user) => {
       if(err) {
-        console.log(err, 'err');
         return res.status(404).json({
           success: false,
           message: 'User Details Not Found'
