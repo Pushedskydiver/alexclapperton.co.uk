@@ -113,7 +113,16 @@
   top: 3px;
   right: 0;
   color: $core-color-danger;
+  font-family: $core-font-family;
   opacity: 0;
+
+  @supports (font-variation-settings: 'wght' 400) {
+    @include min(l) {
+      font-family: $core-variable-font-family;
+      font-weight: $core-font-weight;
+      font-variation-settings: 'wght' $core-secondary-font-weight;
+    }
+  }
 }
 
 .form__validation-message--visible {
