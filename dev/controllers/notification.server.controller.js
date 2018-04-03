@@ -22,19 +22,23 @@ module.exports = {
     );
 
     User.find({}, (err, users) => {
-      users.forEach(user => {
-        webpush.sendNotification(user, message, {})
-        .then((response) => res.json(response))
-        .catch((err) =>{
+      const send = users.map(user => {
+        return webpush.sendNotification(user, message)
+        .then(response => {
+          return response;
+        })
+        .catch(err => {
           if (err.statusCode === 410) {
             User.remove({id: user.id}, (err, user) => {
-              res.end();
+              (err) ? console.log('User Details Not Found', err) : console.log('Delete Successful');
             });
           } else {
             console.log('Subscription is no longer valid: ', err);
           }
         });
       });
+
+      Promise.all(send).then(response => res.json(response));
     });
   }
 };
