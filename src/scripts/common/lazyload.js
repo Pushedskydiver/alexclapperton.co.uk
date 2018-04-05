@@ -1,6 +1,10 @@
-module.exports = (function() {
+module.exports = (function(entry) {
 
-  const lazyImages = document.querySelectorAll('[data-lazy]');
+  const options = {
+    selector: document.querySelectorAll('[data-lazy]'),
+    rootMargin: '0px',
+    threshold: 1
+  }
 
   function lazyloadConfig() {
     window.lazySizesConfig.lazyClass = 'lazyload__image--lazy';
@@ -23,7 +27,7 @@ module.exports = (function() {
   }
 
   function lazyLoadImagesOnResize() {
-    lazyImages.forEach(image => {
+    options.selector.forEach(image => {
       const delayViewportResize = setTimeout(() => {
         lazyloaded(image);
         clearTimeout(delayViewportResize);
@@ -36,11 +40,34 @@ module.exports = (function() {
     image.addEventListener('lazybeforeunveil', image => lazyBeforeUnveil(image));
   }
 
+  // Intersection Observer API
+  function applyLazyLoadToEntry({intersectionRatio, currentTarget, target} = entry) {
+    const ratio = intersectionRatio;
+    const element = currentTarget || target;
+
+    if (ratio === options.threshold) {
+      lazyloaded(element);
+    }
+  }
+
+  function callback(entries) {
+    entries.forEach(applyLazyLoadToEntry);
+  }
+
+  function applyLazyLoad() {
+    const images = options.selector;
+    const observer = new IntersectionObserver(callback, options);
+
+    images.forEach(image => observer.observe(image));
+  }
+
   function init() {
-    if (lazyImages.length > 0) {
+    if (options.selector.length > 0) {
       lazyloadConfig();
-      lazyImages.forEach(image => lazyloadEventListeners(image));
-      window.addEventListener('resize', lazyLoadImagesOnResize);
+      options.selector.forEach(image => lazyloadEventListeners(image));
+
+      'IntersectionObserver' in window ?
+      applyLazyLoad() : window.addEventListener('resize', lazyLoadImagesOnResize);
     }
   }
 

@@ -10,6 +10,7 @@
     "btoa": true,
     "document": true,
     "fetch": true,
+    "IntersectionObserver": true,
     "navigator": true,
     "Notification": true,
     "obj": true,

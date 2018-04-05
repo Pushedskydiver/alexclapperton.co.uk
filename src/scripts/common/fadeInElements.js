@@ -1,33 +1,61 @@
-module.exports = (function() {
+module.exports = (function(entry) {
 
-  const elementsToFade = document.querySelectorAll('[data-fade]');
+  const options = {
+    selector: document.querySelectorAll('[data-fade]'),
+    rootMargin: '0px',
+    threshold: 0.2
+  }
 
-  function toggleFadeClass(element) {
+  function addFadeClass(element) {
+    element.classList.remove('hide');
+    element.classList.add('fade-in');
+    element.style.transitionDelay = element.getAttribute('data-fade-delay');
+  }
+
+  function toggleFade(element) {
     const objectPosition = element.getBoundingClientRect().top;
     const windowHeight = window.innerHeight;
 
     if (objectPosition - windowHeight <= 0) {
-      element.classList.remove('hide');
-      element.classList.add('fade-in');
-      element.style.transitionDelay = element.getAttribute('data-fade-delay');
+      addFadeClass(element);
     }
   }
 
   function fadeIn() {
-    elementsToFade.forEach(element => toggleFadeClass(element));
+    options.selector.forEach(element => toggleFade(element));
   }
 
   function fadeInOnScroll() {
     const delayFade = setTimeout(() => {
-      elementsToFade.forEach(element => toggleFadeClass(element));
+      options.selector.forEach(element => toggleFade(element));
       clearTimeout(delayFade);
     }, 500);
   }
 
+  // Intersection Observer API
+  function applyFadeInToEntry({intersectionRatio, target} = entry) {
+    if (intersectionRatio >= options.threshold) {
+      addFadeClass(target);
+    }
+  }
+
+  function callback(entries) {
+    entries.forEach(applyFadeInToEntry);
+  }
+
+  function applyFadein() {
+    const elements = options.selector;
+    const observer = new IntersectionObserver(callback, options);
+
+    elements.forEach(element => observer.observe(element));
+  }
+
   function init() {
-    if (elementsToFade.length > 0) {
+    if (options.selector.length > 0) {
       fadeIn();
-      window.addEventListener('scroll', fadeInOnScroll);
+
+      'IntersectionObserver' in window ?
+      applyFadein() : window.addEventListener('scroll', fadeInOnScroll);
     }
   }
 
