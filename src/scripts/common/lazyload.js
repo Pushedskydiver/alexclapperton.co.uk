@@ -61,10 +61,10 @@ module.exports = (function(entry) {
     images.forEach(image => observer.observe(image));
   }
 
-  function init() {
-    if (options.selector.length > 0) {
+  function init({selector} = options) {
+    if (selector.length > 0) {
       lazyloadConfig();
-      options.selector.forEach(image => lazyloadEventListeners(image));
+      selector.forEach(image => lazyloadEventListeners(image));
 
       'IntersectionObserver' in window ?
       applyLazyLoad() : window.addEventListener('resize', lazyLoadImagesOnResize);

@@ -8,7 +8,7 @@ module.exports = (function() {
   }
 
   function removeActiveClass() {
-    const navItemActiveClass = document.querySelectorAll('.nav__item--active');
+    const navItemActiveClass = nav.nav.querySelectorAll('.nav__item--active');
 
     if (navItemActiveClass.length > 0) {
       const navItemActive = navItemActiveClass[0];
@@ -21,32 +21,27 @@ module.exports = (function() {
     }
   }
 
-  function detectResize() {
-    const delayResize = setTimeout(() => {
-      if (window.innerWidth >= 768) {
-        removeActiveClass();
-        nav.navItem.forEach(item => {
-          item.parentNode.addEventListener('mouseover', addActiveClass);
-          item.parentNode.addEventListener('mouseleave', removeActiveClass);
-          item.addEventListener('focus', addActiveClass);
-        });
-      }
-      clearTimeout(delayResize);
-    }, 500);
-  }
-
-  function init() {
-    window.addEventListener('resize', detectResize);
-
+  function toggleActiveClass() {
     if (window.innerWidth >= 768) {
       removeActiveClass();
-      nav.nav.removeChild(nav.logo);
       nav.navItem.forEach(item => {
         item.parentNode.addEventListener('mouseover', addActiveClass);
         item.parentNode.addEventListener('mouseleave', removeActiveClass);
         item.addEventListener('focus', addActiveClass);
       });
     }
+  }
+
+  function detectResize() {
+    const delayResize = setTimeout(() => {
+      toggleActiveClass();
+      clearTimeout(delayResize);
+    }, 500);
+  }
+
+  function init() {
+    toggleActiveClass();
+    window.addEventListener('resize', detectResize);
   }
 
   return {
