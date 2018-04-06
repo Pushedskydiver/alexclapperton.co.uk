@@ -13,19 +13,19 @@
                 <div class="form__inner">
                     <div class="form__field">
                         <label class="form__label" id="nameLabel" for="name">Name</label>
-                        <input class="form__input" id="name" type="text" aria-required="true" aria-labelledby="nameLabel" aria-describedby="nameDescribe" pattern="^[a-zA-Z \-']+$" required data-input>
+                        <input class="form__input" id="name" type="text" name="name" aria-required="true" aria-labelledby="nameLabel" aria-describedby="nameDescribe" pattern="^[a-zA-Z \-']+$" required data-input>
                         <small class="form__validation-message" id="nameDescribe" data-validation>Your name is required</small>
                     </div>
 
                     <div class="form__field">
                         <label class="form__label" id="emailLabel" for="email">Email</label>
-                        <input class="form__input" id="email" type="email" aria-required="true" aria-labelledby="emailLabel" aria-describedby="emailDescribe" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" required data-input>
+                        <input class="form__input" id="email" type="email" name="email" aria-required="true" aria-labelledby="emailLabel" aria-describedby="emailDescribe" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" required data-input>
                         <small class="form__validation-message" id="emailDescribe" data-validation>Please enter a valid email address</small>
                     </div>
 
                     <div class="form__field">
                         <label class="form__label" id="messageLabel" for="message">Message</label>
-                        <textarea class="form__textarea" id="message" name="message" rows="6" cols="80" aria-required="true" aria-labelledby="messageLabel" aria-describedby="messageDescribe" required data-textarea></textarea>
+                        <textarea class="form__textarea" id="message" name="message" name="message" rows="6" cols="80" aria-required="true" aria-labelledby="messageLabel" aria-describedby="messageDescribe" required data-textarea></textarea>
                         <small class="form__validation-message" id="messageDescribe" data-validation>Please enter your message</small>
                     </div>
 

@@ -17,16 +17,18 @@ router.get('/', (req, res, next) => {
 });
 
 router.post('/', (req, res) => {
-  let smtpTrans = nodemailer.createTransport({
+  const smtpTrans = nodemailer.createTransport({
     host: process.env.EMAIL_HOST,
+    port: 465,
+    secure: true,
     auth: {
       user: process.env.EMAIL_ADDRESS,
       pass: process.env.EMAIL_PASS
     }
   });
 
-  let mailOpts = {
-    from: req.body.name + ' &lt;' + req.body.email + '&gt;',
+  const mailOpts = {
+    from: req.body.email,
     to: process.env.EMAIL_ADDRESS,
     subject: 'Website contact form',
     text: req.body.message
@@ -34,9 +36,9 @@ router.post('/', (req, res) => {
 
   smtpTrans.sendMail(mailOpts, (error, response) => {
     if (error) {
-      console.log(err);
+      console.log(error, 'error');
     } else {
-      console.log('Message sent');
+      console.log(response, 'response');
     }
 
     smtpTrans.close();
