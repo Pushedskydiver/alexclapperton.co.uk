@@ -11,7 +11,7 @@ $breakpoints: (
 
 @mixin min($name) {
   @if map-has-key($breakpoints, $name) {
-    @media screen and (min-width: #{inspect(map-get($breakpoints, $name))}) {
+    @media screen and (min-width: (map-get($breakpoints, $name))) {
       @content;
     }
   } @else {
@@ -22,7 +22,7 @@ $breakpoints: (
 
 @mixin max($name) {
   @if map-has-key($breakpoints, $name) {
-    @media screen and (max-width: (#{inspect(map-get($breakpoints, $name))} - 0.0625em)) {
+    @media screen and (max-width: (map-get($breakpoints, $name) - 0.0625em)) {
       @content;
     }
   } @else {
@@ -32,8 +32,8 @@ $breakpoints: (
 }
 
 @mixin min-max($min, $max) {
-  @if map-has-key($breakpoints, $min) {
-    @media screen and (min-width: #{inspect(map-get($breakpoints, $min))}) and (max-width: (#{inspect(map-get($breakpoints, $max))} - 0.0625em)) {
+  @if map-has-key($breakpoints, $min) and map-has-key($breakpoints, $max) {
+    @media screen and (min-width: map-get($breakpoints, $min)) and (max-width: (map-get($breakpoints, $max) - 0.0625em)) {
       @content;
     }
   } @else {
