@@ -17,7 +17,11 @@ router.get('/', (req, res, next) => {
 });
 
 router.post('/', (req, res) => {
-  let smtpTrans = nodemailer.createTransport({
+  const {name, email, message} = req.body;
+
+  console.log(email, 'email');
+
+  const smtpTrans = nodemailer.createTransport({
     host: process.env.EMAIL_HOST,
     port: 465,
     secure: true,
@@ -27,12 +31,17 @@ router.post('/', (req, res) => {
     }
   });
 
-  let mailOpts = {
-    from: `'${req.body.name} <${req.body.email}>'`,
+  const mailOpts = {
+    from: `${name} <noreply@alexclapperton.co.uk>`,
     to: process.env.EMAIL_ADDRESS,
     subject: 'Website contact form',
-    text: req.body.message
-};
+    html: `
+      <p><strong>Name:</strong> ${name}</p>
+      <p><strong>Email:</strong> ${email}</p>
+      <p><strong>Message:</strong></p>
+      <p>${message}</p>
+    `
+  };
 
   smtpTrans.sendMail(mailOpts, (error, response) => {
     if (error) {
@@ -40,8 +49,6 @@ router.post('/', (req, res) => {
     } else {
       console.log(response, 'response');
     }
-
-    smtpTrans.close();
   });
 });
 
