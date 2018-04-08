@@ -19,8 +19,6 @@ router.get('/', (req, res, next) => {
 router.post('/', (req, res) => {
   const {name, email, message} = req.body;
 
-  console.log(email, 'email');
-
   const smtpTrans = nodemailer.createTransport({
     host: process.env.EMAIL_HOST,
     port: 465,
@@ -45,10 +43,26 @@ router.post('/', (req, res) => {
 
   smtpTrans.sendMail(mailOpts, (error, response) => {
     if (error) {
-      console.log(error, 'error');
+      res.render('contact', {
+        title: 'Contact',
+        contact: true,
+        data: {
+          global: data
+        },
+        fail: true
+      });
     } else {
-      console.log(response, 'response');
+      res.render('contact', {
+        title: 'Contact',
+        contact: true,
+        data: {
+          global: data
+        },
+        fail: false
+      });
     }
+
+    smtpTrans.close();
   });
 });
 

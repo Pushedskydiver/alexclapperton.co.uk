@@ -31,7 +31,11 @@
 
                     <button class="form__button button button--primary" type="submit" name="button" data-submit-button>Submit form</button>
 
-                    <p>{{msg}}</p>
+                    {{#if fail}}
+                      <span class="form__message form__message--error">No mans</span>
+                      {{else}}
+                      <span class="form__message form__message--success">Yes mans</span>
+                    {{/if}}
                 </div>
             </fieldset>
         </form>
