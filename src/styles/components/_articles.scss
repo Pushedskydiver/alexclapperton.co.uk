@@ -27,7 +27,6 @@
 
 .articles__item {
   @include transition-03(all);
-  display: block;
   position: relative;
   top: 0;
   margin-bottom: ($core-margin * 2.2);
@@ -78,6 +77,15 @@
 .articles__heading {
   @include text(venus);
   display: block;
+
+  &:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
 
   @include min(l) {
     font-size: calc(1em + 0.5vw);

@@ -12,7 +12,9 @@ router.get('/', (req, res, next) => {
     contact: true,
     data: {
       global: data
-    }
+    },
+    fail: false,
+    success: false
   });
 });
 
@@ -58,7 +60,7 @@ router.post('/', (req, res) => {
         data: {
           global: data
         },
-        fail: false
+        success: true
       });
     }
 

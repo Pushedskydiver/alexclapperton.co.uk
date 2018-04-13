@@ -28,15 +28,14 @@
                         <textarea class="form__textarea" id="message" name="message" name="message" rows="6" cols="80" aria-required="true" aria-labelledby="messageLabel" aria-describedby="messageDescribe" required data-textarea></textarea>
                         <small class="form__validation-message" id="messageDescribe" data-validation>Please enter your message</small>
                     </div>
-
                     <button class="form__button button button--primary" type="submit" name="button" data-submit-button>Submit form</button>
-
-                    {{#if fail}}
-                      <span class="form__message form__message--error">No mans</span>
-                      {{else}}
-                      <span class="form__message form__message--success">Yes mans</span>
-                    {{/if}}
                 </div>
+            {{#if fail}}
+                <span class="form__message form__message--error">Oops. There was an error. Please submit the form again.</span>
+            {{/if}}
+            {{#if success}}
+                <span class="form__message form__message--success">Hooray. Your message has been successfully sent.</span>
+            {{/if}}
             </fieldset>
         </form>
 

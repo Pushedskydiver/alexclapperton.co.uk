@@ -123,8 +123,27 @@
       font-variation-settings: 'wght' $core-secondary-font-weight;
     }
   }
+
+  &--visible {
+    opacity: 1;
+  }
 }
 
-.form__validation-message--visible {
-  opacity: 1;
+.form__message {
+  @include text(bodyCopy);
+  display: block;
+  margin-top: ($core-margin * 2);
+  margin-bottom: 0;
+  padding-top: ($core-padding / 2);
+  padding-right: $core-padding;
+  padding-bottom: ($core-padding / 2);
+  padding-left: $core-padding;
+
+  &--error {
+    background-color: rgba($core-color-danger, 0.7);
+  }
+
+  &--success {
+    background-color: rgba($core-color-success, 0.7);
+  }
 }

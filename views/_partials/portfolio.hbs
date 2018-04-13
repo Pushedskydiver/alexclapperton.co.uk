@@ -1,4 +1,5 @@
-<a class="portfolio__item{{#if fields.projectData.picture}} portfolio__item--large{{/if}}" href="/portfolio/{{fields.slug}}/" title="{{fields.projectData.title-attr}}" data-portfolio-item>
+<div class="portfolio__item{{#if fields.projectData.picture}} portfolio__item--large{{/if}}" data-portfolio-item>
+    <a class="portfolio__title" href="/portfolio/{{fields.slug}}/" title="{{fields.projectData.title-attr}}">{{fields.projectName}}</a>
     <figure class="portfolio__figure">
         <div class="portfolio__image-wrapper{{#unless fields.projectData.picture}} lazyload{{/unless}}">
         {{#if fields.projectData.picture}}
@@ -29,4 +30,4 @@
             <p class="portfolio__caption-category">{{fields.category}}</p>
         </figcaption>
     </figure>
-</a>
+</div>
