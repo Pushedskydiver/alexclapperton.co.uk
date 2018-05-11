@@ -1,8 +1,12 @@
-const cacheName = 'alexclapperton:0038';
+const cacheName = 'alexclapperton:0040';
 const cacheFiles = [
   '/',
-  '/about-me/',
-  '/contact/',
+  '/css/main.css',
+  '/js/common.bundle.js',
+  '/js/vendor.bundle.js',
+  '/fonts/selawik-variable.woff2',
+  '/fonts/avenir-next-variable.woff2',
+  '/favicons/favicon-72x72.png',
   '/offline/',
   '/articles/how-to-use-grid-and-flexbox-together/',
   '/articles/working-with-grid-the-holy-grail-of-css-layout/',
@@ -34,7 +38,7 @@ self.addEventListener('fetch', event => {
 
 // Empty out any caches that don’t match the ones listed.
 self.addEventListener('activate', event => {
-  const cacheWhitelist = ['alexclapperton:0038'];
+  const cacheWhitelist = ['alexclapperton:0040'];
 
   event.waitUntil(
     caches.keys()
