@@ -46,26 +46,40 @@
             {
                 "@context": "http://schema.org",
                 {{#if article.date}}
-                    "@type": "NewsArticle",
-                    "author": {{{data.global.name}}}
-                    "publisher": {{{data.global.name}}}
+                    "@type": "Article",
+                    "mainEntityOfPage": {
+                        "@type": "WebPage",
+                        "@id": "{{data.global.url}}{{#if article.date}}/articles{{/if}}{{#if article.slug}}/{{article.slug}}{{/if}}"
+                    },
                     "headline": "{{{title}}}",
-                    "datePublished": "{{{article.date}}}",
-                    "dateModified":  "{{{article.date}}}",
-                    "mainEntityOfPage": "{{{data.global.url}}}{{#if article.date}}/articles{{/if}}{{#if article.slug}}/{{{article.slug}}}{{/if}}",
+                    "datePublished": "{{article.date}}",
+                    "dateModified":  "{{article.date}}",
+                    "author": {
+                        "@type": "Person",
+                        "name": "{{data.global.name}}"
+                    },
+                    "publisher": {
+                        "@type": "Organization",
+                        "name": "{{data.global.name}}",
+                        "logo": {
+                            "@type": "ImageObject",
+                            "url": "{{data.global.url}}/favicons/favicon-256x256.png"
+                        }
+                    },
+                    "url": "{{data.global.url}}{{#if article.date}}/articles{{/if}}{{#if article.slug}}/{{article.slug}}{{/if}}",
+                    "image" : "{{#if ogImage}}{{ogImage}}{{else}}{{data.global.url}}/images/profile/alex-clapperton.jpg{{/if}}"
                 {{else}}
                     "@type": "Person",
-                    "name": "{{{data.global.name}}}",
-                {{/if}}
-                    "url": "{{{data.global.url}}}{{#if article.date}}/articles{{/if}}{{#if article.slug}}/{{{article.slug}}}{{/if}}",
-                    "image" : "{{#if ogImage}}{{{ogImage}}}{{else}}{{{data.global.url}}}/images/profile/alex-clapperton.jpg{{/if}}",
-                {{#unless article.date}}
+                    "name": "{{data.global.name}}",
+                    "url": "{{data.global.url}}{{#if article.date}}/articles{{/if}}{{#if article.slug}}/{{article.slug}}{{/if}}",
+                    "image" : "{{#if ogImage}}{{ogImage}}{{else}}{{data.global.url}}/images/profile/alex-clapperton.jpg{{/if}}",
                     "sameAs" : [
-                        "{{{data.global.twitterHandle}}}",
-                        "{{{data.global.linkedinName}}}",
-                        "{{{data.global.githubRepo}}}"
+                    {{#each data.global.social}}
+                        {{#unless @last}}"{{url}}",{{/unless}}
+                        {{#if @last}}"{{url}}"{{/if}}
+                    {{/each}}
                     ]
-                {{/unless}}
+                {{/if}}
             }
         </script>
 
