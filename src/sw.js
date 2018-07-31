@@ -7,6 +7,8 @@ const cacheFiles = [
   '/fonts/selawik-variable.woff2',
   '/fonts/avenir-next-variable.woff2',
   '/favicons/favicon-72x72.png',
+  '/about-me/',
+  '/contact/',
   '/offline/',
   '/articles/how-to-use-grid-and-flexbox-together/',
   '/articles/working-with-grid-the-holy-grail-of-css-layout/',
