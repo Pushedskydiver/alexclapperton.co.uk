@@ -1,46 +1,41 @@
 import cookies from 'cookies'
 
-module.exports = (function(window) {
+const hostname = window.location.hostname === 'localhost' ? null : window.location.hostname;
 
-  const hostname = window.location.hostname === 'localhost' ? null : window.location.hostname;
-
-  function hideNotices() {
-    if (!cookies.docCookies.hasItem('browserNoticeDismissed')) {
-      document.body.className += ' browser-notice-active';
-    }
-
-    if (!cookies.docCookies.hasItem('cssNoticeDismissed')) {
-      document.body.className += ' css-notice-active';
-    }
+function hideNotices() {
+  if (!cookies.docCookies.hasItem('browserNoticeDismissed')) {
+    document.body.className += ' browser-notice-active';
   }
 
-  function bindEvents() {
-    const buttons = document.getElementsByClassName('js-close-notice');
-
-    for (let i = 0; i < buttons.length; ++i) {
-      buttons[i].addEventListener('click', closeNotice);
-      buttons[i].addEventListener('click', setCookie);
-    }
+  if (!cookies.docCookies.hasItem('cssNoticeDismissed')) {
+    document.body.className += ' css-notice-active';
   }
+}
 
-  function closeNotice(button) {
-    const notice = button.target.parentNode;
+function bindEvents() {
+  const buttons = document.getElementsByClassName('js-close-notice');
 
-    notice.style.display = 'none';
+  for (let i = 0; i < buttons.length; ++i) {
+    buttons[i].addEventListener('click', closeNotice);
+    buttons[i].addEventListener('click', setCookie);
   }
+}
 
-  function setCookie(button) {
-    const noticeName = button.target.parentNode.classList[1].replace('support-notice--', '');
+function closeNotice(button) {
+  const notice = button.target.parentNode;
 
-    cookies.docCookies.setItem(noticeName + 'NoticeDismissed', true, 'Fri, 31 Dec 9999 23:59:59 GMT', '/', hostname);
-  }
+  notice.style.display = 'none';
+}
 
-  function init() {
-    hideNotices();
-    bindEvents();
-  }
+function setCookie(button) {
+  const noticeName = button.target.parentNode.classList[1].replace('support-notice--', '');
 
-  return {
-    init: init
-  };
-})(window);
+  cookies.docCookies.setItem(noticeName + 'NoticeDismissed', true, 'Fri, 31 Dec 9999 23:59:59 GMT', '/', hostname);
+}
+
+function initNotices() {
+  hideNotices();
+  bindEvents();
+}
+
+export default initNotices;

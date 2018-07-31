@@ -1,83 +1,77 @@
-module.exports = (function() {
+const form = document.querySelector('[data-form]');
+const inputs = document.querySelectorAll('[data-input]');
+const textarea = document.querySelector('[data-textarea]');
+const submitButton = document.querySelector('[data-submit-button]');
 
-  const form = document.querySelector('[data-form]');
-  const inputs = document.querySelectorAll('[data-input]');
-  const textarea = document.querySelector('[data-textarea]');
-  const submitButton = document.querySelector('[data-submit-button]');
+function getInputPattern(input) {
+  const pattern = input.getAttribute('pattern');
+  const regex = RegExp(pattern);
 
-  function getInputPattern(input) {
-    const pattern = input.getAttribute('pattern');
-    const regex = RegExp(pattern);
+  return new RegExp(regex, 'i').test(input.value);
+}
 
-    return new RegExp(regex, 'i').test(input.value);
+function validateInput(input) {
+  const element = input.currentTarget || input;
+  const isValid = getInputPattern(element);
+  const validationMessage = element.nextElementSibling;
+
+  if (isValid && element.value.length !== 0) {
+    element.classList.remove('form__input--invalid');
+    element.classList.add('form__input--valid');
+    validationMessage.classList.remove('form__validation-message--visible');
+  } else {
+    element.classList.add('form__input--invalid');
+    element.classList.remove('form__input--valid');
+    validationMessage.classList.add('form__validation-message--visible');
   }
+}
 
-  function validateInput(input) {
-    const element = input.currentTarget || input;
-    const isValid = getInputPattern(element);
-    const isNotEmpty = element.value.length !== 0;
-    const validationMessage = element.nextElementSibling;
+function validateTextarea(input) {
+  const element = input.currentTarget || input;
+  const isNotEmpty = element.value.length !== 0;
+  const validationMessage = element.nextElementSibling;
 
-    if (isValid && isNotEmpty) {
-      element.classList.remove('form__input--invalid');
-      element.classList.add('form__input--valid');
-      validationMessage.classList.remove('form__validation-message--visible');
-    } else {
-      element.classList.add('form__input--invalid');
-      element.classList.remove('form__input--valid');
-      validationMessage.classList.add('form__validation-message--visible');
-    }
+  if (isNotEmpty) {
+    element.classList.remove('form__textarea--invalid');
+    element.classList.add('form__textarea--valid');
+    validationMessage.classList.remove('form__validation-message--visible');
+  } else {
+    element.classList.add('form__textarea--invalid');
+    element.classList.remove('form__textarea--valid');
+    validationMessage.classList.add('form__validation-message--visible');
   }
+}
 
-  function validateTextarea(input) {
-    const element = input.currentTarget || input;
-    const isNotEmpty = element.value.length !== 0;
-    const validationMessage = element.nextElementSibling;
+function validateAllFields(event) {
+  let firstErrorFound = false;
 
-    if (isNotEmpty) {
-      element.classList.remove('form__textarea--invalid');
-      element.classList.add('form__textarea--valid');
-      validationMessage.classList.remove('form__validation-message--visible');
-    } else {
-      element.classList.add('form__textarea--invalid');
-      element.classList.remove('form__textarea--valid');
-      validationMessage.classList.add('form__validation-message--visible');
-    }
-  }
+  inputs.forEach(input => {
+    validateInput(input);
 
-  function validateAllFields(event) {
-    let firstErrorFound = false;
-
-    inputs.forEach(input => {
-      validateInput(input);
-
-      if (input.classList.contains('form__input--invalid') && !firstErrorFound) {
-        input.focus();
-        firstErrorFound = true;
-      }
-    });
-
-    validateTextarea(textarea);
-
-    if (textarea.classList.contains('form__textarea--invalid') && !firstErrorFound) {
-      textarea.focus();
+    if (input.classList.contains('form__input--invalid') && !firstErrorFound) {
+      input.focus();
       firstErrorFound = true;
     }
+  });
 
-    if (firstErrorFound) {
-      event.preventDefault();
-    }
+  validateTextarea(textarea);
+
+  if (textarea.classList.contains('form__textarea--invalid') && !firstErrorFound) {
+    textarea.focus();
+    firstErrorFound = true;
   }
 
-  function init() {
-    if (form !== null) {
-      inputs.forEach(input => input.addEventListener('change', validateInput));
-      textarea.addEventListener('change', validateTextarea);
-      submitButton.addEventListener('click', validateAllFields);
-    }
+  if (firstErrorFound) {
+    event.preventDefault();
   }
+}
 
-  return {
-    init: init
-  };
-}());
+function initFormValidation() {
+  if (form !== null) {
+    inputs.forEach(input => input.addEventListener('change', validateInput));
+    textarea.addEventListener('change', validateTextarea);
+    submitButton.addEventListener('click', validateAllFields);
+  }
+}
+
+export default initFormValidation;

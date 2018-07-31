@@ -3,8 +3,8 @@
  * @author Alex Clapperton <hi@alexclapperton.co.uk>
  */
 
-import plugins from 'gulp-load-plugins'
-import fs from 'fs'
+import plugins from 'gulp-load-plugins';
+import fs from 'fs';
 
 const $ = plugins()
 

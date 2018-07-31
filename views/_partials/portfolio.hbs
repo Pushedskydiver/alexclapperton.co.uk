@@ -4,20 +4,72 @@
         <div class="portfolio__image-wrapper{{#unless fields.projectData.picture}} lazyload{{/unless}}">
         {{#if fields.projectData.picture}}
             <picture class="lazyload">
-                <source media="(max-width: 50em)" data-srcset="/images/portfolio/{{fields.projectData.src-mobile}}.jpg">
-                <img class="portfolio__📷 lazyload__image lazyload__image--lazy" data-src="/images/portfolio/{{fields.projectData.src-desktop}}.jpg" alt="{{fields.projectData.alt}}" data-lazy>
+                <source
+                    media="(max-width: 50em)"
+                    type="image/webp"
+                    data-srcset="/images/portfolio/{{fields.projectData.src-mobile}}.webp"
+                >
+                <source
+                    media="(max-width: 50em)"
+                    data-srcset="/images/portfolio/{{fields.projectData.src-mobile}}.jpg"
+                >
+                <source
+                    type="image/webp"
+                    data-srcset="/images/portfolio/{{fields.projectData.src-desktop}}.webp"
+                >
+                <img
+                    class="portfolio__📷 lazyload__image lazyload__image--lazy"
+                    data-src="/images/portfolio/{{fields.projectData.src-desktop}}.jpg"
+                    alt="{{fields.projectData.alt}}"
+                    data-lazy
+                >
 
                 <noscript>
-                    <source media="(max-width: 50em)" srcset="/images/portfolio/{{fields.projectData.src-mobile}}.jpg">
-                    <img class="portfolio__📷" src="/images/portfolio/{{fields.projectData.src-desktop}}.jpg" alt="{{fields.projectData.alt}}">
+                    <source
+                        media="(max-width: 50em)"
+                        type="image/webp"
+                        srcset="/images/portfolio/{{fields.projectData.src-mobile}}.webp"
+                    >
+                    <source
+                        media="(max-width: 50em)"
+                        srcset="/images/portfolio/{{fields.projectData.src-mobile}}.jpg"
+                    >
+                    <source
+                        type="image/webp"
+                        srcset="/images/portfolio/{{fields.projectData.src-desktop}}.webp"
+                    >
+                    <img
+                        class="portfolio__📷"
+                        src="/images/portfolio/{{fields.projectData.src-desktop}}.jpg"
+                        alt="{{fields.projectData.alt}}"
+                    >
                 </noscript>
             </picture>
         {{else}}
-            <img class="portfolio__📷 lazyload__image lazyload__image--lazy" data-src="/images/portfolio/{{fields.projectData.src}}.jpg" alt="{{fields.projectData.alt}}" data-lazy>
+            <picture>
+                <source
+                    type="image/webp"
+                    data-srcset="/images/portfolio/{{fields.projectData.src}}.webp"
+                >
+                <img
+                    class="portfolio__📷 lazyload__image lazyload__image--lazy"
+                    data-src="/images/portfolio/{{fields.projectData.src}}.jpg"
+                    alt="{{fields.projectData.alt}}"
+                    data-lazy
+                >
 
-            <noscript>
-                <img class="portfolio__📷" src="/images/portfolio/{{fields.projectData.src}}.jpg" alt="{{fields.projectData.alt}}">
-            </noscript>
+                <noscript>
+                    <source
+                        type="image/webp"
+                        srcset="/images/portfolio/{{fields.projectData.src}}.webp"
+                    >
+                    <img
+                        class="portfolio__📷"
+                        src="/images/portfolio/{{fields.projectData.src}}.jpg"
+                        alt="{{fields.projectData.alt}}"
+                    >
+                </noscript>
+            </picture>
         {{/if}}
         </div>
         <figcaption class="portfolio__caption">

@@ -1,12 +1,15 @@
-(function() {
-  'use strict';
+import initDesktopNav from './common/desktopNavigation';
+import initMobileNav from './common/mobileNavigation';
+import initLazyload from './common/lazyload';
+import initFade from './common/fadeInElements';
+import initFormValidation from './common/formValidation';
+import initNotices from './common/notices';
+import initServiceWorker from './common/swRegister';
 
-  require('./common/desktopNavigation.js').init();
-  require('./common/mobileNavigation.js').init();
-  require('./common/lazyload.js').init();
-  require('./common/fadeInElements.js').init();
-  require('./common/notices.js').init();
-  require('./common/formValidation.js').init();
-  require('./common/swRegister.js').init();
-
-}());
+initDesktopNav();
+initMobileNav();
+initLazyload();
+initFade();
+initFormValidation();
+initNotices();
+initServiceWorker();

@@ -3,7 +3,7 @@
  * @author Alex Clapperton <hi@alexclapperton.co.uk>
  */
 
-import del from 'del'
+import del from 'del';
 
 module.exports = (gulp, data, argv) => {
   gulp.task('clean:all', () => {

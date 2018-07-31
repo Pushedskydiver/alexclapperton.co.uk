@@ -3,10 +3,9 @@
  * @author Alex Clapperton <hi@alexclapperton.co.uk>
  */
 
-// import stylelint from 'stylelint'
-import plugins from 'gulp-load-plugins'
+import plugins from 'gulp-load-plugins';
 
-const $ = plugins()
+const $ = plugins();
 
 module.exports = (gulp, data, argv) => {
   gulp.task('stylelint', () => {

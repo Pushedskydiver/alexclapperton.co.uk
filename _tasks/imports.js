@@ -3,14 +3,14 @@
  * @author Alex Clapperton <hi@alexclapperton.co.uk>
  */
 
-import plugins from 'gulp-load-plugins'
+import plugins from 'gulp-load-plugins';
 
-const $ = plugins()
+const $ = plugins();
 
 const creds = {
   "Author": 	"Alex Clapperton",
   "Website": 	"alexclapperton.co.uk"
-}
+};
 
 module.exports = (gulp, data) => {
   gulp.task('imports:sass', () => {

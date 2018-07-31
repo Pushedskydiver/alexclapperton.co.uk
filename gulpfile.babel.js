@@ -3,8 +3,6 @@
  * @author Alex Clapperton <hi@alexclapperton.co.uk>
  */
 
-'use strict'
-
 import gulp from 'gulp'
 import yargs from 'yargs'
 import runSeq from 'run-sequence'
@@ -51,7 +49,7 @@ gulp.task('default', callback => {
     'clean:all',
     'imports:sass',
     ['styles:sass', 'scripts:compile'],
-    ['images', 'copy:icons'],
+    ['images', 'images:webp', 'copy:icons'],
     ['copy:favicons', 'copy:manifest', 'copy:browser-config', 'copy:fonts', 'copy:serviceWorker'],
     callback
   )

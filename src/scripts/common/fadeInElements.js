@@ -1,65 +1,60 @@
-module.exports = (function(entry) {
+const options = {
+  selector: document.querySelectorAll('[data-fade]'),
+  rootMargin: '0px',
+  threshold: 0.2
+}
 
-  const options = {
-    selector: document.querySelectorAll('[data-fade]'),
-    rootMargin: '0px',
-    threshold: 0.2
+function addFadeClass(element) {
+  element.classList.remove('hide');
+  element.classList.add('fade-in');
+  element.style.transitionDelay = element.getAttribute('data-fade-delay');
+}
+
+function toggleFade(element) {
+  const objectPosition = element.getBoundingClientRect().top;
+  const windowHeight = window.innerHeight;
+
+  if (objectPosition - windowHeight <= 0) {
+    addFadeClass(element);
   }
+}
 
-  function addFadeClass(element) {
-    element.classList.remove('hide');
-    element.classList.add('fade-in');
-    element.style.transitionDelay = element.getAttribute('data-fade-delay');
-  }
+function fadeIn() {
+  options.selector.forEach(element => toggleFade(element));
+}
 
-  function toggleFade(element) {
-    const objectPosition = element.getBoundingClientRect().top;
-    const windowHeight = window.innerHeight;
-
-    if (objectPosition - windowHeight <= 0) {
-      addFadeClass(element);
-    }
-  }
-
-  function fadeIn() {
+function fadeInOnScroll() {
+  const delayFade = setTimeout(() => {
     options.selector.forEach(element => toggleFade(element));
+    clearTimeout(delayFade);
+  }, 500);
+}
+
+// Intersection Observer API
+function applyFadeInToEntry({ intersectionRatio, target }) {
+  if (intersectionRatio >= options.threshold) {
+    addFadeClass(target);
   }
+}
 
-  function fadeInOnScroll() {
-    const delayFade = setTimeout(() => {
-      options.selector.forEach(element => toggleFade(element));
-      clearTimeout(delayFade);
-    }, 500);
-  }
+function callback(entries) {
+  entries.forEach(entry => applyFadeInToEntry(entry));
+}
 
-  // Intersection Observer API
-  function applyFadeInToEntry({intersectionRatio, target} = entry) {
-    if (intersectionRatio >= options.threshold) {
-      addFadeClass(target);
-    }
-  }
+function applyFadein() {
+  const elements = options.selector;
+  const observer = new IntersectionObserver(callback, options);
 
-  function callback(entries) {
-    entries.forEach(applyFadeInToEntry);
-  }
+  elements.forEach(element => observer.observe(element));
+}
 
-  function applyFadein() {
-    const elements = options.selector;
-    const observer = new IntersectionObserver(callback, options);
+function initFade() {
+  if (options.selector.length > 0) {
+    fadeIn();
 
-    elements.forEach(element => observer.observe(element));
-  }
-
-  function init() {
-    if (options.selector.length > 0) {
-      fadeIn();
-
-      'IntersectionObserver' in window ?
+    'IntersectionObserver' in window ?
       applyFadein() : window.addEventListener('scroll', fadeInOnScroll);
-    }
   }
+}
 
-  return {
-    init: init
-  };
-}());
+export default initFade;

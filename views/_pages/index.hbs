@@ -1,6 +1,8 @@
 <main class="info-block notch" id="main">
     <picture class="info-block__picture info-block__picture--home">
+        <source media="(max-width: 39.9375em)" type="image/webp" srcset="/images/alex/alex-square.webp">
         <source media="(max-width: 39.9375em)" srcset="/images/alex/alex-square.jpg">
+        <source media="(min-width: 40em)" type="image/webp" srcset="/images/alex/alex-landscape.webp">
         <source media="(min-width: 40em)" srcset="/images/alex/alex-landscape.jpg">
         <img class="info-block__image" src="/images/alex/alex-landscape.jpg" alt="Portrait of Alex Clapperton.">
     </picture>
@@ -19,11 +21,13 @@
     <div class="portfolio__container hide" data-fade>
         <small class="portfolio__heading-small">Recent</small>
         <h3 class="portfolio__heading-main">Work &amp; projects</h3>
+
         <div class="portfolio__content">
         {{#eachUpTo projects 4}}
             {{>portfolio}}
         {{/eachUpTo}}
         </div>
+
         <a class="portfolio__button button button--secondary" href="/portfolio/">
             View portfolio
             <svg class="button__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" stroke-linecap="round" stroke-linejoin="round" d="M4.5 16.61l7.06 5.65 7.05-5.65m-7.05 5.65V2.5"/></svg>
@@ -35,11 +39,13 @@
     <div class="articles__container hide" data-fade>
         <small class="articles__heading-small">Read my</small>
         <h3 class="articles__heading-main">Latest articles</h3>
+
         <div class="articles__content">
         {{#eachUpTo articles 3}}
           {{>articles}}
         {{/eachUpTo}}
         </div>
+
         <a class="button button--secondary" href="/articles/">
             View articles
             <svg class="button__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" stroke-linecap="round" stroke-linejoin="round" d="M4.5 16.61l7.06 5.65 7.05-5.65m-7.05 5.65V2.5"/></svg>

@@ -3,10 +3,10 @@
  * @author Alex Clapperton <hi@alexclapperton.co.uk>
  */
 
-import webpack from 'webpack'
-import plugins from 'gulp-load-plugins'
+import webpack from 'webpack';
+import plugins from 'gulp-load-plugins';
 
-const $ = plugins()
+const $ = plugins();
 
 module.exports = (gulp, data, argv) => {
   gulp.task('scripts:compile', () => {

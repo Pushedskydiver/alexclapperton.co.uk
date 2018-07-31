@@ -3,15 +3,15 @@
  * @author Alex Clapperton <hi@alexclapperton.co.uk>
  */
 
-import autoprefixer from 'autoprefixer'
-import devtools from 'postcss-devtools'
-import focus from 'postcss-focus'
-import cssnano from 'cssnano'
-import mqpacker from 'css-mqpacker'
-import cleanselectors from 'postcss-minify-selectors'
-import plugins from 'gulp-load-plugins'
+import autoprefixer from 'autoprefixer';
+import devtools from 'postcss-devtools';
+import focus from 'postcss-focus';
+import cssnano from 'cssnano';
+import mqpacker from 'css-mqpacker';
+import cleanselectors from 'postcss-minify-selectors';
+import plugins from 'gulp-load-plugins';
 
-const $ = plugins()
+const $ = plugins();
 
 module.exports = (gulp, data, argv) => {
   const getPostCssPlugins = () => {
