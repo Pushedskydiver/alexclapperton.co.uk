@@ -1,4 +1,4 @@
-const cacheName = 'alexclapperton:0040';
+const cacheName = 'alexclapperton:0041';
 const cacheFiles = [
   '/',
   '/css/main.css',
@@ -40,7 +40,7 @@ self.addEventListener('fetch', event => {
 
 // Empty out any caches that don’t match the ones listed.
 self.addEventListener('activate', event => {
-  const cacheWhitelist = ['alexclapperton:0040'];
+  const cacheWhitelist = ['alexclapperton:0041'];
 
   event.waitUntil(
     caches.keys()
