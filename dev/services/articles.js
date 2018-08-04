@@ -15,7 +15,7 @@ function getArticles(query) {
 }
 
 function getArticlesInCategory(id) {
-  return getArticles({'fields.categories.sys.id[in]': id});
+  return getArticles({'fields.categories.sys.id[in]': id });
 }
 
 module.exports = {

@@ -7,14 +7,14 @@ const projects = require('../services/portfolio');
 const manageUsers = require('../controllers/user.server.controller');
 const notification = require('../controllers/notification.server.controller');
 
-router.use(function (req, res, next) {
+router.use((req, res, next) => {
   articles.getArticles().then(articleCollection => {
     req.articles = articleCollection.items;
     next();
   });
 });
 
-router.use(function (req, res, next) {
+router.use((req, res, next) => {
   projects.getProjects().then(projectsCollection => {
     req.projects = projectsCollection.items;
     next();

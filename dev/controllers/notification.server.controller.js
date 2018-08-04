@@ -1,5 +1,3 @@
-'use strict';
-
 import webpush from 'web-push'
 
 const User = require('../models/user.server.model');

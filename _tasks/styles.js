@@ -30,7 +30,7 @@ module.exports = (gulp, data, argv) => {
       }))
     }
 
-    return postCssPlugins
+    return postCssPlugins;
   }
 
   gulp.task('styles:sass', () => {

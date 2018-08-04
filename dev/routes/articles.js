@@ -22,14 +22,14 @@ router.param('slug', (req, res, next, slug) => {
   });
 });
 
-router.use(function (req, res, next) {
+router.use((req, res, next) => {
   articles.getArticles().then(articleCollection => {
     req.articles = articleCollection.items;
     next();
   });
 });
 
-router.get('/:slug', (req, res, next) => {
+router.get('/:slug', (req, res) => {
   res.header('Cache-Control', 'public, max-age=2592000000');
   res.render('articles/post', {
     title: req.article.articleName,
@@ -44,7 +44,7 @@ router.get('/:slug', (req, res, next) => {
   });
 });
 
-router.get('/', (req, res, next) => {
+router.get('/', (req, res) => {
   res.header('Cache-Control', 'public, max-age=2592000000');
   res.render('articles/index', {
     title: 'Articles',

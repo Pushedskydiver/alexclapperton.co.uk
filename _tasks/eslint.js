@@ -6,7 +6,7 @@
 import plugins from 'gulp-load-plugins';
 import fs from 'fs';
 
-const $ = plugins()
+const $ = plugins();
 
 module.exports = (gulp, data, argv) => {
   function isFixed(file) {

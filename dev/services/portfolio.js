@@ -14,7 +14,4 @@ function getProjects(query) {
   return client.getEntries(query);
 }
 
-module.exports = {
-  getProject,
-  getProjects
-}
+export { getProject, getProjects };

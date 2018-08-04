@@ -125,7 +125,7 @@ function saveSubscriptionID(endpoint, key, auth) {
 function deleteSubscriptionID(endpoint) {
   const subscription = endpoint.substring(endpoint.lastIndexOf('/') + 1, endpoint.length);
 
-  fetch('https://alexclapperton.co.uk/api/user/' + subscription, {
+  fetch(`https://alexclapperton.co.uk/api/user/${subscription}`, {
     method: 'delete',
     headers: {
       'Accept': 'application/json',
