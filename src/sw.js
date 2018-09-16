@@ -1,4 +1,4 @@
-const cacheName = 'alexclapperton:0041';
+const cacheName = 'alexclapperton:0042';
 const cacheFiles = [
   '/',
   '/css/main.css',
@@ -17,9 +17,11 @@ const cacheFiles = [
 
 self.addEventListener('install', event => {
   event.waitUntil(
-    caches
-    .open(cacheName)
-    .then(cache => cache.addAll(cacheFiles))
+    caches.open(cacheName)
+      .then(function (cache) {
+        //console.log('Opened cache');
+        return cache.addAll(cacheFiles);
+      })
   );
 });
 
@@ -27,24 +29,25 @@ self.addEventListener('install', event => {
 self.addEventListener('fetch', event => {
   event.respondWith(
     caches.match(event.request)
-    .then(response => {
-      if (response) {
-        return response;
-      }
-
-      return fetch(event.request);
-    })
-    .catch(() => caches.match('/offline/'))
+      .then(response => {
+        // Grab the asset from SW cache.
+        if (response) {
+          return response;
+        }
+        return fetch(event.request);
+      }).catch(() => {
+        // Can't access the network return an offline page from the cache
+        return caches.match('/offline/');
+      })
   );
 });
 
 // Empty out any caches that don’t match the ones listed.
 self.addEventListener('activate', event => {
-  const cacheWhitelist = ['alexclapperton:0041'];
+  const cacheWhitelist = ['alexclapperton:0042'];
 
   event.waitUntil(
-    caches.keys()
-    .then(cacheNames => {
+    caches.keys().then(cacheNames => {
       return Promise.all(
         cacheNames.map(cacheName => {
           if (cacheWhitelist.indexOf(cacheName) === -1) {
