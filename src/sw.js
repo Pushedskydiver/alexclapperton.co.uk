@@ -18,7 +18,7 @@ const cacheFiles = [
 self.addEventListener('install', event => {
   event.waitUntil(
     caches.open(cacheName)
-      .then(function (cache) {
+      .then(cache => {
         //console.log('Opened cache');
         return cache.addAll(cacheFiles);
       })
