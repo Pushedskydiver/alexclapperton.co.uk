@@ -1,6 +1,7 @@
 // Logo...............Site logo styles.
 
 .logo {
+  position: relative;
   display: inline-block;
   width: 35px;
   height: 35px;
@@ -10,6 +11,15 @@
     width: 45px;
     height: 45px;
   }
+}
+
+.logo__text {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 0;
+  clip: rect(0, 0, 0, 0);
 }
 
 .logo__icon {

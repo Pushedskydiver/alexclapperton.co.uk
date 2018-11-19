@@ -22,7 +22,8 @@ const minifyHtmlData = require(path.resolve(__dirname, '../utils', 'minifyHtml.j
 const app = express();
 
 // Connect to mongodb for push notifications
-mongoose.connect(process.env.MONGO_URL);
+mongoose.connect(process.env.MONGO_URL, { useNewUrlParser: true });
+mongoose.set('useCreateIndex', true);
 
 // View engine setup
 app.set('views', path.join(__dirname, '../views/_pages'));
