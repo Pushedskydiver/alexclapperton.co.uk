@@ -3,20 +3,20 @@
  * @author Alex Clapperton <hi@alexclapperton.co.uk>
  */
 
+import { dest, src } from 'gulp';
 import plugins from 'gulp-load-plugins';
+import { data } from '../gulpfile.babel';
 
 const $ = plugins();
 
-module.exports = (gulp, data) => {
-  gulp.task('images', () => {
-      return gulp.src(data.paths.source.images)
-          .pipe($.imagemin(data.plugin.imgmin))
-          .pipe(gulp.dest(data.paths.dist.images));
-  });
+export function images() {
+  return src(data.paths.source.images)
+    .pipe($.imagemin(data.plugin.imgmin))
+    .pipe(dest(data.paths.dist.images));
+}
 
-  gulp.task('images:webp', () => {
-      return gulp.src(data.paths.source.images)
-        .pipe($.webp())
-        .pipe(gulp.dest(data.paths.dist.images));
-  });
+export function webp() {
+  return src(data.paths.source.images)
+    .pipe($.webp())
+    .pipe(dest(data.paths.dist.images));
 }

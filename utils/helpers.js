@@ -1,3 +1,7 @@
+
+import path from 'path';
+import fs from 'fs';
+
 (function () {
   'use strict';
 
@@ -9,13 +13,25 @@
           return options.inverse(this);
         }
 
-        var result = [ ];
+        const result = [ ];
 
-        for(var i = 0; i < max && i < ary.length; ++i) {
+        for(let i = 0; i < max && i < ary.length; ++i) {
           result.push(options.fn(ary[i]));
         }
 
         return result.join('');
+      },
+      renderScripts: function() {
+        const manifestData = JSON.parse(fs.readFileSync(path.resolve(process.cwd(), 'public', 'js', 'manifest.json'), 'utf8'));
+        const filteredData = Object.keys(manifestData).filter(data => data.endsWith('js')).reverse();
+
+        const tags = filteredData.map(data => {
+          const src = Object.getOwnPropertyDescriptor(manifestData, data);
+
+          return `<script src="/js/${src.value}" defer></script>`;
+        }).join('');
+
+        return tags;
       }
     };
   };

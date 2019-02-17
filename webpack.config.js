@@ -1,8 +1,10 @@
-import webpack from 'webpack'
-import UglifyJsPlugin from 'uglifyjs-webpack-plugin'
+import webpack from 'webpack';
+// import HtmlWebpackPlugin from 'html-webpack-plugin';
+import ManifestPlugin from 'webpack-manifest-plugin';
+import UglifyJsPlugin from 'uglifyjs-webpack-plugin';
 import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
-import glob from 'glob'
-import path from 'path'
+import glob from 'glob';
+import path from 'path';
 
 module.exports = function(argv) {
   const env = process.env.NODE_ENV;
@@ -22,21 +24,23 @@ module.exports = function(argv) {
     },
 
     output: {
-      path: path.resolve(__dirname, 'public/js'),
-      filename: '[name].bundle.js',
+      path: path.resolve(__dirname, 'public', 'js'),
+      filename: '[name].bundle.[contenthash].js',
     },
 
     mode: env || 'development',
 
     module: {
-      rules: [{
-        test: /\.js*/,
-        exclude: /node_modules/,
-        loader: 'babel-loader',
-        options: {
-          presets: ['@babel/preset-env']
+      rules: [
+        {
+          test: /\.js*/,
+          exclude: /node_modules/,
+          loader: 'babel-loader',
+          options: {
+            presets: ['@babel/preset-env']
+          }
         }
-      }]
+      ]
     },
 
     optimization: {
@@ -52,6 +56,7 @@ module.exports = function(argv) {
     },
 
     plugins: [
+      new ManifestPlugin(),
       new webpack.LoaderOptionsPlugin({
         debug: true
       }),

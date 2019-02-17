@@ -4,13 +4,12 @@
  */
 
 import del from 'del';
+import { argv, data } from '../gulpfile.babel';
 
-module.exports = (gulp, data, argv) => {
-  gulp.task('clean:all', () => {
-      if (!argv.prod) {
-        return del([
-          data.paths.dist.base
-        ])
-      }
-  });
+function clean() {
+  if (!argv.prod) {
+    return del([ data.paths.dist.base ]);
+  }
 }
+
+export default clean;

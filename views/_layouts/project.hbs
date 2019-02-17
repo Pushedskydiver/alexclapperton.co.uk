@@ -18,14 +18,13 @@
                 <picture class="browser__picture lazyload">
                     <source media="(max-width: 50em)" data-srcset="/images/portfolio/{{project.slug}}/{{project.slug}}-mobile.jpg">
                     <img class="browser__image lazyload__image lazyload__image--lazy" data-src="/images/portfolio/{{project.slug}}/{{project.slug}}-desktop.jpg" alt="{{project.browserAlt}}" data-lazy>
-                </picture>
 
-                <noscript>
-                    <picture class="browser__picture">
+                    <noscript>
                         <source media="(max-width: 50em)" srcset="/images/portfolio/{{project.slug}}/{{project.slug}}-mobile.jpg">
-                        <img class="browser__image" src="/images/portfolio/{{project.slug}}/{{project.slug}}-desktop.jpg" alt="{{project.browserAlt}}">
-                    </picture>
-                </noscript>
+                        <img class="browser__image" src="/images/portfolio/{{project.slug}}/{{project.slug}}-desktop.jpg"
+                            alt="{{project.browserAlt}}">
+                    </noscript>
+                </picture>
             </div>
         </div>
     </div>

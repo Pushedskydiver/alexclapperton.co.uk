@@ -3,17 +3,15 @@
  * @author Alex Clapperton <hi@alexclapperton.co.uk>
  */
 
-import webpack from 'webpack';
-import plugins from 'gulp-load-plugins';
+import { dest } from 'gulp';
+import webpack from 'webpack-stream';
+import { argv, data } from '../gulpfile.babel';
 
-const $ = plugins();
+function scripts() {
+  const webpackConfig = require('../webpack.config')(argv);
 
-module.exports = (gulp, data, argv) => {
-  gulp.task('scripts:compile', () => {
-      const webpackConfig = require('../webpack.config')(argv);
-
-      return gulp.src('')
-          .pipe($.webpack(webpackConfig, webpack))
-          .pipe(gulp.dest(data.paths.dist.scripts));
-  });
+  return webpack(webpackConfig)
+    .pipe(dest(data.paths.dist.scripts));
 }
+
+export default scripts;

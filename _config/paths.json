@@ -2,18 +2,18 @@
   "source": {
     "base": "./src/",
     "data": "./src/data/",
-    "layouts": "./_layouts/",
-    "partials": "./_partials/",
-    "content": "./src/pages/",
+    "layouts": "./views/_layouts/",
+    "partials": "./views/_partials/",
+    "content": "./views/_pages/",
     "fonts": "./src/fonts/**/*",
     "icons": "./src/icons/*",
     "favicons": "./src/favicons/",
     "images": "./src/images/**/*",
-    "forms": "./src/forms/",
     "scripts": {
+      "base": "./src/scripts/",
       "common": "./src/scripts/common/",
       "vendor": "./src/scripts/vendor/",
-      "dev": "./src/scripts/dev/"
+      "dev": "./src/scripts/vendor/dev/"
     },
     "styles": "./src/styles/"
   },
