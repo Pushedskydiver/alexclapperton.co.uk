@@ -1,15 +1,17 @@
 'use strict';
 
-import express from 'express'
-import mongoose from 'mongoose'
-import path from 'path'
-import hbs from 'express-handlebars'
-import methodOverride from 'express-method-override'
-import bodyParser from 'body-parser'
-import compression from 'compression'
-import json from 'express-json'
-import minifyHtml from 'express-minify-html'
-import helmet from 'helmet'
+import express from 'express';
+import mongoose from 'mongoose';
+import path from 'path';
+import hbs from 'express-handlebars';
+import methodOverride from 'express-method-override';
+import inlineCSS from 'express-inline-css';
+import bodyParser from 'body-parser';
+import compression from 'compression';
+import json from 'express-json';
+
+import minifyHtml from 'express-minify-html';
+import helmet from 'helmet';
 
 const main = require('./routes/index');
 const articles = require('./routes/articles');
@@ -37,6 +39,10 @@ app.engine('.hbs', hbs({
   defaultLayout: 'default.hbs',
   partialsDir: [path.join(__dirname, '../views/_partials')],
   helpers: helpers
+}));
+app.use(inlineCSS({
+  override: true,
+  cssFilePath: path.resolve(process.cwd(), 'public', 'css', 'main.css')
 }));
 app.use(compression());
 app.use(json());

@@ -1,5 +1,4 @@
 import express from 'express'
-import dateFormat from 'dateformat'
 
 const router = express.Router();
 const data = require('../../_data/global.json');

@@ -2,21 +2,35 @@ import express from 'express'
 
 const router = express.Router();
 const data = require('../../_data/global.json');
+const home = require('../services/home');
 const articles = require('../services/articles');
 const projects = require('../services/portfolio');
 const manageUsers = require('../controllers/user.server.controller');
 const notification = require('../controllers/notification.server.controller');
 
 router.use((req, res, next) => {
-  articles.getArticles().then(articleCollection => {
-    req.articles = articleCollection.items;
+  home.getHome().then(data => {
+    req.home = data.items[0].fields;
+    req.heroImage = req.home.heroImage.map(image => image.fields);
+    req.heroImageLandscape = req.heroImage[0].file;
+    req.heroImageSquare = req.heroImage[1].file;
+
     next();
   });
 });
 
 router.use((req, res, next) => {
-  projects.getProjects().then(projectsCollection => {
-    req.projects = projectsCollection.items;
+  articles.getArticles().then(collection => {
+    req.articles = collection.items.map(item => item.fields);
+
+    next();
+  });
+});
+
+router.use((req, res, next) => {
+  projects.getProjects().then(collection => {
+    req.projects = collection.items.map(item => item.fields);
+
     next();
   });
 });
@@ -25,10 +39,25 @@ router.use((req, res, next) => {
 router.get('/', (req, res, next) => {
   res.header('Cache-Control', 'public, max-age=2592000000');
   res.render('index', {
-    title: 'Alex Clapperton',
+    home: true,
+    title: req.home.title,
+    subText: req.home.subText,
     articles: req.articles,
     projects: req.projects,
-    home: true,
+    heroImage: {
+      landscape: {
+        url: `https:${req.heroImageLandscape.url}`,
+        webp: `https:${req.heroImageLandscape.url}?fm=webp`,
+        width: req.heroImageLandscape.details.image.width,
+        height: req.heroImageLandscape.details.image.height,
+      },
+      square: {
+        url: `https:${req.heroImageSquare.url}`,
+        webp: `https:${req.heroImageSquare.url}?fm=webp`,
+        width: req.heroImageSquare.details.image.width,
+        height: req.heroImageSquare.details.image.height,
+      }
+    },
     data: {
       global: data
     }

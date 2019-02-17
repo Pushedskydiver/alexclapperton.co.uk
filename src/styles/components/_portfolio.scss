@@ -90,18 +90,19 @@
 
   @include min(l) {
     &:hover + .portfolio__figure::before,
-    &:hover + .portfolio__figure .portfolio__image-wrapper::before,
+    &:hover + .portfolio__figure .portfolio__picture::before,
     &:hover + .portfolio__figure .portfolio__caption {
       opacity: 1;
     }
   }
 }
 
-.portfolio__image-wrapper {
+.portfolio__picture {
   position: relative;
+  display: block;
 
-  .js & {
-    padding-top: 50%;
+  &:not(&--square) {
+    padding-top: (546 / 800) * 100%;
   }
 
   &::before {
@@ -133,6 +134,10 @@
       opacity: 0;
     }
   }
+}
+
+.portfolio__picture--square {
+  padding-top: (880 / 1000) * 100%;
 }
 
 .portfolio__caption {

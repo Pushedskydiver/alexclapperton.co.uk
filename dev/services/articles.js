@@ -18,7 +18,4 @@ function getArticlesInCategory(id) {
   return getArticles({'fields.categories.sys.id[in]': id });
 }
 
-module.exports = {
-  getArticle,
-  getArticles
-}
+export { getArticle, getArticles }

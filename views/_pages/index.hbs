@@ -1,13 +1,15 @@
 <main class="info-block notch" id="main">
-    <picture class="info-block__picture info-block__picture--home">
-        <source media="(max-width: 39.9375em)" type="image/webp" srcset="/images/alex/alex-square.webp">
-        <source media="(min-width: 40em)" type="image/webp" srcset="/images/alex/alex-landscape.webp">
+    <div class="info-block__image-wrapper info-block__image-wrapper--home">
+        <picture class="info-block__picture">
+            <source media="(max-width: 39.9375em)" type="image/webp" srcset="{{heroImage.square.webp}}">
+            <source media="(min-width: 40em)" type="image/webp" srcset="{{heroImage.landscape.webp}}">
 
-        <source media="(max-width: 39.9375em)" srcset="/images/alex/alex-square.jpg">
-        <source media="(min-width: 40em)" srcset="/images/alex/alex-landscape.jpg">
+            <source media="(max-width: 39.9375em)" srcset="{{heroImage.square.url}}">
+            <source media="(min-width: 40em)" srcset="{{heroImage.landscape.url}}">
 
-        <img class="info-block__image" src="/images/alex/alex-landscape.jpg" alt="Portrait of Alex Clapperton.">
-    </picture>
+            <img class="info-block__image" src="{{heroImage.landscape.url}}" alt="Portrait of Alex Clapperton.">
+        </picture>
+    </div>
 
     <div class="info-block__inner info-block__inner--home">
         <h2 class="info-block__heading">Hi there</h2>
