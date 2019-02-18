@@ -22,11 +22,12 @@ import fs from 'fs';
         return result.join('');
       },
       renderScripts: function() {
-        const manifestData = JSON.parse(fs.readFileSync(path.resolve(process.cwd(), 'public', 'js', 'manifest.json'), 'utf8'));
-        const filteredData = Object.keys(manifestData).filter(data => data.endsWith('js')).reverse();
+        const file = path.resolve(process.cwd(), 'src', 'scripts', 'manifest.json');
+        const contents = JSON.parse(fs.readFileSync(path.resolve(file), 'utf8'));
+        const filteredData = Object.keys(contents).filter(data => data.endsWith('js')).reverse();
 
         const tags = filteredData.map(data => {
-          const src = Object.getOwnPropertyDescriptor(manifestData, data);
+          const src = Object.getOwnPropertyDescriptor(contents, data);
 
           return `<script src="/js/${src.value}" defer></script>`;
         }).join('');

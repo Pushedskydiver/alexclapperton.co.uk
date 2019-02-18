@@ -2,8 +2,19 @@ const cacheName = 'alexclapperton:0043';
 const cacheFiles = [
     '/',
     '/css/main.css',
-    '/js/common.bundle.6547096bc109e8b242a6.js',
-'/js/vendor.bundle.4151916334b33e8b3ca0.js',
+    function scriptsToCache() {
+  var file = _path.default.resolve(process.cwd(), 'src', 'scripts', 'manifest.json');
+
+  var contents = JSON.parse(_fs.default.readFileSync(file, 'utf8'));
+  var filteredData = Object.keys(contents).filter(function (data) {
+    return data.endsWith('js');
+  });
+  return filteredData.map(function (data) {
+    var src = Object.getOwnPropertyDescriptor(contents, data);
+    var result = "'/js/".concat(src.value, "'");
+    return result;
+  }).join(',\n');
+},
     '/fonts/selawik-variable.woff2',
     '/fonts/avenir-next-variable.woff2',
     '/favicons/favicon-72x72.png',

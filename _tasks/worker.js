@@ -11,11 +11,12 @@ import handlebars from 'gulp-compile-handlebars';
 import { data } from '../gulpfile.babel';
 
 function scriptsToCache() {
-  const manifestData = JSON.parse(fs.readFileSync(path.resolve(process.cwd(), 'public', 'js', 'manifest.json'), 'utf8'));
-  const filteredData = Object.keys(manifestData).filter(data => data.endsWith('js'));
+  const file = path.resolve(process.cwd(), 'src', 'scripts', 'manifest.json');
+  const contents = JSON.parse(fs.readFileSync(file, 'utf8'));
+  const filteredData = Object.keys(contents).filter(data => data.endsWith('js'));
 
   return filteredData.map(data => {
-    const src = Object.getOwnPropertyDescriptor(manifestData, data);
+    const src = Object.getOwnPropertyDescriptor(contents, data);
     const result = `'/js/${src.value}'`;
 
     return result;
@@ -24,12 +25,12 @@ function scriptsToCache() {
 
 const helpers = {
   cacheScripts: function(str) {
-    return str.data.root.scripts;
+    return str.data.root.scriptsToCache;
   }
 };
 
 const templatedata = {
-  scriptsToCache: scriptsToCache()
+  scriptsToCache
 };
 
 const hbsOptions = {

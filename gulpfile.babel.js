@@ -54,9 +54,9 @@ function watchFiles() {
 const watchTask = parallel(watchFiles);
 const buildTask = series(
   clean,
-  imports, styles, scripts,
-  images, webp, copyIcons,
-  copyFavicons, copyManifest, copyBrowserConfig, copyFonts, generateServiceWorker, copyServiceWorker
+  parallel(scripts, imports, styles),
+  parallel(images, webp, copyIcons),
+  parallel(copyFavicons, copyManifest, copyBrowserConfig, copyFonts), generateServiceWorker, copyServiceWorker
 );
 
 exports.default = buildTask;

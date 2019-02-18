@@ -46,7 +46,7 @@ app.use(inlineCSS({
 }));
 app.use(compression());
 app.use(json());
-app.use(methodOverride());
+// app.use(methodOverride());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(minifyHtml(minifyHtmlData));

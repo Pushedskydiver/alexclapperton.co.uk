@@ -1,5 +1,4 @@
 import webpack from 'webpack';
-// import HtmlWebpackPlugin from 'html-webpack-plugin';
 import ManifestPlugin from 'webpack-manifest-plugin';
 import UglifyJsPlugin from 'uglifyjs-webpack-plugin';
 import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
@@ -56,7 +55,9 @@ module.exports = function(argv) {
     },
 
     plugins: [
-      new ManifestPlugin(),
+      new ManifestPlugin({
+        fileName: path.join(__dirname, 'src', 'scripts', 'manifest.json')
+      }),
       new webpack.LoaderOptionsPlugin({
         debug: true
       }),
