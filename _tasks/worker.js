@@ -10,27 +10,20 @@ import rename from 'gulp-rename';
 import handlebars from 'gulp-compile-handlebars';
 import { data } from '../gulpfile.babel';
 
-function scriptsToCache() {
-  const file = path.resolve(process.cwd(), 'src', 'scripts', 'manifest.json');
-  const contents = JSON.parse(fs.readFileSync(file, 'utf8'));
-  const filteredData = Object.keys(contents).filter(data => data.endsWith('js'));
+function getScriptsToCache(contents, data) {
+  const src = Object.getOwnPropertyDescriptor(contents, data);
 
-  return filteredData.map(data => {
-    const src = Object.getOwnPropertyDescriptor(contents, data);
-    const result = `'/js/${src.value}'`;
-
-    return result;
-  }).join(',\n');
+  return `'/js/${src.value}'`;
 }
 
 const helpers = {
-  cacheScripts: function(str) {
-    return str.data.root.scriptsToCache;
-  }
-};
+  cacheScripts: function() {
+    const file = path.resolve(process.cwd(), 'src', 'scripts', 'manifest.json');
+    const contents = JSON.parse(fs.readFileSync(file, 'utf8'));
+    const filteredData = Object.keys(contents).filter(data => data.endsWith('js'));
 
-const templatedata = {
-  scriptsToCache
+    return filteredData.map(data => getScriptsToCache(contents, data)).join(',\n');
+  }
 };
 
 const hbsOptions = {
@@ -39,7 +32,7 @@ const hbsOptions = {
 
 function generateServiceWorker() {
   return src(`${data.paths.source.partials}sw.hbs`)
-    .pipe(handlebars(templatedata, hbsOptions))
+    .pipe(handlebars(null, hbsOptions))
     .pipe(rename('sw.js'))
     .pipe(dest(data.paths.source.base));
 }

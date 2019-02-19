@@ -99,17 +99,18 @@
   }
 }
 
-.devices__image-wrapper {
+.devices__picture {
   position: absolute;
   top: 50%;
   left: 50%;
   width: 100%;
   height: 100%;
+  padding-top: 217%;
   transform: translate(-50%, -50%);
   z-index: z(alpha);
 }
 
-.devices__image {
+.devices__picture-image {
   padding-top: 13%;
   padding-right: 5.5%;
   padding-bottom: 13%;

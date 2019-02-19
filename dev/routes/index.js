@@ -14,7 +14,6 @@ router.use((req, res, next) => {
     req.heroImage = req.home.heroImage.map(image => image.fields);
     req.heroImageLandscape = req.heroImage[0].file;
     req.heroImageSquare = req.heroImage[1].file;
-
     next();
   });
 });
@@ -22,7 +21,6 @@ router.use((req, res, next) => {
 router.use((req, res, next) => {
   articles.getArticles().then(collection => {
     req.articles = collection.items.map(item => item.fields);
-
     next();
   });
 });
@@ -30,7 +28,6 @@ router.use((req, res, next) => {
 router.use((req, res, next) => {
   projects.getProjects().then(collection => {
     req.projects = collection.items.map(item => item.fields);
-
     next();
   });
 });
@@ -67,9 +64,9 @@ router.get('/', (req, res, next) => {
 router.get('/about-me/', (req, res, next) => {
   res.header('Cache-Control', 'public, max-age=2592000000');
   res.render('about-me', {
+    about: true,
     title: 'About Me',
     articles: req.articles,
-    about: true,
     data: {
       global: data
     }
@@ -79,10 +76,10 @@ router.get('/about-me/', (req, res, next) => {
 router.get('/offline/', (req, res, next) => {
   res.header('Cache-Control', 'public, max-age=2592000000');
   res.render('offline', {
-    title: 'Oops! It looks like you\'re offline',
-    articles: req.articles,
     offline: true,
     nofollow: true,
+    title: 'Oops! It looks like you\'re offline',
+    articles: req.articles,
     data: {
       global: data
     }
