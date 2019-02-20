@@ -1,10 +1,11 @@
 /**
- * @file styles.js - Styles related Gulp tasks
+ * @file styles.js - Compile scss files to css and hash css
  * @author Alex Clapperton <hi@alexclapperton.co.uk>
  */
 
+import { resolve } from 'path';
 import through from 'through2';
-import fs from 'fs';
+import { readFile, writeFile } from 'fs';
 import { dest, src } from 'gulp';
 import autoprefixer from 'autoprefixer';
 import devtools from 'postcss-devtools';
@@ -39,16 +40,20 @@ function getPostCssPlugins() {
 }
 
 function generateCacheManifest(chunk, enc, cb) {
-  const path = chunk.path.substring(chunk.path.indexOf('main.'), chunk.path.length);
-  const { cache } = obj
+  const file = chunk.path.substring(chunk.path.indexOf('main.'), chunk.path.length);
+  const output = resolve(process.cwd(), 'src', 'cache-manifest.json');
+  const { cache } = obj;
 
-  cache.push(path);
+  cache.push(file);
 
-  const json = JSON.stringify({...cache});
+  readFile(output, (err, data) => {
+    const array = Object.values(JSON.parse(data));
+    const cacheJson = array.filter(item => !item.startsWith('main.'));
 
-  fs.writeFile('manifest.json', json, 'utf8', cb);
+    cacheJson.push(...cache);
 
-  // return cb(null, chunk);
+    writeFile(output, JSON.stringify({ ...cacheJson }), 'utf8', cb);
+  })
 }
 
 function styles() {
@@ -59,8 +64,8 @@ function styles() {
     .pipe($.if(argv.prod, $.cleanCss(data.plugin.cleancss)))
     .pipe($.sourcemaps.write('sourcemaps'))
     .pipe($.hashFilename({ format: '{name}.{hash}{ext}' }))
-    .pipe(through.obj(generateCacheManifest))
-    .pipe(dest(data.paths.dist.styles));
+    .pipe(dest(data.paths.dist.styles))
+    .pipe(through.obj(generateCacheManifest));
 }
 
 export default styles;

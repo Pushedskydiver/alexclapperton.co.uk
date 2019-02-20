@@ -40,10 +40,10 @@ app.engine('.hbs', hbs({
   partialsDir: [path.join(__dirname, '../views/_partials')],
   helpers: helpers
 }));
-app.use(inlineCSS({
-  override: true,
-  cssFilePath: path.resolve(process.cwd(), 'public', 'css', 'main.css')
-}));
+// app.use(inlineCSS({
+//   override: true,
+//   cssFilePath: path.resolve(process.cwd(), 'public', 'css', '*.css')
+// }));
 app.use(compression());
 app.use(json());
 // app.use(methodOverride());

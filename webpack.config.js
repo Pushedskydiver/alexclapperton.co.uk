@@ -56,7 +56,7 @@ module.exports = function(argv) {
 
     plugins: [
       new ManifestPlugin({
-        fileName: path.join(__dirname, 'src', 'scripts', 'manifest.json')
+        fileName: path.join(__dirname, 'src', 'cache-manifest.json')
       }),
       new webpack.LoaderOptionsPlugin({
         debug: true

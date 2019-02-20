@@ -1,6 +1,6 @@
 
-import path from 'path';
-import fs from 'fs';
+import { resolve } from 'path';
+import { readFileSync } from 'fs';
 
 (function () {
   'use strict';
@@ -21,18 +21,31 @@ import fs from 'fs';
 
         return result.join('');
       },
+      renderStylesPreloadTag: function() {
+        const file = resolve(process.cwd(), 'src', 'cache-manifest.json');
+        const contents = JSON.parse(readFileSync(resolve(file), 'utf8'));
+        const cssPath = Object.values(contents).find(item => item.endsWith('.css'));
+
+        return `<link rel="preload" href="/css/${cssPath}" as="style">`;
+      },
+      renderStylesTag: function() {
+        const file = resolve(process.cwd(), 'src', 'cache-manifest.json');
+        const contents = JSON.parse(readFileSync(resolve(file), 'utf8'));
+        const cssPath = Object.values(contents).find(item => item.endsWith('.css'));
+
+        return `<link rel="stylesheet" href="/css/${cssPath}">`;
+
+      },
       renderScripts: function() {
-        const file = path.resolve(process.cwd(), 'src', 'scripts', 'manifest.json');
-        const contents = JSON.parse(fs.readFileSync(path.resolve(file), 'utf8'));
-        const filteredData = Object.keys(contents).filter(data => data.endsWith('js')).reverse();
+        const file = resolve(process.cwd(), 'src', 'cache-manifest.json');
+        const contents = JSON.parse(readFileSync(resolve(file), 'utf8'));
+        const filteredData = Object.values(contents).filter(data => data.endsWith('js')).reverse();
 
-        const tags = filteredData.map(data => {
-          const src = Object.getOwnPropertyDescriptor(contents, data);
-
-          return `<script src="/js/${src.value}" defer></script>`;
+        const scriptTags = filteredData.map(data => {
+          return `<script src="/js/${data}" defer></script>`;
         }).join('');
 
-        return tags;
+        return scriptTags;
       },
       deviceFadeInDelay: function(value) {
         const index = parseInt(value, 10) + 1;

@@ -60,6 +60,7 @@ const buildTask = series(
 );
 
 exports.styles = styles;
+exports.worker = generateServiceWorker;
 exports.default = buildTask;
 exports.watch = watchTask;
 exports.dev = series(buildTask, watchTask);
