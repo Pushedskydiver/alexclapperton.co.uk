@@ -6,31 +6,19 @@
   }
 }
 
-.info-block__image-wrapper {
+.info-block__picture {
+  display: block;
+
   @include min(l) {
     flex-basis: 50%;
     order: 2;
   }
 }
 
-.info-block__image-wrapper--home {
+.info-block__picture--home {
   @include min(xl) {
     flex-basis: 55%;
   }
-}
-
-.info-block__picture {
-  position: relative;
-  display: block;
-}
-
-.info-block__image {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  object-fit: cover;
 }
 
 .info-block__inner {

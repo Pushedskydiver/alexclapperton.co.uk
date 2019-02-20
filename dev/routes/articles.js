@@ -23,8 +23,8 @@ router.param('slug', (req, res, next, slug) => {
 });
 
 router.use((req, res, next) => {
-  articles.getArticles().then(articleCollection => {
-    req.articles = articleCollection.items;
+  articles.getArticles().then(collection => {
+    req.articles = collection.items;
     next();
   });
 });

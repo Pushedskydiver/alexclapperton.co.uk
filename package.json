@@ -50,6 +50,7 @@
     "glob": "^7.1.2",
     "gulp": "^4.0.0",
     "gulp-compile-handlebars": "^0.6.1",
+    "gulp-hash-filename": "^2.0.1",
     "gulp-rename": "^1.4.0",
     "gulp-sass": "^4.0.1",
     "hbs": "~4.0.1",

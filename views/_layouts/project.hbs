@@ -16,12 +16,12 @@
 
             <div class="browser__wrapper">
                 <picture class="browser__picture lazyload">
-                    <source media="(max-width: 50em)" data-srcset="{{browserImage.mobile.url}}">
-                    <img class="browser__image lazyload__image lazyload__image--lazy" data-src="{{browserImage.desktop.url}}" alt="{{project.browserAlt}}" data-lazy>
+                    <source media="(max-width: 50em)" data-srcset="{{browserImage.mobile}}">
+                    <img class="browser__image lazyload__image lazyload__image--lazy" data-src="{{browserImage.desktop}}" alt="{{project.browserAlt}}" data-lazy>
 
                     <noscript>
-                        <source media="(max-width: 50em)" srcset="{{browserImage.mobile.url}}">
-                        <img class="browser__image" src="{{browserImage.desktop.url}}" alt="{{project.browserAlt}}">
+                        <source media="(max-width: 50em)" srcset="{{browserImage.mobile}}">
+                        <img class="browser__image" src="{{browserImage.desktop}}" alt="{{project.browserAlt}}">
                     </noscript>
                 </picture>
             </div>

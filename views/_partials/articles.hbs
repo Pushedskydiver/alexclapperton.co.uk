@@ -1,68 +1,16 @@
 <!-- BEGIN : ARTICLES ITEM -->
 <div class="articles__item">
-    <div class="article__content{{#unless articleData.picture}} lazyload{{/unless}}">
+    <div class="article__content">
         <!-- BEGIN : ARTICLES THUMBNAIL -->
-        {{#if articleData.picture}}
-            <picture class="articles__picture lazyload">
-                <source
-                    media="(max-width: 50em)"
-                    type="image/webp"
-                    data-srcset="/images/articles/featured/{{articleData.src-mobile}}.webp"
-                >
-                <source
-                    media="(max-width: 50em)"
-                    data-srcset="/images/articles/featured/{{articleData.src-mobile}}.jpg"
-                >
-                <source
-                    type="image/webp"
-                    data-srcset="/images/articles/featured/{{articleData.src-desktop}}.webp"
-                >
-                <img
-                    class="articles__img lazyload__image lazyload__image--lazy"
-                    data-src="/images/articles/featured/{{articleData.src-desktop}}.jpg"
-                    alt="{{articleData.alt}}"
-                    data-lazy
-                >
+        <picture class="articles__picture lazyload">
+            <source type="image/webp" data-srcset="https:{{featuredImage.fields.file.url}}?fm=webp">
+            <img class="articles__img lazyload__image lazyload__image--lazy" data-src="https:{{featuredImage.fields.file.url}}" alt="{{articleData.alt}}" data-lazy>
 
-                <noscript>
-                    <source
-                        media="(max-width: 50em)"
-                        type="image/webp"
-                        srcset="/images/articles/featured/{{articleData.src-mobile}}.webp"
-                    >
-                    <source
-                        media="(max-width: 50em)"
-                        srcset="/images/articles/featured/{{articleData.src-mobile}}.jpg"
-                    >
-                    <source
-                        type="image/webp"
-                        data-srcset="/images/articles/featured/{{articleData.src-desktop}}.webp"
-                    >
-                    <img
-                        class="articles__img"
-                        src="/images/articles/featured/{{articleData.src-desktop}}.jpg"
-                        alt="{{alt}}"
-                    >
-                </noscript>
-            </picture>
-        {{else}}
-            <div class="articles__picture lazyload">
-                <img
-                    class="articles__img lazyload__image lazyload__image--lazy"
-                    data-src="/images/articles/featured/{{articleData.src}}.jpg"
-                    alt="{{articleData.alt}}"
-                    data-lazy
-                >
-
-                <noscript>
-                    <img
-                        class="articles__img"
-                        src="/images/articles/featured/{{articleData.src}}.jpg"
-                        alt="{{articleData.alt}}"
-                    >
-                </noscript>
-            </div>
-        {{/if}}
+            <noscript>
+                <sourcet type="image/webp" srcset="https:{{featuredImage.fields.file.url}}?fm=webp">
+                <img class="articles__img " src="https:{{featuredImage.fields.file.url}}" alt="{{articleData.alt}}">
+            </noscript>
+        </picture>
         <!-- END : ARTICLES THUMBNAIL /-->
         <!-- BEGIN : ARTICLES DETAILS -->
         <div class="articles__details">

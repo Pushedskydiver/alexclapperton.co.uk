@@ -51,18 +51,8 @@ router.get('/:slug', (req, res, next) => {
     projectData: req.project.projectData,
     deviceImages: req.deviceImages,
     browserImage: {
-      mobile: {
-        url: `https:${req.browserImageMobile.url}`,
-        webp: `https:${req.browserImageMobile.url}?fm=webp`,
-        width: req.browserImageMobile.details.image.width,
-        height: req.browserImageMobile.details.image.height,
-      },
-      desktop: {
-        url: `https:${req.browserImageDesktop.url}`,
-        webp: `https:${req.browserImageDesktop.url}?fm=webp`,
-        width: req.browserImageDesktop.details.image.width,
-        height: req.browserImageDesktop.details.image.height,
-      }
+      mobile: `https:${req.browserImageMobile.url}`,
+      desktop: `https:${req.browserImageDesktop.url}`
     },
     data: {
       global: data

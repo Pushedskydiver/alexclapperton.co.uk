@@ -33,6 +33,11 @@ import fs from 'fs';
         }).join('');
 
         return tags;
+      },
+      deviceFadeInDelay: function(value) {
+        const index = parseInt(value, 10) + 1;
+
+        return index * 3;
       }
     };
   };

@@ -79,8 +79,8 @@ if (cluster.isMaster) {
     }
 
     const bind = typeof port === 'string'
-      ? 'Pipe ' + port
-      : 'Port ' + port;
+      ? `Pipe ${port}`
+      : `Port ${port}`;
 
     // handle specific listen errors with friendly messages
     switch (error.code) {
@@ -103,14 +103,14 @@ if (cluster.isMaster) {
 
   function onListening() {
     const addr = server.address()
-    const bind = typeof addr === 'string' ? 'pipe ' + addr : 'port ' + addr.port;
+    const bind = typeof addr === 'string' ? `pipe ${addr}` : `port ${addr.port}`;
 
     if (process.env.DYNO) {
       fs.openSync('/tmp/app-initialized', 'w');
     }
 
     if (process.env.NODE_ENV !== 'production') {
-      console.log('Listening on ' + bind);
+      console.log(`Listening on http://localhost:${addr.port}`);
     }
   }
 }
