@@ -4,12 +4,10 @@
  */
 
 import del from 'del';
-import { argv, data } from '../gulpfile.babel';
+import { data } from '../gulpfile.babel';
 
 function clean() {
-  if (!argv.prod) {
-    return del([ data.paths.dist.base ]);
-  }
+  return del([data.paths.dist.base]);
 }
 
 export default clean;

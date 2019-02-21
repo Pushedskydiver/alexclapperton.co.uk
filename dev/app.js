@@ -4,7 +4,6 @@ import express from 'express';
 import mongoose from 'mongoose';
 import path from 'path';
 import hbs from 'express-handlebars';
-import methodOverride from 'express-method-override';
 import inlineCSS from 'express-inline-css';
 import bodyParser from 'body-parser';
 import compression from 'compression';

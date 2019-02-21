@@ -37,13 +37,13 @@ import generateServiceWorker from './_tasks/worker';
 
 function watchFiles() {
   // Watch image files
-  watch(`${data.paths.source.images}**/*`, images);
+  watch(`${data.paths.source.images}**/*`, parallel(images, webp));
 
   // Watch .scss files
-  watch(`${data.paths.source.styles}**/*.scss`, series(styles, stylelint));
+  watch(`${data.paths.source.styles}**/*.scss`, series(styles, stylelint, generateServiceWorker, copyServiceWorker));
 
   // Watch .js files
-  watch(`${data.paths.source.scripts.common}*.js`, series(scripts, eslint));
+  watch(`${data.paths.source.scripts.common}*.js`, series(scripts, eslint, generateServiceWorker, copyServiceWorker));
 }
 
 
