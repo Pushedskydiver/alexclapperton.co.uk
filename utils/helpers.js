@@ -1,5 +1,5 @@
-const resolve = require('path');
-const readFileSync = require('fs');
+const path = require('path');
+const fs = require('fs');
 
 (function () {
   'use strict';
@@ -21,23 +21,23 @@ const readFileSync = require('fs');
         return result.join('');
       },
       renderStylesPreloadTag: function() {
-        const file = resolve(process.cwd(), 'src', 'cache-manifest.json');
-        const contents = JSON.parse(readFileSync(resolve(file), 'utf8'));
+        const file = path.resolve(process.cwd(), 'src', 'cache-manifest.json');
+        const contents = JSON.parse(fs.readFileSync(path.resolve(file), 'utf8'));
         const cssPath = Object.values(contents).find(item => item.endsWith('.css'));
 
         return `<link rel="preload" href="/css/${cssPath}" as="style">`;
       },
       renderStylesTag: function() {
-        const file = resolve(process.cwd(), 'src', 'cache-manifest.json');
-        const contents = JSON.parse(readFileSync(resolve(file), 'utf8'));
+        const file = path.resolve(process.cwd(), 'src', 'cache-manifest.json');
+        const contents = JSON.parse(fs.readFileSync(path.resolve(file), 'utf8'));
         const cssPath = Object.values(contents).find(item => item.endsWith('.css'));
 
         return `<link rel="stylesheet" href="/css/${cssPath}">`;
 
       },
       renderScripts: function() {
-        const file = resolve(process.cwd(), 'src', 'cache-manifest.json');
-        const contents = JSON.parse(readFileSync(resolve(file), 'utf8'));
+        const file = path.resolve(process.cwd(), 'src', 'cache-manifest.json');
+        const contents = JSON.parse(fs.readFileSync(path.resolve(file), 'utf8'));
         const filteredData = Object.values(contents).filter(data => data.endsWith('js')).reverse();
 
         const scriptTags = filteredData.map(data => {
