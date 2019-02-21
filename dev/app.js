@@ -14,6 +14,7 @@ import minifyHtml from 'express-minify-html';
 import helmet from 'helmet';
 
 const main = require('./routes/index');
+const aboutMe = require('./routes/about-me');
 const articles = require('./routes/articles');
 const portfolio = require('./routes/portfolio');
 const contact = require('./routes/contact');
@@ -60,8 +61,8 @@ app.use((req, res, next) => {
 });
 
 app.use('/', main, require('./routes/sitemap'));
-app.use('/about-me/', main);
 app.use('/offline/', main);
+app.use('/about-me/', aboutMe);
 app.use('/articles/', articles);
 app.use('/portfolio/', portfolio);
 app.use('/contact/', contact);

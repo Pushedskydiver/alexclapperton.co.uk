@@ -44,29 +44,13 @@ router.get('/', (req, res, next) => {
     heroImage: {
       landscape: {
         url: `https:${req.heroImageLandscape.url}`,
-        webp: `https:${req.heroImageLandscape.url}?fm=webp`,
-        width: req.heroImageLandscape.details.image.width,
-        height: req.heroImageLandscape.details.image.height,
+        webp: `https:${req.heroImageLandscape.url}?fm=webp`
       },
       square: {
         url: `https:${req.heroImageSquare.url}`,
-        webp: `https:${req.heroImageSquare.url}?fm=webp`,
-        width: req.heroImageSquare.details.image.width,
-        height: req.heroImageSquare.details.image.height,
+        webp: `https:${req.heroImageSquare.url}?fm=webp`
       }
     },
-    data: {
-      global: data
-    }
-  });
-});
-
-router.get('/about-me/', (req, res, next) => {
-  res.header('Cache-Control', 'public, max-age=2592000000');
-  res.render('about-me', {
-    about: true,
-    title: 'About Me',
-    articles: req.articles,
     data: {
       global: data
     }
