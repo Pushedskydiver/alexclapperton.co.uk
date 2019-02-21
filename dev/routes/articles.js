@@ -24,7 +24,7 @@ router.param('slug', (req, res, next, slug) => {
 
 router.use((req, res, next) => {
   articles.getArticles().then(collection => {
-    req.articles = collection.items;
+    req.articles = collection.items.map(item => item.fields);
     next();
   });
 });
