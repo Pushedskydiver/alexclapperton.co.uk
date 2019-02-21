@@ -1,6 +1,5 @@
-
-import { resolve } from 'path';
-import { readFileSync } from 'fs';
+const resolve = require('path');
+const readFileSync = require('fs');
 
 (function () {
   'use strict';
