@@ -32,8 +32,8 @@
         {{/if}}
 
         {{#if about}}
-        <link rel="preload" href="/images/banner/banner-about-mobile.jpg" as="image" media="(max-width: 61.9375em)">
-        <link rel="preload" href="/images/banner/banner-about-desktop.jpg" as="image" media="(min-width: 62em)">
+        <link rel="preload" href="{{heroImage.mobile.url}}?fm=webp" as="image" media="(max-width: 39.9375em)" type="image/webp">
+        <link rel="preload" href="{{heroImage.desktop.url}}?fm=webp" as="image" media="(min-width: 40em)" type="image/webp>
         {{/if}}
 
         <!-- STYLESHEET -->
