@@ -26,6 +26,7 @@
 }
 
 .browser__picture {
+  position: relative;
   padding-top: 77.5%;
 
   @include min(l) {

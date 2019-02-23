@@ -15,9 +15,9 @@
             <svg class="browser__bar" xmlns="http://www.w3.org/2000/svg" width="801" height="23" viewBox="0 0 801 23"><path fill="#f1f1f1" d="M801 23H0V4c0-2.8 3.3-4 6.1-4H797c2.8 0 4.1 1.2 4.1 4v19z"/><path fill="#e74c3c" d="M9.4 11.5a4.7 4.7 0 1 0 9.4 0 4.7 4.7 0 1 0-9.4 0"/><path fill="#f1c40f" d="M24.8 11.5a4.7 4.7 0 1 0 9.4 0 4.7 4.7 0 1 0-9.4 0"/><path fill="#2ecc71" d="M40.2 11.5a4.7 4.7 0 1 0 9.4 0 4.7 4.7 0 1 0-9.4 0"/></svg>
 
             <div class="browser__wrapper">
-                <picture class="browser__picture lazyload">
+                <picture class="browser__picture">
                     <source media="(max-width: 50em)" data-srcset="{{browserImage.mobile}}">
-                    <img class="browser__image lazyload__image lazyload__image--lazy" data-src="{{browserImage.desktop}}" alt="{{project.browserAlt}}" data-lazy>
+                    <img class="browser__image lazyload__image lazyload" data-src="{{browserImage.desktop}}" alt="{{project.browserAlt}}" data-lazy>
 
                     <noscript>
                         <source media="(max-width: 50em)" srcset="{{browserImage.mobile}}">

@@ -2,9 +2,9 @@
 <div class="articles__item">
     <div class="article__content">
         <!-- BEGIN : ARTICLES THUMBNAIL -->
-        <picture class="articles__picture lazyload">
+        <picture class="articles__picture">
             <source type="image/webp" data-srcset="https:{{featuredImage.fields.file.url}}?fm=webp">
-            <img class="articles__img lazyload__image lazyload__image--lazy" data-src="https:{{featuredImage.fields.file.url}}" alt="{{articleData.alt}}" data-lazy>
+            <img class="articles__img lazyload__image lazyload" data-src="https:{{featuredImage.fields.file.url}}" alt="{{articleData.alt}}" data-lazy>
 
             <noscript>
                 <sourcet type="image/webp" srcset="https:{{featuredImage.fields.file.url}}?fm=webp">

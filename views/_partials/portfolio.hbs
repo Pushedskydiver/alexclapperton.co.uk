@@ -4,7 +4,7 @@
         <picture class="portfolio__picture {{#if projectData.isFeaturedImageSquare}}portfolio__picture--square{{/if}} lazyload">
             <source type="image/webp" data-srcset="{{featuredImage.fields.file.url}}?fm=webp">
 
-            <img class="portfolio__image lazyload__image lazyload__image--lazy" data-src="{{featuredImage.fields.file.url}}" alt="{{featuredImage.fields.description}}" data-lazy>
+            <img class="portfolio__image lazyload__image lazyload" data-src="{{featuredImage.fields.file.url}}" alt="{{featuredImage.fields.description}}" data-lazy>
 
             <noscript>
                 <source type="image/webp" srcset="{{featuredImage.fields.file.url}}fm=webp">

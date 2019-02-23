@@ -2,6 +2,10 @@
 
 .lazyload {
   position: relative;
+
+  .js & {
+    opacity: 0;
+  }
 }
 
 .lazyload__image {
@@ -12,16 +16,10 @@
   height: 100%;
 }
 
-.lazyload__image--lazy {
-  .js & {
-    opacity: 0;
-  }
-}
-
 .lazyload--image-loaded {
   display: block;
 
-  .lazyload__image--loaded {
+  .lazyloaded {
     opacity: 0;
     animation-name: fadein;
     animation-duration: 1s;
