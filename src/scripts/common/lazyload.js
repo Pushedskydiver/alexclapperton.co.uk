@@ -9,6 +9,9 @@ function lazyloadConfig() {
 }
 
 function lazyBeforeUnveil({ currentTarget }) {
+  console.log(currentTarget);
+  console.log(currentTarget.parentNode);
+
   currentTarget.parentNode.classList.add('lazyload--image-loaded');
   currentTarget.removeEventListener('lazybeforeunveil', lazyBeforeUnveil);
 }
