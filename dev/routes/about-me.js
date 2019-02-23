@@ -8,7 +8,7 @@ const articles = require('../services/articles');
 router.use((req, res, next) => {
   aboutMe.getAboutMe().then(data => {
     req.aboutMe = data.items[0].fields;
-    req.heroImage = req.home.heroImage.map(image => image.fields);
+    req.heroImage = req.aboutMe.heroImage.map(image => image.fields);
     req.heroImageDesktop = req.heroImage[0].file;
     req.heroImageMobile = req.heroImage[1].file;
     next();
