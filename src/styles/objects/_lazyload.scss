@@ -1,8 +1,6 @@
 // Lazyload...........Generic styles for lazy loading images.
 
 .lazyload {
-  position: relative;
-
   .js & {
     opacity: 0;
   }
