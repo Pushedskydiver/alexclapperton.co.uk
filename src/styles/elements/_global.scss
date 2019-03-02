@@ -44,12 +44,10 @@ a {
   font-weight: $core-tertiary-font-weight;
   text-decoration: none;
 
-  @supports (font-variation-settings: 'wght' 400) {
-    @include min(l) {
-      font-family: $core-variable-font-family;
-      font-weight: $core-font-weight;
-      font-variation-settings: 'wght' $core-tertiary-font-weight;
-    }
+  @include min(l) {
+    font-family: $core-variable-font-family;
+    font-weight: $core-font-weight;
+    font-variation-settings: 'wght' $core-tertiary-font-weight;
   }
 
   @include min(l) {
@@ -60,11 +58,8 @@ a {
 
 strong {
   color: $core-color-brand;
-
-  @supports (font-variation-settings: 'wght' 400) {
-    font-weight: $core-font-weight;
-    font-variation-settings: 'wght' $core-tertiary-font-weight;
-  }
+  font-weight: $core-font-weight;
+  font-variation-settings: 'wght' $core-tertiary-font-weight;
 }
 
 ul,

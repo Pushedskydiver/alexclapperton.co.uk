@@ -7,16 +7,11 @@
   border-bottom-style: $core-border-style;
   border-bottom-color: $core-color-link;
 
-  @supports (font-variation-settings: 'wght' 400) {
-    @include min(l) {
-      font-family: $core-variable-font-family;
-      font-weight: $core-font-weight;
-      font-variation-settings: 'wght' $core-tertiary-font-weight;
-    }
-  }
-
   @include min(l) {
     @include transition-03(background-color);
+    font-family: $core-variable-font-family;
+    font-weight: $core-font-weight;
+    font-variation-settings: 'wght' $core-tertiary-font-weight;
 
     &:hover {
       background-color: $core-color-link;

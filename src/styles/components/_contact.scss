@@ -60,18 +60,12 @@
 
 .contact__list-title {
   color: $core-color-brand;
-  font-family: $core-secondary-font-family;
+  font-family: $core-secondary-variable-font-family;
   font-size: calc(1em + 0.25vw);
   line-height: $core-secondary-line-height;
-  font-weight: $core-secondary-font-weight;
+  font-variation-settings: 'wght' $core-tertiary-font-weight;
   margin-top: 0;
   margin-bottom: ($core-margin / 2);
-
-  @supports (font-variation-settings: 'wght' 400) {
-    font-family: $core-secondary-variable-font-family;
-    font-weight: $core-font-weight;
-    font-variation-settings: 'wght' $core-tertiary-font-weight;
-  }
 }
 
 .contact__list-body {
@@ -87,12 +81,10 @@
   font-family: $core-font-family;
   font-weight: $core-tertiary-font-weight;
 
-  @supports (font-variation-settings: 'wght' 400) {
-    @include min(l) {
-      font-family: $core-variable-font-family;
-      font-weight: $core-font-weight;
-      font-variation-settings: 'wght' $core-tertiary-font-weight;
-    }
+  @include min(l) {
+    font-family: $core-variable-font-family;
+    font-weight: $core-font-weight;
+    font-variation-settings: 'wght' $core-tertiary-font-weight;
   }
 }
 

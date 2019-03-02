@@ -159,10 +159,7 @@
 
   @include min(l) {
     @include transition-03(opacity);
-    padding-top: ($core-padding * 4);
-    padding-right: ($core-padding * 4);
-    padding-bottom: ($core-padding * 4);
-    padding-left: ($core-padding * 4);
+    padding: ($core-padding * 4);
     opacity: 0;
   }
 }

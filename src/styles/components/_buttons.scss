@@ -24,10 +24,8 @@
     padding-left: ($core-padding * 2);
   }
 
-  @supports (font-variation-settings: 'wght' 400) {
-    @include min(l) {
-      font-variation-settings: 'wght' $core-secondary-font-weight;
-    }
+  @include min(l) {
+    font-variation-settings: 'wght' $core-secondary-font-weight;
   }
 }
 

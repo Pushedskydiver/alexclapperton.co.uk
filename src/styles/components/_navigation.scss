@@ -105,14 +105,8 @@
 
   @include min-max(xs, m) {
     font-size: calc(2.5em + 0.5vw);
-    font-weight: $core-tertiary-font-weight;
-  }
-
-  @supports (font-variation-settings: 'wght' 400) {
-    @include min-max(xs, m) {
-      font-weight: $core-font-weight;
-      font-variation-settings: 'wght' $core-secondary-font-weight;
-    }
+    font-weight: $core-font-weight;
+    font-variation-settings: 'wght' $core-secondary-font-weight;
   }
 
   @include min(xs) {

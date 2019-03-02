@@ -27,27 +27,17 @@
   background-color: $core-color-link;
   color: $core-color-brand;
   font-size: calc(3em + 0.5vw);
-  font-weight: $core-secondary-font-weight;
+  font-weight: $core-font-weight;
+  font-variation-settings: 'wght' $core-tertiary-font-weight;
   line-height: 4rem;
   border-radius: 50%;
-
-  @supports (font-variation-settings: 'wght' 400) {
-    font-weight: $core-font-weight;
-    font-variation-settings: 'wght' $core-tertiary-font-weight;
-  }
 }
 
 .quote__body {
   margin-bottom: 0;
   color: $core-color-brand;
-  font-family: $core-secondary-font-family;
+  font-family: $core-secondary-variable-font-family;
   font-size: calc(1.1em + 0.5vw);
   font-style: italic;
-  font-weight: $core-font-weight;
-
-  @supports (font-variation-settings: 'wght' 400) {
-    font-family: $core-secondary-variable-font-family;
-    font-weight: $core-font-weight;
-    font-variation-settings: 'wght' $core-tertiary-font-weight;
-  }
+  font-variation-settings: 'wght' $core-tertiary-font-weight;
 }

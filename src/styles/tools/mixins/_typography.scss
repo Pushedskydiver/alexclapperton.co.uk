@@ -176,16 +176,12 @@ $headings: (
 
     @if $font-family != $core-font-family {
       @if map-has-key($props, variable-fonts) {
-        @supports (font-variation-settings: 'wght' 400) {
-          @include map-to-props($variable-fonts);
-        }
+        @include map-to-props($variable-fonts);
       }
     } @else {
       @if map-has-key($props, variable-fonts) {
         @include min(l) {
-          @supports (font-variation-settings: 'wght' 400) {
-            @include map-to-props($variable-fonts);
-          }
+          @include map-to-props($variable-fonts);
         }
       }
     }
