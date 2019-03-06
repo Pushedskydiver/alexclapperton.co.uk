@@ -4,9 +4,8 @@ import express from 'express';
 import mongoose from 'mongoose';
 import path from 'path';
 import hbs from 'express-handlebars';
-import inlineCSS from 'express-inline-css';
 import bodyParser from 'body-parser';
-import compression from 'compression';
+import shrinkRay from 'shrink-ray';
 import json from 'express-json';
 
 import minifyHtml from 'express-minify-html';
@@ -40,13 +39,8 @@ app.engine('.hbs', hbs({
   partialsDir: [path.join(__dirname, '../views/_partials')],
   helpers: helpers
 }));
-// app.use(inlineCSS({
-//   override: true,
-//   cssFilePath: path.resolve(process.cwd(), 'public', 'css', '*.css')
-// }));
-app.use(compression());
+app.use(shrinkRay());
 app.use(json());
-// app.use(methodOverride());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(minifyHtml(minifyHtmlData));

@@ -19,11 +19,12 @@ function validateInput(input) {
     element.classList.remove('form__input--invalid');
     element.classList.add('form__input--valid');
     validationMessage.classList.remove('form__validation-message--visible');
-  } else {
-    element.classList.add('form__input--invalid');
-    element.classList.remove('form__input--valid');
-    validationMessage.classList.add('form__validation-message--visible');
+    return;
   }
+
+  element.classList.add('form__input--invalid');
+  element.classList.remove('form__input--valid');
+  validationMessage.classList.add('form__validation-message--visible');
 }
 
 function validateTextarea(input) {
@@ -35,11 +36,12 @@ function validateTextarea(input) {
     element.classList.remove('form__textarea--invalid');
     element.classList.add('form__textarea--valid');
     validationMessage.classList.remove('form__validation-message--visible');
-  } else {
-    element.classList.add('form__textarea--invalid');
-    element.classList.remove('form__textarea--valid');
-    validationMessage.classList.add('form__validation-message--visible');
+    return;
   }
+
+  element.classList.add('form__textarea--invalid');
+  element.classList.remove('form__textarea--valid');
+  validationMessage.classList.add('form__validation-message--visible');
 }
 
 function validateAllFields(event) {

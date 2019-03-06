@@ -5,97 +5,73 @@ $headings: (
   sun: (
     default: (
       color: $core-color-brand,
-      font-family: $core-secondary-font-family,
+      font-family: $core-secondary-variable-font-family,
       font-size: calc(3em + 0.5vw),
-      font-weight: $core-secondary-font-weight,
+      font-weight: normal,
+      font-variation-settings: 'wght' $core-tertiary-font-weight,
       line-height: 1.1,
       margin-top: 0,
       margin-bottom: ($core-margin * 1.75)
-    ),
-    variable-fonts: (
-      font-family: $core-secondary-variable-font-family,
-      font-weight: normal,
-      font-variation-settings: 'wght' $core-tertiary-font-weight
     )
   ),
   jupiter: (
     default: (
       color: $core-color-brand,
-      font-family: $core-secondary-font-family,
+      font-family: $core-secondary-variable-font-family,
       font-size: calc(2.3em + 0.5vw),
-      font-weight: $core-secondary-font-weight,
+      font-weight: normal,
+      font-variation-settings: 'wght' $core-tertiary-font-weight,
       line-height: $core-secondary-line-height,
       margin-top: 0,
       margin-bottom: ($core-margin * 1.75)
-    ),
-    variable-fonts: (
-      font-family: $core-secondary-variable-font-family,
-      font-weight: normal,
-      font-variation-settings: 'wght' $core-tertiary-font-weight
     )
   ),
   saturn: (
     default: (
       color: $core-color-brand,
-      font-family: $core-secondary-font-family,
+      font-family: $core-secondary-variable-font-family,
       font-size: calc(2em + 0.5vw),
-      font-weight: $core-secondary-font-weight,
+      font-weight: normal,
+      font-variation-settings: 'wght' $core-tertiary-font-weight,
       line-height: $core-secondary-line-height,
       margin-top: 0,
       margin-bottom: ($core-margin * 1.5)
-    ),
-    variable-fonts: (
-      font-family: $core-secondary-variable-font-family,
-      font-weight: normal,
-      font-variation-settings: 'wght' $core-tertiary-font-weight
     )
   ),
   uranus: (
     default: (
       color: $core-color-brand,
-      font-family: $core-secondary-font-family,
+      font-family: $core-secondary-variable-font-family,
       font-size: calc(1.7em + 0.5vw),
-      font-weight: $core-secondary-font-weight,
+      font-weight: normal,
+      font-variation-settings: 'wght' $core-tertiary-font-weight,
       line-height: $core-secondary-line-height,
       margin-top: 0,
       margin-bottom: ($core-margin * 1.5)
-    ),
-    variable-fonts: (
-      font-family: $core-secondary-variable-font-family,
-      font-weight: normal,
-      font-variation-settings: 'wght' $core-tertiary-font-weight
     )
   ),
   mars: (
     default: (
       color: $core-color-brand,
-      font-family: $core-secondary-font-family,
+      font-family: $core-secondary-variable-font-family,
       font-size: calc(1.3em + 0.5vw),
-      font-weight: $core-secondary-font-weight,
+      font-weight: normal,
+      font-variation-settings: 'wght' $core-tertiary-font-weight,
       line-height: $core-secondary-line-height,
       margin-top: 0,
       margin-bottom: $core-margin
-    ),
-    variable-fonts: (
-      font-family: $core-secondary-variable-font-family,
-      font-weight: normal,
-      font-variation-settings: 'wght' $core-tertiary-font-weight
     )
   ),
   venus: (
     default: (
       color: $core-color-brand,
-      font-family: $core-secondary-font-family,
+      font-family: $core-secondary-variable-font-family,
       font-size: calc(1.1em + 0.5vw),
-      font-weight: $core-secondary-font-weight,
+      font-weight: normal,
+      font-variation-settings: 'wght' 650,
       line-height: $core-secondary-line-height,
       margin-top: 0,
       margin-bottom: $core-margin
-    ),
-    variable-fonts: (
-      font-family: $core-secondary-variable-font-family,
-      font-weight: normal,
-      font-variation-settings: 'wght' 650
     )
   ),
   pluto: (
@@ -174,11 +150,7 @@ $headings: (
   } @else {
     @include map-to-props($default);
 
-    @if $font-family != $core-font-family {
-      @if map-has-key($props, variable-fonts) {
-        @include map-to-props($variable-fonts);
-      }
-    } @else {
+    @if $font-family == $core-font-family {
       @if map-has-key($props, variable-fonts) {
         @include min(l) {
           @include map-to-props($variable-fonts);
