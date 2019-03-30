@@ -21,7 +21,8 @@
     "production": "cross-env NODE_ENV=production && npm run serve",
     "serve": "node ./prod/bin/www.js",
     "start": "npm run production",
-    "test": "echo \"Error: no test specified\""
+    "test": "echo \"Error: no test specified\"",
+    "heroku-postbuild": "echo Skip build on Heroku"
   },
   "config": {
     "accessToken": "73940eda44dadba56db69ec6395029036dbd43845eb476473e17a79f627d351a",
