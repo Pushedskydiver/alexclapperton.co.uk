@@ -1,6 +1,8 @@
 // Info Block.........Info block styles.
 
 .info-block {
+  background-color: var(--color-fade);
+
   @include min(l) {
     @include flex(wrap, row, space-between, null);
   }
@@ -29,7 +31,6 @@
 
   @include min(l) {
     @include flex(null, column, center, null);
-    background-color: darken($core-color-background, 1%);
     padding-top: ($core-padding * 4.5);
     padding-right: 4vw;
     padding-bottom: ($core-padding * 4.5);

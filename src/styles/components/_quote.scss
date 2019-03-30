@@ -35,7 +35,7 @@
 
 .quote__body {
   margin-bottom: 0;
-  color: $core-color-brand;
+  color: var(--color-heading);
   font-family: $core-secondary-variable-font-family;
   font-size: calc(1.1em + 0.5vw);
   font-style: italic;

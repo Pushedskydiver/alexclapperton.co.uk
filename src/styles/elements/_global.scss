@@ -6,26 +6,48 @@
   box-sizing: border-box;
 }
 
+:root {
+  --color-brand: #{$core-color-brand};
+  --color-background: #{$core-color-background};
+  --color-foreground: #{$core-color-foreground};
+  --color-neutral: #{$core-color-neutral};
+  --color-fade: #{$core-color-fade};
+  --color-heading: #{$core-color-brand};
+  --color-body: #{$core-color-body};
+  --color-link: #{$core-color-brand};
+
+  @media (prefers-color-scheme: dark) {
+    --color-brand: #{$dark-mode-color-brand};
+    --color-background: #{$dark-mode-color-background};
+    --color-foreground: #{$dark-mode-color-foreground};
+    --color-neutral: #{$dark-mode-color-neutral};
+    --color-fade: #{$dark-mode-color-background};
+    --color-heading: #{$core-color-background};
+    --color-body: #{$dark-mode-color-body};
+    --color-link: #{$core-color-link};
+  }
+}
+
 html {
   font-size: $core-font-size;
 }
 
 body {
-  color: $core-color-body;
-  background-color: $core-color-background;
+  color: var(--color-body);
+  background-color: var(--color-background);
   margin: 0;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
 }
 
 body ::-moz-selection {
-  background: $core-color-brand;
-  color: $core-color-background;
+  background: var(--color-foreground);
+  color: var(--color-background);
 }
 
 body ::selection {
-  background: $core-color-brand;
-  color: $core-color-background;
+  background: var(--color-foreground);
+  color: var(--color-background);
 }
 
 h1 {
@@ -39,7 +61,7 @@ p {
 }
 
 a {
-  color: $core-color-brand;
+  color: var(--color-link);
   font-family: $core-font-family;
   font-weight: $core-tertiary-font-weight;
   text-decoration: none;

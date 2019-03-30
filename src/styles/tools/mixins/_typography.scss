@@ -4,7 +4,7 @@
 $headings: (
   sun: (
     default: (
-      color: $core-color-brand,
+      color: var(--color-heading),
       font-family: $core-secondary-variable-font-family,
       font-size: calc(3em + 0.5vw),
       font-weight: normal,
@@ -16,7 +16,7 @@ $headings: (
   ),
   jupiter: (
     default: (
-      color: $core-color-brand,
+      color: var(--color-heading),
       font-family: $core-secondary-variable-font-family,
       font-size: calc(2.3em + 0.5vw),
       font-weight: normal,
@@ -28,7 +28,7 @@ $headings: (
   ),
   saturn: (
     default: (
-      color: $core-color-brand,
+      color: var(--color-heading),
       font-family: $core-secondary-variable-font-family,
       font-size: calc(2em + 0.5vw),
       font-weight: normal,
@@ -40,7 +40,7 @@ $headings: (
   ),
   uranus: (
     default: (
-      color: $core-color-brand,
+      color: var(--color-heading),
       font-family: $core-secondary-variable-font-family,
       font-size: calc(1.7em + 0.5vw),
       font-weight: normal,
@@ -52,7 +52,7 @@ $headings: (
   ),
   mars: (
     default: (
-      color: $core-color-brand,
+      color: var(--color-heading),
       font-family: $core-secondary-variable-font-family,
       font-size: calc(1.3em + 0.5vw),
       font-weight: normal,
@@ -64,7 +64,7 @@ $headings: (
   ),
   venus: (
     default: (
-      color: $core-color-brand,
+      color: var(--color-heading),
       font-family: $core-secondary-variable-font-family,
       font-size: calc(1.1em + 0.5vw),
       font-weight: normal,
@@ -76,7 +76,7 @@ $headings: (
   ),
   pluto: (
     default: (
-      color: $core-color-body,
+      color: var(--color-body),
       font-family: $core-font-family,
       font-size: calc(1em + 0.5vw),
       font-variation-settings: 'wght' $core-font-weight,
@@ -92,7 +92,7 @@ $headings: (
   ),
   earth: (
     default: (
-      color: $core-color-body,
+      color: var(--color-body),
       font-family: $core-font-family,
       font-size: calc(#{$core-font-size} + 0.15vw),
       font-weight: $core-tertiary-font-weight,
@@ -108,7 +108,7 @@ $headings: (
   ),
   moon: (
     default: (
-      color: $core-color-body,
+      color: var(--color-body),
       font-family: $core-font-family,
       font-size: calc(0.8em + 0.15vw),
       font-weight: $core-tertiary-font-weight,

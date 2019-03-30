@@ -151,11 +151,12 @@
 
 .nav__link {
   display: block;
+  color: $core-color-neutral;
   font-family: inherit;
   text-decoration: none;
 
-  @include max(m) {
-    color: $core-color-neutral;
+  @include min(m) {
+    color: var(--color-foreground);
   }
 }
 

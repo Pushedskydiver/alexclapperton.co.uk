@@ -2,7 +2,7 @@
 
 .articles {
   @include container;
-  background-color: darken($core-color-background, 4%);
+  background-color: var(--color-fade);
   padding-top: ($core-padding * 3);
   padding-bottom: ($core-padding * 3);
 
@@ -58,7 +58,6 @@
 
 .articles__details {
   @include flex(null, column, space-between, null);
-  background-color: $core-color-background;
   padding-top: $core-padding;
   padding-right: $core-padding;
   padding-bottom: $core-padding;
@@ -68,6 +67,10 @@
   @include min(l) {
     padding-top: ($core-padding * 2);
     padding-bottom: ($core-padding * 2);
+  }
+
+  @media (prefers-color-scheme: dark) {
+    background-color: var(--color-neutral);
   }
 }
 

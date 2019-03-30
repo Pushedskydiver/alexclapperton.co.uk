@@ -2,6 +2,7 @@
 
 .banner {
   @include container;
+  // background-color: var(--color-brand);
 
   &:not(&--home):not(&--404) {
     height: 550px;
@@ -134,7 +135,7 @@
 .banner__scroll-link {
   @include text(earth);
   @include flex(null, row, null, center);
-  color: $core-color-brand;
+  color: var(--color-link);
   margin-bottom: 0;
   text-decoration: none;
   align-self: flex-start;
@@ -144,7 +145,7 @@
   width: 16px;
   height: 16px;
   margin-left: ($core-margin / 2);
-  stroke: $core-color-brand;
+  stroke: var(--color-link);
   stroke-width: 3;
   vertical-align: middle;
 }
