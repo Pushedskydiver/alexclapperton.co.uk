@@ -15,6 +15,7 @@
   --color-heading: #{$core-color-brand};
   --color-body: #{$core-color-body};
   --color-link: #{$core-color-brand};
+  --color-danger: #{$core-color-danger};
 
   @media (prefers-color-scheme: dark) {
     --color-brand: #{$dark-mode-color-brand};
@@ -25,6 +26,7 @@
     --color-heading: #{$core-color-background};
     --color-body: #{$dark-mode-color-body};
     --color-link: #{$core-color-link};
+    --color-danger: #{$dark-mode-color-danger};
   }
 }
 
@@ -161,8 +163,4 @@ hr {
   margin: ($core-margin * 2) 0;
   border-color: $core-color-foreground;
   opacity: 0.1;
-}
-
-svg {
-  @include transition-03(all);
 }

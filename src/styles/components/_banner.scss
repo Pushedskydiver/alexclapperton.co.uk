@@ -2,7 +2,6 @@
 
 .banner {
   @include container;
-  // background-color: var(--color-brand);
 
   &:not(&--home):not(&--404) {
     height: 550px;
@@ -31,7 +30,7 @@
 }
 
 .banner--dark {
-  background-color: $core-color-brand;
+  background-color: var(--color-brand);
 }
 
 .banner__container {

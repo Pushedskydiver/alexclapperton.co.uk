@@ -16,5 +16,13 @@
     &:hover {
       background-color: $core-color-link;
     }
+
+    @media (prefers-color-scheme: dark) {
+      @include transition-03(all);
+
+      &:hover {
+        color: var(--color-brand);
+      }
+    }
   }
 }

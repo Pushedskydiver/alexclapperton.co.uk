@@ -3,13 +3,16 @@
 .project {
   @include container;
   padding-top: ($core-padding * 3);
+  padding-bottom: ($core-padding * 3);
 
   @include min(m) {
     padding-top: ($core-padding * 4);
+    padding-bottom: ($core-padding * 4);
   }
 
   @include min(l) {
     padding-top: ($core-padding * 4.5);
+    padding-bottom: ($core-padding * 4.5);
   }
 }
 

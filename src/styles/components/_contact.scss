@@ -48,6 +48,10 @@
     padding-bottom: ($core-padding * 3);
     padding-left: ($core-padding * 2.5);
   }
+
+  @media (prefers-color-scheme: dark) {
+    background-color: var(--color-brand);
+  }
 }
 
 .contact__sidebar-title {
@@ -59,7 +63,7 @@
 }
 
 .contact__list-title {
-  color: $core-color-brand;
+  color: var(--color-heading);
   font-family: $core-secondary-variable-font-family;
   font-size: calc(1em + 0.25vw);
   line-height: $core-secondary-line-height;

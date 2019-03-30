@@ -75,14 +75,9 @@
   height: 18px;
   margin-top: -0.15em;
   margin-left: ($core-margin / 2);
-  stroke: $core-color-brand;
+  stroke: currentColor;
   stroke-width: 3;
   vertical-align: middle;
-
-  .button--primary:hover &,
-  .button--secondary:hover & {
-    stroke: $core-color-background;
-  }
 }
 
 .button--nav-icon {

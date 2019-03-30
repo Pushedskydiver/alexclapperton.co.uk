@@ -11,22 +11,22 @@ $buttons: (
       border-color: $core-color-link
     ),
     hover: (
-      background-color: $core-color-brand,
-      color: $core-color-background,
-      border-color: $core-color-brand
+      background-color: var(--color-foreground),
+      color: var(--color-background),
+      border-color: var(--color-foreground)
     )
   ),
   secondary: (
     default: (
       background-color: transparent,
-      color: $core-color-brand,
+      color: var(--color-foreground),
       border-width: 2px,
       border-style: $core-border-style,
-      border-color: $core-color-brand
+      border-color: var(--color-foreground)
     ),
     hover: (
-      background-color: $core-color-brand,
-      color: $core-color-background
+      background-color: var(--color-foreground),
+      color: var(--color-background)
     )
   ),
   disabled: (
