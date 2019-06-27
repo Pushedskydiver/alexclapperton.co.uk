@@ -59,6 +59,7 @@ const buildTask = series(
   parallel(copyFavicons, copyManifest, copyBrowserConfig, copyFonts), generateServiceWorker, copyServiceWorker
 );
 
+exports.scripts = scripts;
 exports.default = buildTask;
 exports.watch = watchTask;
 exports.dev = series(buildTask, watchTask);

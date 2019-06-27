@@ -1,9 +1,8 @@
 const cacheName = 'alexclapperton:0044';
 const cacheFiles = [
     '/',
-    '/css/main.4e38eaaf87ff7d552987361a71600c09.css',
-    '/js/common.bundle.dde47839d68f18332444.js',
-	'/js/vendor.bundle.1c7cea0209e0fe4d2c10.js',
+    '/css/main.5d84893d13f0df15e612a4b993d6496e.css',
+    ,
     '/fonts/selawik-variable.woff2',
     '/fonts/avenir-next-variable.woff2',
     '/favicons/favicon-72x72.png',

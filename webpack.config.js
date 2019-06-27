@@ -1,30 +1,71 @@
-import webpack from 'webpack';
-import ManifestPlugin from 'webpack-manifest-plugin';
-import UglifyJsPlugin from 'uglifyjs-webpack-plugin';
-import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
-import glob from 'glob';
-import path from 'path';
+const webpack = require('webpack');
+const ManifestPlugin = require('webpack-manifest-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
+const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
+const glob = require('glob');
+const path = require('path');
 
-module.exports = function(argv) {
+function Bundle() {
+  const prod = process.argv.includes('--prod');
   const env = process.env.NODE_ENV;
-  const vendorPath = path.resolve(__dirname, 'src/scripts/vendor');
+  // const vendorPath = path.resolve(__dirname, 'src/scripts/vendor');
   const plugin = require('./_config/plugins.json');
 
-  let webpackConfig = {
+  const alias = {
+    'cookies': 'mozilla-doc-cookies/doccookies.js',
+    'zenscroll': 'zenscroll/zenscroll.js',
+    'prism': 'prism/lib/index.js',
+    Src: path.resolve(__dirname, 'src')
+  };
+
+  const plugins = [
+    new ManifestPlugin({
+      fileName: path.join(__dirname, 'src', 'cache-manifest.json')
+    }),
+    new HtmlWebpackPlugin({
+      inject: false,
+      filename: path.resolve(__dirname, 'views', '_partials', 'scripts.hbs'),
+      template: path.resolve(__dirname, 'views', '_templates', 'scripts.hbs'),
+      chunks: ['common']
+    }),
+    new webpack.LoaderOptionsPlugin({
+      debug: true
+    }),
+    // new BundleAnalyzerPlugin()
+  ];
+
+  const BabelLoader = {
+    loader: 'babel-loader',
+    options: {
+      presets: [
+        ['@babel/preset-env', {
+          targets: {
+            browsers: ['>0.25%', 'ie 11', 'not op_mini all']
+          },
+          modules: false
+        }]
+      ],
+      plugins: [
+        '@babel/plugin-syntax-dynamic-import'
+      ]
+    },
+  };
+
+  return {
     cache: false,
 
-    devtool: !argv.prod ? 'source-map' : 'eval',
+    devtool: !prod ? 'source-map' : 'eval',
 
     entry : {
-      common: path.resolve(__dirname, 'src/scripts/main.js'),
-      vendor: argv.prod ?
-      glob.sync('./src/scripts/vendor/*.js') :
-      glob.sync('./src/scripts/vendor/**/*.js')
+      common: path.resolve(__dirname, 'src/scripts/main.js')
     },
 
     output: {
       path: path.resolve(__dirname, 'public', 'js'),
-      filename: '[name].bundle.[contenthash].js',
+      filename: '[name].bundle.js?cb=[chunkhash]',
+      chunkFilename: '[id].chunk.js?cb=[chunkhash]',
+      publicPath: '/js/'
     },
 
     mode: env || 'development',
@@ -34,16 +75,13 @@ module.exports = function(argv) {
         {
           test: /\.js*/,
           exclude: /node_modules/,
-          loader: 'babel-loader',
-          options: {
-            presets: ['@babel/preset-env']
-          }
+          use: [BabelLoader]
         }
       ]
     },
 
     optimization: {
-      minimizer: argv.prod ?
+      minimizer: prod ?
       [new UglifyJsPlugin(plugin.uglify)] :
       [new UglifyJsPlugin({
         uglifyOptions: {
@@ -54,28 +92,15 @@ module.exports = function(argv) {
       })]
     },
 
-    plugins: [
-      new ManifestPlugin({
-        fileName: path.join(__dirname, 'src', 'cache-manifest.json')
-      }),
-      new webpack.LoaderOptionsPlugin({
-        debug: true
-      }),
-      // new BundleAnalyzerPlugin()
-    ],
+    plugins,
 
     resolve: {
-      alias: {
-        'cookies': path.join(vendorPath, 'cookies'),
-        'zenscroll': path.join(vendorPath, 'zenscroll-min'),
-        'lazyload': path.join(vendorPath, 'lazyload.min'),
-        'prism' : path.join(vendorPath, 'prism')
-      },
+      alias,
       extensions: ['.js']
     },
 
     watch: false
   };
-
-  return webpackConfig;
 };
+
+module.exports = Bundle();

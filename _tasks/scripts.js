@@ -1,17 +1,13 @@
 /**
- * @file scripts.js - Combine scripts into single file and uglify
+ * @file scripts.js - Bundle scripts and uglify with webpack
  * @author Alex Clapperton <hi@alexclapperton.co.uk>
+ * @template webpack.config.js
  */
 
-import { dest } from 'gulp';
-import webpack from 'webpack-stream';
-import { argv, data } from '../gulpfile.babel';
+import run from 'gulp-run';
 
 function scripts() {
-  const webpackConfig = require('../webpack.config')(argv);
-
-  return webpack(webpackConfig)
-    .pipe(dest(data.paths.dist.scripts));
+  return run('npm run webpack').exec();
 }
 
 export default scripts;
