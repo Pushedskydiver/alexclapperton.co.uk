@@ -21,6 +21,8 @@ function fadeInElements() {
   }
 
   function fadeIn() {
+    console.log('fadeIn');
+
     options.selector.forEach(element => toggleFade(element));
   }
 
@@ -43,6 +45,8 @@ function fadeInElements() {
   }
 
   function applyFadein() {
+    console.log('applyFadein');
+
     const elements = options.selector;
     const observer = new IntersectionObserver(callback, options);
 
@@ -50,7 +54,11 @@ function fadeInElements() {
   }
 
   function init() {
+    console.log('init');
+
     if (options.selector.length > 0) {
+      console.log('options.selector.length');
+
       fadeIn();
 
       'IntersectionObserver' in window ?

@@ -13,7 +13,7 @@ function Bundle() {
   const plugin = require('./_config/plugins.json');
 
   const alias = {
-    'cookies': 'mozilla-doc-cookies/doccookies.js',
+    'cookies': 'mozilla-doc-cookies/docCookies.js',
     'zenscroll': 'zenscroll/zenscroll.js',
     'prism': 'prism/lib/index.js',
     Src: path.resolve(__dirname, 'src')

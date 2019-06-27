@@ -4,11 +4,11 @@ function notices() {
   const hostname = window.location.hostname === 'localhost' ? null : window.location.hostname;
 
   function hideNotices() {
-    if (!cookies.docCookies.hasItem('browserNoticeDismissed')) {
+    if (!cookies.hasItem('browserNoticeDismissed')) {
       document.body.className += ' browser-notice-active';
     }
 
-    if (!cookies.docCookies.hasItem('cssNoticeDismissed')) {
+    if (!cookies.hasItem('cssNoticeDismissed')) {
       document.body.className += ' css-notice-active';
     }
   }
@@ -31,7 +31,7 @@ function notices() {
   function setCookie(button) {
     const noticeName = button.target.parentNode.classList[1].replace('support-notice--', '');
 
-    cookies.docCookies.setItem(noticeName + 'NoticeDismissed', true, 'Fri, 31 Dec 9999 23:59:59 GMT', '/', hostname);
+    cookies.setItem(noticeName + 'NoticeDismissed', true, 'Fri, 31 Dec 9999 23:59:59 GMT', '/', hostname);
   }
 
   function init() {

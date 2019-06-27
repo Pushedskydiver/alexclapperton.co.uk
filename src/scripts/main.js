@@ -1,4 +1,5 @@
 import 'lazysizes';
+import 'zenscroll';
 
 function initModule(module, element = null) {
   module.default.init(element);
@@ -48,12 +49,9 @@ import(/* webpackChunkName: "desktop-navigation" */ 'Src/scripts/common/desktopN
 
 observe(() => {
   import(/* webpackChunkName: "fade-in-elements" */ 'Src/scripts/common/fadeInElements').then(initModule).catch(err => console.error(`Error in: fadeInElements - ${err}`));
-}, document.querySelectorAll('[data-component="fade-in-elements"]'));
+}, document.querySelectorAll('[data-fade]'));
 
 observe(() => {
   import(/* webpackChunkName: "form-validation" */ 'Src/scripts/common/formValidation').then(initModule).catch(err => console.error(`Error in: formValidation - ${err}`));
-}, document.querySelectorAll('[data-component="form-validation"]'));
+}, document.querySelectorAll('[data-form]'));
 
-observe(() => {
-  import(/* webpackChunkName: "form-validation" */ 'Src/scripts/common/formValidation').then(initModule).catch(err => console.error(`Error in: formValidation - ${err}`));
-}, document.querySelectorAll('[data-component="form-validation"]'));
