@@ -25,7 +25,7 @@ function getPostCssPlugins() {
     devtools(),
     focus(),
     cleanselectors(),
-    autoprefixer(data.plugin.autoprefixer),
+    autoprefixer(),
     mqpacker(data.plugin.mqpacker),
     cssnano(data.plugin.cssnano)
   ];
