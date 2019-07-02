@@ -35,17 +35,6 @@ const fs = require('fs');
         return `<link rel="stylesheet" href="/css/${cssPath}">`;
 
       },
-      renderScripts: function() {
-        const file = path.resolve(process.cwd(), 'src', 'cache-manifest.json');
-        const contents = JSON.parse(fs.readFileSync(path.resolve(file), 'utf8'));
-        const filteredData = Object.values(contents).filter(data => data.endsWith('js')).reverse();
-
-        const scriptTags = filteredData.map(data => {
-          return `<script src="/js/${data}" defer></script>`;
-        }).join('');
-
-        return scriptTags;
-      },
       deviceFadeInDelay: function(value) {
         const index = parseInt(value, 10) + 1;
 

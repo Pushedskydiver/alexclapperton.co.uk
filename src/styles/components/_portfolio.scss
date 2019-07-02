@@ -140,6 +140,16 @@
   padding-top: (880 / 1000) * 100%;
 }
 
+.portfolio__image {
+  .no-js & {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+}
+
 .portfolio__caption {
   position: absolute;
   bottom: 0;

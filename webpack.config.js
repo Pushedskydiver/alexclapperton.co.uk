@@ -3,13 +3,11 @@ const ManifestPlugin = require('webpack-manifest-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
-const glob = require('glob');
 const path = require('path');
 
 function Bundle() {
   const prod = process.argv.includes('--prod');
   const env = process.env.NODE_ENV;
-  // const vendorPath = path.resolve(__dirname, 'src/scripts/vendor');
   const plugin = require('./_config/plugins.json');
 
   const alias = {

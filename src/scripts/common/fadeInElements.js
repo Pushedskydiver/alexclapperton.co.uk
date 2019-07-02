@@ -1,6 +1,5 @@
 function fadeInElements() {
   const options = {
-    selector: document.querySelectorAll('[data-fade]'),
     rootMargin: '0px',
     threshold: 0.2
   }
@@ -20,15 +19,13 @@ function fadeInElements() {
     }
   }
 
-  function fadeIn() {
-    console.log('fadeIn');
-
-    options.selector.forEach(element => toggleFade(element));
+  function fadeIn(element) {
+    toggleFade(element)
   }
 
-  function fadeInOnScroll() {
+  function fadeInOnScroll(element) {
     const delayFade = setTimeout(() => {
-      options.selector.forEach(element => toggleFade(element));
+      toggleFade(element)
       clearTimeout(delayFade);
     }, 500);
   }
@@ -44,26 +41,19 @@ function fadeInElements() {
     entries.forEach(entry => applyFadeInToEntry(entry));
   }
 
-  function applyFadein() {
-    console.log('applyFadein');
-
-    const elements = options.selector;
+  function applyFadein(element) {
     const observer = new IntersectionObserver(callback, options);
 
-    elements.forEach(element => observer.observe(element));
+    observer.observe(element)
   }
 
-  function init() {
+  function init(element) {
     console.log('init');
 
-    if (options.selector.length > 0) {
-      console.log('options.selector.length');
+    fadeIn(element);
 
-      fadeIn();
-
-      'IntersectionObserver' in window ?
-        applyFadein() : window.addEventListener('scroll', fadeInOnScroll);
-    }
+    'IntersectionObserver' in window ?
+      applyFadein(element) : window.addEventListener('scroll', () => fadeInOnScroll(element));
   }
 
   return {

@@ -1,6 +1,10 @@
 import 'lazysizes';
 import 'zenscroll';
 
+const html = document.querySelector('html');
+
+html.classList.remove('no-js');
+
 function initModule(module, element = null) {
   module.default.init(element);
 }
@@ -47,8 +51,8 @@ import(/* webpackChunkName: "desktop-navigation" */ 'Src/scripts/common/desktopN
  *
  * ******* */
 
-observe(() => {
-  import(/* webpackChunkName: "fade-in-elements" */ 'Src/scripts/common/fadeInElements').then(initModule).catch(err => console.error(`Error in: fadeInElements - ${err}`));
+observe(element => {
+  import(/* webpackChunkName: "fade-in-elements" */ 'Src/scripts/common/fadeInElements').then((module) => initModule(module, element)).catch(err => console.error(`Error in: fadeInElements - ${err}`));
 }, document.querySelectorAll('[data-fade]'));
 
 observe(() => {
