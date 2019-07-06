@@ -1,5 +1,4 @@
 import 'lazysizes';
-import 'zenscroll';
 
 const html = document.querySelector('html');
 
@@ -37,13 +36,15 @@ function observe(callback, elements) {
  *
  * ******* */
 
-import(/* webpackChunkName: "swRegister" */ 'Src/scripts/common/swRegister').then(initModule).catch(err => console.error(`Error in: swRegister - ${err}`));
+import(/* webpackChunkName: "swRegister" */ 'Src/scripts/swRegister').then(initModule).catch(err => console.error(`Error in: swRegister - ${err}`));
 
-import(/* webpackChunkName: "lazyload" */ 'Src/scripts/common/lazyload').then(initModule).catch(err => console.error(`Error in: lazyload - ${err}`));
+import(/* webpackChunkName: "lazyload" */ 'Src/scripts/lazyload').then(initModule).catch(err => console.error(`Error in: lazyload - ${err}`));
 
-import(/* webpackChunkName: "notices" */ 'Src/scripts/common/notices').then(initModule).catch(err => console.error(`Error in: notices - ${err}`));
+import(/* webpackChunkName: "notices" */ 'Src/scripts/notices').then(initModule).catch(err => console.error(`Error in: notices - ${err}`));
 
-import(/* webpackChunkName: "desktop-navigation" */ 'Src/scripts/common/desktopNavigation').then(initModule).catch(err => console.error(`Error in: desktopNavigation - ${err}`));
+import(/* webpackChunkName: "mobile-navigation" */ 'Src/scripts/mobileNavigation').then(initModule).catch(err => console.error(`Error in: mobileNavigation - ${err}`));
+
+import(/* webpackChunkName: "desktop-navigation" */ 'Src/scripts/desktopNavigation').then(initModule).catch(err => console.error(`Error in: desktopNavigation - ${err}`));
 
 /** *****
  *
@@ -51,11 +52,19 @@ import(/* webpackChunkName: "desktop-navigation" */ 'Src/scripts/common/desktopN
  *
  * ******* */
 
+observe(() => {
+  import(/* webpackChunkName: "zenscroll" */ 'zenscroll').catch(err => console.error(`Error in: zenscroll - ${err}`));
+}, document.querySelectorAll('[data-scroll]'));
+
+observe(() => {
+  import(/* webpackChunkName: "prism" */ 'prism').catch(err => console.error(`Error in: prism - ${err}`));
+}, document.querySelectorAll('pre'));
+
 observe(element => {
-  import(/* webpackChunkName: "fade-in-elements" */ 'Src/scripts/common/fadeInElements').then((module) => initModule(module, element)).catch(err => console.error(`Error in: fadeInElements - ${err}`));
+  import(/* webpackChunkName: "fade-in-elements" */ 'Src/scripts/fadeInElements').then((module) => initModule(module, element)).catch(err => console.error(`Error in: fadeInElements - ${err}`));
 }, document.querySelectorAll('[data-fade]'));
 
 observe(() => {
-  import(/* webpackChunkName: "form-validation" */ 'Src/scripts/common/formValidation').then(initModule).catch(err => console.error(`Error in: formValidation - ${err}`));
+  import(/* webpackChunkName: "form-validation" */ 'Src/scripts/formValidation').then(initModule).catch(err => console.error(`Error in: formValidation - ${err}`));
 }, document.querySelectorAll('[data-form]'));
 
