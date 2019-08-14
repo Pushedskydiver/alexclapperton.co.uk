@@ -48,16 +48,13 @@ function checkErrors(err) {
 }
 
 function generateCacheManifest(chunk, enc, cb) {
-  const file = chunk.path;
   const output = resolve(process.cwd(), 'src', 'cache-manifest.json');
+  const file = JSON.parse(chunk.contents.toString());
+  const contents = Object.keys(file);
+  const cssPath = `main.css?cb=${file[contents[1]]}`;
   const { cache } = obj;
 
-  readFile(file, (err, data) => {
-    const array = Object.values(JSON.parse(data));
-    const cssPath = `main.css?cb=${array[1]}`;
-
-    cache.push(cssPath);
-  })
+  cache.push(cssPath);
 
   readFile(output, (err, data) => {
     const array = Object.values(JSON.parse(data));
