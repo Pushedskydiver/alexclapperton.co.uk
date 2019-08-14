@@ -1534,7 +1534,7 @@ bluebird@^2.9.25:
   resolved "https://registry.yarnpkg.com/bluebird/-/bluebird-2.11.0.tgz#534b9033c022c9579c56ba3b3e5a5caafbb650e1"
   integrity sha1-U0uQM8AiyVecVro7Plpcqvu2UOE=
 
-bluebird@^3.5.1, bluebird@^3.5.5:
+bluebird@^3.3.5, bluebird@^3.5.1, bluebird@^3.5.5:
   version "3.5.5"
   resolved "https://registry.yarnpkg.com/bluebird/-/bluebird-3.5.5.tgz#a8d0afd73251effbbd5fe384a77d73003c17a71f"
   integrity sha512-5am6HnnfN+urzt4yfg7IgTbotDjIT/u8AJpEt0sIU9FtXfVeezXAPKswrG+xKUCOYAINpSdgZVDU6QFh+cuH3w==
@@ -4535,6 +4535,17 @@ gulp-babel@^8.0.0:
     through2 "^2.0.0"
     vinyl-sourcemaps-apply "^0.2.0"
 
+gulp-buster@^1.1.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/gulp-buster/-/gulp-buster-1.1.0.tgz#f58afae8051725fbe86792b2ff95637c38c7de1e"
+  integrity sha1-9Yr66AUXJfvoZ5Ky/5VjfDjH3h4=
+  dependencies:
+    bluebird "^3.3.5"
+    gulp-util "^3.0.7"
+    lodash.defaults "^4.0.1"
+    object-assign "^4.0.1"
+    through "^2.3.8"
+
 gulp-clean-css@^4.2.0:
   version "4.2.0"
   resolved "https://registry.yarnpkg.com/gulp-clean-css/-/gulp-clean-css-4.2.0.tgz#915ec258dc6d3e6a50043f610066d5c2eac4f54e"
@@ -4586,11 +4597,6 @@ gulp-eslint@^5.0.0:
     eslint "^5.0.1"
     fancy-log "^1.3.2"
     plugin-error "^1.0.1"
-
-gulp-hash-filename@^2.0.1:
-  version "2.0.1"
-  resolved "https://registry.yarnpkg.com/gulp-hash-filename/-/gulp-hash-filename-2.0.1.tgz#c30656261a9b622d636766e48b8297125b4ddde8"
-  integrity sha512-pMg5owb8Dt0wqjgPx/TFbU3c5ckD16rrgo0BTm9PQ3pVC1Zsgw7AYx1+DP2t31JoUTeN1/dPuXNWnCNvN/wj7A==
 
 gulp-if@^2.0.1:
   version "2.0.2"
@@ -4720,7 +4726,7 @@ gulp-stylelint@^9.0.0:
     strip-ansi "^5.2.0"
     through2 "^3.0.1"
 
-gulp-util@^3.0.0, gulp-util@^3.0.3:
+gulp-util@^3.0.0, gulp-util@^3.0.3, gulp-util@^3.0.7:
   version "3.0.8"
   resolved "https://registry.yarnpkg.com/gulp-util/-/gulp-util-3.0.8.tgz#0054e1e744502e27c04c187c3ecc505dd54bbb4f"
   integrity sha1-AFTh50RQLifATBh8PsxQXdVLu08=

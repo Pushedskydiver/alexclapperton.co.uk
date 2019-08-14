@@ -1,117 +1,124 @@
 const cacheName = 'alexclapperton:0046';
 const cacheFiles = [
-'/',
-'/css/main.2a0b786ed7470144d6aef325efeade39.css',
-'/fonts/selawik-variable.woff2',
-'/fonts/avenir-next-variable.woff2',
-'/favicons/favicon-72x72.png',
-'/about-me/',
-'/contact/',
-'/offline/',
-'/articles/how-to-use-grid-and-flexbox-together/',
-'/articles/working-with-grid-the-holy-grail-of-css-layout/',
-'/articles/from-https-to-css-what-i-have-changed-on-my-website/'
+  '/',
+  '/css/main.css?cb=333cad0be4ef05b8c40b30e39aafd36d',
+  '/fonts/selawik-variable.woff2',
+  '/fonts/avenir-next-variable.woff2',
+  '/favicons/favicon-72x72.png',
+  '/about-me/',
+  '/contact/',
+  '/offline/',
+  '/articles/how-to-use-grid-and-flexbox-together/',
+  '/articles/working-with-grid-the-holy-grail-of-css-layout/',
+  '/articles/from-https-to-css-what-i-have-changed-on-my-website/'
 ];
 
 self.addEventListener('install', event => {
-event.waitUntil(
-caches.open(cacheName)
-.then(cache => {
-//console.log('Opened cache');
-return cache.addAll(cacheFiles);
-})
-);
+  event.waitUntil(
+    caches.open(cacheName)
+      .then(cache => {
+        //console.log('Opened cache');
+        return cache.addAll(cacheFiles);
+      })
+  );
 });
 
 // Adding `fetch` event listener
 self.addEventListener('fetch', event => {
-event.respondWith(
-caches.match(event.request)
-.then(response => {
-// Grab the asset from SW cache.
-if (response) {
-return response;
-}
-return fetch(event.request);
-}).catch(() => {
-// Can't access the network return an offline page from the cache
-return caches.match('/offline/');
-})
-);
+  event.respondWith(
+    caches.match(event.request)
+      .then(response => {
+        // Grab the asset from SW cache.
+        if (response) {
+          return response;
+        }
+        return fetch(event.request);
+      }).catch(() => {
+        // Can't access the network return an offline page from the cache
+        return caches.match('/offline/');
+      })
+  );
 });
 
 // Empty out any caches that don’t match the ones listed.
 self.addEventListener('activate', event => {
-const cacheWhitelist = [cacheName];
+  const cacheWhitelist = [cacheName];
 
-event.waitUntil(
-caches.keys().then(cacheNames => {
-return Promise.all(
-cacheNames.map(cacheName => {
-if (cacheWhitelist.indexOf(cacheName) === -1) {
-return caches.delete(cacheName);
-}
-})
-);
-})
-);
+  event.waitUntil(
+    caches.keys().then(cacheNames => {
+      return Promise.all(
+        cacheNames.map(cacheName => {
+          if (cacheWhitelist.indexOf(cacheName) === -1) {
+            return caches.delete(cacheName);
+          }
+        })
+      );
+    })
+  );
 });
 
 // Adding `push` event listener
 self.addEventListener('push', event => {
-let title = 'Alex has published a new article';
+  let title = 'Alex has published a new article';
 
-const body = {
-'body': 'Press to see the latest article',
-'icon': '/favicons/favicon-192x192.png',
-'badge': '/favicons/favicon-badge-192x192.png',
-'tag': 'article',
-'data': {
-'messageCount': 1
-}
-};
-
-event.waitUntil(
-self.registration.getNotifications({tag} = body)
-.then(notifications => {
-let currentNotification;
-
-for(let i = 0; i < notifications.length; i++) { if (tag) { currentNotification=notifications[i]; } } return
-    currentNotification; }) .then(currentNotification=> {
-    if (currentNotification) {
-    const messageCount = currentNotification.data.messageCount + 1;
-
-    title = `Alex has published ${messageCount} new articles`;
-    body.body = 'Press to see the latest articles';
-    body.data.messageCount = messageCount;
-    currentNotification.close();
+  const body = {
+    'body': 'Press to see the latest article',
+    'icon': '/favicons/favicon-192x192.png',
+    'badge': '/favicons/favicon-badge-192x192.png',
+    'tag': 'article',
+    'data': {
+      'messageCount': 1
     }
-    })
-    .then(() => {
-    return self.registration.showNotification(title, body);
-    })
-    );
-    });
+  };
 
-    // Adding `notification` click event listener
-    self.addEventListener('notificationclick', event => {
-    const page = '/articles/';
-    const url = new URL(page, self.location.origin).href;
+  event.waitUntil(
+    self.registration.getNotifications({ tag } = body)
+      .then(notifications => {
+        let currentNotification;
 
-    event.notification.close();
+        for (let i = 0; i < notifications.length; i++) { if (tag) { currentNotification = notifications[i]; } } return
+        currentNotification;
+      }).then(currentNotification => {
+        if (currentNotification) {
+          const messageCount = currentNotification.data.messageCount + 1;
 
-    const promiseChain = clients.matchAll({
+          title = `Alex has published ${messageCount} new articles`;
+          body.body = 'Press to see the latest articles';
+          body.data.messageCount = messageCount;
+          currentNotification.close();
+        }
+      })
+      .then(() => {
+        return self.registration.showNotification(title, body);
+      })
+  );
+});
+
+// Adding `notification` click event listener
+self.addEventListener('notificationclick', event => {
+  const page = '/articles/';
+  const url = new URL(page, self.location.origin).href;
+
+  event.notification.close();
+
+  const promiseChain = clients.matchAll({
     type: 'window',
     includeUncontrolled: true
-    })
+  })
     .then(windowClients => {
-    let matchingClient = null;
+      let matchingClient = null;
 
-    for (let i = 0; i < windowClients.length; i++) { const client=windowClients[i]; if (client.url===url) {
-        matchingClient=client; break; } } if (matchingClient) { return matchingClient.focus(); } else { return
-        clients.openWindow(url); } }) .catch(error=> {
-        return error;
-        })
+      for (let i = 0; i < windowClients.length; i++) {
+        const client = windowClients[i]; if (client.url === url) {
+          matchingClient = client; break;
+        }
+      } if (matchingClient) { return matchingClient.focus(); } else {
+        return
+        clients.openWindow(url);
+      }
+    }).catch(error => {
+      return error;
+    })
 
-        event.waitUntil(promiseChain);
-        });
+  event.waitUntil(promiseChain);
+});

@@ -15,14 +15,17 @@ function getScriptsToCache(data) {
 }
 
 const helpers = {
-  cacheStylesheet: function() {
+  cacheStylesheet: function () {
     const file = path.resolve(process.cwd(), 'src', 'cache-manifest.json');
     const contents = JSON.parse(readFileSync(file, 'utf8'));
-    const cssPath = Object.values(contents).find(data => data.endsWith('css'));
+    const cssPath = Object.values(contents).find(data => data.includes('css'));
+
+    console.log({ cssPath });
+
 
     return `'/css/${cssPath}'`;
   },
-  cacheScripts: function() {
+  cacheScripts: function () {
     const file = path.resolve(process.cwd(), 'src', 'cache-manifest.json');
     const contents = JSON.parse(readFileSync(file, 'utf8'));
     const jsPaths = Object.values(contents).filter(data => data.endsWith('js'));

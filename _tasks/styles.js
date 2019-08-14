@@ -48,19 +48,23 @@ function checkErrors(err) {
 }
 
 function generateCacheManifest(chunk, enc, cb) {
-  const file = chunk.path.substring(chunk.path.indexOf('main.'), chunk.path.length);
+  const file = chunk.path;
   const output = resolve(process.cwd(), 'src', 'cache-manifest.json');
   const { cache } = obj;
 
-  cache.push(file);
+  readFile(file, (err, data) => {
+    const array = Object.values(JSON.parse(data));
+    const cssPath = `main.css?cb=${array[1]}`;
+
+    cache.push(cssPath);
+  })
 
   readFile(output, (err, data) => {
     const array = Object.values(JSON.parse(data));
-    const cacheJson = array.filter(item => !item.startsWith('main.'));
 
-    cacheJson.push(...cache);
+    array.push(...cache);
 
-    writeFile(output, JSON.stringify({ ...cacheJson }), 'utf8', checkErrors);
+    writeFile(output, JSON.stringify({ ...array }), 'utf8', checkErrors);
     cb(null, chunk);
   })
 }
@@ -71,10 +75,10 @@ function styles() {
     .pipe($.sass({ outputStyle: 'expanded' }).on('error', $.sass.logError))
     .pipe($.postcss(getPostCssPlugins()))
     .pipe($.if(argv.prod, $.cleanCss(data.plugin.cleancss)))
-    .pipe($.hashFilename({ format: '{name}.{hash}{ext}' }))
-    .pipe(through.obj(generateCacheManifest))
     .pipe($.sourcemaps.write('sourcemaps'))
-    .pipe(dest(data.paths.dist.styles));
+    .pipe(dest(data.paths.dist.styles))
+    .pipe($.buster())
+    .pipe(through.obj(generateCacheManifest));
 }
 
 export default styles;
