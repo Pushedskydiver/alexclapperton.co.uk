@@ -7,8 +7,6 @@ cache:
 branches:
   only:
   - master
-script:
-  curl https://www.projectwallace.com/webhooks/v1/imports?token=437db188-8041-44c8-b7ad-cc4e71f337d8 -fsS --retry 3 -X POST -H 'Content-Type: text/css' -d /css/main.css
 deploy:
   provider: heroku
   app: alexclapperton
