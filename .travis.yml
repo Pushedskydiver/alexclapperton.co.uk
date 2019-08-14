@@ -12,5 +12,3 @@ deploy:
   app: alexclapperton
   api_key:
     secure: Xf6Xx+Mp/4QhSUn82rPBO11pbvagOgXHvtoGpKrCOmOnvMOd2CxRTsgG71WqyP54AAonLYaDMijwzcY20NGu3zSFnW2hWzWfrO3ykmLyLPBpvPBrUdIuO7PxtEOMSKIKPQmsQiua1jg63nw6ZiLt9Ks8L7lYTp1EK4vI1AmPPpmP6zdSoYz26GNOXEuT4J7bUQ5z+kNvVCWUCowNooYcFk2MJ9uRnD8BfFYkr62Jn6cdbzNdgG5zZz5UyWPbFATDjf9jCRwQdmLpavmVhb561zHL00/Kq58+URZna24OqA7itnNngnQZ9yahQWGBOPsuqwdmb/YTww3gp4YMzsfWZK0oyNeoktmrIzZjRPPDizr9S4gV9NIuVOLN+DYUyUbgXQlKmnA1JQdapVHUDJrV+iir9FsptwmqfgzLKjpD5XlFyRTLaQhVKOBhVCeLg6G6JEo5iMsk5VgwI0tAadEVzT+0Bn5Le2CvjGddZavpnU5PruVIsngRQZKR4qIBXbmFAq+uy4N9opjDpveQdMluJ2aKzhd8hLueu6Yj+1QDRg0vA1D+Munhvaiw2OkyI5YM6b5eOprAKyBpKdh2Tfd8p/IkQAC9InKfPBatkwkgAYvyfYFpF+bUVRFOHeq7Hz0ammMR9F4CqBjcdAB/KQGXW4vnjUlAhrGWecn/vh8IibE=
-after_success:
-- curl https://www.projectwallace.com/webhooks/v1/imports?token=437db188-8041-44c8-b7ad-cc4e71f337d8 -fsS --retry 3 -X POST -H 'Content-Type: text/css' -d @./public/css/main.css

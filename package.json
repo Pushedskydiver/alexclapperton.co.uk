@@ -25,8 +25,9 @@
     "serve": "node ./prod/bin/www.js",
     "start": "npm run production",
     "test": "echo \"Error: no test specified\"",
-    "heroku-postbuild": "echo Skip build on Heroku",
-    "webpack": "webpack"
+    "heroku-postbuild": "echo Skip build on Heroku && npm run css-stats",
+    "webpack": "webpack",
+    "css-stats": "curl https://www.projectwallace.com/webhooks/v1/imports?token=437db188-8041-44c8-b7ad-cc4e71f337d8 -fsS --retry 3 -X POST -H 'Content-Type: text/css' -d @./public/css/main.css"
   },
   "config": {
     "accessToken": "73940eda44dadba56db69ec6395029036dbd43845eb476473e17a79f627d351a",
