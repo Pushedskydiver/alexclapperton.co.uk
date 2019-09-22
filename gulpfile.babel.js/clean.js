@@ -4,7 +4,7 @@
  */
 
 import del from 'del';
-import { data } from '../gulpfile.babel';
+import { data } from './index';
 
 function clean() {
   return del([data.paths.dist.base]);

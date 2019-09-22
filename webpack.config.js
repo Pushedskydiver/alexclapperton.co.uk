@@ -2,7 +2,7 @@ const webpack = require('webpack');
 const ManifestPlugin = require('webpack-manifest-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
-const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
+// const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
 const path = require('path');
 
 function Bundle() {
@@ -29,7 +29,7 @@ function Bundle() {
     }),
     new webpack.LoaderOptionsPlugin({
       debug: true
-    }),
+    })
     // new BundleAnalyzerPlugin()
   ];
 
@@ -47,7 +47,7 @@ function Bundle() {
       plugins: [
         '@babel/plugin-syntax-dynamic-import'
       ]
-    },
+    }
   };
 
   return {
@@ -86,7 +86,7 @@ function Bundle() {
           minimize: false,
           warnings: false,
           mangle: false
-        },
+        }
       })]
     },
 
@@ -99,6 +99,6 @@ function Bundle() {
 
     watch: false
   };
-};
+}
 
 module.exports = Bundle();

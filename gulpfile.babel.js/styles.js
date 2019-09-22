@@ -14,7 +14,7 @@ import cssnano from 'cssnano';
 import mqpacker from 'css-mqpacker';
 import cleanselectors from 'postcss-minify-selectors';
 import plugins from 'gulp-load-plugins';
-import { argv, data } from '../gulpfile.babel';
+import { argv, data } from './index';
 
 const $ = plugins();
 

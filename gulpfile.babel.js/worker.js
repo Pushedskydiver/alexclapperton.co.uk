@@ -8,7 +8,7 @@ import { readFileSync } from 'fs';
 import { dest, src } from 'gulp';
 import rename from 'gulp-rename';
 import handlebars from 'gulp-compile-handlebars';
-import { data } from '../gulpfile.babel';
+import { data } from './index';
 
 function getScriptsToCache(data) {
   return `'/js/${data}'`;
@@ -19,9 +19,6 @@ const helpers = {
     const file = path.resolve(process.cwd(), 'src', 'cache-manifest.json');
     const contents = JSON.parse(readFileSync(file, 'utf8'));
     const cssPath = Object.values(contents).find(data => data.includes('css'));
-
-    console.log({ cssPath });
-
 
     return `'/css/${cssPath}'`;
   },

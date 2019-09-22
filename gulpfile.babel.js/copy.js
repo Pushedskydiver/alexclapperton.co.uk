@@ -4,7 +4,7 @@
  */
 
 import { dest, src } from 'gulp';
-import { data } from '../gulpfile.babel';
+import { data } from './index';
 
 function copy(source, destination) {
   return src(source)

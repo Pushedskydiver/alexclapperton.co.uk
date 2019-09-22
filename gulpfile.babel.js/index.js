@@ -8,11 +8,11 @@ import yargs from 'yargs';
 
 export const argv = yargs.argv;
 export const data = {
-  paths: require('./_config/paths.json'),
-  plugin: require('./_config/plugins.json'),
-  site: require('./_config/site.json'),
-  stylelint: './_config/stylelint.json',
-  eslint: './_config/eslint.json'
+  paths: require('../_config/paths.json'),
+  plugin: require('../_config/plugins.json'),
+  site: require('../_config/site.json'),
+  stylelint: '../_config/stylelint.json',
+  eslint: '../_config/eslint.json'
 };
 
 
@@ -20,15 +20,15 @@ export const data = {
     Import tasks
 \* ============================================================ */
 
-import clean from './_tasks/clean';
-import { copyFavicons, copyManifest, copyBrowserConfig, copyFonts, copyIcons, copyServiceWorker } from './_tasks/copy';
-import { images, webp } from './_tasks/images';
-import imports from './_tasks/imports';
-import eslint from './_tasks/eslint';
-import scripts from './_tasks/scripts';
-import stylelint from './_tasks/stylelint';
-import styles from './_tasks/styles';
-import generateServiceWorker from './_tasks/worker';
+import clean from './clean';
+import { copyFavicons, copyManifest, copyBrowserConfig, copyFonts, copyIcons, copyServiceWorker } from './copy';
+import { images, webp } from './images';
+import imports from './imports';
+import eslint from './eslint';
+import scripts from './scripts';
+import stylelint from './stylelint';
+import styles from './styles';
+import generateServiceWorker from './worker';
 
 
 /* ============================================================ *\

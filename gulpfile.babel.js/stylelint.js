@@ -5,7 +5,7 @@
 
 import { src } from 'gulp';
 import plugins from 'gulp-load-plugins';
-import { argv, data } from '../gulpfile.babel';
+import { argv, data } from './index';
 
 const $ = plugins();
 
