@@ -14,7 +14,7 @@
     "url": "https://github.com/Pushedskydiver/alexclapperton.co.uk"
   },
   "engines": {
-    "node": ">= 8.15.1"
+    "node": "8.15.1"
   },
   "scripts": {
     "babel-node": "babel-node ./dev/bin/www.js",
