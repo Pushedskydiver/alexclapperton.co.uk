@@ -7,24 +7,22 @@ const contentfulClient = contentful.createClient({
   space: '66vjslfacivy'
 });
 
-const fetchArticles = () => {
-  contentfulClient.getEntries({
-    content_type: '2PqfXUJwE8qSYKuM0U6w8M'
-  })
-  .then(entries => {
-    entries.items.forEach(item => {
-      const fileName = item.fields.slug;
-      const posts = path.resolve(process.cwd(), 'src', 'site', 'articles');
-      const year = item.fields.date.split('-')[0];
+function fetchArticles() {
+  contentfulClient.getEntries({ content_type: '2PqfXUJwE8qSYKuM0U6w8M' })
+    .then(entries => {
+      entries.items.forEach(item => {
+        const fileName = item.fields.slug;
+        const posts = path.resolve(process.cwd(), 'src', 'site', 'articles');
+        const year = item.fields.date.split('-')[0];
 
-      const md = `---\ntags: articles \ntitle: "${item.fields.articleName} — Alex Clapperton — Professional Front-End Web Developer" \nlayout: _layouts/post\n---\n`
+        const md = `---\ntags: articles \ntitle: "${item.fields.articleName}" \nlayout: _layouts/post\n---\n`
 
-      const data = `${md.trim()}\n\n${item.fields.post}`;
+        const data = `${md.trim()}\n\n${item.fields.post}`;
 
-      fs.mkdirSync(`${posts}/${year}/${fileName}`, { recursive: true });
-      fs.writeFileSync(`${posts}/${year}/${fileName}/index.hbs`, data);
+        fs.mkdirSync(`${posts}/${year}/${fileName}`, { recursive: true });
+        fs.writeFileSync(`${posts}/${year}/${fileName}/index.hbs`, data);
+      })
     })
-  })
 }
 
-fetchArticles();
+module.exports = fetchArticles;

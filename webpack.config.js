@@ -30,19 +30,19 @@ function Bundle() {
     new HtmlWebpackPlugin({
       inject: false,
       filename: path.resolve(__dirname, 'src', 'site', '_includes', '_partials', 'scripts.hbs'),
-      template: path.resolve(__dirname, 'views', '_templates', 'scripts.hbs'),
+      template: path.resolve(__dirname, '_templates', 'scripts.hbs'),
       chunks: ['common']
     }),
     new HtmlWebpackPlugin({
       inject: false,
       filename: path.resolve(__dirname, 'src', 'site', '_includes', '_partials', 'styles.hbs'),
-      template: path.resolve(__dirname, 'views', '_templates', 'styles.hbs'),
+      template: path.resolve(__dirname, '_templates', 'styles.hbs'),
       cssVersion: getCSSVersion()
     }),
     new HtmlWebpackPlugin({
       inject: false,
       filename: path.resolve(__dirname, 'src', 'site', '_includes', '_partials', 'preload-styles.hbs'),
-      template: path.resolve(__dirname, 'views', '_templates', 'preload-styles.hbs'),
+      template: path.resolve(__dirname, '_templates', 'preload-styles.hbs'),
       cssVersion: getCSSVersion()
     }),
     new webpack.LoaderOptionsPlugin({
@@ -73,7 +73,7 @@ function Bundle() {
 
     devtool: !prod ? 'source-map' : 'eval',
 
-    entry : {
+    entry: {
       common: path.resolve(__dirname, 'src/scripts/main.js')
     },
 

@@ -1,8 +1,8 @@
 {
   "name": "alexclapperton.co.uk",
-  "version": "1.0.0",
-  "description": "My personal website and blog",
-  "main": "gulpfile.babel.js",
+  "version": "2.0.0",
+  "description": "My personal JAMStack website and blog",
+  "main": ".eleventy.js",
   "author": {
     "name": "Alex Clapperton",
     "email": "hi@alexclapperton.co.uk",
@@ -15,10 +15,10 @@
   },
   "scripts": {
     "start": "npm run dev",
-    "dev": "cross-env ELEVENTY_ENV=dev npm run articles && eleventy --serve && webpack",
-    "build": "cross-env ELEVENTY_ENV=prod npm run articles && eleventy && webpack",
+    "dev": "cross-env ELEVENTY_ENV=dev npm run data && eleventy --serve && webpack",
+    "build": "cross-env ELEVENTY_ENV=prod npm run data && eleventy && webpack",
     "seed": "cross-env ELEVENTY_ENV=seed eleventy",
-    "articles": "node ./_data/articles.js",
+    "data": "node ./_data/index.js",
     "css-stats": "curl https://www.projectwallace.com/webhooks/v1/imports?token=437db188-8041-44c8-b7ad-cc4e71f337d8 -fsS --retry 3 -X POST -H 'Content-Type: text/css' -d @./public/css/main.css"
   },
   "dependencies": {

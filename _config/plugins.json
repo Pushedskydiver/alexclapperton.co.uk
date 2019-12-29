@@ -45,23 +45,19 @@
     "uniqueSelectors": true,
     "zindex": false
   },
-  "imgmin": {
-    "options": {
-      "optimizationLevel": 7,
-      "progressive": true,
-      "interlaced": true
-    }
-  },
-  "mqpacker": {
-    "sort": true
-  },
   "stylelint": {
     "failAfterError": true,
     "syntax": "scss",
     "reportOutputDir": "src/reports/stylelint/",
     "reporters": [
-      {"formatter": "verbose", "console": true},
-      {"formatter": "verbose", "save": "stylelint.txt"}
+      {
+        "formatter": "verbose",
+        "console": true
+      },
+      {
+        "formatter": "verbose",
+        "save": "stylelint.txt"
+      }
     ]
   },
   "uglify": {
