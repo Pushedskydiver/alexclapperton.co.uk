@@ -1,6 +1,6 @@
 {
   "name": "alexclapperton.co.uk",
-  "version": "1.1.1",
+  "version": "1.0.0",
   "description": "My personal website and blog",
   "main": "gulpfile.babel.js",
   "author": {
@@ -13,106 +13,42 @@
     "type": "git",
     "url": "https://github.com/Pushedskydiver/alexclapperton.co.uk"
   },
-  "engines": {
-    "node": "8.15.1"
-  },
   "scripts": {
-    "babel-node": "babel-node ./dev/bin/www.js",
-    "build": "babel dev -d prod",
-    "dev": "cross-env NODE_ENV=development nodemon --exec npm run babel-node",
-    "heroku-prebuild": "yarn && gulp default --prod && npm run build",
-    "production": "cross-env NODE_ENV=production && npm run serve",
-    "serve": "node ./prod/bin/www.js",
-    "start": "npm run production",
-    "test": "echo \"Error: no test specified\"",
-    "heroku-postbuild": "echo Skip build on Heroku && npm run css-stats",
-    "webpack": "webpack",
+    "start": "npm run dev",
+    "dev": "cross-env ELEVENTY_ENV=dev npm run articles && eleventy --serve && webpack",
+    "build": "cross-env ELEVENTY_ENV=prod npm run articles && eleventy && webpack",
+    "seed": "cross-env ELEVENTY_ENV=seed eleventy",
+    "articles": "node ./_data/articles.js",
     "css-stats": "curl https://www.projectwallace.com/webhooks/v1/imports?token=437db188-8041-44c8-b7ad-cc4e71f337d8 -fsS --retry 3 -X POST -H 'Content-Type: text/css' -d @./public/css/main.css"
   },
-  "config": {
-    "accessToken": "73940eda44dadba56db69ec6395029036dbd43845eb476473e17a79f627d351a",
-    "space": "66vjslfacivy"
-  },
   "dependencies": {
-    "@babel/cli": "^7.4.4",
-    "@babel/core": "^7.4.5",
-    "@babel/node": "^7.4.5",
-    "@babel/plugin-syntax-dynamic-import": "^7.2.0",
-    "@babel/preset-env": "^7.4.5",
-    "@babel/register": "^7.4.4",
-    "babel-loader": "^8.0.6",
-    "body-parser": "~1.19.0",
-    "cluster": "^0.7.7",
-    "contentful": "^7.8.0",
-    "cross-env": "^5.1.3",
-    "dateformat": "^3.0.3",
-    "express": "~4.17.1",
-    "express-handlebars": "^3.1.0",
-    "express-json": "^1.0.0",
-    "express-minify-html": "^0.12.0",
-    "glob": "^7.1.4",
-    "gulp": "^4.0.2",
-    "gulp-compile-handlebars": "^0.6.1",
-    "gulp-rename": "^1.4.0",
-    "gulp-sass": "^4.0.1",
-    "gulp-sourcemaps": "^2.6.5",
-    "hbs": "~4.0.4",
-    "helmet": "^3.18.0",
-    "html-webpack-plugin": "^3.2.0",
-    "http": "^0.0.0",
-    "lazysizes": "^5.1.0",
-    "mongoose": "^5.6.1",
-    "morgan": "^1.9.0",
+    "@11ty/eleventy": "^0.9.0",
+    "contentful": "^7.11.3",
+    "cssnano": "^4.1.10",
+    "dotenv": "^8.2.0",
+    "faunadb": "^2.10.2",
+    "html-minifier": "^4.0.0",
+    "lazysizes": "^5.2.0",
     "mozilla-doc-cookies": "^1.0.3",
-    "nodemailer": "^6.2.1",
-    "nodemon": "^1.19.1",
-    "prismjs": "^1.16.0",
-    "shrink-ray": "^0.1.3",
-    "sitemap": "^2.2.0",
-    "stylelint-selector-bem-pattern": "^2.1.0",
-    "uglifyjs-webpack-plugin": "^2.1.3",
-    "web-push": "^3.3.5",
-    "webpack": "^4.35.0",
-    "webpack-bundle-analyzer": "^3.3.2",
-    "webpack-cli": "^3.3.5",
-    "webpack-manifest-plugin": "^2.0.4",
+    "node-sass": "^4.13.0",
+    "postcss": "^7.0.25",
+    "postcss-clean": "^1.1.0",
+    "postcss-minify-selectors": "^4.0.2",
+    "postcss-scss": "^2.0.0",
+    "postcss-sort-media-queries": "^1.0.15",
+    "prismjs": "^1.17.1",
+    "sass": "^1.24.0",
+    "uninstall": "0.0.0",
     "zenscroll": "^4.0.2"
   },
   "devDependencies": {
-    "autoprefixer": "^9.6.0",
-    "css-mqpacker": "^7.0.0",
-    "cssnano": "^4.1.0",
-    "del": "^4.1.1",
-    "dotenv": "^8.0.0",
-    "gulp-buster": "^1.1.0",
-    "gulp-clean-css": "^4.2.0",
-    "gulp-eslint": "^5.0.0",
-    "gulp-if": "^2.0.1",
-    "gulp-imagemin": "^6.0.0",
-    "gulp-load-plugins": "^1.6.0",
-    "gulp-postcss": "^8.0.0",
-    "gulp-run": "^1.7.1",
-    "gulp-sass-generate-contents": "^1.0.1",
-    "gulp-stylelint": "^9.0.0",
-    "gulp-webp": "^4.0.1",
-    "postcss-devtools": "^1.1.0",
-    "postcss-focus": "^4.0.0",
-    "postcss-minify-selectors": "^4.0.0",
-    "postcss-reporter": "^6.0.0",
-    "postcss-short": "^5.0.0"
-  },
-  "babel": {
-    "presets": [
-      [
-        "@babel/preset-env"
-      ]
-    ]
-  },
-  "browserslist": [
-    "last 2 versions",
-    "not ie <= 11"
-  ],
-  "resolutions": {
-    "**/event-stream": "^4.0.1"
+    "cross-env": "^6.0.3",
+    "html-webpack-plugin": "^3.2.0",
+    "stylelint": "^12.0.1",
+    "terser-webpack-plugin": "^2.3.1",
+    "webpack": "^4.41.5",
+    "webpack-bundle-analyzer": "^3.6.0",
+    "webpack-cli": "^3.3.10",
+    "webpack-manifest-plugin": "^2.2.0"
   }
 }

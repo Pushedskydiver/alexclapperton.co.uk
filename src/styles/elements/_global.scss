@@ -1,3 +1,8 @@
+@use "../settings/variables" as _variables;
+@use "../tools/mixins/responsive" as _responsive;
+@use "../tools/mixins/transitions" as _transitions;
+@use "../tools/mixins/typography" as _typography;
+
 // Global.............The sites core styles.
 
 *,
@@ -7,31 +12,31 @@
 }
 
 :root {
-  --color-brand: #{$core-color-brand};
-  --color-background: #{$core-color-background};
-  --color-foreground: #{$core-color-foreground};
-  --color-neutral: #{$core-color-neutral};
-  --color-fade: #{$core-color-fade};
-  --color-heading: #{$core-color-brand};
-  --color-body: #{$core-color-body};
-  --color-link: #{$core-color-brand};
-  --color-danger: #{$core-color-danger};
+  --color-brand: #{_variables.$core-color-brand};
+  --color-background: #{_variables.$core-color-background};
+  --color-foreground: #{_variables.$core-color-foreground};
+  --color-neutral: #{_variables.$core-color-neutral};
+  --color-fade: #{_variables.$core-color-fade};
+  --color-heading: #{_variables.$core-color-brand};
+  --color-body: #{_variables.$core-color-body};
+  --color-link: #{_variables.$core-color-brand};
+  --color-danger: #{_variables.$core-color-danger};
 
   @media (prefers-color-scheme: dark) {
-    --color-brand: #{$dark-mode-color-brand};
-    --color-background: #{$dark-mode-color-background};
-    --color-foreground: #{$dark-mode-color-foreground};
-    --color-neutral: #{$dark-mode-color-neutral};
-    --color-fade: #{$dark-mode-color-background};
-    --color-heading: #{$core-color-background};
-    --color-body: #{$dark-mode-color-body};
-    --color-link: #{$core-color-link};
-    --color-danger: #{$dark-mode-color-danger};
+    --color-brand: #{_variables.$dark-mode-color-brand};
+    --color-background: #{_variables.$dark-mode-color-background};
+    --color-foreground: #{_variables.$dark-mode-color-foreground};
+    --color-neutral: #{_variables.$dark-mode-color-neutral};
+    --color-fade: #{_variables.$dark-mode-color-background};
+    --color-heading: #{_variables.$core-color-background};
+    --color-body: #{_variables.$dark-mode-color-body};
+    --color-link: #{_variables.$core-color-link};
+    --color-danger: #{_variables.$dark-mode-color-danger};
   }
 }
 
 html {
-  font-size: $core-font-size;
+  font-size: _variables.$core-font-size;
 }
 
 body {
@@ -53,37 +58,37 @@ body ::selection {
 }
 
 h1 {
-  @include min(l) {
+  @include _responsive.min(l) {
     font-size: calc(2.5em + 0.5vw);
   }
 }
 
 p {
-  @include text(bodyCopy);
+  @include _typography.text(bodyCopy);
 }
 
 a {
   color: var(--color-link);
-  font-family: $core-font-family;
-  font-weight: $core-tertiary-font-weight;
+  font-family: _variables.$core-font-family;
+  font-weight: _variables.$core-tertiary-font-weight;
   text-decoration: none;
 
-  @include min(l) {
-    font-family: $core-variable-font-family;
-    font-weight: $core-font-weight;
-    font-variation-settings: 'wght' $core-tertiary-font-weight;
+  @include _responsive.min(l) {
+    font-family: _variables.$core-variable-font-family;
+    font-weight: _variables.$core-font-weight;
+    font-variation-settings: 'wght' _variables.$core-tertiary-font-weight;
   }
 
-  @include min(l) {
-    @include transition-03(all);
+  @include _responsive.min(l) {
+    @include _transitions.transition-03(all);
     cursor: pointer;
   }
 }
 
 strong {
   color: var(--color-heading);
-  font-weight: $core-font-weight;
-  font-variation-settings: 'wght' $core-tertiary-font-weight;
+  font-weight: _variables.$core-font-weight;
+  font-variation-settings: 'wght' _variables.$core-tertiary-font-weight;
 }
 
 ul,
@@ -99,7 +104,7 @@ dd {
 }
 
 li {
-  @include text(bodyCopy);
+  @include _typography.text(bodyCopy);
 }
 
 figure {
@@ -127,13 +132,13 @@ legend {
 }
 
 input {
-  @include text(bodyCopy);
+  @include _typography.text(bodyCopy);
   border-radius: 0;
   appearance: none;
 }
 
 textarea {
-  @include text(bodyCopy);
+  @include _typography.text(bodyCopy);
   border-radius: 0;
   appearance: none;
 }
@@ -145,8 +150,8 @@ button {
   border-radius: 0;
   appearance: none;
 
-  @include min(l) {
-    @include transition-03(all);
+  @include _responsive.min(l) {
+    @include _transitions.transition-03(all);
 
     &:hover {
       cursor: pointer;
@@ -156,11 +161,11 @@ button {
 
 pre {
   margin-top: 0;
-  margin-bottom: ($core-margin * 3);
+  margin-bottom: (_variables.$core-margin * 3);
 }
 
 hr {
-  margin: ($core-margin * 2) 0;
-  border-color: $core-color-foreground;
+  margin: (_variables.$core-margin * 2) 0;
+  border-color: _variables.$core-color-foreground;
   opacity: 0.1;
 }

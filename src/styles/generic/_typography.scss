@@ -1,3 +1,5 @@
+@use "../settings/variables" as _variables;
+
 // Typography.........The sites typography faces.
 
 // Variable Fonts
@@ -26,7 +28,7 @@
   url('../fonts/nunito-sans/nunito-sans-regular.woff') format('woff');
   font-display: swap;
   font-style: normal;
-  font-weight: $core-font-weight;
+  font-weight: _variables.$core-font-weight;
 }
 @font-face {
   font-family: 'Nunito Sans';
@@ -34,7 +36,7 @@
   url('../fonts/nunito-sans/nunito-sans-semi-bold.woff') format('woff');
   font-display: swap;
   font-style: normal;
-  font-weight: $core-tertiary-font-weight;
+  font-weight: _variables.$core-tertiary-font-weight;
 }
 
 // Ubuntu
@@ -44,7 +46,7 @@
   url('../fonts/ubuntu/ubuntu-regular.woff') format('woff');
   font-display: swap;
   font-style: normal;
-  font-weight: $core-font-weight;
+  font-weight: _variables.$core-font-weight;
 }
 @font-face {
   font-family: 'Ubuntu';
@@ -52,5 +54,5 @@
   url('../fonts/ubuntu/ubuntu-medium.woff') format('woff');
   font-display: swap;
   font-style: normal;
-  font-weight: $core-secondary-font-weight;
+  font-weight: _variables.$core-secondary-font-weight;
 }

@@ -1,0 +1,95 @@
+---
+tags: articles 
+title: "From HTTPS to CSS: What I have changed on my website — Alex Clapperton — Professional Front-End Web Developer" 
+layout: _layouts/post
+---
+
+<h2 class="post__heading">Someone's been busy</h2>
+
+<p class="post__body">Well now haven't I been a busy bee. I've made some interesting changes to my website since my last post and I'm very excited to share what I have been up to. Now I imagine some of you have already jumped the gun and are thinking to yourself, "What do you mean changes? Your site looks the same as last time.". While you may be right in thinking this, the changes I have made are more performance improvements than visual (although I am working on re-designing my website 😉) and make my site faster and more secure than before, so let's get right into it.</p>
+
+<h3 class="post__sub-title">Moving over to HTTPS</h3>
+
+<p class="post__body">For a while now I have debated whether I should move other to https as my website doesn't contain any databases, nor does it take any payment details or personal information (except for the contact form which just asks for an email address). For those unfamiliar with HTTPS, to put it simply it just makes your website secure and you get a nice padlock in the address bar on your browser. You can find more about https by checking out <a class="link" href="https://www.sitepoint.com/https-basics/" title="External link to sitepoints blog on https basics.">this nice article over on sitepoint</a>.</p>
+
+<figure class="figure">
+    <div style="position:relative; padding-top: 17.879948914%;">
+        <img class="figure__img lazyload__image lazyload" data-src="/images/articles/post/site-secure.jpg" alt="URL of alexclapperton.co.uk in Chrome browser address bar with https padlock" data-lazy>
+    </div>
+    <noscript>
+        <img class="figure__img" src="/images/articles/post/site-secure.jpg" alt="URL of alexclapperton.co.uk in Chrome browser address bar with https padlock.">
+    </noscript>
+    <figcaption class="figure__caption">alexclapperton.co.uk now on https</figcaption>
+</figure>
+
+<p class="post__body">Having said all that, I felt I needed to make the change over with https becoming a prerequisite for several technologies that I wanted to use such as Service Worker (more on service worker below). Another reason for moving is <a class="link" href="https://security.googleblog.com/2016/09/moving-towards-more-secure-web.html" title="External link to google blog about moving towards a secure web.">Google's intent to mark certain webpages as insecure</a> which gives the implication that any site that isn't explicitly marked as secure, is therefore insecure which could prevent some users from vising the site.</p>
+
+<p class="post__body">Making the switch to https was relatively simple thanks to the use of CloudFlare which offer a variety of <a class="link" href="https://www.cloudflare.com/performance/" title="External link to cloud flare website.">performance-related services</a>. I found a nice <a class="link" href="https://raventools.com/blog/free-ssl-http2/" title="External link to raven tools blog about moving to https.">tutorial on Raven Tools</a> explaining how to move to https with CloudFlare.</p>
+
+<p class="post__body">To this end, I think that HTTPS is as much an exercise in branding and trust as it is in security, and that it will steadily become more and more ubiquitous. This is only a good thing.</p>
+
+<h3 class="post__sub-title">Making my site work offline</h3>
+
+<p class="post__body">Yes, you read that right, my site can now work offline without any internet connection. So if you somehow find yourself stranded on a desert island, in the middle of nowhere, with nothing but your laptop (<a class="link" href="https://www.youtube.com/watch?v=PdQIY6lSOWg" title="External link to youtube video of a scene from cast away film.">and a volleyball called Wilson</a>), you'll be happy to know you can at least visit my website. How freaking cool is that?</p>
+
+<p class="post__body">The way this works is by the use of a Service Worker. in the words from the <a class="link" href="https://developers.google.com/web/fundamentals/getting-started/primers/service-workers" title="External link to google developers web page about the service worker.">Google Developer website</a>, A service worker is a script that your browser runs in the background, separate from a web page, opening the door to features that don't need a web page or user interaction. One such feature is by making your site work offline. The way in which it works is that whenever you visit a page on my website, it will create a cached version of that page and store it. Then if you turn off your internet and reload or re-visit the page, it will load the cached version of that page, allowing to carry on browsing the page as normal. Pretty awesome right? If you are interested in getting your site to work offline, then follow this nice <a class="link" href="https://mariopabon.com/2016/07/25/make-your-site-work-offline-with-service-worker.html" title="External link to blog post about how to use a service worker.">tutorial from Mario Pabon</a> on how to do so.</p>
+
+<h3 class="post__sub-title">Optimising my CSS media queries</h3>
+
+<p class="post__body">One problem I encountered with my css was that I had multiple media queries of the same breakpoint. The reasoning behind this was because my media queries were nested inside my classes (yes I'm using scss here), to make the code more maintainable. The problem with this is than when compiled, I had multiple media queries of the same breakpoint, which in turn made my css file larger.</p>
+
+<p class="post__body"> Even though the size of my css code was pretty small when minified and gzipped, I wanted to find a solution to this problem and luckily I did with a bit of help from a handy Gulp plugin called <a class="link" href="https://www.npmjs.com/package/css-mqpacker" title="External link to css-mqpacker plugin page.">css-mqpacker</a>. This awesome plugin looks for multiple media queries of the same breakpoint in your css and merges them into one thus reducing the file size of your css. With this plugin, I was able to reduce the size of my css from 6kb to 5kb, which may not seem a lot in terms of file size, but in terms of the amount of code it has been significantly reduced.</p>
+
+<pre><code class="language-css">
+/* Compiled CSS before css-mqpacker */
+@media (min-width: 400px) {
+
+  .site-banner__img--home {
+    -webkit-transform: scale(1.7);
+    transform: scale(1.7);
+  }
+
+  ...
+
+}
+
+@media (min-width: 400px) {
+
+  h1 {
+    font-size: 2.25em;
+  }
+
+  ...
+
+}
+
+
+/* Compiled CSS after css-mqpacker */
+@media (min-width: 400px) {
+
+  .site-banner__img--home {
+    -webkit-transform: scale(1.7);
+    transform: scale(1.7);
+  }
+
+  h1 {
+    font-size: 2.25em;
+  }
+
+  ...
+
+}
+
+</code></pre>
+
+<h3 class="post__sub-title">That's a wrap</h3>
+
+<p class="post__body">So there you have it. This is what I have been up to these last few months and I'm not stopping there. I will always continue to look for new techniques that I can use to help make my website perform at its absolute best.</p>
+
+<hr>
+
+<h4 class="post__small-title">Bibliography</h4>
+
+<ul class="list list--unordered">
+    <li class="list__item">Gauntm M. (2017). Service Workers: an Introduction. [ONLINE] [Accessed 13 January 2017]. URL: <a class="link" href="https://developers.google.com/web/fundamentals/getting-started/primers/service-workers" title="External link to google developers web page about the service worker.">Google Developers</a></li>
+</ul>

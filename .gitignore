@@ -2,8 +2,7 @@
 node_modules
 
 # production
-prod
-public
+dist
 reports
 .env
 

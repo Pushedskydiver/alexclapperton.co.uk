@@ -1,18 +1,23 @@
+@use "../settings/variables" as _variables;
+@use "../tools/mixins/responsive" as _responsive;
+@use "../tools/mixins/typography" as _typography;
+
+@use "sass:color";
 // Contact............Contact page styles.
 
 .contact {
-  @include container;
-  padding-top: ($core-padding * 3);
-  padding-bottom: ($core-padding * 3);
+  @include _responsive.container;
+  padding-top: (_variables.$core-padding * 3);
+  padding-bottom: (_variables.$core-padding * 3);
 
-  @include min(l) {
-    padding-top: ($core-padding * 4.5);
-    padding-bottom: ($core-padding * 4.5);
+  @include _responsive.min(l) {
+    padding-top: (_variables.$core-padding * 4.5);
+    padding-bottom: (_variables.$core-padding * 4.5);
   }
 }
 
 .contact__container {
-  @include min(m) {
+  @include _responsive.min(m) {
     display: grid;
     grid-gap: 30px 60px;
     grid-template-columns: repeat(3, 1fr);
@@ -20,13 +25,13 @@
 }
 
 .contact__inner {
-  @include min(m) {
+  @include _responsive.min(m) {
     grid-column-end: span 2;
   }
 }
 
 .contact__heading {
-  @include text(saturn);
+  @include _typography.text(saturn);
 }
 
 .contact__body {
@@ -34,19 +39,19 @@
 }
 
 .contact__sidebar {
-  background-color: darken($core-color-background, 3%);
-  padding-top: ($core-padding * 2.5);
-  padding-right: ($core-padding * 2);
-  padding-bottom: ($core-padding * 2.5);
-  padding-left: ($core-padding * 2);
+  background-color: color.adjust(_variables.$core-color-background, $lightness: -3%);
+  padding-top: (_variables.$core-padding * 2.5);
+  padding-right: (_variables.$core-padding * 2);
+  padding-bottom: (_variables.$core-padding * 2.5);
+  padding-left: (_variables.$core-padding * 2);
 
-  @include min(m) {
+  @include _responsive.min(m) {
     grid-row: 1 / span 2;
     grid-column: 3;
-    padding-top: ($core-padding * 3);
-    padding-right: ($core-padding * 2.5);
-    padding-bottom: ($core-padding * 3);
-    padding-left: ($core-padding * 2.5);
+    padding-top: (_variables.$core-padding * 3);
+    padding-right: (_variables.$core-padding * 2.5);
+    padding-bottom: (_variables.$core-padding * 3);
+    padding-left: (_variables.$core-padding * 2.5);
   }
 
   @media (prefers-color-scheme: dark) {
@@ -55,25 +60,25 @@
 }
 
 .contact__sidebar-title {
-  @include text(mars);
+  @include _typography.text(mars);
 }
 
 .contact__list {
-  margin-top: ($core-margin * 2.5);
+  margin-top: (_variables.$core-margin * 2.5);
 }
 
 .contact__list-title {
   color: var(--color-heading);
-  font-family: $core-secondary-variable-font-family;
+  font-family: _variables.$core-secondary-variable-font-family;
   font-size: calc(1em + 0.25vw);
-  line-height: $core-secondary-line-height;
-  font-variation-settings: 'wght' $core-tertiary-font-weight;
+  line-height: _variables.$core-secondary-line-height;
+  font-variation-settings: 'wght' _variables.$core-tertiary-font-weight;
   margin-top: 0;
-  margin-bottom: ($core-margin / 2);
+  margin-bottom: (_variables.$core-margin / 2);
 }
 
 .contact__list-body {
-  margin-bottom: ($core-margin * 2);
+  margin-bottom: (_variables.$core-margin * 2);
 
   &:last-child {
     margin-bottom: 0;
@@ -81,18 +86,18 @@
 }
 
 .contact__list-body--notch {
-  color: $core-color-foreground;
-  font-family: $core-font-family;
-  font-weight: $core-tertiary-font-weight;
+  color: _variables.$core-color-foreground;
+  font-family: _variables.$core-font-family;
+  font-weight: _variables.$core-tertiary-font-weight;
 
-  @include min(l) {
-    font-family: $core-variable-font-family;
-    font-weight: $core-font-weight;
-    font-variation-settings: 'wght' $core-tertiary-font-weight;
+  @include _responsive.min(l) {
+    font-family: _variables.$core-variable-font-family;
+    font-weight: _variables.$core-font-weight;
+    font-variation-settings: 'wght' _variables.$core-tertiary-font-weight;
   }
 }
 
 .contact__list-link {
   display: inline-block;
-  margin-bottom: $core-margin;
+  margin-bottom: _variables.$core-margin;
 }

@@ -1,9 +1,11 @@
+@use "../settings/variables" as _variables;
+
 // List...............Blog post list styles.
 
 .list {
-  margin-bottom: ($core-margin * 2.5);
-  margin-left: $core-margin;
-  padding-left: ($core-padding * 1.5);
+  margin-bottom: (_variables.$core-margin * 2.5);
+  margin-left: _variables.$core-margin;
+  padding-left: (_variables.$core-padding * 1.5);
 }
 
 .list--ordered {
@@ -15,7 +17,7 @@
 }
 
 .list__item {
-  margin-bottom: $core-margin;
+  margin-bottom: _variables.$core-margin;
 
   &:last-child {
     margin-bottom: 0;

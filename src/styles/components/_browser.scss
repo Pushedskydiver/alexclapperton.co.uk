@@ -1,11 +1,15 @@
+@use "sass:color";
+@use "../settings/variables" as _variables;
+@use "../tools/mixins/responsive" as _responsive;
+
 // Browser............Browser window styles for project item.
 
 .browser {
-  background-color: darken($core-color-background, 4%);
-  margin-top: ($core-margin * 2);
-  margin-bottom: ($core-margin * 2);
+  background-color: color.adjust(_variables.$core-color-background, $lightness: -4%);
+  margin-top: (_variables.$core-margin * 2);
+  margin-bottom: (_variables.$core-margin * 2);
 
-  @include min(l) {
+  @include _responsive.min(l) {
     width: 53%;
     margin-top: 0;
     order: 1;
@@ -19,7 +23,7 @@
 }
 
 .browser__wrapper {
-  @include min(l) {
+  @include _responsive.min(l) {
     max-height: 50rem;
     overflow-y: scroll;
   }
@@ -29,7 +33,7 @@
   position: relative;
   padding-top: 77.5%;
 
-  @include min(l) {
+  @include _responsive.min(l) {
     padding-top: 248.14%;
   }
 }

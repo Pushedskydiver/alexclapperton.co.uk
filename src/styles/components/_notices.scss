@@ -1,15 +1,18 @@
+@use "../settings/variables" as _variables;
+@use "../tools/functions/z-index" as _z-index;
+
 // Notices............The sites notice styles for JS turned off etc.
 
 .support-notice {
   position: fixed;
   bottom: 0;
   width: 100%;
-  background-color: $core-color-link;
-  padding: ($core-padding / 2);
+  background-color: _variables.$core-color-link;
+  padding: (_variables.$core-padding / 2);
   text-align: center;
   opacity: 0.9;
   transition: opacity 250ms;
-  z-index: z(kilo);
+  z-index: _z-index.z(kilo);
 
   &:hover {
     opacity: 1;

@@ -1,7 +1,12 @@
+@use "../settings/variables" as _variables;
+@use "../tools/mixins/flexbox" as _flexbox;
+@use "../tools/mixins/responsive" as _responsive;
+@use "../tools/mixins/typography" as _typography;
+
 // Banner.............Top page banner styles.
 
 .banner {
-  @include container;
+  @include _responsive.container;
 
   &:not(&--home):not(&--404) {
     height: 550px;
@@ -13,7 +18,7 @@
     }
   }
 
-  @include min(l) {
+  @include _responsive.min(l) {
     &:not(&--404) {
       height: 750px;
     }
@@ -34,12 +39,12 @@
 }
 
 .banner__container {
-  @include flex(null, column, center, null);
+  @include _flexbox.flex(null, column, center, null);
   height: 100%;
 }
 
 .banner__container--404 {
-  @include min(l) {
+  @include _responsive.min(l) {
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -55,7 +60,7 @@
   position: relative;
   overflow: hidden;
 
-  @include min(l) {
+  @include _responsive.min(l) {
     width: 50%;
   }
 }
@@ -63,32 +68,32 @@
 .banner__img--404 {
   display: none;
 
-  @include min(l) {
+  @include _responsive.min(l) {
     display: block;
   }
 }
 
 .banner__heading {
-  @include text(jupiter);
+  @include _typography.text(jupiter);
 
   &:not(&--center):not(&--404) {
     max-width: 450px;
   }
 
   &--home {
-    @include text(sun);
+    @include _typography.text(sun);
 
-    @include min(xs) {
+    @include _responsive.min(xs) {
       font-size: calc(3.8em + 0.5vw);
     }
 
-    @include min(l) {
+    @include _responsive.min(l) {
       font-size: calc(4.5em + 0.5vw);
     }
   }
 
   &--light {
-    color: $core-color-background;
+    color: _variables.$core-color-background;
   }
 
   &--center {
@@ -101,7 +106,7 @@
   &--404 {
     max-width: 450px;
 
-    @include min(l) {
+    @include _responsive.min(l) {
       max-width: none;
     }
   }
@@ -112,9 +117,9 @@
 }
 
 .banner__body {
-  @include text(earth);
+  @include _typography.text(earth);
 
-  @include max(m) {
+  @include _responsive.max(m) {
     max-width: 250px;
   }
 
@@ -125,15 +130,15 @@
   &--404 {
     max-width: 450px;
 
-    @include min(l) {
+    @include _responsive.min(l) {
       max-width: none;
     }
   }
 }
 
 .banner__scroll-link {
-  @include text(earth);
-  @include flex(null, row, null, center);
+  @include _typography.text(earth);
+  @include _flexbox.flex(null, row, null, center);
   color: var(--color-link);
   margin-bottom: 0;
   text-decoration: none;
@@ -143,7 +148,7 @@
 .banner__scroll-icon {
   width: 16px;
   height: 16px;
-  margin-left: ($core-margin / 2);
+  margin-left: (_variables.$core-margin / 2);
   stroke: var(--color-link);
   stroke-width: 3;
   vertical-align: middle;

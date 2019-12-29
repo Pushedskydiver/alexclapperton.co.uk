@@ -1,3 +1,6 @@
+@use "../tools/mixins/responsive" as _responsive;
+@use "../tools/mixins/transitions" as _transitions;
+
 // Logo...............Site logo styles.
 
 .logo {
@@ -7,7 +10,7 @@
   height: 35px;
   vertical-align: middle;
 
-  @include min(xs) {
+  @include _responsive.min(xs) {
     width: 45px;
     height: 45px;
   }
@@ -23,7 +26,8 @@
 }
 
 .logo__icon {
-  @include transition-03(fill);
+  @include _transitions.transition-03(fill);
   width: 100%;
   height: 100%;
+  color: var(--color-foreground);
 }

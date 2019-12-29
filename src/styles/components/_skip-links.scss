@@ -1,17 +1,21 @@
+@use "../settings/variables" as _variables;
+@use "../tools/functions/z-index" as _z-index;
+@use "../tools/mixins/typography" as _typography;
+
 // Skip links.........The sites skip to links.
 
 .skip-link {
-  @include text(earth);
+  @include _typography.text(earth);
   position: absolute;
   top: 0;
   left: 0;
-  background-color: $core-color-brand;
-  color: $core-color-background;
+  background-color: _variables.$core-color-brand;
+  color: _variables.$core-color-background;
   margin: 0;
-  padding-top: $core-padding;
-  padding-right: ($core-padding/ 2);
-  padding-bottom: $core-padding;
-  padding-left: ($core-padding/ 2);
+  padding-top: _variables.$core-padding;
+  padding-right: (_variables.$core-padding/ 2);
+  padding-bottom: _variables.$core-padding;
+  padding-left: (_variables.$core-padding/ 2);
   text-align: center;
   text-decoration: none;
 }
@@ -27,6 +31,6 @@
   &:focus {
     clip: auto;
     overflow: visible;
-    z-index: z(kilo);
+    z-index: _z-index.z(kilo);
   }
 }

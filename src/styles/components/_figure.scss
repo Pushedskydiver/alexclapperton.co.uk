@@ -1,22 +1,26 @@
+@use "sass:color";
+@use "../settings/variables" as _variables;
+@use "../tools/mixins/typography" as _typography;
+
 // Figure.............Figure and figcaption styles.
 
 .figure {
-  margin-bottom: ($core-margin * 2.5);
+  margin-bottom: (_variables.$core-margin * 2.5);
 }
 
 .figure__img {
-  padding-top: $core-padding;
-  padding-right: $core-padding;
-  padding-bottom: $core-padding;
-  padding-left: $core-padding;
+  padding-top: _variables.$core-padding;
+  padding-right: _variables.$core-padding;
+  padding-bottom: _variables.$core-padding;
+  padding-left: _variables.$core-padding;
   border-width: 1px;
-  border-style: $core-border-style;
-  border-color: darken($core-color-background, 15%);
+  border-style: _variables.$core-border-style;
+  border-color: color.adjust(_variables.$core-color-background, $lightness: -15%);
 }
 
 .figure__caption {
-  @include text(moon);
-  margin-top: ($core-margin / 2);
+  @include _typography.text(moon);
+  margin-top: (_variables.$core-margin / 2);
   margin-bottom: 0;
   text-align: center;
 }

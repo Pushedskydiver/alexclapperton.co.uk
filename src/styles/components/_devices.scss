@@ -1,14 +1,20 @@
+@use "sass:color";
+@use "../settings/variables" as _variables;
+@use "../tools/functions/z-index" as _z-index;
+@use "../tools/mixins/flexbox" as _flexbox;
+@use "../tools/mixins/responsive" as _responsive;
+
 // Devices............Mobile device view styles.
 
 .devices {
-  @include container;
-  background-color: darken($core-color-background, 1%);
-  padding-top: ($core-padding * 3);
-  padding-bottom: ($core-padding * 3);
+  @include _responsive.container;
+  background-color: color.adjust(_variables.$core-color-background, $lightness: -1%);
+  padding-top: (_variables.$core-padding * 3);
+  padding-bottom: (_variables.$core-padding * 3);
 
-  @include min(m) {
-    padding-top: ($core-padding * 4);
-    padding-bottom: ($core-padding * 4);
+  @include _responsive.min(m) {
+    padding-top: (_variables.$core-padding * 4);
+    padding-bottom: (_variables.$core-padding * 4);
   }
 
   @media (prefers-color-scheme: dark) {
@@ -17,7 +23,7 @@
 }
 
 .devices__container {
-  @include flex(wrap, row, space-between, null);
+  @include _flexbox.flex(wrap, row, space-between, null);
 }
 
 .devices__item {
@@ -30,7 +36,7 @@
     display: none;
   }
 
-  @include min(l) {
+  @include _responsive.min(l) {
     width: 30%;
     border-radius: 4vw;
 
@@ -45,7 +51,7 @@
   position: relative;
   width: 100%;
   height: auto;
-  z-index: z(delta);
+  z-index: _z-index.z(delta);
 }
 
 .devices__picture {
@@ -56,7 +62,7 @@
   height: 100%;
   padding-top: 217%;
   transform: translate(-50%, -50%);
-  z-index: z(alpha);
+  z-index: _z-index.z(alpha);
 }
 
 .devices__picture-image {

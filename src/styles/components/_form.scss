@@ -1,10 +1,17 @@
+@use "../settings/variables" as _variables;
+@use "../tools/mixins/flexbox" as _flexbox;
+@use "../tools/mixins/responsive" as _responsive;
+@use "../tools/mixins/transitions" as _transitions;
+@use "../tools/mixins/typography" as _typography;
+
+@use "sass:color";
 // Form...............Contact form styles.
 
 .form {
-  margin-bottom: ($core-margin * 2.5);
-  padding-top: $core-padding;
+  margin-bottom: (_variables.$core-margin * 2.5);
+  padding-top: _variables.$core-padding;
 
-  @include min(m) {
+  @include _responsive.min(m) {
     grid-column-end: span 2;
     margin-bottom: 0;
     padding-top: 0;
@@ -18,7 +25,7 @@
 }
 
 .form__content {
-  @include min(m) {
+  @include _responsive.min(m) {
     display: grid;
     grid-gap: 40px 20px;
     grid-template-columns: repeat(3, 1fr);
@@ -26,16 +33,16 @@
 }
 
 .form__inner {
-  @include min(m) {
-    @include flex(wrap, row, space-between, null);
+  @include _responsive.min(m) {
+    @include _flexbox.flex(wrap, row, space-between, null);
   }
 }
 
 .form__field {
   position: relative;
-  margin-bottom: ($core-margin * 2);
+  margin-bottom: (_variables.$core-margin * 2);
 
-  @include min(m) {
+  @include _responsive.min(m) {
     flex-basis: 48%;
 
     &:nth-of-type(3) {
@@ -45,42 +52,42 @@
 }
 
 .form__item {
-  margin-bottom: ($core-margin * 1.5);
+  margin-bottom: (_variables.$core-margin * 1.5);
 }
 
 .form__label {
   display: block;
   color: var(--color-heading);
-  font-family: $core-font-family;
-  font-weight: $core-tertiary-font-weight;
-  margin-bottom: ($core-margin / 2);
+  font-family: _variables.$core-font-family;
+  font-weight: _variables.$core-tertiary-font-weight;
+  margin-bottom: (_variables.$core-margin / 2);
 
-  @include min(l) {
-    font-family: $core-variable-font-family;
-    font-weight: $core-font-weight;
-    font-variation-settings: 'wght' $core-tertiary-font-weight;
+  @include _responsive.min(l) {
+    font-family: _variables.$core-variable-font-family;
+    font-weight: _variables.$core-font-weight;
+    font-variation-settings: 'wght' _variables.$core-tertiary-font-weight;
   }
 }
 
 .form__input,
 .form__textarea {
-  @include transition-03(border-color);
+  @include _transitions.transition-03(border-color);
   width: 100%;
-  background-color: darken($core-color-background, 3%);
+  background-color: color.adjust(_variables.$core-color-background, $lightness: -3%);
   color: var(--color-body);
   margin-bottom: 0;
-  padding-top: ($core-padding / 2);
-  padding-right: $core-padding;
-  padding-bottom: ($core-padding / 2);
-  padding-left: $core-padding;
+  padding-top: (_variables.$core-padding / 2);
+  padding-right: _variables.$core-padding;
+  padding-bottom: (_variables.$core-padding / 2);
+  padding-left: _variables.$core-padding;
   border-width: 2px;
-  border-style: $core-border-style;
+  border-style: _variables.$core-border-style;
   border-color: var(--color-neutral);
 
   &:hover,
   &:focus,
   &:active {
-    border-color: $core-color-link;
+    border-color: _variables.$core-color-link;
     outline: none;
   }
 
@@ -96,7 +103,7 @@
 
 .form__input--valid,
 .form__textarea--valid {
-  border-color: $core-color-success;
+  border-color: _variables.$core-color-success;
 }
 
 .form__input--invalid,
@@ -110,19 +117,19 @@
 }
 
 .form__validation-message {
-  @include transition-03(opacity);
+  @include _transitions.transition-03(opacity);
   display: block;
   position: absolute;
   top: 3px;
   right: 0;
   color: var(--color-danger);
-  font-family: $core-font-family;
+  font-family: _variables.$core-font-family;
   opacity: 0;
 
-  @include min(l) {
-    font-family: $core-variable-font-family;
-    font-weight: $core-font-weight;
-    font-variation-settings: 'wght' $core-secondary-font-weight;
+  @include _responsive.min(l) {
+    font-family: _variables.$core-variable-font-family;
+    font-weight: _variables.$core-font-weight;
+    font-variation-settings: 'wght' _variables.$core-secondary-font-weight;
   }
 
   &--visible {
@@ -131,14 +138,14 @@
 }
 
 .form__message {
-  @include text(bodyCopy);
+  @include _typography.text(bodyCopy);
   display: block;
-  margin-top: ($core-margin * 2);
+  margin-top: (_variables.$core-margin * 2);
   margin-bottom: 0;
-  padding-top: ($core-padding / 2);
-  padding-right: $core-padding;
-  padding-bottom: ($core-padding / 2);
-  padding-left: $core-padding;
+  padding-top: (_variables.$core-padding / 2);
+  padding-right: _variables.$core-padding;
+  padding-bottom: (_variables.$core-padding / 2);
+  padding-left: _variables.$core-padding;
   color: var(--color-brand);
 
   &--error {
@@ -146,6 +153,6 @@
   }
 
   &--success {
-    background-color: rgba($core-color-success, 0.7);
+    background-color: rgba(_variables.$core-color-success, 0.7);
   }
 }

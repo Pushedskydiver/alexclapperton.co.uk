@@ -1,0 +1,23 @@
+{{> _partials/head }}
+
+{{> _partials/navigation }}
+
+{{> _partials/banner }}
+
+<div class="notch">
+    <main class="post" id="main">
+        <div class="post__container">
+            <div class="post__content">
+                <article class="post__article">
+                    <time class="post__date" datetime="{{ article.date }}"><strong>Published on:</strong> {{ readableDate }}</time>
+
+                    {{{ content }}}
+                </article>
+            </div>
+        </div>
+    </main>
+
+    {{> _partials/push }}
+</div>
+
+{{> _partials/footer }}

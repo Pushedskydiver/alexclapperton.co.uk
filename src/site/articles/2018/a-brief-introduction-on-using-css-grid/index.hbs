@@ -1,0 +1,172 @@
+---
+tags: articles 
+title: "A brief introduction on using CSS Grid — Alex Clapperton — Professional Front-End Web Developer" 
+layout: _layouts/post
+---
+
+<p class="post__body">Over the last few years, the web has evolved at an astonishing pace and shows no signs of slowing down. So much so, that webpage layouts are becoming more and more complex for web developers to create. So far, we have been relying on hacky solutions like floats to create our layouts. More recently developers have been using <a class="link" href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/" title="CSS Tricks A Complete Guide to Grid article." rel="external">Flexbox</a> which goes some way to creating complex layouts easier but by no means is it the perfect solution. However, an exciting new layout module known as CSS Grid has now surfaced and is without a doubt the ultimate solution to all our layout problems.</p>
+
+<h2 class="post__sub-title">What is CSS Grid?</h2>
+
+<p class="post__body">I'm glad you asked. The core behind the Grid layout module is to divide a web page into columns and rows with the ability to size and position block elements based on the number of rows and columns we create. Grid also allows us to easily change positions of block elements based on different screen sizes. All of this is done solely with CSS and does not require any altering of our HTML.</p>
+
+<h3 class="post__sub-title">Browser Support</h3>
+
+<p class="post__body">Before we rush off and start using Grid, it's important to understand <a class="link" href="http://caniuse.com/#feat=css-grid" title="Can I Use website showing browsers supporting CSS Grid." rel="external">the status of browser support</a> for Grid. The awesome news is that Chrome, Safari, Firefox, Edge and Opera all have Grid enabled by default on their latest versions. Internet Explorer 10 and 11 support and old implementation of Grid.</p>
+
+<figure class="figure">
+  <div style="position: relative; padding-top: 43%;">
+    <img class="figure__img lazyload__image lazyload" data-src="/images/articles/post/css-grid-support-01-2018.jpg" alt="Browser versions that support grid." data-lazy>
+  </div>
+  <noscript>
+    <img class="figure__img" src="/images/articles/post/css-grid-support-01-2018.jpg" alt="Browser versions that support grid.">
+  </noscript>
+  <figcaption class="figure__caption">Latest modern browser versions support Grid</figcaption> 
+</figure>
+
+<h3 class="post__sub-title">An example of using Grid</h3>
+
+<p class="post__body">To see the power of Grid in all its glory, let's have a look at when we put it to use.</p>
+
+<p class="post__body">Let's imagine that we want to create a 3-column layout consisting of a header, banner, content, sidebar and footer.</p>
+
+<p class="post__body">Here is our HTML:</p>
+
+<pre><code class="language-markup">&lt;div class="grid">
+
+    &lt;header class="header">HEADER&lt;/header>
+    &lt;section class="banner">BANNER&lt;/section>
+    &lt;article class="content">CONTENT&lt;/article>
+    &lt;aside class="sidebar">SIDEBAR&lt;/aside>
+    &lt;footer class="footer">FOOTER&lt;/footer>
+    
+&lt;/div></code></pre>
+
+<p class="post__body">Now we apply our CSS to the <code class="language-inline">.grid</code> container:</p>
+
+<pre><code class="language-css">.grid {
+  width: 80%;
+  margin: 0 auto;
+  
+  display:  grid;
+  grid-gap: 20px 30px;
+  grid-template-areas:
+    "header header header"
+    "banner banner banner"
+    "content content sidebar"
+    "footer footer footer";
+}</code></pre>
+
+<p class="post__body">Then some CSS to our grid items (I'm using Scss here):</p>
+
+<pre><code class="language-css">.grid__item {
+  background-color: #eee;
+  
+  &amp;--header {
+    grid-area: header;
+    padding: 20px;
+  }
+  
+  &amp;--banner {
+    grid-area: banner;
+    padding: 60px 20px;
+  }
+  
+  &amp;--content {
+    grid-area: content;
+    padding: 100px 20px;
+  }
+  
+  &amp;--sidebar {
+    grid-area: sidebar;
+    padding: 100px 20px;
+  }
+  
+  &amp;--footer {
+    grid-area: footer;
+    padding: 20px;
+  }
+}</code></pre>
+
+<p class="post__body">Which should create something like this:</p>
+
+<figure class="figure">
+  <div style="position:relative; padding-top: 51.3671875%;">
+    <img class="figure__img lazyload__image lazyload" data-src="/images/articles/post/css-grid-layout-desktop.jpg" alt="Desktop layout with sidebar using Grid." data-lazy>
+  </div>
+  <noscript>
+    <img class="figure__img" src="/images/articles/post/css-grid-layout-desktop.jpg" alt="Desktop layout with sidebar using Grid.">
+  </noscript>
+  <figcaption class="figure__caption">Finished layout using only CSS Grid.</figcaption> 
+</figure>
+
+<p class="post__body">You can view the full <a class="link" href="https://codepen.io/Pushedskydiver/pen/vxeyoG" title="View the CSS Grid layout demo on CodePen." rel="external">demo of this on CodePen</a>.</p>
+
+<p class="post__body">Let's explain a little about what we've done to achieve this layout:</p>
+
+<ol class="list list--ordered">
+  <li class="list__item">Set the display property of the <code class="language-inline">.grid</code> container to <code class="language-inline">grid</code>.</li>
+  <li class="list__item">Set the spacing between the rows <code class="language-inline">20px</code> and the columns <code class="language-inline">30px</code> using <code class="language-inline">grid-gap</code>.</li>
+  <li class="list__item">Defining our grid layout with named areas using <code class="language-inline">grid-template-areas</code>.</li>
+  <li class="list__item">Assigning our grid items to their corresponding area name using <code class="language-inline">grid-area</code>.</li>
+</ol>
+
+<p class="post__body">As you can see, the Grid layout module adds a new value to the <code class="language-inline">display</code> property which is <code class="language-inline">grid</code>. This value is required to start using Grid. One property that stands out is <code class="language-inline">grid-template-areas</code> which allows us to assign names to our grid items and define how many columns and rows we want all in one property. I could have also used <code class="language-inline">grid-template-rows</code> and <code class="language-inline">grid-template-columns</code> to define the grid. Assigning names to grid items will hopefully make it easier for any developers who collaborate with designers.</p>
+
+<p class="post__body">To make this grid responsive, we only need to change our <code class="language-inline">grid-template-areas</code> property in our media queries like so:</p>
+
+<pre><code class="language-css">@media (max-width: 768px) {
+  .grid {
+    grid-template-areas:
+      "header"
+      "banner"
+      "content"
+      "sidebar"
+      "footer";
+  }
+}</code></pre>
+
+<p class="post__body">This puts every grid item underneath each other in one column. Simple.</p>
+
+<figure class="figure">
+  <div style="position:relative; padding-top: 132.299741602%;">
+    <img class="figure__img lazyload__image lazyload" data-src="/images/articles/post/css-grid-layout-mobile.jpg" alt="Stacked layout using Grid." data-lazy>
+  </div>
+  <noscript>
+    <img class="figure__img" src="/images/articles/post/css-grid-layout-mobile.jpg" alt="Stacked layout using Grid.">
+  </noscript>
+  <figcaption class="figure__caption">Layout now stacked using CSS Grid.</figcaption> 
+</figure>
+
+<h3 class="post__sub-title">Grid vs Flexbox</h3>
+
+<p class="post__body">Since many of us like to use Flexbox, you might be wondering: Is there any point in using flexbox anymore? The short answer is, yes, Flexbox is still useful and can work alongside Grid.</p>
+
+<p class="post__body">I found a good explanation from <a class="link" href="https://www.slideshare.net/rachelandrew/flexbox-and-grid-layout/89" title="Rachel Andrew's presentation slides on CSS Grid." rel="external">Rachel Andrew</a> who says:</p>
+
+<blockquote class="quote">
+  <span class="quote__mark">&#8220;</span>
+  <p class="quote__body">Grid Layout for the main page structure of rows and columns.</p>
+  <p class="quote__body">Flexbox for navigation, UI elements, anything you could linearize.</p>
+</blockquote>
+
+<h3 class="post__sub-title">CSS Grid Layout Resources</h3>
+
+<p class="post__body">I have only scratched the surface of Grid's concepts and syntax, so I recommend you check out the following resources to get a more in depth look at Grid:</p>
+
+<ul class="list list--unordered">
+  <li class="list__item"><a class="link" href="https://drafts.csswg.org/css-grid/" title="W3C CSS Grid layout specification page." rel="external">CSS Grid Layout Module spec</a></li>
+  <li class="list__item"><a class="link" href="https://igalia.github.io/css-grid-layout/index.html" title="GitHub page of CSS Grid layout examples." rel="external">CSS Grid Layout Examples</a></li>
+  <li class="list__item"><a class="link" href="http://gridbyexample.com/" title="Grid By Example website by Rachel Andrew." rel="external">Grid by Example</a></li>
+  <li class="list__item"><a class="link" href="https://hacks.mozilla.org/2015/09/the-future-of-layout-with-css-grid-layouts/" title="Article about the future of CSS Grid." rel="external">The future of layout with CSS: Grid Layouts</a></li>
+  <li class="list__item"><a class="link" href="https://css-tricks.com/snippets/css/complete-guide-grid/" title="CSS Tricks A Complete Guide to Grid article." rel="external">A Complete Guide to Grid</a></li>
+  <li class="list__item">Follow <a class="link" href="https://rachelandrew.co.uk/" title="Rachel Andrew's website." rel="external">Rachel Andrew</a> for updates and resources. She is doing a lot of great work in relation to Grid Layout.</li>
+</ul>
+
+<h3 class="post__sub-title">Conclusion</h3>
+
+<p class="post__body">As you've seen, CSS Grid is powerful because of its code brevity and the fact that you have the power to change the layout order without touching the HTML. These features can help us permanently change the way we create layouts for the web.</p>
+
+<h4 class="post__small-title">Side note</h4>
+
+<p class="post__body">If anyone is using <a class="link" href="https://atom.io/" title="Atom.io website" rel="external">Atom</a> as their Text Editor, I’ve created a handy <a class="link" href="https://atom.io/packages/css-grid-snippets" title="CSS Grid Snippets package detail page on Atom.io." rel="external">CSS Grid Snippets Package</a> to make it easier and quicker to write out the Grid properties. Download it and let me know what you think.</p>

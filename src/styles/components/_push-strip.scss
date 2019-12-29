@@ -1,10 +1,15 @@
+@use "../settings/variables" as _variables;
+@use "../tools/mixins/flexbox" as _flexbox;
+@use "../tools/mixins/responsive" as _responsive;
+@use "../tools/mixins/typography" as _typography;
+
 // Push strip.........Push notification strip styles.
 
 .push-strip {
-  @include container;
-  background-color: $core-color-background;
-  padding-top: ($core-padding * 1.5);
-  padding-bottom: ($core-padding * 1.8);
+  @include _responsive.container;
+  background-color: _variables.$core-color-background;
+  padding-top: (_variables.$core-padding * 1.5);
+  padding-bottom: (_variables.$core-padding * 1.8);
 
   &--hide {
     display: none;
@@ -12,9 +17,9 @@
 }
 
 .push-strip__container {
-  @include flex(null, column, null, center);
+  @include _flexbox.flex(null, column, null, center);
 
-  @include min(m) {
+  @include _responsive.min(m) {
     flex-direction: row;
     justify-content: center;
   }
@@ -26,22 +31,22 @@
 }
 
 .push-strip__text {
-  @include text(venus);
-  margin-top: $core-margin;
-  margin-bottom: $core-margin;
+  @include _typography.text(venus);
+  margin-top: _variables.$core-margin;
+  margin-bottom: _variables.$core-margin;
   text-align: center;
 
-  @include min(m) {
+  @include _responsive.min(m) {
     max-width: 380px;
     margin-top: 0;
-    margin-right: ($core-margin * 2);
+    margin-right: (_variables.$core-margin * 2);
     margin-bottom: 0;
-    margin-left: ($core-margin * 1.5);
+    margin-left: (_variables.$core-margin * 1.5);
     text-align: left;
   }
 
-  @include min(l) {
+  @include _responsive.min(l) {
     max-width: 65%;
-    margin-left: ($core-margin * 2);
+    margin-left: (_variables.$core-margin * 2);
   }
 }

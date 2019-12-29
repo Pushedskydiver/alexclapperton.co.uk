@@ -20,7 +20,7 @@
     "calc": true,
     "colormin": true,
     "convertValues": true,
-    "core": false,
+    "core": true,
     "discardComments": {
       "removeAll": true
     },
@@ -65,7 +65,7 @@
     ]
   },
   "uglify": {
-    "uglifyOptions": {
+    "terserOptions": {
       "minimize": true,
       "warnings": false,
       "compress": {

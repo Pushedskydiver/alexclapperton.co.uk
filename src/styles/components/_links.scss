@@ -1,24 +1,28 @@
+@use "../settings/variables" as _variables;
+@use "../tools/mixins/responsive" as _responsive;
+@use "../tools/mixins/transitions" as _transitions;
+
 // Links..............Generic link styles.
 
 .link {
-  font-family: $core-font-family;
-  font-weight: $core-tertiary-font-weight;
-  border-bottom-width: $core-border-width;
-  border-bottom-style: $core-border-style;
-  border-bottom-color: $core-color-link;
+  font-family: _variables.$core-font-family;
+  font-weight: _variables.$core-tertiary-font-weight;
+  border-bottom-width: _variables.$core-border-width;
+  border-bottom-style: _variables.$core-border-style;
+  border-bottom-color: _variables.$core-color-link;
 
-  @include min(l) {
-    @include transition-03(background-color);
-    font-family: $core-variable-font-family;
-    font-weight: $core-font-weight;
-    font-variation-settings: 'wght' $core-tertiary-font-weight;
+  @include _responsive.min(l) {
+    @include _transitions.transition-03(background-color);
+    font-family: _variables.$core-variable-font-family;
+    font-weight: _variables.$core-font-weight;
+    font-variation-settings: 'wght' _variables.$core-tertiary-font-weight;
 
     &:hover {
-      background-color: $core-color-link;
+      background-color: _variables.$core-color-link;
     }
 
     @media (prefers-color-scheme: dark) {
-      @include transition-03(all);
+      @include _transitions.transition-03(all);
 
       &:hover {
         color: var(--color-brand);

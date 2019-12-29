@@ -1,18 +1,20 @@
+@use "../settings/variables" as _variables;
+
 // Quote..............Blockquote styles.
 
 .quote {
   position: relative;
-  margin-top: ($core-margin * 5);
-  margin-bottom: ($core-margin * 4);
-  padding-top: ($core-padding * 4);
-  padding-bottom: ($core-padding * 4);
+  margin-top: (_variables.$core-margin * 5);
+  margin-bottom: (_variables.$core-margin * 4);
+  padding-top: (_variables.$core-padding * 4);
+  padding-bottom: (_variables.$core-padding * 4);
   text-align: center;
   border-top-width: 1px;
-  border-top-style: $core-border-style;
-  border-top-color: $core-color-neutral;
+  border-top-style: _variables.$core-border-style;
+  border-top-color: _variables.$core-color-neutral;
   border-bottom-width: 1px;
-  border-bottom-style: $core-border-style;
-  border-bottom-color: $core-color-neutral;
+  border-bottom-style: _variables.$core-border-style;
+  border-bottom-color: _variables.$core-color-neutral;
 }
 
 .quote__mark {
@@ -23,12 +25,12 @@
   width: 50px;
   height: 50px;
   margin: 0 auto;
-  padding: ($core-padding / 2);
-  background-color: $core-color-link;
-  color: $core-color-brand;
+  padding: (_variables.$core-padding / 2);
+  background-color: _variables.$core-color-link;
+  color: _variables.$core-color-brand;
   font-size: calc(3em + 0.5vw);
-  font-weight: $core-font-weight;
-  font-variation-settings: 'wght' $core-tertiary-font-weight;
+  font-weight: _variables.$core-font-weight;
+  font-variation-settings: 'wght' _variables.$core-tertiary-font-weight;
   line-height: 4rem;
   border-radius: 50%;
 }
@@ -36,8 +38,8 @@
 .quote__body {
   margin-bottom: 0;
   color: var(--color-heading);
-  font-family: $core-secondary-variable-font-family;
+  font-family: _variables.$core-secondary-variable-font-family;
   font-size: calc(1.1em + 0.5vw);
   font-style: italic;
-  font-variation-settings: 'wght' $core-tertiary-font-weight;
+  font-variation-settings: 'wght' _variables.$core-tertiary-font-weight;
 }

@@ -2,8 +2,10 @@ import obj from './navigation'
 
 function desktopNavigation() {
   function addActiveClass({ target }) {
-    obj.activeNavItem.style.left = `${target.offsetLeft}px`;
-    obj.activeNavItem.style.width = `${target.clientWidth}px`;
+    if (target.nodeName === 'A') {
+      obj.activeNavItem.style.left = `${target.offsetLeft}px`;
+      obj.activeNavItem.style.width = `${target.clientWidth}px`;
+    }
   }
 
   function removeActiveClass() {

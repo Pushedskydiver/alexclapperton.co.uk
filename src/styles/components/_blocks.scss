@@ -1,18 +1,23 @@
+@use "../settings/variables" as _variables;
+@use "../tools/mixins/flexbox" as _flexbox;
+@use "../tools/mixins/responsive" as _responsive;
+@use "../tools/mixins/typography" as _typography;
+
 // Blocks.............Blocks styles on about page.
 
 .blocks {
-  @include container;
-  padding-top: ($core-padding * 3);
-  padding-bottom: ($core-padding * 3);
+  @include _responsive.container;
+  padding-top: (_variables.$core-padding * 3);
+  padding-bottom: (_variables.$core-padding * 3);
 
-  @include min(l) {
-    padding-top: ($core-padding * 4.5);
-    padding-bottom: ($core-padding * 4.5);
+  @include _responsive.min(l) {
+    padding-top: (_variables.$core-padding * 4.5);
+    padding-bottom: (_variables.$core-padding * 4.5);
   }
 }
 
 .blocks__heading {
-  @include text(saturn);
+  @include _typography.text(saturn);
 }
 
 .blocks__sub-text {
@@ -20,35 +25,35 @@
 }
 
 .blocks__content {
-  @include min(m) {
-    @include flex(wrap, row, space-between, null);
+  @include _responsive.min(m) {
+    @include _flexbox.flex(wrap, row, space-between, null);
   }
 }
 
 .blocks__item {
   background-color: var(--color-neutral);
-  margin-bottom: ($core-margin * 2);
-  padding-top: ($core-padding * 2.5);
-  padding-right: ($core-padding * 2.5);
-  padding-bottom: ($core-padding * 2.5);
-  padding-left: ($core-padding * 2.5);
+  margin-bottom: (_variables.$core-margin * 2);
+  padding-top: (_variables.$core-padding * 2.5);
+  padding-right: (_variables.$core-padding * 2.5);
+  padding-bottom: (_variables.$core-padding * 2.5);
+  padding-left: (_variables.$core-padding * 2.5);
 
   &:last-child {
     margin-bottom: 0;
   }
 
-  @include min(m) {
+  @include _responsive.min(m) {
     width: 49%;
   }
 
-  @include min(l) {
+  @include _responsive.min(l) {
     margin-bottom: 0;
     flex-basis: 32.333333%;
   }
 }
 
 .blocks__item-title {
-  @include text(mars);
+  @include _typography.text(mars);
 
   &--strike {
     text-decoration: line-through;
