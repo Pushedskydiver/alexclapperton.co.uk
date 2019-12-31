@@ -1,0 +1,12 @@
+[build]
+  command = "npm run build"
+  publish = "dist"
+  functions = "src/functions"
+
+[dev]
+  command = "npm run start"
+
+[[redirects]]
+  from = "https://alexclapperton.co.uk/api/users/"
+  to = "/.netlify/functions/new-push-user"
+  status = 200
