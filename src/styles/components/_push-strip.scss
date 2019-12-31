@@ -7,7 +7,7 @@
 
 .push-strip {
   @include _responsive.container;
-  background-color: _variables.$core-color-background;
+  background-color: var(--color-background);
   padding-top: (_variables.$core-padding * 1.5);
   padding-bottom: (_variables.$core-padding * 1.8);
 

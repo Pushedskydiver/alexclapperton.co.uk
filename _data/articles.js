@@ -2,7 +2,7 @@ const fs = require('fs');
 const path = require('path');
 const articlesService = require('../_services/articles');
 
-function buildMarkdown(article) {
+function buildMarkdown(article, year) {
   const thumbnail = article.featuredImage.fields.file;
 
   return `
@@ -10,6 +10,9 @@ function buildMarkdown(article) {
 tags: articles
 title: "${article.articleName}"
 description: "${article.articleDescription}"
+datePublished: ${article.date}
+dateModified: ${article.modified}
+slug: ${year}/${article.slug}
 external: ${article.isExternal}
 post: true
 thumbnail:
@@ -24,19 +27,22 @@ function buildData(article) {
   const fileName = article.slug;
   const year = article.date.split('-')[0];
   const output = path.resolve(process.cwd(), 'src', 'site', 'articles');
-  const md = buildMarkdown(article);
+  const md = buildMarkdown(article, year);
   const data = `${md.trim()}\n\n${article.post}`;
 
   fs.mkdirSync(`${output}/${year}/${fileName}`, { recursive: true });
   fs.writeFileSync(`${output}/${year}/${fileName}/index.hbs`, data);
 }
 
-
 async function fetchArticles() {
   return await articlesService.getArticles().then(collection => {
-    const articles = collection.items.map(item => item.fields);
+    const articles = collection.items.map(item => {
+      item.fields.modified = item.sys.updatedAt.split('T')[0];
 
-    articles.forEach(buildData)
+      return item.fields;
+    });
+
+    articles.forEach(buildData);
   });
 }
 

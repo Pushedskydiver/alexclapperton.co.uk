@@ -48,8 +48,6 @@ function fadeInElements() {
   }
 
   function init(element) {
-    console.log('init');
-
     fadeIn(element);
 
     'IntersectionObserver' in window ?

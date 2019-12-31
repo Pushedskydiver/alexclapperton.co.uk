@@ -12,6 +12,8 @@ module.exports = config => {
   config.addFilter('fadeInDelay', fadeInDelay);
   config.addFilter('swStyles', swStyles);
 
+  // config.addWatchTarget('./src/styles/'); // For v0.10.0 release
+
   config.addPassthroughCopy({ 'src/favicons': 'favicons' });
   config.addPassthroughCopy({ 'src/fonts': 'fonts' });
   config.addPassthroughCopy({ 'src/icons': 'icons' });
@@ -19,7 +21,7 @@ module.exports = config => {
   config.addPassthroughCopy({ 'src/site.webmanifest': 'site.webmanifest' });
   config.addPassthroughCopy({ 'src/browserconfig.xml': 'browserconfig.xml' });
 
-  config.addTransform('htmlmin', htmlMin);
+  // config.addTransform('htmlmin', htmlMin);
 
   config.setBrowserSyncConfig({
     callbacks: {
