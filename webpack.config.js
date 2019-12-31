@@ -7,12 +7,11 @@ const ImageminWebpWebpackPlugin = require('imagemin-webp-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
 // const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
 const path = require('path');
-const plugins = require('./_config/plugins.json');
+const plugin = require('./_config/plugins.json');
 
 function Bundle() {
   const prod = process.argv.includes('--prod');
   const env = process.env.ELEVENTY_ENV;
-  const plugin = require('./_config/plugins.json');
 
   const alias = {
     'cookies': 'mozilla-doc-cookies/docCookies.js',
@@ -120,8 +119,8 @@ function Bundle() {
                 plugins: () => [
                   require('postcss-sort-media-queries'),
                   require('postcss-minify-selectors'),
-                  require('postcss-clean')(plugins.cleancss),
-                  require('cssnano')(plugins.cssnano)
+                  require('postcss-clean')(plugin.cleancss),
+                  require('cssnano')(plugin.cssnano)
                 ],
               },
             },
