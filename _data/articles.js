@@ -1,28 +1,43 @@
-const contentful = require('contentful');
 const fs = require('fs');
 const path = require('path');
+const articlesService = require('../_services/articles');
 
-const contentfulClient = contentful.createClient({
-  accessToken: '73940eda44dadba56db69ec6395029036dbd43845eb476473e17a79f627d351a',
-  space: '66vjslfacivy'
-});
+function buildMarkdown(article) {
+  const thumbnail = article.featuredImage.fields.file;
 
-function fetchArticles() {
-  contentfulClient.getEntries({ content_type: '2PqfXUJwE8qSYKuM0U6w8M' })
-    .then(entries => {
-      entries.items.forEach(item => {
-        const fileName = item.fields.slug;
-        const posts = path.resolve(process.cwd(), 'src', 'site', 'articles');
-        const year = item.fields.date.split('-')[0];
+  return `
+---
+tags: articles
+title: "${article.articleName}"
+description: "${article.articleDescription}"
+external: ${article.isExternal}
+post: true
+thumbnail:
+  url: ${thumbnail.url}
+  alt: "${article.articleData.alt}"
+layout: _layouts/post
+---
+  `
+}
 
-        const md = `---\ntags: articles \ntitle: "${item.fields.articleName}" \nlayout: _layouts/post\n---\n`
+function buildData(article) {
+  const fileName = article.slug;
+  const year = article.date.split('-')[0];
+  const output = path.resolve(process.cwd(), 'src', 'site', 'articles');
+  const md = buildMarkdown(article);
+  const data = `${md.trim()}\n\n${article.post}`;
 
-        const data = `${md.trim()}\n\n${item.fields.post}`;
+  fs.mkdirSync(`${output}/${year}/${fileName}`, { recursive: true });
+  fs.writeFileSync(`${output}/${year}/${fileName}/index.hbs`, data);
+}
 
-        fs.mkdirSync(`${posts}/${year}/${fileName}`, { recursive: true });
-        fs.writeFileSync(`${posts}/${year}/${fileName}/index.hbs`, data);
-      })
-    })
+
+async function fetchArticles() {
+  return await articlesService.getArticles().then(collection => {
+    const articles = collection.items.map(item => item.fields);
+
+    articles.forEach(buildData)
+  });
 }
 
 module.exports = fetchArticles;

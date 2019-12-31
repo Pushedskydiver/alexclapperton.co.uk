@@ -18,13 +18,13 @@
         <link rel="preconnect" href="https://images.ctfassets.net/">
 
         <!-- PRELOAD FILES -->
-        {{> _partials/preload-styles }}
+        <link rel="preload" href="/css/main.css" as="style">
         <link rel="preload" href="/fonts/avenir-next-variable.woff2" as="font" type="font/woff2" crossorigin>
         <link rel="preload" href="/fonts/selawik-variable.woff2" as="font" type="font/woff2" media="(min-width: 62em)" crossorigin>
 
         {{#if home}}
-        <link rel="preload" href="{{heroImage.square.url}}?fm=webp" as="image" media="((max-width: 39.9375em))" type="image/webp">
-        <link rel="preload" href="{{heroImage.landscape.url}}?fm=webp" as="image" media="(min-width: 40em)" type="image/webp">
+        <link rel="preload" href="https://images.ctfassets.net/66vjslfacivy/3QPP25tbf4hfIqe6IfdwGW/8dbd89b212da827012c985b7a6017a4d/alex-square.jpg?fm=webp" as="image" media="((max-width: 39.9375em))" type="image/webp">
+        <link rel="preload" href="https://images.ctfassets.net/66vjslfacivy/3QPP25tbf4hfIqe6IfdwGW/8dbd89b212da827012c985b7a6017a4d/alex-landscape.jpg?fm=webp" as="image" media="(min-width: 40em)" type="image/webp">
         {{/if}}
 
         {{#if about}}
@@ -33,10 +33,10 @@
         {{/if}}
 
         <!-- STYLESHEET -->
-        {{> _partials/styles }}
+        <link rel="stylesheet" href="/css/main.css">
 
         <!-- SITEMAP -->
-        <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml" />
+        {{!-- <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml" /> --}}
 
         <!-- MANIFEST -->
         <link rel="manifest" href="/site.webmanifest">

@@ -3,27 +3,28 @@
                 <div class="footer__content">
                     <ul class="footer__list">
                         <li class="footer__list-item footer__list-item--title">Useful links</li>
-                    {{#each data.global.navigation}}
-                        <li class="footer__list-item"><a class="footer__list-link" href="{{url}}" title="{{title-attr}}" data-item-{{slug}}>{{title}}</a></li>
+
+                    {{#each settings.navigation}}
+                        <li class="footer__list-item"><a class="footer__list-link" href="{{this.url}}" title="{{this.title-attr}}" data-item-{{this.slug}}>{{title}}</a></li>
                     {{/each}}
                     </ul>
                     <ul class="footer__list">
                         <li class="footer__list-item footer__list-item--title">Send me an email</li>
-                        <li class="footer__list-item"><a class="footer__list-link" href="mailto:{{data.global.email}}">{{data.global.email}}</a></li>
+                        <li class="footer__list-item"><a class="footer__list-link" href="mailto:{{settings.email}}">{{settings.email}}</a></li>
                     </ul>
                     <ul class="footer__list">
                         <li class="footer__list-item footer__list-item--title">Let's have a chat</li>
-                        <li class="footer__list-item footer__list-item--phone">{{data.global.phone}}</li>
+                        <li class="footer__list-item footer__list-item--phone">{{settings.phone}}</li>
                     </ul>
                     <ul class="footer__list">
                         <li class="footer__list-item footer__list-item--title">Let's be social</li>
-                    {{#each data.global.social}}
-                        <li class="footer__list-item footer__list-item--social"><a class="footer__list-link" href="{{url}}" title="{{title-attr}}" {{#if external}}rel="external"{{/if}}>{{title}}</a></li>
+                    {{#each settings.social}}
+                        <li class="footer__list-item footer__list-item--social"><a class="footer__list-link" href="{{this.url}}" title="{{this.title-attr}}" {{#if this.external}}rel="external"{{/if}}>{{this.title}}</a></li>
                     {{/each}}
                     </ul>
                 </div>
 
-                <small class="footer__body">Copyright &copy; 2019 {{data.global.name}}. All rights reserved.</small>
+                <small class="footer__body">Copyright &copy; 2019 {{settings.name}}. All rights reserved.</small>
             </div>
         </footer>
     </body>

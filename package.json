@@ -15,14 +15,16 @@
   },
   "scripts": {
     "start": "npm run dev",
-    "dev": "cross-env ELEVENTY_ENV=dev npm run data && eleventy --serve && webpack",
-    "build": "cross-env ELEVENTY_ENV=prod npm run data && eleventy && webpack",
+    "dev": "cross-env ELEVENTY_ENV=dev npm run data && webpack && eleventy --serve",
+    "build": "cross-env ELEVENTY_ENV=prod npm run data && webpack && eleventy",
     "seed": "cross-env ELEVENTY_ENV=seed eleventy",
+    "debug": "cross-env ELEVENTY_ENV=dev DEBUG=Eleventy* eleventy",
     "data": "node ./_data/index.js",
     "css-stats": "curl https://www.projectwallace.com/webhooks/v1/imports?token=437db188-8041-44c8-b7ad-cc4e71f337d8 -fsS --retry 3 -X POST -H 'Content-Type: text/css' -d @./public/css/main.css"
   },
   "dependencies": {
     "@11ty/eleventy": "^0.9.0",
+    "@mightyplow/eleventy-plugin-cache-buster": "^1.1.3",
     "contentful": "^7.11.3",
     "cssnano": "^4.1.10",
     "dotenv": "^8.2.0",

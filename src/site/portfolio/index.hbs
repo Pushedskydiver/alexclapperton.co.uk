@@ -9,8 +9,8 @@ layout: _layouts/default
         <p class="portfolio__sub-text">We engage with our clients in order to understand their needs and impact their business. See how we’ve helped our clients!</p>
 
         <div class="portfolio__content">
-            {{#each projects}}
-                {{>portfolio}}
+            {{#each collections.projects}}
+                {{> _partials/portfolio }}
             {{/each}}
         </div>
     </div>
@@ -21,8 +21,8 @@ layout: _layouts/default
         <small class="articles__heading-small">Read my</small>
         <h3 class="articles__heading-main">Latest articles</h3>
         <div class="articles__content">
-            {{#eachUpTo articles 3}}
-              {{>articles}}
+            {{#eachUpTo collections.articles 3}}
+              {{> _partials/articles }}
             {{/eachUpTo}}
         </div>
         <a class="button button--secondary" href="/articles/">

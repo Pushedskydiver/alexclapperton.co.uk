@@ -1,27 +1,43 @@
-const contentful = require('contentful');
 const fs = require('fs');
 const path = require('path');
+const projectsService = require('../_services/projects');
 
-const contentfulClient = contentful.createClient({
-  accessToken: '73940eda44dadba56db69ec6395029036dbd43845eb476473e17a79f627d351a',
-  space: '66vjslfacivy'
-});
+function buildMarkdown(project) {
+  const thumbnail = project.featuredImage.fields;
 
-function fetchProjects() {
-  contentfulClient.getEntries({ content_type: 'sFzTZbSuM8coEwygeUYes' })
-    .then(entries => {
-      entries.items.forEach(item => {
-        const fileName = item.fields.slug;
-        const projects = path.resolve(process.cwd(), 'src', 'site', 'portfolio');
+  return `
+---
+tags: projects
+title: "${project.projectName}"
+description: "${project.projectName}"
+category: ${project.category}
+date: ${project.date}
+stack: [${project.tags}]
+thumbnail:
+  url: ${thumbnail.file.url}
+  alt: "${thumbnail.file.description}"
+  square: ${project.projectData.isFeaturedImageSquare}
+layout: _layouts/project
+---
+  `;
+}
 
-        const md = `---\ntags: projects \ntitle: "${item.fields.projectName}" \nlayout: _layouts/project\n---\n`
+function buildData(project) {
+  const fileName = project.slug;
+  const projects = path.resolve(process.cwd(), 'src', 'site', 'portfolio');
+  const md = buildMarkdown(project);
+  const data = `${md.trim()}\n\n${project.projectContent}`;
 
-        const data = `${md.trim()}\n\n${item.fields.projectContent}`;
+  fs.mkdirSync(`${projects}/${fileName}`, { recursive: true });
+  fs.writeFileSync(`${projects}/${fileName}/index.hbs`, data);
+}
 
-        fs.mkdirSync(`${projects}/${fileName}`, { recursive: true });
-        fs.writeFileSync(`${projects}/${fileName}/index.hbs`, data);
-      })
-    })
+async function fetchProjects() {
+  return await projectsService.getProjects().then(collection => {
+    const projects = collection.items.map(item => item.fields);
+
+    projects.forEach(buildData);
+  });
 }
 
 module.exports = fetchProjects;

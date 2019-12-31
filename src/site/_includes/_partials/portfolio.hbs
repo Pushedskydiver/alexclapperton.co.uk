@@ -1,25 +1,25 @@
 <div class="portfolio__item" data-portfolio-item>
-    <a class="portfolio__title" href="/portfolio/{{slug}}/" title="{{projectData.title-attr}}">{{projectName}}</a>
+    <a class="portfolio__title" href="{{this.url}}">{{this.data.title}}</a>
     <figure class="portfolio__figure">
-        <picture class="portfolio__picture {{#if projectData.isFeaturedImageSquare}}portfolio__picture--square{{/if}}">
-            <source type="image/webp" data-srcset="{{featuredImage.fields.file.url}}?fm=webp">
+        <picture class="portfolio__picture {{#if this.data.thumbnail.square}}portfolio__picture--square{{/if}}">
+            <source type="image/webp" data-srcset="{{this.data.thumbnail.url}}?fm=webp">
 
-            <img class="portfolio__image lazyload__image lazyload" data-src="{{featuredImage.fields.file.url}}" alt="{{featuredImage.fields.description}}" data-lazy>
+            <img class="portfolio__image lazyload__image lazyload" data-src="{{this.data.thumbnail.url}}" alt="{{this.data.thumbnail.alt}}" data-lazy>
 
             <noscript>
-                <source type="image/webp" srcset="{{featuredImage.fields.file.url}}fm=webp">
-                <img class="portfolio__image" src="{{featuredImage.fields.file.url}}" alt="{{featuredImage.fields.description}}">
+                <source type="image/webp" srcset="{{this.data.thumbnail.url}}fm=webp">
+                <img class="portfolio__image" src="{{this.data.thumbnail.url}}" alt="{{this.data.thumbnail.alt}}">
             </noscript>
         </pciture>
 
         <figcaption class="portfolio__caption">
-            <p class="portfolio__caption-title">{{projectName}}</p>
+            <p class="portfolio__caption-title">{{this.data.title}}</p>
             <p class="portfolio__caption-body">
-            {{#each tags}}
+            {{#each this.data.stack}}
               <span class="portfolio__caption-tags">{{this}}</span>
             {{/each}}
             </p>
-            <p class="portfolio__caption-category">{{category}}</p>
+            <p class="portfolio__caption-category">{{this.data.category}}</p>
         </figcaption>
     </figure>
 </div>

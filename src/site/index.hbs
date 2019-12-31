@@ -1,23 +1,26 @@
 ---
 title: Alex Clapperton
+heroImage:
+    square: https://images.ctfassets.net/66vjslfacivy/3QPP25tbf4hfIqe6IfdwGW/8dbd89b212da827012c985b7a6017a4d/alex-square.jpg
+    landscape: https://images.ctfassets.net/66vjslfacivy/3QPP25tbf4hfIqe6IfdwGW/8dbd89b212da827012c985b7a6017a4d/alex-landscape.jpg
 layout: _layouts/default
 home: true
 ---
 
 <main class="info-block notch" id="main">
     <picture class="info-block__picture info-block__picture--home">
-        <source media="(max-width: 39.9375em)" type="image/webp" srcset="{{heroImage.square.webp}}">
-        <source media="(min-width: 40em)" type="image/webp" srcset="{{heroImage.landscape.webp}}">
+        <source media="(max-width: 39.9375em)" type="image/webp" srcset="{{heroImage.square}}?fm=webp">
+        <source media="(min-width: 40em)" type="image/webp" srcset="{{heroImage.landscape}}?fm=webp">
 
-        <source media="(max-width: 39.9375em)" srcset="{{heroImage.square.url}}">
-        <source media="(min-width: 40em)" srcset="{{heroImage.landscape.url}}">
+        <source media="(max-width: 39.9375em)" srcset="{{heroImage.square}}">
+        <source media="(min-width: 40em)" srcset="{{heroImage.landscape}}">
 
-        <img class="info-block__picture-image" src="{{heroImage.landscape.url}}" alt="Portrait of Alex Clapperton.">
+        <img class="info-block__picture-image" src="{{heroImage.landscape}}" alt="Portrait of Alex Clapperton.">
     </picture>
 
     <div class="info-block__inner info-block__inner--home">
         <h2 class="info-block__heading">Hi there</h2>
-        <p>I'm Alex, a Front-end Web Developer from the UK. My passion is to build beautiful and responsive websites with accessibility at the heart of it. I am currently working as a {{data.global.jobTitle}} for <a class="link" href="{{data.global.employerUrl}}" rel="external">{{data.global.employer}}</a>, a digital agency based in Manchester.</p>
+        <p>I'm Alex, a Front-end Web Developer from the UK. My passion is to build beautiful and responsive websites with accessibility at the heart of it. I am currently working as a {{settings.jobTitle}} for <a class="link" href="{{settings.employerUrl}}" rel="external">{{settings.employer}}</a>, a digital agency based in Manchester.</p>
 
         <a class="info-block__button button button--primary" href="/about-me/">
             More about Alex
@@ -32,8 +35,8 @@ home: true
         <h3 class="portfolio__heading-main">Work &amp; projects</h3>
 
         <div class="portfolio__content">
-        {{#eachUpTo projects 4}}
-            {{>portfolio}}
+        {{#eachUpTo collections.projects 4}}
+            {{> _partials/portfolio }}
         {{/eachUpTo}}
         </div>
 
@@ -50,8 +53,8 @@ home: true
         <h3 class="articles__heading-main">Latest articles</h3>
 
         <div class="articles__content">
-        {{#eachUpTo articles 3}}
-          {{>articles}}
+        {{#eachUpTo collections.articles 3}}
+          {{> _partials/articles }}
         {{/eachUpTo}}
         </div>
 

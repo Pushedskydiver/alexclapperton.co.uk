@@ -1,15 +1,9 @@
-const fs = require('fs');
 const webpack = require('webpack');
 const ManifestPlugin = require('webpack-manifest-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
 // const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
 const path = require('path');
-
-function getCSSVersion() {
-  const stats = fs.statSync('dist/css/main.css');
-  return stats.mtime.getTime();
-}
 
 function Bundle() {
   const prod = process.argv.includes('--prod');
@@ -32,18 +26,6 @@ function Bundle() {
       filename: path.resolve(__dirname, 'src', 'site', '_includes', '_partials', 'scripts.hbs'),
       template: path.resolve(__dirname, '_templates', 'scripts.hbs'),
       chunks: ['common']
-    }),
-    new HtmlWebpackPlugin({
-      inject: false,
-      filename: path.resolve(__dirname, 'src', 'site', '_includes', '_partials', 'styles.hbs'),
-      template: path.resolve(__dirname, '_templates', 'styles.hbs'),
-      cssVersion: getCSSVersion()
-    }),
-    new HtmlWebpackPlugin({
-      inject: false,
-      filename: path.resolve(__dirname, 'src', 'site', '_includes', '_partials', 'preload-styles.hbs'),
-      template: path.resolve(__dirname, '_templates', 'preload-styles.hbs'),
-      cssVersion: getCSSVersion()
     }),
     new webpack.LoaderOptionsPlugin({
       debug: true
@@ -79,7 +61,7 @@ function Bundle() {
 
     output: {
       path: path.resolve(__dirname, 'dist', 'js'),
-      filename: '[name].bundle.js?cb=[chunkhash]',
+      filename: '[name].bundle.js',
       chunkFilename: '[id].chunk.js?cb=[chunkhash]',
       publicPath: '/js/'
     },

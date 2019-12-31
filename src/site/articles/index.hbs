@@ -7,7 +7,9 @@ permalink: "articles/index.html"
 <main class="articles notch" id="main">
     <div class="articles__container hide" data-fade>
         <div class="articles__content">
-        <p>osdifjiosjfsd</p>
+        {{#each collections.articles}}
+            {{> _partials/articles }}
+        {{/each}}
         </div>
     </div>
 </main>
