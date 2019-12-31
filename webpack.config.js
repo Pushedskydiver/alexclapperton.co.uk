@@ -1,7 +1,9 @@
 const webpack = require('webpack');
 const ManifestPlugin = require('webpack-assets-manifest');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
+const ImageminWebpWebpackPlugin = require('imagemin-webp-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
 // const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
 const path = require('path');
@@ -43,6 +45,14 @@ function Bundle() {
       filename: path.resolve(__dirname, 'src', 'site', '_includes', '_partials', 'styles.hbs'),
       template: path.resolve(__dirname, '_templates', 'styles.hbs')
     }),
+    new CopyWebpackPlugin([{
+      from: './src/images/**/*.jpg',
+      to: '[path][name].webp',
+      transformPath(targetPath, absolutePath) {
+        return targetPath.split('src/')[1];
+      },
+    }]),
+    new ImageminWebpWebpackPlugin(),
     new webpack.LoaderOptionsPlugin({
       debug: true
     })

@@ -5,11 +5,11 @@ layout: _layouts/default
 
 <main class="info-block notch" id="main">
     <picture class="info-block__picture">
-        <source media="(max-width: 39.9375em)" type="image/webp" srcset="{{heroImage.mobile.url}}?fm=webp">
-        <source media="(max-width: 39.9375em)" srcset="{{heroImage.mobile.url}}">
-        <source media="(min-width: 40em)" type="image/webp" srcset="{{heroImage.desktop.url}}?fm=webp">
-        <source media="(min-width: 40em)" srcset="{{heroImage.desktop.url}}">
-        <img class="info-block__picture-image" src="{{heroImage.desktop.url}}" alt="Wide shot of Alex Clapperton sat down working on his laptop.">
+        <source media="(max-width: 39.9375em)" type="image/webp" srcset="{{about.heroImage.mobile}}?fm=webp">
+        <source media="(max-width: 39.9375em)" srcset="{{about.heroImage.mobile}}">
+        <source media="(min-width: 40em)" type="image/webp" srcset="{{about.heroImage.desktop}}?fm=webp">
+        <source media="(min-width: 40em)" srcset="{{about.heroImage.desktop}}">
+        <img class="info-block__picture-image" src="{{about.heroImage.desktop}}" alt="Wide shot of Alex Clapperton sat down working on his laptop.">
     </picture>
 
     <div class="info-block__inner">
@@ -55,8 +55,8 @@ layout: _layouts/default
         <small class="articles__heading-small">Read my</small>
         <h3 class="articles__heading-main">Latest articles</h3>
         <div class="articles__content">
-        {{#eachUpTo articles 3}}
-          {{>articles}}
+        {{#eachUpTo collections.articles 3}}
+            {{> _partials/articles }}
         {{/eachUpTo}}
         </div>
         <a class="button button--secondary" href="/articles/">
