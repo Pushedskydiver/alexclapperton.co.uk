@@ -1,9 +1,11 @@
 const webpack = require('webpack');
-const ManifestPlugin = require('webpack-manifest-plugin');
+const ManifestPlugin = require('webpack-assets-manifest');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const TerserPlugin = require('terser-webpack-plugin');
 // const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
 const path = require('path');
+const plugins = require('./_config/plugins.json');
 
 function Bundle() {
   const prod = process.argv.includes('--prod');
@@ -19,13 +21,27 @@ function Bundle() {
 
   const plugins = [
     new ManifestPlugin({
-      fileName: path.join(__dirname, 'src', 'cache-manifest.json')
+      output: path.join(__dirname, 'src', 'cache-manifest.json')
+    }),
+    new MiniCssExtractPlugin({
+      filename: 'css/main.css?cb=[contenthash]'
     }),
     new HtmlWebpackPlugin({
       inject: false,
       filename: path.resolve(__dirname, 'src', 'site', '_includes', '_partials', 'scripts.hbs'),
       template: path.resolve(__dirname, '_templates', 'scripts.hbs'),
       chunks: ['common']
+    }),
+    new HtmlWebpackPlugin({
+      inject: false,
+      filename: path.resolve(__dirname, 'src', 'site', '_includes', '_partials', 'preload-styles.hbs'),
+      template: path.resolve(__dirname, '_templates', 'preload-styles.hbs'),
+      chunks: ['main']
+    }),
+    new HtmlWebpackPlugin({
+      inject: false,
+      filename: path.resolve(__dirname, 'src', 'site', '_includes', '_partials', 'styles.hbs'),
+      template: path.resolve(__dirname, '_templates', 'styles.hbs')
     }),
     new webpack.LoaderOptionsPlugin({
       debug: true
@@ -56,27 +72,61 @@ function Bundle() {
     devtool: !prod ? 'source-map' : 'eval',
 
     entry: {
-      common: path.resolve(__dirname, 'src/scripts/main.js')
+      common: path.resolve(__dirname, 'src/scripts/main.js'),
+      main: path.resolve(__dirname, 'src/styles/main.scss')
     },
 
     output: {
-      path: path.resolve(__dirname, 'dist', 'js'),
-      filename: '[name].bundle.js',
-      chunkFilename: '[id].chunk.js?cb=[chunkhash]',
-      publicPath: '/js/'
+      path: path.resolve(__dirname, 'dist'),
+      filename: 'js/[name].bundle.js?cb=[chunkhash]',
+      chunkFilename: 'js/[id].chunk.js?cb=[chunkhash]',
+      publicPath: '/'
     },
 
     mode: env === 'prod' ? 'production' : 'development',
 
-    // module: {
-    //   rules: [
-    //     {
-    //       test: /\.js*/,
-    //       exclude: /node_modules/,
-    //       use: [BabelLoader]
-    //     }
-    //   ]
-    // },
+    module: {
+      rules: [
+        {
+          test: /\.s[ac]ss$/i,
+          use: [
+            {
+              loader: MiniCssExtractPlugin.loader,
+              options: {
+                name: 'main.css?cb=[contenthash]',
+                publicPath: '/'
+              }
+            },
+            {
+              loader: 'css-loader?-url',
+              options: {
+                sourceMap: true,
+                url: false
+              }
+            },
+            {
+              loader: 'postcss-loader',
+              options: {
+                plugins: () => [
+                  require('postcss-sort-media-queries'),
+                  require('postcss-minify-selectors'),
+                  require('postcss-clean')(plugins.cleancss),
+                  require('cssnano')(plugins.cssnano)
+                ],
+              },
+            },
+            {
+              loader: 'sass-loader'
+            }
+          ],
+        }
+        // {
+        //   test: /\.js*/,
+        //   exclude: /node_modules/,
+        //   use: [BabelLoader]
+        // }
+      ]
+    },
 
     optimization: {
       minimizer: prod ? [new TerserPlugin(plugin.uglify)] : [new TerserPlugin({

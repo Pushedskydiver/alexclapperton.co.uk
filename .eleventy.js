@@ -1,20 +1,16 @@
 const fs = require('fs');
-const cacheBuster = require('@mightyplow/eleventy-plugin-cache-buster');
 const htmlMin = require('./src/utils/minify-html.js');
 const eachUpTo = require('./src/utils/filters/each-up-to');
 const fadeInDelay = require('./src/utils/filters/fade-in-delay');
-
-const cacheBusterOptions = {
-  outputDirectory: 'dist',
-  hashParameter: 'cb'
-};
+const swStyles = require('./src/utils/filters/sw-styles');
 
 module.exports = config => {
   // A useful way to reference the context we are runing eleventy in
   let env = process.env.ELEVENTY_ENV;
 
   config.addFilter('eachUpTo', eachUpTo);
-  config.addFilter('deviceFadeInDelay', fadeInDelay);
+  config.addFilter('fadeInDelay', fadeInDelay);
+  config.addFilter('swStyles', swStyles);
 
   config.addPassthroughCopy({ 'src/favicons': 'favicons' });
   config.addPassthroughCopy({ 'src/fonts': 'fonts' });
@@ -22,8 +18,6 @@ module.exports = config => {
   config.addPassthroughCopy({ 'src/images': 'images' });
   config.addPassthroughCopy({ 'src/site.webmanifest': 'site.webmanifest' });
   config.addPassthroughCopy({ 'src/browserconfig.xml': 'browserconfig.xml' });
-
-  config.addPlugin(cacheBuster(cacheBusterOptions));
 
   config.addTransform('htmlmin', htmlMin);
 
