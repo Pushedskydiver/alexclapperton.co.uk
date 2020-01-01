@@ -3,6 +3,8 @@ function formValidation() {
   const inputs = document.querySelectorAll('[data-input]');
   const textarea = document.querySelector('[data-textarea]');
   const submitButton = document.querySelector('[data-submit-button]');
+  const errorMessage = document.querySelector('[data-form-error]');
+  const successMessage = document.querySelector('[data-form-success]');
 
   function getInputPattern(input) {
     const pattern = input.getAttribute('pattern');
@@ -46,6 +48,14 @@ function formValidation() {
   }
 
   function showSuccessMessage() {
+    successMessage.style.display = 'block';
+  }
+
+  function showErrorMessage() {
+    errorMessage.style.display = 'block';
+  }
+
+  function submitForm() {
     const formData = new FormData(form);
 
     fetch(form.getAttribute('action'), {
@@ -56,11 +66,8 @@ function formValidation() {
       },
       body: new URLSearchParams(formData).toString()
     })
-      .then(response => {
-        if (response) {
-          console.log('Success');
-        }
-      });
+    .then(showSuccessMessage)
+    .catch(showErrorMessage);
   }
 
   function validateAllFields(event) {
@@ -85,7 +92,7 @@ function formValidation() {
     }
 
     if (!firstErrorFound) {
-      showSuccessMessage();
+      submitForm();
     }
   }
 

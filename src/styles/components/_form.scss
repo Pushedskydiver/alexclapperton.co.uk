@@ -139,7 +139,7 @@
 
 .form__message {
   @include _typography.text(bodyCopy);
-  display: block;
+  display: none;
   margin-top: (_variables.$core-margin * 2);
   margin-bottom: 0;
   padding-top: (_variables.$core-padding / 2);
