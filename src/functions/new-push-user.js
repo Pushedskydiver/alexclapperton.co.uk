@@ -3,16 +3,21 @@ const faunadb = require('faunadb');
 require('dotenv').config();
 
 const q = faunadb.query;
-const client = new faunadb.Client({
-  secret: process.env.FAUNADB_SERVER_SECRET
-})
+const client = new faunadb.Client({ secret: process.env.FAUNADB_SERVER_SECRET });
 
 /* export our lambda function as named "handler" export */
 exports.handler = (event, context, callback) => {
-  console.log(event);
-
   // get the form data
-  const data = querystring.parse(event.body);
+  const body = JSON.parse(event.body);
+
+  const data = {
+    id: body.id,
+    endpoint: body.notificationEndPoint,
+    keys: {
+      p256dh: body.publicKey,
+      auth: body.auth
+    }
+  };
 
   const user = {
     data: data

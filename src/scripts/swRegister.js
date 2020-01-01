@@ -108,7 +108,7 @@ function swRegister() {
     const encodedKey = btoa(String.fromCharCode.apply(null, new Uint8Array(key)));
     const encodedAuth = btoa(String.fromCharCode.apply(null, new Uint8Array(auth)));
 
-    fetch('https://alexclapperton.co.uk/api/users/', {
+    fetch('/.netlify/functions/new-push-user', {
       method: 'post',
       headers: {
         'Accept': 'application/json',
@@ -126,7 +126,7 @@ function swRegister() {
   function deleteSubscriptionID(endpoint) {
     const subscription = endpoint.substring(endpoint.lastIndexOf('/') + 1, endpoint.length);
 
-    fetch(`https://alexclapperton.co.uk/api/user/${subscription}`, {
+    fetch(`/.netlify/functions/delete-push-user/${subscription}`, {
       method: 'delete',
       headers: {
         'Accept': 'application/json',
