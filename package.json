@@ -16,7 +16,7 @@
   "scripts": {
     "start": "npm run dev",
     "dev": "cross-env ELEVENTY_ENV=dev npm run data && webpack && eleventy --serve",
-    "build": "cross-env ELEVENTY_ENV=prod npm run data && webpack && eleventy",
+    "build": "cross-env ELEVENTY_ENV=prod npm run data && webpack --prod && eleventy",
     "seed": "cross-env ELEVENTY_ENV=seed eleventy",
     "debug": "cross-env ELEVENTY_ENV=dev DEBUG=Eleventy* eleventy",
     "data": "node ./_data/index.js",

@@ -6,6 +6,8 @@ function formValidation() {
   const errorMessage = document.querySelector('[data-form-error]');
   const successMessage = document.querySelector('[data-form-success]');
 
+  // TODO: Tidy this up
+
   function getInputPattern(input) {
     const pattern = input.getAttribute('pattern');
     const regex = RegExp(pattern);
@@ -66,8 +68,8 @@ function formValidation() {
       },
       body: new URLSearchParams(formData).toString()
     })
-    .then(showSuccessMessage)
-    .catch(showErrorMessage);
+      .then(showSuccessMessage)
+      .catch(showErrorMessage);
   }
 
   function validateAllFields(event) {

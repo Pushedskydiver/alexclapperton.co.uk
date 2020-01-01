@@ -11,7 +11,6 @@ const plugin = require('./_config/plugins.json');
 
 function Bundle() {
   const prod = process.argv.includes('--prod');
-  const env = process.env.ELEVENTY_ENV;
 
   const alias = {
     'cookies': 'mozilla-doc-cookies/docCookies.js',
@@ -58,23 +57,6 @@ function Bundle() {
     // new BundleAnalyzerPlugin()
   ];
 
-  // const BabelLoader = {
-  //   loader: 'babel-loader',
-  //   options: {
-  //     presets: [
-  //       ['@babel/preset-env', {
-  //         targets: {
-  //           browsers: ['>0.25%', 'ie 11', 'not op_mini all']
-  //         },
-  //         modules: false
-  //       }]
-  //     ],
-  //     plugins: [
-  //       '@babel/plugin-syntax-dynamic-import'
-  //     ]
-  //   }
-  // };
-
   return {
     cache: false,
 
@@ -92,7 +74,7 @@ function Bundle() {
       publicPath: '/'
     },
 
-    mode: env === 'prod' ? 'production' : 'development',
+    mode: prod ? 'production' : 'development',
 
     module: {
       rules: [
@@ -129,11 +111,6 @@ function Bundle() {
             }
           ],
         }
-        // {
-        //   test: /\.js*/,
-        //   exclude: /node_modules/,
-        //   use: [BabelLoader]
-        // }
       ]
     },
 
@@ -154,7 +131,7 @@ function Bundle() {
       extensions: ['.js']
     },
 
-    watch: false
+    watch: prod ? false : true
   };
 }
 

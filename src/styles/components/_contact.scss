@@ -85,8 +85,8 @@
   }
 }
 
-.contact__list-body--notch {
-  color: _variables.$core-color-foreground;
+.contact__list-body--phone {
+  color:var(--color-link);
   font-family: _variables.$core-font-family;
   font-weight: _variables.$core-tertiary-font-weight;
 
