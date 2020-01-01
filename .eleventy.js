@@ -24,7 +24,7 @@ module.exports = config => {
   config.addPassthroughCopy({ 'src/site.webmanifest': 'site.webmanifest' });
   config.addPassthroughCopy({ 'src/browserconfig.xml': 'browserconfig.xml' });
 
-  config.addTransform('htmlmin', htmlMin);
+  // config.addTransform('htmlmin', htmlMin);
 
   config.setBrowserSyncConfig({
     callbacks: {

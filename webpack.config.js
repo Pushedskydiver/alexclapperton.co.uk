@@ -131,7 +131,7 @@ function Bundle() {
       extensions: ['.js']
     },
 
-    watch: prod ? false : true
+    watch: false
   };
 }
 

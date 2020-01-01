@@ -8,12 +8,12 @@
         </svg>
 
         <picture class="devices__picture">
-            <source type="image/webp" data-srcset="https:{{url}}?fm=webp">
-            <img class="devices__picture-image lazyload__image lazyload"data-src="https:{{url}}" alt="{{projectData.deviceOneAlt}}" data-lazy>
+            <source type="image/webp" data-srcset="https:{{this.url}}?fm=webp">
+            <img class="devices__picture-image lazyload__image lazyload"data-src="https:{{this.url}}" alt="{{this.alt}}" data-lazy>
 
             <noscript>
-                <source type="image/webp" srcset="https:{{url}}?fm=webp">
-                <img class="devices__picture-image" src="https:{{url}}" alt="{{projectData.deviceOneAlt}}">
+                <source type="image/webp" srcset="https:{{this.url}}?fm=webp">
+                <img class="devices__picture-image" src="https:{{this.url}}" alt="{{this.alt}}">
             </noscript>
         </picture>
     </div>
