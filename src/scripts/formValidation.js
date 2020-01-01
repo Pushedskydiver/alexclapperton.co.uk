@@ -45,8 +45,28 @@ function formValidation() {
     validationMessage.classList.add('form__validation-message--visible');
   }
 
+  function showSuccessMessage() {
+    const formData = new FormData(form);
+
+    fetch(testForm.getAttribute('action'), {
+      method: 'POST',
+      headers: {
+        'Accept': 'application/x-www-form-urlencoded;charset=UTF-8',
+        'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'
+      },
+      body: new URLSearchParams(formData).toString()
+    })
+      .then(response => {
+        if (response) {
+          console.log('Success');
+        }
+      });
+  }
+
   function validateAllFields(event) {
     let firstErrorFound = false;
+
+    event.preventDefault();
 
     inputs.forEach(input => {
       validateInput(input);
@@ -64,8 +84,8 @@ function formValidation() {
       firstErrorFound = true;
     }
 
-    if (firstErrorFound) {
-      event.preventDefault();
+    if (!firstErrorFound) {
+      showSuccessMessage();
     }
   }
 
