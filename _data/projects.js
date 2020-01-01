@@ -15,6 +15,7 @@ date: ${project.date}
 stack: [${project.tags}]
 home: false
 about: false
+project: true
 thumbnail:
   url: ${thumbnail.file.url}
   alt: "${thumbnail.file.description}"

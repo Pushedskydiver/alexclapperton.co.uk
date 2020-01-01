@@ -8,6 +8,9 @@ module.exports = config => {
   // A useful way to reference the context we are runing eleventy in
   let env = process.env.ELEVENTY_ENV;
 
+  // make the seed target act like prod
+  env = (env == 'seed') ? 'prod' : env;
+
   config.addFilter('eachUpTo', eachUpTo);
   config.addFilter('fadeInDelay', fadeInDelay);
   config.addFilter('swStyles', swStyles);
@@ -21,7 +24,7 @@ module.exports = config => {
   config.addPassthroughCopy({ 'src/site.webmanifest': 'site.webmanifest' });
   config.addPassthroughCopy({ 'src/browserconfig.xml': 'browserconfig.xml' });
 
-  // config.addTransform('htmlmin', htmlMin);
+  config.addTransform('htmlmin', htmlMin);
 
   config.setBrowserSyncConfig({
     callbacks: {
@@ -35,9 +38,6 @@ module.exports = config => {
       }
     }
   });
-
-  // make the seed target act like prod
-  env = (env == 'seed') ? 'prod' : env;
 
   return {
     dir: {
