@@ -21,7 +21,7 @@
     "debug": "cross-env ELEVENTY_ENV=dev DEBUG=Eleventy* eleventy",
     "data": "node ./_data/index.js",
     "webpack": "webpack --profile --json",
-    "css-stats": "curl https://www.projectwallace.com/webhooks/v1/imports?token=437db188-8041-44c8-b7ad-cc4e71f337d8 -fsS --retry 3 -X POST -H 'Content-Type: text/css' -d @./public/css/main.css"
+    "css-stats": "curl https://www.projectwallace.com/webhooks/v1/imports?token=437db188-8041-44c8-b7ad-cc4e71f337d8 -fsS --retry 3 -X POST -H 'Content-Type: text/css' -d @./dist/css/main.css"
   },
   "dependencies": {
     "@11ty/eleventy": "^0.9.0",
