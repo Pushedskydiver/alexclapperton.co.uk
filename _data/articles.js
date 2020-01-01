@@ -14,6 +14,8 @@ datePublished: ${article.date}
 dateModified: ${article.modified}
 slug: ${year}/${article.slug}
 external: ${article.isExternal}
+home: false
+about: false
 post: true
 thumbnail:
   url: ${thumbnail.url}

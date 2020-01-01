@@ -13,6 +13,8 @@ description: "${project.projectName}"
 category: ${project.category}
 date: ${project.date}
 stack: [${project.tags}]
+home: false
+about: false
 thumbnail:
   url: ${thumbnail.file.url}
   alt: "${thumbnail.file.description}"
