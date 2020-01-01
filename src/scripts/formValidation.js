@@ -48,7 +48,7 @@ function formValidation() {
   function showSuccessMessage() {
     const formData = new FormData(form);
 
-    fetch(testForm.getAttribute('action'), {
+    fetch(form.getAttribute('action'), {
       method: 'POST',
       headers: {
         'Accept': 'application/x-www-form-urlencoded;charset=UTF-8',
