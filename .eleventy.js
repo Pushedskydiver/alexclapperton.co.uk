@@ -2,6 +2,7 @@ const fs = require('fs');
 const htmlMin = require('./src/utils/minify-html.js');
 const eachUpTo = require('./src/utils/filters/each-up-to');
 const fadeInDelay = require('./src/utils/filters/fade-in-delay');
+const formatDate = require('./src/utils/filters/format-date');
 const swStyles = require('./src/utils/filters/sw-styles');
 
 module.exports = config => {
@@ -9,9 +10,8 @@ module.exports = config => {
 
   config.addFilter('eachUpTo', eachUpTo);
   config.addFilter('fadeInDelay', fadeInDelay);
+  config.addFilter('formatDate', formatDate);
   config.addFilter('swStyles', swStyles);
-
-  // config.addWatchTarget('./src/styles/'); // For v0.10.0 release
 
   config.addPassthroughCopy({ 'src/favicons': 'favicons' });
   config.addPassthroughCopy({ 'src/fonts': 'fonts' });

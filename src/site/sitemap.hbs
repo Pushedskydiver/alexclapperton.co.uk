@@ -1,0 +1,19 @@
+---
+permalink: /sitemap.xml
+ignore: true
+---
+
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    {{#each collections.all as |collection|}}
+
+    {{#unless collection.data.ignore}}
+    <url>
+        <loc>https://alexclapperton.co.uk{{ collection.url }}</loc>
+        <lastmod>{{formatDate collection.date}}</lastmod>
+        <changefreq>{{ collection.data.changefreq }}</changefreq>
+        <priority>{{ collection.data.priority }}</priority>
+    </url>
+    {{/unless}}
+    {{/each}}
+</urlset>

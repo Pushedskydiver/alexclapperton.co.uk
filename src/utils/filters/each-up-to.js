@@ -11,4 +11,4 @@ module.exports = (ary, max, options) => {
   }
 
   return result.join('');
-};
+}
