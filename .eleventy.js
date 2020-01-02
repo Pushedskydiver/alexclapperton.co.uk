@@ -5,11 +5,7 @@ const fadeInDelay = require('./src/utils/filters/fade-in-delay');
 const swStyles = require('./src/utils/filters/sw-styles');
 
 module.exports = config => {
-  // A useful way to reference the context we are runing eleventy in
-  let env = process.env.ELEVENTY_ENV;
-
-  // make the seed target act like prod
-  env = (env == 'seed') ? 'prod' : env;
+  const prod = process.env.NODE_ENV === 'prod';
 
   config.addFilter('eachUpTo', eachUpTo);
   config.addFilter('fadeInDelay', fadeInDelay);
@@ -24,7 +20,9 @@ module.exports = config => {
   config.addPassthroughCopy({ 'src/site.webmanifest': 'site.webmanifest' });
   config.addPassthroughCopy({ 'src/browserconfig.xml': 'browserconfig.xml' });
 
-  // config.addTransform('htmlmin', htmlMin);
+  if (prod) {
+    config.addTransform('htmlmin', htmlMin);
+  }
 
   config.setBrowserSyncConfig({
     callbacks: {

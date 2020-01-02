@@ -15,12 +15,13 @@
   },
   "scripts": {
     "start": "npm run dev",
-    "dev": "cross-env ELEVENTY_ENV=dev npm run data && webpack && eleventy --serve",
-    "build": "cross-env ELEVENTY_ENV=prod npm run data && webpack --prod && eleventy",
-    "seed": "cross-env ELEVENTY_ENV=seed eleventy",
-    "debug": "cross-env ELEVENTY_ENV=dev DEBUG=Eleventy* eleventy",
+    "dev": "npm run data && concurrently \"npm:webpack:dev\" \"npm:eleventy:dev\"",
+    "build": "npm run data && npm run webpack:prod && npm run eleventy:prod",
+    "eleventy:dev": "cross-env NODE_ENV=dev eleventy --serve",
+    "eleventy:prod": "cross-env NODE_ENV=prod eleventy",
+    "webpack:dev": "cross-env NODE_ENV=dev webpack",
+    "webpack:prod": "cross-env NODE_ENV=prod webpack",
     "data": "node ./_data/index.js",
-    "webpack": "webpack",
     "css-stats": "curl https://www.projectwallace.com/webhooks/v1/imports?token=437db188-8041-44c8-b7ad-cc4e71f337d8 -fsS --retry 3 -X POST -H 'Content-Type: text/css' -d @./dist/css/main.css"
   },
   "dependencies": {
@@ -37,6 +38,7 @@
     "zenscroll": "^4.0.2"
   },
   "devDependencies": {
+    "concurrently": "^5.0.2",
     "copy-webpack-plugin": "^5.1.1",
     "cross-env": "^6.0.3",
     "css-loader": "^3.4.0",

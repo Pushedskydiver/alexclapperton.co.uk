@@ -10,7 +10,7 @@ const path = require('path');
 const plugin = require('./_config/plugins.json');
 
 function Bundle() {
-  const prod = process.argv.includes('--prod');
+  const prod = process.env.NODE_ENV === 'prod';
 
   const alias = {
     'cookies': 'mozilla-doc-cookies/docCookies.js',
@@ -131,7 +131,7 @@ function Bundle() {
       extensions: ['.js']
     },
 
-    watch: false
+    watch: prod ? false : true
   };
 }
 
