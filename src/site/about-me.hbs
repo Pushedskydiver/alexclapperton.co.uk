@@ -34,21 +34,13 @@ layout: _layouts/default
         <h3 class="blocks__heading hide" data-fade>Fun facts</h3>
         <p class="blocks__sub-text hide" data-fade>Here are some facts about me that I think you may find interesting and hopefully make you giggle along the way.</p>
 
-        <div class="blocks__content hide" data-fade>
-            <div class="blocks__item">
-                <h4 class="blocks__item-title">To pun or <span class="blocks__item-title--strike">not</span> to pun?</h4>
-                <p class="blocks__item-body">I absolutley love a good pun, and by good pun, I mean a bad pun. Bad puns are the best. Making puns is something I do on a daily basis. I am in constant competiton with my work colleagues and I usually come out on top.</p>
-            </div>
-
-            <div class="blocks__item hide" data-fade>
-                <h4 class="blocks__item-title">Football is my game</h4>
-                <p class="blocks__item-body">Football has been a big part of my life ever since my childhood. It is my favourite sport and I play the 5-a-side format on a regular basis. I support none other than the almighty boys in blue, Manchester City.</p>
-            </div>
-
-            <div class="blocks__item hide" data-fade>
-                <h4 class="blocks__item-title">Super addicted to Apple</h4>
-                <p class="blocks__item-body">If there is definitely one thing I am known for then it's my love for Apple. I am absolutley obsessed with buying the latest Apple products. It is like a drug. I have been a fan of Apple since the launch of the original iPhone back in 2007.</p>
-            </div>
+        <div class="blocks__content">
+            {{#each aboutMe.contentBlocks as |block|}}
+                <div class="blocks__item hide" data-fade data-fade-delay="0.{{@index}}s">
+                    <h4 class="blocks__item-title">{{{block.title}}}</h4>
+                    <p class="blocks__item-body">{{block.body}}</p>
+                </div>
+            {{/each}}
         </div>
     </div>
 </section>
