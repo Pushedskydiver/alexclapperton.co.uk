@@ -54,10 +54,6 @@
 
 .blocks__item-title {
   @include _typography.text(mars);
-
-  &--strike {
-    text-decoration: line-through;
-  }
 }
 
 .blocks__item-body {
