@@ -30,7 +30,7 @@
     "dotenv": "^8.2.0",
     "faunadb": "^2.10.2",
     "html-minifier": "^4.0.0",
-    "lazysizes": "^5.2.0",
+    "lazysizes": "^5.2.1",
     "mozilla-doc-cookies": "^1.0.3",
     "prismjs": "^1.17.1",
     "sass": "^1.24.0",
