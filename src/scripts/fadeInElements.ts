@@ -4,13 +4,15 @@ function fadeInElements() {
     threshold: 0.2
   }
 
-  function addFadeClass(element) {
+  function addFadeClass(element: HTMLElement) {
+    const style: any = element.style;
+
     element.classList.remove('hide');
     element.classList.add('fade-in');
-    element.style.transitionDelay = element.getAttribute('data-fade-delay');
+    style.transitionDelay = element.getAttribute('data-fade-delay');
   }
 
-  function toggleFade(element) {
+  function toggleFade(element: HTMLElement) {
     const objectPosition = element.getBoundingClientRect().top;
     const windowHeight = window.innerHeight;
 
@@ -19,11 +21,11 @@ function fadeInElements() {
     }
   }
 
-  function fadeIn(element) {
+  function fadeIn(element: HTMLElement) {
     toggleFade(element)
   }
 
-  function fadeInOnScroll(element) {
+  function fadeInOnScroll(element: HTMLElement) {
     const delayFade = setTimeout(() => {
       toggleFade(element)
       clearTimeout(delayFade);
@@ -31,23 +33,23 @@ function fadeInElements() {
   }
 
   // Intersection Observer API
-  function applyFadeInToEntry({ intersectionRatio, target }) {
+  function applyFadeInToEntry({ intersectionRatio, target }: { intersectionRatio: number, target: HTMLElement }) {
     if (intersectionRatio >= options.threshold) {
       addFadeClass(target);
     }
   }
 
-  function callback(entries) {
-    entries.forEach(entry => applyFadeInToEntry(entry));
+  function callback(entries: Array<any>) {
+    entries.map(applyFadeInToEntry);
   }
 
-  function applyFadein(element) {
-    const observer = new IntersectionObserver(callback, options);
+  function applyFadein(element: HTMLElement) {
+    const observer: IntersectionObserver = new IntersectionObserver(callback, options);
 
-    observer.observe(element)
+    observer.observe(element);
   }
 
-  function init(element) {
+  function init(element: HTMLElement) {
     fadeIn(element);
 
     'IntersectionObserver' in window ?

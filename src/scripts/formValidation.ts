@@ -1,22 +1,22 @@
 function formValidation() {
-  const form = document.querySelector('[data-form]');
-  const inputs = document.querySelectorAll('[data-input]');
-  const textarea = document.querySelector('[data-textarea]');
-  const submitButton = document.querySelector('[data-submit-button]');
-  const errorMessage = document.querySelector('[data-form-error]');
-  const successMessage = document.querySelector('[data-form-success]');
+  const form: HTMLFormElement | any = document.querySelector('[data-form]');
+  const inputs: NodeListOf<HTMLInputElement> = document.querySelectorAll('[data-input]');
+  const textarea: HTMLTextAreaElement | any = document.querySelector('[data-textarea]');
+  const submitButton: HTMLButtonElement | any = document.querySelector('[data-submit-button]');
+  const errorMessage: HTMLElement | any = document.querySelector('[data-form-error]');
+  const successMessage: HTMLElement | any = document.querySelector('[data-form-success]');
 
   // TODO: Tidy this up
 
-  function getInputPattern(input) {
+  function getInputPattern(input: any) {
     const pattern = input.getAttribute('pattern');
     const regex = RegExp(pattern);
 
     return new RegExp(regex, 'i').test(input.value);
   }
 
-  function validateInput(input) {
-    const element = input.currentTarget || input;
+  function validateInput(event: any) {
+    const element = event.currentTarget || event;
     const isValid = getInputPattern(element);
     const validationMessage = element.nextElementSibling;
 
@@ -32,8 +32,8 @@ function formValidation() {
     validationMessage.classList.add('form__validation-message--visible');
   }
 
-  function validateTextarea(input) {
-    const element = input.currentTarget || input;
+  function validateTextarea(event: any) {
+    const element = event.currentTarget || event;
     const isNotEmpty = element.value.length !== 0;
     const validationMessage = element.nextElementSibling;
 
@@ -58,9 +58,10 @@ function formValidation() {
   }
 
   function submitForm() {
-    const formData = new FormData(form);
+    const formData: any = new FormData(form);
+    const url: string | any = form.getAttribute('action');
 
-    fetch(form.getAttribute('action'), {
+    fetch(url, {
       method: 'POST',
       headers: {
         'Accept': 'application/x-www-form-urlencoded;charset=UTF-8',
@@ -72,7 +73,7 @@ function formValidation() {
       .catch(showErrorMessage);
   }
 
-  function validateAllFields(event) {
+  function validateAllFields(event: Event) {
     let firstErrorFound = false;
 
     event.preventDefault();

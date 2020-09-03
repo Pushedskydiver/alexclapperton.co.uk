@@ -1,4 +1,4 @@
-import obj from './navigation'
+import obj from './navigation';
 
 function mobileNavigation() {
   function removeNavigationClasses() {
@@ -20,13 +20,13 @@ function mobileNavigation() {
   function toggleNavigation() {
     navigationAnimation();
 
-    obj.body.classList.toggle('body--nav-open');
     obj.html.classList.toggle('body--nav-open');
+    obj.body.classList.toggle('body--nav-open');
     obj.nav.classList.add('nav--open');
     obj.navTrigger.classList.toggle('button--nav-active');
   }
 
-  function preventScrollWhenNavigationOpen(event) {
+  function preventScrollWhenNavigationOpen(event: Event) {
     if (obj.nav.classList.contains('nav--open')) {
       event.preventDefault();
     }

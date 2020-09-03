@@ -6,5 +6,7 @@ module.exports = () => {
   const contents = JSON.parse(fs.readFileSync(file, 'utf8'));
   const cssPath = Object.values(contents).find(data => data.includes('css'));
 
+  console.log('dghfudighdfuhgufdhgufdhgufdhgudhud');
+
   return `'/${cssPath}'`;
 }

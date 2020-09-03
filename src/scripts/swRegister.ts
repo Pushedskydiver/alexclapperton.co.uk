@@ -1,10 +1,10 @@
 function swRegister() {
   const applicationServerKey =
     'BBZfIKcG1E4t_KR-whw7Z6hRBiRi4vC216bdtN1mrXNdohzQ26XnYdZh8eaLOWmHagBLja5nuLSoLd_XPTEbYCM';
-  const pushBanner = document.querySelector('[data-push]');
-  const pushButton = document.querySelector('[data-push-button]');
+  const pushBanner: Element | any = document.querySelector('[data-push]');
+  const pushButton: Element | any = document.querySelector('[data-push-button]');
 
-  function urlB64ToUint8Array(base64String) {
+  function urlB64ToUint8Array(base64String: string) {
     const padding = '='.repeat((4 - base64String.length % 4) % 4);
     const base64 = (base64String + padding)
       .replace(/\-/g, '+')
@@ -19,9 +19,8 @@ function swRegister() {
     return outputArray;
   }
 
-  function changePushStatus(status) {
-    pushButton.dataset.checked = status;
-    pushButton.checked = status;
+  function changePushStatus(status: boolean) {
+    pushButton.setAttribute('checked', `${status}`);
 
     if (status) {
       pushButton.classList.remove('button--primary');
@@ -68,8 +67,8 @@ function swRegister() {
         })
           .then(subscription => {
             const endpoint = subscription.endpoint;
-            const key = subscription.getKey('p256dh');
-            const auth = subscription.getKey('auth');
+            const key: ArrayBuffer | any = subscription.getKey('p256dh');
+            const auth: ArrayBuffer | any = subscription.getKey('auth');
 
             saveSubscriptionID(endpoint, key, auth);
             changePushStatus(true);
@@ -103,10 +102,13 @@ function swRegister() {
       })
   }
 
-  function saveSubscriptionID(endpoint, key, auth) {
+  function saveSubscriptionID(endpoint: string, key: ArrayBuffer, auth: ArrayBuffer) {
     const subscription = endpoint.substring(endpoint.lastIndexOf('/') + 1, endpoint.length);
-    const encodedKey = btoa(String.fromCharCode.apply(null, new Uint8Array(key)));
-    const encodedAuth = btoa(String.fromCharCode.apply(null, new Uint8Array(auth)));
+    const unitKey: any = new Uint8Array(key);
+    const unitAuth: any = new Uint8Array(auth);
+
+    const encodedKey = btoa(String.fromCharCode.apply(null, unitKey));
+    const encodedAuth = btoa(String.fromCharCode.apply(null, unitAuth));
 
     fetch('/.netlify/functions/new-push-user', {
       method: 'post',
@@ -123,7 +125,7 @@ function swRegister() {
     });
   }
 
-  function deleteSubscriptionID(endpoint) {
+  function deleteSubscriptionID(endpoint: string) {
     const subscription = endpoint.substring(endpoint.lastIndexOf('/') + 1, endpoint.length);
 
     fetch(`/.netlify/functions/delete-push-user/${subscription}`, {
@@ -136,7 +138,7 @@ function swRegister() {
   }
 
   function togglePush() {
-    const isSubscribed = pushButton.dataset.checked === 'true';
+    const isSubscribed = pushButton?.setAttribute('checked', 'true');
 
     isSubscribed ? unsubscribePush() : subscribePush();
   }
@@ -152,7 +154,7 @@ function swRegister() {
   function init() {
     registerServiceWorker();
 
-    if (pushBanner !== null) {
+    if (pushBanner && pushButton) {
       pushButton.addEventListener('click', togglePush);
     }
   }

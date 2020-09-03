@@ -1,10 +1,10 @@
 import obj from './navigation'
 
 function desktopNavigation() {
-  function addActiveClass({ target }) {
-    if (target.nodeName === 'A') {
-      obj.activeNavItem.style.left = `${target.offsetLeft}px`;
-      obj.activeNavItem.style.width = `${target.clientWidth}px`;
+  function addActiveClass(event: any) {
+    if (event.target && event.target.nodeName === 'A') {
+      obj.activeNavItem.style.left = `${event.target.offsetLeft}px`;
+      obj.activeNavItem.style.width = `${event.target.clientWidth}px`;
     }
   }
 
@@ -26,7 +26,7 @@ function desktopNavigation() {
   function toggleActiveClass() {
     if (window.innerWidth >= 768) {
       removeActiveClass();
-      obj.navItem.forEach(item => {
+      obj.navItems.forEach((item: any) => {
         item.parentNode.addEventListener('mouseover', addActiveClass);
         item.parentNode.addEventListener('mouseleave', removeActiveClass);
         item.addEventListener('focus', addActiveClass);

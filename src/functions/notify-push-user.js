@@ -23,12 +23,12 @@ exports.handler = (event, context, callback) => {
   );
 
   client.query(q.Paginate(q.Match(q.Ref('indexes/all_users'))))
-    .then((response) => {
+    .then(response => {
       const userRefs = response.data;
-      const getAllUsersDataQuery = userRefs.map((ref) => q.Get(ref));
+      const getAllUsersDataQuery = userRefs.map(ref => q.Get(ref));
 
       return client.query(getAllUsersDataQuery)
-        .then((ret) => {
+        .then(ret => {
           const send = ret.map(user => {
             return webpush.sendNotification(user.data)
               .then(response => response)
@@ -37,13 +37,13 @@ exports.handler = (event, context, callback) => {
                   const ref = user.ref.toString().split(',')[1].match(/(\d+)/)[0];
 
                   client.query(q.Delete(q.Ref(`classes/users/${ref}`)))
-                    .then((response) => {
+                    .then(response => {
                       return callback(null, {
                         statusCode: 200,
                         body: JSON.stringify(response)
                       })
                     })
-                    .catch((error) => {
+                    .catch(error => {
                       return callback(null, {
                         statusCode: 400,
                         body: JSON.stringify(error)
@@ -61,7 +61,7 @@ exports.handler = (event, context, callback) => {
           });
         });
     })
-    .catch((error) => {
+    .catch(error => {
       return callback(null, {
         statusCode: 400,
         body: JSON.stringify(error)

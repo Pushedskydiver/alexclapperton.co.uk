@@ -1,20 +1,21 @@
 import 'lazysizes';
 
-const html = document.querySelector('html');
+const html: HTMLElement | null = document.querySelector('html');
 
-html.classList.remove('no-js');
+if (html) html.classList.remove('no-js');
 
-function initModule(module, element = null) {
+function initModule(module: any, element: any = null) {
   module.default.init(element);
 }
 
-function observe(callback, elements) {
+function observe(callback: Function, elements: NodeList) {
   const config = {
     rootMargin: '200px 0px',
     threshold: 0.01
   };
 
   if (elements.length > 0) {
+    const collection: Array<any> = Array.from(elements);
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         // Are we in viewport?
@@ -26,7 +27,7 @@ function observe(callback, elements) {
       });
     }, config);
 
-    Array.from(elements).forEach(element => observer.observe(element));
+    collection.forEach((element) => observer.observe(element));
   }
 }
 
@@ -57,10 +58,10 @@ observe(() => {
 }, document.querySelectorAll('[data-scroll]'));
 
 observe(() => {
-  import(/* webpackChunkName: "prism" */ 'prism').catch(err => console.error(`Error in: prism - ${err}`));
+  import(/* webpackChunkName: "prism" */ 'prismjs').catch(err => console.error(`Error in: prism - ${err}`));
 }, document.querySelectorAll('pre'));
 
-observe(element => {
+observe((element: HTMLElement) => {
   import(/* webpackChunkName: "fade-in-elements" */ 'Src/scripts/fadeInElements').then((module) => initModule(module, element)).catch(err => console.error(`Error in: fadeInElements - ${err}`));
 }, document.querySelectorAll('[data-fade]'));
 

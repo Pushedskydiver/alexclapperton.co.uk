@@ -1,22 +1,22 @@
 function lazyLoad() {
   const options = {
-    selector: document.querySelectorAll('[data-lazy]')
+    selector: Array.from(document.querySelectorAll('[data-lazy]'))
   };
 
-  function lazyBeforeUnveil({ currentTarget }) {
+  function lazyBeforeUnveil({ currentTarget }: { currentTarget: any }) {
     currentTarget.parentNode.classList.add('lazyload--image-loaded');
     currentTarget.removeEventListener('lazybeforeunveil', lazyBeforeUnveil);
   }
 
-  function lazyloadEventListeners(image) {
-    image.addEventListener('lazybeforeunveil', image => lazyBeforeUnveil(image));
+  function lazyloadEventListeners(image: Element) {
+    image.addEventListener('lazybeforeunveil', lazyBeforeUnveil);
   }
 
   function init() {
     const { selector } = options;
 
     if (selector.length > 0) {
-      selector.forEach(image => lazyloadEventListeners(image));
+      selector.forEach(lazyloadEventListeners);
     }
   }
 

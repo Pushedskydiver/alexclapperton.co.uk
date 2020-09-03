@@ -1,3 +1,5 @@
+/* eslint-disable max-len */
+/* eslint-disable complexity */
 const webpack = require('webpack');
 const ManifestPlugin = require('webpack-assets-manifest');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
@@ -13,9 +15,6 @@ function Bundle() {
   const prod = process.env.NODE_ENV === 'prod';
 
   const alias = {
-    'cookies': 'mozilla-doc-cookies/docCookies.js',
-    'zenscroll': 'zenscroll/zenscroll.js',
-    'prism': 'prismjs/prism.js',
     Src: path.resolve(__dirname, 'src')
   };
 
@@ -46,9 +45,9 @@ function Bundle() {
     new CopyWebpackPlugin([{
       from: './src/images/**/*.jpg',
       to: '[path][name].webp',
-      transformPath(targetPath, absolutePath) {
+      transformPath(targetPath) {
         return targetPath.split('src/')[1];
-      },
+      }
     }]),
     new ImageminWebpWebpackPlugin(),
     new webpack.LoaderOptionsPlugin({
@@ -63,7 +62,7 @@ function Bundle() {
     devtool: !prod ? 'source-map' : 'eval',
 
     entry: {
-      common: path.resolve(__dirname, 'src/scripts/main.js'),
+      common: path.resolve(__dirname, 'src/scripts/main.ts'),
       main: path.resolve(__dirname, 'src/styles/main.scss')
     },
 
@@ -74,10 +73,16 @@ function Bundle() {
       publicPath: '/'
     },
 
+
     mode: prod ? 'production' : 'development',
 
     module: {
       rules: [
+        {
+          test: /\.tsx?$/,
+          use: ['ts-loader'],
+          exclude: /node_modules/
+        },
         {
           test: /\.s[ac]ss$/i,
           use: [
@@ -103,13 +108,13 @@ function Bundle() {
                   require('postcss-minify-selectors'),
                   require('postcss-clean')(plugin.cleancss),
                   require('cssnano')(plugin.cssnano)
-                ],
-              },
+                ]
+              }
             },
             {
               loader: 'sass-loader'
             }
-          ],
+          ]
         }
       ]
     },
@@ -128,7 +133,7 @@ function Bundle() {
 
     resolve: {
       alias,
-      extensions: ['.js']
+      extensions: ['.ts', '.js']
     },
 
     watch: prod ? false : true
