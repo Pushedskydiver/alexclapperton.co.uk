@@ -1,20 +1,4 @@
 {
-  "cleancss": {
-    "level": {
-      "1": {
-        "all": true,
-        "removeQuotes": false,
-        "roundingPrecision": false,
-        "tidyBlockScopes": false
-      },
-      "2": {
-        "all": true,
-        "mergeSemantically": false,
-        "removeUnusedAtRules": false,
-        "restructureRules": false
-      }
-    }
-  },
   "cssnano": {
     "autoprefixer": true,
     "calc": true,
@@ -22,7 +6,7 @@
     "convertValues": true,
     "core": true,
     "discardComments": {
-      "removeAll": true
+      "removeAll": false
     },
     "discardDuplicates": true,
     "discardEmpty": true,
@@ -62,8 +46,7 @@
   },
   "uglify": {
     "terserOptions": {
-      "minimize": true,
-      "warnings": false,
+      "module": true,
       "compress": {
         "sequences": true,
         "properties": false,

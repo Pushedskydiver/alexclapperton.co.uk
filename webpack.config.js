@@ -7,9 +7,9 @@ const ImageminWebpWebpackPlugin = require('imagemin-webp-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
 // const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
 const path = require('path');
-const plugin = require('./_config/plugins.json');
 
 function Bundle() {
+  const plugin = require('./_config/plugins.json');
   const prod = process.env.NODE_ENV === 'prod';
 
   const alias = {
@@ -24,7 +24,8 @@ function Bundle() {
       output: path.join(__dirname, 'src', 'cache-manifest.json')
     }),
     new MiniCssExtractPlugin({
-      filename: 'css/main.css?cb=[contenthash]'
+      filename: 'css/main.css?cb=[chunkhash]',
+      chunkFilename: 'main.css?cb=[contenthash]'
     }),
     new HtmlWebpackPlugin({
       inject: false,
@@ -43,13 +44,19 @@ function Bundle() {
       filename: path.resolve(__dirname, 'src', 'site', '_includes', '_partials', 'styles.hbs'),
       template: path.resolve(__dirname, '_templates', 'styles.hbs')
     }),
-    new CopyWebpackPlugin([{
-      from: './src/images/**/*.jpg',
-      to: '[path][name].webp',
-      transformPath(targetPath, absolutePath) {
-        return targetPath.split('src/')[1];
-      },
-    }]),
+
+
+    new CopyWebpackPlugin({
+      patterns: [
+        {
+          from: './src/images/**/*.jpg',
+          to: '[path][name].webp',
+          transformPath(targetPath, absolutePath) {
+            return targetPath.split('src/')[1];
+          },
+        }
+      ],
+    }),
     new ImageminWebpWebpackPlugin(),
     new webpack.LoaderOptionsPlugin({
       debug: true
@@ -84,12 +91,11 @@ function Bundle() {
             {
               loader: MiniCssExtractPlugin.loader,
               options: {
-                name: 'main.css?cb=[contenthash]',
                 publicPath: '/'
               }
             },
             {
-              loader: 'css-loader?-url',
+              loader: 'css-loader',
               options: {
                 sourceMap: true,
                 url: false
@@ -98,12 +104,13 @@ function Bundle() {
             {
               loader: 'postcss-loader',
               options: {
-                plugins: () => [
-                  require('postcss-sort-media-queries'),
-                  require('postcss-minify-selectors'),
-                  require('postcss-clean')(plugin.cleancss),
-                  require('cssnano')(plugin.cssnano)
-                ],
+                postcssOptions: {
+                  plugins: [
+                    require('postcss-sort-media-queries'),
+                    require('postcss-minify-selectors'),
+                    require('cssnano')(plugin.cssnano)
+                  ],
+                }
               },
             },
             {
