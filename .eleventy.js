@@ -20,6 +20,7 @@ module.exports = config => {
   config.addPassthroughCopy({ 'src/images': 'images' });
   config.addPassthroughCopy({ 'src/site.webmanifest': 'site.webmanifest' });
   config.addPassthroughCopy({ 'src/browserconfig.xml': 'browserconfig.xml' });
+  config.addPassthroughCopy({ 'src/_redirects': '_redirects' });
 
   if (prod) {
     config.addTransform('htmlmin', htmlMin);
