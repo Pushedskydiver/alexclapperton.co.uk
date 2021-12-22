@@ -2,12 +2,13 @@
 title: Alex Clapperton
 home: true
 about: false
-changefreq: monthly
-priority: 1
 heroImage:
     square: https://images.ctfassets.net/66vjslfacivy/5iYptR3N7dkm0cHsZS8QQw/6b0a09c506f55bf200bd8dfeb6dff519/alex-square.jpg
     landscape: https://images.ctfassets.net/66vjslfacivy/3QPP25tbf4hfIqe6IfdwGW/8dbd89b212da827012c985b7a6017a4d/alex-landscape.jpg
 layout: _layouts/default
+sitemap:
+  changefreq: daily
+  priority: 1
 ---
 
 <main class="info-block notch" id="main">
@@ -38,9 +39,11 @@ layout: _layouts/default
         <h3 class="portfolio__heading-main">Work &amp; projects</h3>
 
         <div class="portfolio__content">
-        {{#eachUpTo collections.projects 4}}
-            {{> _partials/portfolio }}
-        {{/eachUpTo}}
+        {% for i in range(0, 4) %}
+            {% set item = collections.projects[i] %}
+
+            {% include "_partials/portfolio.njk" %}
+        {% endfor %}
         </div>
 
         <a class="portfolio__button button button--secondary" href="/portfolio/">
@@ -56,9 +59,11 @@ layout: _layouts/default
         <h3 class="articles__heading-main">Latest articles</h3>
 
         <div class="articles__content">
-        {{#eachUpTo collections.articles 3}}
-          {{> _partials/articles }}
-        {{/eachUpTo}}
+        {% for i in range(0, 3) %}
+            {% set item = collections.articles[i] %}
+
+            {% include "_partials/articles.njk" %}
+        {% endfor %}
         </div>
 
         <a class="button button--secondary" href="/articles/">

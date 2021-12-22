@@ -1,13 +1,12 @@
 ---
 title: 'sw'
 permalink: sw.js
-ignore: true
+eleventyExcludeFromCollections: true
 ---
 
 const cacheName = 'alexclapperton:0048';
 const cacheFiles = [
   '/',
-  {{{ swStyles }}},
   '/fonts/selawik-variable.woff2',
   '/fonts/avenir-next-variable.woff2',
   '/favicons/favicon-72x72.png',
@@ -16,7 +15,9 @@ const cacheFiles = [
   '/offline/',
   '/articles/2018/how-to-use-grid-and-flexbox-together/',
   '/articles/2017/working-with-grid-the-holy-grail-of-css-layout/',
-  '/articles/2017/from-https-to-css-what-i-have-changed-on-my-website/'
+  '/articles/2017/from-https-to-css-what-i-have-changed-on-my-website/',
+  {% swStyles %},
+  {% swScripts %}
 ];
 
 self.addEventListener('install', event => {

@@ -10,11 +10,11 @@ layout: _layouts/default
 <main class="articles notch" id="main">
     <div class="articles__container hide" data-fade>
         <div class="articles__content">
-        {{#each collections.articles}}
-            {{> _partials/articles }}
-        {{/each}}
+        {% for item in collections.articles %}
+            {% include "_partials/articles.njk" %}
+        {% endfor %}
         </div>
     </div>
 </main>
 
-{{> _partials/push }}
+{% include "_partials/push.njk" %}

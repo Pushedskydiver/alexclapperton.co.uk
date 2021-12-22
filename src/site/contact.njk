@@ -2,9 +2,10 @@
 title: Contact
 home: false
 about: false
-changefreq: monthly
-priority: 0.8
 layout: _layouts/default
+sitemap:
+  changefreq: monthly
+  priority: 1
 ---
 
 <main class="contact notch" id="main">
@@ -54,10 +55,11 @@ layout: _layouts/default
                 <dd class="contact__list-body contact__list-body--phone">{{settings.phone}}</dd>
                 <dt class="contact__list-title">Social Links</dt>
                 <dd class="contact__list-body">
-                {{#each settings.social as |item|}}
-                    <a class="contact__list-link link" href="{{item.url}}" title="{{item.title-attr}}"{{#if item.external}} rel="external"{{/if}}>{{item.title}}</a>
+
+                {% for item in settings.social %}
+                    <a class="contact__list-link link" href="{{item.url}}" title="{{item.title-attr}}"{% if item.external %} rel="external"{% endif %}>{{item.title}}</a>
                     <br>
-                {{/each}}
+                {% endfor %}
                 </dd>
             </dl>
         </aside>

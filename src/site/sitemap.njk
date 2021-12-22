@@ -1,0 +1,28 @@
+---
+permalink: /sitemap.xml
+eleventyExcludeFromCollections: true
+---
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+    {# {{#each collections.all as |collection|}}
+      {{#unless collection.data.ignore}}
+        <url>
+            <loc>https://alexclapperton.co.uk{{ collection.url }}</loc>
+            <lastmod>{{formatDate collection.date}}</lastmod>
+            <changefreq>{{ collection.data.changefreq }}</changefreq>
+            <priority>{{ collection.data.priority }}</priority>
+        </url>
+      {{/unless}}
+    {{/each}} #}
+
+    {% for collection in collections.all %}
+      {% set sitemap = collection.data.sitemap %}
+
+      <url>
+          <loc>{{ settings.url }}{{ collection.url }}</loc>
+          <lastmod>{{ collection.date | formatDate }}</lastmod>
+          <changefreq>{{ sitemap.changefreq }}</changefreq>
+          <priority>{{ sitemap.priority }}</priority>
+      </url>
+    {% endfor %}
+</urlset>

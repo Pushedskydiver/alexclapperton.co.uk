@@ -50,7 +50,7 @@ function buildData(project) {
   const data = `${md.trim()}\n\n${project.projectContent}`;
 
   fs.mkdirSync(`${projects}/${fileName}`, { recursive: true });
-  fs.writeFileSync(`${projects}/${fileName}/index.hbs`, data);
+  fs.writeFileSync(`${projects}/${fileName}/index.njk`, data);
 }
 
 async function fetchProjects() {

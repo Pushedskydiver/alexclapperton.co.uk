@@ -4,36 +4,37 @@
         <!-- META TAGS  -->
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, minimum-scale=1, user-scalable=yes, initial-scale=1, viewport-fit=cover">
-        <meta name="description" content="{{#if description}}{{{description}}}{{else}}{{#if title}}{{{title}}}{{/if}}{{#unless home}} &mdash; Alex Clapperton{{/unless}} &mdash; Front-End Web Developer{{/if}}">
-        {{#if nofollow}}
-        <meta name="robots" content="noindex, nofollow">
-        {{/if}}
+        <meta name="description" content="{% if renderData.description or description %}{{ renderData.description or description }}{% endif %}">
+
+        {% if nofollow %}
+            <meta name="robots" content="noindex, nofollow">
+        {% endif %}
 
         <!-- PAGE TITLE -->
         <title>
-        {{#if title}}{{{title}}}{{/if}}{{#unless home}} &mdash; Alex Clapperton{{/unless}} &mdash; Professional Front-End Web Developer
+            {% if title %}{{ title }}{% endif %} {% if not home %} &mdash; Alex Clapperton{% endif %} &mdash; Front-End Engineer
         </title>
 
         <!-- RESOURCE HINTS -->
         <link rel="preconnect" href="https://images.ctfassets.net/">
 
         <!-- PRELOAD FILES -->
-         {{> _partials/preload-styles }}
+        {% include "_partials/preload-styles.njk" %}
         <link rel="preload" href="/fonts/avenir-next-variable.woff2" as="font" type="font/woff2" crossorigin>
         <link rel="preload" href="/fonts/selawik-variable.woff2" as="font" type="font/woff2" media="(min-width: 62em)" crossorigin>
 
-        {{#if home}}
-        <link rel="preload" href="https://images.ctfassets.net/66vjslfacivy/5iYptR3N7dkm0cHsZS8QQw/6b0a09c506f55bf200bd8dfeb6dff519/alex-square.jpg?fm=webp" as="image" media="((max-width: 39.9375em))" type="image/webp">
-        <link rel="preload" href="https://images.ctfassets.net/66vjslfacivy/3QPP25tbf4hfIqe6IfdwGW/8dbd89b212da827012c985b7a6017a4d/alex-landscape.jpg?fm=webp" as="image" media="(min-width: 40em)" type="image/webp">
-        {{/if}}
+        {% if home %}
+            <link rel="preload" href="https://images.ctfassets.net/66vjslfacivy/5iYptR3N7dkm0cHsZS8QQw/6b0a09c506f55bf200bd8dfeb6dff519/alex-square.jpg?fm=webp" as="image" media="((max-width: 39.9375em))" type="image/webp">
+            <link rel="preload" href="https://images.ctfassets.net/66vjslfacivy/3QPP25tbf4hfIqe6IfdwGW/8dbd89b212da827012c985b7a6017a4d/alex-landscape.jpg?fm=webp" as="image" media="(min-width: 40em)" type="image/webp">
+        {% endif %}
 
-        {{#if about}}
-        <link rel="preload" href="https://images.ctfassets.net/66vjslfacivy/3RrFB5WNvOFckt1M8Z8JEO/adc11b0965cb458112ddf0f009cd896a/about-me--mobile.jpg?fm=webp" as="image" media="(max-width: 39.9375em)" type="image/webp">
-        <link rel="preload" href="https://images.ctfassets.net/66vjslfacivy/1pB8uKiprcORU9GDWV3QKS/5803b785f8f8846628dfd88e996d3c87/about-me--desktop.jpg?fm=webp" as="image" media="(min-width: 40em)" type="image/webp">
-        {{/if}}
+        {% if about %}
+            <link rel="preload" href="https://images.ctfassets.net/66vjslfacivy/3RrFB5WNvOFckt1M8Z8JEO/adc11b0965cb458112ddf0f009cd896a/about-me--mobile.jpg?fm=webp" as="image" media="(max-width: 39.9375em)" type="image/webp">
+            <link rel="preload" href="https://images.ctfassets.net/66vjslfacivy/1pB8uKiprcORU9GDWV3QKS/5803b785f8f8846628dfd88e996d3c87/about-me--desktop.jpg?fm=webp" as="image" media="(min-width: 40em)" type="image/webp">
+        {% endif %}
 
         <!-- STYLESHEET -->
-        {{> _partials/styles }}
+        {% include "_partials/styles.njk" %}
 
         <!-- SITEMAP -->
         <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml" />
@@ -41,12 +42,12 @@
         <!-- MANIFEST -->
         <link rel="manifest" href="/site.webmanifest">
 
-        <link rel="alternate" href="{{{settings.url}}}" hreflang="en-gb">
-        <link rel="canonical" href="{{{settings.url}}}{{#if article.date}}/articles{{/if}}{{#if article.slug}}/{{{article.slug}}}{{/if}}">
+        <link rel="alternate" href="{{settings.url}}" hreflang="en-gb">
+        <link rel="canonical" href="{{settings.url}}{% if article.date %}/articles{% endif %}{% if article.slug %}/{{article.slug}}{% endif %}">
 
         <script type="application/ld+json">{
             "@context": "http://schema.org",
-        {{#if post}}
+        {% if post %}
             "@type": "BlogPosting",
              "mainEntityOfPage": {
                 "@type": "WebPage",
@@ -69,46 +70,46 @@
                 "height": 256
                 }
             },
-            "datePublished": "{{this.datePublished}}",
-            "dateModified": "{{this.dateModified}}"
-        {{else}}
+            "datePublished": "{{page.datePublished}}",
+            "dateModified": "{{page.dateModified}}"
+        {% else %}
             "@type": "Person",
             "name": "{{settings.name}}",
             "url": "{{settings.url}}",
             "image": "{{settings.url}}images/profile/alex-clapperton.jpg",
             "sameAs": [
                 "{{settings.url}}",
-            {{#each settings.social}}
-                {{#unless @last}}"{{this.url}}",{{/unless}}
-                {{#if @last}}"{{this.url}}"{{/if}}
-            {{/each}}
+            {% for item in settings.social %}
+                {% if not loop.last %}"{{item.url}}",{% endif %}
+                {% if loop.last %}"{{item.url}}"{% endif %}
+            {% endfor %}
             ],
             "jobTitle": "{{settings.jobTitle}}",
             "worksFor": {
                 "@type": "Organization",
                 "name": "{{settings.employer}}"
             }
-        {{/if}}
+        {% endif %}
         }</script>
 
         <!-- FACEBOOK -->
-        <meta property="og:title" content="{{#if title}}{{title}}{{/if}}{{#unless home}} &mdash; {{settings.name}}{{/unless}}{{#if settings.jobTitle}} &mdash; {{settings.jobTitle}}{{/if}}" />
-        <meta property="og:type" content="{{#if article.date}}article{{else}}website{{/if}}" />
-        <meta property="og:url" content="{{{settings.url}}}{{#if article.date}}/articles{{/if}}{{#if article.slug}}/{{{article.slug}}}{{/if}}" />
-        <meta property="og:image" content="{{{settings.url}}}{{#if ogImage}}{{{ogImage}}}{{else}}/images/profile/alex-clapperton.jpg{{/if}}" />
-        <meta property="og:description" content="{{#if summary}}{{{summary}}}{{else}}{{{settings.name}}}{{/if}}">
+        <meta property="og:title" content=" {% if title %}{{title}}{% endif %}{% if not home %} &mdash; {{settings.name}}{% endif %}{% if settings.jobTitle %}  &mdash; {{settings.jobTitle}}{% endif %}" />
+        <meta property="og:type" content="{% if article.date %}article{% else %}website{% endif %}" />
+        <meta property="og:url" content="{{settings.url}}{% if article.date %}/articles{% endif %}{% if article.slug %}/{{article.slug}}{% endif %}" />
+        <meta property="og:image" content="{{settings.url}}{% if ogImage %}{{ogImage}}{% else %}/images/profile/alex-clapperton.jpg{% endif %}" />
+        <meta property="og:description" content="{% if summary %}{{summary}}{% else %}{{settings.name}}{% endif %}">
         <meta property="og:locale" content="en_GB">
-        <meta property="article:author" content="{{{settings.name}}}">
-        <meta property="og:site_name" content="{{{settings.name}}}">
+        <meta property="article:author" content="{{settings.name}}">
+        <meta property="og:site_name" content="{{settings.name}}">
 
         <!-- TWITTER -->
         <meta name="twitter:card" content="summary">
-        <meta name="twitter:site" content="{{{settings.twitterHandle}}}">
-        <meta name="twitter:creator" content="{{{settings.twitterHandle}}}">
-        <meta name="twitter:url" content="{{{settings.url}}}{{#if article.date}}/articles{{/if}}{{#if article.slug}}/{{{article.slug}}}{{/if}}">
-        <meta name="twitter:title" content="{{#if title}}{{title}}{{/if}}{{#unless home}} &mdash; {{settings.name}}{{/unless}}{{#if settings.jobTitle}} &mdash; {{settings.jobTitle}}{{/if}}">
-        <meta name="twitter:description" content="{{#if summary}}{{{summary}}}{{else}}{{{settings.name}}} &mdash; Articles{{/if}}">
-        <meta name="twitter:image" content="{{{settings.url}}}{{#if ogImage}}{{{ogImage}}}{{else}}/images/profile/alex-clapperton.jpg{{/if}}">
+        <meta name="twitter:site" content="{{settings.twitterHandle}}">
+        <meta name="twitter:creator" content="{{settings.twitterHandle}}">
+        <meta name="twitter:url" content="{{settings.url}}{% if article.date %}/articles{% endif %}{% if article.slug %}/{{article.slug}}{% endif %}">
+        <meta name="twitter:title" content="{% if title %}{{title}}{% endif %}{% if not home %} &mdash; {{settings.name}}{% endif %}{% if settings.jobTitle %} &mdash; {{settings.jobTitle}}{% endif %}">
+        <meta name="twitter:description" content="{% if summary %}{{summary}}{% else %}{{settings.name}} &mdash; Articles{% endif %}">
+        <meta name="twitter:image" content="{{settings.url}}{% if ogImage %}{{ogImage}}{% else %}/images/profile/alex-clapperton.jpg{% endif %}">
 
         <!-- FAVICONS -->
         <link rel="icon" type="image/png" href="/favicons/favicon-48x48.png" sizes="16x16">
@@ -153,11 +154,10 @@
         <meta name="theme-color" content="#0e0d0d">
 
         <!-- JAVASCRIPT -->
-        {{> _partials/scripts }}
+        {% include "_partials/scripts.njk" %}
     </head>
 
     <body id="top">
-
         <!-- JAVASCRIPT ALERT -->
         <noscript>
             <div class="support-notice support-notice--javascript">

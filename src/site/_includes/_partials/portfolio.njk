@@ -1,0 +1,25 @@
+<div class="portfolio__item" data-portfolio-item>
+    <a class="portfolio__title" href="{{item.url}}">{{item.data.title}}</a>
+    <figure class="portfolio__figure">
+        <picture class="portfolio__picture {% if item.data.thumbnail.square %}portfolio__picture--square{% endif %}">
+            <source type="image/webp" data-srcset="{{item.data.thumbnail.url}}?fm=webp">
+
+            <img class="portfolio__image lazyload__image lazyload" data-src="{{item.data.thumbnail.url}}" alt="{{item.data.thumbnail.alt}}" data-lazy>
+
+            <noscript>
+                <source type="image/webp" srcset="{{item.data.thumbnail.url}}fm=webp">
+                <img class="portfolio__image" src="{{item.data.thumbnail.url}}" alt="{{item.data.thumbnail.alt}}">
+            </noscript>
+        </picture>
+
+        <figcaption class="portfolio__caption">
+            <p class="portfolio__caption-title">{{item.data.title}}</p>
+            <p class="portfolio__caption-body">
+            {% for tag in item.data.stack %}
+                <span class="portfolio__caption-tags">{{tag}}</span>
+            {% endfor %}
+            </p>
+            <p class="portfolio__caption-category">{{item.data.category}}</p>
+        </figcaption>
+    </figure>
+</div>

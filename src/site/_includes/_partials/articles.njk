@@ -1,0 +1,23 @@
+<!-- BEGIN : ARTICLES ITEM -->
+<div class="articles__item">
+    <div class="article__content">
+        <!-- BEGIN : ARTICLES THUMBNAIL -->
+        <picture class="articles__picture">
+            <source type="image/webp" data-srcset="https:{{item.data.thumbnail.url}}?fm=webp">
+            <img class="articles__image lazyload__image lazyload" data-src="https:{{item.data.thumbnail.url}}" alt="{{item.data.thumbnail.alt}}" data-lazy>
+
+            <noscript>
+                <source type="image/webp" srcset="https:{{item.data.thumbnail.url}}?fm=webp">
+                <img class="articles__image" src="https:{{item.data.thumbnail.url}}" alt="{{item.data.thumbnail.alt}}">
+            </noscript>
+        </picture>
+        <!-- END : ARTICLES THUMBNAIL /-->
+        <!-- BEGIN : ARTICLES DETAILS -->
+        <div class="articles__details">
+            <a class="articles__heading" href="{{item.url}}" {% if item.data.external %}rel="external"{% endif %}>{{item.data.title}}</a>
+            <p class="articles__body">{{item.data.description}}</p>
+        </div>
+        <!-- END : ARTICLES DETAILS /-->
+    </div>
+</div>
+<!-- END : ARTICLES ITEM /-->

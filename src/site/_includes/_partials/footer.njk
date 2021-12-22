@@ -4,10 +4,11 @@
                     <ul class="footer__list">
                         <li class="footer__list-item footer__list-item--title">Useful links</li>
 
-                    {{#each settings.navigation}}
-                        <li class="footer__list-item"><a class="footer__list-link" href="{{this.url}}" title="{{this.title-attr}}" data-item-{{this.slug}}>{{title}}</a></li>
-                    {{/each}}
+                    {% for item in settings.navigation %}
+                        <li class="footer__list-item"><a class="footer__list-link" href="{{item.url}}" title="{{item.title-attr}}" data-item-{{item.slug}}>{{title}}</a></li>
+                    {% endfor %}
                     </ul>
+
                     <ul class="footer__list">
                         <li class="footer__list-item footer__list-item--title">Send me an email</li>
                         <li class="footer__list-item"><a class="footer__list-link" href="mailto:{{settings.email}}">{{settings.email}}</a></li>
@@ -18,9 +19,10 @@
                     </ul>
                     <ul class="footer__list">
                         <li class="footer__list-item footer__list-item--title">Let's be social</li>
-                    {{#each settings.social}}
-                        <li class="footer__list-item footer__list-item--social"><a class="footer__list-link" href="{{this.url}}" title="{{this.title-attr}}" {{#if this.external}}rel="external"{{/if}}>{{this.title}}</a></li>
-                    {{/each}}
+
+                    {% for item in settings.social %}
+                        <li class="footer__list-item footer__list-item--social"><a class="footer__list-link" href="{{this.url}}" title="{{item.title-attr}}"  {% if item.external %}rel="external"{% endif %}>{{item.title}}</a></li>
+                    {% endfor %}
                     </ul>
                 </div>
 
