@@ -18,8 +18,9 @@ stack: [${project.tags}]
 home: false
 about: false
 project: true
-changefreq: monthly
-priority: 0.8
+sitemap:
+  changefreq: monthly
+  priority: 0.8
 browserImage:
   desktop: ${browserImages[0].file.url}
   mobile: ${browserImages[1].file.url}

@@ -17,8 +17,9 @@ external: ${article.isExternal}
 home: false
 about: false
 post: true
-changefreq: monthly
-priority: 0.8
+sitemap:
+  changefreq: monthly
+  priority: 0.8
 thumbnail:
   url: ${thumbnail.url}
   alt: "${article.articleData.alt}"
