@@ -23,13 +23,8 @@
                 </a>
                 <ul class="nav__list" data-navigation-list>
                 {% for item in settings.navigation %}
-                  {% if not home %} nav__link--light{% endif %}
-
                   <li class="nav__item"><a class="nav__link {% if item.slug %} nav__link--active{% endif %}{% if not home %} nav__link--light{% endif %}" href="{{item.url}}" title="{{item.title-attr}}" data-nav-item><span class="nav__link-index">.0{{@index}}</span>{{item.title}}</a></li>
                 {% endfor %}
-                {# {{#each settings.navigation as |item|}}
-                    <li class="nav__item"><a class="nav__link{{#if item.slug}} nav__link--active{{/if}}{{#unless home}} nav__link--light{{/unless}}" href="{{item.url}}" title="{{item.title-attr}}" data-nav-item><span class="nav__link-index">.0{{@index}}</span>{{item.title}}</a></li>
-                {{/each}} #}
                 </ul>
                 <span class="nav__item-active" data-nav-item-active></span>
             </nav>
