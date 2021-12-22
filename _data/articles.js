@@ -17,8 +17,9 @@ external: ${article.isExternal}
 home: false
 about: false
 post: true
-changefreq: monthly
-priority: 0.8
+sitemap:
+  changefreq: monthly
+  priority: 0.8
 thumbnail:
   url: ${thumbnail.url}
   alt: "${article.articleData.alt}"
@@ -35,7 +36,7 @@ function buildData(article) {
   const data = `${md.trim()}\n\n${article.post}`;
 
   fs.mkdirSync(`${output}/${year}/${fileName}`, { recursive: true });
-  fs.writeFileSync(`${output}/${year}/${fileName}/index.hbs`, data);
+  fs.writeFileSync(`${output}/${year}/${fileName}/index.njk`, data);
 }
 
 async function fetchArticles() {

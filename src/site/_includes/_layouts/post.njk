@@ -1,0 +1,21 @@
+{% include "_partials/head.njk" %}
+{% include "_partials/navigation.njk" %}
+{% include "_partials/banner.njk" %}
+
+<div class="notch">
+    <main class="post" id="main">
+        <div class="post__container">
+            <div class="post__content">
+                <article class="post__article">
+                    <time class="post__date" datetime="{{article.date}}"><strong>Published on:</strong> {{readableDate}}</time>
+
+                    {{content | safe}}
+                </article>
+            </div>
+        </div>
+    </main>
+
+    {% include "_partials/push.njk" %}
+</div>
+
+{% include "_partials/footer.njk" %}

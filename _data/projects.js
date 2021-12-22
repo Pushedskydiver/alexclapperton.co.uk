@@ -18,8 +18,9 @@ stack: [${project.tags}]
 home: false
 about: false
 project: true
-changefreq: monthly
-priority: 0.8
+sitemap:
+  changefreq: monthly
+  priority: 0.8
 browserImage:
   desktop: ${browserImages[0].file.url}
   mobile: ${browserImages[1].file.url}
@@ -50,7 +51,7 @@ function buildData(project) {
   const data = `${md.trim()}\n\n${project.projectContent}`;
 
   fs.mkdirSync(`${projects}/${fileName}`, { recursive: true });
-  fs.writeFileSync(`${projects}/${fileName}/index.hbs`, data);
+  fs.writeFileSync(`${projects}/${fileName}/index.njk`, data);
 }
 
 async function fetchProjects() {
