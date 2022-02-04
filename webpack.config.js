@@ -10,7 +10,7 @@ const path = require('path');
 
 function Bundle() {
   const plugin = require('./_config/plugins.json');
-  const prod = process.env.NODE_ENV === 'prod';
+  const prod = process.env.NODE_ENV === 'production';
 
   const alias = {
     'cookies': 'mozilla-doc-cookies/docCookies.js',
@@ -67,7 +67,7 @@ function Bundle() {
 
     entry: {
       common: path.resolve(__dirname, 'src/scripts/main.js'),
-      main: path.resolve(__dirname, 'src/styles/main.scss')
+      main: path.resolve(__dirname, 'src/styles/tailwind.css'),
     },
 
     output: {
@@ -82,7 +82,7 @@ function Bundle() {
     module: {
       rules: [
         {
-          test: /\.s[ac]ss$/i,
+          test: /\.css$/i,
           use: [
             {
               loader: MiniCssExtractPlugin.loader,
@@ -97,21 +97,7 @@ function Bundle() {
                 url: false
               }
             },
-            {
-              loader: 'postcss-loader',
-              options: {
-                postcssOptions: {
-                  plugins: [
-                    require('postcss-sort-media-queries'),
-                    require('postcss-minify-selectors'),
-                    require('cssnano')(plugin.cssnano)
-                  ],
-                }
-              },
-            },
-            {
-              loader: 'sass-loader'
-            }
+            { loader: 'postcss-loader' },
           ],
         }
       ]
@@ -133,8 +119,6 @@ function Bundle() {
       alias,
       extensions: ['.js']
     },
-
-    watch: prod ? false : true
   };
 }
 

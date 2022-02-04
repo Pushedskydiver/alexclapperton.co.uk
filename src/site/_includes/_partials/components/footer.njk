@@ -1,0 +1,43 @@
+        <footer class="py-32 pr-safe pl-safe bg-black md:py-48" id="footer">
+            <div class="container mx-auto px-16 xs:px-24 sm:px-32 md:px-48" data-fade>
+                <div class="sm:flex sm:flex-wrap sm:justify-between">
+                    <div class="mb-32">
+                        <h3 class="mb-16 font-selawik text-lg leading-lg fvs-sb text-white">Useful links</h3>
+
+                        <ul>
+                        {% for item in settings.navigation %}
+                            <li class="mb-16 last:mb-0 fvs-md text-yellow-400">
+                                <a class="inline border-solid border-b-2 border-yellow-400 hov:transition-colors hov:duration-200 hov:hover:bg-yellow-400 hov:hover:text-slate-900 motion-reduce:transition-none" href="{{item.url}}" title="{{item.title-attr}}" data-item-{{item.slug}}>{{item.title}}</a>
+                            </li>
+                        {% endfor %}
+                        </ul>
+                    </div>
+
+                    <div class="mb-32">
+                        <h3 class="mb-16 font-selawik text-lg leading-lg fvs-sb text-white">Send me an email</h3>
+
+                        <ul>
+                            <li class="fvs-md text-yellow-400">
+                                <a class="inline border-solid border-b-2 border-yellow-400 hov:transition-colors hov:duration-200 hov:hover:bg-yellow-400 hov:hover:text-slate-900 motion-reduce:transition-none" href="mailto:{{settings.email}}">{{settings.email}}</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="mb-32">
+                        <h3 class="mb-16 font-selawik text-lg leading-lg fvs-sb text-white">Let's be social</h3>
+
+                        <ul class="sm:flex sm:flex-wrap sm:gap-16">
+                        {% for item in settings.social %}
+                            <li class="mb-16 last:mb-0 fvs-md text-yellow-400">
+                                <a class="inline border-solid border-b-2 border-yellow-400 hov:transition-colors hov:duration-200 hov:hover:bg-yellow-400 hov:hover:text-slate-900 motion-reduce:transition-none" href="{{this.url}}" title="{{item.title-attr}}"  {% if item.external %}rel="external"{% endif %}>{{item.title}}</a>
+                            </li>
+                        {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+
+                <small class="text-sm leading-sm text-slate-400">Copyright &copy; 2022 {{settings.name}}. All rights reserved.</small>
+            </div>
+        </footer>
+    </body>
+</html>

@@ -1,0 +1,85 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  @font-face {
+    font-family: 'Selawik Variable';
+    src: url('../fonts/selawik-variable.woff2') format('woff2-variations');
+    font-display: optional;
+    font-weight: 400;
+  }
+
+  @font-face {
+    font-family: 'Avenir Next Variable';
+    src: url('../fonts/avenir-next-variable.woff2') format('woff2-variations');
+    font-display: optional;
+    font-weight: 400;
+  }
+
+  html {
+    @apply scroll-smooth;
+    font-size: 16px;
+  }
+
+  body {
+    font-family: 'Avenir Next Variable', sans-serif;
+    text-rendering: optimizeLegibility;
+  }
+
+  .fvs-rg {
+    font-variation-settings: 'wght' 400;
+  }
+
+  .fvs-md {
+    font-variation-settings: 'wght' 500;
+  }
+
+  .fvs-sb {
+    font-variation-settings: 'wght' 600;
+  }
+
+  .fvs-bd {
+    font-variation-settings: 'wght' 700;
+  }
+
+  .pt-safe {
+    padding-top: env(safe-area-inset-top);
+  }
+
+  .pr-safe {
+    padding-right: env(safe-area-inset-right);
+  }
+
+  .pb-safe {
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+
+  .pl-safe {
+    padding-left: env(safe-area-inset-left);
+  }
+
+  .sl {
+    @apply absolute bg-slate-900 whitespace-nowrap border-0 text-center py-8 z-120 sm:py-16;
+    clip: rect(0,0,0,0);
+    height: 1px;
+    margin: -1px;
+    width: 1px;
+  }
+
+  .sl:focus {
+    @apply whitespace-normal;
+    clip: auto;
+    height: auto;
+    margin: 0;
+    width: 100%;
+  }
+
+  [data-navigation-trigger][aria-expanded="true"] {
+    @apply bg-white text-slate-900;
+  }
+
+  [data-navigation-trigger][aria-expanded="true"] svg {
+    @apply rotate-45;
+  }
+}

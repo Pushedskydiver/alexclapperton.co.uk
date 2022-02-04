@@ -15,7 +15,7 @@ sitemap:
 
         <div class="portfolio__content">
         {% for item in collections.projects %}
-            {% include "_partials/portfolio.njk" %}
+            {% include "_partials/components/portfolio.njk" %}
         {% endfor %}
         </div>
     </div>
@@ -30,7 +30,7 @@ sitemap:
         {% for i in range(0, 3) %}
             {% set item = collections.articles[i] %}
 
-            {% include "_partials/articles.njk" %}
+            {% include "_partials/components/articles.njk" %}
         {% endfor %}
 
         </div>

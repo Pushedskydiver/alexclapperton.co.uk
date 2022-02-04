@@ -1,0 +1,28 @@
+<div class="relative mb-32 bg-slate-900 sm:w-full sm:inline-block sm:mb-24" data-portfolio-item>
+    <a class="sr-only" href="{{item.url}}">{{item.data.title}}</a>
+    <figure class="relative before:absolute before:top-0 before:left-0 before:w-full before:h-full before:z-10 before:bg-gradient-to-t before:from-black before:outline before:outline-4 before:outline-yellow-400 before:outline-offset-[-16px]">
+        <picture class="relative block {% if item.data.thumbnail.square %}aspect-square{% else %}aspect-3/2{% endif %}">
+            <source type="image/webp" data-srcset="{{item.data.thumbnail.url}}?fm=webp">
+
+            <img class="absolute top-0 left-0 w-full h-full object-cover lazyload" data-src="{{item.data.thumbnail.url}}" alt="{{item.data.thumbnail.alt}}" loading="lazy" {% if item.data.thumbnail.square %}width="200"{% else %}width="300"{% endif %} height="200" data-lazy>
+
+            <noscript>
+                <source type="image/webp" srcset="{{item.data.thumbnail.url}}fm=webp">
+                <img class="absolute top-0 left-0 w-full h-full object-cover" src="{{item.data.thumbnail.url}}" alt="{{item.data.thumbnail.alt}}" loading="lazy" {% if item.data.thumbnail.square %}width="200"{% else %}width="300"{% endif %} height="200">
+            </noscript>
+        </picture>
+
+        <figcaption class="absolute bottom-0 left-0 w-full px-32 pb-32 z-20">
+            <h3 class="mb-8 text-white text-lg leading-lg fvs-sb font-selawik">{{item.data.title}}</h3>
+            <ul class="mb-24 text-white text-base leading-base fvs-rg">
+            {%- for tag in item.data.stack %}
+                <li class="inline-block mr-4">
+                    {{- tag -}}
+                    {%- if not loop.last %}, {% endif %}
+                </li>
+            {% endfor %}
+            </ul>
+            <p class="text-yellow-400 text-base leading-base fvs-rg">{{item.data.category}}</p>
+        </figcaption>
+    </figure>
+</div>

@@ -11,10 +11,10 @@ layout: _layouts/default
     <div class="articles__container hide" data-fade>
         <div class="articles__content">
         {% for item in collections.articles %}
-            {% include "_partials/articles.njk" %}
+            {% include "_partials/components/articles.njk" %}
         {% endfor %}
         </div>
     </div>
 </main>
 
-{% include "_partials/push.njk" %}
+{% include "_partials/components/push.njk" %}

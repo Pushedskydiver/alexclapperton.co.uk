@@ -53,10 +53,6 @@ import(/* webpackChunkName: "desktop-navigation" */ 'Src/scripts/desktopNavigati
  * ******* */
 
 observe(() => {
-  import(/* webpackChunkName: "zenscroll" */ 'zenscroll').catch(err => console.error(`Error in: zenscroll - ${err}`));
-}, document.querySelectorAll('[data-scroll]'));
-
-observe(() => {
   import(/* webpackChunkName: "prism" */ 'prism').catch(err => console.error(`Error in: prism - ${err}`));
 }, document.querySelectorAll('pre'));
 

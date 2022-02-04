@@ -22,6 +22,8 @@ module.exports = config => {
   config.addPassthroughCopy({ 'src/browserconfig.xml': 'browserconfig.xml' });
   config.addPassthroughCopy({ 'src/_redirects': '_redirects' });
 
+  config.addWatchTarget('src/styles/tailwind.css')
+
   if (prod) {
     config.addTransform('htmlmin', htmlMin);
   }
@@ -44,8 +46,7 @@ module.exports = config => {
       input: 'src/site',
       output: 'dist'
     },
-    templateFormats: ['njk', 'md', '11ty.js'],
-    htmlTemplateEngine: 'njk',
-    markdownTemplateEngine: 'njk'
+    markdownTemplateEngine: 'njk',
+    passthroughFileCopy: true
   };
 };

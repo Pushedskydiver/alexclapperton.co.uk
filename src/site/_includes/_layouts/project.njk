@@ -1,6 +1,6 @@
 {% include "_partials/head.njk" %}
-{% include "_partials/navigation.njk" %}
-{% include "_partials/banner.njk" %}
+{% include "_partials/components/navigation.njk" %}
+{% include "_partials/components/banner.njk" %}
 
 <main class="project notch" id="main">
     <div class="project__container">
@@ -35,9 +35,9 @@
 <section class="devices notch">
     <div class="devices__container">
     {% for item in deviceImages %}
-        {% include "_partials/devices.njk" %}
+        {% include "_partials/components/devices.njk" %}
     {% endfor %}
     </div>
 </section>
 
-{% include "_partials/footer.njk" %}
+{% include "_partials/components/footer.njk" %}

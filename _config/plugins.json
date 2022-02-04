@@ -29,21 +29,6 @@
     "uniqueSelectors": true,
     "zindex": false
   },
-  "stylelint": {
-    "failAfterError": true,
-    "syntax": "scss",
-    "reportOutputDir": "src/reports/stylelint/",
-    "reporters": [
-      {
-        "formatter": "verbose",
-        "console": true
-      },
-      {
-        "formatter": "verbose",
-        "save": "stylelint.txt"
-      }
-    ]
-  },
   "uglify": {
     "terserOptions": {
       "module": true,

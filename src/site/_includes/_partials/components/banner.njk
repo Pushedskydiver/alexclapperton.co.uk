@@ -1,0 +1,23 @@
+<section class="{% if home %}h-screen md:[height:750px]{% endif %} pr-safe pl-safe">
+{% if post %}
+    <div class="banner__container banner__container--center">
+        <h1 class="banner__heading banner__heading--light banner__heading--center">{{title}}</h1>
+    </div>
+{% else %}
+    <div class="h-full flex flex-col justify-center container mx-auto px-16 xs:px-24 sm:px-32 md:px-48">
+    {% if home %}
+        <h1 class="mb-24 text-white text-xxxl leading-xxxl fvs-sb font-selawik [max-width:450px]">{{homepage.title}}</h1>
+        <span class="mb-24 text-white text-md leading-md fvs-md">{{homepage.subText}}</span>
+        <a class="text-yellow-400 text-md leading-md fvs-md flex justify-between items-center self-start gap-4 border-b-2 border-b-yellow-400 hov:transition-colors hov:duration-200 hov:hover:bg-yellow-400 hov:hover:text-slate-900 motion-reduce:transition-none" href="#main" aria-label="Scroll to main content" data-scroll>
+            <span aria-hidden="true">Scroll</span>
+            <svg class="md:w-24 md:h-24" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24"><path fill="currentColor" fill-rule="evenodd" d="M11 3v14.17l-3.59-3.58L6 15l6 6 6-6-1.41-1.41L13 17.17V3h-2Z" clip-rule="evenodd"/></svg>
+        </a>
+    {% elif offline %}
+        <h1 class="banner__heading banner__heading--light banner__heading--offline">{{title}}</h1>
+    {% else %}
+        <h1 class="banner__heading banner__heading--light">{{title}}</h1>
+        {% include "_partials/components/breadcrumbs.njk" %}
+    {% endif %}
+    </div>
+{% endif %}
+</section>
