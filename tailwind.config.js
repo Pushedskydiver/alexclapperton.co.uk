@@ -22,6 +22,7 @@ module.exports = {
     aspectRatio: {
       'square': '1 / 1',
       '3/2': '3 / 2',
+      '4/3': '4 / 3',
       '16/9': '16 / 9',
     },
     lineHeight: {
@@ -30,7 +31,7 @@ module.exports = {
       base: `clamp(${pxToRem(24)}, 2.188vw, ${pxToRem(28)})`,
       md: `clamp(${pxToRem(24)}, 2.500vw, ${pxToRem(32)})`,
       lg: `clamp(${pxToRem(32)}, 2.813vw, ${pxToRem(36)})`,
-      xl: `clamp(${pxToRem(36)}, 3.750vw, ${pxToRem(48)})`,
+      xl: `clamp(${pxToRem(36)}, 3.438vw, ${pxToRem(44)})`,
       xxl: `clamp(${pxToRem(48)}, 4.375vw, ${pxToRem(56)})`,
       xxxl: `clamp(${pxToRem(64)}, 5.625vw, ${pxToRem(72)})`,
     },
@@ -39,13 +40,13 @@ module.exports = {
       selawik: ['Selawik Variable', 'sans-serif'],
     },
     fontSize: {
-      xs: pxToRem(12),
-      sm: `clamp(${pxToRem(12)}, 1.250vw, ${pxToRem(16)})`,
+      xs: pxToRem(14),
+      sm: `clamp(${pxToRem(14)}, 1.250vw, ${pxToRem(16)})`,
       base: `clamp(${pxToRem(16)}, 1.406vw, ${pxToRem(18)})`,
       md: `clamp(${pxToRem(18)}, 1.563vw, ${pxToRem(20)})`,
       lg: `clamp(${pxToRem(20)}, 1.875vw, ${pxToRem(24)})`,
-      xl: `clamp(${pxToRem(24)}, 2.500vw, ${pxToRem(32)})`,
-      xxl: `clamp(${pxToRem(32)},3.125vw, ${pxToRem(40)})`,
+      xl: `clamp(${pxToRem(24)}, 2.188vw, ${pxToRem(28)})`,
+      xxl: `clamp(${pxToRem(32)}, 3.125vw, ${pxToRem(40)})`,
       xxxl: `clamp(${pxToRem(56)}, 5vw, ${pxToRem(64)})`,
     },
     screens: {

@@ -1,20 +1,20 @@
 <!-- BEGIN : ARTICLES ITEM -->
-<li class="mb-32">
-    <article class="relative sm:h-full sm:flex sm:flex-col">
+<li class="[margin-block-end:32px]">
+    <article class="relative sm:[block-size:100%] sm:flex sm:flex-col">
         <!-- BEGIN : ARTICLES THUMBNAIL -->
         <picture class="relative block aspect-3/2">
             <source type="image/webp" data-srcset="https:{{item.data.thumbnail.url}}?fm=webp">
-            <img class="absolute top-0 left-0 w-full h-full object-cover lazyload" data-src="https:{{item.data.thumbnail.url}}" alt="{{item.data.thumbnail.alt}}" loading="lazy" width="300" height="200" data-lazy>
+            <img class="absolute [inset-block-start:0] [inset-inline-start:0] [inline-size:100%] [block-size:100%] object-cover lazyload" data-src="https:{{item.data.thumbnail.url}}" alt="{{item.data.thumbnail.alt}}" loading="lazy" width="300" height="200" data-lazy>
 
             <noscript>
                 <source type="image/webp" srcset="https:{{item.data.thumbnail.url}}?fm=webp">
-                <img class="absolute top-0 left-0 w-full h-full object-cover" src="https:{{item.data.thumbnail.url}}" alt="{{item.data.thumbnail.alt}}" loading="lazy" width="300" height="200">
+                <img class="absolute [inset-block-start:0] [inset-inline-start:0] [inline-size:100%] [block-size:100%] object-cover" src="https:{{item.data.thumbnail.url}}" alt="{{item.data.thumbnail.alt}}" loading="lazy" width="300" height="200">
             </noscript>
         </picture>
         <!-- END : ARTICLES THUMBNAIL /-->
         <!-- BEGIN : ARTICLES DETAILS -->
         <div class="flex flex-col justify-between p-16 bg-black sm:flex-1">
-            <h3 class="mb-16 font-selawik text-md leading-md fvs-sb text-white">
+            <h3 class="[margin-block-end:16px] font-selawik text-md leading-md fvs-sb text-white">
                 <a class="inline border-solid border-b-2 border-white hov:transition-all hov:duration-200 hov:hover:bg-yellow-400 hov:hover:text-slate-900 hov:hover:border-yellow-400  motion-reduce:transition-none" href="{{item.url}}" {% if item.data.external %}rel="external"{% endif %}>{{item.data.title}}</a>
             </h3>
 

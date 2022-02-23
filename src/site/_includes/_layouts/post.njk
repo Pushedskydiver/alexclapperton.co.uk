@@ -2,16 +2,14 @@
 {% include "_partials/components/navigation.njk" %}
 {% include "_partials/components/banner.njk" %}
 
-<div class="notch">
-    <main class="post" id="main">
-        <div class="post__container">
-            <div class="post__content">
-                <article class="post__article">
-                    <time class="post__date" datetime="{{article.date}}"><strong>Published on:</strong> {{readableDate}}</time>
+<div class="pr-safe pl-safe">
+    <main class="bg-slate-800 [padding-block:32px] md:[padding-block:48px]" id="main">
+        <div class="container [margin-inline:auto] [padding-inline:16px]">
+            <article class="text-white [max-inline-size:45rem] [margin-inline:auto]">
+                <time class="block [margin-block-end:24px]" datetime="{{datePublished}}"><strong class="fvs-md">Published on:</strong> {{datePublished | formatDate}}</time>
 
-                    {{content | safe}}
-                </article>
-            </div>
+                {{content | safe}}
+            </article>
         </div>
     </main>
 

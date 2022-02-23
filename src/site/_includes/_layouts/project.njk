@@ -2,10 +2,11 @@
 {% include "_partials/components/navigation.njk" %}
 {% include "_partials/components/banner.njk" %}
 
-<main class="project notch" id="main">
-    <div class="project__container">
+<main class="pr-safe pl-safe" id="main">
+    <div class="container [margin-inline:auto] [padding-inline:16px]">
         <div class="project__content">
-            <h2 class="project__heading">Project details</h2>
+            <h2 class="text-white text-xl leading-xl font-selawik fvs-sb [margin-block-end:24px]">Project details</h2>
+
             {{content | safe}}
 
             {# <a class="button button--primary" href="#">
@@ -14,17 +15,17 @@
             </a> #}
         </div>
 
-        <div class="browser hide" data-fade>
-            <svg class="browser__bar" xmlns="http://www.w3.org/2000/svg" width="801" height="23" viewBox="0 0 801 23"><path fill="#f1f1f1" d="M801 23H0V4c0-2.8 3.3-4 6.1-4H797c2.8 0 4.1 1.2 4.1 4v19z"/><path fill="#e74c3c" d="M9.4 11.5a4.7 4.7 0 1 0 9.4 0 4.7 4.7 0 1 0-9.4 0"/><path fill="#f1c40f" d="M24.8 11.5a4.7 4.7 0 1 0 9.4 0 4.7 4.7 0 1 0-9.4 0"/><path fill="#2ecc71" d="M40.2 11.5a4.7 4.7 0 1 0 9.4 0 4.7 4.7 0 1 0-9.4 0"/></svg>
+        <div class="bg-slate-300 [margin-block:24px]" data-fade>
+            <svg class="block [block-size:auto] [inline-size:100%]" xmlns="http://www.w3.org/2000/svg" width="801" height="23" viewBox="0 0 801 23"><path fill="#f1f1f1" d="M801 23H0V4c0-2.8 3.3-4 6.1-4H797c2.8 0 4.1 1.2 4.1 4v19z"/><path fill="#e74c3c" d="M9.4 11.5a4.7 4.7 0 1 0 9.4 0 4.7 4.7 0 1 0-9.4 0"/><path fill="#f1c40f" d="M24.8 11.5a4.7 4.7 0 1 0 9.4 0 4.7 4.7 0 1 0-9.4 0"/><path fill="#2ecc71" d="M40.2 11.5a4.7 4.7 0 1 0 9.4 0 4.7 4.7 0 1 0-9.4 0"/></svg>
 
-            <div class="browser__wrapper">
+            <div class="overflow-y-scroll">
                 <picture class="browser__picture">
                     <source media="(max-width: 50em)" data-srcset="{{browserImage.mobile}}">
                     <img class="browser__image lazyload__image lazyload" data-src="{{browserImage.desktop}}" alt="{{project.browserAlt}}" data-lazy>
 
                     <noscript>
                         <source media="(max-width: 50em)" srcset="{{browserImage.mobile}}">
-                        <img class="browser__image" src="{{browserImage.desktop}}" alt="{{project.browserAlt}}">
+                        <img class="browser__image" src="{{browserImage.desktop}}" alt="{{project.browserAlt}}" loading="lazy">
                     </noscript>
                 </picture>
             </div>
@@ -32,7 +33,7 @@
     </div>
 </main>
 
-<section class="devices notch">
+<section class="devices notch text-white">
     <div class="devices__container">
     {% for item in deviceImages %}
         {% include "_partials/components/devices.njk" %}

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html class="no-js" lang="en-GB">
+<html class="no-js" lang="en-GB" dir="ltr">
     <head>
         <!-- META TAGS  -->
         <meta charset="utf-8">
@@ -151,13 +151,15 @@
         <meta name="msapplication-square310x310logo" content="/favicons/favicon-310x310.png">
         <meta name="msapplication-tooltip" content="Alex">
         <meta name="msapplication-config" content="/browserconfig.xml">
-        <meta name="theme-color" content="#0e0d0d">
+
+        <meta name="theme-color"  content="#ffffff" media="(prefers-color-scheme: light)">
+        <meta name="theme-color"  content="#0f182a" media="(prefers-color-scheme: dark)">
 
         <!-- JAVASCRIPT -->
         {% include "_partials/scripts.njk" %}
     </head>
 
-    <body class="dark:bg-slate-900" id="top">
+    <body class="bg-slate-900" id="top">
         <!-- JAVASCRIPT ALERT -->
         <noscript>
             <div>

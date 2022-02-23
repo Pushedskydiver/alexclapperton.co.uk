@@ -25,16 +25,7 @@ browserImage:
   desktop: ${browserImages[0].file.url}
   mobile: ${browserImages[1].file.url}
   alt: ${browserImages[0].description}
-deviceImages:
-  one:
-    url: ${deviceImages[0].file.url}
-    alt: ${deviceImages[0].description}
-  two:
-    url: ${deviceImages[1].file.url}
-    alt: ${deviceImages[1].description}
-  three:
-    url: ${deviceImages[2].file.url}
-    alt: ${deviceImages[2].description}
+deviceImages: ${JSON.stringify(deviceImages)}
 thumbnail:
   url: ${thumbnail.file.url}
   alt: "${thumbnail.description}"

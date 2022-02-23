@@ -1,30 +1,30 @@
-<header class="absolute left-0 w-full z-100 bg-transparent pr-safe pl-safe">
+<header class="absolute [inset-inline-start:0] [inline-size:100%] z-100 bg-transparent pr-safe pl-safe">
     <a href="#nav" class="sl text-yellow-400">Skip to navigation</a>
     <a href="#main" class="sl text-yellow-400">Skip to main content</a>
     <a href="#footer" class="sl text-yellow-400">Skip to footer</a>
 
-    <div class="relative container mx-auto px-16 xs:px-24 sm:px-32 md:px-48">
-        <div class="flex items-center justify-start py-16 sm:justify-between">
+    <div class="relative container [margin-inline:auto] [padding-inline:16px]">
+        <div class="flex items-center justify-start [padding-block:16px] sm:justify-between">
             <a class="text-slate-900 dark:text-white" href="/" title="Go to the homepage.">
                 <svg xmlns="http://www.w3.org/2000/svg" width="45" height="45" viewBox="0 0 117 122" fill="currentColor">
                     <path d="M61.734 19.305a5 5 0 1 1 9.07 4.209l-10.268 22.59a5 5 0 0 1-9.072-4.208l10.27-22.591zm-32.67 70.59a5 5 0 0 1 9.072 4.21l-11.6 25a5 5 0 1 1-9.072-4.21l11.6-25zM40.19 65.908a5 5 0 0 1 9.082 4.186l-5.53 12a5 5 0 0 1-9.082-4.186l5.53-12zm10.156-4.937a4.985 4.985 0 1 1 0-9.97 4.985 4.985 0 0 1 0 9.97zm-8.98-34.075a5 5 0 1 1 9.07 4.21l-26 56a5 5 0 1 1-9.07-4.21l26-56zM52.465 2.898a5 5 0 0 1 9.072 4.206l-5.1 11a5 5 0 1 1-9.072-4.206l5.1-11zM5.059 104.912a5 5 0 0 1 9.085 4.179l-4.6 10a5 5 0 0 1-9.085-4.18l4.6-10zm9.692-4.01a4.95 4.95 0 1 1 0-9.9 4.95 4.95 0 0 1 0 9.9zM52.837 77.54a5 5 0 1 1 9.082 4.185l-4.377 9.369a5 5 0 1 1-9.082-4.185l4.377-9.37zm11.441-24.881c1.162-2.505 4.456-4.198 6.96-3.036a5 5 0 0 1 2.432 6.64L67.216 70.16a5 5 0 1 1-9.071-4.21l6.133-13.29zm10.307-5.189a4.985 4.985 0 1 1 0-9.97 4.985 4.985 0 0 1 0 9.97zm-5.9 51.5a4.985 4.985 0 1 1 0-9.97 4.985 4.985 0 0 1 0 9.97zm11.72-42.1a5 5 0 1 1 9.072 4.21l-10.5 22.652a5 5 0 1 1-9.07-4.209L80.405 56.87zm16.191 42.693l-7.13 15.342a5 5 0 0 0 9.07 4.209l7.452-15.947a5 5 0 0 0-2.431-6.64c-2.505-1.162-5.798.53-6.96 3.036zM88.4 78.41l-8.384 18.145a5 5 0 0 0 9.07 4.209l8.706-18.75a5 5 0 0 0-2.431-6.64c-2.505-1.162-5.799.53-6.961 3.035zm18.6 38.575a4.985 4.985 0 1 0 9.97 0 4.985 4.985 0 1 0-9.97 0" />
                 </svg>
             </a>
 
-            <button class="fixed left-1/2 bottom-60 flex justify-between gap-4 mx-auto py-8 px-12 text-base leading-base fvs-rg rounded-sm bg-white dark:bg-slate-800 text-white transition-all duration-300 -translate-x-1/2 z-110 sm:hidden" aria-controls="nav" aria-expanded="false" data-navigation-trigger>
+            <button class="fixed [inset-inline-start:50%] [inset-block-end:60px] flex justify-between gap-4 [margin-inline:auto] [padding-block:8px] [padding-inline:12px] text-base leading-base fvs-rg rounded-sm bg-white dark:bg-slate-800 text-white border-2 border-solid border-slate-900 transition-all duration-300 -translate-x-1/2 z-110 sm:hidden" aria-controls="nav" aria-expanded="false" data-navigation-trigger>
                 Menu
                 <svg class="transition-all duration-300" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="currentColor"><path d="M18.984 12.984h-6v6h-1.97v-6h-6v-1.97h6v-6h1.97v6h6v1.97z"/></svg>
             </button>
 
-            <nav class="fixed top-0 left-0 w-full h-full py-32 px-24 flex flex-col justify-between bg-slate-900 transition-all duration-700 -translate-y-full invisible z-100 sm:static sm:block sm:w-auto sm:p-0 sm:bg-transparent sm:visible sm:translate-y-0" id="nav" data-navigation>
+            <nav class="fixed [inset-block-start:0] [inset-inline-start:0] [inline-size:100%] [block-size:100%] [padding-block:32px] [padding-inline:24px] flex flex-col justify-between bg-slate-900 transition-all duration-700 -translate-y-full invisible z-100 sm:static sm:block sm:[inline-size:auto] sm:p-0 sm:bg-transparent sm:visible sm:translate-y-0" id="nav" data-navigation>
                 <a class="text-slate-900 dark:text-white sm:hidden" href="/" data-navigation-logo>
                     <svg xmlns="http://www.w3.org/2000/svg" width="45" height="45" viewBox="0 0 117 122" fill="currentColor"><g><title>Alex Clapperton</title><path d="M61.734 19.305a5 5 0 1 1 9.07 4.209l-10.268 22.59a5 5 0 0 1-9.072-4.208l10.27-22.591zm-32.67 70.59a5 5 0 0 1 9.072 4.21l-11.6 25a5 5 0 1 1-9.072-4.21l11.6-25zM40.19 65.908a5 5 0 0 1 9.082 4.186l-5.53 12a5 5 0 0 1-9.082-4.186l5.53-12zm10.156-4.937a4.985 4.985 0 1 1 0-9.97 4.985 4.985 0 0 1 0 9.97zm-8.98-34.075a5 5 0 1 1 9.07 4.21l-26 56a5 5 0 1 1-9.07-4.21l26-56zM52.465 2.898a5 5 0 0 1 9.072 4.206l-5.1 11a5 5 0 1 1-9.072-4.206l5.1-11zM5.059 104.912a5 5 0 0 1 9.085 4.179l-4.6 10a5 5 0 0 1-9.085-4.18l4.6-10zm9.692-4.01a4.95 4.95 0 1 1 0-9.9 4.95 4.95 0 0 1 0 9.9zM52.837 77.54a5 5 0 1 1 9.082 4.185l-4.377 9.369a5 5 0 1 1-9.082-4.185l4.377-9.37zm11.441-24.881c1.162-2.505 4.456-4.198 6.96-3.036a5 5 0 0 1 2.432 6.64L67.216 70.16a5 5 0 1 1-9.071-4.21l6.133-13.29zm10.307-5.189a4.985 4.985 0 1 1 0-9.97 4.985 4.985 0 0 1 0 9.97zm-5.9 51.5a4.985 4.985 0 1 1 0-9.97 4.985 4.985 0 0 1 0 9.97zm11.72-42.1a5 5 0 1 1 9.072 4.21l-10.5 22.652a5 5 0 1 1-9.07-4.209L80.405 56.87zm16.191 42.693l-7.13 15.342a5 5 0 0 0 9.07 4.209l7.452-15.947a5 5 0 0 0-2.431-6.64c-2.505-1.162-5.798.53-6.96 3.036zM88.4 78.41l-8.384 18.145a5 5 0 0 0 9.07 4.209l8.706-18.75a5 5 0 0 0-2.431-6.64c-2.505-1.162-5.799.53-6.961 3.035zm18.6 38.575a4.985 4.985 0 1 0 9.97 0 4.985 4.985 0 1 0-9.97 0"/></g></svg>
                 </a>
 
-                <ul class="flex flex-col justify-center flex-1 gap-36 mb-48 sm:flex-row sm:gap-24 sm:mb-0" data-navigation-list>
+                <ul class="flex flex-col justify-center flex-1 gap-36 [margin-block-end:48px] sm:flex-row sm:gap-24 sm:[margin-block-end:0]" data-navigation-list>
                 {% for item in settings.navigation %}
                     <li>
-                        <a class="block font-selawik text-white text-xxxl leading-xxxl fvs-sb sm:text-base sm:leading-base" href="{{item.url}}" title="{{item.title-attr}}" data-nav-item>
+                        <a class="block font-selawik text-white text-xxl leading-xxl fvs-sb sm:text-base sm:leading-base" href="{{item.url}}" title="{{item.titleAttr}}" data-nav-item>
                             <span class="inline-block mr-16 font-selawik fvs-sb text-base leading-base align-super sm:hidden" aria-hidden="true">.0{{loop.index}}</span>
                             {{item.title}}
                         </a>

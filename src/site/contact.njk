@@ -8,58 +8,79 @@ sitemap:
   priority: 1
 ---
 
-<main class="contact notch" id="main">
-    <article class="contact__container" id="contact">
-        <div class="contact__inner">
-            <h2 class="contact__heading">Drop me a line</h2>
-            <p class="contact__body">Got a question to ask? Then please, don't hesitate to get in touch with me. Whether it's a question regarding potential work, about my website, or if you just want to say hi.</p>
-            <p>You can contact me by filling in the super simple form below:</p>
+<main class="[padding-block:32px] pr-safe pl-safe md:[padding-block:48px]" id="main">
+    <article class="container [margin-inline:auto] [padding-inline:16px] sm:grid sm:grid-cols-3 sm:gap-x-64 sm:gap-y-48" id="contact">
+        <div class="[margin-block-end:40px] sm:col-span-2 sm:[margin-block-end:0]">
+            <h2 class="[margin-block-end:16px] text-white text-xxl leading-xxl fvs-sb font-selawik md:[margin-block-end:24px]">Drop me a line</h2>
+
+            <p class="text-base leading-base text-white fvs-rg [margin-block-end:24px] [max-inline-size:550px]">Got a question to ask? Then please, don't hesitate to get in touch with me. Whether it's a question regarding potential work, about my website, or if you just want to say hi.</p>
+
+            <p class="text-base leading-base text-white fvs-rg [margin-block-end:24px][max-inline-size:550px]">You can contact me by filling in the super simple form below:</p>
         </div>
 
-        <form class="form" name="contact" method="post" action="/#contact" netlify data-form>
-            <fieldset class="form__fieldset">
-                <legend class="form__legend">Enter your name, email and your message.</legend>
+        <form class="[margin-block-end:32px] sm:col-span-2 sm:[margin-block-end:0]" name="contact" method="post" action="/#contact" netlify data-form>
+            <fieldset class="relative">
+                <legend class="sr-only">Enter your name, email and your message.</legend>
 
-                <div class="form__inner">
-                    <div class="form__field">
-                        <label class="form__label" id="nameLabel" for="name">Name</label>
-                        <input class="form__input" id="name" type="text" name="name" aria-required="true" aria-labelledby="nameLabel" aria-describedby="nameDescribe" pattern="^[a-zA-Z \-']+$" required data-input>
-                        <small class="form__validation-message" id="nameDescribe" data-validation>Your name is required</small>
+                <div class="sm:grid sm:grid-cols-2 sm:gap-x-32">
+                    <div class="relative [margin-block-end:24px] sm:col-span-1">
+                        <label class="block text-white text-base leading-base fvs-sb [margin-block-end:8px]" id="nameLabel" for="name">Name</label>
+
+                        <input class="bg-slate-800 text-white text-base leading-base border-2 border-solid border-slate-700 transition-colors duration-200 [inline-size:100%] [padding-block:8px] [padding-inline:16px] focus:border-yellow-400 valid:border-lime-500 motion-reduce:transition-none" id="name" type="text" name="name" aria-required="true" aria-labelledby="nameLabel" aria-describedby="nameDescribe" pattern="^[a-zA-Z \-']+$" required data-input>
+
+                        <small class="hidden" id="nameDescribe" data-validation>Your name is required</small>
                     </div>
 
-                    <div class="form__field">
-                        <label class="form__label" id="emailLabel" for="email">Email</label>
-                        <input class="form__input" id="email" type="email" name="email" aria-required="true" aria-labelledby="emailLabel" aria-describedby="emailDescribe" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" required data-input>
-                        <small class="form__validation-message" id="emailDescribe" data-validation>Please enter a valid email address</small>
+                    <div class="relative [margin-block-end:24px] sm:col-span-1">
+                        <label class="block text-white text-base leading-base fvs-sb [margin-block-end:8px]" id="emailLabel" for="email">Email</label>
+
+                        <input class="bg-slate-800 text-white text-base leading-base border-2 border-solid border-slate-700 transition-colors duration-200 [inline-size:100%] [padding-block:8px] [padding-inline:16px] focus:border-yellow-400 valid:border-lime-500 motion-reduce:transition-none" id="email" type="email" name="email" aria-required="true" aria-labelledby="emailLabel" aria-describedby="emailDescribe" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" required data-input>
+
+                        <small class="hidden" id="emailDescribe" data-validation>Please enter a valid email address</small>
                     </div>
 
-                    <div class="form__field">
-                        <label class="form__label" id="messageLabel" for="message">Message</label>
-                        <textarea class="form__textarea" id="message" name="message" name="message" rows="6" cols="80" aria-required="true" aria-labelledby="messageLabel" aria-describedby="messageDescribe" required data-textarea></textarea>
-                        <small class="form__validation-message" id="messageDescribe" data-validation>Please enter your message</small>
+                    <div class="relative [margin-block-end:24px] sm:col-span-full">
+                        <label class="block text-white text-base leading-base fvs-sb [margin-block-end:8px]" id="messageLabel" for="message">Message</label>
+
+                        <textarea class="bg-slate-800 text-white text-base leading-base border-2 border-solid border-slate-700 transition-colors duration-200 [inline-size:100%] [padding-block:8px] [padding-inline:16px] focus:border-yellow-400 valid:border-lime-500 motion-reduce:transition-none" id="message" name="message" name="message" rows="6" cols="80" aria-required="true" aria-labelledby="messageLabel" aria-describedby="messageDescribe" required data-textarea></textarea>
+
+                        <small class="hidden" id="messageDescribe" data-validation>Please enter your message</small>
                     </div>
-                    <button class="form__button button button--primary" type="submit" name="button" data-submit-button>Submit form</button>
+
+                    <button class="relative [padding-block:12px] [padding-inline:24px] bg-yellow-400 text-slate-900 text-base leading-base fvs-md inline-flex justify-center items-center gap-8 rounded-sm sm:justify-self-start focus:outline focus:outline-2 focus:outline-offset-4 focus:outline-yellow-400 hov:after:absolute hov:after:[inset-block-end:0] hov:after:[inset-inline-start:0] hov:after:[inline-size:100%] hov:after:[block-size:100%] hov:after:bg-yellow-600 hov:after:rounded-sm hov:after:transition-transform hov:after:duration-200 hov:after:-z-10 hov:hover:after:translate-x-8 hov:hover:after:translate-y-8 motion-reduce:after:transition-none" type="submit" name="button" data-submit-button>Submit form</button>
                 </div>
 
-                <span class="form__message form__message--error" data-form-error>Oops. There was an error. Please submit the form again.</span>
-                <span class="form__message form__message--success" data-form-success>Hooray. Your message has been successfully sent.</span>
+                <span class="hidden" data-form-error>Oops. There was an error. Please submit the form again.</span>
+                <span class="hidden" data-form-success>Hooray. Your message has been successfully sent.</span>
             </fieldset>
         </form>
 
-        <aside class="contact__sidebar">
-            <h3 class="contact__sidebar-title">Contact details</h3>
-            <dl class="contact__list">
-                <dt class="contact__list-title">Email</dt>
-                <dd class="contact__list-body"><a class="link" href="mailto:{{settings.email}}">{{settings.email}}</a></dd>
-                <dt class="contact__list-title">Phone Number</dt>
-                <dd class="contact__list-body contact__list-body--phone">{{settings.phone}}</dd>
-                <dt class="contact__list-title">Social Links</dt>
-                <dd class="contact__list-body">
+        <aside class="bg-slate-800 [padding-block:32px] [padding-inline:24px] sm:col-start-3 sm:row-start-1 sm:row-span-2">
+            <h3 class="text-white text-lg leading-lg font-selawik fvs-sb [margin-block-end:24px]">Contact details</h3>
 
-                {% for item in settings.social %}
-                    <a class="contact__list-link link" href="{{item.url}}" title="{{item.title-attr}}"{% if item.external %} rel="external"{% endif %}>{{item.title}}</a>
-                    <br>
-                {% endfor %}
+            <dl class="contact__list">
+                <dt class="text-white text-base leading-base fvs-md [margin-block-end:8px]">Email</dt>
+
+                <dd class="[margin-block-end:32px]">
+                    <a class="text-base leading-base fvs-md text-yellow-400 border-solid border-b-2 border-yellow-400 hov:transition-colors hov:duration-200 hov:hover:bg-yellow-400 hov:hover:text-slate-900 motion-reduce:transition-none" href="mailto:{{settings.email}}">{{settings.email}}</a>
+                </dd>
+
+                <dt class="text-white text-base leading-base fvs-md [margin-block-end:8px]">Phone Number</dt>
+
+                <dd class="[margin-block-end:32px]">
+                    <a href="tel:{{settings.phone}}" class="text-base leading-base fvs-md text-yellow-400 border-solid border-b-2 border-yellow-400 hov:transition-colors hov:duration-200 hov:hover:bg-yellow-400 hov:hover:text-slate-900 motion-reduce:transition-none">{{settings.phone}}</a>
+                </dd>
+
+                <dt class="text-white text-base leading-base fvs-md [margin-block-end:8px]">Social Links</dt>
+
+                <dd>
+                    <ul>
+                        {% for item in settings.social %}
+                        <li class="[margin-block-end:16px] last:[margin-block-end:0]">
+                            <a class="text-base leading-base fvs-md text-yellow-400 border-solid border-b-2 border-yellow-400 hov:transition-colors hov:duration-200 hov:hover:bg-yellow-400 hov:hover:text-slate-900 motion-reduce:transition-none" href="{{item.url}}" title="{{item.titleAttr}}"{% if item.external %} rel="external"{% endif %}>{{item.title}}</a>
+                        </li>
+                        {% endfor %}
+                    </ul>
                 </dd>
             </dl>
         </aside>
