@@ -1,0 +1,7 @@
+{% extends "_layouts/default.njk" %}
+
+{% block content %}
+    {% include "_partials/components/banner.njk" %}
+
+    {{content | safe}}
+{% endblock content %}

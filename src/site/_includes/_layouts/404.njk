@@ -1,4 +1,6 @@
-{% include "_partials/head.njk" %}
-{% include "_partials/components/navigation.njk" %}
+{% extends "_layouts/default.njk" %}
 
-{{content | safe}}
+{% block content %}
+    {{ content | safe }}
+{% endblock %}
+

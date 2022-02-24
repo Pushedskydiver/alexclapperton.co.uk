@@ -1,4 +1,4 @@
-module.exports = date => {
+module.exports = (date) => {
   const d = new Date(date);
   const year = d.getFullYear();
   let month = d.getMonth() + 1;
@@ -12,5 +12,5 @@ module.exports = date => {
     day = `0${day}`;
   }
 
-  return [year, month, day].join('-');
+  return [day, month, year].join('-');
 }

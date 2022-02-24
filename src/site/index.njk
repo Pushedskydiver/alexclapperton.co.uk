@@ -5,7 +5,7 @@ about: false
 heroImage:
     square: https://images.ctfassets.net/66vjslfacivy/5iYptR3N7dkm0cHsZS8QQw/6b0a09c506f55bf200bd8dfeb6dff519/alex-square.jpg
     landscape: https://images.ctfassets.net/66vjslfacivy/3QPP25tbf4hfIqe6IfdwGW/8dbd89b212da827012c985b7a6017a4d/alex-landscape.jpg
-layout: _layouts/default
+layout: _layouts/page
 sitemap:
   changefreq: daily
   priority: 1
@@ -65,7 +65,7 @@ sitemap:
 
         <ul class="sm:grid sm:grid-cols-2 sm:gap-24 md:grid-cols-3">
         {% for i in range(0, 3) %}
-            {% set item = collections.articles[i] %}
+            {% set item = articles[i].fields %}
 
             {% include "_partials/components/articles.njk" %}
         {% endfor %}

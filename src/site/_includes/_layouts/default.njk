@@ -1,7 +1,28 @@
-{% include "_partials/head.njk" %}
-{% include "_partials/components/navigation.njk" %}
-{% include "_partials/components/banner.njk" %}
+<!DOCTYPE html>
+<html class="no-js" lang="en-GB" dir="ltr">
+    {% include "_partials/head.njk" %}
 
-{{content | safe}}
+    <body class="bg-slate-900" id="top">
+        <!-- JAVASCRIPT ALERT -->
+        <noscript>
+            <div>
+              <p>You currently have JavaScript in your browser turned off, so some features of this site may not work fully.</p>
+              <p>Find out <a href="http://enable-javascript.com" rel="external noopener noreferrer" target="_blank" >how to turn JavaScript on</a>.</p>
+            </div>
+        </noscript>
 
-{% include "_partials/components/footer.njk" %}
+        <a href="#nav" class="sl text-yellow-400">Skip to navigation</a>
+        <a href="#main" class="sl text-yellow-400">Skip to main content</a>
+        <a href="#footer" class="sl text-yellow-400">Skip to footer</a>
+
+        {% include "_partials/components/navigation.njk" %}
+
+        {% block content %}
+        {% endblock content %}
+
+        {% include "_partials/components/footer.njk" %}
+
+        {% block foot %}
+        {% endblock %}
+    </body>
+</html>

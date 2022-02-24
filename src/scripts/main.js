@@ -52,10 +52,6 @@ import(/* webpackChunkName: "desktop-navigation" */ 'Src/scripts/desktopNavigati
  *
  * ******* */
 
-observe(() => {
-  import(/* webpackChunkName: "prism" */ 'prism').catch(err => console.error(`Error in: prism - ${err}`));
-}, document.querySelectorAll('pre'));
-
 observe(element => {
   import(/* webpackChunkName: "fade-in-elements" */ 'Src/scripts/fadeInElements').then((module) => initModule(module, element)).catch(err => console.error(`Error in: fadeInElements - ${err}`));
 }, document.querySelectorAll('[data-fade]'));

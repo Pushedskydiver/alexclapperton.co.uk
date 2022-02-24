@@ -1,8 +1,14 @@
 const contentful = require('contentful');
 
+require('dotenv').config();
+
+const isProd = process.env.NODE_ENV === 'production';
+const contentfulEnv = isProd ? 'master' : 'staging'
+
 const client = contentful.createClient({
-  accessToken: '73940eda44dadba56db69ec6395029036dbd43845eb476473e17a79f627d351a',
-  space: '66vjslfacivy'
+  accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
+  environment: contentfulEnv,
+  space: process.env.CONTENTFUL_SPACE_ID
 });
 
 exports.client = client;

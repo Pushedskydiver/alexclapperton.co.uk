@@ -15,7 +15,6 @@ function Bundle() {
   const alias = {
     'cookies': 'mozilla-doc-cookies/docCookies.js',
     'zenscroll': 'zenscroll/zenscroll.js',
-    'prism': 'prismjs/prism.js',
     Src: path.resolve(__dirname, 'src')
   };
 

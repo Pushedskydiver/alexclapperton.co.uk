@@ -16,7 +16,8 @@ module.exports = {
     './src/site/articles/**/*.njk',
     './src/site/portfolio/**/*.njk',
     './src/scripts/**/*.js',
-    './src/functions/**/*.js'
+    './src/functions/**/*.js',
+    './src/utils/**/*.js',
   ],
   theme: {
     aspectRatio: {

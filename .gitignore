@@ -5,6 +5,7 @@ node_modules
 dist
 reports
 .env
+.env.*
 
 # misc
 [Tt]humbs.db

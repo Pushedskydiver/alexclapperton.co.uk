@@ -4,12 +4,14 @@ const fadeInDelay = require('./src/utils/filters/fade-in-delay');
 const formatDate = require('./src/utils/filters/format-date');
 const swStyles = require('./src/utils/filters/sw-styles');
 const swScripts = require('./src/utils/filters/sw-scripts.js');
+const renderRichTextAsHtml = require('./src/utils/filters/render-text-as-html.js');
 
 module.exports = config => {
   const prod = process.env.NODE_ENV === 'prod';
 
   config.addFilter('fadeInDelay', fadeInDelay);
   config.addFilter('formatDate', formatDate);
+  config.addFilter('renderRichTextAsHtml', renderRichTextAsHtml);
 
   config.addShortcode('swStyles', swStyles);
   config.addShortcode('swScripts', swScripts);

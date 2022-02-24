@@ -1,24 +1,27 @@
+{% set thumbnail = item.featuredImage.fields.file %}
+{% set url = '/articles/' + item.year + '/' + item.slug + '/' %}
+
 <!-- BEGIN : ARTICLES ITEM -->
 <li class="[margin-block-end:32px]">
     <article class="relative sm:[block-size:100%] sm:flex sm:flex-col">
         <!-- BEGIN : ARTICLES THUMBNAIL -->
         <picture class="relative block aspect-3/2">
-            <source type="image/webp" data-srcset="https:{{item.data.thumbnail.url}}?fm=webp">
-            <img class="absolute [inset-block-start:0] [inset-inline-start:0] [inline-size:100%] [block-size:100%] object-cover lazyload" data-src="https:{{item.data.thumbnail.url}}" alt="{{item.data.thumbnail.alt}}" loading="lazy" width="300" height="200" data-lazy>
+            <source type="image/webp" data-srcset="https:{{thumbnail.url}}?fm=webp">
+            <img class="absolute [inset-block-start:0] [inset-inline-start:0] [inline-size:100%] [block-size:100%] object-cover lazyload" data-src="https:{{thumbnail.url}}" alt="{{thumbnail.alt}}" loading="lazy" width="300" height="200" data-lazy>
 
             <noscript>
-                <source type="image/webp" srcset="https:{{item.data.thumbnail.url}}?fm=webp">
-                <img class="absolute [inset-block-start:0] [inset-inline-start:0] [inline-size:100%] [block-size:100%] object-cover" src="https:{{item.data.thumbnail.url}}" alt="{{item.data.thumbnail.alt}}" loading="lazy" width="300" height="200">
+                <source type="image/webp" srcset="https:{{thumbnail.url}}?fm=webp">
+                <img class="absolute [inset-block-start:0] [inset-inline-start:0] [inline-size:100%] [block-size:100%] object-cover" src="https:{{thumbnail.url}}" alt="{{thumbnail.alt}}" loading="lazy" width="300" height="200">
             </noscript>
         </picture>
         <!-- END : ARTICLES THUMBNAIL /-->
         <!-- BEGIN : ARTICLES DETAILS -->
         <div class="flex flex-col justify-between p-16 bg-black sm:flex-1">
             <h3 class="[margin-block-end:16px] font-selawik text-md leading-md fvs-sb text-white">
-                <a class="inline border-solid border-b-2 border-white hov:transition-all hov:duration-200 hov:hover:bg-yellow-400 hov:hover:text-slate-900 hov:hover:border-yellow-400  motion-reduce:transition-none" href="{{item.url}}" {% if item.data.external %}rel="external"{% endif %}>{{item.data.title}}</a>
+                <a class="inline border-solid border-b-2 border-white hov:transition-all hov:duration-200 hov:hover:bg-yellow-400 hov:hover:text-slate-900 hov:hover:border-yellow-400  motion-reduce:transition-none" href="{{url}}" {% if item.isExternal %}rel="external"{% endif %}>{{item.articleName}}</a>
             </h3>
 
-            <p class="text-base leading-base text-white">{{item.data.description}}</p>
+            <p class="text-base leading-base text-white">{{item.articleDescription}}</p>
         </div>
         <!-- END : ARTICLES DETAILS /-->
     </article>
