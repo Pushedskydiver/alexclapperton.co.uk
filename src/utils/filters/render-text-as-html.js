@@ -2,6 +2,14 @@ const { documentToHtmlString } = require('@contentful/rich-text-html-renderer');
 const { BLOCKS, INLINES } = require('@contentful/rich-text-types');
 
 module.exports = (value) => {
+  // create an asset map
+  const assetMap = new Map();
+
+  // loop through the assets and add them to the map
+  for (const asset of value.links.assets.block) {
+    assetMap.set(asset.sys.id, asset);
+  }
+
   const options = {
     renderNode: {
       [BLOCKS.HEADING_2]: (node, next) => {
@@ -40,21 +48,21 @@ module.exports = (value) => {
         `
       },
       [BLOCKS.EMBEDDED_ASSET]: (node) => {
-        const { fields } = node.data.target
-        const { description, file } = fields
-        const { width, height } = file.details.image
+        // find the asset in the assetMap by ID
+        const asset = assetMap.get(node.data.target.sys.id);
+        const { description, width, height, url } = asset;
 
         return `
           <figure class="[margin-block-end:32px]">
             <div class="relative" style="aspect-ratio:${width}/${height}">
               <picture>
-                <source media="(max-width: 44.9375rem)" type="image/webp" srcset="https:${file.url}?fm=webp&w=570">
-                <source media="(min-width: 45rem)" type="image/webp" srcset="https:${file.url}?fm=webp">
+                <source media="(max-width: 44.9375rem)" type="image/webp" srcset="${url}?fm=webp&w=570">
+                <source media="(min-width: 45rem)" type="image/webp" srcset="${url}?fm=webp">
 
-                <source media="(max-width: 44.9375rem)" srcset="https:${file.url}?w=570">
-                <source media="(min-width: 45rem)" srcset="https:${file.url}">
+                <source media="(max-width: 44.9375rem)" srcset="${url}?w=570">
+                <source media="(min-width: 45rem)" srcset="${url}">
 
-                <img class="absolute [inset-inline-start:0] [inset-block-start:0] [inline-size:100%] [block-size:100%] object-cover p-8 border-2 border-solid border-slate-300 sm:p-16" src="https:${file.url}" alt="${description}" loading="lazy">
+                <img class="absolute [inset-inline-start:0] [inset-block-start:0] [inline-size:100%] [block-size:100%] object-cover p-8 border-2 border-solid border-slate-300 sm:p-16" src="${url}" alt="${description}" loading="lazy">
               </picture>
             </div>
 
@@ -68,5 +76,5 @@ module.exports = (value) => {
     }
   }
 
-  return documentToHtmlString(value, options);
+  return documentToHtmlString(value.json, options);
 }
