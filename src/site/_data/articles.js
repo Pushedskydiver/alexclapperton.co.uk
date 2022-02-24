@@ -1,4 +1,3 @@
-// const articlesService = require('../../../_services/articles');
 const { fetchContentfulData } = require('../../utils/fetchContentfulData');
 
 const query = `{
