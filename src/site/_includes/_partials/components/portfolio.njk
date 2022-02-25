@@ -1,0 +1,28 @@
+{% set thumbnail = item.featuredImage %}
+{% set url = '/portfolio/' + item.slug + '/' %}
+
+<li class="relative [margin-block-end:32px] bg-slate-900 sm:[inline-size:100%] sm:inline-block sm:[margin-block-end:24px]">
+    <figure class="relative grid before:absolute before:[inset-block-start:0] before:[inset-inline-start:0] before:[inline-size:100%] before:[block-size:100%] before:z-10 before:bg-gradient-to-t before:from-black before:outline before:outline-4 before:outline-yellow-400 before:outline-offset-[-16px]">
+        <picture class="relative block row-span-full col-span-full" style="aspect-ratio:{{thumbnail.width}}/{{thumbnail.height}};">
+            <source type="image/webp" srcset="{{thumbnail.url}}?fm=webp">
+
+            <img class="absolute [inset-block-start:0] [inset-inline-start:0] [inline-size:100%] [block-size:100%] object-cover" src="{{thumbnail.url}}" alt="{{thumbnail.description}}" width="{{thumbnail.width}}" height="{{thumbnail.height}}" loading="lazy">
+        </picture>
+
+        <figcaption class="row-span-full col-span-full self-end [inset-block-end:0] [inset-inline-start:0] [inline-size:100%] [padding-inline:32px] [padding-block-end:32px] z-20">
+            <h3 class="[margin-block-end:8px] text-white text-lg leading-lg fvs-sb font-selawik">
+                <a href="{{url}}" class="before:absolute before:[inset-block-start:0] before:[inset-inline-start:0] before:[block-size:100%] before:[inline-size:100%]">{{item.projectName}}</a>
+            </h3>
+
+            <ul class="[margin-block-end:24px] text-white text-base leading-base fvs-rg">
+            {%- for tag in item.tags %}
+                <li class="inline-block mr-4">
+                    {{- tag -}}
+                    {%- if not loop.last %}, {% endif %}
+                </li>
+            {% endfor %}
+            </ul>
+            <p class="text-yellow-400 text-base leading-base fvs-rg">{{item.category}}</p>
+        </figcaption>
+    </figure>
+</li>

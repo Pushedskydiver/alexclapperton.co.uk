@@ -1,15 +1,17 @@
 const fs = require('fs');
-const htmlMin = require('./src/utils/minify-html.js');
+const htmlMin = require('./src/utils/transforms/minify-html.js');
 const fadeInDelay = require('./src/utils/filters/fade-in-delay');
 const formatDate = require('./src/utils/filters/format-date');
-const swStyles = require('./src/utils/filters/sw-styles');
-const swScripts = require('./src/utils/filters/sw-scripts.js');
+const renderRichTextAsHtml = require('./src/utils/filters/render-text-as-html.js');
+const swStyles = require('./src/utils/shortcodes/sw-styles');
+const swScripts = require('./src/utils/shortcodes/sw-scripts.js');
 
 module.exports = config => {
-  const prod = process.env.NODE_ENV === 'prod';
+  const prod = process.env.NODE_ENV === 'production';
 
   config.addFilter('fadeInDelay', fadeInDelay);
   config.addFilter('formatDate', formatDate);
+  config.addFilter('renderRichTextAsHtml', renderRichTextAsHtml);
 
   config.addShortcode('swStyles', swStyles);
   config.addShortcode('swScripts', swScripts);
@@ -21,6 +23,8 @@ module.exports = config => {
   config.addPassthroughCopy({ 'src/site.webmanifest': 'site.webmanifest' });
   config.addPassthroughCopy({ 'src/browserconfig.xml': 'browserconfig.xml' });
   config.addPassthroughCopy({ 'src/_redirects': '_redirects' });
+
+  config.addWatchTarget('src/styles/tailwind.css');
 
   if (prod) {
     config.addTransform('htmlmin', htmlMin);
@@ -44,8 +48,7 @@ module.exports = config => {
       input: 'src/site',
       output: 'dist'
     },
-    templateFormats: ['njk', 'md', '11ty.js'],
-    htmlTemplateEngine: 'njk',
-    markdownTemplateEngine: 'njk'
+    markdownTemplateEngine: 'njk',
+    passthroughFileCopy: true
   };
 };

@@ -1,0 +1,86 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  @font-face {
+    font-family: 'Selawik Variable';
+    src: url('../fonts/selawik-variable.woff2') format('woff2-variations');
+    font-display: optional;
+    font-weight: 400;
+  }
+
+  @font-face {
+    font-family: 'Avenir Next Variable';
+    src: url('../fonts/avenir-next-variable.woff2') format('woff2-variations');
+    font-display: optional;
+    font-weight: 400;
+  }
+
+  html {
+    @apply scroll-smooth;
+    font-size: 16px;
+  }
+
+  body {
+    @apply text-base leading-base;
+    font-family: 'Avenir Next Variable', sans-serif;
+    text-rendering: optimizeLegibility;
+  }
+
+  .fvs-rg {
+    font-variation-settings: 'wght' 400;
+  }
+
+  .fvs-md {
+    font-variation-settings: 'wght' 500;
+  }
+
+  .fvs-sb {
+    font-variation-settings: 'wght' 600;
+  }
+
+  .fvs-bd {
+    font-variation-settings: 'wght' 700;
+  }
+
+  .pt-safe {
+    padding-block-start: env(safe-area-inset-top);
+  }
+
+  .pr-safe {
+    padding-inline-end: env(safe-area-inset-right);
+  }
+
+  .pb-safe {
+    padding-block-end: env(safe-area-inset-bottom);
+  }
+
+  .pl-safe {
+    padding-inline-start: env(safe-area-inset-left);
+  }
+
+  .sl {
+    @apply absolute bg-slate-900 whitespace-nowrap border-0 text-center [padding-block:8px] z-120 sm:[padding-block:16px];
+    clip: rect(0,0,0,0);
+    inline-size: 1px;
+    block-size: 1px;
+    margin: -1px;
+  }
+
+  .sl:focus {
+    @apply whitespace-normal;
+    clip: auto;
+    inline-size: 100%;
+    block-size: auto;
+    margin: 0;
+  }
+
+  [data-navigation-trigger][aria-expanded="true"] {
+    @apply bg-white text-slate-900;
+  }
+
+  [data-navigation-trigger][aria-expanded="true"] svg {
+    @apply rotate-45;
+  }
+}

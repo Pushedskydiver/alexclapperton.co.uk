@@ -4,8 +4,8 @@ permalink: sw.js
 eleventyExcludeFromCollections: true
 ---
 
-const cacheName = 'alexclapperton:0048';
-const cacheFiles = [
+const CACHE_NAMES = 'alexclapperton:0050';
+const CACHE_FILES = [
   '/',
   '/fonts/selawik-variable.woff2',
   '/fonts/avenir-next-variable.woff2',
@@ -21,45 +21,39 @@ const cacheFiles = [
 ];
 
 self.addEventListener('install', event => {
-  event.waitUntil(
-    caches.open(cacheName)
-      .then(cache => {
-        //console.log('Opened cache');
-        return cache.addAll(cacheFiles);
-      })
+  self.skipWaiting();
+
+  event.waitUntil(caches.open(CACHE_NAMES)
+    .then(cache => cache.addAll(CACHE_FILES))
   );
 });
 
 // Adding `fetch` event listener
 self.addEventListener('fetch', event => {
-  event.respondWith(
-    caches.match(event.request)
-      .then(response => {
-        // Grab the asset from SW cache.
-        if (response) {
-          return response;
-        }
-        return fetch(event.request);
-      }).catch(() => {
-        // Can't access the network return an offline page from the cache
-        return caches.match('/offline/');
-      })
+  event.respondWith(caches.match(event.request)
+    .then(response => {
+      // Grab the asset from SW cache.
+      if (response) {
+        return response;
+      }
+
+      return fetch(event.request);
+    })
+    .catch(() => caches.match('/offline/'))
   );
 });
 
 // Empty out any caches that don’t match the ones listed.
 self.addEventListener('activate', event => {
-  const cacheWhitelist = [cacheName];
+  const cacheWhitelist = [CACHE_NAMES];
 
   event.waitUntil(
-    caches.keys().then(cacheNames => {
-      return Promise.all(
-        cacheNames.map(cacheName => {
-          if (cacheWhitelist.indexOf(cacheName) === -1) {
-            return caches.delete(cacheName);
-          }
-        })
-      );
+    caches.keys().then(CACHE_NAMES => {
+      return Promise.all(CACHE_NAMES.map(cacheName => {
+        if (cacheWhitelist.indexOf(cacheName) === -1) {
+          return caches.delete(cacheName);
+        }
+      }));
     })
   );
 });

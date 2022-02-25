@@ -1,0 +1,11 @@
+{% extends "_layouts/default.njk" %}
+
+{% block content %}
+    {% include "_partials/components/banner.njk" %}
+
+    <div class="pr-safe pl-safe">
+        {{ content | safe }}
+
+        {% include "_partials/components/push.njk" %}
+    </div>
+{% endblock %}

@@ -3,3 +3,6 @@
 # Redirect default Netlify subdomain to primary domain
 https://quizzical-leavitt-1e7adc.netlify.com/* https://www.alexclapperton.co.uk/:splat 301!
 https://alexclapperton.com/* https://www.alexclapperton.com/:splat 301!
+
+
+/api/*                     /.netlify/functions/:splat                       200

@@ -1,3 +1,4 @@
+const path = require('path');
 const webpack = require('webpack');
 const ManifestPlugin = require('webpack-assets-manifest');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
@@ -6,16 +7,12 @@ const CopyWebpackPlugin = require('copy-webpack-plugin');
 const ImageminWebpWebpackPlugin = require('imagemin-webp-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
 // const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
-const path = require('path');
 
 function Bundle() {
   const plugin = require('./_config/plugins.json');
-  const prod = process.env.NODE_ENV === 'prod';
+  const prod = process.env.NODE_ENV === 'production';
 
   const alias = {
-    'cookies': 'mozilla-doc-cookies/docCookies.js',
-    'zenscroll': 'zenscroll/zenscroll.js',
-    'prism': 'prismjs/prism.js',
     Src: path.resolve(__dirname, 'src')
   };
 
@@ -66,8 +63,8 @@ function Bundle() {
     devtool: !prod ? 'source-map' : 'eval',
 
     entry: {
-      common: path.resolve(__dirname, 'src/scripts/main.js'),
-      main: path.resolve(__dirname, 'src/styles/main.scss')
+      common: path.resolve(__dirname, 'src/scripts/main.ts'),
+      main: path.resolve(__dirname, 'src/styles/tailwind.css'),
     },
 
     output: {
@@ -82,7 +79,12 @@ function Bundle() {
     module: {
       rules: [
         {
-          test: /\.s[ac]ss$/i,
+          test: /\.tsx?$/,
+          use: ['ts-loader'],
+          exclude: /node_modules/
+        },
+        {
+          test: /\.css$/i,
           use: [
             {
               loader: MiniCssExtractPlugin.loader,
@@ -97,21 +99,7 @@ function Bundle() {
                 url: false
               }
             },
-            {
-              loader: 'postcss-loader',
-              options: {
-                postcssOptions: {
-                  plugins: [
-                    require('postcss-sort-media-queries'),
-                    require('postcss-minify-selectors'),
-                    require('cssnano')(plugin.cssnano)
-                  ],
-                }
-              },
-            },
-            {
-              loader: 'sass-loader'
-            }
+            { loader: 'postcss-loader' },
           ],
         }
       ]
@@ -131,10 +119,8 @@ function Bundle() {
 
     resolve: {
       alias,
-      extensions: ['.js']
+      extensions: ['.ts', '.js']
     },
-
-    watch: prod ? false : true
   };
 }
 

@@ -1,74 +1,82 @@
 ---
-title: Alex Clapperton
 home: true
-about: false
-heroImage:
-    square: https://images.ctfassets.net/66vjslfacivy/5iYptR3N7dkm0cHsZS8QQw/6b0a09c506f55bf200bd8dfeb6dff519/alex-square.jpg
-    landscape: https://images.ctfassets.net/66vjslfacivy/3QPP25tbf4hfIqe6IfdwGW/8dbd89b212da827012c985b7a6017a4d/alex-landscape.jpg
-layout: _layouts/default
+layout: _layouts/page
+eleventyComputed:
+    title: "{{homepage.title}}"
 sitemap:
-  changefreq: daily
-  priority: 1
+    changefreq: daily
+    priority: 1
 ---
 
-<main class="info-block notch" id="main">
-    <picture class="info-block__picture info-block__picture--home">
-        <source media="(max-width: 39.9375em)" type="image/webp" srcset="{{heroImage.square}}?fm=webp">
-        <source media="(min-width: 40em)" type="image/webp" srcset="{{heroImage.landscape}}?fm=webp">
+{% set heroImageDesktop = homepage.heroImageCollection.items[0] %}
+{% set heroImageMobile = homepage.heroImageCollection.items[1] %}
 
-        <source media="(max-width: 39.9375em)" srcset="{{heroImage.square}}">
-        <source media="(min-width: 40em)" srcset="{{heroImage.landscape}}">
+<main class="bg-slate-800 pr-safe pl-safe sm:flex sm:flex-row-reverse sm:flex-wrap sm:justify-between sm:items-center" id="main">
+    <picture class="relative block aspect-square md:aspect-16/9 sm:flex-1 md:flex-[3]">
+        <source media="(max-width: 59.9375rem)" type="image/avif" srcset="{{heroImageMobile.url}}?fm=avif">
+        <source media="(min-width: 60rem)" type="image/avif" srcset="{{heroImageDesktop.url}}?fm=avif">
 
-        <img class="info-block__picture-image" src="{{heroImage.landscape}}" alt="Portrait of Alex Clapperton.">
+        <source media="(max-width: 59.9375rem)" type="image/webp" srcset="{{heroImageMobile.url}}?fm=webp">
+        <source media="(min-width: 60rem)" type="image/webp" srcset="{{heroImageDesktop.url}}?fm=webp">
+
+        <source media="(max-width: 59.9375rem)" srcset="{{heroImageMobile.url}}">
+        <source media="(min-width: 60rem)" srcset="{{heroImageDesktop.url}}">
+
+        <img class="absolute [inset-inline-start:0] [inset-block-start:0]  [inline-size:100%] [block-size:100%] object-contain" src="{{heroImageMobile.url}}" width="{{heroImageMobile.width}}" height="{{heroImageMobile.height}}" loading="eager" alt="{{heroImageMobile.description}}">
     </picture>
 
-    <div class="info-block__inner info-block__inner--home">
-        <h2 class="info-block__heading">Hi there</h2>
-        <p>I'm Alex, a Front-end Web Developer from the UK. My passion is to build beautiful and responsive websites with accessibility at the heart of it. I am currently working as a {{settings.jobTitle}} for <a class="link" href="{{settings.employerUrl}}" rel="external">{{settings.employer}}</a>, a digital agency based in Manchester.</p>
+    <div class="[padding-block:32px] [padding-inline:16px] xs:[padding-inline:24px] sm:[block-size:100%] sm:flex-1 sm:[padding-inline:48px]  md:flex-[2] hov:relative hov:z-10">
+        <h2 class="[margin-block-end:16px] text-white text-xxl leading-xxl fvs-sb font-selawik">Hi there</h2>
 
-        <a class="info-block__button button button--primary" href="/about-me/">
+        <p class="[margin-block-end:24px] text-white text-base leading-base fvs-rg">I'm Alex, a Front-end software engineer from the UK. My passion is to build beautiful and responsive websites with accessibility at the heart of it. I am currently working as a software engineer for <a class="text-yellow-400 fvs-sb border-b-2 border-b-yellow-400 hov:transition-colors hov:duration-200 hov:hover:bg-yellow-400 hov:hover:text-slate-900 motion-reduce:transition-none" href="{{settings.employerUrl}}" rel="external">{{settings.employer}}</a>, a faff-free way to buy used cars online.</p>
+
+        <a class="relative [padding-block:12px] [padding-inline:24px] bg-yellow-400 text-slate-900 text-base leading-base fvs-md inline-flex justify-center items-center gap-8 rounded-sm focus:outline focus:outline-2 focus:outline-offset-4 focus:outline-yellow-400 hov:after:absolute hov:after:[inset-block-end:0] hov:after:[inset-inline-start:0] hov:after:[inline-size:100%] hov:after:[block-size:100%] hov:after:bg-yellow-600 hov:after:rounded-sm hov:after:transition-transform hov:after:duration-200 hov:after:-z-10 hov:hover:after:translate-x-8 hov:hover:after:translate-y-8 motion-reduce:after:transition-none" href="/about-me/">
             More about Alex
-            <svg class="button__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" stroke-linecap="round" stroke-linejoin="round" d="M4.5 16.61l7.06 5.65 7.05-5.65m-7.05 5.65V2.5"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" fill-rule="evenodd" d="M3 13h14.17l-3.58 3.59L15 18l6-6-6-6-1.41 1.41L17.17 11H3v2Z" clip-rule="evenodd"/></svg>
         </a>
     </div>
 </main>
 
-<section class="portfolio notch">
-    <div class="portfolio__container hide" data-fade>
-        <small class="portfolio__heading-small">Recent</small>
-        <h3 class="portfolio__heading-main">Work &amp; projects</h3>
+<section class="[padding-block:32px] pr-safe pl-safe md:[padding-block:48px]" aria-labelledby="recent-projects">
+    <div class="container [margin-inline:auto] [padding-inline:16px]">
+        <h2 class="[margin-block-end:16px] text-white text-xl leading-xl fvs-sb font-selawik md:[margin-block-end:24px]" id="recent-projects">
+            <small class="block text-base leading-xs fvs-rg font-avenir-next">Recent</small>
+            Work and projects
+        </h2>
 
-        <div class="portfolio__content">
+        <div class="sm:columns-2 sm:gap-24">
         {% for i in range(0, 4) %}
-            {% set item = collections.projects[i] %}
+            {% set item = projects[i] %}
 
-            {% include "_partials/portfolio.njk" %}
+            {%- include "_partials/components/portfolio.njk" -%}
         {% endfor %}
         </div>
 
-        <a class="portfolio__button button button--secondary" href="/portfolio/">
+        <a class="[inline-size:100%] [padding-block:12px]  [padding-inline:24px]  bg-transparent text-white border-2 border-white border-solid text-base leading-base fvs-md flex justify-center items-center gap-8 rounded-sm sm:[inline-size:auto] sm:inline-flex focus:bg-white focus:text-slate-900 focus:outline focus:outline-2 focus:outline-offset-4 focus:outline-yellow-400 hov:transition-colors hov:duration-200 hov:hover:bg-white hov:hover:text-slate-900 motion-reduce:transition-none" href="/portfolio/">
             View portfolio
-            <svg class="button__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" stroke-linecap="round" stroke-linejoin="round" d="M4.5 16.61l7.06 5.65 7.05-5.65m-7.05 5.65V2.5"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" fill-rule="evenodd" d="M3 13h14.17l-3.58 3.59L15 18l6-6-6-6-1.41 1.41L17.17 11H3v2Z" clip-rule="evenodd"/></svg>
         </a>
     </div>
 </section>
 
-<section class="articles notch">
-    <div class="articles__container hide" data-fade>
-        <small class="articles__heading-small">Read my</small>
-        <h3 class="articles__heading-main">Latest articles</h3>
+<section class="[padding-block:32px] pr-safe pl-safe bg-slate-800 md:[padding-block:48px]" aria-labelledby="latest-articles">
+    <div class="container [margin-inline:auto] [padding-inline:16px]">
+        <h2 class="[margin-block-end:16px] text-white text-xl leading-xl fvs-sb font-selawik md:[margin-block-end:24px]" id="latest-articles">
+            <small class="block text-base leading-xs fvs-rg font-avenir-next">Read my</small>
+            Latest articles
+        </h2>
 
-        <div class="articles__content">
+        <ul class="sm:grid sm:grid-cols-2 sm:gap-24 md:grid-cols-3">
         {% for i in range(0, 3) %}
-            {% set item = collections.articles[i] %}
+            {% set item = articles[i] %}
 
-            {% include "_partials/articles.njk" %}
+            {% include "_partials/components/articles.njk" %}
         {% endfor %}
-        </div>
+        </ul>
 
-        <a class="button button--secondary" href="/articles/">
+        <a class="[padding-block:12px] [padding-inline:24px] bg-transparent text-white border-2 border-white border-solid text-base leading-base fvs-md inline-flex justify-center items-center gap-8 rounded-sm sm:[inline-size:auto] focus:bg-white focus:text-slate-900 focus:outline focus:outline-2 focus:outline-offset-4 focus:outline-yellow-400 hov:transition-colors hov:duration-200 hov:hover:bg-white hov:hover:text-slate-900 motion-reduce:transition-none" href="/articles/">
             View articles
-            <svg class="button__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" stroke-linecap="round" stroke-linejoin="round" d="M4.5 16.61l7.06 5.65 7.05-5.65m-7.05 5.65V2.5"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" fill-rule="evenodd" d="M3 13h14.17l-3.58 3.59L15 18l6-6-6-6-1.41 1.41L17.17 11H3v2Z" clip-rule="evenodd"/></svg>
         </a>
     </div>
 </section>

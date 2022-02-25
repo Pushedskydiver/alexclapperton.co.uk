@@ -1,42 +1,45 @@
 ---
 title: Portfolio
-home: false
-about: false
-layout: _layouts/default
+layout: _layouts/page
 sitemap:
     changefreq: monthly
     priority: 0.8
 ---
 
-<main class="portfolio notch" id="main">
-    <div class="portfolio__container hide" data-fade>
-        <h2 class="portfolio__heading">Professional &amp; personal work</h2>
-        <p class="portfolio__sub-text">We engage with our clients in order to understand their needs and impact their business. See how we’ve helped our clients!</p>
+<main class="bg-slate-800 [padding-block:32px] pr-safe pl-safe md:[padding-block:48px]" id="main">
+    <div class="container [margin-inline:auto] [padding-inline:16px]">
+        <h2 class="text-xxl leading-xxl text-white font-selawik fvs-sb [margin-block-end:16px]" id="fun-facts">Professional &amp; personal work</h2>
 
-        <div class="portfolio__content">
-        {% for item in collections.projects %}
-            {% include "_partials/portfolio.njk" %}
+        <p class="text-base leading-base text-white fvs-rg [margin-block-end:24px] [max-inline-size:550px]">We engage with our clients in order to understand their needs and impact their business. See how we've helped our clients!</p>
+
+        <div class="sm:columns-2 sm:gap-24">
+        {% for i in range(0, 4) %}
+            {% set item = projects[i] %}
+
+            {%- include "_partials/components/portfolio.njk" -%}
         {% endfor %}
         </div>
     </div>
 </main>
 
-<section class="articles notch">
-    <div class="articles__container hide" data-fade>
-        <small class="articles__heading-small">Read my</small>
-        <h3 class="articles__heading-main">Latest articles</h3>
-        <div class="articles__content">
+<section class="[padding-block:32px] pr-safe pl-safe md:[padding-block:48px]" aria-labelledby="latest-articles">
+    <div class="container [margin-inline:auto] [padding-inline:16px]">
+        <h2 class="[margin-block-end:16px] text-white text-xl leading-xl fvs-sb font-selawik md:[margin-block-end:24px]" id="latest-articles">
+            <small class="block text-base leading-xs fvs-rg font-avenir-next">Read my</small>
+            Latest articles
+        </h2>
 
+        <ul class="sm:grid sm:grid-cols-2 sm:gap-24 md:grid-cols-3">
         {% for i in range(0, 3) %}
-            {% set item = collections.articles[i] %}
+            {% set item = articles[i] %}
 
-            {% include "_partials/articles.njk" %}
+            {% include "_partials/components/articles.njk" %}
         {% endfor %}
+        </ul>
 
-        </div>
-        <a class="button button--secondary" href="/articles/">
+        <a class="[padding-block:12px] [padding-inline:24px] bg-transparent text-white border-2 border-white border-solid text-base leading-base fvs-md inline-flex justify-center items-center gap-8 rounded-sm sm:[inline-size:auto] focus:bg-white focus:text-slate-900 focus:outline focus:outline-2 focus:outline-offset-4 focus:outline-yellow-400 hov:transition-colors hov:duration-200 hov:hover:bg-white hov:hover:text-slate-900 motion-reduce:transition-none" href="/articles/">
             View articles
-            <svg class="button__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" stroke-linecap="round" stroke-linejoin="round" d="M4.5 16.61l7.06 5.65 7.05-5.65m-7.05 5.65V2.5"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" fill-rule="evenodd" d="M3 13h14.17l-3.58 3.59L15 18l6-6-6-6-1.41 1.41L17.17 11H3v2Z" clip-rule="evenodd"/></svg>
         </a>
     </div>
 </section>

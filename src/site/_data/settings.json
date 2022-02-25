@@ -2,8 +2,8 @@
   "url": "https://alexclapperton.co.uk",
   "name": "Alex Clapperton",
   "jobTitle": "Professional Front-End Web Developer",
-  "employer": "Code Computerlove",
-  "employerUrl": "https://www.codecomputerlove.com/",
+  "employer": "Cinch Cars Ltd",
+  "employerUrl": "https://www.cinch.co.uk/",
   "university": "Manchester Metropolitan University",
   "email": "hi@alexclapperton.co.uk",
   "phone": "+44 7930 946 211",
@@ -15,20 +15,20 @@
     {
       "url": "https://github.com/Pushedskydiver",
       "title": "GitHub",
-      "title-attr": "Go to Alex's GitHub profile.",
+      "titleAttr": "Go to Alex's GitHub profile.",
       "external": true
     },
     {
       "url": "https://twitter.com/AlexMClapperton",
       "title": "Twitter",
-      "title-attr": "Go to Alex's Twitter profile.",
+      "titleAttr": "Go to Alex's Twitter profile.",
       "handle": "@AlexMClapperton",
       "external": true
     },
     {
       "url": "https://uk.linkedin.com/in/alexclapperton",
       "title": "LinkedIn",
-      "title-attr": "Go to Alex's LinkedIn profile.",
+      "titleAttr": "Go to Alex's LinkedIn profile.",
       "handle": "AlexClapperton",
       "external": true
     }
@@ -37,25 +37,25 @@
     {
       "url": "/about-me/",
       "title": "About Me",
-      "title-attr": "Go to the about page.",
+      "titleAttr": "Go to the about page.",
       "slug": "about"
     },
     {
       "url": "/portfolio/",
       "title": "Portfolio",
-      "title-attr": "Go to the portfolio page.",
+      "titleAttr": "Go to the portfolio page.",
       "slug": "portfolio"
     },
     {
       "url": "/articles/",
       "title": "Articles",
-      "title-attr": "Go to the articles page.",
+      "titleAttr": "Go to the articles page.",
       "slug": "articles"
     },
     {
       "url": "/contact/",
       "title": "Contact",
-      "title-attr": "Go to the contact page."
+      "titleAttr": "Go to the contact page."
     }
   ]
 }

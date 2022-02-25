@@ -1,167 +1,149 @@
-<!DOCTYPE html>
-<html class="no-js" lang="en-GB">
-    <head>
-        <!-- META TAGS  -->
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, minimum-scale=1, user-scalable=yes, initial-scale=1, viewport-fit=cover">
-        <meta name="description" content="{% if renderData.description or description %}{{ renderData.description or description }}{% endif %}">
+<head>
+    <!-- META TAGS  -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, minimum-scale=1, user-scalable=yes, initial-scale=1, viewport-fit=cover">
+    <meta name="description" content="{% if renderData.description or description %}{{ renderData.description or description }}{% endif %}">
 
-        {% if nofollow %}
-            <meta name="robots" content="noindex, nofollow">
-        {% endif %}
+    {% if nofollow %}
+        <meta name="robots" content="noindex, nofollow">
+    {% endif %}
 
-        <!-- PAGE TITLE -->
-        <title>
-            {% if title %}{{ title }}{% endif %} {% if not home %} &mdash; Alex Clapperton{% endif %} &mdash; Front-End Engineer
-        </title>
+    <!-- PAGE TITLE -->
+    <title>
+        {% if title %}{{ title }}{% endif %} {% if not home %} &mdash; Alex Clapperton{% endif %} &mdash; Front-End Engineer
+    </title>
 
-        <!-- RESOURCE HINTS -->
-        <link rel="preconnect" href="https://images.ctfassets.net/">
+    <!-- RESOURCE HINTS -->
+    <link rel="preconnect" href="https://images.ctfassets.net/">
 
-        <!-- PRELOAD FILES -->
-        {% include "_partials/preload-styles.njk" %}
-        <link rel="preload" href="/fonts/avenir-next-variable.woff2" as="font" type="font/woff2" crossorigin>
-        <link rel="preload" href="/fonts/selawik-variable.woff2" as="font" type="font/woff2" media="(min-width: 62em)" crossorigin>
+    <!-- PRELOAD FILES -->
+    {% include "_partials/preload-styles.njk" %}
+    <link rel="preload" href="/fonts/avenir-next-variable.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="/fonts/selawik-variable.woff2" as="font" type="font/woff2" media="(min-width: 62rem)" crossorigin>
 
-        {% if home %}
-            <link rel="preload" href="https://images.ctfassets.net/66vjslfacivy/5iYptR3N7dkm0cHsZS8QQw/6b0a09c506f55bf200bd8dfeb6dff519/alex-square.jpg?fm=webp" as="image" media="((max-width: 39.9375em))" type="image/webp">
-            <link rel="preload" href="https://images.ctfassets.net/66vjslfacivy/3QPP25tbf4hfIqe6IfdwGW/8dbd89b212da827012c985b7a6017a4d/alex-landscape.jpg?fm=webp" as="image" media="(min-width: 40em)" type="image/webp">
-        {% endif %}
+    <!-- STYLESHEET -->
+    {% include "_partials/styles.njk" %}
 
-        {% if about %}
-            <link rel="preload" href="https://images.ctfassets.net/66vjslfacivy/3RrFB5WNvOFckt1M8Z8JEO/adc11b0965cb458112ddf0f009cd896a/about-me--mobile.jpg?fm=webp" as="image" media="(max-width: 39.9375em)" type="image/webp">
-            <link rel="preload" href="https://images.ctfassets.net/66vjslfacivy/1pB8uKiprcORU9GDWV3QKS/5803b785f8f8846628dfd88e996d3c87/about-me--desktop.jpg?fm=webp" as="image" media="(min-width: 40em)" type="image/webp">
-        {% endif %}
+    <!-- SITEMAP -->
+    <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml" />
 
-        <!-- STYLESHEET -->
-        {% include "_partials/styles.njk" %}
+    <!-- MANIFEST -->
+    <link rel="manifest" href="/site.webmanifest">
 
-        <!-- SITEMAP -->
-        <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml" />
+    <link rel="alternate" href="{{settings.url}}" hreflang="en-gb">
+    <link rel="canonical" href="{{settings.url}}{% if article.date %}/articles{% endif %}{% if article.slug %}/{{article.slug}}{% endif %}">
 
-        <!-- MANIFEST -->
-        <link rel="manifest" href="/site.webmanifest">
-
-        <link rel="alternate" href="{{settings.url}}" hreflang="en-gb">
-        <link rel="canonical" href="{{settings.url}}{% if article.date %}/articles{% endif %}{% if article.slug %}/{{article.slug}}{% endif %}">
-
-        <script type="application/ld+json">{
-            "@context": "http://schema.org",
-        {% if post %}
-            "@type": "BlogPosting",
-             "mainEntityOfPage": {
-                "@type": "WebPage",
-                "@id": "{{settings.url}}/articles/{{this.slug}}/"
-            },
-            "headline": "{{this.title}}",
-            "description": "{{this.description}}",
-            "image": "{{settings.url}}/images/profile/alex-clapperton.jpg",
-            "author": {
-                "@type": "Person",
-                "name": "{{settings.name}}"
-            },
-            "publisher": {
-                "@type": "Organization",
-                "name": "{{settings.name}}",
-                "logo": {
-                "@type": "ImageObject",
-                "url": "{{settings.url}}/favicons/favicon-256x256.png",
-                "width": 256,
-                "height": 256
-                }
-            },
-            "datePublished": "{{page.datePublished}}",
-            "dateModified": "{{page.dateModified}}"
-        {% else %}
+    <script type="application/ld+json">{
+        "@context": "http://schema.org",
+    {% if post %}
+        "@type": "BlogPosting",
+            "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "{{settings.url}}/articles/{{this.slug}}/"
+        },
+        "headline": "{{this.title}}",
+        "description": "{{this.description}}",
+        "image": "{{settings.url}}/images/profile/alex-clapperton.jpg",
+        "author": {
             "@type": "Person",
+            "name": "{{settings.name}}"
+        },
+        "publisher": {
+            "@type": "Organization",
             "name": "{{settings.name}}",
-            "url": "{{settings.url}}",
-            "image": "{{settings.url}}images/profile/alex-clapperton.jpg",
-            "sameAs": [
-                "{{settings.url}}",
-            {% for item in settings.social %}
-                {% if not loop.last %}"{{item.url}}",{% endif %}
-                {% if loop.last %}"{{item.url}}"{% endif %}
-            {% endfor %}
-            ],
-            "jobTitle": "{{settings.jobTitle}}",
-            "worksFor": {
-                "@type": "Organization",
-                "name": "{{settings.employer}}"
+            "logo": {
+            "@type": "ImageObject",
+            "url": "{{settings.url}}/favicons/favicon-256x256.png",
+            "width": 256,
+            "height": 256
             }
-        {% endif %}
-        }</script>
+        },
+        "datePublished": "{{page.datePublished}}",
+        "dateModified": "{{page.dateModified}}"
+    {% else %}
+        "@type": "Person",
+        "name": "{{settings.name}}",
+        "url": "{{settings.url}}",
+        "image": "{{settings.url}}images/profile/alex-clapperton.jpg",
+        "sameAs": [
+            "{{settings.url}}",
+        {% for item in settings.social %}
+            {% if not loop.last %}"{{item.url}}",{% endif %}
+            {% if loop.last %}"{{item.url}}"{% endif %}
+        {% endfor %}
+        ],
+        "jobTitle": "{{settings.jobTitle}}",
+        "worksFor": {
+            "@type": "Organization",
+            "name": "{{settings.employer}}"
+        }
+    {% endif %}
+    }</script>
 
-        <!-- FACEBOOK -->
-        <meta property="og:title" content=" {% if title %}{{title}}{% endif %}{% if not home %} &mdash; {{settings.name}}{% endif %}{% if settings.jobTitle %}  &mdash; {{settings.jobTitle}}{% endif %}" />
-        <meta property="og:type" content="{% if article.date %}article{% else %}website{% endif %}" />
-        <meta property="og:url" content="{{settings.url}}{% if article.date %}/articles{% endif %}{% if article.slug %}/{{article.slug}}{% endif %}" />
-        <meta property="og:image" content="{{settings.url}}{% if ogImage %}{{ogImage}}{% else %}/images/profile/alex-clapperton.jpg{% endif %}" />
-        <meta property="og:description" content="{% if summary %}{{summary}}{% else %}{{settings.name}}{% endif %}">
-        <meta property="og:locale" content="en_GB">
-        <meta property="article:author" content="{{settings.name}}">
-        <meta property="og:site_name" content="{{settings.name}}">
+    <!-- FACEBOOK -->
+    <meta property="og:title" content=" {% if title %}{{title}}{% endif %}{% if not home %} &mdash; {{settings.name}}{% endif %}{% if settings.jobTitle %}  &mdash; {{settings.jobTitle}}{% endif %}" />
+    <meta property="og:type" content="{% if article.date %}article{% else %}website{% endif %}" />
+    <meta property="og:url" content="{{settings.url}}{% if article.date %}/articles{% endif %}{% if article.slug %}/{{article.slug}}{% endif %}" />
+    <meta property="og:image" content="{{settings.url}}{% if ogImage %}{{ogImage}}{% else %}/images/profile/alex-clapperton.jpg{% endif %}" />
+    <meta property="og:description" content="{% if summary %}{{summary}}{% else %}{{settings.name}}{% endif %}">
+    <meta property="og:locale" content="en_GB">
+    <meta property="article:author" content="{{settings.name}}">
+    <meta property="og:site_name" content="{{settings.name}}">
 
-        <!-- TWITTER -->
-        <meta name="twitter:card" content="summary">
-        <meta name="twitter:site" content="{{settings.twitterHandle}}">
-        <meta name="twitter:creator" content="{{settings.twitterHandle}}">
-        <meta name="twitter:url" content="{{settings.url}}{% if article.date %}/articles{% endif %}{% if article.slug %}/{{article.slug}}{% endif %}">
-        <meta name="twitter:title" content="{% if title %}{{title}}{% endif %}{% if not home %} &mdash; {{settings.name}}{% endif %}{% if settings.jobTitle %} &mdash; {{settings.jobTitle}}{% endif %}">
-        <meta name="twitter:description" content="{% if summary %}{{summary}}{% else %}{{settings.name}} &mdash; Articles{% endif %}">
-        <meta name="twitter:image" content="{{settings.url}}{% if ogImage %}{{ogImage}}{% else %}/images/profile/alex-clapperton.jpg{% endif %}">
+    <!-- TWITTER -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="{{settings.twitterHandle}}">
+    <meta name="twitter:creator" content="{{settings.twitterHandle}}">
+    <meta name="twitter:url" content="{{settings.url}}{% if article.date %}/articles{% endif %}{% if article.slug %}/{{article.slug}}{% endif %}">
+    <meta name="twitter:title" content="{% if title %}{{title}}{% endif %}{% if not home %} &mdash; {{settings.name}}{% endif %}{% if settings.jobTitle %} &mdash; {{settings.jobTitle}}{% endif %}">
+    <meta name="twitter:description" content="{% if summary %}{{summary}}{% else %}{{settings.name}} &mdash; Articles{% endif %}">
+    <meta name="twitter:image" content="{{settings.url}}{% if ogImage %}{{ogImage}}{% else %}/images/profile/alex-clapperton.jpg{% endif %}">
 
-        <!-- FAVICONS -->
-        <link rel="icon" type="image/png" href="/favicons/favicon-48x48.png" sizes="16x16">
-        <link rel="icon" type="image/png" href="/favicons/favicon-72x72.png" sizes="32x32">
-        <link rel="icon" type="image/png" sizes="96x96" href="/favicons/favicon-96x96.png">
-        <link rel="icon" type="image/png" sizes="144x144" href="/favicons/favicon-144x144.png">
-        <link rel="icon" type="image/png" sizes="256x256" href="/favicons/favicon-256x256.png">
+    <!-- FAVICONS -->
+    <link rel="icon" type="image/png" href="/favicons/favicon-48x48.png" sizes="16x16">
+    <link rel="icon" type="image/png" href="/favicons/favicon-72x72.png" sizes="32x32">
+    <link rel="icon" type="image/png" sizes="96x96" href="/favicons/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="144x144" href="/favicons/favicon-144x144.png">
+    <link rel="icon" type="image/png" sizes="256x256" href="/favicons/favicon-256x256.png">
 
-        <!-- APPLE ICONS -->
-        <meta name="apple-mobile-web-app-title" content="Alex">
-        <meta name="apple-mobile-web-app-capable" content="yes">
-        <meta name="apple-mobile-web-app-status-bar-style" content="default">
-        <link rel="apple-touch-icon" href="/favicons/apple-touch-icon.png">
-        <link rel="mask-icon" href="/favicons/safari-pinned-tab.svg" color="#0e0d0d">
+    <!-- APPLE ICONS -->
+    <meta name="apple-mobile-web-app-title" content="Alex">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <link rel="apple-touch-icon" href="/favicons/apple-touch-icon.png">
+    <link rel="mask-icon" href="/favicons/safari-pinned-tab.svg" color="#0e0d0d">
 
-        <!-- APPLE SPLASH SCREENS -->
-        <!-- iPhone X (1125px x 2436px) -->
-        <link rel="apple-touch-startup-image" media="(device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3)" href="/images/splash/splash-1125x2436.jpg">
-        <!-- iPhone 8, 7, 6s, 6 (750px x 1334px) -->
-        <link rel="apple-touch-startup-image" media="(device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2)" href="/images/splash/splash-750x1334.jpg">
-        <!-- iPhone 8 Plus, 7 Plus, 6s Plus, 6 Plus (1242px x 2208px) -->
-        <link rrel="apple-touch-startup-image" media="(device-width: 414px) and (device-height: 736px) and (-webkit-device-pixel-ratio: 3)" href="/images/splash/splash-1242x2208.jpg">
-        <!-- iPhone 5 (640px x 1136px) -->
-        <link rel="apple-touch-startup-image" media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2)" href="/images/splash/splash-640x1136.jpg">
-        <!-- iPad Mini, Air (1536px x 2048px) -->
-        <link rel="apple-touch-startup-image" media="(device-width: 768px) and (device-height: 1024px) and (-webkit-device-pixel-ratio: 2)" href="/images/splash/splash-1536x2048.jpg">
-        <!-- iPad Pro 10.5" (1668px x 2224px) -->
-        <link rel="apple-touch-startup-image" media="(device-width: 834px) and (device-height: 1112px) and (-webkit-device-pixel-ratio: 2)" href="/images/splash/splash-1668x2224.jpg">
-        <!-- iPad Pro 12.9" (2048px x 2732px) -->
-        <link rel="apple-touch-startup-image" media="(device-width: 1024px) and (device-height: 1366px) and (-webkit-device-pixel-ratio: 2)" href="/images/splash/splash-2048x2732.jpg">
+    <!-- APPLE SPLASH SCREENS -->
+    <!-- iPhone X (1125px x 2436px) -->
+    <link rel="apple-touch-startup-image" media="(device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3)" href="/images/splash/splash-1125x2436.jpg">
+    <!-- iPhone 8, 7, 6s, 6 (750px x 1334px) -->
+    <link rel="apple-touch-startup-image" media="(device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2)" href="/images/splash/splash-750x1334.jpg">
+    <!-- iPhone 8 Plus, 7 Plus, 6s Plus, 6 Plus (1242px x 2208px) -->
+    <link rrel="apple-touch-startup-image" media="(device-width: 414px) and (device-height: 736px) and (-webkit-device-pixel-ratio: 3)" href="/images/splash/splash-1242x2208.jpg">
+    <!-- iPhone 5 (640px x 1136px) -->
+    <link rel="apple-touch-startup-image" media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2)" href="/images/splash/splash-640x1136.jpg">
+    <!-- iPad Mini, Air (1536px x 2048px) -->
+    <link rel="apple-touch-startup-image" media="(device-width: 768px) and (device-height: 1024px) and (-webkit-device-pixel-ratio: 2)" href="/images/splash/splash-1536x2048.jpg">
+    <!-- iPad Pro 10.5" (1668px x 2224px) -->
+    <link rel="apple-touch-startup-image" media="(device-width: 834px) and (device-height: 1112px) and (-webkit-device-pixel-ratio: 2)" href="/images/splash/splash-1668x2224.jpg">
+    <!-- iPad Pro 12.9" (2048px x 2732px) -->
+    <link rel="apple-touch-startup-image" media="(device-width: 1024px) and (device-height: 1366px) and (-webkit-device-pixel-ratio: 2)" href="/images/splash/splash-2048x2732.jpg">
 
-        <!-- MS TILE ICONS -->
-        <meta name="application-name" content="Alex">
-        <meta name="msapplication-TileColor" content="#fff">
-        <meta name="msapplication-square70x70logo" content="/favicons/favicon-70x70.png">
-        <meta name="msapplication-TileImage" content="/favicons/favicon-144x144.png">
-        <meta name="msapplication-square150x150logo" content="/favicons/favicon-150x150.png">
-        <meta name="msapplication-wide310x150logo" content="/favicons/favicon-310x150.png">
-        <meta name="msapplication-square310x310logo" content="/favicons/favicon-310x310.png">
-        <meta name="msapplication-tooltip" content="Alex">
-        <meta name="msapplication-config" content="/browserconfig.xml">
-        <meta name="theme-color" content="#0e0d0d">
+    <!-- MS TILE ICONS -->
+    <meta name="application-name" content="Alex">
+    <meta name="msapplication-TileColor" content="#fff">
+    <meta name="msapplication-square70x70logo" content="/favicons/favicon-70x70.png">
+    <meta name="msapplication-TileImage" content="/favicons/favicon-144x144.png">
+    <meta name="msapplication-square150x150logo" content="/favicons/favicon-150x150.png">
+    <meta name="msapplication-wide310x150logo" content="/favicons/favicon-310x150.png">
+    <meta name="msapplication-square310x310logo" content="/favicons/favicon-310x310.png">
+    <meta name="msapplication-tooltip" content="Alex">
+    <meta name="msapplication-config" content="/browserconfig.xml">
 
-        <!-- JAVASCRIPT -->
-        {% include "_partials/scripts.njk" %}
-    </head>
+    <meta name="theme-color"  content="#ffffff" media="(prefers-color-scheme: light)">
+    <meta name="theme-color"  content="#0f182a" media="(prefers-color-scheme: dark)">
 
-    <body id="top">
-        <!-- JAVASCRIPT ALERT -->
-        <noscript>
-            <div class="support-notice support-notice--javascript">
-              <p>You currently have JavaScript in your browser turned off, so some features of this site may not work fully.</p>
-              <p>Find out <a href="http://enable-javascript.com" rel="external" target="_blank">how to turn JavaScript on</a>.</p>
-            </div>
-        </noscript>
+    <!-- JAVASCRIPT -->
+    {% include "_partials/scripts.njk" %}
+</head>
+
