@@ -30,7 +30,6 @@
     "@contentful/rich-text-html-renderer": "^15.11.1",
     "@contentful/rich-text-types": "^15.11.1",
     "autoprefixer": "^10.4.2",
-    "contentful": "^9.1.10",
     "dotenv": "^15.0.0",
     "faunadb": "^4.4.2",
     "html-minifier": "^4.0.0",
