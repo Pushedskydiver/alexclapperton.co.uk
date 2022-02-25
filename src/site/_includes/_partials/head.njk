@@ -19,17 +19,7 @@
     <!-- PRELOAD FILES -->
     {% include "_partials/preload-styles.njk" %}
     <link rel="preload" href="/fonts/avenir-next-variable.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="preload" href="/fonts/selawik-variable.woff2" as="font" type="font/woff2" media="(min-width: 62em)" crossorigin>
-
-    {% if home %}
-        <link rel="preload" href="https://images.ctfassets.net/66vjslfacivy/5iYptR3N7dkm0cHsZS8QQw/6b0a09c506f55bf200bd8dfeb6dff519/alex-square.jpg?fm=webp" as="image" media="((max-width: 39.9375em))" type="image/webp">
-        <link rel="preload" href="https://images.ctfassets.net/66vjslfacivy/3QPP25tbf4hfIqe6IfdwGW/8dbd89b212da827012c985b7a6017a4d/alex-landscape.jpg?fm=webp" as="image" media="(min-width: 40em)" type="image/webp">
-    {% endif %}
-
-    {% if about %}
-        <link rel="preload" href="https://images.ctfassets.net/66vjslfacivy/3RrFB5WNvOFckt1M8Z8JEO/adc11b0965cb458112ddf0f009cd896a/about-me--mobile.jpg?fm=webp" as="image" media="(max-width: 39.9375em)" type="image/webp">
-        <link rel="preload" href="https://images.ctfassets.net/66vjslfacivy/1pB8uKiprcORU9GDWV3QKS/5803b785f8f8846628dfd88e996d3c87/about-me--desktop.jpg?fm=webp" as="image" media="(min-width: 40em)" type="image/webp">
-    {% endif %}
+    <link rel="preload" href="/fonts/selawik-variable.woff2" as="font" type="font/woff2" media="(min-width: 62rem)" crossorigin>
 
     <!-- STYLESHEET -->
     {% include "_partials/styles.njk" %}
