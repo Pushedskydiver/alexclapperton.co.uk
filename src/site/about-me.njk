@@ -39,13 +39,13 @@ sitemap:
 
 <section class="[padding-block:32px] pr-safe pl-safe md:[padding-block:48px]" aria-labelledby="fun-facts">
     <div class="container [margin-inline:auto] [padding-inline:16px]">
-        <h2 class="text-xxl leading-xxl text-white font-selawik fvs-sb [margin-block-end:16px]" id="fun-facts"="data-fade">Fun facts</h2>
+        <h2 class="text-xxl leading-xxl text-white font-selawik fvs-sb [margin-block-end:16px]" id="fun-facts">Fun facts</h2>
 
-        <p class="text-base leading-base text-white fvs-rg [margin-block-end:24px] max-w-[550px]"="data-fade">Here are some facts about me that I think you may find interesting and hopefully make you giggle along the way.</p>
+        <p class="text-base leading-base text-white fvs-rg [margin-block-end:24px] max-w-[550px]">Here are some facts about me that I think you may find interesting and hopefully make you giggle along the way.</p>
 
         <ul class="sm:grid sm:grid-cols-2 sm:gap-24 md:grid-cols-3">
             {% for item in aboutMe.contentBlockCollection.items %}
-                <li class="[margin-block-end:24px] last:[margin-block-end:0] p-32 bg-slate-800 sm:[margin-block-end:0]"="data-fade"-delay="0.{{loop.index}}s">
+                <li class="[margin-block-end:24px] last:[margin-block-end:0] p-32 bg-slate-800 sm:[margin-block-end:0]"-delay="0.{{loop.index}}s">
                     <h3 class="text-xl leading-xl text-white font-selawik fvs-sb [margin-block-end:16px]">{{item.title}}</h3>
                     <p class="text-base leading-base text-white fvs-rg">{{item.body}}</p>
                 </li>
@@ -55,7 +55,7 @@ sitemap:
 </section>
 
 <section class="[padding-block:32px] pr-safe pl-safe bg-slate-800 md:[padding-block:48px]" aria-labelledby="latest-articles">
-    <div class="container [margin-inline:auto] [padding-inline:16px]"="data-fade">
+    <div class="container [margin-inline:auto] [padding-inline:16px]">
         <h2 class="[margin-block-end:16px] text-white text-xl leading-xl fvs-sb font-selawik md:[margin-block-end:24px]" id="latest-articles">
             <small class="block text-base leading-xs fvs-rg font-avenir-next">Read my</small>
             Latest articles
