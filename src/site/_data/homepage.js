@@ -1,12 +1,28 @@
-const homeService = require('../../../_services/home');
+const { fetchContentfulData } = require('../../utils/fetchContentfulData');
 
-module.exports = async function () {
-  return await homeService.getHome().then(collection => {
-    const data = collection.items[0].fields;
-
-    return {
-      title: data.title,
-      subText: data.subText
+const query = `{
+  home(id: "2P27DVt2sMY4kQjO161SDQ") {
+    title
+    subText
+    heroImageCollection(
+      limit: 10
+    ) {
+      items {
+        width
+        height
+        url
+        description
+      }
     }
-  })
+  }
+}`
+
+async function homepageData() {
+  const response = await fetchContentfulData({ query, type: 'home' });
+  const homepage = response.data.home;
+
+  return homepage;
 }
+
+// export for 11ty
+module.exports = homepageData

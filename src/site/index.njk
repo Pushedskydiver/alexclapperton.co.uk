@@ -2,24 +2,24 @@
 title: Alex Clapperton
 home: true
 about: false
-heroImage:
-    square: https://images.ctfassets.net/66vjslfacivy/5iYptR3N7dkm0cHsZS8QQw/6b0a09c506f55bf200bd8dfeb6dff519/alex-square.jpg
-    landscape: https://images.ctfassets.net/66vjslfacivy/3QPP25tbf4hfIqe6IfdwGW/8dbd89b212da827012c985b7a6017a4d/alex-landscape.jpg
 layout: _layouts/page
 sitemap:
   changefreq: daily
   priority: 1
 ---
 
+{% set heroImageDesktop = homepage.heroImageCollection.items[0] %}
+{% set heroImageMobile = homepage.heroImageCollection.items[1] %}
+
 <main class="bg-slate-800 pr-safe pl-safe sm:flex sm:flex-row-reverse sm:flex-wrap sm:justify-between sm:items-center" id="main">
     <picture class="relative block aspect-square md:aspect-16/9 sm:flex-1 md:flex-[3]">
-        <source media="(max-width: 59.9375rem)" type="image/webp" srcset="{{heroImage.square}}?fm=webp">
-        <source media="(min-width: 60rem)" type="image/webp" srcset="{{heroImage.landscape}}?fm=webp">
+        <source media="(max-width: 59.9375rem)" type="image/webp" srcset="{{heroImageMobile.url}}?fm=webp">
+        <source media="(min-width: 60rem)" type="image/webp" srcset="{{heroImageDesktop.url}}?fm=webp">
 
-        <source media="(max-width: 59.9375rem)" srcset="{{heroImage.square}}">
-        <source media="(min-width: 60rem)" srcset="{{heroImage.landscape}}">
+        <source media="(max-width: 59.9375rem)" srcset="{{heroImageMobile.url}}">
+        <source media="(min-width: 60rem)" srcset="{{heroImageDesktop.url}}">
 
-        <img class="absolute [inset-inline-start:0] [inset-block-start:0]  [inline-size:100%] [block-size:100%] object-contain" src="{{heroImage.landscape}}" alt="Portrait of Alex Clapperton.">
+        <img class="absolute [inset-inline-start:0] [inset-block-start:0]  [inline-size:100%] [block-size:100%] object-contain" src="{{heroImageMobile.url}}" loading="lazy" alt="{{heroImageMobile.description}}">
     </picture>
 
     <div class="[padding-block:32px] [padding-inline:16px] xs:[padding-inline:24px] sm:[block-size:100%] sm:flex-1 sm:[padding-inline:48px]  md:flex-[2] hov:relative hov:z-10">
