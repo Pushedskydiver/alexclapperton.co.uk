@@ -18,7 +18,7 @@ const query = `{
 }`
 
 async function homepageData() {
-  const response = await fetchContentfulData({ query, type: 'home' });
+  const response = await fetchContentfulData({ query, type: 'homepage' });
   const homepage = response.data.home;
 
   return homepage;

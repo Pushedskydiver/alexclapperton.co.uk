@@ -1,11 +1,11 @@
 ---
-title: Alex Clapperton
 home: true
-about: false
 layout: _layouts/page
+eleventyComputed:
+    title: "{{homepage.title}}"
 sitemap:
-  changefreq: daily
-  priority: 1
+    changefreq: daily
+    priority: 1
 ---
 
 {% set heroImageDesktop = homepage.heroImageCollection.items[0] %}

@@ -1,21 +1,25 @@
 ---
-title: About Me
 about: true
 layout: _layouts/page
+eleventyComputed:
+    title: "{{aboutMe.title}}"
 sitemap:
-  changefreq: monthly
-  priority: 0.8
+    changefreq: monthly
+    priority: 0.8
 ---
+
+{% set heroImageDesktop = aboutMe.heroImageCollection.items[0] %}
+{% set heroImageMobile = aboutMe.heroImageCollection.items[1] %}
 
 <main class="bg-slate-800 pr-safe pl-safe md:flex md:flex-row-reverse md:flex-wrap md:justify-between md:items-center" id="main">
     <picture class="relative block aspect-4/3 md:flex-[3]">
-        <source media="(max-width: 59.9375rem)" type="image/webp" srcset="https:{{aboutMe.heroImage.mobile}}?fm=webp">
-        <source media="(min-width: 60rem)" type="image/webp" srcset="https:{{aboutMe.heroImage.desktop}}?fm=webp">
+        <source media="(max-width: 59.9375rem)" type="image/webp" srcset="{{heroImageMobile.url}}?fm=webp">
+        <source media="(min-width: 60rem)" type="image/webp" srcset="{{heroImageDesktop.url}}?fm=webp">
 
-        <source media="(max-width: 59.9375rem)" srcset="https:{{aboutMe.heroImage.mobile}}">
-        <source media="(min-width: 60rem)" srcset="https:{{aboutMe.heroImage.desktop}}">
+        <source media="(max-width: 59.9375rem)" srcset="{{heroImageMobile.url}}">
+        <source media="(min-width: 60rem)" srcset="{{heroImageDesktop.url}}">
 
-        <img class="absolute [inset-block-start:0] [inset-inline-start:0] [inline-size:100%] [block-size:100%] object-contain" src="https:{{aboutMe.heroImage.desktop}}" alt="Wide shot of Alex Clapperton sat down working on his laptop.">
+        <img class="absolute [inset-block-start:0] [inset-inline-start:0] [inline-size:100%] [block-size:100%] object-contain" src="{{heroImageMobile.url}}" loading="lazy" alt="{{heroImageMobile.description}}">
     </picture>
 
     <div class="[padding-block:32px] [padding-inline:16px]  xs:[padding-inline:24px] sm:[block-size:100%] sm:[padding-inline:48px]  md:flex-[2] hov:relative hov:z-10">
@@ -40,7 +44,7 @@ sitemap:
         <p class="text-base leading-base text-white fvs-rg [margin-block-end:24px] max-w-[550px]" data-fade="data-fade">Here are some facts about me that I think you may find interesting and hopefully make you giggle along the way.</p>
 
         <ul class="sm:grid sm:grid-cols-2 sm:gap-24 md:grid-cols-3">
-            {% for item in aboutMe.contentBlocks %}
+            {% for item in aboutMe.contentBlockCollection.items %}
                 <li class="[margin-block-end:24px] last:[margin-block-end:0] p-32 bg-slate-800 sm:[margin-block-end:0]" data-fade="data-fade" data-fade-delay="0.{{loop.index}}s">
                     <h3 class="text-xl leading-xl text-white font-selawik fvs-sb [margin-block-end:16px]">{{item.title}}</h3>
                     <p class="text-base leading-base text-white fvs-rg">{{item.body}}</p>
