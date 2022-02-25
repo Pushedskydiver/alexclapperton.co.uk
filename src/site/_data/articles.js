@@ -19,8 +19,6 @@ const query = `{
       tags
       isExternal
       featuredImage {
-        size
-        title
         width
         height
         description
@@ -44,13 +42,12 @@ const query = `{
           }
         }
       }
-      articleData
     }
   }
 }`
 
 async function articlesData() {
-  const response =  await fetchContentfulData({ query });
+  const response =  await fetchContentfulData({ query, type: 'articles' });
   const articles = response.data.contentType2PqfXuJwE8QSyKuM0U6W8MCollection.items;
 
   return articles;

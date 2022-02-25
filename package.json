@@ -14,11 +14,10 @@
     "url": "https://github.com/Pushedskydiver/alexclapperton.co.uk"
   },
   "scripts": {
-    "data": "node ./_data/index.js",
     "clean": "rimraf dist",
     "start": "npm run dev",
-    "dev": "npm run data && run-p *:dev",
-    "build": "npm run clean && npm run data && run-p *:prod",
+    "dev": "run-p *:dev",
+    "build": "npm run clean && run-p *:prod",
     "eleventy:dev": "cross-env NODE_ENV=development eleventy --serve",
     "eleventy:prod": "cross-env NODE_ENV=production eleventy",
     "webpack:dev": "cross-env NODE_ENV=development webpack --watch",

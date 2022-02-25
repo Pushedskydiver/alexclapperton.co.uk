@@ -1,0 +1,52 @@
+---
+layout: _layouts/project
+pagination:
+    data: projects
+    size: 1
+    alias: project
+    addAllPagesToCollections: true
+permalink:  "portfolio//{{ project.slug }}/index.html"
+eleventyComputed:
+    title: "{{ project.projectName }}"
+---
+
+{% set desktopBrowserImage = project.browserImagesCollection.items[0] %}
+{% set mobileBrowserImage = project.browserImagesCollection.items[1] %}
+
+<main class="[padding-block:32px] pr-safe pl-safe md:[padding-block:48px] bg-slate-800" id="main">
+    <div class="container [margin-inline:auto] [padding-inline:16px] md:flex md:flex-row-reverse md:flex-wrap md:justify-between md:gap-48">
+        <div class="md:[flex:2]">
+            {% if project.body %}
+                {{ project.body | renderRichTextAsHtml | safe }}
+            {% endif %}
+
+            {# <a class="button button--primary" href="#">
+                Visit website
+                <svg class="button__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" stroke-linecap="round" stroke-linejoin="round" d="M4.5 16.61l7.06 5.65 7.05-5.65m-7.05 5.65V2.5"/></svg>
+            </a> #}
+        </div>
+
+        <div class="bg-slate-300 [margin-block:24px] md:self-start md:[flex:3] md:[margin-block:0]" data-fade>
+            <svg class="block [block-size:auto] [inline-size:100%]" xmlns="http://www.w3.org/2000/svg" width="801" height="auto" viewBox="0 0 801 23"><path fill="#f1f1f1" d="M801 23H0V4c0-2.8 3.3-4 6.1-4H797c2.8 0 4.1 1.2 4.1 4v19z"/><path fill="#e74c3c" d="M9.4 11.5a4.7 4.7 0 1 0 9.4 0 4.7 4.7 0 1 0-9.4 0"/><path fill="#f1c40f" d="M24.8 11.5a4.7 4.7 0 1 0 9.4 0 4.7 4.7 0 1 0-9.4 0"/><path fill="#2ecc71" d="M40.2 11.5a4.7 4.7 0 1 0 9.4 0 4.7 4.7 0 1 0-9.4 0"/></svg>
+
+            <div class="[aspect-ratio:{{mobileBrowserImage.width}}/{{mobileBrowserImage.height}}}] md:[max-block-size:50rem] md:overflow-y-scroll">
+                <picture class="browser__picture">
+                    <source media="(max-width: 62rem)" type="image/webp" srcset="{{mobileBrowserImage.url}}?fm=webp">
+                    <source media="(max-width: 62rem)" srcset="{{mobileBrowserImage.url}}">
+
+                    <source type="image/webp" srcset="{{desktopBrowserImage.url}}?fm=webp">
+
+                    <img class="browser__image" src="{{desktopBrowserImage.url}}" alt="{{desktopBrowserImage.description}}" width="{{mobileBrowserImage.width}}" height="{{mobileBrowserImage.height}}" loading="lazy">
+                </picture>
+            </div>
+        </div>
+    </div>
+</main>
+
+<section class="[padding-block:32px] pr-safe pl-safe md:[padding-block:48px]">
+    <ul class="container [margin-inline:auto] [padding-inline:16px] sm:grid sm:grid-cols-3 sm:gap-24">
+    {% for item in project.deviceImagesCollection.items %}
+        {% include "_partials/components/devices.njk" %}
+    {% endfor %}
+    </ul>
+</section>

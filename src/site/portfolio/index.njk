@@ -16,7 +16,7 @@ sitemap:
 
         <div class="sm:columns-2 sm:gap-24">
         {% for i in range(0, 4) %}
-            {% set item = collections.projects[i] %}
+            {% set item = projects[i] %}
 
             {%- include "_partials/components/portfolio.njk" -%}
         {% endfor %}

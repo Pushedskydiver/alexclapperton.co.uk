@@ -9,6 +9,8 @@ module.exports = {
     './src/site/about-me.njk',
     './src/site/contact.njk',
     './src/site/index.njk',
+    './src/site/article.njk',
+    './src/site/project.njk',
     './src/site/offline.njk',
     './src/site/_includes/_layouts/*.njk',
     './src/site/_includes/_partials/components/*.njk',
