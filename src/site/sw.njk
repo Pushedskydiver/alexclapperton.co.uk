@@ -4,7 +4,7 @@ permalink: sw.js
 eleventyExcludeFromCollections: true
 ---
 
-const CACHE_NAMES = 'alexclapperton:0055';
+const CACHE_NAMES = 'alexclapperton:0056';
 const CACHE_FILES = [
   '/',
   '/fonts/selawik-variable.woff2',
@@ -16,6 +16,8 @@ const CACHE_FILES = [
   '/articles/2017/working-with-grid-the-holy-grail-of-css-layout/',
   '/articles/2016/performance-and-optimisation-getting-your-website-up-to-speed/',
   '/articles/2016/the-digital-industry-a-developers-perspective/',
+  {% swStyles %},
+  {% swScripts %}
 ];
 
 self.addEventListener('install', event => {
