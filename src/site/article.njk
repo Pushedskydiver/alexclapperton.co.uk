@@ -9,6 +9,9 @@ pagination:
 permalink:  "articles/{{ article.year }}/{{ article.slug }}/index.html"
 eleventyComputed:
     title: "{{ article.articleName }}"
+sitemap:
+    changefreq: monthly
+    priority: 0.8
 ---
 
 <main class="bg-slate-800 [padding-block:32px] md:[padding-block:48px]" id="main">
