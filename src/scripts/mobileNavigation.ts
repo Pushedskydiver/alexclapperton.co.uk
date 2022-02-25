@@ -8,11 +8,21 @@ function MobileNavigation() {
 
     if (!nav || !navTrigger) return;
 
-    const isNavOpen = !nav.classList.contains('invisible');
+    const isNavOpen = navTrigger.getAttribute('aria-expanded') === 'true';
+    const navHasOpacity = nav.classList.contains('opacity-0');
+
+    if (navHasOpacity) nav.classList.remove('opacity-0');
+
+    if (isNavOpen) {
+      nav.classList.remove('translate-y-0');
+      nav.classList.add('-translate-y-full');
+    } else {
+      nav.classList.add('translate-y-0');
+      nav.classList.remove('-translate-y-full');
+    }
 
     nav.classList.toggle('invisible');
-    nav.classList.toggle('-translate-y-full');
-    navTrigger.setAttribute('aria-expanded', `${isNavOpen}`);
+    navTrigger.setAttribute('aria-expanded', `${!isNavOpen}`);
   }
 
   function detectResize() {
