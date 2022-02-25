@@ -1,10 +1,16 @@
 function swRegister() {
   const applicationServerKey =
     'BBZfIKcG1E4t_KR-whw7Z6hRBiRi4vC216bdtN1mrXNdohzQ26XnYdZh8eaLOWmHagBLja5nuLSoLd_XPTEbYCM';
-  const pushBanner = document.querySelector('[data-push]');
+  const pushBanner = document.querySelector('[data-push-banner]');
   const pushButton = document.querySelector('[data-push-button]');
 
-  function urlB64ToUint8Array(base64String) {
+  function b64EncodeUnicode(str: string) {
+    return window.btoa(encodeURIComponent(str).replace(/%([0-9A-F]{2})/g, function (_, p1) {
+      return String.fromCharCode(parseInt(p1, 16))
+    }))
+  }
+
+  function urlB64ToUint8Array(base64String: string) {
     const padding = '='.repeat((4 - base64String.length % 4) % 4);
     const base64 = (base64String + padding)
       .replace(/\-/g, '+')
@@ -19,31 +25,25 @@ function swRegister() {
     return outputArray;
   }
 
-  function changePushStatus(status) {
-    pushButton.dataset.checked = status;
-    pushButton.checked = status;
+  function changePushStatus(status: boolean) {
+    if (!pushButton) return;
+
+    pushButton.setAttribute('data-subscribed', `${status}`);
 
     if (status) {
-      pushButton.classList.remove('button--primary');
-      pushButton.classList.add('button--secondary');
       pushButton.textContent = 'Disable notifications';
     } else {
-      pushButton.classList.add('button--primary');
-      pushButton.classList.remove('button--secondary');
       pushButton.textContent = 'Enable notifications';
     }
   }
 
   function isPushSupported() {
-    if (Notification.permission === 'denied') {
-      return;
-    }
+    const pushInWindow = 'PushManager' in window
+    const permissionDenied = Notification.permission === 'denied';
 
-    if (!('PushManager' in window)) {
-      return;
-    }
+    if (permissionDenied || !pushInWindow || !pushBanner) return;
 
-    pushBanner.classList.remove('push-strip--hide');
+    pushBanner.classList.remove('hidden');
 
     navigator.serviceWorker.ready
       .then(registration => {
@@ -75,6 +75,8 @@ function swRegister() {
             changePushStatus(true);
           })
           .catch(error => {
+            console.log(error, 'subscribePush');
+
             changePushStatus(false);
             return error;
           });
@@ -97,16 +99,29 @@ function swRegister() {
                 deleteSubscriptionID(subscription.endpoint);
                 changePushStatus(false);
               })
-              .catch(error => error);
+              .catch(error => {
+                console.log(error, 'unsubscribePush');
+
+                changePushStatus(false);
+                return error;
+              });
           })
           .catch(error => error);
       })
   }
 
-  function saveSubscriptionID(endpoint, key, auth) {
+  function saveSubscriptionID(
+    endpoint: string,
+    key: ArrayBuffer | null,
+    auth: ArrayBuffer | null
+  ) {
+    if (!key || !auth) return
+
+    const unit8KeyStr = new TextDecoder().decode(new Uint8Array(key));
+    const unit8AuthStr = new TextDecoder().decode(new Uint8Array(auth));
+    const encodedKey = b64EncodeUnicode(unit8KeyStr);
+    const encodedAuth = b64EncodeUnicode(unit8AuthStr);
     const subscription = endpoint.substring(endpoint.lastIndexOf('/') + 1, endpoint.length);
-    const encodedKey = btoa(String.fromCharCode.apply(null, new Uint8Array(key)));
-    const encodedAuth = btoa(String.fromCharCode.apply(null, new Uint8Array(auth)));
 
     fetch('/.netlify/functions/new-push-user', {
       method: 'post',
@@ -123,7 +138,7 @@ function swRegister() {
     });
   }
 
-  function deleteSubscriptionID(endpoint) {
+  function deleteSubscriptionID(endpoint: string) {
     const subscription = endpoint.substring(endpoint.lastIndexOf('/') + 1, endpoint.length);
 
     fetch(`/.netlify/functions/delete-push-user/${subscription}`, {
@@ -136,7 +151,9 @@ function swRegister() {
   }
 
   function togglePush() {
-    const isSubscribed = pushButton.dataset.checked === 'true';
+    if (!pushButton) return;
+
+    const isSubscribed = pushButton.getAttribute('data-subscribed') === 'true';
 
     isSubscribed ? unsubscribePush() : subscribePush();
   }
@@ -152,7 +169,7 @@ function swRegister() {
   function init() {
     registerServiceWorker();
 
-    if (pushBanner !== null) {
+    if (pushBanner && pushButton) {
       pushButton.addEventListener('click', togglePush);
     }
   }
@@ -162,4 +179,4 @@ function swRegister() {
   }
 }
 
-export default swRegister();
+export default swRegister;
