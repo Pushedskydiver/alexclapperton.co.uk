@@ -13,6 +13,9 @@ sitemap:
 
 <main class="bg-slate-800 pr-safe pl-safe sm:flex sm:flex-row-reverse sm:flex-wrap sm:justify-between sm:items-center" id="main">
     <picture class="relative block aspect-square md:aspect-16/9 sm:flex-1 md:flex-[3]">
+        <source media="(max-width: 59.9375rem)" type="image/avif" srcset="{{heroImageMobile.url}}?fm=avif">
+        <source media="(min-width: 60rem)" type="image/avif" srcset="{{heroImageDesktop.url}}?fm=avif">
+
         <source media="(max-width: 59.9375rem)" type="image/webp" srcset="{{heroImageMobile.url}}?fm=webp">
         <source media="(min-width: 60rem)" type="image/webp" srcset="{{heroImageDesktop.url}}?fm=webp">
 
