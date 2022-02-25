@@ -123,7 +123,7 @@ function swRegister() {
     const encodedAuth = b64EncodeUnicode(unit8AuthStr);
     const subscription = endpoint.substring(endpoint.lastIndexOf('/') + 1, endpoint.length);
 
-    fetch('/.netlify/functions/new-push-user', {
+    fetch('/api/new-push-user', {
       method: 'post',
       headers: {
         'Accept': 'application/json',
@@ -141,7 +141,7 @@ function swRegister() {
   function deleteSubscriptionID(endpoint: string) {
     const subscription = endpoint.substring(endpoint.lastIndexOf('/') + 1, endpoint.length);
 
-    fetch(`/.netlify/functions/delete-push-user/${subscription}`, {
+    fetch(`/api/delete-push-user/${subscription}`, {
       method: 'delete',
       headers: {
         'Accept': 'application/json',
