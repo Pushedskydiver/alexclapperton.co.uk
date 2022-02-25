@@ -24,7 +24,7 @@ module.exports = config => {
   config.addPassthroughCopy({ 'src/browserconfig.xml': 'browserconfig.xml' });
   config.addPassthroughCopy({ 'src/_redirects': '_redirects' });
 
-  config.addWatchTarget('src/styles/tailwind.css')
+  config.addWatchTarget('src/styles/tailwind.css');
 
   if (prod) {
     config.addTransform('htmlmin', htmlMin);
