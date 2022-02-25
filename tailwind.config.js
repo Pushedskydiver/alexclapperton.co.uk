@@ -17,7 +17,7 @@ module.exports = {
     './src/site/_includes/_partials/head.njk',
     './src/site/articles/**/*.njk',
     './src/site/portfolio/**/*.njk',
-    './src/scripts/**/*.js',
+    './src/scripts/**/*.ts',
     './src/functions/**/*.js',
     './src/utils/**/*.js',
   ],

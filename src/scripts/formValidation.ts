@@ -19,18 +19,17 @@ function FormValidation(form: HTMLFormElement) {
     const isValid = getInputPattern(element);
     const validationMessage = element.nextElementSibling;
 
-    element.classList.remove('border-grey-border');
-
     if (isValid && element.value.length !== 0) {
-      element.classList.remove('border-danger');
-      element.classList.add('border-success');
-      validationMessage.classList.remove('opacity-100');
+      element.classList.add('border-lime-500');
+      element.classList.remove('border-red-400');
+      element.classList.remove('border-slate-700');
       return;
     }
 
-    element.classList.add('border-danger');
-    element.classList.remove('border-success');
-    validationMessage.classList.add('opacity-100');
+    element.classList.add('border-red-400');
+    element.classList.remove('border-lime-500');
+    element.classList.remove('border-slate-700');
+    validationMessage.classList.remove('hidden');
   }
 
   function validateTextarea(event: any) {
@@ -38,26 +37,25 @@ function FormValidation(form: HTMLFormElement) {
     const isNotEmpty = element.value.length !== 0;
     const validationMessage = element.nextElementSibling;
 
-    element.classList.remove('border-grey-border');
-
     if (isNotEmpty) {
-      element.classList.remove('border-danger');
-      element.classList.add('border-success');
-      validationMessage.classList.remove('opacity-100');
+      element.classList.add('border-lime-500');
+      element.classList.remove('border-red-400');
+      element.classList.remove('border-slate-700');
       return;
     }
 
-    element.classList.add('border-danger');
-    element.classList.remove('border-success');
-    validationMessage.classList.add('opacity-100');
+    element.classList.add('border-red-400');
+    element.classList.remove('border-lime-500');
+    element.classList.remove('border-slate-700');
+    validationMessage.classList.remove('hidden');
   }
 
   function showSuccessMessage() {
-    successMessage.style.display = 'block';
+    successMessage.classList.remove('hidden');
   }
 
   function showErrorMessage() {
-    errorMessage.style.display = 'block';
+    errorMessage.classList.remove('hidden');
   }
 
   function submitForm() {
@@ -84,7 +82,7 @@ function FormValidation(form: HTMLFormElement) {
     inputs.forEach(input => {
       validateInput(input);
 
-      if (input.classList.contains('border-danger') && !firstErrorFound) {
+      if (input.classList.contains('border-red-400') && !firstErrorFound) {
         input.focus();
         firstErrorFound = true;
       }
@@ -92,7 +90,7 @@ function FormValidation(form: HTMLFormElement) {
 
     validateTextarea(textarea);
 
-    if (textarea.classList.contains('border-danger') && !firstErrorFound) {
+    if (textarea.classList.contains('border-red-400') && !firstErrorFound) {
       textarea.focus();
       firstErrorFound = true;
     }
