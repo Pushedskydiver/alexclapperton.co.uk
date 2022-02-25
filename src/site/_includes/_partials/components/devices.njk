@@ -6,10 +6,10 @@
             <path fill="#000000" d="M254 35a6 6 0 1 0 12 0 6 6 0 1 0-12 0" />
         </svg>
 
-        <picture class="absolute [inset-block-start:0] [inset-inline-start:0] [inline-size:100%] [block-size:100%] p-32 sm:p-12">
+        <picture class="absolute [inset-block-start:0] [inset-inline-start:0] [inline-size:100%] [block-size:100%] p-32 sm:p-12 md:p-16 lg:p-24">
             <source type="image/webp" srcset="{{item.url}}?fm=webp">
 
-            <img class="[inline-size:100%] [block-size:100%] object-contain" src="https:{{item.url}}" alt="{{item.description}}" loading="lazy">
+            <img class="[inline-size:100%] [block-size:100%] object-contain" src="https:{{item.url}}" alt="{{item.description}}" width="{{item.width}}" height="{{item.height}}" loading="lazy">
         </picture>
     </div>
 </li>
