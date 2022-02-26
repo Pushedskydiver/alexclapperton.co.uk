@@ -5,8 +5,7 @@ require('dotenv').config();
 exports.fetchContentfulData = async ({ query, type }) => {
   const token = process.env.CONTENTFUL_ACCESS_TOKEN;
   const id = process.env.CONTENTFUL_SPACE_ID;
-  const isProd = process.env.NODE_ENV === 'production';
-  const env = isProd ? 'master' : 'staging'
+  const env = process.env.CONTENTFUL_ENVIRONMENT;
   const fetchUrl = `https://graphql.contentful.com/content/v1/spaces/${id}/environments/${env}?type=${type}`;
 
   try {
