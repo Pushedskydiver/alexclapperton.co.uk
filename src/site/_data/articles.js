@@ -11,6 +11,8 @@ const query = `{
     items {
       sys {
         id
+        firstPublishedAt
+        publishedAt
       }
       articleName
       slug

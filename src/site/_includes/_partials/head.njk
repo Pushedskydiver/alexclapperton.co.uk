@@ -37,12 +37,12 @@
         "@context": "http://schema.org",
     {% if post %}
         "@type": "BlogPosting",
-            "mainEntityOfPage": {
+        "mainEntityOfPage": {
             "@type": "WebPage",
-            "@id": "{{settings.url}}/articles/{{this.slug}}/"
+            "@id": "{{settings.url}}{{page.url}}"
         },
-        "headline": "{{this.title}}",
-        "description": "{{this.description}}",
+        "headline": "{{title}}",
+        "description": "{{description}}",
         "image": "{{settings.url}}/images/profile/alex-clapperton.jpg",
         "author": {
             "@type": "Person",
@@ -58,8 +58,8 @@
             "height": 256
             }
         },
-        "datePublished": "{{page.datePublished}}",
-        "dateModified": "{{page.dateModified}}"
+        "datePublished": "{{datePublished}}",
+        "dateModified": "{{dateModified}}"
     {% else %}
         "@type": "Person",
         "name": "{{settings.name}}",
