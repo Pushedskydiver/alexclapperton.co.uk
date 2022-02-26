@@ -25,21 +25,18 @@ function MobileNavigation() {
     navTrigger.setAttribute('aria-expanded', `${!isNavOpen}`);
   }
 
-  function detectResize() {
-    const delayResize = setTimeout(() => {
-      if (window.innerWidth < 768 && navTrigger) {
+  function resizeCallback(entries: ResizeObserverEntry[]) {
+    entries.forEach((entry) => {
+      if (entry.contentRect.width < 768 && navTrigger) {
         navTrigger.addEventListener('click', toggleNavigation);
-      }
-      clearTimeout(delayResize);
-    }, 500);
+      };
+    });
   }
 
   function init() {
-    window.addEventListener('resize', detectResize);
+    const resizeObserver = new ResizeObserver(resizeCallback);
 
-    if (window.innerWidth < 768 && navTrigger) {
-      navTrigger.addEventListener('click', toggleNavigation);
-    }
+    resizeObserver.observe(body);
   }
 
   return {

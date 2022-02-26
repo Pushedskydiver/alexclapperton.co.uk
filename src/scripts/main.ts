@@ -1,4 +1,4 @@
-const html: HTMLElement | null = document.querySelector('html');
+const html = document.querySelector('html');
 
 if (html) html.className = 'js';
 
