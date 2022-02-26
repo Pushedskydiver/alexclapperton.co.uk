@@ -64,7 +64,7 @@ module.exports = (value) => {
                 <source media="(max-width: 44.9375rem)" srcset="${url}?w=570">
                 <source media="(min-width: 45rem)" srcset="${url}">
 
-                <img class="absolute [inset-inline-start:0] [inset-block-start:0] [inline-size:100%] [block-size:100%] object-cover p-8 border-2 border-solid border-slate-300 sm:p-16" src="${url}" alt="${description}" width="${width}" height="${height}" loading="lazy">
+                <img class="absolute [inset-inline-start:0] [inset-block-start:0] [inline-size:100%] [block-size:100%] object-cover p-8 border-2 border-solid border-slate-300 sm:p-16" src="${url}" alt="${description}" width="${width}" height="${height}" loading="lazy" decoding="async">
               </picture>
             </div>
 

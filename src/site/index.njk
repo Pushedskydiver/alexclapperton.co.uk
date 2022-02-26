@@ -23,7 +23,7 @@ sitemap:
         <source media="(max-width: 59.9375rem)" srcset="{{heroImageMobile.url}}">
         <source media="(min-width: 60rem)" srcset="{{heroImageDesktop.url}}">
 
-        <img class="absolute [inset-inline-start:0] [inset-block-start:0]  [inline-size:100%] [block-size:100%] object-contain" src="{{heroImageMobile.url}}" width="{{heroImageMobile.width}}" height="{{heroImageMobile.height}}" loading="eager" alt="{{heroImageMobile.description}}">
+        <img class="absolute [inset-inline-start:0] [inset-block-start:0]  [inline-size:100%] [block-size:100%] object-contain" src="{{heroImageMobile.url}}" width="{{heroImageMobile.width}}" height="{{heroImageMobile.height}}" loading="eager" decoding="async" alt="{{heroImageMobile.description}}">
     </picture>
 
     <div class="[padding-block:32px] [padding-inline:16px] xs:[padding-inline:24px] sm:[block-size:100%] sm:flex-1 sm:[padding-inline:48px]  md:flex-[2] hov:relative hov:z-10">

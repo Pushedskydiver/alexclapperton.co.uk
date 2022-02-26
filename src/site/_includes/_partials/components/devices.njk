@@ -9,7 +9,7 @@
         <picture class="absolute [inset-block-start:0] [inset-inline-start:0] [inline-size:100%] [block-size:100%] p-32 sm:p-12 md:p-16 lg:p-24">
             <source type="image/webp" srcset="{{item.url}}?fm=webp">
 
-            <img class="[inline-size:100%] [block-size:100%] object-contain" src="https:{{item.url}}" alt="{{item.description}}" width="{{item.width}}" height="{{item.height}}" loading="lazy">
+            <img class="[inline-size:100%] [block-size:100%] object-contain" src="https:{{item.url}}" alt="{{item.description}}" width="{{item.width}}" height="{{item.height}}" loading="lazy" decoding="async">
         </picture>
     </div>
 </li>

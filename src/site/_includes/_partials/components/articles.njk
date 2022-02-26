@@ -7,7 +7,7 @@
         <!-- BEGIN : ARTICLES THUMBNAIL -->
         <picture class="relative block aspect-3/2">
             <source type="image/webp" srcset="{{thumbnail.url}}?fm=webp">
-            <img class="absolute [inset-block-start:0] [inset-inline-start:0] [inline-size:100%] [block-size:100%] object-cover lazyload" src="{{thumbnail.url}}" alt="{{thumbnail.description}}" loading="lazy" width="300" height="200">
+            <img class="absolute [inset-block-start:0] [inset-inline-start:0] [inline-size:100%] [block-size:100%] object-cover lazyload" src="{{thumbnail.url}}" alt="{{thumbnail.description}}" loading="lazy" decoding="async" width="300" height="200">
         </picture>
         <!-- END : ARTICLES THUMBNAIL /-->
         <!-- BEGIN : ARTICLES DETAILS -->

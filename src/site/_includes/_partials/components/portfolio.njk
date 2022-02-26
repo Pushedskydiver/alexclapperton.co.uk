@@ -6,7 +6,7 @@
         <picture class="relative block row-span-full col-span-full" style="aspect-ratio:{{thumbnail.width}}/{{thumbnail.height}};">
             <source type="image/webp" srcset="{{thumbnail.url}}?fm=webp">
 
-            <img class="absolute [inset-block-start:0] [inset-inline-start:0] [inline-size:100%] [block-size:100%] object-cover" src="{{thumbnail.url}}" alt="{{thumbnail.description}}" width="{{thumbnail.width}}" height="{{thumbnail.height}}" loading="lazy">
+            <img class="absolute [inset-block-start:0] [inset-inline-start:0] [inline-size:100%] [block-size:100%] object-cover" src="{{thumbnail.url}}" alt="{{thumbnail.description}}" width="{{thumbnail.width}}" height="{{thumbnail.height}}" loading="lazy" decoding="async">
         </picture>
 
         <figcaption class="row-span-full col-span-full self-end [inset-block-end:0] [inset-inline-start:0] [inline-size:100%] [padding-inline:32px] [padding-block-end:32px] z-20">
