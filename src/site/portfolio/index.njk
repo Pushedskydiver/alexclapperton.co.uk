@@ -12,13 +12,13 @@ sitemap:
 
         <p class="text-base leading-base text-white fvs-rg [margin-block-end:24px] [max-inline-size:550px]">We engage with our clients in order to understand their needs and impact their business. See how we've helped our clients!</p>
 
-        <div class="sm:columns-2 sm:gap-24">
+        <ul class="sm:columns-2 sm:gap-24">
         {% for i in range(0, 4) %}
             {% set item = projects[i] %}
 
             {%- include "_partials/components/portfolio.njk" -%}
         {% endfor %}
-        </div>
+        </ul>
     </div>
 </main>
 

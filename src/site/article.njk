@@ -9,6 +9,7 @@ pagination:
 permalink:  "articles/{{ article.year }}/{{ article.slug }}/index.html"
 eleventyComputed:
     title: "{{ article.articleName }}"
+    description: "{{ article.description }}"
     datePublished: "{{ article.sys.firstPublishedAt }}"
     dateModified: "{{ article.sys.publishedAt }}"
 sitemap:

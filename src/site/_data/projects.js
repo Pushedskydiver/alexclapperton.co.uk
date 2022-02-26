@@ -7,6 +7,7 @@ const query = `{
   ) {
     items {
       projectName
+      description
       slug
       date
       category

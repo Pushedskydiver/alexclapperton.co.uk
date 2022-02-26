@@ -15,6 +15,7 @@ const query = `{
         publishedAt
       }
       articleName
+      description
       slug
       year
       date

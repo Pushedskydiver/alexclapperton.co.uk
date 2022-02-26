@@ -2,7 +2,7 @@
     <!-- META TAGS  -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, minimum-scale=1, user-scalable=yes, initial-scale=1, viewport-fit=cover">
-    <meta name="description" content="{% if renderData.description or description %}{{ renderData.description or description }}{% endif %}">
+    <meta name="description" content="{{ description }}">
 
     {% if nofollow %}
         <meta name="robots" content="noindex, nofollow">

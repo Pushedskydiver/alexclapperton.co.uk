@@ -3,6 +3,7 @@ const { fetchContentfulData } = require('../../utils/fetchContentfulData');
 const query = `{
   home(id: "2P27DVt2sMY4kQjO161SDQ") {
     title
+    description
     subText
     heroImageCollection(
       limit: 10

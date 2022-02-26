@@ -3,6 +3,7 @@ home: true
 layout: _layouts/page
 eleventyComputed:
     title: "{{homepage.title}}"
+    description: "{{ homepage.description }}"
 sitemap:
     changefreq: daily
     priority: 1
@@ -44,13 +45,13 @@ sitemap:
             Work and projects
         </h2>
 
-        <div class="sm:columns-2 sm:gap-24">
+        <ul class="sm:columns-2 sm:gap-24">
         {% for i in range(0, 4) %}
             {% set item = projects[i] %}
 
             {%- include "_partials/components/portfolio.njk" -%}
         {% endfor %}
-        </div>
+        </ul>
 
         <a class="[inline-size:100%] [padding-block:12px]  [padding-inline:24px]  bg-transparent text-white border-2 border-white border-solid text-base leading-base fvs-md flex justify-center items-center gap-8 rounded-sm sm:[inline-size:auto] sm:inline-flex focus:bg-white focus:text-slate-900 focus:outline focus:outline-2 focus:outline-offset-4 focus:outline-yellow-400 hov:transition-colors hov:duration-200 hov:hover:bg-white hov:hover:text-slate-900 motion-reduce:transition-none" href="/portfolio/">
             View portfolio
