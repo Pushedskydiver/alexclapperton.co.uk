@@ -29,7 +29,7 @@
                         <ul class="sm:flex sm:flex-wrap sm:gap-16">
                         {% for item in settings.social %}
                             <li class="text-base leading-base fvs-md text-yellow-400 [margin-block-end:16px] last:[margin-block-end:0]">
-                                <a class="inline border-solid border-b-2 border-yellow-400 hov:transition-colors hov:duration-200 hov:hover:bg-yellow-400 hov:hover:text-slate-900 motion-reduce:transition-none" href="{{this.url}}" title="{{item.titleAttr}}"  {% if item.external %}rel="external"{% endif %}>{{item.title}}</a>
+                                <a class="inline border-solid border-b-2 border-yellow-400 hov:transition-colors hov:duration-200 hov:hover:bg-yellow-400 hov:hover:text-slate-900 motion-reduce:transition-none" href="{{item.url}}" title="{{item.titleAttr}}"  {% if item.external %}rel="external"{% endif %}>{{item.title}}</a>
                             </li>
                         {% endfor %}
                         </ul>
