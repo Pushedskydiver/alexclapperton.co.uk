@@ -1,6 +1,5 @@
 const fs = require('fs');
 const htmlMin = require('./src/utils/transforms/minify-html.js');
-const fadeInDelay = require('./src/utils/filters/fade-in-delay');
 const formatDate = require('./src/utils/filters/format-date');
 const renderRichTextAsHtml = require('./src/utils/filters/render-text-as-html.js');
 const swStyles = require('./src/utils/shortcodes/sw-styles');
@@ -9,7 +8,6 @@ const swScripts = require('./src/utils/shortcodes/sw-scripts.js');
 module.exports = config => {
   const prod = process.env.NODE_ENV === 'production';
 
-  config.addFilter('fadeInDelay', fadeInDelay);
   config.addFilter('formatDate', formatDate);
   config.addFilter('renderRichTextAsHtml', renderRichTextAsHtml);
 
