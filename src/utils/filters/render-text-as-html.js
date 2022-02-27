@@ -1,16 +1,12 @@
 const { documentToHtmlString } = require('@contentful/rich-text-html-renderer');
 const { BLOCKS, INLINES } = require('@contentful/rich-text-types');
+const codeBlock = require('../renders/codeBlock');
 
 module.exports = (value) => {
   // create an asset map
-  const assetMap = new Map();
+  const assetMap = new Map(value?.assets?.block?.map((asset) => [asset.sys.id, asset]));
 
-  // loop through the assets and add them to the map
-  if (value.links) {
-    for (const asset of value.links.assets.block) {
-      assetMap.set(asset.sys.id, asset);
-    }
-  }
+  const blockEntryMap = new Map(value?.entries?.block?.map((entry) => [entry.sys.id, entry]));
 
   const options = {
     renderNode: {
@@ -71,6 +67,16 @@ module.exports = (value) => {
             <figcaption class="text-white text-center text-sm leading-sm fvs-md [margin-block-start:8px]">${description}</figcaption>
           </figure>
         `
+      },
+      [BLOCKS.EMBEDDED_ENTRY]: (node) => {
+        const entry = blockEntryMap.get(node.data.target.sys.id);
+        const { __typename } = entry;
+
+        if (__typename === 'CodeBlock') {
+          const { code, language } = entry;
+
+          return codeBlock({ code, language });
+        }
       },
       [INLINES.HYPERLINK]: (node, next) => {
         return `<a href="${node.data.uri}" class="text-yellow-400 fvs-sb border-b-2 border-b-yellow-400 hov:transition-colors hov:duration-200 hov:hover:bg-yellow-400 hov:hover:text-slate-900 motion-reduce:transition-none">${next(node.content)}</a>`

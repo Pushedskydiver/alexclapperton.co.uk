@@ -43,6 +43,18 @@ const query = `{
               height
             }
           }
+          entries {
+            block {
+              sys {
+                id
+              }
+              __typename
+              ... on CodeBlock {
+                language
+      					code
+              }
+            }
+          }
         }
       }
     }
