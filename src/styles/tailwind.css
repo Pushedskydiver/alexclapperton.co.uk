@@ -28,6 +28,10 @@
     text-rendering: optimizeLegibility;
   }
 
+  pre {
+    @apply rounded-sm;
+  }
+
   .fvs-rg {
     font-variation-settings: 'wght' 400;
   }

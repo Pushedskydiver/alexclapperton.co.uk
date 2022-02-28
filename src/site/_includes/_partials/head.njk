@@ -14,7 +14,10 @@
     </title>
 
     <!-- RESOURCE HINTS -->
-    <link rel="preconnect" href="https://images.ctfassets.net/">
+    <link rel="preconnect" href="https://images.ctfassets.net">
+{% if post %}
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+{% endif %}
 
     <!-- PRELOAD FILES -->
     {% include "_partials/preload-styles.njk" %}
@@ -23,6 +26,10 @@
 
     <!-- STYLESHEET -->
     {% include "_partials/styles.njk" %}
+
+    {% if post %}
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.27.0/themes/prism-tomorrow.min.css">
+    {% endif %}
 
     <!-- SITEMAP -->
     <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml" />

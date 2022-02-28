@@ -1,14 +1,25 @@
 const { documentToHtmlString } = require('@contentful/rich-text-html-renderer');
-const { BLOCKS, INLINES } = require('@contentful/rich-text-types');
+const { BLOCKS, INLINES, MARKS } = require('@contentful/rich-text-types');
 const codeBlock = require('../renders/codeBlock');
 
 module.exports = (value) => {
   // create an asset map
-  const assetMap = new Map(value?.assets?.block?.map((asset) => [asset.sys.id, asset]));
+  const assetMap = new Map(value?.links?.assets?.block?.map((asset) => [asset.sys.id, asset]));
 
-  const blockEntryMap = new Map(value?.entries?.block?.map((entry) => [entry.sys.id, entry]));
+  const blockEntryMap = new Map();
+
+  if (value?.links?.entries.block) {
+    for (const entry of value.links.entries.block) {
+      blockEntryMap.set(entry.sys.id, entry);
+    }
+  }
 
   const options = {
+    renderMark: {
+      [MARKS.CODE]: (text) => {
+        return `<code class="bg-stone-700 text-slate-200 rounded-sm p-4">${text}</code>`;
+      }
+    },
     renderNode: {
       [BLOCKS.HEADING_2]: (node, next) => {
         return `<h2 class="text-white text-xl leading-xl fvs-sb [margin-block-end:16px]">${next(node.content)}</h2>`
