@@ -2,6 +2,7 @@ const fs = require('fs');
 const rssFeed = require('@11ty/eleventy-plugin-rss');
 const htmlMin = require('./src/utils/transforms/minify-html.js');
 const formatDate = require('./src/utils/filters/format-date');
+const formatSitemapDate = require('./src/utils/filters/format-sitemap-date');
 const getRecentUpdatedArticle = require('./src/utils/filters/get-recent-updated-article-date');
 const renderRichTextAsHtml = require('./src/utils/filters/render-text-as-html.js');
 const swStyles = require('./src/utils/shortcodes/sw-styles');
@@ -11,6 +12,7 @@ module.exports = config => {
   const prod = process.env.NODE_ENV === 'production';
 
   config.addFilter('formatDate', formatDate);
+  config.addFilter('formatSitemapDate', formatSitemapDate);
   config.addFilter('getRecentUpdatedArticle', getRecentUpdatedArticle);
   config.addFilter('renderRichTextAsHtml', renderRichTextAsHtml);
 
