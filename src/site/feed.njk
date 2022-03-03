@@ -28,8 +28,7 @@
   </author>
   {%- for post in articles %}
 {%- set absolutePostUrl -%}
-    {%- set postUrl = '/articles/' + post.year + '/' + post.slug + '/' -%}
-    {{- postUrl | url | absoluteUrl(metadata.url) -}}
+    {{- '/articles/' + post.year + '/' + post.slug + '/' | url | absoluteUrl(metadata.url) -}}
 {%- endset -%}
   <entry>
     <title>{{ post.articleName }}</title>
