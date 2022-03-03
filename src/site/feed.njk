@@ -27,10 +27,7 @@
     <email>{{ metadata.author.email }}</email>
   </author>
   {%- for post in articles %}
-{%- set absolutePostUrl -%}
-    {%- set postUrl = '/articles/' + post.year + '/' + post.slug + '/' -%}
-    {{- postUrl | url | absoluteUrl(metadata.url) -}}
-{%- endset -%}
+  {% set absolutePostUrl =  metadata.url + 'articles/' + post.year + '/' + post.slug + '/' %}
   <entry>
     <title>{{ post.articleName }}</title>
     <link href="{{ absolutePostUrl }}"/>
