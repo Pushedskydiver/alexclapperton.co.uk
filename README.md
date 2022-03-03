@@ -55,4 +55,8 @@ netlify dev
 - `npm run build`: Command used in Netlify to run `webpack:prod` and `eleventy:prod`
 
 <!-- BLOG-POST-LIST:START -->
+- [A brief introduction on using CSS Grid](https://www.alexclapperton.co.uk/articles/2018/a-brief-introduction-on-using-css-grid/)
+- [Working with Grid: The holy grail of CSS layout](https://www.alexclapperton.co.uk/articles/2017/working-with-grid-the-holy-grail-of-css-layout/)
+- [Performance and optimisation: Getting your website up to speed](https://www.alexclapperton.co.uk/articles/2016/performance-and-optimisation-getting-your-website-up-to-speed/)
+- [The digital industry: A developers perspective](https://www.alexclapperton.co.uk/articles/2016/the-digital-industry-a-developers-perspective/)
 <!-- BLOG-POST-LIST:END -->
