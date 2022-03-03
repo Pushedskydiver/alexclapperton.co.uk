@@ -1,9 +1,12 @@
 const { fetchContentfulData } = require('../../utils/fetchContentfulData');
 
+const variables = { preview: true };
+const type = 'articles';
 const query = `{
   contentType2PqfXuJwE8QSyKuM0U6W8MCollection(
     limit: 10
     order: [sys_firstPublishedAt_ASC]
+    preview: $preview
   ) {
     total
     skip
@@ -62,7 +65,7 @@ const query = `{
 }`
 
 async function articlesData() {
-  const response =  await fetchContentfulData({ query, type: 'articles' });
+  const response = await fetchContentfulData({ query, type, variables });
   const articles = response.data.contentType2PqfXuJwE8QSyKuM0U6W8MCollection.items;
 
   return articles;
