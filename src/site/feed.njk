@@ -20,7 +20,7 @@
   <subtitle>{{ metadata.description }}</subtitle>
   <link href="{{ metadata.feedUrl }}" rel="self"/>
   <link href="{{ metadata.url }}"/>
-  {# <updated>{{ articles | getRecentUpdatedArticle | formatDate }}</updated> #}
+  <updated>{{ articles | getRecentUpdatedArticle | formatDate }}</updated>
   <id>{{ metadata.url }}</id>
   <author>
     <name>{{ metadata.author.name }}</name>
