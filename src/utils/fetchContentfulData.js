@@ -3,7 +3,7 @@ const Cache = require('@11ty/eleventy-fetch');
 require('dotenv').config();
 
 const defaultApiOptions = {
-  preview: false,
+  preview: true,
 }
 
 exports.fetchContentfulData = async ({
@@ -20,9 +20,6 @@ exports.fetchContentfulData = async ({
   const token = options.preview
     ? process.env.CONTENTFUL_PREVIEW_ACCESS_TOKEN
     : process.env.CONTENTFUL_ACCESS_TOKEN;
-
-  console.log(token.toString(), 'token');
-  console.log(options, 'options');
 
   try {
     const fetchOptions = {

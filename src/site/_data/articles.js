@@ -66,11 +66,6 @@ const query = `{
 
 async function articlesData() {
   const response = await fetchContentfulData({ query, type, variables });
-
-  console.log(response, 'response');
-  console.log(type, 'type');
-  console.log(variables, 'variables');
-
   const articles = response.data.contentType2PqfXuJwE8QSyKuM0U6W8MCollection.items;
 
   return articles;
