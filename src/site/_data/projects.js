@@ -1,5 +1,6 @@
 const { fetchContentfulData } = require('../../utils/fetchContentfulData');
 
+const type = 'projects';
 const query = `{
   sFzTZbSuM8CoEwygeUYesCollection(
     limit: 10
@@ -42,7 +43,7 @@ const query = `{
 }`
 
 async function projectsData() {
-  const response = await fetchContentfulData({ query, type: 'projects' });
+  const response = await fetchContentfulData({ query, type });
   const articles = response.data.sFzTZbSuM8CoEwygeUYesCollection.items;
 
   return articles;
