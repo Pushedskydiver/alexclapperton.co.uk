@@ -20,20 +20,20 @@
   <subtitle>{{ metadata.description }}</subtitle>
   <link href="{{ metadata.feedUrl }}" rel="self"/>
   <link href="{{ metadata.url }}"/>
-  <updated>{{ articles | getRecentUpdatedArticle }}</updated>
+  <updated>{{ articles | getRecentUpdatedArticle | formatDate }}</updated>
   <id>{{ metadata.url }}</id>
   <author>
     <name>{{ metadata.author.name }}</name>
     <email>{{ metadata.author.email }}</email>
   </author>
   {%- for post in articles %}
-  {# {% set absolutePostUrl =  metadata.url + 'articles/' + post.year + '/' + post.slug + '/' %} #}
+  {% set absolutePostUrl =  metadata.url + 'articles/' + post.year + '/' + post.slug + '/' %}
   <entry>
     <title>{{ post.articleName }}</title>
-    {# <link href="{{ absolutePostUrl }}"/> #}
+    <link href="{{ absolutePostUrl }}"/>
     <updated>{{ post.date | formatDate }}</updated>
-    {# <id>{{- absolutePostUrl -}}</id> #}
-    {# <content type="html">{{ post.body | renderRichTextAsHtml | htmlToAbsoluteUrls(absolutePostUrl) }}</content> #}
+    <id>{{- absolutePostUrl -}}</id>
+    <content type="html">{{ post.body | renderRichTextAsHtml | htmlToAbsoluteUrls(absolutePostUrl) }}</content>
   </entry>
   {%- endfor %}
 </feed>

@@ -9,7 +9,7 @@ module.exports = (date) => {
   let dayNumber = d.getDate();
 
   if (dayNumber.toString().length < 2) {
-    day = `0${day}`;
+    dayNumber = `0${day}`;
   }
 
   return `${day}, ${dayNumber} ${month} ${year}`;
