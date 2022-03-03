@@ -13,5 +13,5 @@ jobs:
           time: "2m"
       - uses: gautamkrishnar/blog-post-workflow@master
         with:
-          feed_list: "https://whitep4nth3r.com/feed.xml"
+          feed_list: "https://alexclapperton.co.uk/feed.xml"
           commit_message: "Updated README with latest blog posts"

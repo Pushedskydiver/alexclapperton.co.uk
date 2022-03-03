@@ -27,6 +27,7 @@
   "dependencies": {
     "@11ty/eleventy": "^1.0.0",
     "@11ty/eleventy-fetch": "^3.0.0",
+    "@11ty/eleventy-plugin-rss": "^1.1.2",
     "@11ty/eleventy-plugin-syntaxhighlight": "^4.0.0",
     "@contentful/rich-text-html-renderer": "^15.11.1",
     "@contentful/rich-text-types": "^15.11.1",

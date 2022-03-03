@@ -1,16 +1,16 @@
 module.exports = (date) => {
+  const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+  const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+
   const d = new Date(date);
+  const day = days[d.getDay()];
   const year = d.getFullYear();
-  let month = d.getMonth() + 1;
-  let day = d.getDate();
+  const month = months[d.getMonth()];
+  let dayNumber = d.getDate();
 
-  if (month.toString().length < 2) {
-    month = `0${month}`;
-  }
-
-  if (day.toString().length < 2) {
+  if (dayNumber.toString().length < 2) {
     day = `0${day}`;
   }
 
-  return [day, month, year].join('-');
+  return `${day}, ${dayNumber} ${month} ${year}`;
 }
