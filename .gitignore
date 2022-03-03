@@ -3,7 +3,9 @@ node_modules
 
 # production
 dist
-reports
+src/site/_includes/_partials/preload-styles.njk
+src/site/_includes/_partials/scripts.njk
+src/site/_includes/_partials/styles.njk
 .env
 .env.*
 
@@ -15,3 +17,6 @@ reports
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+# Local Netlify folder
+.netlify
