@@ -21,6 +21,8 @@ exports.fetchContentfulData = async ({
     ? process.env.CONTENTFUL_PREVIEW_ACCESS_TOKEN
     : process.env.CONTENTFUL_ACCESS_TOKEN;
 
+  console.log(token, 'token');
+
   try {
     const fetchOptions = {
       duration: fetchDuration,
