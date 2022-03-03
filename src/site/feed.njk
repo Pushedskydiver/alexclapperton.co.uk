@@ -1,0 +1,42 @@
+---json
+{
+  "permalink": "feed.xml",
+  "eleventyExcludeFromCollections": true,
+  "metadata": {
+    "title": "alexclapperton.co.uk RSS feed",
+    "description": "Posts about web development, accessibility and more from Alex Clapperton.",
+    "url": "https://www.alexclapperton.co.uk/",
+    "feedUrl": "https://www.alexclapperton.co.uk/feed.xml",
+    "author": {
+      "name": "Alex Clapperton",
+      "email": "hi@alexclapperton.co.uk"
+    }
+  }
+}
+---
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>{{ metadata.title }}</title>
+  <subtitle>{{ metadata.description }}</subtitle>
+  <link href="{{ metadata.feedUrl }}" rel="self"/>
+  <link href="{{ metadata.url }}"/>
+  <updated>{{ articles | getRecentUpdatedArticle | formatDate }}</updated>
+  <id>{{ metadata.url }}</id>
+  <author>
+    <name>{{ metadata.author.name }}</name>
+    <email>{{ metadata.author.email }}</email>
+  </author>
+  {%- for post in articles %}
+{%- set absolutePostUrl -%}
+    {%- set postUrl = '/articles/' + post.year + '/' + post.slug + '/' -%}
+    {{- postUrl | url | absoluteUrl(metadata.url) -}}
+{%- endset -%}
+  <entry>
+    <title>{{ post.articleName }}</title>
+    <link href="{{ absolutePostUrl }}"/>
+    <updated>{{ post.date | formatDate }}</updated>
+    <id>{{- absolutePostUrl -}}</id>
+    <content type="html">{{ post.body | renderRichTextAsHtml | htmlToAbsoluteUrls(absolutePostUrl) }}</content>
+  </entry>
+  {%- endfor %}
+</feed>

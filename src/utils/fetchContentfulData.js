@@ -8,7 +8,7 @@ exports.fetchContentfulData = async ({ query, type }) => {
   const id = process.env.CONTENTFUL_SPACE_ID;
   const env = process.env.CONTENTFUL_ENVIRONMENT;
   const fetchUrl = `https://graphql.contentful.com/content/v1/spaces/${id}/environments/${env}?type=${type}`;
-  const fetchDuration = isProd ? '1h' : '1s' ;
+  const fetchDuration = isProd ? '1h' : '1s';
 
   try {
     const fetchOptions = {
