@@ -2,22 +2,13 @@ const Cache = require('@11ty/eleventy-fetch');
 
 require('dotenv').config();
 
-const defaultApiOptions = {
-  preview: true,
-}
-
-exports.fetchContentfulData = async ({
-  query,
-  type,
-  variables = {},
-  options = defaultApiOptions,
-}) => {
+exports.fetchContentfulData = async ({ query, type }) => {
   const isProd = process.env.NODE_ENV === 'production';
+  const token = process.env.CONTENTFUL_ACCESS_TOKEN;
   const id = process.env.CONTENTFUL_SPACE_ID;
   const env = process.env.CONTENTFUL_ENVIRONMENT;
-  const fetchDuration = isProd ? '1h' : '1s';
   const fetchUrl = `https://graphql.contentful.com/content/v1/spaces/${id}/environments/${env}?type=${type}`;
-  const token = process.env.CONTENTFUL_ACCESS_TOKEN;
+  const fetchDuration = isProd ? '1h' : '1s';
 
   try {
     const fetchOptions = {
@@ -29,7 +20,7 @@ exports.fetchContentfulData = async ({
           Authorization: `Bearer ${token}`,
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ query, variables }),
+        body: JSON.stringify({ query }),
       }
     };
 

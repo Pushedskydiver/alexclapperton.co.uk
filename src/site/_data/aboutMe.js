@@ -1,6 +1,5 @@
 const { fetchContentfulData } = require('../../utils/fetchContentfulData');
 
-const type = 'about';
 const query = `{
   aboutMe(id: "2biUWOFVHi0F4knwzmFzoL") {
     title
@@ -27,7 +26,7 @@ const query = `{
 }`
 
 async function aboutMeData() {
-  const response = await fetchContentfulData({ query, type });
+  const response = await fetchContentfulData({ query, type: 'about' });
   const aboutMe = response.data.aboutMe;
 
   return aboutMe;

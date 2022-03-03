@@ -1,6 +1,5 @@
 const { fetchContentfulData } = require('../../utils/fetchContentfulData');
 
-const type = 'homepage';
 const query = `{
   home(id: "2P27DVt2sMY4kQjO161SDQ") {
     title
@@ -20,7 +19,7 @@ const query = `{
 }`
 
 async function homepageData() {
-  const response = await fetchContentfulData({ query, type });
+  const response = await fetchContentfulData({ query, type: 'homepage' });
   const homepage = response.data.home;
 
   return homepage;
