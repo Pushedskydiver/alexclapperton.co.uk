@@ -1,5 +1,6 @@
 const { fetchContentfulData } = require('../../utils/fetchContentfulData');
 
+const projects = 'projects';
 const query = `{
   sFzTZbSuM8CoEwygeUYesCollection(
     limit: 10
