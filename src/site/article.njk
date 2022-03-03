@@ -20,7 +20,7 @@ sitemap:
 <main class="bg-slate-800 [padding-block:32px] md:[padding-block:48px]" id="main">
     <div class="container [margin-inline:auto] [padding-inline:16px]">
         <article class="text-white [max-inline-size:45rem] [margin-inline:auto]">
-            <time class="block [margin-block-end:24px]" datetime="{{article.date}}"><strong class="fvs-sb">Published on:</strong> {{article.date | formatDate}}</time>
+            <time class="block [margin-block-end:24px]" datetime="{{datePublished}}"><strong class="fvs-sb">Published on:</strong> {{datePublished | formatDate}}</time>
 
             {{article.body | renderRichTextAsHtml | safe}}
         </article>

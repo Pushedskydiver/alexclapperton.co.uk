@@ -18,7 +18,6 @@ const query = `{
       description
       slug
       year
-      date
       tags
       isExternal
       featuredImage {
