@@ -16,8 +16,8 @@
   "scripts": {
     "clean": "rimraf dist",
     "start": "npm run dev",
-    "dev": "run-p *:dev",
-    "build": "npm run clean && run-p *:prod",
+    "dev": "run-p webpack:dev eleventy:dev",
+    "build": "npm run clean && run-p webpack:prod eleventy:prod",
     "eleventy:dev": "cross-env NODE_ENV=development eleventy --serve",
     "eleventy:prod": "cross-env NODE_ENV=production eleventy",
     "webpack:dev": "cross-env NODE_ENV=development webpack --watch",
