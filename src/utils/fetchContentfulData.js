@@ -31,13 +31,11 @@ exports.fetchContentfulData = async ({
           Authorization: `Bearer ${token}`,
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ query }),
+        body: JSON.stringify({ query, variables }),
       }
     };
 
     const response = await Cache(fetchUrl, fetchOptions);
-
-    console.log(response, 'response');
 
     // handle errors
     if (response.errors) {
