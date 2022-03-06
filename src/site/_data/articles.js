@@ -77,6 +77,9 @@ const query = `query GetContentType2PqfXuJwE8QSyKuM0U6W8MCollection($preview: Bo
 
 async function getArticlesData() {
   const response = await fetchContentfulData({ query, type, variables });
+
+  console.log(response, 'response');
+
   const articles = response.data.contentType2PqfXuJwE8QSyKuM0U6W8MCollection.items;
 
   return articles;
