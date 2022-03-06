@@ -2,11 +2,10 @@ const { fetchContentfulData } = require('../../utils/fetchContentfulData');
 
 const variables = { preview: false };
 const type = 'articles';
-const query = `query GetContentType2PqfXuJwE8QSyKuM0U6W8MCollection($preview: Boolean!) {
+const query = `{
   contentType2PqfXuJwE8QSyKuM0U6W8MCollection(
     limit: 10
     order: [sys_firstPublishedAt_ASC]
-    preview: $preview
   ) {
     total
     skip
@@ -21,19 +20,6 @@ const query = `query GetContentType2PqfXuJwE8QSyKuM0U6W8MCollection($preview: Bo
       description
       slug
       year
-      topicsCollection {
-        items {
-          sys {
-            id
-          }
-          name
-          slug
-          icon {
-            description
-            url
-          }
-        }
-      }
       isExternal
       featuredImage {
         width
