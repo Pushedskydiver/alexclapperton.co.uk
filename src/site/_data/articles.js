@@ -1,9 +1,12 @@
 const { fetchContentfulData } = require('../../utils/fetchContentfulData');
 
-const query = `{
+const variables = { preview: false };
+const type = 'articles';
+const query = `query GetContentType2PqfXuJwE8QSyKuM0U6W8MCollection($preview: Boolean!) {
   contentType2PqfXuJwE8QSyKuM0U6W8MCollection(
     limit: 10
     order: [sys_firstPublishedAt_ASC]
+    preview: $preview
   ) {
     total
     skip
@@ -18,6 +21,19 @@ const query = `{
       description
       slug
       year
+      topicsCollection {
+        items {
+          sys {
+            id
+          }
+          name
+          slug
+          icon {
+            description
+            url
+          }
+        }
+      }
       isExternal
       featuredImage {
         width
@@ -59,12 +75,15 @@ const query = `{
   }
 }`
 
-async function articlesData() {
-  const response =  await fetchContentfulData({ query, type: 'articles' });
+async function getArticlesData() {
+  const response = await fetchContentfulData({ query, type, variables });
+
+  console.log(response, 'response');
+
   const articles = response.data.contentType2PqfXuJwE8QSyKuM0U6W8MCollection.items;
 
   return articles;
 }
 
 // export for 11ty
-module.exports = articlesData
+module.exports = getArticlesData
