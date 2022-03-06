@@ -19,7 +19,7 @@ const query = `{
   }
 }`
 
-async function homepageData() {
+async function getHomepageData() {
   const response = await fetchContentfulData({ query, type });
   const homepage = response.data.home;
 
@@ -27,4 +27,4 @@ async function homepageData() {
 }
 
 // export for 11ty
-module.exports = homepageData
+module.exports = getHomepageData

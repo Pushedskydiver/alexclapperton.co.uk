@@ -42,7 +42,7 @@ const query = `{
   }
 }`
 
-async function projectsData() {
+async function getProjectsData() {
   const response = await fetchContentfulData({ query, type });
   const articles = response.data.sFzTZbSuM8CoEwygeUYesCollection.items;
 
@@ -50,4 +50,4 @@ async function projectsData() {
 }
 
 // export for 11ty
-module.exports = projectsData
+module.exports = getProjectsData
