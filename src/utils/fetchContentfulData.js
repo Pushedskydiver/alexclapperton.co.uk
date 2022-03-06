@@ -17,7 +17,9 @@ exports.fetchContentfulData = async ({
   const env = process.env.CONTENTFUL_ENVIRONMENT;
   const fetchDuration = isProd ? '1h' : '1s';
   const fetchUrl = `https://graphql.contentful.com/content/v1/spaces/${id}/environments/${env}?type=${type}`;
-  const token = process.env.CONTENTFUL_ACCESS_TOKEN;
+  const token = options.preview
+    ? process.env.CONTENTFUL_PREVIEW_ACCESS_TOKEN
+    : process.env.CONTENTFUL_ACCESS_TOKEN;
 
   try {
     const fetchOptions = {
@@ -29,7 +31,7 @@ exports.fetchContentfulData = async ({
           Authorization: `Bearer ${token}`,
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ query, variables }),
+        body: JSON.stringify({ query }),
       }
     };
 
