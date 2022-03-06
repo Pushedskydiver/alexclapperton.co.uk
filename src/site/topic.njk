@@ -30,7 +30,7 @@ sitemap:
 
         {% for topicItem in topicsByPost %}
             {% if topicItem.topic === topic.slug %}
-                <ul class="[margin-block-start:24px] sm:grid sm:grid-cols-2 sm:gap-24 sm:[margin-block-start:32px] md:grid-cols-3">
+                <ul class="[margin-block-start:24px] grid gap-24 sm:grid-cols-2 sm:[margin-block-start:40px] md:grid-cols-3">
                 {% for item in topicItem.posts %}
                     {% include "_partials/components/article.njk" %}
                 {% endfor %}
