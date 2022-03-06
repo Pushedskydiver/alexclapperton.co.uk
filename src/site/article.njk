@@ -17,12 +17,42 @@ sitemap:
     priority: 0.8
 ---
 
+{% set thumbnail = article.featuredImage %}
+
 <main class="bg-slate-800 [padding-block:32px] md:[padding-block:48px]" id="main">
     <div class="container [margin-inline:auto] [padding-inline:16px]">
-        <article class="text-white [max-inline-size:45rem] [margin-inline:auto]">
-            <time class="block [margin-block-end:24px]" datetime="{{article.date}}"><strong class="fvs-sb">Published on:</strong> {{article.sys.firstPublishedAt | formatDate}}</time>
+        <div class="grid gap-40 [max-inline-size:60rem] [margin-inline:auto] sm:grid-cols-3">
+            <aside class="sm:col-span-1">
+                <picture class="relative block aspect-3/2 bg-slate-900 [max-inline-size:25rem] [margin-block-end:16px] [margin-inline:auto]">
+                    <source  media="(max-width: 47.9375rem)" type="image/webp" srcset="{{thumbnail.url}}?fm=webp&w=400">
+                    <source  media="(min-width: 48rem)" type="image/webp" srcset="{{thumbnail.url}}?fm=webp&w=600">
 
-            {{article.body | renderRichTextAsHtml | safe}}
-        </article>
+                    <source  media="(max-width: 47.9375rem)" srcset="{{thumbnail.url}}?w=400">
+                    <source  media="(min-width: 48rem)" type="image/webp" srcset="{{thumbnail.url}}?w=600">
+
+                    <img class="absolute [inset-block-start:0] [inset-inline-start:0] [inline-size:100%] [block-size:100%] object-cover p-8 border-2 border-solid border-slate-300 sm:p-12" src="{{thumbnail.url}}?w=400" alt="{{thumbnail.description}}" loading="lazy" decoding="async" width="300" height="200">
+                </picture>
+
+                <time class="block text-white text-sm leading-sm [margin-block-end:24px]" datetime="{{datePublished}}">
+                    <strong class="fvs-sb">Published:</strong>
+                    {{datePublished | formatDate}}
+                </time>
+
+                <details class="sticky [inset-block-start:8px]" open>
+                    <summary class="text-white text-md leading-md fvs-sb rounded-sm [margin-block-end:8px] focus:outline focus:outline-2 focus:outline-offset-4 focus:outline-yellow-400">
+                        <h2 class="inline-block">Table of contents</h2>
+                    </summary>
+
+                    <ol>
+                        {{article.body | renderTocTextAsHtml | safe}}
+                    </ol>
+                </details>
+            </aside>
+
+            <article class="text-white sm:col-span-2">
+                {{article.body | renderRichTextAsHtml | safe}}
+            </article>
+        </div>
+
     </div>
 </main>
