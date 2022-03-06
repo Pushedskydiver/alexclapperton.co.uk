@@ -37,6 +37,8 @@ exports.fetchContentfulData = async ({
 
     const response = await Cache(fetchUrl, fetchOptions);
 
+    console.log(response, 'response');
+
     // handle errors
     if (response.errors) {
       const errors = response.errors;
