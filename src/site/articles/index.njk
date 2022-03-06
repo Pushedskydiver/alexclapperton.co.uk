@@ -20,7 +20,7 @@ sitemap:
             </ul>
         </div>
 
-        <ul class="[margin-block-start:24px] sm:grid sm:grid-cols-2 sm:gap-24 sm:[margin-block-start:40px] md:grid-cols-3" aria-label="Articles">
+        <ul class="[margin-block-start:24px] grid gap-24 sm:grid-cols-2 md:grid-cols-3 sm:[margin-block-start:40px]" aria-label="Articles">
         {% for item in articles %}
             {% include "_partials/components/article.njk" %}
         {% endfor %}
