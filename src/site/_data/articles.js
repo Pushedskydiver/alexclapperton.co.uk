@@ -2,10 +2,11 @@ const { fetchContentfulData } = require('../../utils/fetchContentfulData');
 
 const variables = { preview: false };
 const type = 'articles';
-const query = `{
+const query = `query GetContentType2PqfXuJwE8QSyKuM0U6W8MCollection($preview: Boolean!) {
   contentType2PqfXuJwE8QSyKuM0U6W8MCollection(
     limit: 5
     order: [sys_firstPublishedAt_ASC]
+    preview: $preview
   ) {
     total
     skip
