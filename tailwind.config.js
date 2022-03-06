@@ -11,6 +11,7 @@ module.exports = {
     './src/site/index.njk',
     './src/site/article.njk',
     './src/site/project.njk',
+    './src/site/topic.njk',
     './src/site/offline.njk',
     './src/site/_includes/_layouts/*.njk',
     './src/site/_includes/_partials/components/*.njk',

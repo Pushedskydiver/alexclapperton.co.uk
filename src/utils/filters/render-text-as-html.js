@@ -1,6 +1,7 @@
 const { documentToHtmlString } = require('@contentful/rich-text-html-renderer');
 const { BLOCKS, INLINES, MARKS } = require('@contentful/rich-text-types');
 const codeBlock = require('../renders/codeBlock');
+const slugifyString = require('../tools/slugify-string');
 
 module.exports = (value) => {
   // create an asset map
@@ -22,7 +23,7 @@ module.exports = (value) => {
     },
     renderNode: {
       [BLOCKS.HEADING_2]: (node, next) => {
-        return `<h2 class="text-white text-xl leading-xl fvs-sb [margin-block-end:16px]">${next(node.content)}</h2>`
+        return `<h2 class="text-white text-xl leading-xl fvs-sb [margin-block-end:16px]" id="${slugifyString(next(node.content))}">${next(node.content)}</h2>`
       },
       [BLOCKS.HEADING_3]: (node, next) => {
         return `<h3 class="text-white text-lg leading-lg fvs-sb [margin-block-end:16px]">${next(node.content)}</h3>`

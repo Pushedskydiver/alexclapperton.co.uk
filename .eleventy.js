@@ -5,6 +5,7 @@ const formatDate = require('./src/utils/filters/format-date');
 const formatSitemapDate = require('./src/utils/filters/format-sitemap-date');
 const getRecentUpdatedArticle = require('./src/utils/filters/get-recent-updated-article-date');
 const renderRichTextAsHtml = require('./src/utils/filters/render-text-as-html.js');
+const renderTocTextAsHtml = require('./src/utils/filters/render-toc-as-html.js');
 const swStyles = require('./src/utils/shortcodes/sw-styles');
 const swScripts = require('./src/utils/shortcodes/sw-scripts.js');
 
@@ -15,6 +16,7 @@ module.exports = config => {
   config.addFilter('formatSitemapDate', formatSitemapDate);
   config.addFilter('getRecentUpdatedArticle', getRecentUpdatedArticle);
   config.addFilter('renderRichTextAsHtml', renderRichTextAsHtml);
+  config.addFilter('renderTocTextAsHtml', renderTocTextAsHtml);
 
   config.addShortcode('swStyles', swStyles);
   config.addShortcode('swScripts', swScripts);

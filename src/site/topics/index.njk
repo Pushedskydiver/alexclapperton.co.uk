@@ -1,0 +1,21 @@
+---
+title: Topics
+description: Posts about web development, accessibility and more.
+layout: _layouts/page
+sitemap:
+    changefreq: monthly
+    priority: 0.8
+---
+
+<main class="bg-slate-800 [padding-block:32px] pr-safe pl-safe md:[padding-block:48px]" id="main">
+    <div class="bg-black p-24">
+        <h2 class="text-white text-md leading-md fvs-md [margin-block-end:16px]">Explore articles by topic</h2>
+        <ul class="flex flex-wrap gap-16" aria-label="Topics">
+            {% for topic in topics %}
+                {% set item = topic %}
+
+                {% include '_partials/components/topic.njk' %}
+            {% endfor %}
+        </ul>
+    </div>
+</main>

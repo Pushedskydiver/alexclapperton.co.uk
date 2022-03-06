@@ -4,7 +4,7 @@ const variables = { preview: true };
 const type = 'articles';
 const query = `query GetContentType2PqfXuJwE8QSyKuM0U6W8MCollection($preview: Boolean!) {
   contentType2PqfXuJwE8QSyKuM0U6W8MCollection(
-    limit: 10
+    limit: 5
     order: [sys_firstPublishedAt_ASC]
     preview: $preview
   ) {
@@ -21,8 +21,19 @@ const query = `query GetContentType2PqfXuJwE8QSyKuM0U6W8MCollection($preview: Bo
       description
       slug
       year
-      date
-      tags
+      topicsCollection {
+        items {
+          sys {
+            id
+          }
+          name
+          slug
+          icon {
+            description
+            url
+          }
+        }
+      }
       isExternal
       featuredImage {
         width
@@ -64,7 +75,7 @@ const query = `query GetContentType2PqfXuJwE8QSyKuM0U6W8MCollection($preview: Bo
   }
 }`
 
-async function articlesData() {
+async function getArticlesData() {
   const response = await fetchContentfulData({ query, type, variables });
   const articles = response.data.contentType2PqfXuJwE8QSyKuM0U6W8MCollection.items;
 
@@ -72,4 +83,4 @@ async function articlesData() {
 }
 
 // export for 11ty
-module.exports = articlesData
+module.exports = getArticlesData

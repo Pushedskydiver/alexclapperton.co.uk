@@ -26,7 +26,7 @@ const query = `{
   }
 }`
 
-async function aboutMeData() {
+async function getAboutMeData() {
   const response = await fetchContentfulData({ query, type });
   const aboutMe = response.data.aboutMe;
 
@@ -34,4 +34,4 @@ async function aboutMeData() {
 }
 
 // export for 11ty
-module.exports = aboutMeData
+module.exports = getAboutMeData
