@@ -4,7 +4,7 @@ const variables = { preview: false };
 const type = 'articles';
 const query = `{
   contentType2PqfXuJwE8QSyKuM0U6W8MCollection(
-    limit: 10
+    limit: 5
     order: [sys_firstPublishedAt_ASC]
   ) {
     total
