@@ -20,6 +20,19 @@ const query = `{
       description
       slug
       year
+      topicsCollection {
+        items {
+          sys {
+            id
+          }
+          name
+          slug
+          icon {
+            description
+            url
+          }
+        }
+      }
       isExternal
       featuredImage {
         width
