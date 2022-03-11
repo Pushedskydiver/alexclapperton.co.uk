@@ -8,7 +8,7 @@
             <a class="border-b-2 border-b-yellow-400 hov:transition-colors hov:duration-200 hov:hover:bg-yellow-400 hov:hover:text-slate-900 motion-reduce:transition-none" href="/portfolio/">Portfolio</a> <span aria-hidden="true">/</span>
         </li>
     {% endif %}
-    {% if '/topics' in page.url %}
+    {% if '/topics/' in page.url and page.url !== '/topics/' %}
         <li class="text-base leading-base fvs-sb text-white">
             <a class="border-b-2 border-b-yellow-400 hov:transition-colors hov:duration-200 hov:hover:bg-yellow-400 hov:hover:text-slate-900 motion-reduce:transition-none" href="/topics/">Topics</a> <span aria-hidden="true">/</span>
         </li>

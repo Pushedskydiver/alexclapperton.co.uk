@@ -14,15 +14,18 @@ sitemap:
     priority: 0.8
 ---
 
+{% from "_partials/_macros/topic.njk" import topicLink %}
+
 <main class="bg-slate-800 [padding-block:32px] pr-safe pl-safe md:[padding-block:48px]" id="main">
     <div class="container [margin-inline:auto] [padding-inline:16px]">
-        <div class="bg-black p-24">
+        <div class="[padding-block:24px]">
             <h2 class="text-white text-md leading-md fvs-md [margin-block-end:16px]">Explore articles by topic</h2>
-            <ul class="flex flex-wrap gap-16" aria-label="Topics">
+
+            <ul class="flex flex-wrap gap-16" aria-label="Article topics">
                 {% for topicToShow in topics %}
                     {% set item = topicToShow %}
 
-                {% include '_partials/components/topic.njk' %}
+                    {{ topicLink(item.name, page.url, item.icon, item.slug) }}
                 {% endfor %}
             </ul>
         </div>

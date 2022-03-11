@@ -17,6 +17,8 @@ sitemap:
     priority: 0.8
 ---
 
+{% from "_partials/_macros/topic.njk" import topicLink %}
+{% set articleTopics = article.topicsCollection.items %}
 {% set thumbnail = article.featuredImage %}
 
 <main class="bg-slate-800 [padding-block:32px] md:[padding-block:48px]" id="main">
@@ -38,15 +40,27 @@ sitemap:
                     {{datePublished | formatDate}}
                 </time>
 
-                <details class="sticky [inset-block-start:8px]" open>
-                    <summary class="text-white text-md leading-md fvs-sb rounded-sm [margin-block-end:8px] focus:outline focus:outline-2 focus:outline-offset-4 focus:outline-yellow-400">
-                        <h2 class="inline-block">Table of contents</h2>
-                    </summary>
+                <div class="sticky [inset-block-start:8px]">
+                    <details class="cursor-pointer" open>
+                        <summary class="text-white text-md leading-md fvs-sb rounded-sm [margin-block-end:8px] focus:outline focus:outline-2 focus:outline-offset-4 focus:outline-yellow-400">
+                            <h2 class="inline-block">Table of contents</h2>
+                        </summary>
 
-                    <ol>
-                        {{article.body | renderTocTextAsHtml | safe}}
-                    </ol>
-                </details>
+                        <ol>
+                            {{article.body | renderTocTextAsHtml | safe}}
+                        </ol>
+                    </details>
+
+                    {% if articleTopics.length > 0 %}
+                        <ul class="flex flex-wrap gap-16 [margin-block-start:24px]" aria-label="Article topics">
+                            {% for item in articleTopics %}
+                                {% set body = 'More on ' + item.name  %}
+
+                                {{ topicLink(body, page.url, item.icon, item.slug) }}
+                            {% endfor %}
+                        </ul>
+                    {% endif %}
+                </div>
             </aside>
 
             <article class="text-white sm:col-span-2">
