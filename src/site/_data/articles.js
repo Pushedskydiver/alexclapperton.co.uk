@@ -5,7 +5,7 @@ const type = 'articles';
 const query = `query GetContentType2PqfXuJwE8QSyKuM0U6W8MCollection($preview: Boolean!) {
   contentType2PqfXuJwE8QSyKuM0U6W8MCollection(
     limit: 5
-    order: [sys_firstPublishedAt_ASC]
+    order: [sys_firstPublishedAt_DESC]
     preview: $preview
   ) {
     total
