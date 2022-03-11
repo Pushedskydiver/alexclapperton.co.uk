@@ -1,24 +1,35 @@
 {% set thumbnail = item.featuredImage %}
 {% set url = '/articles/' + item.year + '/' + item.slug + '/' %}
+{% set topics = item.topicsCollection.items %}
 
 <!-- BEGIN : ARTICLES ITEM -->
 <li>
-    <article class="relative sm:[block-size:100%] sm:flex sm:flex-col">
-        <!-- BEGIN : ARTICLES THUMBNAIL -->
-        <picture class="relative block aspect-3/2">
-            <source type="image/webp" srcset="{{thumbnail.url}}?fm=webp">
-            <img class="absolute [inset-block-start:0] [inset-inline-start:0] [inline-size:100%] [block-size:100%] object-cover" src="{{thumbnail.url}}" alt="{{thumbnail.description}}" loading="lazy" decoding="async" width="300" height="200">
-        </picture>
-        <!-- END : ARTICLES THUMBNAIL /-->
+    <article class="relative sm:[block-size:100%] sm:flex sm:flex-col-reverse">
         <!-- BEGIN : ARTICLES DETAILS -->
         <div class="flex flex-col justify-between p-16 bg-black sm:flex-1">
             <h3 class="[margin-block-end:16px] font-selawik text-md leading-md fvs-sb text-white">
                 <a class="inline border-solid border-b-2 border-white hov:transition-all hov:duration-200 hov:hover:bg-yellow-400 hov:hover:text-slate-900 hov:hover:border-yellow-400  motion-reduce:transition-none" href="{{url}}" {% if item.isExternal %}rel="external"{% endif %}>{{item.articleName}}</a>
             </h3>
 
-            <p class="text-base leading-base text-white">{{item.articleDescription}}</p>
+            {% if topics.length > 0 %}
+                <ul class="flex flex-wrap gap-16 [margin-block-start:24px]" aria-label="Article topics">
+                    {% for topic in topics %}
+                        <li>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" title="{{topic.name}}">
+                                <image href="{{topic.icon.url}}" width="100%" height="100%" />
+                            </svg>
+                        </li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
         </div>
         <!-- END : ARTICLES DETAILS /-->
+        <!-- BEGIN : ARTICLES THUMBNAIL -->
+        <picture class="relative block aspect-3/2 border-2 border-solid border-black">
+            <source type="image/webp" srcset="{{thumbnail.url}}?fm=webp">
+            <img class="absolute [inset-block-start:0] [inset-inline-start:0] [inline-size:100%] [block-size:100%] object-cover" src="{{thumbnail.url}}" alt="{{thumbnail.description}}" loading="lazy" decoding="async" width="300" height="200">
+        </picture>
+        <!-- END : ARTICLES THUMBNAIL /-->
     </article>
 </li>
 <!-- END : ARTICLES ITEM /-->
