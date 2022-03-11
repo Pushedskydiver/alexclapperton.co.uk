@@ -23,7 +23,6 @@ const query = `query GetTopicsCollection($slug: String!, $limit: Int!, $skip: In
               description
               url
             }
-            articleDescription
             topicsCollection {
               items {
                 sys {
