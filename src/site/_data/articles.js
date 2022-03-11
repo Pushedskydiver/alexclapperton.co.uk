@@ -41,7 +41,6 @@ const query = `query GetContentType2PqfXuJwE8QSyKuM0U6W8MCollection($preview: Bo
         description
         url
       }
-      articleDescription
       body {
         json
         links {
