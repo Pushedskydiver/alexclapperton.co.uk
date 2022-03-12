@@ -9,7 +9,7 @@ function renderTocAsHtml(value) {
       [BLOCKS.HEADING_1]: (node, next) => '',
       [BLOCKS.HEADING_2]: (node, next) => (`
         <li class="[margin-block-end:8px] last:[margin-block-end:0]">
-          <a href="#${slugifyString(next(node.content))}" class="text-yellow-400 text-sm leading-base fvs-sb border-b-2 border-b-yellow-400 hov:transition-colors hov:duration-200 hov:hover:bg-yellow-400 hov:hover:text-slate-900 motion-reduce:transition-none">${next(node.content)}</a>
+          <a href="#${slugifyString(next(node.content))}" class="text-yellow-400 text-sm leading-base fvs-sb border-b-2 border-b-yellow-400 hov:transition-colors hov:duration-200 hov:hover:bg-yellow-400 hov:hover:text-zinc-900 motion-reduce:transition-none">${next(node.content)}</a>
         </li>
       `),
       [BLOCKS.HEADING_3]: (node, next) => '',

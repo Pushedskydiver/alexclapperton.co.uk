@@ -7,27 +7,21 @@ pagination:
     addAllPagesToCollections: true
 permalink:  "topics/{{ topic.slug }}/index.html"
 eleventyComputed:
-    title: "Posts about {{ topic.name | lower }}."
+    title: "Posts about {{ topic.name | lower }}"
     description: "Explore content about {{topic.name}} from Alex Clapperton."
 sitemap:
     changefreq: monthly
     priority: 0.8
 ---
 
-{% from "_partials/_macros/topic.njk" import topicLink %}
+{% from "_partials/_macros/topic.njk" import topicsList %}
 
-<main class="bg-slate-800 [padding-block:32px] pr-safe pl-safe md:[padding-block:48px]" id="main">
-    <div class="container [margin-inline:auto] [padding-inline:16px]">
+<main class="bg-zinc-900 [padding-block:32px] pr-safe pl-safe md:[padding-block:48px]" id="main">
+    <div class="container [margin-inline:auto] [padding-inline:16px] sm:[padding-inline:32px] md:[padding-inline:48px]">
         <div class="[padding-block:24px]">
             <h2 class="text-white text-md leading-md fvs-md [margin-block-end:16px]">Explore articles by topic</h2>
 
-            <ul class="flex flex-wrap gap-16" aria-label="Article topics">
-                {% for topicToShow in topics %}
-                    {% set item = topicToShow %}
-
-                    {{ topicLink(item.name, page.url, item.icon, item.slug) }}
-                {% endfor %}
-            </ul>
+            {{ topicsList(topics, page.url) }}
         </div>
 
 

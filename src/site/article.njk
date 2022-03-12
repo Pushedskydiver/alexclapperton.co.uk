@@ -17,22 +17,22 @@ sitemap:
     priority: 0.8
 ---
 
-{% from "_partials/_macros/topic.njk" import topicLink %}
+{% from "_partials/_macros/topic.njk" import topicsList %}
 {% set articleTopics = article.topicsCollection.items %}
 {% set thumbnail = article.featuredImage %}
 
-<main class="bg-slate-800 [padding-block:32px] md:[padding-block:48px]" id="main">
-    <div class="container [margin-inline:auto] [padding-inline:16px]">
-        <div class="grid gap-40 [max-inline-size:60rem] [margin-inline:auto] sm:grid-cols-3">
-            <aside class="sm:col-span-1">
-                <picture class="relative block aspect-3/2 bg-slate-900 [max-inline-size:25rem] [margin-block-end:16px] [margin-inline:auto]">
+<main class="bg-zinc-900 [padding-block:32px] md:[padding-block:48px]" id="main">
+    <div class="container [margin-inline:auto] [padding-inline:16px] sm:[padding-inline:32px] md:[padding-inline:48px]">
+        <div class="[max-inline-size:60rem] [margin-inline:auto] sm:grid sm:gap-40 sm:grid-cols-3">
+            <aside class="[margin-block-end:40px] sm:col-span-1 sm:[margin-block-end:0]">
+                <picture class="relative block aspect-3/2 bg-zinc-900 [max-inline-size:25rem] [margin-block-end:16px] [margin-inline:auto]">
                     <source  media="(max-width: 47.9375rem)" type="image/webp" srcset="{{thumbnail.url}}?fm=webp&w=400">
                     <source  media="(min-width: 48rem)" type="image/webp" srcset="{{thumbnail.url}}?fm=webp&w=600">
 
                     <source  media="(max-width: 47.9375rem)" srcset="{{thumbnail.url}}?w=400">
                     <source  media="(min-width: 48rem)" type="image/webp" srcset="{{thumbnail.url}}?w=600">
 
-                    <img class="absolute [inset-block-start:0] [inset-inline-start:0] [inline-size:100%] [block-size:100%] object-cover p-8 border-2 border-solid border-slate-300 sm:p-12" src="{{thumbnail.url}}?w=400" alt="{{thumbnail.description}}" loading="lazy" decoding="async" width="300" height="200">
+                    <img class="absolute [inset-block-start:0] [inset-inline-start:0] [inline-size:100%] [block-size:100%] object-cover p-8 border-2 border-solid border-zinc-300 sm:p-12" src="{{thumbnail.url}}?w=400" alt="{{thumbnail.description}}" loading="lazy" decoding="async" width="300" height="200">
                 </picture>
 
                 <time class="block text-white text-sm leading-sm [margin-block-end:24px]" datetime="{{datePublished}}">
@@ -51,15 +51,7 @@ sitemap:
                         </ol>
                     </details>
 
-                    {% if articleTopics.length > 0 %}
-                        <ul class="flex flex-wrap gap-16 [margin-block-start:24px]" aria-label="Article topics">
-                            {% for item in articleTopics %}
-                                {% set body = 'More on ' + item.name  %}
-
-                                {{ topicLink(body, page.url, item.icon, item.slug) }}
-                            {% endfor %}
-                        </ul>
-                    {% endif %}
+                    {{ topicsList(articleTopics, page.url, true) }}
                 </div>
             </aside>
 
