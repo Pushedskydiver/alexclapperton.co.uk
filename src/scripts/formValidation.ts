@@ -22,13 +22,13 @@ function FormValidation(form: HTMLFormElement) {
     if (isValid && element.value.length !== 0) {
       element.classList.add('border-lime-500');
       element.classList.remove('border-red-400');
-      element.classList.remove('border-slate-700');
+      element.classList.remove('border-zinc-700');
       return;
     }
 
     element.classList.add('border-red-400');
     element.classList.remove('border-lime-500');
-    element.classList.remove('border-slate-700');
+    element.classList.remove('border-zinc-700');
     validationMessage.classList.remove('hidden');
   }
 
@@ -40,13 +40,13 @@ function FormValidation(form: HTMLFormElement) {
     if (isNotEmpty) {
       element.classList.add('border-lime-500');
       element.classList.remove('border-red-400');
-      element.classList.remove('border-slate-700');
+      element.classList.remove('border-zinc-700');
       return;
     }
 
     element.classList.add('border-red-400');
     element.classList.remove('border-lime-500');
-    element.classList.remove('border-slate-700');
+    element.classList.remove('border-zinc-700');
     validationMessage.classList.remove('hidden');
   }
 

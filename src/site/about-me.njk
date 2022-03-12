@@ -12,7 +12,7 @@ sitemap:
 {% set heroImageDesktop = aboutMe.heroImageCollection.items[0] %}
 {% set heroImageMobile = aboutMe.heroImageCollection.items[1] %}
 
-<main class="bg-slate-800 pr-safe pl-safe md:flex md:flex-row-reverse md:flex-wrap md:justify-between md:items-center" id="main">
+<main class="bg-zinc-900 pr-safe pl-safe md:flex md:flex-row-reverse md:flex-wrap md:justify-between md:items-center" id="main">
     <picture class="relative block aspect-4/3 md:flex-[3]">
         <source media="(max-width: 59.9375rem)" type="image/avif" srcset="{{heroImageMobile.url}}?fm=avif">
         <source media="(min-width: 60rem)" type="image/avif" srcset="{{heroImageDesktop.url}}?fm=avif">
@@ -30,11 +30,11 @@ sitemap:
         <h2 class="[margin-block-end:16px] text-white text-xxl leading-xxl fvs-sb font-selawik">Who am I?</h2>
 
         <p class="[margin-block-end:24px] text-white text-base leading-base fvs-rg">I'm Alex, a Front-end software engineer from the UK. My passion is to build beautiful and responsive websites with accessibility at the heart of it. I am currently working as a software engineer for
-            <a class="text-yellow-400 fvs-sb border-b-2 border-b-yellow-400 hov:transition-colors hov:duration-200 hov:hover:bg-yellow-400 hov:hover:text-slate-900 motion-reduce:transition-none" href="{{settings.employerUrl}}" rel="external">{{settings.employer}}</a>, a faff-free way to buy used cars online.</p>
+            <a class="text-yellow-400 fvs-sb border-b-2 border-b-yellow-400 hov:transition-colors hov:duration-200 hov:hover:bg-yellow-400 hov:hover:text-zinc-900 motion-reduce:transition-none" href="{{settings.employerUrl}}" rel="external">{{settings.employer}}</a>, a faff-free way to buy used cars online.</p>
 
         <p class="[margin-block-end:24px] text-white text-base leading-base fvs-rg">I thrive off learning new skills, being challenged daily and having to prove myself under pressure and being part of such young and dynamic industry is the perfect motivation for me to keep improving myself both professionally and personally.</p>
 
-        <a class="relative [padding-block:12px] [padding-inline:24px]  bg-yellow-400 text-slate-900 text-base leading-base fvs-md inline-flex justify-center items-center gap-8 rounded-sm focus:outline focus:outline-2 focus:outline-offset-4 focus:outline-yellow-400 hov:after:absolute hov:after:bottom-0 hov:after:[inset-inline-start:0] hov:after:[inline-size:100%] hov:after:[block-size:100%] hov:after:bg-yellow-600 hov:after:rounded-sm hov:after:transition-transform hov:after:duration-200 hov:after:-z-10 hov:hover:after:translate-x-8 hov:hover:after:translate-y-8 motion-reduce:after:transition-none" href="/contact/">
+        <a class="relative [padding-block:12px] [padding-inline:24px]  bg-yellow-400 text-zinc-900 text-base leading-base fvs-md inline-flex justify-center items-center gap-8 rounded-sm focus:outline focus:outline-2 focus:outline-offset-4 focus:outline-yellow-400 hov:after:absolute hov:after:bottom-0 hov:after:[inset-inline-start:0] hov:after:[inline-size:100%] hov:after:[block-size:100%] hov:after:bg-yellow-600 hov:after:rounded-sm hov:after:transition-transform hov:after:duration-200 hov:after:-z-10 hov:hover:after:translate-x-8 hov:hover:after:translate-y-8 motion-reduce:after:transition-none" href="/contact/">
             Get in touch
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewbox="0 0 24 24" aria-hidden="true"><path fill="currentColor" fill-rule="evenodd" d="M3 13h14.17l-3.58 3.59L15 18l6-6-6-6-1.41 1.41L17.17 11H3v2Z" clip-rule="evenodd"/></svg>
         </a>
@@ -42,14 +42,14 @@ sitemap:
 </main>
 
 <section class="[padding-block:32px] pr-safe pl-safe md:[padding-block:48px]" aria-labelledby="fun-facts">
-    <div class="container [margin-inline:auto] [padding-inline:16px]">
+    <div class="container [margin-inline:auto] [padding-inline:16px] sm:[padding-inline:32px] md:[padding-inline:48px]">
         <h2 class="text-xxl leading-xxl text-white font-selawik fvs-sb [margin-block-end:16px]" id="fun-facts">Fun facts</h2>
 
         <p class="text-base leading-base text-white fvs-rg [margin-block-end:24px] max-w-[550px]">Here are some facts about me that I think you may find interesting and hopefully make you giggle along the way.</p>
 
         <ul class="sm:grid sm:grid-cols-2 sm:gap-24 md:grid-cols-3">
             {% for item in aboutMe.contentBlockCollection.items %}
-                <li class="[margin-block-end:24px] last:[margin-block-end:0] p-32 bg-slate-800 sm:[margin-block-end:0]"-delay="0.{{loop.index}}s">
+                <li class="[margin-block-end:24px] last:[margin-block-end:0] p-32 bg-zinc-900 sm:[margin-block-end:0]"-delay="0.{{loop.index}}s">
                     <h3 class="text-xl leading-xl text-white font-selawik fvs-sb [margin-block-end:16px]">{{item.title}}</h3>
                     <p class="text-base leading-base text-white fvs-rg">{{item.body}}</p>
                 </li>
@@ -58,8 +58,8 @@ sitemap:
     </div>
 </section>
 
-<section class="[padding-block:32px] pr-safe pl-safe bg-slate-800 md:[padding-block:48px]" aria-labelledby="latest-articles">
-    <div class="container [margin-inline:auto] [padding-inline:16px]">
+<section class="[padding-block:32px] pr-safe pl-safe bg-zinc-900 md:[padding-block:48px]" aria-labelledby="latest-articles">
+    <div class="container [margin-inline:auto] [padding-inline:16px] sm:[padding-inline:32px] md:[padding-inline:48px]">
         <h2 class="[margin-block-end:16px] text-white text-xl leading-xl fvs-sb font-selawik md:[margin-block-end:24px]" id="latest-articles">
             <small class="block text-base leading-xs fvs-rg font-avenir-next">Read my</small>
             Latest articles
@@ -73,7 +73,7 @@ sitemap:
             {% endfor %}
         </ul>
 
-        <a class="[margin-block-start:32px] [padding-block:12px] [padding-inline:24px] bg-transparent text-white border-2 border-white border-solid text-base leading-base fvs-md inline-flex justify-center items-center gap-8 rounded-sm sm:w-auto focus:bg-white focus:text-slate-900 focus:outline focus:outline-2 focus:outline-offset-4 focus:outline-yellow-400 hov:transition-colors hov:duration-200 hov:hover:bg-white hov:hover:text-slate-900 motion-reduce:transition-none" href="/articles/">
+        <a class="[margin-block-start:32px] [padding-block:12px] [padding-inline:24px] bg-transparent text-white border-2 border-white border-solid text-base leading-base fvs-md inline-flex justify-center items-center gap-8 rounded-sm sm:w-auto focus:bg-white focus:text-zinc-900 focus:outline focus:outline-2 focus:outline-offset-4 focus:outline-yellow-400 hov:transition-colors hov:duration-200 hov:hover:bg-white hov:hover:text-zinc-900 motion-reduce:transition-none" href="/articles/">
             View articles
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewbox="0 0 24 24" aria-hidden="true"><path fill="currentColor" fill-rule="evenodd" d="M3 13h14.17l-3.58 3.59L15 18l6-6-6-6-1.41 1.41L17.17 11H3v2Z" clip-rule="evenodd"/></svg>
         </a>

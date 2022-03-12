@@ -65,7 +65,7 @@
   }
 
   .sl {
-    @apply absolute bg-slate-900 whitespace-nowrap border-0 text-center [padding-block:8px] z-120 sm:[padding-block:16px];
+    @apply absolute bg-zinc-900 whitespace-nowrap border-0 text-center [padding-block:8px] z-120 sm:[padding-block:16px];
     clip: rect(0,0,0,0);
     inline-size: 1px;
     block-size: 1px;
@@ -81,7 +81,7 @@
   }
 
   [data-navigation-trigger][aria-expanded="true"] {
-    @apply bg-white text-slate-900;
+    @apply bg-white text-zinc-900;
   }
 
   [data-navigation-trigger][aria-expanded="true"] svg {

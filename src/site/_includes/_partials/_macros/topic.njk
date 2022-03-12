@@ -1,4 +1,19 @@
 
+{% macro topicsList(topics, currentUrl, isArticle = false) %}
+    <ul class="flex flex-wrap gap-16 [margin-block-start:24px]" aria-label="Article topics">
+        {% for item in topics %}
+            {% if isArticle %}
+                {% set body = 'More on ' + item.name  %}
+            {% else %}
+                {% set body = item.name  %}
+            {% endif %}
+
+            {{ topicLink(body, currentUrl, item.icon, item.slug) }}
+        {% endfor %}
+    </ul>
+{% endmacro %}
+
+
 {% macro topicLink(body, currentUrl, icon, slug) %}
     {% set topicUrl = '/topics/' + slug + '/' %}
     {% set isActiveTopic = currentUrl === topicUrl %}
