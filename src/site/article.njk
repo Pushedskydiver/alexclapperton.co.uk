@@ -17,12 +17,12 @@ sitemap:
     priority: 0.8
 ---
 
-{% from "_partials/_macros/topic.njk" import topicLink %}
+{% from "_partials/_macros/topic.njk" import topicsList %}
 {% set articleTopics = article.topicsCollection.items %}
 {% set thumbnail = article.featuredImage %}
 
 <main class="bg-slate-800 [padding-block:32px] md:[padding-block:48px]" id="main">
-    <div class="container [margin-inline:auto] [padding-inline:16px]">
+    <div class="container [margin-inline:auto] [padding-inline:16px] sm:[padding-inline:32px] md:[padding-inline:48px]">
         <div class="[max-inline-size:60rem] [margin-inline:auto] sm:grid sm:gap-40 sm:grid-cols-3">
             <aside class="[margin-block-end:40px] sm:col-span-1 sm:[margin-block-end:0]">
                 <picture class="relative block aspect-3/2 bg-slate-900 [max-inline-size:25rem] [margin-block-end:16px] [margin-inline:auto]">
@@ -51,15 +51,7 @@ sitemap:
                         </ol>
                     </details>
 
-                    {% if articleTopics.length > 0 %}
-                        <ul class="flex flex-wrap gap-16 [margin-block-start:24px]" aria-label="Article topics">
-                            {% for item in articleTopics %}
-                                {% set body = 'More on ' + item.name  %}
-
-                                {{ topicLink(body, page.url, item.icon, item.slug) }}
-                            {% endfor %}
-                        </ul>
-                    {% endif %}
+                    {{ topicsList(articleTopics, page.url, true) }}
                 </div>
             </aside>
 

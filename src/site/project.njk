@@ -18,7 +18,7 @@ sitemap:
 {% set mobileBrowserImage = project.browserImagesCollection.items[1] %}
 
 <main class="[padding-block:32px] pr-safe pl-safe md:[padding-block:48px] bg-slate-800" id="main">
-    <div class="container [margin-inline:auto] [padding-inline:16px] md:flex md:flex-row-reverse md:flex-wrap md:justify-between md:gap-48">
+    <div class="container [margin-inline:auto] [padding-inline:16px] sm:[padding-inline:32px] md:[padding-inline:48px] md:flex md:flex-row-reverse md:flex-wrap md:justify-between md:gap-48">
         <div class="md:[flex:2]">
             {% if project.body %}
                 {{ project.body | renderRichTextAsHtml | safe }}
@@ -48,7 +48,7 @@ sitemap:
 </main>
 
 <section class="[padding-block:32px] pr-safe pl-safe md:[padding-block:48px]">
-    <ul class="container [margin-inline:auto] [padding-inline:16px] sm:grid sm:grid-cols-3 sm:gap-24">
+    <ul class="container [margin-inline:auto] [padding-inline:16px] sm:grid sm:grid-cols-3 sm:gap-24 sm:[padding-inline:32px] md:[padding-inline:48px]">
     {% for item in project.deviceImagesCollection.items %}
         {% include "_partials/components/devices.njk" %}
     {% endfor %}

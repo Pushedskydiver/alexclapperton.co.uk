@@ -59,8 +59,6 @@ module.exports = {
       sm: '48rem',
       md: '60rem',
       lg: '80rem',
-      xl: '90rem',
-      xxl: '120rem',
       hov: { 'raw': '(hover)' }
     },
     spacing: {
