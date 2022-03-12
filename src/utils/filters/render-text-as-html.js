@@ -18,7 +18,7 @@ module.exports = (value) => {
   const options = {
     renderMark: {
       [MARKS.CODE]: (text) => {
-        return `<code class="bg-stone-700 text-slate-200 rounded-sm p-4">${text}</code>`;
+        return `<code class="bg-zinc-700 text-zinc-200 rounded-sm p-4">${text}</code>`;
       }
     },
     renderNode: {
@@ -44,12 +44,12 @@ module.exports = (value) => {
         return `<li class="[margin-block-end:16px] last:[margin-block-end:0]">${next(node.content)}</li>`
       },
       [BLOCKS.HR]: () => {
-        return `<hr class="[margin-block:24px] border-slate-300">`
+        return `<hr class="[margin-block:24px] border-zinc-300">`
       },
       [BLOCKS.QUOTE]: (node, next) => {
         return `
-          <blockquote class="relative text-center border-t-2 border-b-2 border-solid border-slate-300 [margin-block-start:64px] [margin-block-end:48px] [padding-block:48px]">
-            <span class="absolute [inset-block-start:-25px] [inset-inline-start:50%] [inline-size:50px] [block-size:50px] [margin-inline:auto] bg-yellow-400 text-slate-900 text-xxxl [line-height:normal] fvs-rg font-selawik rounded-full -translate-x-1/2">“</span>
+          <blockquote class="relative text-center border-t-2 border-b-2 border-solid border-zinc-300 [margin-block-start:64px] [margin-block-end:48px] [padding-block:48px]">
+            <span class="absolute [inset-block-start:-25px] [inset-inline-start:50%] [inline-size:50px] [block-size:50px] [margin-inline:auto] bg-yellow-400 text-zinc-900 text-xxxl [line-height:normal] fvs-rg font-selawik rounded-full -translate-x-1/2">“</span>
 
             ${node.content.map(item => {
               return `<p class="text-white text-lg leading-lg fvs-sb italic [margin-block-end:8px] last:[margin-block-end:0]">${next(item.content)}</p>`
@@ -72,7 +72,7 @@ module.exports = (value) => {
                 <source media="(max-width: 44.9375rem)" srcset="${url}?w=570">
                 <source media="(min-width: 45rem)" srcset="${url}">
 
-                <img class="absolute [inset-inline-start:0] [inset-block-start:0] [inline-size:100%] [block-size:100%] object-cover p-8 border-2 border-solid border-slate-300 sm:p-16" src="${url}" alt="${description}" width="${width}" height="${height}" loading="lazy" decoding="async">
+                <img class="absolute [inset-inline-start:0] [inset-block-start:0] [inline-size:100%] [block-size:100%] object-cover p-8 border-2 border-solid border-zinc-300 sm:p-16" src="${url}" alt="${description}" width="${width}" height="${height}" loading="lazy" decoding="async">
               </picture>
             </div>
 
@@ -91,7 +91,7 @@ module.exports = (value) => {
         }
       },
       [INLINES.HYPERLINK]: (node, next) => {
-        return `<a href="${node.data.uri}" class="text-yellow-400 fvs-sb border-b-2 border-b-yellow-400 hov:transition-colors hov:duration-200 hov:hover:bg-yellow-400 hov:hover:text-slate-900 motion-reduce:transition-none">${next(node.content)}</a>`
+        return `<a href="${node.data.uri}" class="text-yellow-400 fvs-sb border-b-2 border-b-yellow-400 hov:transition-colors hov:duration-200 hov:hover:bg-yellow-400 hov:hover:text-zinc-900 motion-reduce:transition-none">${next(node.content)}</a>`
       },
     }
   }

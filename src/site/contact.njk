@@ -7,7 +7,7 @@ sitemap:
     priority: 1
 ---
 
-<main class="[padding-block:32px] pr-safe pl-safe md:[padding-block:48px]" id="main">
+<main class="bg-zinc-900 [padding-block:32px] pr-safe pl-safe md:[padding-block:48px]" id="main">
     <article class="container [margin-inline:auto] [padding-inline:16px] sm:grid sm:grid-cols-3 sm:gap-x-64 sm:gap-y-48 sm:[padding-inline:32px] md:[padding-inline:48px]" id="contact">
         <div class="[margin-block-end:40px] sm:col-span-2 sm:[margin-block-end:0]">
             <h2 class="[margin-block-end:16px] text-white text-xxl leading-xxl fvs-sb font-selawik md:[margin-block-end:24px]">Drop me a line</h2>
@@ -21,11 +21,11 @@ sitemap:
             <fieldset class="relative">
                 <legend class="sr-only">Enter your name, email and your message.</legend>
 
-                <div class="[margin-block-end:24px] sm:grid sm:grid-cols-2 sm:gap-x-32">
+                <div class="relative z-10 [margin-block-end:24px] sm:grid sm:grid-cols-2 sm:gap-x-32">
                     <div class="relative [margin-block-end:24px] sm:col-span-1">
                         <label class="block text-white text-base leading-base fvs-sb [margin-block-end:8px]" id="nameLabel" for="name">Name</label>
 
-                        <input class="bg-slate-800 text-white text-base leading-base border-2 border-solid border-slate-700 transition-colors duration-200 [inline-size:100%] [padding-block:8px] [padding-inline:16px] focus:border-yellow-400 valid:border-lime-500 motion-reduce:transition-none" id="name" type="text" name="name" aria-required="true" aria-labelledby="nameLabel" aria-describedby="nameDescribe" pattern="^[a-zA-Z \-']+$" required data-input>
+                        <input class="bg-zinc-800 text-white text-base leading-base border-2 border-solid border-zinc-700 transition-colors duration-200 outline-none [inline-size:100%] [padding-block:8px] [padding-inline:16px] focus:border-yellow-400 valid:border-lime-500 motion-reduce:transition-none" id="name" type="text" name="name" aria-required="true" aria-labelledby="nameLabel" aria-describedby="nameDescribe" pattern="^[a-zA-Z \-']+$" required data-input>
 
                         <small class="hidden absolute text-red-400 fvs-rg [inset-block-start:0] [inset-inline-end:0]" id="nameDescribe" data-validation>Your name is required</small>
                     </div>
@@ -33,7 +33,7 @@ sitemap:
                     <div class="relative [margin-block-end:24px] sm:col-span-1">
                         <label class="block text-white text-base leading-base fvs-sb [margin-block-end:8px]" id="emailLabel" for="email">Email</label>
 
-                        <input class="bg-slate-800 text-white text-base leading-base border-2 border-solid border-slate-700 transition-colors duration-200 [inline-size:100%] [padding-block:8px] [padding-inline:16px] focus:border-yellow-400 valid:border-lime-500 motion-reduce:transition-none" id="email" type="email" name="email" aria-required="true" aria-labelledby="emailLabel" aria-describedby="emailDescribe" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" required data-input>
+                        <input class="bg-zinc-800 text-white text-base leading-base border-2 border-solid border-zinc-700 transition-colors duration-200 outline-none [inline-size:100%] [padding-block:8px] [padding-inline:16px] focus:border-yellow-400 valid:border-lime-500 motion-reduce:transition-none" id="email" type="email" name="email" aria-required="true" aria-labelledby="emailLabel" aria-describedby="emailDescribe" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" required data-input>
 
                         <small class="hidden absolute text-red-400 fvs-rg [inset-block-start:0] [inset-inline-end:0]" id="emailDescribe" data-validation>Enter a valid email address</small>
                     </div>
@@ -41,12 +41,12 @@ sitemap:
                     <div class="relative [margin-block-end:24px] sm:col-span-full">
                         <label class="block text-white text-base leading-base fvs-sb [margin-block-end:8px]" id="messageLabel" for="message">Message</label>
 
-                        <textarea class="bg-slate-800 text-white text-base leading-base border-2 border-solid border-slate-700 transition-colors duration-200 [inline-size:100%] [padding-block:8px] [padding-inline:16px] focus:border-yellow-400 valid:border-lime-500 motion-reduce:transition-none" id="message" name="message" name="message" rows="6" cols="80" aria-required="true" aria-labelledby="messageLabel" aria-describedby="messageDescribe" required data-textarea></textarea>
+                        <textarea class="bg-zinc-800 text-white text-base leading-base border-2 border-solid border-zinc-700 transition-colors duration-200 outline-none [inline-size:100%] [padding-block:8px] [padding-inline:16px] focus:border-yellow-400 valid:border-lime-500 motion-reduce:transition-none" id="message" name="message" name="message" rows="6" cols="80" aria-required="true" aria-labelledby="messageLabel" aria-describedby="messageDescribe" required data-textarea></textarea>
 
                         <small class="hidden absolute text-red-400 fvs-rg [inset-block-start:0] [inset-inline-end:0]" id="messageDescribe" data-validation>Please enter your message</small>
                     </div>
 
-                    <button class="relative [padding-block:12px] [padding-inline:24px] bg-yellow-400 text-slate-900 text-base leading-base fvs-md inline-flex justify-center items-center gap-8 rounded-sm sm:justify-self-start focus:outline focus:outline-2 focus:outline-offset-4 focus:outline-yellow-400 hov:after:absolute hov:after:[inset-block-end:0] hov:after:[inset-inline-start:0] hov:after:[inline-size:100%] hov:after:[block-size:100%] hov:after:bg-yellow-600 hov:after:rounded-sm hov:after:transition-transform hov:after:duration-200 hov:after:-z-10 hov:hover:after:translate-x-8 hov:hover:after:translate-y-8 motion-reduce:after:transition-none" type="submit" name="button" data-submit-button>Submit form</button>
+                    <button class="relative [padding-block:12px] [padding-inline:24px] bg-yellow-400 text-zinc-900 text-base leading-base fvs-md inline-flex justify-center items-center gap-8 rounded-sm sm:justify-self-start focus:outline focus:outline-2 focus:outline-offset-4 focus:outline-yellow-400 hov:after:absolute hov:after:[inset-block-end:0] hov:after:[inset-inline-start:0] hov:after:[inline-size:100%] hov:after:[block-size:100%] hov:after:bg-yellow-600 hov:after:rounded-sm hov:after:transition-transform hov:after:duration-200 hov:after:-z-10 hov:hover:after:translate-x-8 hov:hover:after:translate-y-8 motion-reduce:after:transition-none" type="submit" name="button" data-submit-button>Submit form</button>
                 </div>
 
                 <span class="hidden bg-red-400 text-base leading-base fvs-md [margin-block-start:24px] [padding-block:8px] [padding-inline:16px]" data-form-error>Oops. There was an error. Please submit the form again.</span>
@@ -54,14 +54,14 @@ sitemap:
             </fieldset>
         </form>
 
-        <aside class="bg-slate-800 [padding-block:32px] [padding-inline:24px] sm:col-start-3 sm:row-start-1 sm:row-span-2">
+        <aside class="bg-zinc-800 [padding-block:32px] [padding-inline:24px] sm:col-start-3 sm:row-start-1 sm:row-span-2">
             <h3 class="text-white text-lg leading-lg font-selawik fvs-sb [margin-block-end:24px]">Contact details</h3>
 
             <dl class="contact__list">
                 <dt class="text-white text-base leading-base fvs-md [margin-block-end:8px]">Email</dt>
 
                 <dd class="[margin-block-end:32px]">
-                    <a class="text-base leading-base fvs-md text-yellow-400 border-solid border-b-2 border-yellow-400 hov:transition-colors hov:duration-200 hov:hover:bg-yellow-400 hov:hover:text-slate-900 motion-reduce:transition-none" href="mailto:{{settings.email}}">{{settings.email}}</a>
+                    <a class="text-base leading-base fvs-md text-yellow-400 border-solid border-b-2 border-yellow-400 hov:transition-colors hov:duration-200 hov:hover:bg-yellow-400 hov:hover:text-zinc-900 motion-reduce:transition-none" href="mailto:{{settings.email}}">{{settings.email}}</a>
                 </dd>
 
                 <dt class="text-white text-base leading-base fvs-md [margin-block-end:8px]">Social Links</dt>
@@ -70,7 +70,7 @@ sitemap:
                     <ul>
                         {% for item in settings.social %}
                         <li class="[margin-block-end:16px] last:[margin-block-end:0]">
-                            <a class="text-base leading-base fvs-md text-yellow-400 border-solid border-b-2 border-yellow-400 hov:transition-colors hov:duration-200 hov:hover:bg-yellow-400 hov:hover:text-slate-900 motion-reduce:transition-none" href="{{item.url}}" title="{{item.titleAttr}}"{% if item.external %} rel="external"{% endif %}>{{item.title}}</a>
+                            <a class="text-base leading-base fvs-md text-yellow-400 border-solid border-b-2 border-yellow-400 hov:transition-colors hov:duration-200 hov:hover:bg-yellow-400 hov:hover:text-zinc-900 motion-reduce:transition-none" href="{{item.url}}" title="{{item.titleAttr}}"{% if item.external %} rel="external"{% endif %}>{{item.title}}</a>
                         </li>
                         {% endfor %}
                     </ul>

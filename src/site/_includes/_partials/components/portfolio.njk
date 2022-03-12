@@ -1,7 +1,7 @@
 {% set thumbnail = item.featuredImage %}
 {% set url = '/portfolio/' + item.slug + '/' %}
 
-<li class="relative [margin-block-end:32px] bg-slate-900 sm:[inline-size:100%] sm:inline-block sm:[margin-block-end:24px]">
+<li class="relative [margin-block-end:32px] bg-zinc-900 sm:[inline-size:100%] sm:inline-block sm:[margin-block-end:24px]">
     <figure class="relative grid before:absolute before:[inset-block-start:0] before:[inset-inline-start:0] before:[inline-size:100%] before:[block-size:100%] before:z-10 before:bg-gradient-to-t before:from-black before:outline before:outline-4 before:outline-yellow-400 before:outline-offset-[-16px]">
         <picture class="relative block row-span-full col-span-full" style="aspect-ratio:{{thumbnail.width}}/{{thumbnail.height}};">
             <source type="image/webp" srcset="{{thumbnail.url}}?fm=webp">
