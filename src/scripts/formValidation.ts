@@ -5,61 +5,36 @@ function FormValidation(form: HTMLFormElement) {
   const errorMessage: HTMLElement | any = document.querySelector('[data-form-error]');
   const successMessage: HTMLElement | any = document.querySelector('[data-form-success]');
 
-  // TODO: Tidy this up
-
-  function getInputPattern(input: any) {
-    const pattern = input.getAttribute('pattern');
-    const regex = RegExp(pattern);
-
-    return new RegExp(regex, 'i').test(input.value);
-  }
-
-  function validateInput(event: any) {
-    const element = event.currentTarget || event;
-    const isValid = getInputPattern(element);
-    const validationMessage = element.nextElementSibling;
-
-    if (isValid && element.value.length !== 0) {
-      element.classList.add('border-lime-500');
-      element.classList.remove('border-red-400');
-      element.classList.remove('border-zinc-700');
-      return;
-    }
-
-    element.classList.add('border-red-400');
-    element.classList.remove('border-lime-500');
-    element.classList.remove('border-zinc-700');
-    validationMessage.classList.remove('hidden');
-  }
-
-  function validateTextarea(event: any) {
-    const element = event.currentTarget || event;
-    const isNotEmpty = element.value.length !== 0;
-    const validationMessage = element.nextElementSibling;
-
-    if (isNotEmpty) {
-      element.classList.add('border-lime-500');
-      element.classList.remove('border-red-400');
-      element.classList.remove('border-zinc-700');
-      return;
-    }
-
-    element.classList.add('border-red-400');
-    element.classList.remove('border-lime-500');
-    element.classList.remove('border-zinc-700');
-    validationMessage.classList.remove('hidden');
-  }
+  let inputValidationErrorFound = false;
 
   function showSuccessMessage() {
-    successMessage.classList.remove('hidden');
+    submitButton.setAttribute('aria-describedby', 'formSuccess');
+    successMessage.removeAttribute('hidden');
   }
 
   function showErrorMessage() {
-    errorMessage.classList.remove('hidden');
+    submitButton.setAttribute('aria-describedby', 'formError');
+    errorMessage.removeAttribute('hidden');
+  }
+
+  function setInvalidInputState(input: HTMLInputElement | HTMLTextAreaElement) {
+    const inputId = input.id;
+
+    input.setAttribute('aria-describedby', `${inputId}Describe`);
+    input.classList.add('border-red-400');
+    input.classList.remove('border-lime-400');
+    input.nextElementSibling?.removeAttribute('hidden');
+  }
+
+  function setValidInputState(input: HTMLInputElement | HTMLTextAreaElement) {
+    input.removeAttribute('aria-describedby');
+    input.classList.remove('border-red-400');
+    input.classList.add('border-lime-400');
+    input.nextElementSibling?.setAttribute('hidden', 'true');
   }
 
   function submitForm() {
-    const formData: any = new FormData(form);
+    const formData = new FormData(form).toString();
     const url: string | any = form.getAttribute('action');
 
     fetch(url, {
@@ -74,37 +49,40 @@ function FormValidation(form: HTMLFormElement) {
       .catch(showErrorMessage);
   }
 
-  function validateAllFields(event: Event) {
-    let firstErrorFound = false;
+  function validateInput(input: HTMLInputElement | HTMLTextAreaElement) {
+    const isEmail = input.getAttribute('type') === 'email';
+    const isValidEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(input.value);
+    const isValidInput = isEmail ? isValidEmail : input.value.length > 0;
 
-    event.preventDefault();
-
-    inputs.forEach(input => {
-      validateInput(input);
-
-      if (input.classList.contains('border-red-400') && !firstErrorFound) {
-        input.focus();
-        firstErrorFound = true;
-      }
-    });
-
-    validateTextarea(textarea);
-
-    if (textarea.classList.contains('border-red-400') && !firstErrorFound) {
-      textarea.focus();
-      firstErrorFound = true;
+    if (!isValidInput && !inputValidationErrorFound) {
+      inputValidationErrorFound = true;
+      input.focus();
     }
 
-    if (!firstErrorFound) {
+    if (!isValidInput) setInvalidInputState(input);
+
+    if (isValidInput) {
+      inputValidationErrorFound = false;
+      setValidInputState(input);
+    }
+
+    return inputValidationErrorFound;
+  }
+
+  function handleFormSubmission(event: Event) {
+    event.preventDefault();
+
+    Array.from(inputs).forEach(validateInput);
+    validateInput(textarea);
+
+    if (!inputValidationErrorFound) {
       submitForm();
     }
   }
 
   function init() {
     if (form !== null) {
-      inputs.forEach(input => input.addEventListener('change', validateInput));
-      textarea.addEventListener('change', validateTextarea);
-      submitButton.addEventListener('click', validateAllFields);
+      form.addEventListener('submit', handleFormSubmission)
     }
   }
 
