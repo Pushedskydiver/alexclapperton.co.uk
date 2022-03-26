@@ -25,32 +25,32 @@ sitemap:
                     <div class="relative [margin-block-end:24px] sm:col-span-1">
                         <label class="block text-white text-base leading-base fvs-sb [margin-block-end:8px]" id="nameLabel" for="name">Name</label>
 
-                        <input class="bg-zinc-800 text-white text-base leading-base border-2 border-solid border-zinc-700 transition-colors duration-200 outline-none [inline-size:100%] [padding-block:8px] [padding-inline:16px] focus:border-yellow-400 valid:border-lime-500 motion-reduce:transition-none" id="name" type="text" name="name" aria-required="true" aria-labelledby="nameLabel" aria-describedby="nameDescribe" inputmode="text" enterkeyhint="next" pattern="^[a-zA-Z \-']+$" required data-input>
+                        <input class="bg-zinc-800 text-white text-base leading-base border-2 border-solid border-zinc-700 transition-colors duration-200 outline-none [inline-size:100%] [padding-block:8px] [padding-inline:16px] focus:border-yellow-400  motion-reduce:transition-none" id="name" type="text" name="name"  aria-describedby="nameDescribe" inputmode="text" enterkeyhint="next" data-input>
 
-                        <small class="hidden absolute text-red-400 fvs-rg [inset-block-start:0] [inset-inline-end:0]" id="nameDescribe" aria-hidden="true" data-validation>Your name is required</small>
+                        <small class="absolute text-red-400 fvs-rg [inset-block-start:0] [inset-inline-end:0]" id="nameDescribe" aria-hidden="true" hidden>Your name is required</small>
                     </div>
 
                     <div class="relative [margin-block-end:24px] sm:col-span-1">
                         <label class="block text-white text-base leading-base fvs-sb [margin-block-end:8px]" id="emailLabel" for="email">Email</label>
 
-                        <input class="bg-zinc-800 text-white text-base leading-base border-2 border-solid border-zinc-700 transition-colors duration-200 outline-none [inline-size:100%] [padding-block:8px] [padding-inline:16px] focus:border-yellow-400 valid:border-lime-500 motion-reduce:transition-none" id="email" type="email" name="email" aria-required="true" aria-labelledby="emailLabel" aria-describedby="emailDescribe" inputmode="email" enterkeyhint="next" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" required data-input>
+                        <input class="bg-zinc-800 text-white text-base leading-base border-2 border-solid border-zinc-700 transition-colors duration-200 outline-none [inline-size:100%] [padding-block:8px] [padding-inline:16px] focus:border-yellow-400  motion-reduce:transition-none" id="email" type="email" name="email"  aria-describedby="emailDescribe" inputmode="email" enterkeyhint="next" data-input>
 
-                        <small class="hidden absolute text-red-400 fvs-rg [inset-block-start:0] [inset-inline-end:0]" id="emailDescribe" aria-hidden="true" data-validation>Enter a valid email address</small>
+                        <small class="absolute text-red-400 fvs-rg [inset-block-start:0] [inset-inline-end:0]" id="emailDescribe" aria-hidden="true" hidden>Enter a valid email address</small>
                     </div>
 
                     <div class="relative [margin-block-end:24px] sm:col-span-full">
                         <label class="block text-white text-base leading-base fvs-sb [margin-block-end:8px]" id="messageLabel" for="message">Message</label>
 
-                        <textarea class="bg-zinc-800 text-white text-base leading-base border-2 border-solid border-zinc-700 transition-colors duration-200 outline-none [inline-size:100%] [padding-block:8px] [padding-inline:16px] focus:border-yellow-400 valid:border-lime-500 motion-reduce:transition-none" id="message" name="message" name="message" rows="6" cols="80" aria-required="true" aria-labelledby="messageLabel" aria-describedby="messageDescribe" inputmode="text" enterkeyhint="send" required data-textarea></textarea>
+                        <textarea class="bg-zinc-800 text-white text-base leading-base border-2 border-solid border-zinc-700 transition-colors duration-200 outline-none [inline-size:100%] [padding-block:8px] [padding-inline:16px] focus:border-yellow-400  motion-reduce:transition-none" id="message" name="message" name="message" rows="6" cols="80" aria-describedby="messageDescribe" inputmode="text" enterkeyhint="send" data-textarea></textarea>
 
-                        <small class="hidden absolute text-red-400 fvs-rg [inset-block-start:0] [inset-inline-end:0]" id="messageDescribe" aria-hidden="true" data-validation>Please enter your message</small>
+                        <small class="absolute text-red-400 fvs-rg [inset-block-start:0] [inset-inline-end:0]" id="messageDescribe" aria-hidden="true" hidden>Please enter your message</small>
                     </div>
 
                     <button class="relative [padding-block:12px] [padding-inline:24px] bg-yellow-400 text-zinc-900 text-base leading-base fvs-md inline-flex justify-center items-center gap-8 rounded-sm sm:justify-self-start focus:outline focus:outline-2 focus:outline-offset-4 focus:outline-yellow-400 hov:after:absolute hov:after:[inset-block-end:0] hov:after:[inset-inline-start:0] hov:after:[inline-size:100%] hov:after:[block-size:100%] hov:after:bg-yellow-600 hov:after:rounded-sm hov:after:transition-transform hov:after:duration-200 hov:after:-z-10 hov:hover:after:translate-x-8 hov:hover:after:translate-y-8 motion-reduce:after:transition-none" type="submit" name="button" data-submit-button>Submit form</button>
                 </div>
 
-                <span class="hidden bg-red-400 text-base leading-base fvs-md [margin-block-start:24px] [padding-block:8px] [padding-inline:16px]" data-form-error>Oops. There was an error. Please submit the form again.</span>
-                <span class="hidden bg-lime-500 text-base leading-base fvs-md [margin-block-start:24px] [padding-block:8px] [padding-inline:16px]" data-form-success>Hooray. Your message has been successfully sent.</span>
+                <span class="bg-red-400 text-base leading-base fvs-md [margin-block-start:24px] [padding-block:8px] [padding-inline:16px]" id="formError" aria-hidden="true" hidden data-form-error>Oops. There was an error. Please submit the form again.</span>
+                <span class="bg-lime-500 text-base leading-base fvs-md [margin-block-start:24px] [padding-block:8px] [padding-inline:16px]" id="formSuccess" aria-hidden="true" hidden data-form-success>Hooray. Your message has been successfully sent.</span>
             </fieldset>
         </form>
 
