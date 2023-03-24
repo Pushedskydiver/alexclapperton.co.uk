@@ -1,4 +1,3 @@
-const fs = require('fs');
 const rssFeed = require('@11ty/eleventy-plugin-rss');
 const htmlMin = require('./src/utils/transforms/minify-html.js');
 const formatDate = require('./src/utils/filters/format-date');
@@ -36,19 +35,6 @@ module.exports = config => {
   if (prod) {
     config.addTransform('htmlmin', htmlMin);
   }
-
-  config.setBrowserSyncConfig({
-    callbacks: {
-      ready: function (err, bs) {
-        const content_404 = fs.readFileSync('dist/404.html');
-
-        bs.addMiddleware("*", (req, res) => {
-          res.write(content_404);
-          res.end();
-        });
-      }
-    }
-  });
 
   return {
     dir: {

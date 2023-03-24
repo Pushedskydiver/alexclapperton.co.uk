@@ -1,20 +1,20 @@
 function FormValidation(form: HTMLFormElement) {
-  const inputs: NodeListOf<HTMLInputElement> = document.querySelectorAll('[data-input]');
-  const textarea: HTMLTextAreaElement | any = document.querySelector('[data-textarea]');
-  const submitButton: HTMLButtonElement | any = document.querySelector('[data-submit-button]');
-  const errorMessage: HTMLElement | any = document.querySelector('[data-form-error]');
-  const successMessage: HTMLElement | any = document.querySelector('[data-form-success]');
+  const inputs: NodeListOf<HTMLInputElement> = form.querySelectorAll('[data-input]');
+  const textarea: HTMLTextAreaElement | null = form.querySelector('[data-textarea]');
+  const submitButton: HTMLButtonElement | null = form.querySelector('[data-submit-button]');
+  const errorMessage: HTMLElement | null = form.querySelector('[data-form-error]');
+  const successMessage: HTMLElement | null = form.querySelector('[data-form-success]');
 
   let inputValidationErrorFound = false;
 
   function showSuccessMessage() {
-    submitButton.setAttribute('aria-describedby', 'formSuccess');
-    successMessage.removeAttribute('hidden');
+    submitButton?.setAttribute('aria-describedby', 'formSuccess');
+    successMessage?.removeAttribute('hidden');
   }
 
   function showErrorMessage() {
-    submitButton.setAttribute('aria-describedby', 'formError');
-    errorMessage.removeAttribute('hidden');
+    submitButton?.setAttribute('aria-describedby', 'formError');
+    errorMessage?.removeAttribute('hidden');
   }
 
   function setInvalidInputState(input: HTMLInputElement | HTMLTextAreaElement) {
@@ -49,7 +49,9 @@ function FormValidation(form: HTMLFormElement) {
       .catch(showErrorMessage);
   }
 
-  function validateInput(input: HTMLInputElement | HTMLTextAreaElement) {
+  function validateInput(input: HTMLInputElement | HTMLTextAreaElement | null) {
+    if (!input) return;
+
     const isEmail = input.getAttribute('type') === 'email';
     const isValidEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(input.value);
     const isValidInput = isEmail ? isValidEmail : input.value.length > 0;
