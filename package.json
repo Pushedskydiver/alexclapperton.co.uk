@@ -21,8 +21,7 @@
     "eleventy:dev": "cross-env NODE_ENV=development eleventy --incremental --serve",
     "eleventy:prod": "cross-env NODE_ENV=production eleventy",
     "webpack:dev": "cross-env NODE_ENV=development webpack --watch",
-    "webpack:prod": "cross-env NODE_ENV=production webpack",
-    "css-stats": "curl https://www.projectwallace.com/webhooks/v1/imports?token=437db188-8041-44c8-b7ad-cc4e71f337d8 -fsS --retry 3 -X POST -H 'Content-Type: text/css' -d @./dist/css/main.css"
+    "webpack:prod": "cross-env NODE_ENV=production webpack"
   },
   "dependencies": {
     "@11ty/eleventy": "^2.0.0",
