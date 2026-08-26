@@ -284,10 +284,39 @@ eleventyExcludeFromCollections: true
     margin-bottom: 0.6rem;
   }
 
-  @media (prefers-reduced-motion: reduce) {
-    .glass svg * {
-      animation: none !important;
-    }
+  /* The animations live in shadow roots, which this stylesheet cannot reach —
+     a `@media (prefers-reduced-motion)` rule here looks like it handles motion
+     and does nothing at all. The real one is injected with each clip, and it
+     is gated on an attribute so the visitor can turn it back on. */
+  .motion {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 0.6rem;
+    max-width: var(--measure);
+    margin: -1rem 0 clamp(2rem, 5vh, 3rem);
+    font-size: 0.9375rem;
+    color: rgba(248, 236, 208, 0.72);
+  }
+  .motion[hidden] {
+    display: none;
+  }
+  .motion button {
+    font: inherit;
+    font-family: var(--pixel);
+    font-size: 0.6875rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--sky-1);
+    background: var(--sky-4);
+    border: 0;
+    border-radius: 0.2rem;
+    padding: 0.45rem 0.7rem;
+    cursor: pointer;
+  }
+  .motion button:focus-visible {
+    outline: 2px solid var(--ink);
+    outline-offset: 2px;
   }
 </style>
 </head>
@@ -350,6 +379,13 @@ eleventyExcludeFromCollections: true
       panel draws from, running at the size they were drawn at — every limb
       moves on a whole pixel, because at this scale half a pixel is a smudge.
     </p>
+    <p class="motion" hidden>
+      <span
+        >Your device asks for less motion, so they are holding still.</span
+      >
+      <button type="button">Play them anyway</button>
+    </p>
+
     <div class="grid">
       <figure class="cell">
         <div class="glass" data-clip="typing"></div>
@@ -440,14 +476,44 @@ eleventyExcludeFromCollections: true
   // The page stylesheet stops at the shadow boundary, so the sizing has to go
   // in with the clip — without it each SVG renders at its intrinsic 168x200
   // and overflows the frame.
+  //
+  // The motion kill is gated on an attribute rather than written as a bare
+  // `@media (prefers-reduced-motion)`. On this page the animations are not
+  // decoration — they are the entire subject — so honouring the preference by
+  // freezing them silently leaves fifteen still crabs and nothing saying why.
+  // The default still respects the preference; the difference is that there is
+  // a way back, and the page says so.
   const fit =
     '<style>:host{display:block}svg{display:block;width:100%;height:auto;' +
     'image-rendering:pixelated}' +
-    '@media (prefers-reduced-motion:reduce){*{animation:none!important}}</style>';
-  for (const host of document.querySelectorAll('.glass[data-clip]')) {
+    ':host([data-still]) *{animation:none!important}</style>';
+  const hosts = [...document.querySelectorAll('.glass[data-clip]')];
+  for (const host of hosts) {
     const clip = clips[host.dataset.clip];
     if (clip) host.attachShadow({ mode: 'open' }).innerHTML = fit + clip;
   }
+
+  const reduce = window.matchMedia('(prefers-reduced-motion: reduce)');
+  const note = document.querySelector('.motion');
+  const toggle = note.querySelector('button');
+  let playing = false;
+
+  function syncMotion() {
+    const still = reduce.matches && !playing;
+    for (const host of hosts) host.toggleAttribute('data-still', still);
+    note.hidden = !reduce.matches;
+    toggle.textContent = playing ? 'Hold them still' : 'Play them anyway';
+    toggle.setAttribute('aria-pressed', String(playing));
+  }
+
+  toggle.addEventListener('click', () => {
+    playing = !playing;
+    syncMotion();
+  });
+  // The preference can change while the page is open — a phone entering low
+  // power mode turns it on.
+  reduce.addEventListener('change', syncMotion);
+  syncMotion();
 </script>
 
 </body>
