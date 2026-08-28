@@ -1,0 +1,419 @@
+---
+permalink: /j/setup/index.html
+eleventyExcludeFromCollections: true
+---
+{% raw %}<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="robots" content="noindex, nofollow" />
+<title>Setting the panel up</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link
+  rel="stylesheet"
+  href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..600&family=Silkscreen:wght@400;700&display=swap"
+/>
+
+<style>
+  /* The panel's own dusk scheme, truncated the way RGB565 truncates — the
+     same values /j/ uses, so the two pages are visibly one thing. */
+  :root {
+    --sky-1: #282848;
+    --sky-2: #683c68;
+    --sky-3: #b86060;
+    --sky-4: #e89458;
+    --ink: #f8ecd0;
+    --rock: #383038;
+    --sand: #705850;
+    --sea: #383458;
+    --measure: 36rem;
+    --pixel: 'Silkscreen', 'Courier New', monospace;
+    --body: 'Fraunces', Georgia, 'Times New Roman', serif;
+    /* Anything meant to be typed uses a real monospace. Silkscreen has no
+       true lowercase, so it renders commands and paths in what reads as
+       capitals — wrong for a shell, where case decides whether it works. */
+    --mono: ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas,
+      'Liberation Mono', monospace;
+  }
+
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
+  body {
+    margin: 0;
+    background: var(--sky-1);
+    color: var(--ink);
+    font-family: var(--body);
+    font-size: 1.0625rem;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .shell {
+    max-width: var(--measure);
+    margin: 0 auto;
+    padding-inline: clamp(1.25rem, 5vw, 2rem);
+  }
+
+  /* ── the header ────────────────────────────────────────────────── */
+  header {
+    background: linear-gradient(
+      180deg,
+      var(--sky-1) 0%,
+      var(--sky-2) 55%,
+      var(--sky-3) 100%
+    );
+    padding-block: clamp(3rem, 12vh, 5.5rem) clamp(2.5rem, 8vh, 4rem);
+    border-bottom: 4px solid var(--sand);
+  }
+
+  .eyebrow {
+    font-family: var(--pixel);
+    font-size: 0.6875rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: rgba(248, 236, 208, 0.72);
+    margin: 0 0 1.25rem;
+  }
+
+  h1 {
+    font-family: var(--pixel);
+    font-weight: 700;
+    font-size: clamp(1.5rem, 6vw, 2.75rem);
+    line-height: 1.12;
+    letter-spacing: -0.01em;
+    margin: 0 0 1.25rem;
+    color: var(--ink);
+  }
+
+  .standfirst {
+    margin: 0;
+    font-size: 1.125rem;
+    color: rgba(248, 236, 208, 0.86);
+    text-wrap: balance;
+  }
+
+  /* ── the steps ─────────────────────────────────────────────────── */
+  main {
+    padding-block: clamp(2.5rem, 8vh, 4rem) 6rem;
+  }
+
+  h2 {
+    font-family: var(--pixel);
+    font-size: 0.9375rem;
+    letter-spacing: 0.04em;
+    line-height: 1.4;
+    margin: 3.5rem 0 0.75rem;
+    color: var(--sky-4);
+  }
+
+  h2:first-of-type {
+    margin-top: 0;
+  }
+
+  h2 .n {
+    color: rgba(248, 236, 208, 0.4);
+    margin-right: 0.6em;
+  }
+
+  p {
+    margin: 0 0 1rem;
+  }
+
+  a {
+    color: var(--sky-4);
+    text-underline-offset: 0.2em;
+  }
+
+  code {
+    font-family: var(--mono);
+    font-size: 0.875em;
+    /* `--apply` ligates into something that reads as one dash in several
+       monospace faces. Copy-paste is unaffected; anyone typing it is not. */
+    font-variant-ligatures: none;
+    background: rgba(56, 48, 56, 0.7);
+    padding: 0.15em 0.4em;
+    border-radius: 3px;
+  }
+
+  pre {
+    font-family: var(--mono);
+    font-size: 0.875rem;
+    font-variant-ligatures: none;
+    line-height: 1.8;
+    -webkit-overflow-scrolling: touch;
+    background: var(--rock);
+    color: var(--ink);
+    border-left: 4px solid var(--sand);
+    margin: 1.25rem 0 1.5rem;
+    padding: 1rem 1.25rem;
+    overflow-x: auto;
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+  }
+
+  pre code {
+    background: none;
+    padding: 0;
+    font-size: 1em;
+  }
+
+  /* ── asides ────────────────────────────────────────────────────── */
+  .note {
+    border-left: 4px solid var(--sky-4);
+    background: rgba(104, 60, 104, 0.35);
+    padding: 1rem 1.25rem;
+    margin: 1.5rem 0;
+  }
+
+  .note p:last-child {
+    margin-bottom: 0;
+  }
+
+  .note strong {
+    color: var(--sky-4);
+  }
+
+  hr {
+    border: 0;
+    border-top: 2px dashed rgba(112, 88, 80, 0.8);
+    margin: 4rem 0 0;
+  }
+
+  footer {
+    padding-block: 2rem 0;
+    font-size: 0.9375rem;
+    color: rgba(248, 236, 208, 0.6);
+  }
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="shell">
+    <p class="eyebrow">Tamaclaude</p>
+    <h1>Setting the panel up</h1>
+    <p class="standfirst">
+      Twenty minutes, most of it one download. The panel needs your Mac —
+      every frame is drawn there and sent over USB, which is why there is
+      software to install at all.
+    </p>
+  </div>
+</header>
+
+<main class="shell">
+
+  <h2><span class="n">00</span>Before you start</h2>
+  <p>
+    Two tools, neither of which macOS ships: <strong>Node 24</strong> and
+    <strong>pnpm</strong>. If you use
+    <a href="https://mise.jdx.dev">mise</a>, the project pins both and
+    <code>mise install</code> will fetch them once you have the folder.
+    Otherwise install Node 24 from
+    <a href="https://nodejs.org">nodejs.org</a> and run
+    <code>corepack enable pnpm</code>.
+  </p>
+  <p>
+    Nothing compiles on install, so you do not need Xcode — though you
+    probably do need Apple's command line tools, since that is where
+    <code>git</code> comes from. The first <code>git</code> command offers to
+    install them.
+  </p>
+
+  <h2><span class="n">01</span>Get the project, and build it</h2>
+  <p>
+    <strong>Clone it somewhere permanent</strong> — your home folder is fine,
+    and it is what the rest of this page assumes. Two later steps record where
+    it lives, so moving it afterwards stops the panel. If you do move it,
+    re-run steps 05 and 06 from the new location and both re-point themselves.
+  </p>
+  <pre><code>cd ~
+git clone https://github.com/Pushedskydiver/Tamaclaude.git
+cd Tamaclaude
+pnpm install
+pnpm build</code></pre>
+  <div class="note">
+    <p>
+      <strong>Everything below runs from inside that folder.</strong>
+      <code>pnpm tamaclaude …</code> resolves against the nearest
+      <code>package.json</code>, so it works there and in subfolders like
+      <code>docs/</code>, and fails anywhere else — including the home folder
+      a new Terminal window opens in. If a command ever answers
+      <code>ERR_PNPM_NO_IMPORTER_MANIFEST_FOUND</code>, that is all it means:
+      <code>cd ~/Tamaclaude</code> and try again.
+    </p>
+  </div>
+  <p>
+    pnpm will warn that it ignored a build script. Leave it alone — nothing
+    needed to run the panel builds anything. You can also skip the
+    Playwright line in the README: that is for the test suite, and the
+    animations are already drawn and baked into the code.
+  </p>
+
+  <h2><span class="n">02</span>Put your pack in place</h2>
+  <p>
+    A <em>pack</em> holds your colours, the things Clawd says, and the date he
+    knows about. Yours was made for you and lives in its own small private
+    repository — <strong>its address was sent to you separately</strong>, not
+    printed here.
+  </p>
+  <pre><code>git clone &lt;your pack address&gt; ~/.tamaclaude/pack
+pnpm tamaclaude pack</code></pre>
+  <div class="note">
+    <p>
+      <strong>It is a private repository, so git has to know who you are.</strong>
+      Be signed in to GitHub on this Mac and have accepted the invitation
+      first. If you see <code>Repository not found</code>, that is almost
+      always access rather than a typo in the address — GitHub reports a
+      private repo you cannot see and one that does not exist in exactly the
+      same words.
+    </p>
+    <p>
+      Handed a folder instead of an address? Copy its contents in, and mind
+      the trailing slash — without it you get a folder inside a folder and
+      the program will say it cannot find the pack:
+    </p>
+    <pre><code>mkdir -p ~/.tamaclaude/pack
+cp -R /path/to/your-pack/ ~/.tamaclaude/pack/</code></pre>
+  </div>
+  <p>
+    That last command should name your pack and say when its birthday fires.
+    If it says <code>example</code>, or <code>birthday: none in this
+    pack</code>, the wrong folder is in place — worth stopping for, because
+    the panel will look completely correct and quietly do the wrong thing on
+    the one day it matters.
+  </p>
+
+  <h2><span class="n">03</span>Plug the panel in</h2>
+  <p>
+    Use the USB cable, into the Mac itself rather than a hub if you have the
+    choice. You should see the boot screen: Clawd waving next to the name.
+    Do this before the next step — the program finds the panel by looking for
+    it, so it needs to already be there.
+  </p>
+
+  <h2><span class="n">04</span>Start it, then stop it</h2>
+  <pre><code>pnpm tamaclaude daemon</code></pre>
+  <p>
+    The boot screen should be replaced by Clawd beside his rock pool. Then
+    press <code>Ctrl-C</code> to stop it. It will print
+    <code>ELIFECYCLE Command failed</code> on the way out — that is what
+    stopping looks like, not a problem. The next step starts the same program
+    automatically and two copies cannot both hold the panel.
+  </p>
+
+  <h2><span class="n">05</span>Make it start when you log in</h2>
+  <p>This one prints what it would do and changes nothing:</p>
+  <pre><code>pnpm tamaclaude install-agent</code></pre>
+  <p>When it looks right:</p>
+  <pre><code>pnpm tamaclaude install-agent --apply
+pnpm tamaclaude status</code></pre>
+  <p>
+    <code>--apply</code> should end with <code>Installed and running</code>,
+    and <code>status</code> should say <code>agent running (pid …)</code>. If
+    you get <code>agent loaded but not running; last exit 1</code>, a
+    <code>pnpm tamaclaude daemon</code> from step 04 is still running in
+    another Terminal window and is holding the panel — close it, then re-run
+    the <code>--apply</code> line.
+  </p>
+
+  <h2><span class="n">06</span>Connect it to Claude Code</h2>
+  <p>Prints the change and writes nothing:</p>
+  <pre><code>pnpm tamaclaude-install-hooks</code></pre>
+  <p>When it looks right:</p>
+  <pre><code>pnpm tamaclaude-install-hooks --apply</code></pre>
+  <p>
+    This edits <code>~/.claude/settings.json</code>, which is where your own
+    Claude Code settings live, so it is worth reading what it says it will add
+    before you let it.
+  </p>
+  <div class="note">
+    <p>
+      <strong>Start a new Claude Code session before you test.</strong> Hooks
+      are read when a session starts, so one that was already open knows
+      nothing about them — and the hook is deliberately silent when anything
+      goes wrong, so an already-open session shows you exactly what a failed
+      install would. It has not failed; it just is not listening yet.
+    </p>
+  </div>
+  <p>
+    Then ask Claude Code to <strong>read</strong> a file and watch — Clawd
+    should start climbing. Opening a session is not enough; that puts him at
+    rest. Reading rather than editing, because reading needs no approval, and
+    a first edit tends to land on the permission screen rather than the typing
+    you were watching for.
+  </p>
+
+  <hr />
+
+  <h2>When it stops</h2>
+  <p>Start here:</p>
+  <pre><code>cd ~/Tamaclaude        # or wherever you put it
+pnpm tamaclaude status</code></pre>
+  <p>Three things account for almost everything.</p>
+
+  <div class="note">
+    <p>
+      <strong>Clawd stopped reacting, but the panel is still on.</strong> The
+      Claude Code wiring stores the full path to Node, and it is deliberately
+      silent when that path breaks — it must never interrupt a session, so a
+      failure prints nothing anywhere and <code>status</code> still looks
+      fine. This is the most likely thing to happen after a Node upgrade.
+      Re-point it with
+      <code>pnpm tamaclaude-install-hooks --apply</code>.
+    </p>
+  </div>
+
+  <p>
+    <strong>Stuck on the boot screen, or never came back after a
+    restart.</strong> Usually the login entry pointing at a Node that moved.
+    <code>pnpm tamaclaude status</code> says so, and
+    <code>pnpm tamaclaude install-agent --apply</code> re-points it.
+  </p>
+  <p>
+    <strong>You started it by hand and forgot.</strong> A
+    <code>pnpm tamaclaude daemon</code> still running in a Terminal window
+    holds the panel, so the automatic one cannot. Close that window; the
+    automatic one takes over within a minute.
+  </p>
+  <p>
+    If none of those, the log is at
+    <code>~/.tamaclaude/daemon.log</code> — written only by the automatic
+    startup, so it will not exist if you never got that far. And note that
+    <code>status</code> reports the program, not the hardware: to check the
+    panel is found, run <code>pnpm tamaclaude install-agent</code>, which
+    prints the device it would use.
+  </p>
+
+  <h2>Changing your pack later</h2>
+  <p>
+    From the project folder — <code>git -C</code> pulls the pack without
+    moving you, which matters because the two lines after it only run here:
+  </p>
+  <pre><code>git -C ~/.tamaclaude/pack pull
+pnpm tamaclaude uninstall-agent
+pnpm tamaclaude install-agent --apply</code></pre>
+  <p>
+    The program reads the pack once when it starts, so it has to start again.
+    Unplugging the panel is not enough. Logging out and back in does it too,
+    if you would rather not type anything.
+  </p>
+
+  <footer>
+    <p>
+      The full version of all this is in <code>docs/INSTALL.md</code> in the
+      repo, which is the same instructions with more of the reasoning.
+      &nbsp;·&nbsp; <a href="/j/">Back to the card</a>
+    </p>
+  </footer>
+
+</main>
+
+</body>
+</html>{% endraw %}
