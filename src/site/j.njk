@@ -210,6 +210,30 @@ eleventyExcludeFromCollections: true
     color: var(--sand);
   }
 
+  .next {
+    margin-top: 2.5rem;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 0.25rem 1rem;
+  }
+  .next a {
+    font-family: var(--pixel);
+    font-size: 0.9375rem;
+    color: var(--sky-4);
+    text-decoration: none;
+    border-bottom: 2px solid currentColor;
+    padding-bottom: 0.15rem;
+  }
+  .next a:hover,
+  .next a:focus-visible {
+    color: var(--ink);
+  }
+  .next span {
+    font-size: 0.9375rem;
+    color: rgba(248, 236, 208, 0.66);
+  }
+
   /* ── the gallery ──────────────────────────────────────────────── */
   .gallery {
     margin-top: clamp(4rem, 12vh, 7rem);
@@ -370,6 +394,11 @@ eleventyExcludeFromCollections: true
     </span>
 
     <p class="sign">— with love, and a slightly excessive amount of build tooling</p>
+
+    <p class="next">
+      <a href="/j/setup/">Setting it up →</a>
+      <span>Twenty minutes, most of it one download.</span>
+    </p>
   </section>
 
   <section class="gallery">
@@ -461,7 +490,8 @@ eleventyExcludeFromCollections: true
     <p>
       If he ever stops moving, open Terminal, go to the project folder and run
       <code>pnpm tamaclaude status</code>. It will tell you which of the two
-      usual things has gone wrong.
+      usual things has gone wrong, and
+      <a href="/j/setup/">the setup page</a> says what to do about each.
     </p>
   </footer>
 </div>
