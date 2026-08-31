@@ -70,6 +70,35 @@ eleventyExcludeFromCollections: true
   .sky i:nth-child(4) {
     background: var(--sky-4);
   }
+  /* The bands are the device's own dusk palette and they are the point — but
+     they are also light exactly where the text is. Measured against WCAG: the
+     name, set in --sky-4 over the red band, was 1.80:1, and 1.00:1 — literally
+     invisible — if it landed on the orange one; the standfirst over orange was
+     1.85:1 against the 4.5:1 it needs. So the left column gets a scrim and the
+     right keeps its bands, which is where the device sits and where nothing
+     has to be read. At 80% over the worst band the name is 4.17:1, the
+     standfirst 6.77:1 and the heading 8.47:1.
+
+     On ::after so it paints above the bands without disturbing whatever
+     relationship .sky already has with .shell. */
+  .sky::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      to right,
+      rgba(40, 40, 72, 0.8) 0%,
+      rgba(40, 40, 72, 0.78) 42%,
+      rgba(40, 40, 72, 0) 72%
+    );
+  }
+  /* Narrow screens stack the device below the text, so the scrim has to cover
+     the full width rather than fade out across it. */
+  @media (max-width: 48rem) {
+    .sky::after {
+      background: rgba(40, 40, 72, 0.8);
+    }
+  }
 
   .hero {
     position: relative;
@@ -216,6 +245,24 @@ eleventyExcludeFromCollections: true
     flex-wrap: wrap;
     align-items: baseline;
     gap: 0.25rem 1rem;
+  }
+  /* There was no `a` rule on this page at all, so every link rendered in the
+     browser's default #0000EE — 1.50:1 against the background, unreadable
+     rather than merely ugly. --sky-4 is the accent `.next a` had already
+     chosen, and it is 5.92:1 here. */
+  a {
+    color: var(--sky-4);
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 0.15em;
+  }
+  a:hover {
+    color: var(--ink);
+  }
+  a:focus-visible {
+    outline: 2px solid var(--sky-4);
+    outline-offset: 3px;
+    border-radius: 2px;
   }
   .next a {
     font-family: var(--pixel);

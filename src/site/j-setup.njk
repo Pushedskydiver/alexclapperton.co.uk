@@ -315,9 +315,21 @@ cp -R /path/to/your-pack/ ~/.tamaclaude/pack/</code></pre>
   <pre><code>pnpm tamaclaude install-agent --apply
 pnpm tamaclaude status</code></pre>
   <p>
-    <code>--apply</code> should end with <code>Installed and running</code>,
-    and <code>status</code> should say <code>agent running (pid …)</code>. If
-    you get <code>agent loaded but not running; last exit 1</code>, a
+    With the panel plugged in, <code>--apply</code> ends with
+    <code>Installed and running</code> and <code>status</code> says
+    <code>agent running (pid …)</code>.
+  </p>
+  <p>
+    <strong>If the panel is not plugged in, you get something different and
+    it is not a fault.</strong> <code>--apply</code> ends with
+    <code>Installed. Plug the panel in and it starts itself within thirty
+    seconds; there is nothing else to run.</code>, and <code>status</code>
+    says <code>agent loaded, waiting for a panel</code>. That is the install
+    working. Plug the panel in and it starts on its own.
+  </p>
+  <p>
+    If instead you get
+    <code>agent loaded but not running; last exit 1</code>, a
     <code>pnpm tamaclaude daemon</code> from step 04 is still running in
     another Terminal window and is holding the panel — close it, then re-run
     the <code>--apply</code> line.
@@ -356,7 +368,21 @@ pnpm tamaclaude status</code></pre>
   <p>Start here:</p>
   <pre><code>cd ~/Tamaclaude        # or wherever you put it
 pnpm tamaclaude status</code></pre>
-  <p>Three things account for almost everything.</p>
+  <p>Four things account for almost everything.</p>
+
+  <div class="note">
+    <p>
+      <strong>The panel is not plugged in.</strong> This is the commonest one
+      by a distance — the cable comes out whenever the desk moves — and
+      <code>status</code> says so in as many words:
+    </p>
+    <pre><code>agent     loaded, waiting for a panel — plug it in and it starts itself
+          (`pnpm tamaclaude install-agent` prints the device it would use)</code></pre>
+    <p>
+      There is nothing to re-run. Plug it in and it starts on its own within
+      thirty seconds.
+    </p>
+  </div>
 
   <div class="note">
     <p>
@@ -385,7 +411,11 @@ pnpm tamaclaude status</code></pre>
   <p>
     If none of those, the log is at
     <code>~/.tamaclaude/daemon.log</code> — written only by the automatic
-    startup, so it will not exist if you never got that far. And note that
+    startup, so it will not exist if you never got that far. It does not grow
+    forever: past a megabyte the current one is set aside as
+    <code>~/.tamaclaude/daemon.log.1</code> and a fresh one starts, and the
+    first line of the fresh one says so. There are never more than those two,
+    and nothing older is kept. And note that
     <code>status</code> reports the program, not the hardware: to check the
     panel is found, run <code>pnpm tamaclaude install-agent</code>, which
     prints the device it would use.
